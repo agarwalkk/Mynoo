@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mynoo</string>
+    <string name="tab_tutor">Tutor</string>
+    <string name="tab_library">Library</string>
+    <string name="tab_progress">Progress</string>
+</resources>

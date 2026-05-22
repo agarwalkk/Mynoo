@@ -1,0 +1,42 @@
+# ── Gradle ─────────────────────────────────────────────────────────────────
+.gradle/
+**/build/
+gradle-app.setting
+!gradle-wrapper.jar
+
+# ── Local configuration & secrets ───────────────────────────────────────────
+local.properties
+*.jks
+*.keystore
+*.p12
+google-services.json     # if you manage this outside VCS
+# app/google-services.json is intentionally NOT ignored (needed for CI)
+app/src/main/res/raw/google_sa.json
+
+# ── Android Studio / IntelliJ ────────────────────────────────────────────────
+*.iml
+.idea/
+!.idea/codeStyles/
+!.idea/inspectionProfiles/
+*.hprof
+captures/
+.cxx/
+.externalNativeBuild/
+
+# ── Build outputs ────────────────────────────────────────────────────────────
+*.apk
+*.aab
+*.ap_
+*.dex
+output-metadata.json
+
+# ── Logs ────────────────────────────────────────────────────────────────────
+*.log
+
+# ── macOS / Windows ─────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ── Node / tooling (if any frontend tooling is added) ───────────────────────
+node_modules/

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme (used by launcher / system chrome only;
+         Compose renders its own surface over this immediately). -->
+    <style name="Theme.Mynoo" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/mynoo_bg</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/mynoo_bg</item>
+    </style>
+
+    <!-- Splash screen theme shown before Compose inflates -->
+    <style name="Theme.Mynoo.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/mynoo_bg</item>
+    </style>
+</resources>

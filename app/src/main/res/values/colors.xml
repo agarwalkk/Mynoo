@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand primary used in launcher theme; Compose theme overrides these at runtime -->
+    <color name="mynoo_primary">#FF6B35</color>
+    <color name="mynoo_bg">#FFF9F0</color>
+    <color name="white">#FFFFFF</color>
+</resources>
