@@ -14,9 +14,11 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Mic
-import androidx.compose.material.icons.filled.Send
 import androidx.compose.material.icons.filled.Stop
+import androidx.compose.foundation.clickable
+import com.krishanagarwal.mynoo.ui.viewmodel.TutorUiState
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -38,11 +40,16 @@ import kotlinx.coroutines.launch
 fun TutorScreen(
     childState:   ChildState,
     onChildReset: () -> Unit,
+    onNavigateToPlacementQuiz: (String) -> Unit,
     vm: TutorViewModel = hiltViewModel(),
 ) {
     val ui by vm.ui.collectAsState()
     val listState = rememberLazyListState()
     val scope = rememberCoroutineScope()
+
+    LaunchedEffect(childState.name) {
+        vm.checkAssessedStatus(childState.name)
+    }
 
     // Auto-scroll to last message
     LaunchedEffect(ui.messages.size) {
@@ -69,6 +76,8 @@ fun TutorScreen(
         if (ui.phase == SessionPhase.IDLE) {
             IdleSessionView(
                 childState = childState,
+                ui = ui,
+                onNavigateToPlacementQuiz = onNavigateToPlacementQuiz,
                 onStart    = { lang -> vm.startSession(childState, lang) },
                 onReset    = onChildReset,
             )
@@ -177,6 +186,8 @@ fun TutorScreen(
 @Composable
 private fun IdleSessionView(
     childState: ChildState,
+    ui: TutorUiState,
+    onNavigateToPlacementQuiz: (String) -> Unit,
     onStart:    (String) -> Unit,
     onReset:    () -> Unit,
 ) {
@@ -185,6 +196,43 @@ private fun IdleSessionView(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
+        if (!ui.isAssessed) {
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 24.dp)
+                    .clickable { onNavigateToPlacementQuiz(childState.name) },
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
+            ) {
+                Row(
+                    modifier = Modifier.padding(16.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(16.dp)
+                ) {
+                    Text("📝", fontSize = 32.sp)
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            text = "Take Placement Quiz",
+                            style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+                            color = MaterialTheme.colorScheme.onPrimaryContainer
+                        )
+                        Text(
+                            text = "Find your starting levels for English, Hindi, and Punjabi.",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.8f)
+                        )
+                    }
+                    Icon(
+                        imageVector = Icons.Default.ArrowForward,
+                        contentDescription = "Start",
+                        tint = MaterialTheme.colorScheme.onPrimaryContainer,
+                        modifier = Modifier.size(20.dp)
+                    )
+                }
+            }
+        }
+
         Text("🎓", fontSize = 72.sp)
         Spacer(Modifier.height(16.dp))
         Text(

@@ -15,6 +15,7 @@ import com.krishanagarwal.mynoo.data.api.GeminiRequest
 import com.krishanagarwal.mynoo.data.api.SarvamApi
 import com.krishanagarwal.mynoo.data.model.ChildState
 import com.krishanagarwal.mynoo.data.repository.SessionRepository
+import com.krishanagarwal.mynoo.data.repository.PlacementRepository
 import com.krishanagarwal.mynoo.service.AudioRecorderService
 import com.krishanagarwal.mynoo.service.TtsService
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -50,6 +51,7 @@ data class TutorUiState(
     val error:        String?       = null,
     val quickReplies: List<String>  = emptyList(),
     val hasMicPerm:   Boolean       = false,
+    val isAssessed:   Boolean       = true,
 )
 
 @HiltViewModel
@@ -59,6 +61,7 @@ class TutorViewModel @Inject constructor(
     private val ttsService:    TtsService,
     private val recorder:      AudioRecorderService,
     private val sessionRepo:   SessionRepository,
+    private val placementRepo: PlacementRepository,
 ) : ViewModel() {
 
     private val _ui = MutableStateFlow(TutorUiState())
@@ -72,6 +75,18 @@ class TutorViewModel @Inject constructor(
     // ── Mic permission ────────────────────────────────────────────────────────
     fun onMicPermResult(granted: Boolean) {
         _ui.update { it.copy(hasMicPerm = granted) }
+    }
+
+    fun checkAssessedStatus(childName: String) {
+        if (childName.isBlank()) return
+        viewModelScope.launch {
+            try {
+                val assessed = placementRepo.hasBeenAssessed(childName)
+                _ui.update { it.copy(isAssessed = assessed) }
+            } catch (e: Exception) {
+                Log.e("TutorVM", "Error checking assessment status", e)
+            }
+        }
     }
 
     // ── Session control ───────────────────────────────────────────────────────

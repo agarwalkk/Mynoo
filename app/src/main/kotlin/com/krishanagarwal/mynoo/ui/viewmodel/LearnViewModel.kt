@@ -27,7 +27,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-data class LibraryUiState(
+data class LearnUiState(
     val chapters:  List<ChapterMeta> = emptyList(),
     val loading:   Boolean           = false,
     val error:     String?           = null,
@@ -65,13 +65,13 @@ data class ReaderUiState(
 private data class AudioSegment(val id: String, val kind: String)
 
 @HiltViewModel
-class LibraryViewModel @Inject constructor(
+class LearnViewModel @Inject constructor(
     private val repo:      ChapterRepository,
     private val vocabRepo: VocabRepository,
 ) : ViewModel() {
 
-    private val _lib    = MutableStateFlow(LibraryUiState())
-    val lib: StateFlow<LibraryUiState> = _lib
+    private val _learn  = MutableStateFlow(LearnUiState())
+    val learn: StateFlow<LearnUiState> = _learn
 
     private val _reader = MutableStateFlow(ReaderUiState())
     val reader: StateFlow<ReaderUiState> = _reader
@@ -96,15 +96,15 @@ class LibraryViewModel @Inject constructor(
     // ── Chapter list ──────────────────────────────────────────────────────────
 
     fun loadChapters(classNum: String, subject: String) {
-        _lib.update { it.copy(loading = true, error = null, subject = subject) }
+        _learn.update { it.copy(loading = true, error = null, subject = subject) }
         viewModelScope.launch {
             val chapters = try {
                 repo.getChapters(classNum, subject)
             } catch (e: Exception) {
-                _lib.update { it.copy(loading = false, error = e.message) }
+                _learn.update { it.copy(loading = false, error = e.message) }
                 return@launch
             }
-            _lib.update { it.copy(chapters = chapters, loading = false) }
+            _learn.update { it.copy(chapters = chapters, loading = false) }
         }
     }
 
@@ -226,13 +226,13 @@ class LibraryViewModel @Inject constructor(
     // ── Internal playback (must run on Dispatchers.Main) ─────────────────────
 
     /**
-     * Pre-schedules one coroutine per word that fires at the precise wall-clock moment
-     * derived from the timing data, scaled by [playbackSpeed].
-     * Cancels any previously running word-highlight scope first.
-     *
-     * @param fromSec  audio position (in seconds) at which scheduling starts
-     *                 (0.0 for fresh play, pausePosSec for resume after pause)
-     */
+      * Pre-schedules one coroutine per word that fires at the precise wall-clock moment
+      * derived from the timing data, scaled by [playbackSpeed].
+      * Cancels any previously running word-highlight scope first.
+      *
+      * @param fromSec  audio position (in seconds) at which scheduling starts
+      *                 (0.0 for fresh play, pausePosSec for resume after pause)
+      */
     private fun scheduleWordHighlights(timings: List<WordTiming>?, fromSec: Double = 0.0) {
         wordScope?.cancel()
         if (timings.isNullOrEmpty()) { wordScope = null; return }

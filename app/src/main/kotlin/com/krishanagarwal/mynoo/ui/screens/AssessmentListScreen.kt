@@ -62,39 +62,47 @@ fun AssessmentListScreen(
         }
     ) { padding ->
         Column(modifier = Modifier.fillMaxSize().padding(padding).padding(16.dp)) {
-            Text("Assessments",
+            Text(
+                text = if (subject.isNotBlank()) "$selectedSubject Assessments" else "Assessments",
                 style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.Bold),
-                color = MaterialTheme.colorScheme.primary)
+                color = MaterialTheme.colorScheme.primary
+            )
             Text(childName, style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant)
             Spacer(Modifier.height(12.dp))
 
-            LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                items(SUBJECTS) { subj ->
-                    FilterChip(selected = selectedSubject == subj,
-                        onClick = { selectedSubject = subj },
-                        label = { Text(subj) })
+            if (subject.isBlank()) {
+                LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    items(SUBJECTS) { subj ->
+                        FilterChip(selected = selectedSubject == subj,
+                            onClick = { selectedSubject = subj },
+                            label = { Text(subj) })
+                    }
                 }
+                Spacer(Modifier.height(16.dp))
             }
-            Spacer(Modifier.height(16.dp))
 
             if (quizState.generating) {
                 Row(verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     CircularProgressIndicator(Modifier.size(20.dp), strokeWidth = 2.dp)
-                    Text("Generating $selectedSubject questions…")
+                    Text("Generating $selectedSubject questions.")
                 }
                 Spacer(Modifier.height(8.dp))
+            }
+
+            val filteredAssessments = remember(listState.assessments, selectedSubject) {
+                listState.assessments.filter { it.subject.equals(selectedSubject, ignoreCase = true) }
             }
 
             when {
                 listState.loading -> Box(Modifier.fillMaxWidth().height(200.dp), contentAlignment = Alignment.Center) {
                     CircularProgressIndicator()
                 }
-                listState.assessments.isEmpty() -> Text("No assessments yet. Tap + to start one.",
+                filteredAssessments.isEmpty() -> Text("No assessments yet. Tap + to start one.",
                     color = MaterialTheme.colorScheme.onSurfaceVariant)
                 else -> LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    items(listState.assessments, key = { it.id }) { a ->
+                    items(filteredAssessments, key = { it.id }) { a ->
                         ElevatedCard(
                             modifier = Modifier.fillMaxWidth().clickable {
                                 onNavigateToAssessment(a.id, childName)
@@ -103,12 +111,12 @@ fun AssessmentListScreen(
                         ) {
                             Column(Modifier.padding(16.dp)) {
                                 Text(a.subject, style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Medium))
-                                Text("${a.questions.size} questions · ${a.date.take(10)}",
+                                Text("${a.questions.size} questions Â· ${a.date.take(10)}",
                                     style = MaterialTheme.typography.bodySmall,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant)
                                 if (a.status == "completed" && a.summary.isNotBlank()) {
                                     Spacer(Modifier.height(4.dp))
-                                    Text(a.summary.take(80) + "…",
+                                    Text(a.summary.take(80) + ".",
                                         style = MaterialTheme.typography.bodySmall,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant)
                                 }

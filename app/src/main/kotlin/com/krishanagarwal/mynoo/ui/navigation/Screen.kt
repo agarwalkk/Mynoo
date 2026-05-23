@@ -24,7 +24,7 @@ sealed class Screen(val route: String) {
     // ── Main bottom-tab host ──────────────────────────────────────────────────
     object Main     : Screen("main")
     object Tutor    : Screen("tutor")
-    object Library  : Screen("library")
+    object Learn    : Screen("learn")
     object Progress : Screen("progress")
 
     // ── Top-level stack screens ───────────────────────────────────────────────
@@ -63,5 +63,12 @@ sealed class Screen(val route: String) {
     ) {
         fun route(assessmentId: String, childName: String) =
             "assessment/$assessmentId/$childName"
+    }
+
+    object PlacementQuiz : Screen(
+        "placement_quiz?childName={childName}&lang={lang}"
+    ) {
+        fun route(childName: String, lang: String = "") =
+            "placement_quiz?childName=$childName&lang=$lang"
     }
 }

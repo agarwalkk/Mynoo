@@ -22,6 +22,7 @@ import com.krishanagarwal.mynoo.ui.viewmodel.score
 fun AssessmentScreen(
     assessmentId: String,
     childName:    String,
+    onFinish:     () -> Unit,
     vm: AssessmentViewModel = hiltViewModel(),
 ) {
     val quiz by vm.quiz.collectAsState()
@@ -35,13 +36,13 @@ fun AssessmentScreen(
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 CircularProgressIndicator()
                 Spacer(Modifier.height(8.dp))
-                Text("Loading assessment…")
+                Text("Loading assessment.")
             }
         }
         quiz.error != null -> Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             Text(quiz.error!!, color = MaterialTheme.colorScheme.error)
         }
-        quiz.finished -> SummaryView(quiz.summary, quiz.score, quiz.assessment?.questions?.size ?: 0)
+        quiz.finished -> SummaryView(quiz.summary, quiz.score, quiz.assessment?.questions?.size ?: 0, onFinish)
         else -> {
             val q   = quiz.currentQuestion ?: return
             val idx = quiz.currentIndex
@@ -163,7 +164,7 @@ private fun QuestionView(
             }
             if (revealed) {
                 Button(onClick = onNext, modifier = Modifier.fillMaxWidth()) {
-                    Text(if (index + 1 < 8) "Next Question" else "Finish")
+                    Text(if (index + 1 < total) "Next Question" else "Finish")
                 }
             }
         } else {
@@ -185,7 +186,7 @@ private fun QuestionView(
                 }
                 Spacer(Modifier.height(4.dp))
                 Button(onClick = onNext, modifier = Modifier.fillMaxWidth()) {
-                    Text(if (index + 1 < 8) "Next Question" else "Finish")
+                    Text(if (index + 1 < total) "Next Question" else "Finish")
                 }
             }
         }
@@ -193,7 +194,7 @@ private fun QuestionView(
 }
 
 @Composable
-private fun SummaryView(summary: String, score: Int, total: Int) {
+private fun SummaryView(summary: String, score: Int, total: Int, onFinish: () -> Unit) {
     Column(
         modifier            = Modifier.fillMaxSize().padding(24.dp).verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -211,9 +212,13 @@ private fun SummaryView(summary: String, score: Int, total: Int) {
                     Text(summary, style = MaterialTheme.typography.bodyMedium)
                 }
             }
+            Spacer(Modifier.height(16.dp))
+            Button(onClick = onFinish, modifier = Modifier.fillMaxWidth()) {
+                Text("Done")
+            }
         } else {
             CircularProgressIndicator()
-            Text("Generating feedback…", style = MaterialTheme.typography.bodySmall,
+            Text("Generating feedback.", style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
     }

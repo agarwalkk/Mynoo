@@ -16,6 +16,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 
@@ -26,8 +27,7 @@ private data class BottomNavItem(
 )
 
 private val bottomNavItems = listOf(
-    BottomNavItem("Library",  Icons.Default.AutoStories,              Screen.Library),
-    BottomNavItem("Progress", Icons.AutoMirrored.Filled.TrendingUp,   Screen.Progress),
+    BottomNavItem("Learn",  Icons.Default.AutoStories,              Screen.Learn),
     BottomNavItem("Talk",     Icons.Default.RecordVoiceOver,              Screen.Tutor),
 )
 
@@ -47,8 +47,8 @@ fun MynooBottomBar(navController: NavHostController) {
                 onClick  = {
                     if (!selected) {
                         navController.navigate(item.screen.route) {
-                            // Pop up to the Library tab so back-stack stays clean
-                            popUpTo(Screen.Library.route) { saveState = true }
+                            // Pop up to the start destination of the graph to keep back-stack clean
+                            popUpTo(navController.graph.findStartDestination().id) { saveState = true }
                             launchSingleTop = true
                             restoreState    = true
                         }
@@ -73,3 +73,4 @@ fun MynooBottomBar(navController: NavHostController) {
         }
     }
 }
+

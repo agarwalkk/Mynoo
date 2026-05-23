@@ -1,5 +1,6 @@
-﻿package com.krishanagarwal.mynoo.ui.screens
+package com.krishanagarwal.mynoo.ui.screens
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -9,6 +10,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -28,10 +30,11 @@ private val SUBJECTS = listOf(
 )
 
 @Composable
-fun LibraryScreen(
-    childState:                ChildState,
-    onNavigateToChapterList:   (classNum: String, subject: String, lang: String) -> Unit,
+fun LearnScreen(
+    childState:                 ChildState,
+    onNavigateToChapterList:    (classNum: String, subject: String, lang: String) -> Unit,
     onNavigateToAssessmentList: (lang: String, childName: String, subject: String) -> Unit,
+    onChildReset:               () -> Unit,
 ) {
     val classNum = childState.classNum.ifBlank { "7" }
 
@@ -41,22 +44,36 @@ fun LibraryScreen(
             .padding(horizontal = 16.dp)
             .padding(top = 12.dp),
     ) {
-        Text(
-            text  = "What would you like to read?",
-            style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
-        )
-        Spacer(Modifier.height(2.dp))
-        Text(
-            text  = "Class $classNum · ${childState.name}",
-            style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Column {
+                Text(
+                    text  = "What would you like to read?",
+                    style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
+                )
+                Spacer(Modifier.height(2.dp))
+                Text(
+                    text  = "Class $classNum · ${childState.name}",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+            TextButton(
+                onClick = onChildReset,
+                colors = ButtonDefaults.textButtonColors(contentColor = MaterialTheme.colorScheme.primary)
+            ) {
+                Text("Switch Child", fontWeight = FontWeight.Bold)
+            }
+        }
         Spacer(Modifier.height(16.dp))
 
         LazyVerticalGrid(
             columns               = GridCells.Fixed(2),
-            verticalArrangement   = Arrangement.spacedBy(10.dp),
-            horizontalArrangement = Arrangement.spacedBy(10.dp),
+            verticalArrangement   = Arrangement.spacedBy(12.dp),
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
             contentPadding        = PaddingValues(bottom = 24.dp),
         ) {
             items(SUBJECTS) { subj ->
@@ -76,26 +93,26 @@ private fun SubjectTile(
     onReadClick: () -> Unit,
     onQuizClick: () -> Unit,
 ) {
-    Surface(
+    ElevatedCard(
         shape          = RoundedCornerShape(16.dp),
-        color          = MaterialTheme.colorScheme.primaryContainer,
-        tonalElevation = 2.dp,
+        colors         = CardDefaults.elevatedCardColors(containerColor = MaterialTheme.colorScheme.surface),
+        elevation      = CardDefaults.elevatedCardElevation(defaultElevation = 2.dp),
         modifier       = Modifier.fillMaxWidth(),
     ) {
         Column(
-            modifier            = Modifier.padding(10.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
+            modifier            = Modifier.padding(12.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             // Subject identity row
             Row(
                 verticalAlignment     = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
             ) {
-                Text(subject.emoji, fontSize = 22.sp)
+                Text(subject.emoji, fontSize = 24.sp)
                 Text(
                     text      = subject.name,
                     style     = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
-                    color     = MaterialTheme.colorScheme.onPrimaryContainer,
+                    color     = MaterialTheme.colorScheme.onSurface,
                     maxLines  = 2,
                     textAlign = TextAlign.Start,
                     modifier  = Modifier.weight(1f),
@@ -104,24 +121,32 @@ private fun SubjectTile(
             // Action buttons
             Row(
                 modifier              = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(6.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
             ) {
-                FilledTonalButton(
+                Button(
                     onClick         = onReadClick,
-                    modifier        = Modifier.weight(1f),
+                    modifier        = Modifier.weight(1.2f),
                     contentPadding  = PaddingValues(horizontal = 4.dp, vertical = 0.dp),
                     shape           = RoundedCornerShape(8.dp),
+                    colors          = ButtonDefaults.buttonColors(
+                        containerColor = MaterialTheme.colorScheme.primary,
+                        contentColor = MaterialTheme.colorScheme.onPrimary
+                    )
                 ) {
-                    Text("📖 Read", style = MaterialTheme.typography.labelSmall, maxLines = 1)
+                    Text("📖 Read", style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold), maxLines = 1)
                 }
                 OutlinedButton(
                     onClick         = onQuizClick,
-                    modifier        = Modifier.weight(1f),
+                    modifier        = Modifier.weight(1.0f),
                     contentPadding  = PaddingValues(horizontal = 4.dp, vertical = 0.dp),
                     shape           = RoundedCornerShape(8.dp),
-                    border          = ButtonDefaults.outlinedButtonBorder,
+                    border          = BorderStroke(1.dp, Color(0xFFE2E8F0)),
+                    colors          = ButtonDefaults.outlinedButtonColors(
+                        containerColor = Color.Transparent,
+                        contentColor = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
                 ) {
-                    Text("✏️ Quiz", style = MaterialTheme.typography.labelSmall, maxLines = 1)
+                    Text("✏️ Quiz", style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.SemiBold), maxLines = 1)
                 }
             }
         }

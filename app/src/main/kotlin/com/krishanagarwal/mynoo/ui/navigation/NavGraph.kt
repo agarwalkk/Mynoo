@@ -31,25 +31,28 @@ import com.krishanagarwal.mynoo.ui.screens.AssessmentScreen
 import com.krishanagarwal.mynoo.ui.screens.ChapterListScreen
 import com.krishanagarwal.mynoo.ui.screens.ChapterReaderScreen
 import com.krishanagarwal.mynoo.ui.screens.ChildSelectScreen
-import com.krishanagarwal.mynoo.ui.screens.LibraryScreen
+import com.krishanagarwal.mynoo.ui.screens.LearnScreen
 import com.krishanagarwal.mynoo.ui.screens.ParentDashboardScreen
 import com.krishanagarwal.mynoo.ui.screens.ProgressScreen
+import com.krishanagarwal.mynoo.ui.screens.PlacementQuizScreen
 import com.krishanagarwal.mynoo.ui.screens.TutorScreen
+import androidx.navigation.NavGraph.Companion.findStartDestination
 
 // Screens that show the bottom navigation bar
 private val bottomNavRoutes = setOf(
     Screen.Tutor.route,
-    Screen.Library.route,
-    Screen.Progress.route,
+    Screen.Learn.route,
 )
 
 // Screens that show the TopAppBar (excludes ChildSelect and full-screen modals)
 private val topBarRoutes = setOf(
     Screen.Tutor.route,
-    Screen.Library.route,
+    Screen.Learn.route,
     Screen.Progress.route,
     Screen.AssessmentList.route,
     Screen.ParentDashboard.route,
+    Screen.ChapterList.route,
+    Screen.Assessment.route,
 )
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -69,10 +72,14 @@ fun MynooNavGraph(
                     title = {
                         Text(
                             text = when {
-                                currentRoute?.startsWith(Screen.Tutor.route) == true -> "AI Tutor"
-                                currentRoute?.startsWith(Screen.Library.route) == true -> "Library"
-                                currentRoute?.startsWith(Screen.Progress.route) == true -> "My Progress"
+                                currentRoute == Screen.Tutor.route -> "AI Tutor"
+                                currentRoute == Screen.Learn.route -> "Learn"
+                                currentRoute == Screen.Progress.route -> "My Progress"
+                                currentRoute == Screen.ChapterList.route -> {
+                                    navBackStackEntry?.arguments?.getString("subject") ?: "Chapters"
+                                }
                                 currentRoute?.startsWith(Screen.AssessmentList.route) == true -> "Assessments"
+                                currentRoute == Screen.Assessment.route -> "Assessment"
                                 currentRoute == Screen.ParentDashboard.route -> "Parent Dashboard"
                                 else -> "Mynoo"
                             },
@@ -80,14 +87,14 @@ fun MynooNavGraph(
                         )
                     },
                     navigationIcon = {
-                        if (currentRoute == Screen.ParentDashboard.route) {
+                        if (currentRoute !in bottomNavRoutes && currentRoute != Screen.ChildSelect.route) {
                             IconButton(onClick = { navController.popBackStack() }) {
                                 Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
                             }
                         }
                     },
                     actions = {
-                        if (currentRoute != Screen.ParentDashboard.route) {
+                        if (currentRoute in bottomNavRoutes) {
                             IconButton(onClick = { navController.navigate(Screen.ParentDashboard.route) }) {
                                 Icon(Icons.Default.Settings, contentDescription = "Settings")
                             }
@@ -106,9 +113,10 @@ fun MynooNavGraph(
             }
         }
     ) { innerPadding ->
+        val startDestination = if (childState.isSelected) Screen.Learn.route else Screen.ChildSelect.route
         NavHost(
             navController = navController,
-            startDestination = Screen.Tutor.route,
+            startDestination = startDestination,
             modifier = Modifier.padding(innerPadding)
         ) {
             // ── Main Tabs ─────────────────────────────────────────────────────
@@ -116,10 +124,13 @@ fun MynooNavGraph(
                 TutorScreen(
                     childState   = childState,
                     onChildReset = { onChildSet(ChildState()) },
+                    onNavigateToPlacementQuiz = { childName ->
+                        navController.navigate(Screen.PlacementQuiz.route(childName))
+                    }
                 )
             }
-            composable(Screen.Library.route) {
-                LibraryScreen(
+            composable(Screen.Learn.route) {
+                LearnScreen(
                     childState               = childState,
                     onNavigateToChapterList  = { classNum, subject, lang ->
                         navController.navigate(Screen.ChapterList.route(classNum, subject, lang))
@@ -127,6 +138,7 @@ fun MynooNavGraph(
                     onNavigateToAssessmentList = { lang, childName, subject ->
                         navController.navigate(Screen.AssessmentList.route(lang, childName, subject))
                     },
+                    onChildReset             = { onChildSet(ChildState()) },
                 )
             }
             composable(Screen.Progress.route) {
@@ -147,12 +159,20 @@ fun MynooNavGraph(
                     onChildSelected = { name, classNum ->
                         onChildSet(ChildState(name = name, classNum = classNum))
                     },
+                    onNavigateToParentDashboard = {
+                        navController.navigate(Screen.ParentDashboard.route)
+                    }
                 )
             }
 
             // ── Parent Dashboard ──────────────────────────────────────────────
             composable(Screen.ParentDashboard.route) {
-                ParentDashboardScreen(childState = childState)
+                ParentDashboardScreen(
+                    childState = childState,
+                    onNavigateToProgress = {
+                        navController.navigate(Screen.Progress.route)
+                    }
+                )
             }
 
             // ── Chapter List ──────────────────────────────────────────────────
@@ -202,6 +222,7 @@ fun MynooNavGraph(
                     chapterId = entry.arguments?.getString("chapterId") ?: "",
                     lang      = entry.arguments?.getString("lang")      ?: "en",
                     title     = entry.arguments?.getString("title")     ?: "",
+                    onBackClick = { navController.popBackStack() },
                 )
             }
 
@@ -238,6 +259,27 @@ fun MynooNavGraph(
                 AssessmentScreen(
                     assessmentId = entry.arguments?.getString("assessmentId") ?: "",
                     childName    = entry.arguments?.getString("childName")    ?: "",
+                    onFinish     = { navController.popBackStack() },
+                )
+            }
+
+            // ── Placement Quiz ────────────────────────────────────────────────
+            composable(
+                route     = Screen.PlacementQuiz.route,
+                arguments = listOf(
+                    navArgument("childName") { type = NavType.StringType },
+                    navArgument("lang")      { type = NavType.StringType; nullable = true; defaultValue = null }
+                ),
+            ) { entry ->
+                PlacementQuizScreen(
+                    childName    = entry.arguments?.getString("childName") ?: "",
+                    langOverride = entry.arguments?.getString("lang"),
+                    onExit       = { navController.popBackStack() },
+                    onFinish     = {
+                        navController.navigate(Screen.Tutor.route) {
+                            popUpTo(navController.graph.findStartDestination().id) { inclusive = true }
+                        }
+                    }
                 )
             }
         }

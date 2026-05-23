@@ -1,18 +1,25 @@
 package com.krishanagarwal.mynoo.ui.screens
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.krishanagarwal.mynoo.data.model.ChildState
 
 @Composable
-fun ParentDashboardScreen(childState: ChildState) {
+fun ParentDashboardScreen(
+    childState: ChildState,
+    onNavigateToProgress: () -> Unit
+) {
     val models   = listOf("gemini-2.0-flash", "gemini-1.5-pro", "gemini-1.5-flash")
     val langs    = listOf("en" to "English", "hi" to "Hindi", "pa" to "Punjabi")
 
@@ -28,9 +35,44 @@ fun ParentDashboardScreen(childState: ChildState) {
         Text("Parent Dashboard",
             style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.Bold),
             color = MaterialTheme.colorScheme.primary)
-        Text("Child: ${childState.name} � Class ${childState.classNum}",
+        Text("Child: ${childState.name} · Class ${childState.classNum}",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant)
+
+        // Progress Card
+        ElevatedCard(
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable { onNavigateToProgress() },
+            shape = RoundedCornerShape(12.dp),
+            colors = CardDefaults.elevatedCardColors(containerColor = MaterialTheme.colorScheme.surface)
+        ) {
+            Row(
+                modifier = Modifier.padding(16.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = "📈 View Learner Progress",
+                        style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                    Spacer(Modifier.height(4.dp))
+                    Text(
+                        text = "See streaks, learning heatmap, and analytics for ${childState.name}.",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+                Icon(
+                    imageVector = Icons.Default.ArrowForward,
+                    contentDescription = "View Progress",
+                    tint = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.size(24.dp)
+                )
+            }
+        }
 
         // Model selector
         ElevatedCard(Modifier.fillMaxWidth(), shape = RoundedCornerShape(12.dp)) {

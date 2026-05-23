@@ -1,6 +1,7 @@
 package com.krishanagarwal.mynoo.ui.screens
 
 import androidx.compose.animation.*
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.combinedClickable
@@ -39,11 +40,16 @@ private fun avatarFor(name: String): String =
 @Composable
 fun ChildSelectScreen(
     onChildSelected: (name: String, classNum: String) -> Unit,
+    onNavigateToParentDashboard: () -> Unit,
     vm: ChildViewModel = hiltViewModel(),
 ) {
     val ui by vm.ui.collectAsState()
     var showAddSheet  by remember { mutableStateOf(false) }
     var deleteTarget  by remember { mutableStateOf<String?>(null) }
+
+    var showParentPinDialog by remember { mutableStateOf(false) }
+    var parentPinInput by remember { mutableStateOf("") }
+    var pinError by remember { mutableStateOf(false) }
 
     Scaffold(
         floatingActionButton = {
@@ -80,6 +86,22 @@ fun ChildSelectScreen(
                 modifier  = Modifier.fillMaxWidth(),
                 textAlign = TextAlign.Center,
             )
+
+            Spacer(Modifier.height(12.dp))
+
+            OutlinedButton(
+                onClick = {
+                    showParentPinDialog = true
+                    parentPinInput = ""
+                    pinError = false
+                },
+                modifier = Modifier.align(Alignment.CenterHorizontally),
+                shape = RoundedCornerShape(12.dp),
+                border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.5f)),
+                colors = ButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colorScheme.primary)
+            ) {
+                Text("🔑 I'm a parent", fontWeight = FontWeight.Bold)
+            }
 
             Spacer(Modifier.height(24.dp))
 
@@ -171,6 +193,71 @@ fun ChildSelectScreen(
             dismissButton = {
                 TextButton(onClick = { deleteTarget = null }) { Text("Cancel") }
             },
+        )
+    }
+
+    if (showParentPinDialog) {
+        AlertDialog(
+            onDismissRequest = { 
+                showParentPinDialog = false
+                parentPinInput = ""
+                pinError = false
+            },
+            title = { Text("Parent Verification", fontWeight = FontWeight.Bold) },
+            text = {
+                Column {
+                    Text("Please enter the 4-digit parent PIN to access parent settings.")
+                    Spacer(Modifier.height(16.dp))
+                    OutlinedTextField(
+                        value = parentPinInput,
+                        onValueChange = { 
+                            if (it.length <= 4 && it.all { char -> char.isDigit() }) {
+                                parentPinInput = it
+                                pinError = false
+                            }
+                        },
+                        label = { Text("Parent PIN") },
+                        singleLine = true,
+                        isError = pinError,
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    if (pinError) {
+                        Text(
+                            text = "Incorrect PIN. Please try again.",
+                            color = MaterialTheme.colorScheme.error,
+                            style = MaterialTheme.typography.bodySmall,
+                            modifier = Modifier.padding(top = 4.dp)
+                        )
+                    }
+                }
+            },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        if (parentPinInput == "1234") {
+                            showParentPinDialog = false
+                            parentPinInput = ""
+                            onNavigateToParentDashboard()
+                        } else {
+                            pinError = true
+                        }
+                    }
+                ) {
+                    Text("Verify")
+                }
+            },
+            dismissButton = {
+                TextButton(
+                    onClick = { 
+                        showParentPinDialog = false
+                        parentPinInput = ""
+                        pinError = false
+                    }
+                ) {
+                    Text("Cancel")
+                }
+            }
         )
     }
 }
@@ -325,5 +412,6 @@ private fun AddChildSheet(
             ) { Text("Add learner") }
         }
     }
+
 }
 

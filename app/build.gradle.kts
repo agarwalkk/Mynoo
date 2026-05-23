@@ -41,10 +41,20 @@ android {
 
     signingConfigs {
         create("release") {
-            storeFile     = file(lp("KEYSTORE_PATH"))
-            storePassword = lp("KEYSTORE_PASSWORD")
-            keyAlias      = lp("KEY_ALIAS")
-            keyPassword   = lp("KEY_PASSWORD")
+            val path = lp("KEYSTORE_PATH")
+            val keystoreFile = if (path.isNotEmpty()) file(path) else null
+            if (keystoreFile != null && keystoreFile.exists()) {
+                storeFile     = keystoreFile
+                storePassword = lp("KEYSTORE_PASSWORD")
+                keyAlias      = lp("KEY_ALIAS")
+                keyPassword   = lp("KEY_PASSWORD")
+            } else {
+                val debugKeystore = file(System.getProperty("user.home") + "/.android/debug.keystore")
+                storeFile     = if (debugKeystore.exists()) debugKeystore else file("debug.keystore")
+                storePassword = "android"
+                keyAlias      = "androiddebugkey"
+                keyPassword   = "android"
+            }
         }
     }
 

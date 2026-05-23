@@ -17,7 +17,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.krishanagarwal.mynoo.ui.viewmodel.LibraryViewModel
+import com.krishanagarwal.mynoo.ui.viewmodel.LearnViewModel
 
 @Composable
 fun ChapterListScreen(
@@ -25,9 +25,9 @@ fun ChapterListScreen(
     subject:  String,
     lang:     String,
     onChapterClick: (chapterId: String, title: String) -> Unit,
-    vm: LibraryViewModel = hiltViewModel(),
+    vm: LearnViewModel = hiltViewModel(),
 ) {
-    val ui by vm.lib.collectAsState()
+    val ui by vm.learn.collectAsState()
 
     LaunchedEffect(classNum, subject) { vm.loadChapters(classNum, subject) }
 
@@ -76,7 +76,7 @@ fun ChapterListScreen(
                                 contentAlignment = Alignment.Center,
                             ) {
                                 Text(
-                                    text  = if (chapter.order > 0) "${chapter.order}" else "—",
+                                    text  = if (chapter.order > 0) "${chapter.order}" else "",
                                     style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
                                     color = MaterialTheme.colorScheme.primary,
                                 )

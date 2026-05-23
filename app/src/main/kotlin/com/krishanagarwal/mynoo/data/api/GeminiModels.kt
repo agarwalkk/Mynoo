@@ -1,5 +1,6 @@
 package com.krishanagarwal.mynoo.data.api
 
+import com.google.gson.JsonElement
 import com.google.gson.annotations.SerializedName
 
 // ── Request ──────────────────────────────────────────────────────────────────
@@ -30,6 +31,8 @@ data class GeminiGenConfig(
     @SerializedName("response_modalities")
     val responseModalities: List<String>? = null,
     val speechConfig: GeminiSpeechConfig? = null,
+    val responseMimeType: String? = null,
+    val responseSchema: JsonElement? = null,
 )
 
 data class GeminiSpeechConfig(

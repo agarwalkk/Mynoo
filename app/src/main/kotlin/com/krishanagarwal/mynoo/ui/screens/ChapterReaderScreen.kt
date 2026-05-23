@@ -1,4 +1,4 @@
-﻿package com.krishanagarwal.mynoo.ui.screens
+package com.krishanagarwal.mynoo.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Pause
 import androidx.compose.material.icons.filled.PlayArrow
@@ -45,7 +46,7 @@ import coil.request.ImageRequest
 import com.krishanagarwal.mynoo.data.repository.ChapterParagraph
 import com.krishanagarwal.mynoo.data.repository.ChapterSentence
 import com.krishanagarwal.mynoo.data.repository.MediaItem
-import com.krishanagarwal.mynoo.ui.viewmodel.LibraryViewModel
+import com.krishanagarwal.mynoo.ui.viewmodel.LearnViewModel
 import com.krishanagarwal.mynoo.ui.viewmodel.VocabPopupState
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -57,7 +58,8 @@ fun ChapterReaderScreen(
     chapterId: String,
     lang:      String,
     title:     String,
-    vm: LibraryViewModel = hiltViewModel(),
+    onBackClick: () -> Unit,
+    vm: LearnViewModel = hiltViewModel(),
 ) {
     val ui        by vm.reader.collectAsState()
     val listState  = rememberLazyListState()
@@ -107,6 +109,7 @@ fun ChapterReaderScreen(
                 if (ui.isPlaying) vm.stopPlayback()
                 else vm.playChapter(classNum, subject, chapterId)
             },
+            onBackClick   = onBackClick,
         )
         HorizontalDivider()
 
@@ -143,7 +146,9 @@ fun ChapterReaderScreen(
                                 meaningPopup = it
                                 vm.setResumePoint(it.id)
                             },
-                            onWordTap        = onWordTap,                            onMediaClick     = { item -> mediaPopup = item },                        )
+                            onWordTap        = onWordTap,
+                            onMediaClick     = { item -> mediaPopup = item },
+                        )
                     }
                 }
             }
@@ -706,6 +711,7 @@ private fun ChapterHeader(
     hasAudio:      Boolean,
     isPlaying:     Boolean,
     onListenClick: () -> Unit,
+    onBackClick:   () -> Unit,
 ) {
     Surface(
         modifier = Modifier.fillMaxWidth(),
@@ -714,9 +720,15 @@ private fun ChapterHeader(
         Row(
             modifier          = Modifier
                 .fillMaxWidth()
-                .padding(start = 16.dp, end = 4.dp, top = 8.dp, bottom = 8.dp),
+                .padding(start = 4.dp, end = 4.dp, top = 8.dp, bottom = 8.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
+            IconButton(onClick = onBackClick) {
+                Icon(
+                    imageVector        = Icons.AutoMirrored.Filled.ArrowBack,
+                    contentDescription = "Back"
+                )
+            }
             Text(
                 text     = title,
                 style    = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.SemiBold),
