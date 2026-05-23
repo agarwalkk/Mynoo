@@ -47,7 +47,7 @@ sealed class Screen(val route: String) {
             lang:      String,
             title:     String = "",
         ) = "chapter_reader/$classNum/$subject/$chapterId/$lang?title=${
-            java.net.URLEncoder.encode(title, "UTF-8")
+            java.net.URLEncoder.encode(title, "UTF-8").replace("+", "%20")
         }"
     }
 

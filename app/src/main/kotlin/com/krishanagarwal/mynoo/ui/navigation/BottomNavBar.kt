@@ -3,6 +3,7 @@ package com.krishanagarwal.mynoo.ui.navigation
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.TrendingUp
 import androidx.compose.material.icons.filled.AutoStories
+import androidx.compose.material.icons.filled.RecordVoiceOver
 import androidx.compose.material.icons.filled.School
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -25,9 +26,9 @@ private data class BottomNavItem(
 )
 
 private val bottomNavItems = listOf(
-    BottomNavItem("Tutor",    Icons.Default.School,      Screen.Tutor),
-    BottomNavItem("Library",  Icons.Default.AutoStories,  Screen.Library),
-    BottomNavItem("Progress", Icons.AutoMirrored.Filled.TrendingUp, Screen.Progress),
+    BottomNavItem("Library",  Icons.Default.AutoStories,              Screen.Library),
+    BottomNavItem("Progress", Icons.AutoMirrored.Filled.TrendingUp,   Screen.Progress),
+    BottomNavItem("Talk",     Icons.Default.RecordVoiceOver,              Screen.Tutor),
 )
 
 @Composable
@@ -46,8 +47,8 @@ fun MynooBottomBar(navController: NavHostController) {
                 onClick  = {
                     if (!selected) {
                         navController.navigate(item.screen.route) {
-                            // Pop up to the Tutor tab so back-stack stays clean
-                            popUpTo(Screen.Tutor.route) { saveState = true }
+                            // Pop up to the Library tab so back-stack stays clean
+                            popUpTo(Screen.Library.route) { saveState = true }
                             launchSingleTop = true
                             restoreState    = true
                         }
