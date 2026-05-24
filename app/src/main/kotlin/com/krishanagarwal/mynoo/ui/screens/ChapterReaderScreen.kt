@@ -1,6 +1,9 @@
 package com.krishanagarwal.mynoo.ui.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -9,13 +12,8 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.Pause
-import androidx.compose.material.icons.filled.PlayArrow
-import androidx.compose.material.icons.filled.Refresh
-import androidx.compose.material.icons.filled.Stop
-import androidx.compose.material.icons.filled.VolumeOff
-import androidx.compose.material.icons.filled.VolumeUp
+import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -46,6 +44,7 @@ import coil.request.ImageRequest
 import com.krishanagarwal.mynoo.data.repository.ChapterParagraph
 import com.krishanagarwal.mynoo.data.repository.ChapterSentence
 import com.krishanagarwal.mynoo.data.repository.MediaItem
+import com.krishanagarwal.mynoo.ui.theme.LocalMynooExtras
 import com.krishanagarwal.mynoo.ui.viewmodel.LearnViewModel
 import com.krishanagarwal.mynoo.ui.viewmodel.VocabPopupState
 
@@ -63,10 +62,25 @@ fun ChapterReaderScreen(
 ) {
     val ui        by vm.reader.collectAsState()
     val listState  = rememberLazyListState()
+    
+    val themeColor = remember(subject) {
+        val slug = subject.lowercase().trim()
+        when (slug) {
+            "hindi" -> Color(0xFFE67E22)
+            "english" -> Color(0xFF27AE60)
+            "punjabi" -> Color(0xFF8E44AD)
+            "mathematics", "math" -> Color(0xFF2980B9)
+            "science" -> Color(0xFF16A085)
+            "social studies", "social_studies" -> Color(0xFFC0392B)
+            "computer" -> Color(0xFF7F8C8D)
+            else -> Color(0xFF2980B9)
+        }
+    }
 
     var meaningPopup       by remember { mutableStateOf<ChapterSentence?>(null) }
     var mediaPopup         by remember { mutableStateOf<MediaItem?>(null) }
     var sliderDragPosition by remember { mutableStateOf<Float?>(null) }
+    var fontSizeOffset     by remember { mutableStateOf(0) }
     val onWordTap: (String, String) -> Unit = { word, sentText -> vm.tapWord(word, sentText, subject) }
 
     LaunchedEffect(classNum, subject, chapterId) {
@@ -99,19 +113,21 @@ fun ChapterReaderScreen(
 
         // ── Fixed header: chapter title + listen icon ─────────────────────────
         ChapterHeader(
-            title         = ui.title,
-            audioChecking = ui.audioChecking,
-            loading       = ui.loading,
-            hasError      = ui.error != null,
-            hasAudio      = ui.hasAudio,
-            isPlaying     = ui.isPlaying,
-            onListenClick = {
+            title              = ui.title,
+            themeColor         = themeColor,
+            audioChecking      = ui.audioChecking,
+            loading            = ui.loading,
+            hasError           = ui.error != null,
+            hasAudio           = ui.hasAudio,
+            isPlaying          = ui.isPlaying,
+            onListenClick      = {
                 if (ui.isPlaying) vm.stopPlayback()
                 else vm.playChapter(classNum, subject, chapterId)
             },
-            onBackClick   = onBackClick,
+            onBackClick        = onBackClick,
+            onFontSizeDecrease = { fontSizeOffset = (fontSizeOffset - 1).coerceAtLeast(-8) },
+            onFontSizeIncrease = { fontSizeOffset = (fontSizeOffset + 1).coerceAtMost(12) },
         )
-        HorizontalDivider()
 
         Box(Modifier.weight(1f)) {
             when {
@@ -142,6 +158,7 @@ fun ChapterReaderScreen(
                             // Suppress word highlight on underlying text while popup is playing
                             activeWordIndex  = if (ui.popupIsPlaying) null else ui.activeWordIndex,
                             subject          = subject,
+                            fontSizeOffset   = fontSizeOffset,
                             onLongPress      = {
                                 meaningPopup = it
                                 vm.setResumePoint(it.id)
@@ -173,6 +190,10 @@ fun ChapterReaderScreen(
                                     selected = ui.playbackSpeed == speed,
                                     onClick  = { vm.setSpeed(speed) },
                                     label    = { Text(if (speed == 1.0f) "1×" else "${speed}×") },
+                                    colors = FilterChipDefaults.filterChipColors(
+                                        selectedContainerColor = themeColor,
+                                        selectedLabelColor = Color.White
+                                    )
                                 )
                             }
                         }
@@ -189,14 +210,25 @@ fun ChapterReaderScreen(
                                     sliderDragPosition = null
                                 },
                                 modifier = Modifier.fillMaxWidth(),
+                                colors = SliderDefaults.colors(
+                                    thumbColor = themeColor,
+                                    activeTrackColor = themeColor,
+                                    inactiveTrackColor = themeColor.copy(alpha = 0.24f)
+                                )
                             )
                         }
-                        // Pause / stop controls
+                        // Pause / stop / skip controls
                         Row(
                             modifier              = Modifier.fillMaxWidth(),
                             verticalAlignment     = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.Center,
                         ) {
+                            IconButton(onClick = { vm.playPreviousSentence(classNum, subject, chapterId) }) {
+                                Icon(
+                                    imageVector        = Icons.Default.SkipPrevious,
+                                    contentDescription = "Previous sentence",
+                                )
+                            }
                             IconButton(onClick = { vm.pauseResume() }) {
                                 Icon(
                                     imageVector        = if (ui.isPaused) Icons.Default.PlayArrow else Icons.Default.Pause,
@@ -206,7 +238,13 @@ fun ChapterReaderScreen(
                             IconButton(onClick = { vm.stopPlayback() }) {
                                 Icon(Icons.Default.Stop, contentDescription = "Stop")
                             }
-                            Spacer(Modifier.width(8.dp))
+                            IconButton(onClick = { vm.playNextSentence(classNum, subject, chapterId) }) {
+                                Icon(
+                                    imageVector        = Icons.Default.SkipNext,
+                                    contentDescription = "Next sentence",
+                                )
+                            }
+                            Spacer(Modifier.width(12.dp))
                             Text(
                                 text  = if (ui.isPaused) "Paused" else "Playing…",
                                 style = MaterialTheme.typography.bodyMedium,
@@ -221,18 +259,19 @@ fun ChapterReaderScreen(
     // ── Vocab word popup (single tap) ─────────────────────────────────────────
     ui.vocabPopup?.let { popup ->
         VocabPopupDialog(
-            state     = popup,
-            playing   = ui.vocabWordPlaying,
-            subject   = subject,
-            onGenerate = { word, sentence -> vm.generateWordMeaning(word, sentence, subject) },
-            onRetry    = { word, sentence -> vm.retryWordMeaning(word, sentence, subject) },
-            onPlayStop = {
+            state          = popup,
+            playing        = ui.vocabWordPlaying,
+            subject        = subject,
+            fontSizeOffset = fontSizeOffset,
+            onGenerate     = { word, sentence -> vm.generateWordMeaning(word, sentence, subject) },
+            onRetry        = { word, sentence -> vm.retryWordMeaning(word, sentence, subject) },
+            onPlayStop     = {
                 when (val p = popup) {
                     is VocabPopupState.Found -> vm.toggleVocabAudio(p.entry.audioPath)
                     else -> {}
                 }
             },
-            onDismiss  = { vm.dismissVocabPopup() },
+            onDismiss      = { vm.dismissVocabPopup() },
         )
     }
 
@@ -298,13 +337,14 @@ fun ChapterReaderScreen(
                 if (ui.popupIsPlaying) vm.stopPlayback()
             },
             sheetState = sheetState,
+            containerColor = MaterialTheme.colorScheme.background,
         ) {
             Column(
                 modifier            = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 16.dp)
-                    .padding(bottom = 24.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp),
+                    .padding(horizontal = 20.dp)
+                    .padding(bottom = 32.dp),
+                verticalArrangement = Arrangement.spacedBy(10.dp),
             ) {
                 // Sentence with word highlight when playing
                 val wordHighBg = MaterialTheme.colorScheme.tertiary.copy(alpha = 0.35f)
@@ -313,48 +353,116 @@ fun ChapterReaderScreen(
                 } else {
                     renderInline(sent.text)
                 }
+                
                 Text(
                     text  = sentDisplay,
-                    style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                    style = MaterialTheme.typography.bodyLarge.copy(
+                        fontStyle  = FontStyle.Italic,
+                        color      = LocalMynooExtras.current.textLight,
+                        lineHeight = 24.sp
+                    ).scale(fontSizeOffset),
                 )
+                
                 if (sent.meaning.isNotBlank()) {
-                    HorizontalDivider()
+                    HorizontalDivider(
+                        color = MaterialTheme.colorScheme.primaryContainer,
+                        thickness = 2.dp,
+                        modifier = Modifier.padding(vertical = 4.dp)
+                    )
                     Text(
                         text  = renderMeaning(sent.meaning),
-                        style = MaterialTheme.typography.bodyMedium,
+                        style = MaterialTheme.typography.bodyLarge.copy(
+                            fontWeight = FontWeight.Normal,
+                            color      = MaterialTheme.colorScheme.onSurface,
+                            lineHeight = 26.sp,
+                        ).scale(fontSizeOffset),
                     )
                 }
-                HorizontalDivider()
-                // Speed chips
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    listOf(0.5f, 0.75f, 1.0f).forEach { speed ->
-                        FilterChip(
-                            selected = ui.playbackSpeed == speed,
-                            onClick  = { vm.setSpeed(speed) },
-                            label    = { Text(if (speed == 1.0f) "1×" else "${speed}×") },
-                        )
-                    }
-                }
-                // Play / stop sentence
+                
+                HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.3f))
+                
+                // Play / stop & speed controls in same line
                 Row(
-                    verticalAlignment     = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween,
                 ) {
-                    FilledIconButton(
-                        onClick = {
-                            if (ui.popupIsPlaying) vm.stopPlayback()
-                            else vm.playSentence(classNum, subject, chapterId, sent.id)
-                        },
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
                     ) {
-                        Icon(
-                            imageVector        = if (ui.popupIsPlaying) Icons.Default.Stop else Icons.Default.PlayArrow,
-                            contentDescription = if (ui.popupIsPlaying) "Stop" else "Play sentence",
-                        )
+                        FilledIconButton(
+                            onClick = {
+                                if (ui.popupIsPlaying) vm.pauseResume()
+                                else vm.playSentence(classNum, subject, chapterId, sent.id)
+                            },
+                            modifier = Modifier.size(48.dp),
+                            colors = IconButtonDefaults.filledIconButtonColors(
+                                containerColor = MaterialTheme.colorScheme.primary,
+                                contentColor = Color.White
+                            )
+                        ) {
+                            Icon(
+                                imageVector        = if (ui.popupIsPlaying && !ui.isPaused) Icons.Default.Pause else Icons.Default.PlayArrow,
+                                contentDescription = if (ui.popupIsPlaying && !ui.isPaused) "Pause" else "Play sentence",
+                                modifier = Modifier.size(24.dp)
+                            )
+                        }
+                        if (ui.popupIsPlaying) {
+                            IconButton(
+                                onClick = { vm.stopPlayback() },
+                                modifier = Modifier.size(36.dp)
+                            ) {
+                                Icon(
+                                    imageVector        = Icons.Default.Stop,
+                                    contentDescription = "Stop",
+                                    tint               = MaterialTheme.colorScheme.error,
+                                    modifier = Modifier.size(24.dp)
+                                )
+                            }
+                        }
                     }
-                    Text(
-                        text  = if (ui.popupIsPlaying) "Playing…" else "Listen to sentence",
-                        style = MaterialTheme.typography.bodyMedium,
-                    )
+
+                    // Speed controls on the right (styled filter chips with teal brand accent)
+                    Row(
+                        horizontalArrangement = Arrangement.spacedBy(6.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        listOf(0.5f, 0.75f, 1.0f).forEach { speed ->
+                            val isSelected = ui.playbackSpeed == speed
+                            FilterChip(
+                                selected = isSelected,
+                                onClick  = { vm.setSpeed(speed) },
+                                label    = {
+                                    Text(
+                                        text = when (speed) {
+                                            1.0f -> "1×"
+                                            0.75f -> "¾×"
+                                            else -> "½×"
+                                        },
+                                        style = MaterialTheme.typography.labelLarge.copy(
+                                            fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal
+                                        )
+                                    )
+                                },
+                                colors = FilterChipDefaults.filterChipColors(
+                                    containerColor = Color.Transparent,
+                                    labelColor = MaterialTheme.colorScheme.secondary,
+                                    selectedContainerColor = MaterialTheme.colorScheme.secondary,
+                                    selectedLabelColor = Color.White,
+                                ),
+                                border = FilterChipDefaults.filterChipBorder(
+                                    enabled = true,
+                                    selected = isSelected,
+                                    selectedBorderColor = MaterialTheme.colorScheme.secondary,
+                                    borderColor = MaterialTheme.colorScheme.secondary.copy(alpha = 0.5f),
+                                    borderWidth = 1.dp,
+                                    selectedBorderWidth = 1.dp
+                                ),
+                                shape = RoundedCornerShape(50)
+                            )
+                        }
+                    }
                 }
             }
         }
@@ -369,40 +477,61 @@ private fun ParagraphBlock(
     activeSentenceId: String?,
     activeWordIndex:  Int?,
     subject:          String,
+    fontSizeOffset:   Int,
     onLongPress:      (ChapterSentence) -> Unit,
     onWordTap:        (word: String, sentenceText: String) -> Unit,
     onMediaClick:     (MediaItem) -> Unit,
 ) {
     val context = LocalContext.current
+    val defaultStyle = MaterialTheme.typography.bodyLarge.copy(lineHeight = 28.sp).scale(fontSizeOffset)
+
+    val sentences = remember(para.sentences, para.meaning) {
+        if (para.sentences.isEmpty() && para.text.isNotBlank()) {
+            listOf(ChapterSentence(id = para.id, text = para.text, meaning = para.meaning))
+        } else {
+            para.sentences.map { sent ->
+                if (sent.meaning.isBlank()) {
+                    sent.copy(meaning = para.meaning)
+                } else {
+                    sent
+                }
+            }
+        }
+    }
+
     when (para.type) {
         "heading" -> Text(
             text  = para.text.stripMd(),
-            style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
+            style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold).scale(fontSizeOffset),
         )
         "subheading" -> Text(
             text  = para.text.stripMd(),
-            style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.SemiBold),
+            style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.SemiBold).scale(fontSizeOffset),
         )
         "attribution" -> Text(
             text      = renderInline(para.text),
             style     = MaterialTheme.typography.bodyMedium.copy(
                 fontStyle = FontStyle.Italic,
                 textAlign = TextAlign.End,
-            ),
+            ).scale(fontSizeOffset),
             color     = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier  = Modifier.fillMaxWidth(),
         )
         "verse" -> {
-            val verseText = if (para.sentences.isNotEmpty())
-                para.sentences.joinToString("\n") { it.text }
-            else para.text
-            Text(
-                text     = renderInline(verseText),
-                style    = MaterialTheme.typography.bodyMedium.copy(
+            ParagraphText(
+                sentences        = sentences,
+                activeSentenceId = activeSentenceId,
+                activeWordIndex  = activeWordIndex,
+                subject          = subject,
+                onLongPress      = onLongPress,
+                onWordTap        = onWordTap,
+                paraId           = para.id,
+                separator        = "\n",
+                style            = MaterialTheme.typography.bodyMedium.copy(
                     fontStyle  = FontStyle.Italic,
                     lineHeight = 28.sp,
-                ),
-                modifier = Modifier
+                ).scale(fontSizeOffset),
+                modifier         = Modifier
                     .fillMaxWidth()
                     .background(
                         MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.45f),
@@ -414,7 +543,7 @@ private fun ParagraphBlock(
         "equation" -> OutlinedCard(modifier = Modifier.fillMaxWidth()) {
             Text(
                 text      = para.text,
-                style     = MaterialTheme.typography.bodyLarge,
+                style     = MaterialTheme.typography.bodyLarge.scale(fontSizeOffset),
                 textAlign = TextAlign.Center,
                 modifier  = Modifier
                     .fillMaxWidth()
@@ -427,7 +556,7 @@ private fun ParagraphBlock(
             modifier = Modifier.fillMaxWidth(),
         ) {
             ParagraphText(
-                sentences        = para.sentences,
+                sentences        = sentences,
                 activeSentenceId = activeSentenceId,
                 activeWordIndex  = activeWordIndex,
                 subject          = subject,
@@ -438,7 +567,7 @@ private fun ParagraphBlock(
                 style            = MaterialTheme.typography.bodyMedium.copy(
                     fontStyle  = FontStyle.Italic,
                     lineHeight = 26.sp,
-                ),
+                ).scale(fontSizeOffset),
             )
         }
         "activity", "callout", "note" -> {
@@ -451,19 +580,19 @@ private fun ParagraphBlock(
                 Column(Modifier.padding(12.dp)) {
                     Text(
                         text  = label,
-                        style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.Bold),
+                        style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.Bold).scale(fontSizeOffset),
                         color = MaterialTheme.colorScheme.onTertiaryContainer,
                     )
                     Spacer(Modifier.height(4.dp))
                     ParagraphText(
-                        sentences        = para.sentences,
+                        sentences        = sentences,
                         activeSentenceId = activeSentenceId,
                         activeWordIndex  = activeWordIndex,
                         subject          = subject,
                         onLongPress      = onLongPress,
                         onWordTap        = onWordTap,
                         paraId           = para.id,
-                        style            = MaterialTheme.typography.bodyMedium.copy(lineHeight = 24.sp),
+                        style            = MaterialTheme.typography.bodyMedium.copy(lineHeight = 24.sp).scale(fontSizeOffset),
                     )
                 }
             }
@@ -473,9 +602,9 @@ private fun ParagraphBlock(
                 Row {
                     Text(
                         text  = if (para.ordered) "${i + 1}. " else "• ",
-                        style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
+                        style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold).scale(fontSizeOffset),
                     )
-                    Text(renderInline(item), style = MaterialTheme.typography.bodyMedium)
+                    Text(renderInline(item), style = MaterialTheme.typography.bodyMedium.scale(fontSizeOffset))
                 }
             }
         }
@@ -504,11 +633,11 @@ private fun ParagraphBlock(
                         Column(modifier = Modifier.weight(1f)) {
                             Text(
                                 text  = item.caption.ifBlank { if (item.mediaType == "video") "Video" else "Photo" },
-                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold).scale(fontSizeOffset),
                             )
                             Text(
                                 text  = if (item.mediaType == "video") "Tap to play video" else "Tap to view photo",
-                                style = MaterialTheme.typography.labelSmall,
+                                style = MaterialTheme.typography.labelSmall.scale(fontSizeOffset),
                                 color = MaterialTheme.colorScheme.primary,
                             )
                         }
@@ -517,28 +646,16 @@ private fun ParagraphBlock(
             }
         }
         else -> {
-            if (para.sentences.isNotEmpty()) {
-                ParagraphText(
-                    sentences        = para.sentences,
-                    activeSentenceId = activeSentenceId,
-                    activeWordIndex  = activeWordIndex,
-                    subject          = subject,
-                    onLongPress      = onLongPress,
-                    onWordTap        = onWordTap,
-                    paraId           = para.id,
-                )
-            } else if (para.text.isNotBlank()) {
-                // Treat the paragraph text as a single sentence so tap/long-press work
-                ParagraphText(
-                    sentences        = listOf(ChapterSentence(id = para.id, text = para.text)),
-                    activeSentenceId = activeSentenceId,
-                    activeWordIndex  = activeWordIndex,
-                    subject          = subject,
-                    onLongPress      = onLongPress,
-                    onWordTap        = onWordTap,
-                    paraId           = para.id,
-                )
-            }
+            ParagraphText(
+                sentences        = sentences,
+                activeSentenceId = activeSentenceId,
+                activeWordIndex  = activeWordIndex,
+                subject          = subject,
+                onLongPress      = onLongPress,
+                onWordTap        = onWordTap,
+                paraId           = para.id,
+                style            = defaultStyle,
+            )
         }
     }
 }
@@ -556,6 +673,7 @@ private fun ParagraphText(
     paraId:           String   = "",
     modifier:         Modifier  = Modifier,
     style:            TextStyle = MaterialTheme.typography.bodyLarge.copy(lineHeight = 28.sp),
+    separator:        String   = " ",
 ) {
     if (sentences.isEmpty()) return
 
@@ -592,7 +710,7 @@ private fun ParagraphText(
             }
 
             ranges.add(start until builder.length)
-            if (idx < sentences.lastIndex) builder.append(" ")
+            if (idx < sentences.lastIndex) builder.append(separator)
         }
 
         builder.toAnnotatedString() to ranges.toList()
@@ -705,6 +823,7 @@ private fun renderMeaning(text: String): AnnotatedString {
 @Composable
 private fun ChapterHeader(
     title:         String,
+    themeColor:    Color,
     audioChecking: Boolean,
     loading:       Boolean,
     hasError:      Boolean,
@@ -712,13 +831,17 @@ private fun ChapterHeader(
     isPlaying:     Boolean,
     onListenClick: () -> Unit,
     onBackClick:   () -> Unit,
+    onFontSizeDecrease: () -> Unit,
+    onFontSizeIncrease: () -> Unit,
 ) {
     Surface(
         modifier = Modifier.fillMaxWidth(),
-        color    = MaterialTheme.colorScheme.surface,
+        color    = themeColor,
+        contentColor = Color.White
     ) {
         Row(
             modifier          = Modifier
+                .statusBarsPadding()
                 .fillMaxWidth()
                 .padding(start = 4.dp, end = 4.dp, top = 8.dp, bottom = 8.dp),
             verticalAlignment = Alignment.CenterVertically,
@@ -726,7 +849,8 @@ private fun ChapterHeader(
             IconButton(onClick = onBackClick) {
                 Icon(
                     imageVector        = Icons.AutoMirrored.Filled.ArrowBack,
-                    contentDescription = "Back"
+                    contentDescription = "Back",
+                    tint               = Color.White
                 )
             }
             Text(
@@ -735,7 +859,24 @@ private fun ChapterHeader(
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 modifier = Modifier.weight(1f),
+                color    = Color.White
             )
+
+            IconButton(onClick = onFontSizeDecrease) {
+                Icon(
+                    imageVector        = Icons.Default.Remove,
+                    contentDescription = "Decrease Font Size",
+                    tint               = Color.White,
+                )
+            }
+            IconButton(onClick = onFontSizeIncrease) {
+                Icon(
+                    imageVector        = Icons.Default.Add,
+                    contentDescription = "Increase Font Size",
+                    tint               = Color.White,
+                )
+            }
+
             when {
                 loading || hasError -> {
                     // No audio control while loading or error
@@ -743,20 +884,21 @@ private fun ChapterHeader(
                 audioChecking -> CircularProgressIndicator(
                     modifier    = Modifier.size(24.dp).padding(start = 8.dp),
                     strokeWidth = 2.dp,
+                    color       = Color.White
                 )
                 hasAudio -> IconButton(onClick = onListenClick) {
                     Icon(
                         imageVector        = if (isPlaying) Icons.Default.Stop else Icons.Default.VolumeUp,
                         contentDescription = if (isPlaying) "Stop" else "Listen to chapter",
-                        tint               = if (isPlaying) MaterialTheme.colorScheme.error
-                                             else MaterialTheme.colorScheme.primary,
+                        tint               = if (isPlaying) Color(0xFFFADBD8)
+                                             else Color.White,
                     )
                 }
                 else -> IconButton(onClick = {}, enabled = false) {
                     Icon(
                         imageVector        = Icons.Default.VolumeOff,
                         contentDescription = "No audio available",
-                        tint               = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.38f),
+                        tint               = Color.White.copy(alpha = 0.4f),
                     )
                 }
             }
@@ -771,112 +913,310 @@ private fun VocabPopupDialog(
     state:      VocabPopupState,
     playing:    Boolean,
     subject:    String,
+    fontSizeOffset: Int,
     onGenerate: (word: String, sentence: String) -> Unit,
     onRetry:    (word: String, sentence: String) -> Unit,
     onPlayStop: () -> Unit,
     onDismiss:  () -> Unit,
 ) {
-    AlertDialog(
+    Dialog(
         onDismissRequest = onDismiss,
-        title = {
-            Text(
-                text  = when (state) {
-                    is VocabPopupState.Loading    -> state.word
-                    is VocabPopupState.Found      -> state.word
-                    is VocabPopupState.Ask        -> state.word
-                    is VocabPopupState.Generating -> state.word
-                    is VocabPopupState.Error      -> state.word
-                },
-                style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
-            )
-        },
-        text = {
-            when (state) {
-                is VocabPopupState.Loading -> Row(
-                    verticalAlignment     = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(12.dp),
+        properties = DialogProperties(usePlatformDefaultWidth = false)
+    ) {
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth(0.85f)
+                    .wrapContentHeight(),
+                shape = RoundedCornerShape(24.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surface
+                ),
+                elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 20.dp, vertical = 12.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    CircularProgressIndicator(Modifier.size(20.dp), strokeWidth = 2.dp)
-                    Text("Finding meaning…", style = MaterialTheme.typography.bodyMedium)
-                }
+                    // Top header row: Refresh button on top left, title/word centered
+                    Box(
+                        modifier = Modifier.fillMaxWidth(),
+                        contentAlignment = Alignment.CenterStart
+                    ) {
+                        val canRefresh = when (state) {
+                            is VocabPopupState.Found -> true
+                            is VocabPopupState.Error -> true
+                            else -> false
+                        }
+                        if (canRefresh) {
+                            IconButton(
+                                onClick = {
+                                    val word = when (state) {
+                                        is VocabPopupState.Found -> state.word
+                                        is VocabPopupState.Ask -> state.word
+                                        is VocabPopupState.Error -> state.word
+                                        else -> ""
+                                    }
+                                    val sentence = when (state) {
+                                        is VocabPopupState.Found -> state.sentence
+                                        is VocabPopupState.Ask -> state.sentence
+                                        is VocabPopupState.Error -> state.sentence
+                                        else -> ""
+                                    }
+                                    if (word.isNotBlank()) {
+                                        onRetry(word, sentence)
+                                    }
+                                },
+                                modifier = Modifier
+                                    .size(32.dp)
+                                    .align(Alignment.CenterStart)
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.Refresh,
+                                    contentDescription = "Refresh",
+                                    tint = MaterialTheme.colorScheme.primary,
+                                    modifier = Modifier.size(20.dp)
+                                )
+                            }
+                        }
 
-                is VocabPopupState.Found -> Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Text(
-                        text  = state.entry.meaning,
-                        style = MaterialTheme.typography.bodyLarge,
-                    )
-                    if (state.entry.translation.isNotBlank()) {
-                        HorizontalDivider()
-                        Text(
-                            text  = state.entry.translation,
-                            style = MaterialTheme.typography.bodyMedium.copy(
-                                fontStyle = FontStyle.Italic,
-                                color     = MaterialTheme.colorScheme.onSurfaceVariant,
-                            ),
-                        )
+                        val wordTitle = when (state) {
+                            is VocabPopupState.Loading -> state.word
+                            is VocabPopupState.Found -> state.word
+                            is VocabPopupState.Ask -> state.word
+                            is VocabPopupState.Generating -> state.word
+                            is VocabPopupState.Error -> state.word
+                        }
+                        Row(
+                            modifier = Modifier.align(Alignment.Center),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                        ) {
+                            Text(
+                                text = wordTitle,
+                                style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold).scale(fontSizeOffset)
+                            )
+                            if (state is VocabPopupState.Found) {
+                                val tintColor = if (playing) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.primary
+                                IconButton(
+                                    onClick = onPlayStop,
+                                    modifier = Modifier.size(32.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = if (playing) Icons.Default.Stop else Icons.Default.VolumeUp,
+                                        contentDescription = if (playing) "Stop" else "Listen to word",
+                                        tint = tintColor,
+                                        modifier = Modifier.size(20.dp)
+                                    )
+                                }
+                            }
+                        }
+
+                        if (state is VocabPopupState.Found && !state.entry.llmInputJson.isNullOrBlank()) {
+                            val clipboard = androidx.compose.ui.platform.LocalClipboardManager.current
+                            val context = androidx.compose.ui.platform.LocalContext.current
+                            IconButton(
+                                onClick = {
+                                    val llmInputBeautified = try { org.json.JSONObject(state.entry.llmInputJson).toString(4) } catch (_: Exception) { state.entry.llmInputJson }
+                                    val llmOutputBeautified = try { org.json.JSONObject(state.entry.llmOutputJson ?: "{}").toString(4) } catch (_: Exception) { state.entry.llmOutputJson ?: "" }
+                                    val ttsModel = state.entry.ttsModelUsed ?: "N/A"
+                                    val ttsTokens = state.entry.ttsTokenUsage ?: 0
+
+                                    val textToCopy = """
+                                        === LLM INPUT ===
+                                        $llmInputBeautified
+                                        
+                                        === LLM OUTPUT ===
+                                        $llmOutputBeautified
+                                        
+                                        === TTS MODEL ===
+                                        $ttsModel
+                                        
+                                        === TTS TOKEN USAGE ===
+                                        $ttsTokens
+                                    """.trimIndent()
+
+                                    clipboard.setText(androidx.compose.ui.text.AnnotatedString(textToCopy))
+                                    android.widget.Toast.makeText(context, "Copied LLM & TTS metadata to clipboard", android.widget.Toast.LENGTH_SHORT).show()
+                                },
+                                modifier = Modifier
+                                    .size(32.dp)
+                                    .align(Alignment.CenterEnd)
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.Info,
+                                    contentDescription = "Info",
+                                    tint = MaterialTheme.colorScheme.primary,
+                                    modifier = Modifier.size(20.dp)
+                                )
+                            }
+                        } else if (state is VocabPopupState.Error) {
+                            val clipboard = androidx.compose.ui.platform.LocalClipboardManager.current
+                            val context = androidx.compose.ui.platform.LocalContext.current
+                            IconButton(
+                                onClick = {
+                                    clipboard.setText(androidx.compose.ui.text.AnnotatedString(state.msg))
+                                    android.widget.Toast.makeText(context, "Copied error details to clipboard", android.widget.Toast.LENGTH_SHORT).show()
+                                },
+                                modifier = Modifier
+                                    .size(32.dp)
+                                    .align(Alignment.CenterEnd)
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.ContentCopy,
+                                    contentDescription = "Copy Error",
+                                    tint = MaterialTheme.colorScheme.error,
+                                    modifier = Modifier.size(20.dp)
+                                )
+                            }
+                        }
                     }
-                    Spacer(Modifier.height(4.dp))
-                    FilledTonalIconButton(onClick = onPlayStop) {
-                        Icon(
-                            imageVector        = if (playing) Icons.Default.Stop else Icons.Default.PlayArrow,
-                            contentDescription = if (playing) "Stop" else "Listen to word",
-                        )
+
+                    HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f))
+
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .wrapContentHeight()
+                    ) {
+                        when (state) {
+                            is VocabPopupState.Loading -> Row(
+                                modifier = Modifier.fillMaxWidth().padding(vertical = 12.dp),
+                                verticalAlignment     = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.Center,
+                            ) {
+                                CircularProgressIndicator(Modifier.size(24.dp), strokeWidth = 2.dp)
+                                Spacer(Modifier.width(12.dp))
+                                Text("Finding meaning…", style = MaterialTheme.typography.bodyMedium.scale(fontSizeOffset))
+                            }
+
+                            is VocabPopupState.Found -> Column(
+                                modifier = Modifier.fillMaxWidth(),
+                                verticalArrangement = Arrangement.spacedBy(6.dp)
+                            ) {
+                                Text(
+                                    text  = state.entry.meaning,
+                                    style = MaterialTheme.typography.bodyLarge.scale(fontSizeOffset),
+                                    modifier = Modifier.fillMaxWidth()
+                                )
+                                if (state.entry.translation.isNotBlank()) {
+                                    HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.3f))
+                                    Text(
+                                        text  = state.entry.translation,
+                                        style = MaterialTheme.typography.bodyMedium.copy(
+                                            fontStyle = FontStyle.Italic,
+                                            color     = MaterialTheme.colorScheme.onSurfaceVariant,
+                                        ).scale(fontSizeOffset),
+                                        modifier = Modifier.fillMaxWidth()
+                                    )
+                                }
+                            }
+
+                            is VocabPopupState.Ask -> Column(
+                                modifier = Modifier.fillMaxWidth(),
+                                verticalArrangement = Arrangement.spacedBy(4.dp),
+                                horizontalAlignment = Alignment.CenterHorizontally
+                            ) {
+                                Text(
+                                    text  = "Meaning not found in dictionary.",
+                                    style = MaterialTheme.typography.bodyMedium.scale(fontSizeOffset),
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                )
+                                Text(
+                                    text  = "Generate meaning using AI?",
+                                    style = MaterialTheme.typography.bodyMedium.scale(fontSizeOffset),
+                                    fontWeight = FontWeight.SemiBold
+                                )
+                            }
+
+                            is VocabPopupState.Generating -> Row(
+                                modifier = Modifier.fillMaxWidth().padding(vertical = 12.dp),
+                                verticalAlignment     = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.Center,
+                            ) {
+                                CircularProgressIndicator(Modifier.size(24.dp), strokeWidth = 2.dp)
+                                Spacer(Modifier.width(12.dp))
+                                Text(state.status, style = MaterialTheme.typography.bodyMedium.scale(fontSizeOffset))
+                            }
+
+                            is VocabPopupState.Error -> Column(
+                                modifier = Modifier.fillMaxWidth(),
+                                verticalArrangement = Arrangement.spacedBy(4.dp)
+                            ) {
+                                Text(
+                                    text  = "Could not generate meaning.",
+                                    style = MaterialTheme.typography.bodyMedium.scale(fontSizeOffset),
+                                    color = MaterialTheme.colorScheme.error,
+                                    fontWeight = FontWeight.Bold
+                                )
+                                Spacer(Modifier.height(4.dp))
+                                val scrollState = rememberScrollState()
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .heightIn(max = 200.dp)
+                                        .background(
+                                            color = MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.3f),
+                                            shape = RoundedCornerShape(8.dp)
+                                        )
+                                        .padding(8.dp)
+                                        .verticalScroll(scrollState)
+                                ) {
+                                    Text(
+                                        text  = state.msg,
+                                        style = MaterialTheme.typography.bodySmall.copy(
+                                            fontFamily = FontFamily.Monospace,
+                                            fontSize = 11.sp
+                                        ),
+                                        color = MaterialTheme.colorScheme.onErrorContainer,
+                                    )
+                                }
+                            }
+                        }
                     }
-                }
 
-                is VocabPopupState.Ask -> Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Text(
-                        text  = "Meaning not found in dictionary.",
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
-                    Text(
-                        text  = "Generate meaning using AI?",
-                        style = MaterialTheme.typography.bodyMedium,
-                    )
-                }
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.End,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        TextButton(onClick = onDismiss) {
+                            Text("Close", style = MaterialTheme.typography.labelLarge)
+                        }
 
-                is VocabPopupState.Generating -> Row(
-                    verticalAlignment     = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(12.dp),
-                ) {
-                    CircularProgressIndicator(Modifier.size(20.dp), strokeWidth = 2.dp)
-                    Text("Generating meaning…", style = MaterialTheme.typography.bodyMedium)
-                }
-
-                is VocabPopupState.Error -> Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Text(
-                        text  = "Could not generate meaning.",
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.error,
-                    )
-                    Text(
-                        text  = state.msg,
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
+                        val hasAction = state is VocabPopupState.Ask || state is VocabPopupState.Error
+                        if (hasAction) {
+                            Spacer(Modifier.width(12.dp))
+                            when (state) {
+                                is VocabPopupState.Ask ->
+                                    Button(
+                                        onClick = { onGenerate(state.word, state.sentence) },
+                                        shape = RoundedCornerShape(50)
+                                    ) {
+                                        Text("Yes, generate!")
+                                    }
+                                is VocabPopupState.Error ->
+                                    Button(
+                                        onClick = { onRetry(state.word, state.sentence) },
+                                        shape = RoundedCornerShape(50)
+                                    ) {
+                                        Icon(Icons.Default.Refresh, contentDescription = null, modifier = Modifier.size(16.dp))
+                                        Spacer(Modifier.width(6.dp))
+                                        Text("Try again")
+                                    }
+                                else -> {}
+                            }
+                        }
+                    }
                 }
             }
-        },
-        confirmButton = {
-            when (state) {
-                is VocabPopupState.Ask ->
-                    Button(onClick = { onGenerate(state.word, state.sentence) }) {
-                        Text("Yes, generate!")
-                    }
-                is VocabPopupState.Error ->
-                    Button(onClick = { onRetry(state.word, state.sentence) }) {
-                        Icon(Icons.Default.Refresh, contentDescription = null)
-                        Spacer(Modifier.width(4.dp))
-                        Text("Try again")
-                    }
-                else -> {}
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) { Text("Close") }
-        },
-    )
+        }
+    }
 }
 
 // ── Word tap helper ───────────────────────────────────────────────────────────
@@ -901,4 +1241,18 @@ private fun findWordAtPos(text: String, pos: Int, subject: String): String? {
         charPos = end
     }
     return null
+}
+
+private fun TextStyle.scale(offset: Int): TextStyle {
+    val newFontSize = if (this.fontSize.isSp) {
+        (this.fontSize.value + offset).coerceAtLeast(8f).sp
+    } else {
+        this.fontSize
+    }
+    val newLineHeight = if (this.lineHeight.isSp) {
+        (this.lineHeight.value + offset).coerceAtLeast(10f).sp
+    } else {
+        this.lineHeight
+    }
+    return this.copy(fontSize = newFontSize, lineHeight = newLineHeight)
 }

@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -34,7 +35,6 @@ fun LearnScreen(
     childState:                 ChildState,
     onNavigateToChapterList:    (classNum: String, subject: String, lang: String) -> Unit,
     onNavigateToAssessmentList: (lang: String, childName: String, subject: String) -> Unit,
-    onChildReset:               () -> Unit,
 ) {
     val classNum = childState.classNum.ifBlank { "7" }
 
@@ -44,29 +44,20 @@ fun LearnScreen(
             .padding(horizontal = 16.dp)
             .padding(top = 12.dp),
     ) {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
+        Column(
+            modifier = Modifier.fillMaxWidth()
         ) {
-            Column {
-                Text(
-                    text  = "What would you like to read?",
-                    style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
-                )
-                Spacer(Modifier.height(2.dp))
-                Text(
-                    text  = "Class $classNum · ${childState.name}",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-            }
-            TextButton(
-                onClick = onChildReset,
-                colors = ButtonDefaults.textButtonColors(contentColor = MaterialTheme.colorScheme.primary)
-            ) {
-                Text("Switch Child", fontWeight = FontWeight.Bold)
-            }
+            val name = childState.name.ifBlank { "there" }
+            Text(
+                text  = "What would you like to learn, $name?",
+                style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
+            )
+            Spacer(Modifier.height(2.dp))
+            Text(
+                text  = "Class $classNum · ${childState.name}",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
         }
         Spacer(Modifier.height(16.dp))
 
@@ -93,6 +84,20 @@ private fun SubjectTile(
     onReadClick: () -> Unit,
     onQuizClick: () -> Unit,
 ) {
+    val themeColor = remember(subject.name) {
+        val slug = subject.name.lowercase().trim()
+        when (slug) {
+            "hindi" -> Color(0xFFE67E22)
+            "english" -> Color(0xFF27AE60)
+            "punjabi" -> Color(0xFF8E44AD)
+            "mathematics", "math" -> Color(0xFF2980B9)
+            "science" -> Color(0xFF16A085)
+            "social studies", "social_studies" -> Color(0xFFC0392B)
+            "computer" -> Color(0xFF7F8C8D)
+            else -> Color(0xFF2980B9)
+        }
+    }
+
     ElevatedCard(
         shape          = RoundedCornerShape(16.dp),
         colors         = CardDefaults.elevatedCardColors(containerColor = MaterialTheme.colorScheme.surface),
@@ -125,28 +130,28 @@ private fun SubjectTile(
             ) {
                 Button(
                     onClick         = onReadClick,
-                    modifier        = Modifier.weight(1.2f),
+                    modifier        = Modifier.weight(1.2f).height(36.dp),
                     contentPadding  = PaddingValues(horizontal = 4.dp, vertical = 0.dp),
                     shape           = RoundedCornerShape(8.dp),
                     colors          = ButtonDefaults.buttonColors(
-                        containerColor = MaterialTheme.colorScheme.primary,
-                        contentColor = MaterialTheme.colorScheme.onPrimary
+                        containerColor = themeColor,
+                        contentColor = Color.White
                     )
                 ) {
-                    Text("📖 Read", style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold), maxLines = 1)
+                    Text("📖 Learn", style = MaterialTheme.typography.labelMedium.copy(fontSize = 13.sp, fontWeight = FontWeight.Bold), maxLines = 1)
                 }
                 OutlinedButton(
                     onClick         = onQuizClick,
-                    modifier        = Modifier.weight(1.0f),
+                    modifier        = Modifier.weight(1.0f).height(36.dp),
                     contentPadding  = PaddingValues(horizontal = 4.dp, vertical = 0.dp),
                     shape           = RoundedCornerShape(8.dp),
-                    border          = BorderStroke(1.dp, Color(0xFFE2E8F0)),
+                    border          = BorderStroke(1.dp, themeColor.copy(alpha = 0.5f)),
                     colors          = ButtonDefaults.outlinedButtonColors(
                         containerColor = Color.Transparent,
-                        contentColor = MaterialTheme.colorScheme.onSurfaceVariant
+                        contentColor = themeColor
                     )
                 ) {
-                    Text("✏️ Quiz", style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.SemiBold), maxLines = 1)
+                    Text("✏️ Quiz", style = MaterialTheme.typography.labelMedium.copy(fontSize = 13.sp, fontWeight = FontWeight.SemiBold), maxLines = 1)
                 }
             }
         }

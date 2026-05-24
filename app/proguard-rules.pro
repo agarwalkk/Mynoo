@@ -30,3 +30,6 @@
 # Kotlin
 -keep class kotlin.** { *; }
 -dontwarn kotlin.**
+
+# Keep data and API models from being obfuscated by R8 to prevent serialization errors
+-keep class com.krishanagarwal.mynoo.data.** { *; }

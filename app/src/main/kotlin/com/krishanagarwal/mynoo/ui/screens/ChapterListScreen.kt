@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.graphics.Color
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.krishanagarwal.mynoo.ui.viewmodel.LearnViewModel
 
@@ -28,22 +29,24 @@ fun ChapterListScreen(
     vm: LearnViewModel = hiltViewModel(),
 ) {
     val ui by vm.learn.collectAsState()
+    val themeColor = remember(subject) {
+        val slug = subject.lowercase().trim()
+        when (slug) {
+            "hindi" -> Color(0xFFE67E22)
+            "english" -> Color(0xFF27AE60)
+            "punjabi" -> Color(0xFF8E44AD)
+            "mathematics", "math" -> Color(0xFF2980B9)
+            "science" -> Color(0xFF16A085)
+            "social studies", "social_studies" -> Color(0xFFC0392B)
+            "computer" -> Color(0xFF7F8C8D)
+            else -> Color(0xFF2980B9)
+        }
+    }
 
     LaunchedEffect(classNum, subject) { vm.loadChapters(classNum, subject) }
 
     Column(modifier = Modifier.fillMaxSize().padding(horizontal = 16.dp)) {
-        Spacer(Modifier.height(16.dp))
-        Text(
-            text  = subject,
-            style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.Bold),
-            color = MaterialTheme.colorScheme.primary,
-        )
-        Text(
-            text  = "Class $classNum",
-            style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
-        Spacer(Modifier.height(16.dp))
+        Spacer(Modifier.height(8.dp))
 
         when {
             ui.loading -> Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
@@ -72,13 +75,13 @@ fun ChapterListScreen(
                                 modifier        = Modifier
                                     .size(42.dp)
                                     .clip(CircleShape)
-                                    .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.12f)),
+                                    .background(themeColor.copy(alpha = 0.12f)),
                                 contentAlignment = Alignment.Center,
                             ) {
                                 Text(
                                     text  = if (chapter.order > 0) "${chapter.order}" else "",
                                     style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                                    color = MaterialTheme.colorScheme.primary,
+                                    color = themeColor,
                                 )
                             }
                             Spacer(Modifier.width(14.dp))
@@ -88,13 +91,6 @@ fun ChapterListScreen(
                                     text  = chapter.title,
                                     style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.SemiBold),
                                 )
-                                if (chapter.wordCount > 0) {
-                                    Text(
-                                        text  = "${chapter.wordCount} words",
-                                        style = MaterialTheme.typography.bodySmall,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                    )
-                                }
                             }
                             Spacer(Modifier.width(8.dp))
                             // Chevron

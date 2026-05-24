@@ -531,7 +531,7 @@ class PlacementViewModel @Inject constructor(
                         responseSchema = schemaJson
                     )
                 )
-                val res = geminiApi.generateContent(BuildConfig.GEMINI_API_KEY, request)
+                val res = geminiApi.generateContent(model, BuildConfig.GEMINI_API_KEY, request)
                 rawResponse = res.candidates?.firstOrNull()?.content?.parts?.firstOrNull()?.text ?: "{}"
             }
         }
@@ -860,7 +860,7 @@ class PlacementViewModel @Inject constructor(
                             responseSchema = schemaJson
                         )
                     )
-                    val res = geminiApi.generateContent(BuildConfig.GEMINI_API_KEY, request)
+                    val res = geminiApi.generateContent(model, BuildConfig.GEMINI_API_KEY, request)
                     rawResponse = res.candidates?.firstOrNull()?.content?.parts?.firstOrNull()?.text ?: "{}"
                 }
             }

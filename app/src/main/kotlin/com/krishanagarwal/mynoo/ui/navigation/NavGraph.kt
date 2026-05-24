@@ -7,7 +7,7 @@ import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.Home
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -19,6 +19,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -49,10 +50,8 @@ private val topBarRoutes = setOf(
     Screen.Tutor.route,
     Screen.Learn.route,
     Screen.Progress.route,
-    Screen.AssessmentList.route,
     Screen.ParentDashboard.route,
     Screen.ChapterList.route,
-    Screen.Assessment.route,
 )
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -65,44 +64,94 @@ fun MynooNavGraph(
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 
+    val subjectArg = navBackStackEntry?.arguments?.getString("subject").orEmpty()
+    val isChapterList = currentRoute == Screen.ChapterList.route
+    
+    val topBarBgColor = if (isChapterList && subjectArg.isNotBlank()) {
+        val slug = subjectArg.lowercase().trim()
+        when (slug) {
+            "hindi" -> Color(0xFFE67E22)
+            "english" -> Color(0xFF27AE60)
+            "punjabi" -> Color(0xFF8E44AD)
+            "mathematics", "math" -> Color(0xFF2980B9)
+            "science" -> Color(0xFF16A085)
+            "social studies", "social_studies" -> Color(0xFFC0392B)
+            "computer" -> Color(0xFF7F8C8D)
+            else -> Color(0xFF2980B9)
+        }
+    } else {
+        MaterialTheme.colorScheme.surface
+    }
+
+    val topBarContentColor = if (isChapterList && subjectArg.isNotBlank()) {
+        Color.White
+    } else {
+        MaterialTheme.colorScheme.onSurface
+    }
+
     Scaffold(
         topBar = {
-            if (currentRoute in topBarRoutes) {
+            if (currentRoute in topBarRoutes && currentRoute?.startsWith("assessment_list") != true) {
                 TopAppBar(
                     title = {
-                        Text(
-                            text = when {
-                                currentRoute == Screen.Tutor.route -> "AI Tutor"
-                                currentRoute == Screen.Learn.route -> "Learn"
-                                currentRoute == Screen.Progress.route -> "My Progress"
-                                currentRoute == Screen.ChapterList.route -> {
-                                    navBackStackEntry?.arguments?.getString("subject") ?: "Chapters"
+                        val titleText = when {
+                            currentRoute == Screen.Tutor.route -> "AI Tutor"
+                            currentRoute == Screen.Learn.route -> "Learn"
+                            currentRoute == Screen.Progress.route -> "My Progress"
+                            currentRoute == Screen.ChapterList.route -> {
+                                navBackStackEntry?.arguments?.getString("subject") ?: "Chapters"
+                            }
+                            currentRoute?.startsWith(Screen.AssessmentList.route) == true -> "Assessments"
+                            currentRoute == Screen.Assessment.route -> "Assessment"
+                            currentRoute == Screen.ParentDashboard.route -> "Parent Dashboard"
+                            else -> "Mynoo"
+                        }
+                        if (currentRoute == Screen.ChapterList.route) {
+                            val classNum = navBackStackEntry?.arguments?.getString("classNum") ?: ""
+                            androidx.compose.foundation.layout.Column {
+                                Text(
+                                    text = titleText,
+                                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = androidx.compose.ui.text.font.FontWeight.Bold)
+                                )
+                                if (classNum.isNotBlank()) {
+                                    Text(
+                                        text = "Class $classNum",
+                                        style = MaterialTheme.typography.bodySmall,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                                    )
                                 }
-                                currentRoute?.startsWith(Screen.AssessmentList.route) == true -> "Assessments"
-                                currentRoute == Screen.Assessment.route -> "Assessment"
-                                currentRoute == Screen.ParentDashboard.route -> "Parent Dashboard"
-                                else -> "Mynoo"
-                            },
-                            style = MaterialTheme.typography.titleLarge.copy(fontWeight = androidx.compose.ui.text.font.FontWeight.Bold)
-                        )
+                            }
+                        } else {
+                            Text(
+                                text = titleText,
+                                style = MaterialTheme.typography.titleLarge.copy(fontWeight = androidx.compose.ui.text.font.FontWeight.Bold)
+                            )
+                        }
                     },
                     navigationIcon = {
                         if (currentRoute !in bottomNavRoutes && currentRoute != Screen.ChildSelect.route) {
                             IconButton(onClick = { navController.popBackStack() }) {
-                                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
+                                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back", tint = topBarContentColor)
                             }
                         }
                     },
                     actions = {
                         if (currentRoute in bottomNavRoutes) {
-                            IconButton(onClick = { navController.navigate(Screen.ParentDashboard.route) }) {
-                                Icon(Icons.Default.Settings, contentDescription = "Settings")
+                            IconButton(onClick = {
+                                onChildSet(ChildState())
+                                navController.navigate(Screen.ChildSelect.route) {
+                                    popUpTo(navController.graph.findStartDestination().id) { inclusive = true }
+                                }
+                            }) {
+                                Icon(Icons.Default.Home, contentDescription = "Home")
                             }
                         }
                     },
                     colors = TopAppBarDefaults.topAppBarColors(
-                        containerColor = MaterialTheme.colorScheme.surface,
-                        titleContentColor = MaterialTheme.colorScheme.onSurface,
+                        containerColor = topBarBgColor,
+                        titleContentColor = topBarContentColor,
+                        navigationIconContentColor = topBarContentColor,
+                        actionIconContentColor = topBarContentColor
                     )
                 )
             }
@@ -138,7 +187,6 @@ fun MynooNavGraph(
                     onNavigateToAssessmentList = { lang, childName, subject ->
                         navController.navigate(Screen.AssessmentList.route(lang, childName, subject))
                     },
-                    onChildReset             = { onChildSet(ChildState()) },
                 )
             }
             composable(Screen.Progress.route) {
@@ -171,6 +219,9 @@ fun MynooNavGraph(
                     childState = childState,
                     onNavigateToProgress = {
                         navController.navigate(Screen.Progress.route)
+                    },
+                    onNavigateToAssessment = { assessmentId, childName ->
+                        navController.navigate(Screen.Assessment.route(assessmentId, childName))
                     }
                 )
             }
@@ -244,6 +295,9 @@ fun MynooNavGraph(
                     },
                     onNavigateToAssessment = { assessmentId, childName ->
                         navController.navigate(Screen.Assessment.route(assessmentId, childName))
+                    },
+                    onBackClick = {
+                        navController.popBackStack()
                     },
                 )
             }

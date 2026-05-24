@@ -18,6 +18,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
+import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -36,9 +37,9 @@ data class LearnUiState(
 
 sealed class VocabPopupState {
     data class Loading(val word: String)                                        : VocabPopupState()
-    data class Found(val word: String, val entry: VocabEntry)                   : VocabPopupState()
+    data class Found(val word: String, val entry: VocabEntry, val sentence: String) : VocabPopupState()
     data class Ask(val word: String, val sentence: String)                      : VocabPopupState()
-    data class Generating(val word: String, val sentence: String)               : VocabPopupState()
+    data class Generating(val word: String, val sentence: String, val status: String = "Generating meaning...") : VocabPopupState()
     data class Error(val word: String, val sentence: String, val msg: String)   : VocabPopupState()
 }
 
@@ -148,21 +149,32 @@ class LearnViewModel @Inject constructor(
         _reader.update { it.copy(isPlaying = true, isPaused = false, activeSentenceId = null) }
 
         playJob = viewModelScope.launch(Dispatchers.Main) {
+            var completedNaturally = false
             try {
                 for (seg in segs) {
                     if (!isActive) break
-                    _reader.update { it.copy(activeSentenceId = seg.id, activeWordIndex = null) }
+                    _reader.update {
+                        it.copy(
+                            activeSentenceId = seg.id,
+                            activeWordIndex = null,
+                            resumeFromId = seg.id
+                        )
+                    }
                     val timings = withContext(Dispatchers.IO) {
                         repo.getWordTimings(classNum, subject, chapterId, seg.id, seg.kind)
                     }
                     val url = repo.audioUrl(classNum, subject, chapterId, seg.id, seg.kind, audioExt)
                     playAndWait(url, timings)
                 }
+                completedNaturally = true
             } finally {
                 _reader.update {
                     it.copy(
-                        isPlaying = false, isPaused = false, activeSentenceId = null,
-                        activeWordIndex = null, resumeFromId = null,
+                        isPlaying = false,
+                        isPaused = false,
+                        activeSentenceId = null,
+                        activeWordIndex = null,
+                        resumeFromId = if (completedNaturally) null else it.resumeFromId,
                     )
                 }
             }
@@ -220,6 +232,58 @@ class LearnViewModel @Inject constructor(
                 isPlaying = false, isPaused = false, activeSentenceId = null, activeWordIndex = null,
                 popupIsPlaying = false, playbackPositionMs = 0L, totalDurationMs = 0L,
             )
+        }
+    }
+
+    private suspend fun stopPlaybackAndJoin() {
+        wordScope?.cancel(); wordScope = null
+        positionPollingScope?.cancel(); positionPollingScope = null
+        currentTimings = null
+        mediaPlayer?.let { try { it.stop(); it.release() } catch (_: Exception) {} }
+        mediaPlayer = null
+        playJob?.let {
+            try {
+                it.cancelAndJoin()
+            } catch (_: Exception) {}
+        }
+        playJob = null
+        _reader.update {
+            it.copy(
+                isPlaying = false, isPaused = false, activeSentenceId = null, activeWordIndex = null,
+                popupIsPlaying = false, playbackPositionMs = 0L, totalDurationMs = 0L,
+            )
+        }
+    }
+
+    fun playNextSentence(classNum: String, subject: String, chapterId: String) {
+        val allSegs = buildSegments(_reader.value.content)
+        if (allSegs.isEmpty()) return
+        val currentId = _reader.value.activeSentenceId ?: _reader.value.resumeFromId
+        val currentIdx = if (currentId != null) allSegs.indexOfFirst { it.id == currentId } else -1
+        val nextIdx = currentIdx + 1
+        if (nextIdx in allSegs.indices) {
+            val nextId = allSegs[nextIdx].id
+            viewModelScope.launch(Dispatchers.Main) {
+                stopPlaybackAndJoin()
+                setResumePoint(nextId)
+                playChapter(classNum, subject, chapterId)
+            }
+        }
+    }
+
+    fun playPreviousSentence(classNum: String, subject: String, chapterId: String) {
+        val allSegs = buildSegments(_reader.value.content)
+        if (allSegs.isEmpty()) return
+        val currentId = _reader.value.activeSentenceId ?: _reader.value.resumeFromId
+        val currentIdx = if (currentId != null) allSegs.indexOfFirst { it.id == currentId } else -1
+        val prevIdx = currentIdx - 1
+        if (prevIdx in allSegs.indices) {
+            val prevId = allSegs[prevIdx].id
+            viewModelScope.launch(Dispatchers.Main) {
+                stopPlaybackAndJoin()
+                setResumePoint(prevId)
+                playChapter(classNum, subject, chapterId)
+            }
         }
     }
 
@@ -342,26 +406,31 @@ class LearnViewModel @Inject constructor(
     }
 
     fun playSentence(classNum: String, subject: String, chapterId: String, sentenceId: String) {
-        if (_reader.value.isPlaying) stopPlayback()
-        _reader.update {
-            it.copy(
-                isPlaying = true, isPaused = false, popupIsPlaying = true,
-                activeSentenceId = sentenceId, activeWordIndex = null,
-            )
-        }
-        playJob = viewModelScope.launch(Dispatchers.Main) {
-            try {
-                val timings = withContext(Dispatchers.IO) {
-                    repo.getWordTimings(classNum, subject, chapterId, sentenceId, "sentence")
-                }
-                val url = repo.audioUrl(classNum, subject, chapterId, sentenceId, "sentence", audioExt)
-                playAndWait(url, timings)
-            } finally {
-                _reader.update {
-                    it.copy(
-                        isPlaying = false, isPaused = false, activeSentenceId = null,
-                        activeWordIndex = null, popupIsPlaying = false,
-                    )
+        viewModelScope.launch(Dispatchers.Main) {
+            if (_reader.value.isPlaying) {
+                stopPlaybackAndJoin()
+            }
+            _reader.update {
+                it.copy(
+                    isPlaying = true, isPaused = false, popupIsPlaying = true,
+                    activeSentenceId = sentenceId, activeWordIndex = null,
+                )
+            }
+            val kind = if (_reader.value.content.paragraphs.any { it.id == sentenceId }) "paragraph" else "sentence"
+            playJob = viewModelScope.launch(Dispatchers.Main) {
+                try {
+                    val timings = withContext(Dispatchers.IO) {
+                        repo.getWordTimings(classNum, subject, chapterId, sentenceId, kind)
+                    }
+                    val url = repo.audioUrl(classNum, subject, chapterId, sentenceId, kind, audioExt)
+                    playAndWait(url, timings)
+                } finally {
+                    _reader.update {
+                        it.copy(
+                            isPlaying = false, isPaused = false, activeSentenceId = null,
+                            activeWordIndex = null, popupIsPlaying = false,
+                        )
+                    }
                 }
             }
         }
@@ -396,7 +465,7 @@ class LearnViewModel @Inject constructor(
             val entry = vocabCacheValues[cacheKey]
             _reader.update {
                 it.copy(vocabPopup = if (entry != null)
-                    VocabPopupState.Found(word, entry) else VocabPopupState.Ask(word, sentenceText))
+                    VocabPopupState.Found(word, entry, sentenceText) else VocabPopupState.Ask(word, sentenceText))
             }
             if (entry != null) startVocabAudio(entry.audioPath)
             return
@@ -409,27 +478,59 @@ class LearnViewModel @Inject constructor(
             if (tapIdCounter != tapId) return@launch
             _reader.update {
                 it.copy(vocabPopup = if (entry != null)
-                    VocabPopupState.Found(word, entry) else VocabPopupState.Ask(word, sentenceText))
+                    VocabPopupState.Found(word, entry, sentenceText) else VocabPopupState.Ask(word, sentenceText))
             }
             if (entry != null) startVocabAudio(entry.audioPath)
         }
     }
 
+    private fun getFullErrorDescription(e: Throwable): String {
+        val sw = java.io.StringWriter()
+        val pw = java.io.PrintWriter(sw)
+        e.printStackTrace(pw)
+        val stackTrace = sw.toString()
+
+        var details = ""
+        if (e is retrofit2.HttpException) {
+            val errorBody = try {
+                e.response()?.errorBody()?.string()
+            } catch (_: Exception) {
+                null
+            }
+            if (!errorBody.isNullOrBlank()) {
+                details = "HTTP Error Body:\n$errorBody\n\n"
+            }
+        }
+        return "$details${e.javaClass.name}: ${e.message ?: "Unknown error"}\n\n$stackTrace"
+    }
+
     fun generateWordMeaning(word: String, sentence: String, subject: String) {
         val tapId = ++tapIdCounter
-        _reader.update { it.copy(vocabPopup = VocabPopupState.Generating(word, sentence)) }
+        _reader.update { it.copy(vocabPopup = VocabPopupState.Generating(word, sentence, "Connecting...")) }
         viewModelScope.launch {
-            runCatching { vocabRepo.generate(word, sentence, subject) }
+            runCatching {
+                vocabRepo.generate(word, sentence, subject) { progressStatus ->
+                    if (tapIdCounter == tapId) {
+                        _reader.update { state ->
+                            if (state.vocabPopup is VocabPopupState.Generating) {
+                                state.copy(vocabPopup = (state.vocabPopup as VocabPopupState.Generating).copy(status = progressStatus))
+                            } else {
+                                state
+                            }
+                        }
+                    }
+                }
+            }
                 .onSuccess { entry ->
                     val key = "$word::$sentence"
                     vocabCachePresent.add(key); vocabCacheValues[key] = entry
                     if (tapIdCounter != tapId) return@onSuccess
-                    _reader.update { it.copy(vocabPopup = VocabPopupState.Found(word, entry)) }
+                    _reader.update { it.copy(vocabPopup = VocabPopupState.Found(word, entry, sentence)) }
                     startVocabAudio(entry.audioPath)
                 }
                 .onFailure { e ->
                     if (tapIdCounter != tapId) return@onFailure
-                    _reader.update { it.copy(vocabPopup = VocabPopupState.Error(word, sentence, e.message ?: "Unknown error")) }
+                    _reader.update { it.copy(vocabPopup = VocabPopupState.Error(word, sentence, getFullErrorDescription(e))) }
                 }
         }
     }

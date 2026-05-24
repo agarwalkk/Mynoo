@@ -28,7 +28,7 @@ data class GeminiInlineData(
 
 data class GeminiGenConfig(
     val temperature: Double? = null,
-    @SerializedName("response_modalities")
+    @SerializedName("responseModalities")
     val responseModalities: List<String>? = null,
     val speechConfig: GeminiSpeechConfig? = null,
     val responseMimeType: String? = null,
@@ -49,9 +49,16 @@ data class GeminiPrebuiltVoice(
 
 // ── Response ─────────────────────────────────────────────────────────────────
 
+data class GeminiUsageMetadata(
+    @SerializedName("promptTokenCount") val promptTokenCount: Int = 0,
+    @SerializedName("candidatesTokenCount") val candidatesTokenCount: Int = 0,
+    @SerializedName("totalTokenCount") val totalTokenCount: Int = 0,
+)
+
 data class GeminiResponse(
     val candidates: List<GeminiCandidate>? = null,
     val error: GeminiError? = null,
+    val usageMetadata: GeminiUsageMetadata? = null,
 )
 
 data class GeminiCandidate(
