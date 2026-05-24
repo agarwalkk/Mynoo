@@ -769,12 +769,17 @@ private fun buildWordHighlightedText(text: String, highlightIdx: Int, highlightC
                 val raw      = text.substring(tokStart, pos)
                 val stripped = raw.replace(Regex("""\*+"""), "")
                 val isBold   = raw.startsWith("**") && raw.endsWith("**") && raw.length > 4
+                val isItalic = !isBold && raw.startsWith("*") && raw.endsWith("*") && raw.length > 2
                 if (wordCount == highlightIdx) {
-                    withStyle(SpanStyle(background = highlightColor)) {
-                        append(stripped)
-                    }
+                    // Preserve existing bold/italic alongside the highlight background
+                    withStyle(SpanStyle(
+                        background  = highlightColor,
+                        fontWeight  = if (isBold) FontWeight.Bold else null,
+                        fontStyle   = if (isItalic) FontStyle.Italic else null,
+                    )) { append(stripped) }
                 } else {
-                    if (isBold) withStyle(SpanStyle(fontWeight = FontWeight.Bold)) { append(stripped) }
+                    if (isBold)   withStyle(SpanStyle(fontWeight = FontWeight.Bold))  { append(stripped) }
+                    else if (isItalic) withStyle(SpanStyle(fontStyle = FontStyle.Italic)) { append(stripped) }
                     else append(stripped)
                 }
                 wordCount++

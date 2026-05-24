@@ -80,6 +80,8 @@ class LearnViewModel @Inject constructor(
     private var audioExt:       String        = "mp3"
     private var mediaPlayer:    MediaPlayer?  = null
     private var playJob:        Job?          = null
+    private var skipJob:        Job?          = null
+    private var playGeneration: Int           = 0
 
     // ── Vocab word tap ────────────────────────────────────────────────────────
     private val vocabCachePresent = mutableSetOf<String>()
@@ -148,6 +150,7 @@ class LearnViewModel @Inject constructor(
         val segs     = if (startIdx > 0) allSegs.drop(startIdx) else allSegs
         _reader.update { it.copy(isPlaying = true, isPaused = false, activeSentenceId = null) }
 
+        val myGen = ++playGeneration
         playJob = viewModelScope.launch(Dispatchers.Main) {
             var completedNaturally = false
             try {
@@ -168,14 +171,18 @@ class LearnViewModel @Inject constructor(
                 }
                 completedNaturally = true
             } finally {
-                _reader.update {
-                    it.copy(
-                        isPlaying = false,
-                        isPaused = false,
-                        activeSentenceId = null,
-                        activeWordIndex = null,
-                        resumeFromId = if (completedNaturally) null else it.resumeFromId,
-                    )
+                // Only reset UI if we are still the active playback — a rapid skip may have
+                // already started a newer generation before this finally block runs.
+                if (playGeneration == myGen) {
+                    _reader.update {
+                        it.copy(
+                            isPlaying = false,
+                            isPaused = false,
+                            activeSentenceId = null,
+                            activeWordIndex = null,
+                            resumeFromId = if (completedNaturally) null else it.resumeFromId,
+                        )
+                    }
                 }
             }
         }
@@ -221,6 +228,7 @@ class LearnViewModel @Inject constructor(
     }
 
     fun stopPlayback() {
+        skipJob?.cancel(); skipJob = null
         playJob?.cancel(); playJob = null
         wordScope?.cancel(); wordScope = null
         positionPollingScope?.cancel(); positionPollingScope = null
@@ -261,13 +269,14 @@ class LearnViewModel @Inject constructor(
         val currentId = _reader.value.activeSentenceId ?: _reader.value.resumeFromId
         val currentIdx = if (currentId != null) allSegs.indexOfFirst { it.id == currentId } else -1
         val nextIdx = currentIdx + 1
-        if (nextIdx in allSegs.indices) {
-            val nextId = allSegs[nextIdx].id
-            viewModelScope.launch(Dispatchers.Main) {
-                stopPlaybackAndJoin()
-                setResumePoint(nextId)
-                playChapter(classNum, subject, chapterId)
-            }
+        if (nextIdx !in allSegs.indices) return
+        val nextId = allSegs[nextIdx].id
+        // Stop audio and update UI immediately — no coroutine wait, so taps feel instant.
+        // stopPlayback() also cancels skipJob/playJob.
+        stopPlayback()
+        setResumePoint(nextId)
+        skipJob = viewModelScope.launch(Dispatchers.Main) {
+            playChapter(classNum, subject, chapterId)
         }
     }
 
@@ -277,13 +286,13 @@ class LearnViewModel @Inject constructor(
         val currentId = _reader.value.activeSentenceId ?: _reader.value.resumeFromId
         val currentIdx = if (currentId != null) allSegs.indexOfFirst { it.id == currentId } else -1
         val prevIdx = currentIdx - 1
-        if (prevIdx in allSegs.indices) {
-            val prevId = allSegs[prevIdx].id
-            viewModelScope.launch(Dispatchers.Main) {
-                stopPlaybackAndJoin()
-                setResumePoint(prevId)
-                playChapter(classNum, subject, chapterId)
-            }
+        if (prevIdx !in allSegs.indices) return
+        val prevId = allSegs[prevIdx].id
+        // Stop audio and update UI immediately — no coroutine wait, so taps feel instant.
+        stopPlayback()
+        setResumePoint(prevId)
+        skipJob = viewModelScope.launch(Dispatchers.Main) {
+            playChapter(classNum, subject, chapterId)
         }
     }
 
