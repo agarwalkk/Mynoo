@@ -12,6 +12,8 @@ import com.krishanagarwal.mynoo.data.repository.AssessmentQuestion
 import com.krishanagarwal.mynoo.data.repository.AssessmentRepository
 import com.krishanagarwal.mynoo.data.repository.GlobalSettingsRepository
 import com.krishanagarwal.mynoo.data.repository.PlacementRepository
+import com.krishanagarwal.mynoo.data.repository.UsageRepository
+import com.krishanagarwal.mynoo.data.repository.UsageSummary
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -90,6 +92,7 @@ class AssessmentViewModel @Inject constructor(
     private val sarvamChatApi: SarvamChatApi,
     private val placementRepo:       PlacementRepository,
     private val globalSettingsRepo:  GlobalSettingsRepository,
+    private val usageRepo:          UsageRepository,
 ) : ViewModel() {
 
     private val _list = MutableStateFlow(AssessmentListState())
@@ -98,7 +101,220 @@ class AssessmentViewModel @Inject constructor(
     private val _quiz = MutableStateFlow(QuizState())
     val quiz: StateFlow<QuizState> = _quiz
 
+    // ── Child-specific placement levels & history states ──────────────────────
+    private val _langLevels = MutableStateFlow<Map<String, Any>?>(null)
+    val langLevels: StateFlow<Map<String, Any>?> = _langLevels
+
+    private val _langExpertise = MutableStateFlow<Map<String, Any>?>(null)
+    val langExpertise: StateFlow<Map<String, Any>?> = _langExpertise
+
+    private val _quizHistory = MutableStateFlow<Map<String, Any>?>(null)
+    val quizHistory: StateFlow<Map<String, Any>?> = _quizHistory
+
+    private val _levelsAssessed = MutableStateFlow<Boolean?>(null)
+    val levelsAssessed: StateFlow<Boolean?> = _levelsAssessed
+
+    private val _retestSaving = MutableStateFlow(false)
+    val retestSaving: StateFlow<Boolean> = _retestSaving
+
+    // ── Child-specific AI Usage stats states ─────────────────────────────────
+    private val _usageStats = MutableStateFlow<UsageSummary?>(null)
+    val usageStats: StateFlow<UsageSummary?> = _usageStats
+
+    private val _usageLoading = MutableStateFlow(false)
+    val usageLoading: StateFlow<Boolean> = _usageLoading
+
     private var currentChild = ""
+
+    fun loadChildPlacementData(childName: String) {
+        viewModelScope.launch {
+            try {
+                val assessed = placementRepo.hasBeenAssessed(childName)
+                _levelsAssessed.value = assessed
+                if (assessed) {
+                    _langLevels.value = placementRepo.getLevels(childName)
+                    _langExpertise.value = db.collection("kids").document(childName)
+                        .collection("config").document("langExpertise").get().await().data
+                    _quizHistory.value = placementRepo.getQuizHistory(childName)
+                } else {
+                    _langLevels.value = null
+                    _langExpertise.value = null
+                    _quizHistory.value = null
+                }
+            } catch (e: Exception) {
+                Log.e("AssessmentVM", "Error loading placement data", e)
+            }
+        }
+    }
+
+    fun saveRetestRequest(childName: String, langs: List<String>, onDone: () -> Unit) {
+        _retestSaving.value = true
+        viewModelScope.launch {
+            try {
+                placementRepo.saveRetestRequest(childName, langs)
+                onDone()
+            } catch (e: Exception) {
+                Log.e("AssessmentVM", "Error saving retest request", e)
+            } finally {
+                _retestSaving.value = false
+            }
+        }
+    }
+
+    fun loadUsageStats(childName: String, periodDays: Int) {
+        _usageLoading.value = true
+        viewModelScope.launch {
+            try {
+                val summary = usageRepo.getUsageStats(childName, periodDays)
+                _usageStats.value = summary
+            } catch (e: Exception) {
+                Log.e("AssessmentVM", "Error loading usage stats", e)
+            } finally {
+                _usageLoading.value = false
+            }
+        }
+    }
+
+    fun resetAssessment(childName: String, assessmentId: String) {
+        viewModelScope.launch {
+            try {
+                repo.resetAssessment(childName, assessmentId)
+                loadAssessments(childName)
+            } catch (e: Exception) {
+                Log.e("AssessmentVM", "Error resetting assessment", e)
+            }
+        }
+    }
+
+    fun deleteAssessment(childName: String, assessmentId: String) {
+        viewModelScope.launch {
+            try {
+                repo.deleteAssessment(childName, assessmentId)
+                loadAssessments(childName)
+            } catch (e: Exception) {
+                Log.e("AssessmentVM", "Error deleting assessment", e)
+            }
+        }
+    }
+
+    fun regenerateSummaryForAssessment(childName: String, assessment: Assessment) {
+        _quiz.update { it.copy(validating = true) }
+        viewModelScope.launch {
+            try {
+                val score = assessment.score ?: 0.0
+                val total = assessment.questions.sumOf { it.marks }
+                val earned = assessment.questions.indices.sumOf { i ->
+                    val q = assessment.questions[i]
+                    val a = assessment.answers.getOrNull(i) ?: return@sumOf 0.0
+                    val type = a["type"] as? String ?: ""
+                    if (type == "mcq") {
+                        val correct = a["correct"] as? Boolean ?: false
+                        val attempts = (a["attempts"] as? Number)?.toInt() ?: 1
+                        if (correct) {
+                            if (attempts == 2) q.marks / 2.0 else q.marks
+                        } else 0.0
+                    } else {
+                        val aiEarned = (a["aiEarnedMarks"] as? Number)?.toDouble()
+                        if (aiEarned != null) {
+                            aiEarned
+                        } else {
+                            val selfGrade = a["selfGrade"] as? String ?: ""
+                            if (selfGrade == "got_it") q.marks else if (selfGrade == "partial") q.marks / 2.0 else 0.0
+                        }
+                    }
+                }
+                val finalScore = if (total > 0.0) Math.round((earned / total) * 100.0).toDouble() else 0.0
+                
+                val model = resolveModel(childName, "assessmentModel", assessment.lang)
+                val temp = resolveTemperature(childName, assessment.lang)
+                val langName = when (assessment.lang.lowercase()) {
+                    "hi" -> "Hindi"
+                    "pa" -> "Punjabi"
+                    else -> "English"
+                }
+
+                val gistContent = try {
+                    placementRepo.getGistFile("aarav_assessment_summary.json")
+                } catch (_: Exception) { null }
+
+                val instructions = if (gistContent != null) {
+                    val jsonObj = JSONObject(gistContent)
+                    joinLines(jsonObj.opt("INSTRUCTIONS"))
+                        .replace("{{score}}", finalScore.toInt().toString())
+                        .replace("{{langName}}", langName)
+                        .replace("{{chapterContext}}", if (assessment.chapterTitles.isNotEmpty()) "Chapter: ${assessment.chapterTitles.joinToString(", ")}" else "This is a GENERIC (curriculum-wide) assessment. Leave conceptMastery as an empty array [].")
+                } else {
+                    "Review this ${assessment.subject} assessment for Class ${assessment.classNum}. Write a short 3-sentence summary of performance, strengths, and what to improve."
+                }
+
+                val lines = assessment.questions.mapIndexed { i, q ->
+                    val ans = assessment.answers.getOrNull(i)
+                    val userAns = if (ans != null) {
+                        if (q.type == "mcq") {
+                            val selectedIndex = (ans["selectedIndex"] as? Number)?.toInt() ?: -1
+                            q.options.getOrNull(selectedIndex) ?: ""
+                        } else {
+                            (ans["textAnswer"] as? String) ?: ""
+                        }
+                    } else ""
+                    val finalUserAns = userAns.ifBlank { "(skipped)" }
+                    val correct = if (q.type == "mcq") q.options.getOrNull(q.correctIndex) ?: q.answer else q.answer
+                    "Q${i + 1} [${q.type}]: ${q.question}\nChild answered: $finalUserAns\nCorrect: $correct"
+                }.joinToString("\n\n")
+
+                val prompt = "$instructions\n\n$lines"
+
+                val summary = when {
+                    model.startsWith("grok-") -> {
+                        val request = LlmResponseRequest(
+                            model = model,
+                            input = prompt,
+                            temperature = null,
+                            maxOutputTokens = 1024
+                        )
+                        val res = xaiApi.createResponse("Bearer ${BuildConfig.XAI_API_KEY}", request)
+                        extractTextFromLlmResponse(res)
+                    }
+                    model.startsWith("gpt-") -> {
+                        val request = LlmResponseRequest(
+                            model = model,
+                            input = prompt,
+                            temperature = temp,
+                            maxOutputTokens = 1024
+                        )
+                        val res = openAiApi.createResponse("Bearer ${BuildConfig.OPENAI_API_KEY}", request)
+                        extractTextFromLlmResponse(res)
+                    }
+                    model.startsWith("sarvam-") -> {
+                        val request = SarvamChatRequest(
+                            model = model,
+                            messages = listOf(SarvamChatMessage("user", prompt)),
+                            temperature = temp,
+                            maxTokens = 1024
+                        )
+                        val res = sarvamChatApi.chatCompletions(BuildConfig.SARVAM_API_KEY, request)
+                        res.choices?.firstOrNull()?.message?.content ?: ""
+                    }
+                    else -> {
+                        val req = GeminiRequest(
+                            contents = listOf(GeminiContent(parts = listOf(GeminiPart(text = prompt))))
+                        )
+                        val resp = geminiApi.generateContent(model, BuildConfig.GEMINI_API_KEY, req)
+                        resp.candidates?.firstOrNull()?.content?.parts?.firstOrNull()?.text ?: ""
+                    }
+                }
+
+                if (assessment.id.isNotBlank()) {
+                    repo.saveSummary(childName, assessment.id, summary, finalScore, assessment.answers)
+                    loadAssessments(childName)
+                }
+            } catch (e: Exception) {
+                Log.e("AssessmentVM", "regenerateSummary error", e)
+            } finally {
+                _quiz.update { it.copy(validating = false) }
+            }
+        }
+    }
 
     fun loadAssessments(childName: String) {
         currentChild = childName

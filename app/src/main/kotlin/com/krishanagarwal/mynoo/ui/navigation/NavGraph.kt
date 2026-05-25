@@ -189,14 +189,27 @@ fun MynooNavGraph(
                     },
                 )
             }
-            composable(Screen.Progress.route) {
+            composable(
+                route = Screen.Progress.route,
+                arguments = listOf(
+                    navArgument("childName") { type = NavType.StringType; defaultValue = "" },
+                    navArgument("classNum") { type = NavType.StringType; defaultValue = "" },
+                )
+            ) { entry ->
+                val childName = entry.arguments?.getString("childName").orEmpty()
+                val classNum = entry.arguments?.getString("classNum").orEmpty()
+                val resolvedChildState = if (childName.isNotBlank()) {
+                    com.krishanagarwal.mynoo.data.model.ChildState(name = childName, classNum = classNum)
+                } else {
+                    childState
+                }
                 ProgressScreen(
-                    childState                 = childState,
-                    onNavigateToAssessmentList = { lang, childName, subject ->
-                        navController.navigate(Screen.AssessmentList.route(lang, childName, subject))
+                    childState                 = resolvedChildState,
+                    onNavigateToAssessmentList = { lang, name, subject ->
+                        navController.navigate(Screen.AssessmentList.route(lang, name, subject))
                     },
-                    onNavigateToAssessment     = { assessmentId, childName ->
-                        navController.navigate(Screen.Assessment.route(assessmentId, childName))
+                    onNavigateToAssessment     = { assessmentId, name ->
+                        navController.navigate(Screen.Assessment.route(assessmentId, name))
                     },
                 )
             }
@@ -217,8 +230,8 @@ fun MynooNavGraph(
             composable(Screen.ParentDashboard.route) {
                 ParentDashboardScreen(
                     childState = childState,
-                    onNavigateToProgress = {
-                        navController.navigate(Screen.Progress.route)
+                    onNavigateToProgress = { childName, classNum ->
+                        navController.navigate(Screen.Progress.route(childName, classNum))
                     },
                     onNavigateToAssessment = { assessmentId, childName ->
                         navController.navigate(Screen.Assessment.route(assessmentId, childName))

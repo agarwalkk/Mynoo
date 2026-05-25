@@ -59,7 +59,6 @@ fun ChildSelectScreen(
     vm: ChildViewModel = hiltViewModel(),
 ) {
     val ui by vm.ui.collectAsState()
-    var showAddSheet  by remember { mutableStateOf(false) }
     var deleteTarget  by remember { mutableStateOf<String?>(null) }
 
     var showParentPinDialog by remember { mutableStateOf(false) }
@@ -126,7 +125,7 @@ fun ChildSelectScreen(
                             Text("🌱", fontSize = 64.sp)
                             Spacer(Modifier.height(16.dp))
                             Text(
-                                text      = "No learners yet.\nTap + to add the first one.",
+                                text      = "No learners yet.\nTap 'I'm a parent' at the bottom to add a learner.",
                                 style     = MaterialTheme.typography.bodyLarge,
                                 color     = MaterialTheme.colorScheme.onSurfaceVariant,
                                 textAlign = TextAlign.Center,
@@ -164,57 +163,23 @@ fun ChildSelectScreen(
 
             Spacer(Modifier.height(16.dp))
 
-            Row(
+            OutlinedButton(
+                onClick = {
+                    showParentPinDialog = true
+                    parentPinInput = ""
+                    pinError = false
+                },
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(12.dp),
-                verticalAlignment = Alignment.CenterVertically
+                shape = RoundedCornerShape(12.dp),
+                border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.5f)),
+                colors = ButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colorScheme.primary)
             ) {
-                OutlinedButton(
-                    onClick = {
-                        showParentPinDialog = true
-                        parentPinInput = ""
-                        pinError = false
-                    },
-                    modifier = Modifier.weight(1f),
-                    shape = RoundedCornerShape(12.dp),
-                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.5f)),
-                    colors = ButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colorScheme.primary)
-                ) {
-                    Text("🔑 I'm a parent", fontWeight = FontWeight.Bold, maxLines = 1)
-                }
-
-                Button(
-                    onClick = { showAddSheet = true },
-                    modifier = Modifier.weight(1f),
-                    shape = RoundedCornerShape(12.dp),
-                ) {
-                    Icon(
-                        Icons.Default.Add,
-                        contentDescription = null,
-                        modifier = Modifier.size(18.dp)
-                    )
-                    Spacer(Modifier.width(8.dp))
-                    Text("Add learner", fontWeight = FontWeight.Bold, maxLines = 1)
-                }
+                Text("🔑 I'm a parent", fontWeight = FontWeight.Bold, maxLines = 1)
             }
 
             Spacer(Modifier.height(24.dp))
         }
     }
-    }
-
-    if (showAddSheet) {
-        AddChildSheet(
-            existing  = ui.children.map { it.name },
-            onDismiss = { showAddSheet = false },
-            onAdd     = { name, age, cls ->
-                showAddSheet = false
-                vm.addChild(name, age, cls) { child ->
-                    vm.saveLastChild(child.name, child.classNum)
-                    onChildSelected(child.name, child.classNum)
-                }
-            },
-        )
     }
 
     deleteTarget?.let { name ->
@@ -389,90 +354,7 @@ private fun ChildCard(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-private fun AddChildSheet(
-    existing:  List<String>,
-    onDismiss: () -> Unit,
-    onAdd:     (name: String, age: String, classNum: String) -> Unit,
-) {
-    var name  by remember { mutableStateOf("") }
-    var age   by remember { mutableStateOf("") }
-    var cls   by remember { mutableStateOf("") }
-    var error by remember { mutableStateOf<String?>(null) }
 
-    ModalBottomSheet(onDismissRequest = onDismiss) {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(start = 24.dp, end = 24.dp, bottom = 32.dp),
-        ) {
-            Text(
-                "Add a learner",
-                style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.Bold),
-            )
-            Spacer(Modifier.height(20.dp))
-
-            OutlinedTextField(
-                value         = name,
-                onValueChange = { name = it; error = null },
-                label         = { Text("Name *") },
-                singleLine    = true,
-                isError       = error != null,
-                keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Words),
-                modifier      = Modifier.fillMaxWidth(),
-            )
-            error?.let {
-                Text(it, color = MaterialTheme.colorScheme.error,
-                    style = MaterialTheme.typography.bodySmall)
-            }
-
-            Spacer(Modifier.height(12.dp))
-
-            OutlinedTextField(
-                value           = age,
-                onValueChange   = { age = it },
-                label           = { Text("Age (optional)") },
-                singleLine      = true,
-                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-                modifier        = Modifier.fillMaxWidth(),
-            )
-
-            Spacer(Modifier.height(16.dp))
-
-            Text("Class", style = MaterialTheme.typography.labelLarge)
-            Spacer(Modifier.height(8.dp))
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                CLASSES.forEach { c ->
-                    FilterChip(
-                        selected = cls == c,
-                        onClick  = { cls = if (cls == c) "" else c },
-                        label    = { Text(c) },
-                    )
-                }
-            }
-
-            Spacer(Modifier.height(24.dp))
-
-            Button(
-                modifier = Modifier.fillMaxWidth(),
-                onClick  = {
-                    val t = name.trim()
-                    when {
-                        t.isBlank() ->
-                            error = "Name is required"
-                        !t.matches(Regex("^[A-Za-z][A-Za-z0-9 ]{0,29}$")) ->
-                            error = "Must start with a letter (1–30 chars)"
-                        existing.any { it.equals(t, ignoreCase = true) } ->
-                            error = "$t already exists"
-                        else -> onAdd(t, age.trim(), cls)
-                    }
-                },
-            ) { Text("Add learner") }
-        }
-    }
-
-}
 
 @Composable
 fun SplashOverlay(

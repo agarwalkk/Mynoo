@@ -131,6 +131,14 @@ class PlacementRepository @Inject constructor(
 
     // ── Firestore: Retest Requests ──────────────────────────────────────────────
 
+    suspend fun saveRetestRequest(childName: String, langs: List<String>): Unit = withContext(Dispatchers.IO) {
+        val data = mapOf(
+            "langs" to langs,
+            "requestedAt" to Instant.now().toString()
+        )
+        configCol(childName).document("retestRequest").set(data).await()
+    }
+
     suspend fun getRetestRequest(childName: String): List<String>? = withContext(Dispatchers.IO) {
         try {
             val doc = configCol(childName).document("retestRequest").get().await()

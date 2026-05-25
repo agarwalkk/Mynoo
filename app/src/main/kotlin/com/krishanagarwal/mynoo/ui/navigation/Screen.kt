@@ -25,7 +25,10 @@ sealed class Screen(val route: String) {
     object Main     : Screen("main")
     object Tutor    : Screen("tutor")
     object Learn    : Screen("learn")
-    object Progress : Screen("progress")
+    object Progress : Screen("progress?childName={childName}&classNum={classNum}") {
+        fun route(childName: String = "", classNum: String = "") =
+            "progress?childName=$childName&classNum=$classNum"
+    }
 
     // ── Top-level stack screens ───────────────────────────────────────────────
     object ParentDashboard : Screen("parent_dashboard")

@@ -241,4 +241,19 @@ class AssessmentRepository @Inject constructor(
                 "answers", answers
             ).await()
     }
+
+    suspend fun deleteAssessment(childName: String, assessmentId: String) {
+        col(childName).document(assessmentId).delete().await()
+    }
+
+    suspend fun resetAssessment(childName: String, assessmentId: String) {
+        col(childName).document(assessmentId)
+            .update(
+                "status", "ready",
+                "score", com.google.firebase.firestore.FieldValue.delete(),
+                "answers", com.google.firebase.firestore.FieldValue.delete(),
+                "summary", com.google.firebase.firestore.FieldValue.delete(),
+                "completedAt", com.google.firebase.firestore.FieldValue.delete()
+            ).await()
+    }
 }

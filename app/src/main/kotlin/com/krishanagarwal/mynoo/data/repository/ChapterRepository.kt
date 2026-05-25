@@ -5,10 +5,13 @@ import com.google.firebase.firestore.Source
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
+import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import okhttp3.RequestBody.Companion.toRequestBody
 import org.json.JSONArray
 import org.json.JSONObject
+import java.io.IOException
 import java.net.URLEncoder
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -279,4 +282,140 @@ class ChapterRepository @Inject constructor(
             }
         }
     }
+
+    // ── Storage and Metadata writing (for Parent Dashboard) ───────────────────
+
+    suspend fun uploadChapterJson(classNum: String, subject: String, chapterId: String, json: String): Unit = withContext(Dispatchers.IO) {
+        val slug = subject.lowercase().replace(' ', '_')
+        val path = "classes/$classNum/$slug/$chapterId/content.json"
+        val url = "https://firebasestorage.googleapis.com/v0/b/$STORAGE_BUCKET/o?name=${URLEncoder.encode(path, "UTF-8")}"
+        
+        val body = json.toRequestBody("application/json".toMediaType())
+        val req = Request.Builder()
+            .url(url)
+            .post(body)
+            .build()
+            
+        client.newCall(req).execute().use { resp ->
+            if (!resp.isSuccessful) throw IOException("Upload content.json failed: ${resp.code} ${resp.message}")
+        }
+    }
+
+    suspend fun writeChapterMeta(classNum: String, subject: String, chapterId: String, title: String, order: Int, wordCount: Int, sentenceCount: Int): Unit = withContext(Dispatchers.IO) {
+        val slug = subject.lowercase().replace(' ', '_')
+        val doc = db.collection("classes").document(classNum)
+            .collection("subjects").document(slug)
+            .collection("chapters").document(chapterId)
+            
+        val data = mapOf(
+            "title" to title,
+            "order" to order,
+            "published" to true,
+            "wordCount" to wordCount,
+            "sentenceCount" to sentenceCount,
+            "uploadedAt" to java.time.Instant.now().toString()
+        )
+        
+        doc.set(data).await()
+    }
+
+    suspend fun writeChapterAudioStatus(classNum: String, subject: String, chapterId: String, status: String, error: String?, totalCount: Int, uploadedCount: Int): Unit = withContext(Dispatchers.IO) {
+        val slug = subject.lowercase().replace(' ', '_')
+        val doc = db.collection("classes").document(classNum)
+            .collection("subjects").document(slug)
+            .collection("chapters").document(chapterId)
+            
+        val data = mutableMapOf<String, Any>(
+            "audioStatus" to status,
+            "audioExists" to (uploadedCount > 0),
+            "voiceSegmentsTotal" to totalCount,
+            "voiceSegmentsReady" to uploadedCount,
+            "voicePct" to if (totalCount > 0) Math.min(100, Math.round((uploadedCount.toDouble() / totalCount) * 100).toInt()) else 0
+        )
+        if (error != null) {
+            data["audioError"] = error
+        } else {
+            data["audioError"] = com.google.firebase.firestore.FieldValue.delete()
+        }
+        
+        doc.update(data).await()
+    }
+
+    suspend fun uploadAudioBytes(classNum: String, subject: String, chapterId: String, segId: String, kind: String, ext: String, mimeType: String, bytes: ByteArray): Unit = withContext(Dispatchers.IO) {
+        val slug = subject.lowercase().replace(' ', '_')
+        val folder = if (kind == "sentence") "sentences" else "paragraphs"
+        val path = "classes/$classNum/$slug/$chapterId/audio/$folder/$segId.$ext"
+        val url = "https://firebasestorage.googleapis.com/v0/b/$STORAGE_BUCKET/o?name=${URLEncoder.encode(path, "UTF-8")}"
+        
+        val body = bytes.toRequestBody(mimeType.toMediaType())
+        val req = Request.Builder()
+            .url(url)
+            .post(body)
+            .build()
+            
+        client.newCall(req).execute().use { resp ->
+            if (!resp.isSuccessful) throw IOException("Upload audio segment failed: ${resp.code} ${resp.message}")
+        }
+    }
+
+    suspend fun uploadTimingJson(classNum: String, subject: String, chapterId: String, segId: String, kind: String, json: String): Unit = withContext(Dispatchers.IO) {
+        val slug = subject.lowercase().replace(' ', '_')
+        val folder = if (kind == "sentence") "sentences" else "paragraphs"
+        val path = "classes/$classNum/$slug/$chapterId/audio/$folder/$segId.json"
+        val url = "https://firebasestorage.googleapis.com/v0/b/$STORAGE_BUCKET/o?name=${URLEncoder.encode(path, "UTF-8")}"
+        
+        val body = json.toRequestBody("application/json".toMediaType())
+        val req = Request.Builder()
+            .url(url)
+            .post(body)
+            .build()
+            
+        client.newCall(req).execute().use { resp ->
+            if (!resp.isSuccessful) throw IOException("Upload timing JSON failed: ${resp.code} ${resp.message}")
+        }
+    }
+
+    suspend fun deleteChapter(classNum: String, subject: String, chapterId: String): Unit = withContext(Dispatchers.IO) {
+        val slug = subject.lowercase().replace(' ', '_')
+        val prefix = "classes/$classNum/$slug/$chapterId/"
+        
+        // 1. Delete all storage files
+        var pageToken: String? = null
+        do {
+            val url = "https://firebasestorage.googleapis.com/v0/b/$STORAGE_BUCKET/o?prefix=${URLEncoder.encode(prefix, "UTF-8")}" + 
+                if (pageToken != null) "&pageToken=${URLEncoder.encode(pageToken, "UTF-8")}" else ""
+            
+            val req = Request.Builder().url(url).get().build()
+            client.newCall(req).execute().use { resp ->
+                if (resp.isSuccessful) {
+                    val bodyStr = resp.body?.string() ?: ""
+                    val json = JSONObject(bodyStr)
+                    val items = json.optJSONArray("items")
+                    if (items != null) {
+                        for (i in 0 until items.length()) {
+                            val item = items.getJSONObject(i)
+                            val name = item.getString("name")
+                            val delUrl = "https://firebasestorage.googleapis.com/v0/b/$STORAGE_BUCKET/o/${URLEncoder.encode(name, "UTF-8")}"
+                            val delReq = Request.Builder().url(delUrl).delete().build()
+                            client.newCall(delReq).execute().use { delResp ->
+                                // ignore failure on individual file deletes, just try best effort
+                            }
+                        }
+                    }
+                    val token = json.optString("nextPageToken", "")
+                    pageToken = if (token.isNotEmpty()) token else null
+                } else {
+                    pageToken = null
+                }
+            }
+        } while (pageToken != null)
+
+        // 2. Delete Firestore doc
+        db.collection("classes").document(classNum)
+            .collection("subjects").document(slug)
+            .collection("chapters").document(chapterId)
+            .delete()
+            .await()
+    }
 }
+
