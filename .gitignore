@@ -9,8 +9,7 @@ local.properties
 *.jks
 *.keystore
 *.p12
-google-services.json     # if you manage this outside VCS
-# app/google-services.json is intentionally NOT ignored (needed for CI)
+google-services.json
 app/src/main/res/raw/google_sa.json
 
 # ── Android Studio / IntelliJ ────────────────────────────────────────────────
@@ -40,4 +39,3 @@ Desktop.ini
 
 # ── Node / tooling (if any frontend tooling is added) ───────────────────────
 node_modules/
-*google-services.json
