@@ -11,6 +11,9 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.krishanagarwal.mynoo.BuildConfig
 import com.krishanagarwal.mynoo.data.api.*
 import com.krishanagarwal.mynoo.data.model.ChildState
+import com.krishanagarwal.mynoo.data.model.ReasoningMapper
+import com.krishanagarwal.mynoo.data.api.GeminiThinkingConfig
+import com.krishanagarwal.mynoo.data.repository.GlobalSettingsRepository
 import com.krishanagarwal.mynoo.data.repository.SessionRepository
 import com.krishanagarwal.mynoo.data.repository.PlacementRepository
 import com.krishanagarwal.mynoo.service.AudioRecorderService
@@ -66,9 +69,10 @@ class TutorViewModel @Inject constructor(
     private val sessionRepo:   SessionRepository,
     private val placementRepo: PlacementRepository,
     private val db:            FirebaseFirestore,
-    private val openAiApi:     OpenAiApi,
-    private val xaiApi:        XaiApi,
-    private val sarvamChatApi: SarvamChatApi,
+    private val openAiApi:         OpenAiApi,
+    private val xaiApi:            XaiApi,
+    private val sarvamChatApi:     SarvamChatApi,
+    private val globalSettingsRepo: GlobalSettingsRepository,
 ) : ViewModel() {
 
     private val _ui = MutableStateFlow(TutorUiState())
@@ -79,10 +83,13 @@ class TutorViewModel @Inject constructor(
     private var startTime = Instant.now()
     private var activeJob: Job? = null
 
-    private var activeModel = "gemini-3.5-flash"
-    private var activeTemp = 0.7
+    private var activeModel        = "gemini-3.5-flash"
+    private var activeTemp          = 0.7
+    private var activeReasoningLevel = 0
     private var ttsProvider: String? = null
+    private var ttsModel: String?    = null
     private var sttProvider: String? = null
+    private var sttModel: String?    = null
     private var resolvedSystemPrompt = ""
 
     // ── Mic permission ────────────────────────────────────────────────────────
@@ -125,12 +132,8 @@ class TutorViewModel @Inject constructor(
                     Log.w("TutorVM", "Profile fetch failed", e)
                 }
 
-                // 2. Fetch parent settings
-                var geminiModel = "gemini-3.5-flash"
-                var hiModel: String? = null
-                var paModel: String? = null
-                var globalTemperature = 0.7
-                var slowSpeechMode = false
+                // 2. Fetch parent settings (behavioral flags from per-child; AI model from global)
+                var slowSpeechMode    = false
                 var sessionDurationMin = 30
                 var punjabiBonusEnabled = true
 
@@ -138,30 +141,28 @@ class TutorViewModel @Inject constructor(
                     val sDoc = db.collection("kids").document(childState.name)
                         .collection("config").document("settings").get().await()
                     if (sDoc.exists()) {
-                        geminiModel = sDoc.getString("geminiModel") ?: "gemini-3.5-flash"
-                        hiModel = sDoc.getString("hiModel")
-                        paModel = sDoc.getString("paModel")
-                        globalTemperature = sDoc.getDouble("globalTemperature") ?: 0.7
-                        slowSpeechMode = sDoc.getBoolean("slowSpeechMode") ?: false
-                        sessionDurationMin = sDoc.getLong("sessionDurationMin")?.toInt() ?: 30
+                        slowSpeechMode     = sDoc.getBoolean("slowSpeechMode") ?: false
+                        sessionDurationMin  = sDoc.getLong("sessionDurationMin")?.toInt() ?: 30
                         punjabiBonusEnabled = sDoc.getBoolean("punjabiBonusEnabled") ?: true
-
-                        val ttsMap = sDoc.get("ttsProvider") as? Map<*, *>
-                        ttsProvider = ttsMap?.get("tutorSession") as? String
-
-                        val sttMap = sDoc.get("sttProvider") as? Map<*, *>
-                        sttProvider = sttMap?.get("tutorSession") as? String
                     }
                 } catch (e: Exception) {
-                    Log.w("TutorVM", "Settings fetch failed", e)
+                    Log.w("TutorVM", "Per-child settings fetch failed", e)
                 }
 
-                activeModel = when (lang.lowercase()) {
-                    "hi" -> hiModel ?: geminiModel
-                    "pa" -> paModel ?: geminiModel
-                    else -> geminiModel
+                // AI model, TTS, STT from global settings
+                try {
+                    val globalSettings = globalSettingsRepo.load()
+                    val langConfig     = globalSettings.resolve("talk", lang)
+                    activeModel         = langConfig.llm.model
+                    activeTemp          = langConfig.llm.temperature
+                    activeReasoningLevel = langConfig.llm.reasoningLevel
+                    ttsProvider         = langConfig.tts.provider
+                    ttsModel            = langConfig.tts.model
+                    sttProvider         = langConfig.stt.provider
+                    sttModel            = langConfig.stt.model
+                } catch (e: Exception) {
+                    Log.w("TutorVM", "Global AI settings fetch failed", e)
                 }
-                activeTemp = globalTemperature
 
                 // 3. Load lang levels and expertise
                 var enLevel = 5
@@ -298,11 +299,13 @@ class TutorViewModel @Inject constructor(
                 activeModel.startsWith("grok-") -> {
                     val messages = convertHistoryToLlmMessages()
                     val request = LlmResponseRequest(
-                        model = activeModel,
-                        input = messages,
-                        instructions = system,
-                        temperature = activeTemp,
-                        maxOutputTokens = 1024
+                        model           = activeModel,
+                        input           = messages,
+                        instructions    = system,
+                        temperature     = null, // Grok does not support temperature
+                        maxOutputTokens = 1024,
+                        reasoning       = ReasoningMapper.toReasoningEffortOrNull(activeReasoningLevel)
+                            ?.let { LlmReasoning(it) },
                     )
                     val res = xaiApi.createResponse("Bearer ${BuildConfig.XAI_API_KEY}", request)
                     extractTextFromLlmResponse(res)
@@ -310,11 +313,13 @@ class TutorViewModel @Inject constructor(
                 activeModel.startsWith("gpt-") -> {
                     val messages = convertHistoryToLlmMessages()
                     val request = LlmResponseRequest(
-                        model = activeModel,
-                        input = messages,
-                        instructions = system,
-                        temperature = activeTemp,
-                        maxOutputTokens = 1024
+                        model           = activeModel,
+                        input           = messages,
+                        instructions    = system,
+                        temperature     = activeTemp,
+                        maxOutputTokens = 1024,
+                        reasoning       = ReasoningMapper.toReasoningEffortOrNull(activeReasoningLevel)
+                            ?.let { LlmReasoning(it) },
                     )
                     val res = openAiApi.createResponse("Bearer ${BuildConfig.OPENAI_API_KEY}", request)
                     extractTextFromLlmResponse(res)
@@ -322,21 +327,24 @@ class TutorViewModel @Inject constructor(
                 activeModel.startsWith("sarvam-") -> {
                     val messages = listOf(SarvamChatMessage("system", system)) + convertHistoryToSarvamMessages()
                     val request = SarvamChatRequest(
-                        model = activeModel,
-                        messages = messages,
+                        model       = activeModel,
+                        messages    = messages,
                         temperature = activeTemp,
-                        maxTokens = 1024
+                        maxTokens   = 1024,
                     )
                     val res = sarvamChatApi.chatCompletions(BuildConfig.SARVAM_API_KEY, request)
                     res.choices?.firstOrNull()?.message?.content ?: ""
                 }
                 else -> {
+                    val thinkingBudget = ReasoningMapper.toGeminiThinkingBudget(activeReasoningLevel)
                     val request = GeminiRequest(
-                        systemInstruction = system.let {
-                            GeminiContent(parts = listOf(GeminiPart(text = it)))
-                        },
-                        contents = history.toList(),
-                        generationConfig = GeminiGenConfig(temperature = activeTemp),
+                        systemInstruction = GeminiContent(parts = listOf(GeminiPart(text = system))),
+                        contents          = history.toList(),
+                        generationConfig  = GeminiGenConfig(
+                            temperature   = activeTemp,
+                            thinkingConfig = if (thinkingBudget > 0)
+                                GeminiThinkingConfig(thinkingBudget) else null,
+                        ),
                     )
                     val response = geminiApi.generateContent(activeModel, BuildConfig.GEMINI_API_KEY, request)
                     response.candidates
@@ -354,7 +362,7 @@ class TutorViewModel @Inject constructor(
             appendMessage(ChatMessage(role = "bot", text = speech))
             _ui.update { it.copy(quickReplies = replies) }
 
-            ttsService.speak(speech, lang = lang, provider = ttsProvider)
+            ttsService.speak(speech, lang = lang, provider = ttsProvider, model = ttsModel)
             _ui.update { it.copy(phase = SessionPhase.WAITING_CHILD) }
 
         } catch (e: Exception) {
@@ -373,23 +381,39 @@ class TutorViewModel @Inject constructor(
                 "hi" -> "hi-IN"; "pa" -> "pa-IN"; else -> "en-IN"
             }
 
-            val transcript = if (sttProvider == "google") {
-                val text = callGoogleStt(result.wavFile, langCode)
-                result.wavFile.delete()
-                text
-            } else {
-                val filePart = MultipartBody.Part.createFormData(
-                    "file", result.wavFile.name,
-                    result.wavFile.asRequestBody("audio/wav".toMediaType()),
-                )
-                val sttResponse = sarvamApi.transcribe(
-                    file         = filePart,
-                    model        = "saarika:v2.5".toRequestBody("text/plain".toMediaType()),
-                    languageCode = langCode.toRequestBody("text/plain".toMediaType()),
-                    apiKey       = BuildConfig.SARVAM_API_KEY,
-                )
-                result.wavFile.delete()
-                sttResponse.transcript?.trim().orEmpty()
+            val transcript = when (sttProvider) {
+                "google" -> {
+                    val text = callGoogleStt(result.wavFile, langCode)
+                    result.wavFile.delete()
+                    text
+                }
+                "elevenlabs" -> {
+                    // ElevenLabs Speech-to-Text (scribe_v2)
+                    callElevenLabsStt(result.wavFile, sttModel ?: "scribe_v2", langCode).also {
+                        result.wavFile.delete()
+                    }
+                }
+                "openai" -> {
+                    // OpenAI audio transcription (gpt-4o-transcribe / gpt-4o-mini-transcribe)
+                    callOpenAiStt(result.wavFile, sttModel ?: "gpt-4o-mini-transcribe", langCode).also {
+                        result.wavFile.delete()
+                    }
+                }
+                else -> {
+                    // Default: Sarvam STT — Google STT requires a separate Speech API key
+                    val filePart = MultipartBody.Part.createFormData(
+                        "file", result.wavFile.name,
+                        result.wavFile.asRequestBody("audio/wav".toMediaType()),
+                    )
+                    val sttResponse = sarvamApi.transcribe(
+                        file         = filePart,
+                        model        = (sttModel ?: "saaras:v3").toRequestBody("text/plain".toMediaType()),
+                        languageCode = langCode.toRequestBody("text/plain".toMediaType()),
+                        apiKey       = BuildConfig.SARVAM_API_KEY,
+                    )
+                    result.wavFile.delete()
+                    sttResponse.transcript?.trim().orEmpty()
+                }
             }
 
             if (transcript.isNotBlank()) {
@@ -493,6 +517,56 @@ Start by greeting ${child.name} warmly and asking what they'd like to learn or t
         }
         throw Exception("Responses API returned no text output block")
     }
+
+    private suspend fun callElevenLabsStt(audioFile: File, modelId: String, langCode: String): String =
+        withContext(Dispatchers.IO) {
+            val httpClient = OkHttpClient()
+            val req = Request.Builder()
+                .url("https://api.elevenlabs.io/v1/speech-to-text")
+                .addHeader("xi-api-key", BuildConfig.ELEVENLABS_API_KEY)
+                .post(
+                    okhttp3.MultipartBody.Builder()
+                        .setType(okhttp3.MultipartBody.FORM)
+                        .addFormDataPart("model_id", modelId)
+                        .addPart(
+                            MultipartBody.Part.createFormData(
+                                "file", audioFile.name,
+                                audioFile.asRequestBody("audio/wav".toMediaType()),
+                            )
+                        )
+                        .build()
+                )
+                .build()
+            val resp = httpClient.newCall(req).execute()
+            if (!resp.isSuccessful) throw Exception("ElevenLabs STT error ${resp.code}: ${resp.body?.string()}")
+            JSONObject(resp.body!!.string()).optString("text", "").trim()
+        }
+
+    private suspend fun callOpenAiStt(audioFile: File, modelId: String, langCode: String): String =
+        withContext(Dispatchers.IO) {
+            val httpClient = OkHttpClient()
+            val languageParam = langCode.split("-").firstOrNull() ?: "en"
+            val req = Request.Builder()
+                .url("https://api.openai.com/v1/audio/transcriptions")
+                .addHeader("Authorization", "Bearer ${BuildConfig.OPENAI_API_KEY}")
+                .post(
+                    okhttp3.MultipartBody.Builder()
+                        .setType(okhttp3.MultipartBody.FORM)
+                        .addFormDataPart("model", modelId)
+                        .addFormDataPart("language", languageParam)
+                        .addPart(
+                            MultipartBody.Part.createFormData(
+                                "file", audioFile.name,
+                                audioFile.asRequestBody("audio/wav".toMediaType()),
+                            )
+                        )
+                        .build()
+                )
+                .build()
+            val resp = httpClient.newCall(req).execute()
+            if (!resp.isSuccessful) throw Exception("OpenAI STT error ${resp.code}: ${resp.body?.string()}")
+            JSONObject(resp.body!!.string()).optString("text", "").trim()
+        }
 
     private suspend fun callGoogleStt(audioFile: File, langCode: String): String =
         withContext(Dispatchers.IO) {

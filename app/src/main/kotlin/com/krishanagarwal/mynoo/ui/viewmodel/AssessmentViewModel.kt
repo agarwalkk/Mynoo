@@ -6,9 +6,11 @@ import androidx.lifecycle.viewModelScope
 import com.google.firebase.firestore.FirebaseFirestore
 import com.krishanagarwal.mynoo.BuildConfig
 import com.krishanagarwal.mynoo.data.api.*
+import com.krishanagarwal.mynoo.data.model.ReasoningMapper
 import com.krishanagarwal.mynoo.data.repository.Assessment
 import com.krishanagarwal.mynoo.data.repository.AssessmentQuestion
 import com.krishanagarwal.mynoo.data.repository.AssessmentRepository
+import com.krishanagarwal.mynoo.data.repository.GlobalSettingsRepository
 import com.krishanagarwal.mynoo.data.repository.PlacementRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -86,7 +88,8 @@ class AssessmentViewModel @Inject constructor(
     private val openAiApi:     OpenAiApi,
     private val xaiApi:        XaiApi,
     private val sarvamChatApi: SarvamChatApi,
-    private val placementRepo: PlacementRepository,
+    private val placementRepo:       PlacementRepository,
+    private val globalSettingsRepo:  GlobalSettingsRepository,
 ) : ViewModel() {
 
     private val _list = MutableStateFlow(AssessmentListState())
@@ -497,9 +500,8 @@ class AssessmentViewModel @Inject constructor(
                 val systemInstruction = validationData.first
                 val gradingRules = validationData.second
                 
-                val model = resolveModel(currentChild, "assessmentModel")
-                val temp = resolveTemperature(currentChild)
-                
+                val model = resolveModel(currentChild, "assessmentModel", assessment.lang)
+                val temp = resolveTemperature(currentChild, assessment.lang)
                 val contextLine = "Subject: ${assessment.subject}, Class: ${assessment.classNum}\n"
                 val marksLine = "Marks for this question: ${q.marks} — award earnedMarks between 0 and ${q.marks} in steps of 0.5.\n"
                 val passageLine = if (q.passage.isNotBlank()) "Reading passage:\n\"\"\"\n${q.passage}\n\"\"\"\n" else ""
@@ -517,7 +519,7 @@ class AssessmentViewModel @Inject constructor(
                         val request = LlmResponseRequest(
                             model = model,
                             input = prompt,
-                            temperature = temp,
+                            temperature = null, // Grok does not support temperature parameter
                             maxOutputTokens = 1024,
                             text = LlmTextFormat(LlmJsonSchemaFormat(name = "answer_validate", schema = buildValidationSchema()))
                         )
@@ -782,8 +784,8 @@ class AssessmentViewModel @Inject constructor(
         val assessment = quizState.assessment ?: return
         viewModelScope.launch {
             try {
-                val model = resolveModel(currentChild, "assessmentModel")
-                val temp = resolveTemperature(currentChild)
+                val model = resolveModel(currentChild, "assessmentModel", assessment.lang)
+                val temp = resolveTemperature(currentChild, assessment.lang)
 
                 val langName = when (assessment.lang.lowercase()) {
                     "hi" -> "Hindi"
@@ -831,7 +833,7 @@ class AssessmentViewModel @Inject constructor(
                         val request = LlmResponseRequest(
                             model = model,
                             input = prompt,
-                            temperature = temp,
+                            temperature = null, // Grok does not support temperature parameter
                             maxOutputTokens = 1024
                         )
                         val res = xaiApi.createResponse("Bearer ${BuildConfig.XAI_API_KEY}", request)
@@ -877,8 +879,8 @@ class AssessmentViewModel @Inject constructor(
     }
 
     private suspend fun callGeminiForQuestions(subject: String, classNum: String, lang: String): List<AssessmentQuestion> {
-        val model = resolveModel(currentChild, "assessmentModel")
-        val temp = resolveTemperature(currentChild)
+        val model = resolveModel(currentChild, "assessmentModel", lang)
+        val temp = resolveTemperature(currentChild, lang)
 
         // Load prompt from Gist
         val gistContent = try {
@@ -913,7 +915,7 @@ class AssessmentViewModel @Inject constructor(
                 val request = LlmResponseRequest(
                     model = model,
                     input = prompt,
-                    temperature = temp,
+                    temperature = null, // Grok does not support temperature parameter
                     maxOutputTokens = 4096,
                     text = LlmTextFormat(LlmJsonSchemaFormat(name = "assessment_generate", schema = schemaJson))
                 )
@@ -1055,33 +1057,18 @@ Return ONLY the JSON array, no markdown, no explanation.
         }
     }
 
-    private suspend fun resolveModel(childName: String, field: String): String {
-        if (childName.isBlank()) return "gemini-3.5-flash"
+    /** Resolve the quiz LLM model from global settings for the given lang. */
+    private suspend fun resolveModel(childName: String, field: String, lang: String = "en"): String {
         return try {
-            val sDoc = db.collection("kids").document(childName)
-                .collection("config").document("settings").get().await()
-            if (sDoc.exists()) {
-                val overrideModel = sDoc.getString(field)
-                val geminiModel = sDoc.getString("geminiModel") ?: "gemini-3.5-flash"
-                overrideModel ?: geminiModel
-            } else {
-                "gemini-3.5-flash"
-            }
+            globalSettingsRepo.load().resolve("quiz", lang).llm.model
         } catch (_: Exception) {
             "gemini-3.5-flash"
         }
     }
 
-    private suspend fun resolveTemperature(childName: String): Double {
-        if (childName.isBlank()) return 0.7
+    private suspend fun resolveTemperature(childName: String, lang: String = "en"): Double {
         return try {
-            val sDoc = db.collection("kids").document(childName)
-                .collection("config").document("settings").get().await()
-            if (sDoc.exists()) {
-                sDoc.getDouble("globalTemperature") ?: 0.7
-            } else {
-                0.7
-            }
+            globalSettingsRepo.load().resolve("quiz", lang).llm.temperature
         } catch (_: Exception) {
             0.7
         }

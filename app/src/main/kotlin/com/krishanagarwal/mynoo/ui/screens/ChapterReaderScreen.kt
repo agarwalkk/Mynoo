@@ -44,6 +44,7 @@ import coil.request.ImageRequest
 import com.krishanagarwal.mynoo.data.repository.ChapterParagraph
 import com.krishanagarwal.mynoo.data.repository.ChapterSentence
 import com.krishanagarwal.mynoo.data.repository.MediaItem
+import com.krishanagarwal.mynoo.data.repository.WordTiming
 import com.krishanagarwal.mynoo.ui.theme.LocalMynooExtras
 import com.krishanagarwal.mynoo.ui.viewmodel.LearnViewModel
 import com.krishanagarwal.mynoo.ui.viewmodel.VocabPopupState
@@ -259,19 +260,21 @@ fun ChapterReaderScreen(
     // ── Vocab word popup (single tap) ─────────────────────────────────────────
     ui.vocabPopup?.let { popup ->
         VocabPopupDialog(
-            state          = popup,
-            playing        = ui.vocabWordPlaying,
-            subject        = subject,
-            fontSizeOffset = fontSizeOffset,
-            onGenerate     = { word, sentence -> vm.generateWordMeaning(word, sentence, subject) },
-            onRetry        = { word, sentence -> vm.retryWordMeaning(word, sentence, subject) },
-            onPlayStop     = {
+            state                = popup,
+            playing              = ui.vocabWordPlaying,
+            vocabActiveWordIndex = ui.vocabActiveWordIndex,
+            vocabTimings         = ui.vocabTimings,
+            subject              = subject,
+            fontSizeOffset       = fontSizeOffset,
+            onGenerate           = { word, sentence -> vm.generateWordMeaning(word, sentence, subject) },
+            onRetry              = { word, sentence -> vm.retryWordMeaning(word, sentence, subject) },
+            onPlayStop           = {
                 when (val p = popup) {
-                    is VocabPopupState.Found -> vm.toggleVocabAudio(p.entry.audioPath)
+                    is VocabPopupState.Found -> vm.toggleVocabAudio(p.entry)
                     else -> {}
                 }
             },
-            onDismiss      = { vm.dismissVocabPopup() },
+            onDismiss            = { vm.dismissVocabPopup() },
         )
     }
 
@@ -915,14 +918,16 @@ private fun ChapterHeader(
 
 @Composable
 private fun VocabPopupDialog(
-    state:      VocabPopupState,
-    playing:    Boolean,
-    subject:    String,
-    fontSizeOffset: Int,
-    onGenerate: (word: String, sentence: String) -> Unit,
-    onRetry:    (word: String, sentence: String) -> Unit,
-    onPlayStop: () -> Unit,
-    onDismiss:  () -> Unit,
+    state:               VocabPopupState,
+    playing:             Boolean,
+    vocabActiveWordIndex: Int?,
+    vocabTimings:        List<WordTiming>?,
+    subject:             String,
+    fontSizeOffset:      Int,
+    onGenerate:          (word: String, sentence: String) -> Unit,
+    onRetry:             (word: String, sentence: String) -> Unit,
+    onPlayStop:          () -> Unit,
+    onDismiss:           () -> Unit,
 ) {
     Dialog(
         onDismissRequest = onDismiss,
@@ -1104,6 +1109,35 @@ private fun VocabPopupDialog(
                                 modifier = Modifier.fillMaxWidth(),
                                 verticalArrangement = Arrangement.spacedBy(6.dp)
                             ) {
+                                // speakText with word-by-word highlight when ElevenLabs timings are available
+                                if (state.entry.speakText.isNotBlank()) {
+                                    val annotated = if (vocabTimings != null) {
+                                        buildAnnotatedString {
+                                            for ((idx, timing) in vocabTimings.withIndex()) {
+                                                if (idx > 0) append(" ")
+                                                if (idx == vocabActiveWordIndex) {
+                                                    withStyle(SpanStyle(
+                                                        background  = MaterialTheme.colorScheme.primaryContainer,
+                                                        color       = MaterialTheme.colorScheme.onPrimaryContainer,
+                                                        fontWeight  = FontWeight.Bold,
+                                                    )) { append(timing.word) }
+                                                } else {
+                                                    append(timing.word)
+                                                }
+                                            }
+                                        }
+                                    } else {
+                                        AnnotatedString(state.entry.speakText)
+                                    }
+                                    Text(
+                                        text     = annotated,
+                                        style    = MaterialTheme.typography.bodyMedium.copy(
+                                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                        ).scale(fontSizeOffset),
+                                        modifier = Modifier.fillMaxWidth(),
+                                    )
+                                    HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.3f))
+                                }
                                 Text(
                                     text  = state.entry.meaning,
                                     style = MaterialTheme.typography.bodyLarge.scale(fontSizeOffset),

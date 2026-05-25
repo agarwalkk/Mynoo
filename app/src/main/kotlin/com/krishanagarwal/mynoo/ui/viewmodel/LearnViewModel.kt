@@ -60,6 +60,8 @@ data class ReaderUiState(
     val popupIsPlaying:      Boolean           = false,
     val vocabPopup:          VocabPopupState?  = null,
     val vocabWordPlaying:    Boolean           = false,
+    val vocabActiveWordIndex: Int?             = null,
+    val vocabTimings:        List<WordTiming>? = null,
     val resumeFromId:        String?           = null,
 )
 
@@ -90,6 +92,7 @@ class LearnViewModel @Inject constructor(
     private var vocabPlayer:      MediaPlayer? = null
     // Pre-scheduled word highlight coroutines
     private var wordScope:      CoroutineScope? = null
+    private var vocabWordScope: CoroutineScope? = null
     private var currentTimings: List<WordTiming>? = null
     private var pausePosSec:    Double        = 0.0
     // Playback speed (1.0 = normal; delays scale as 1/speed)
@@ -476,7 +479,7 @@ class LearnViewModel @Inject constructor(
                 it.copy(vocabPopup = if (entry != null)
                     VocabPopupState.Found(word, entry, sentenceText) else VocabPopupState.Ask(word, sentenceText))
             }
-            if (entry != null) startVocabAudio(entry.audioPath)
+            if (entry != null) startVocabAudio(entry)
             return
         }
         _reader.update { it.copy(vocabPopup = VocabPopupState.Loading(word)) }
@@ -489,7 +492,7 @@ class LearnViewModel @Inject constructor(
                 it.copy(vocabPopup = if (entry != null)
                     VocabPopupState.Found(word, entry, sentenceText) else VocabPopupState.Ask(word, sentenceText))
             }
-            if (entry != null) startVocabAudio(entry.audioPath)
+            if (entry != null) startVocabAudio(entry)
         }
     }
 
@@ -535,7 +538,7 @@ class LearnViewModel @Inject constructor(
                     vocabCachePresent.add(key); vocabCacheValues[key] = entry
                     if (tapIdCounter != tapId) return@onSuccess
                     _reader.update { it.copy(vocabPopup = VocabPopupState.Found(word, entry, sentence)) }
-                    startVocabAudio(entry.audioPath)
+                    startVocabAudio(entry)
                 }
                 .onFailure { e ->
                     if (tapIdCounter != tapId) return@onFailure
@@ -557,14 +560,14 @@ class LearnViewModel @Inject constructor(
         _reader.update { it.copy(vocabPopup = null) }
     }
 
-    fun toggleVocabAudio(audioPath: String) {
-        if (_reader.value.vocabWordPlaying) stopVocabAudio() else startVocabAudio(audioPath)
+    fun toggleVocabAudio(entry: VocabEntry) {
+        if (_reader.value.vocabWordPlaying) stopVocabAudio() else startVocabAudio(entry)
     }
 
-    private fun startVocabAudio(audioPath: String) {
+    private fun startVocabAudio(entry: VocabEntry) {
         stopVocabAudio()
-        val url = vocabRepo.audioUrl(audioPath)
-        _reader.update { it.copy(vocabWordPlaying = true) }
+        val url = vocabRepo.audioUrl(entry.audioPath)
+        _reader.update { it.copy(vocabWordPlaying = true, vocabActiveWordIndex = null, vocabTimings = null) }
         val mp = MediaPlayer()
         vocabPlayer = mp
         mp.setAudioAttributes(
@@ -574,22 +577,72 @@ class LearnViewModel @Inject constructor(
                 .build()
         )
         mp.setDataSource(url)
-        mp.setOnPreparedListener  { it.start() }
-        mp.setOnCompletionListener { _reader.update { s -> s.copy(vocabWordPlaying = false) } }
-        mp.setOnErrorListener     { _, _, _ -> _reader.update { s -> s.copy(vocabWordPlaying = false) }; true }
+        mp.setOnPreparedListener { player ->
+            player.start()
+            scheduleVocabHighlights(_reader.value.vocabTimings)
+        }
+        mp.setOnCompletionListener {
+            vocabWordScope?.cancel(); vocabWordScope = null
+            _reader.update { s -> s.copy(vocabWordPlaying = false, vocabActiveWordIndex = null, vocabTimings = null) }
+        }
+        mp.setOnErrorListener { _, _, _ ->
+            vocabWordScope?.cancel(); vocabWordScope = null
+            _reader.update { s -> s.copy(vocabWordPlaying = false, vocabActiveWordIndex = null, vocabTimings = null) }
+            true
+        }
         mp.prepareAsync()
+        // Load timings in parallel — small JSON file, arrives before audio is prepared in practice
+        val timingsPath = entry.timingsPath
+        if (timingsPath != null) {
+            viewModelScope.launch(Dispatchers.IO) {
+                val timings = vocabRepo.loadTimings(timingsPath)
+                withContext(Dispatchers.Main) {
+                    _reader.update { it.copy(vocabTimings = timings) }
+                    // If audio already started, schedule from current position
+                    if (_reader.value.vocabWordPlaying) {
+                        val posSec = try { mp.currentPosition / 1000.0 } catch (_: Exception) { 0.0 }
+                        scheduleVocabHighlights(timings, posSec)
+                    }
+                    // Otherwise onPrepared will pick them up from _reader.value.vocabTimings
+                }
+            }
+        }
+    }
+
+    private fun scheduleVocabHighlights(timings: List<WordTiming>?, fromSec: Double = 0.0) {
+        vocabWordScope?.cancel()
+        if (timings.isNullOrEmpty()) { vocabWordScope = null; return }
+        val scope = CoroutineScope(Dispatchers.Main + SupervisorJob())
+        vocabWordScope = scope
+        for ((index, timing) in timings.withIndex()) {
+            if (timing.start < fromSec) continue
+            val delayMs = ((timing.start - fromSec) * 1000.0).toLong().coerceAtLeast(0L)
+            scope.launch {
+                delay(delayMs)
+                _reader.update { it.copy(vocabActiveWordIndex = index) }
+            }
+        }
+        timings.lastOrNull()?.let { last ->
+            val clearMs = ((last.end - fromSec) * 1000.0).toLong().coerceAtLeast(0L)
+            scope.launch {
+                delay(clearMs)
+                _reader.update { it.copy(vocabActiveWordIndex = null) }
+            }
+        }
     }
 
     fun stopVocabAudio() {
+        vocabWordScope?.cancel(); vocabWordScope = null
         try { vocabPlayer?.stop(); vocabPlayer?.release() } catch (_: Exception) {}
         vocabPlayer = null
-        _reader.update { it.copy(vocabWordPlaying = false) }
+        _reader.update { it.copy(vocabWordPlaying = false, vocabActiveWordIndex = null, vocabTimings = null) }
     }
 
     override fun onCleared() {
         super.onCleared()
         positionPollingScope?.cancel(); positionPollingScope = null
         wordScope?.cancel(); wordScope = null
+        vocabWordScope?.cancel(); vocabWordScope = null
         mediaPlayer?.let { try { it.stop(); it.release() } catch (_: Exception) {} }
         mediaPlayer = null
         try { vocabPlayer?.stop(); vocabPlayer?.release() } catch (_: Exception) {}

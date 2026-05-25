@@ -26,6 +26,11 @@ data class GeminiInlineData(
     val data: String,                   // base64
 )
 
+data class GeminiThinkingConfig(
+    @SerializedName("thinkingBudget")
+    val thinkingBudget: Int,
+)
+
 data class GeminiGenConfig(
     val temperature: Double? = null,
     @SerializedName("responseModalities")
@@ -33,6 +38,8 @@ data class GeminiGenConfig(
     val speechConfig: GeminiSpeechConfig? = null,
     val responseMimeType: String? = null,
     val responseSchema: JsonElement? = null,
+    @SerializedName("thinkingConfig")
+    val thinkingConfig: GeminiThinkingConfig? = null,
 )
 
 data class GeminiSpeechConfig(

@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.krishanagarwal.mynoo.data.model.Child
 import com.krishanagarwal.mynoo.data.repository.ChildRepository
+import com.krishanagarwal.mynoo.data.repository.GlobalSettingsRepository
 import com.krishanagarwal.mynoo.data.store.MynooPrefsStore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -23,8 +24,9 @@ data class ChildSelectUiState(
 
 @HiltViewModel
 class ChildViewModel @Inject constructor(
-    private val repo:  ChildRepository,
-    private val prefs: MynooPrefsStore,
+    private val repo:               ChildRepository,
+    private val prefs:              MynooPrefsStore,
+    private val globalSettingsRepo: GlobalSettingsRepository,
 ) : ViewModel() {
 
     private val _ui = MutableStateFlow(ChildSelectUiState())
@@ -73,5 +75,17 @@ class ChildViewModel @Inject constructor(
 
     fun saveLastChild(name: String, classNum: String) {
         viewModelScope.launch { prefs.saveLastChild(name, classNum) }
+    }
+
+    /** Verifies the PIN against Firestore global settings. Falls back to "1234" if unavailable. */
+    fun verifyPin(input: String, onResult: (Boolean) -> Unit) {
+        viewModelScope.launch {
+            val correctPin = try {
+                globalSettingsRepo.load().pin
+            } catch (_: Exception) {
+                "1234"
+            }
+            onResult(input == correctPin)
+        }
     }
 }

@@ -1,18 +1,19 @@
-package com.krishanagarwal.mynoo.ui.screens
+﻿package com.krishanagarwal.mynoo.ui.screens
 
-import android.util.Log
 import android.widget.Toast
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material.icons.filled.ArrowDropDown
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -20,15 +21,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.google.firebase.firestore.FieldValue
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.SetOptions
-import com.krishanagarwal.mynoo.data.model.ChildState
+import com.krishanagarwal.mynoo.data.model.*
 import com.krishanagarwal.mynoo.ui.viewmodel.AssessmentViewModel
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.tasks.await
+import com.krishanagarwal.mynoo.ui.viewmodel.ParentSettingsViewModel
+import com.krishanagarwal.mynoo.ui.viewmodel.SaveStatus
 
 private fun formatDate(isoString: String): String {
     if (isoString.isBlank()) return ""
@@ -41,18 +40,11 @@ private fun formatDate(isoString: String): String {
         try {
             if (isoString.length >= 10 && isoString[4] == '-' && isoString[7] == '-') {
                 val parts = isoString.take(10).split("-")
-                val year = parts[0]
-                val monthNum = parts[1].toIntOrNull() ?: 1
-                val day = parts[2].toIntOrNull() ?: 1
+                val year = parts[0]; val monthNum = parts[1].toIntOrNull() ?: 1; val day = parts[2].toIntOrNull() ?: 1
                 val months = listOf("", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
-                val monthStr = months.getOrNull(monthNum) ?: "Jan"
-                "$day $monthStr $year"
-            } else {
-                isoString
-            }
-        } catch (_: Exception) {
-            isoString
-        }
+                "$day ${months.getOrNull(monthNum) ?: "Jan"} $year"
+            } else isoString
+        } catch (_: Exception) { isoString }
     }
 }
 
@@ -61,257 +53,94 @@ fun ParentDashboardScreen(
     childState:             ChildState,
     onNavigateToProgress:   () -> Unit,
     onNavigateToAssessment: (assessmentId: String, childName: String) -> Unit,
-    assessmentVm:           AssessmentViewModel = hiltViewModel()
+    assessmentVm:           AssessmentViewModel     = hiltViewModel(),
+    settingsVm:             ParentSettingsViewModel = hiltViewModel(),
 ) {
-    val db = remember { FirebaseFirestore.getInstance() }
-    val scope = rememberCoroutineScope()
-    val context = LocalContext.current
+    val context    = LocalContext.current
+    val settings   by settingsVm.settings.collectAsState()
+    val isLoading  by settingsVm.isLoading.collectAsState()
+    val saveStatus by settingsVm.saveStatus.collectAsState()
+    val listState  by assessmentVm.list.collectAsState()
+    val quizState  by assessmentVm.quiz.collectAsState()
 
-    val allModels = listOf(
-        "gemini-3.5-flash" to "Gemini 3.5 Flash",
-        "gemini-3.1-flash-lite-preview" to "Gemini 3.1 Flash Lite",
-        "gemini-3-flash-preview" to "Gemini 3 Flash Preview",
-        "gemini-2.5-flash" to "Gemini 2.5 Flash",
-        "gemini-2.5-flash-lite" to "Gemini 2.5 Flash Lite",
-        "grok-4-1-fast-reasoning" to "Grok 4.1 Fast (recommended)",
-        "grok-3-mini-fast" to "Grok 3 Mini Fast",
-        "gpt-4.1" to "GPT-4.1",
-        "gpt-4.1-mini" to "GPT-4.1 Mini",
-        "gpt-5" to "GPT-5",
-        "gpt-5.1" to "GPT-5.1",
-        "gpt-5.4-mini" to "GPT-5.4 Mini",
-        "gpt-5.4" to "GPT-5.4",
-        "sarvam-m" to "Sarvam-M (Hindi/Punjabi)"
-    )
-    val overrideModels = listOf(null to "Same as Tutor") + allModels
-
-    val ttsOptions = listOf(
-        null to "Auto",
-        "google" to "Google Gemini TTS",
-        "sarvam" to "Sarvam AI TTS",
-        "elevenlabs" to "ElevenLabs TTS"
-    )
-    val sttOptions = listOf(
-        null to "Auto",
-        "google" to "Google STT V1",
-        "sarvam" to "Sarvam STT"
-    )
-
-    // Talk settings
-    var globalModel by remember { mutableStateOf("gemini-3.5-flash") }
-    var hiModel by remember { mutableStateOf<String?>(null) }
-    var paModel by remember { mutableStateOf<String?>(null) }
-    var tutorTts by remember { mutableStateOf<String?>(null) }
-    var tutorStt by remember { mutableStateOf<String?>(null) }
-
-    // Read settings
-    var readerModel by remember { mutableStateOf<String?>(null) }
-    var readerTts by remember { mutableStateOf<String?>(null) }
-
-    // Quiz settings
-    var assessmentModel by remember { mutableStateOf<String?>(null) }
-    var assessmentTts by remember { mutableStateOf<String?>(null) }
-    var assessmentStt by remember { mutableStateOf<String?>(null) }
-
-    var enDiff  by remember { mutableStateOf(5f) }
-    var hiDiff  by remember { mutableStateOf(5f) }
-    var paDiff  by remember { mutableStateOf(5f) }
-
-    // Subject Assessments Dialog & State
+    var selectedFunction by remember { mutableStateOf(0) }
+    var selectedLang     by remember { mutableStateOf(0) }
+    var showPinDialog    by remember { mutableStateOf(false) }
     var showCreateDialog by remember { mutableStateOf(false) }
-    var createSubject by remember { mutableStateOf("Hindi") }
-    var createClass by remember { mutableStateOf(childState.classNum.ifBlank { "7" }) }
-    var createLang by remember { mutableStateOf("hi") }
-
-    val listState by assessmentVm.list.collectAsState()
-    val quizState by assessmentVm.quiz.collectAsState()
+    var createSubject    by remember { mutableStateOf("Hindi") }
+    var createClass      by remember { mutableStateOf(childState.classNum.ifBlank { "7" }) }
+    var createLang       by remember { mutableStateOf("hi") }
 
     LaunchedEffect(childState.name) {
-        if (childState.name.isNotBlank()) {
-            assessmentVm.loadAssessments(childState.name)
-            try {
-                val doc = db.collection("kids").document(childState.name)
-                    .collection("config").document("settings").get().await()
-                if (doc.exists()) {
-                    globalModel = doc.getString("geminiModel") ?: "gemini-3.5-flash"
-                    hiModel = doc.getString("hiModel")
-                    paModel = doc.getString("paModel")
-                    assessmentModel = doc.getString("assessmentModel")
-                    readerModel = doc.getString("readerModel")
-
-                    enDiff = doc.getDouble("enDiff")?.toFloat() ?: 5f
-                    hiDiff = doc.getDouble("hiDiff")?.toFloat() ?: 5f
-                    paDiff = doc.getDouble("paDiff")?.toFloat() ?: 5f
-
-                    val ttsMap = doc.get("ttsProvider") as? Map<*, *>
-                    tutorTts = ttsMap?.get("tutorSession") as? String
-                    assessmentTts = ttsMap?.get("assessmentQuiz") as? String
-                    readerTts = ttsMap?.get("chapterReading") as? String
-
-                    val sttMap = doc.get("sttProvider") as? Map<*, *>
-                    tutorStt = sttMap?.get("tutorSession") as? String
-                    assessmentStt = sttMap?.get("assessmentQuiz") as? String
-                }
-            } catch (e: Exception) {
-                Log.e("ParentDashboard", "Error loading settings", e)
-            }
-        }
+        if (childState.name.isNotBlank()) assessmentVm.loadAssessments(childState.name)
     }
-
     LaunchedEffect(quizState.assessment) {
         val a = quizState.assessment
-        if (a != null && a.id.isNotBlank() && !quizState.generating) {
-            showCreateDialog = false
-        }
+        if (a != null && a.id.isNotBlank() && !quizState.generating) showCreateDialog = false
+    }
+
+    fun currentFn(): FunctionConfig = when (selectedFunction) { 1 -> settings.read; 2 -> settings.quiz; else -> settings.talk }
+    fun currentLangConfig(): LangConfig = when (selectedLang) { 1 -> currentFn().hi; 2 -> currentFn().pa; else -> currentFn().en }
+
+    fun saveLangConfig(lc: LangConfig) {
+        val fn    = currentFn()
+        val newFn = when (selectedLang) { 1 -> fn.copy(hi = lc); 2 -> fn.copy(pa = lc); else -> fn.copy(en = lc) }
+        val newSettings = when (selectedFunction) { 1 -> settings.copy(read = newFn); 2 -> settings.copy(quiz = newFn); else -> settings.copy(talk = newFn) }
+        settingsVm.updateSettings(newSettings)
     }
 
     Column(
         modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
-        Text("Parent Dashboard",
-            style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.Bold),
-            color = MaterialTheme.colorScheme.primary)
-        Text("Child: ${childState.name} · Class ${childState.classNum}",
-            style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Row(Modifier.fillMaxWidth(), Arrangement.SpaceBetween, Alignment.CenterVertically) {
+            Column {
+                Text("Parent Dashboard", style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.Bold), color = MaterialTheme.colorScheme.primary)
+                Text("Child: ${childState.name} · Class ${childState.classNum}", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
+            OutlinedButton(onClick = { showPinDialog = true }) { Text("Change PIN") }
+        }
 
-        // Progress Card
-        ElevatedCard(
-            modifier = Modifier
-                .fillMaxWidth()
-                .clickable { onNavigateToProgress() },
-            shape = RoundedCornerShape(12.dp),
-            colors = CardDefaults.elevatedCardColors(containerColor = MaterialTheme.colorScheme.surface)
-        ) {
-            Row(
-                modifier = Modifier.padding(16.dp),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Column(modifier = Modifier.weight(1f)) {
-                    Text(
-                        text = "📈 View Learner Progress",
-                        style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                        color = MaterialTheme.colorScheme.primary
-                    )
+        ElevatedCard(modifier = Modifier.fillMaxWidth().clickable { onNavigateToProgress() }, shape = RoundedCornerShape(12.dp)) {
+            Row(Modifier.padding(16.dp), Arrangement.SpaceBetween, Alignment.CenterVertically) {
+                Column(Modifier.weight(1f)) {
+                    Text("📈 View Learner Progress", style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold), color = MaterialTheme.colorScheme.primary)
                     Spacer(Modifier.height(4.dp))
-                    Text(
-                        text = "See streaks, learning heatmap, and analytics for ${childState.name}.",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
+                    Text("See streaks, heatmap, and analytics for ${childState.name}.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }
-                Icon(
-                    imageVector = Icons.AutoMirrored.Filled.ArrowForward,
-                    contentDescription = "View Progress",
-                    tint = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.size(24.dp)
-                )
+                Icon(Icons.AutoMirrored.Filled.ArrowForward, "View Progress", tint = MaterialTheme.colorScheme.primary)
             }
         }
 
-        // Subject Assessments Card
-        ElevatedCard(
-            modifier = Modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(12.dp),
-            colors = CardDefaults.elevatedCardColors(containerColor = MaterialTheme.colorScheme.surface)
-        ) {
-            Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text(
-                        text = "📝 Subject Assessments",
-                        style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                        color = MaterialTheme.colorScheme.primary
-                    )
-                    Button(
-                        onClick = { showCreateDialog = true },
-                        shape = RoundedCornerShape(8.dp),
-                        contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp),
-                        colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary)
-                    ) {
+        ElevatedCard(modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(12.dp)) {
+            Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                Row(Modifier.fillMaxWidth(), Arrangement.SpaceBetween, Alignment.CenterVertically) {
+                    Text("📝 Subject Assessments", style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold), color = MaterialTheme.colorScheme.primary)
+                    Button(onClick = { showCreateDialog = true }, shape = RoundedCornerShape(8.dp), contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp)) {
                         Text("+ Create", style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold))
                     }
                 }
-
-                val pendingAssessments = remember(listState.assessments) {
-                    listState.assessments.filter { it.status != "completed" }
-                }
-
+                val pending = remember(listState.assessments) { listState.assessments.filter { it.status != "completed" } }
                 if (listState.loading) {
-                    CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally).size(24.dp))
-                } else if (pendingAssessments.isEmpty()) {
-                    Text(
-                        text = if (listState.assessments.isNotEmpty()) 
-                            "No pending assessments. All are completed — view them from the child's assessment list."
-                        else 
-                            "No assessments yet. Tap Create to generate one with AI.",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp)
-                    )
+                    CircularProgressIndicator(Modifier.align(Alignment.CenterHorizontally).size(24.dp))
+                } else if (pending.isEmpty()) {
+                    Text(if (listState.assessments.isNotEmpty()) "No pending assessments." else "No assessments yet. Tap Create to generate one with AI.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.padding(vertical = 8.dp))
                 } else {
                     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                        pendingAssessments.forEach { a ->
-                            val statusColor = when (a.status) {
-                                "in_progress" -> Color(0xFFE67E22)
-                                else -> Color(0xFF2980B9)
-                            }
-                            val statusLabel = when (a.status) {
-                                "in_progress" -> "▶ In Progress"
-                                else -> "⏳ Ready"
-                            }
-                            
-                            Card(
-                                modifier = Modifier.fillMaxWidth(),
-                                shape = RoundedCornerShape(8.dp),
-                                border = BorderStroke(1.dp, Color(0xFFE2E8F0)),
-                                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
-                            ) {
-                                Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                                    Row(
-                                        modifier = Modifier.fillMaxWidth(),
-                                        horizontalArrangement = Arrangement.SpaceBetween,
-                                        verticalAlignment = Alignment.Top
-                                    ) {
-                                        Column(modifier = Modifier.weight(1f)) {
-                                            Text(
-                                                text = "${a.subject} · Class ${a.classNum}",
-                                                style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold),
-                                                color = MaterialTheme.colorScheme.onSurface
-                                            )
-                                            val langLabel = when (a.lang) {
-                                                "hi" -> "Hindi"
-                                                "pa" -> "Punjabi"
-                                                else -> "English"
-                                            }
-                                            Text(
-                                                text = "$langLabel · ${a.questions.size} Qs · ${formatDate(if (a.createdAt.isNotBlank()) a.createdAt else a.date)}",
-                                                style = MaterialTheme.typography.bodySmall,
-                                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                                            )
+                        pending.forEach { a ->
+                            val statusColor = if (a.status == "in_progress") Color(0xFFE67E22) else Color(0xFF2980B9)
+                            Card(Modifier.fillMaxWidth(), shape = RoundedCornerShape(8.dp)) {
+                                Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                                    Row(Modifier.fillMaxWidth(), Arrangement.SpaceBetween, Alignment.Top) {
+                                        Column(Modifier.weight(1f)) {
+                                            Text("${a.subject} · Class ${a.classNum}", style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold))
+                                            val langLabel = when (a.lang) { "hi" -> "Hindi"; "pa" -> "Punjabi"; else -> "English" }
+                                            Text("$langLabel · ${a.questions.size} Qs · ${formatDate(if (a.createdAt.isNotBlank()) a.createdAt else a.date)}", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                                         }
-                                        Text(
-                                            text = statusLabel,
-                                            style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
-                                            color = statusColor
-                                        )
+                                        Text(if (a.status == "in_progress") "▶ In Progress" else "⏳ Ready", style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold), color = statusColor)
                                     }
-                                    
-                                    Button(
-                                        onClick = { onNavigateToAssessment(a.id, childState.name) },
-                                        modifier = Modifier.fillMaxWidth(),
-                                        shape = RoundedCornerShape(8.dp),
-                                        colors = ButtonDefaults.buttonColors(containerColor = statusColor)
-                                    ) {
-                                        Text(
-                                            text = if (a.status == "in_progress") "Resume Assessment" else "Start Assessment (hand to child)",
-                                            style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold)
-                                        )
+                                    Button(onClick = { onNavigateToAssessment(a.id, childState.name) }, Modifier.fillMaxWidth(), shape = RoundedCornerShape(8.dp), colors = ButtonDefaults.buttonColors(containerColor = statusColor)) {
+                                        Text(if (a.status == "in_progress") "Resume Assessment" else "Start Assessment (hand to child)", style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold))
                                     }
                                 }
                             }
@@ -320,97 +149,76 @@ fun ParentDashboardScreen(
                 }
             }
         }
-        // Talk (AI Tutor) Settings Card
-        ElevatedCard(Modifier.fillMaxWidth(), shape = RoundedCornerShape(12.dp)) {
-            Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                Text("🗣 Talk (AI Tutor) Settings", style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold), color = MaterialTheme.colorScheme.primary)
-                PremiumDropdownSelector("Global/English Tutor Model", globalModel, allModels) { globalModel = it }
-                PremiumDropdownSelector("Hindi Tutor Override", hiModel, overrideModels) { hiModel = it }
-                PremiumDropdownSelector("Punjabi Tutor Override", paModel, overrideModels) { paModel = it }
-                PremiumDropdownSelector("Tutor TTS Provider", tutorTts, ttsOptions) { tutorTts = it }
-                PremiumDropdownSelector("Tutor STT Provider", tutorStt, sttOptions) { tutorStt = it }
-            }
-        }
 
-        // Read (Chapter Reader) Settings Card
-        ElevatedCard(Modifier.fillMaxWidth(), shape = RoundedCornerShape(12.dp)) {
-            Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                Text("📖 Read (Chapter Reader) Settings", style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold), color = MaterialTheme.colorScheme.primary)
-                PremiumDropdownSelector("Chapter Reader Model Override", readerModel, overrideModels) { readerModel = it }
-                PremiumDropdownSelector("Chapter Reader TTS Provider", readerTts, ttsOptions) { readerTts = it }
-            }
-        }
-
-        // Quiz (Assessments) Settings Card
-        ElevatedCard(Modifier.fillMaxWidth(), shape = RoundedCornerShape(12.dp)) {
-            Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                Text("📝 Quiz (Assessments) Settings", style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold), color = MaterialTheme.colorScheme.primary)
-                PremiumDropdownSelector("Assessment Generator Model Override", assessmentModel, overrideModels) { assessmentModel = it }
-                PremiumDropdownSelector("Assessment TTS Provider", assessmentTts, ttsOptions) { assessmentTts = it }
-                PremiumDropdownSelector("Assessment STT Provider", assessmentStt, sttOptions) { assessmentStt = it }
-            }
-        }
-
-        // Language difficulty sliders
-        ElevatedCard(Modifier.fillMaxWidth(), shape = RoundedCornerShape(12.dp)) {
-            Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                Text("Language Difficulty", style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.SemiBold))
-
-                DifficultySlider("English", enDiff) { enDiff = it }
-                DifficultySlider("Hindi",   hiDiff) { hiDiff = it }
-                DifficultySlider("Punjabi", paDiff) { paDiff = it }
-            }
-        }
-
-        Button(
-            onClick = {
-                scope.launch {
-                    if (childState.name.isNotBlank()) {
-                        try {
-                            val settingsMap = mutableMapOf<String, Any>()
-                            settingsMap["geminiModel"] = globalModel
-                            settingsMap["hiModel"] = hiModel ?: FieldValue.delete()
-                            settingsMap["paModel"] = paModel ?: FieldValue.delete()
-                            settingsMap["assessmentModel"] = assessmentModel ?: FieldValue.delete()
-                            settingsMap["readerModel"] = readerModel ?: FieldValue.delete()
-                            
-                            settingsMap["enDiff"] = enDiff.toDouble()
-                            settingsMap["hiDiff"] = hiDiff.toDouble()
-                            settingsMap["paDiff"] = paDiff.toDouble()
-
-                            val ttsMap = mapOf(
-                                "tutorSession" to tutorTts,
-                                "assessmentQuiz" to assessmentTts,
-                                "chapterReading" to readerTts
-                            )
-                            settingsMap["ttsProvider"] = ttsMap
-
-                            val sttMap = mapOf(
-                                "tutorSession" to tutorStt,
-                                "assessmentQuiz" to assessmentStt
-                            )
-                            settingsMap["sttProvider"] = sttMap
-
-                            db.collection("kids").document(childState.name)
-                                .collection("config").document("settings")
-                                .set(settingsMap, SetOptions.merge()).await()
-
-                            Toast.makeText(context, "Settings saved successfully", Toast.LENGTH_SHORT).show()
-                        } catch (e: Exception) {
-                            Log.e("ParentDashboard", "Error saving settings", e)
-                            Toast.makeText(context, "Failed to save settings: ${e.message}", Toast.LENGTH_LONG).show()
-                        }
-                    }
+        Row(Modifier.fillMaxWidth(), Arrangement.SpaceBetween, Alignment.CenterVertically) {
+            Text("AI Settings", style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold))
+            when (saveStatus) {
+                SaveStatus.SAVING -> Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+                    CircularProgressIndicator(Modifier.size(12.dp), strokeWidth = 2.dp)
+                    Text("Saving…", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }
-            },
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text("Save Settings")
+                SaveStatus.SAVED  -> Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+                    Icon(Icons.Default.Check, null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(14.dp))
+                    Text("Saved", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.primary)
+                }
+                SaveStatus.ERROR  -> Text("Save failed", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.error)
+                else              -> {}
+            }
         }
 
-        Text("Settings saved to Firestore at kids/${childState.name}/config/settings",
-            style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant)
+        if (isLoading) {
+            Box(Modifier.fillMaxWidth().padding(32.dp), Alignment.Center) { CircularProgressIndicator() }
+        } else {
+            TabRow(selectedTabIndex = selectedFunction) {
+                listOf("🗣 Talk", "📖 Read", "📝 Quiz").forEachIndexed { i, title ->
+                    Tab(selected = selectedFunction == i, onClick = { selectedFunction = i; selectedLang = 0 }, text = { Text(title, style = MaterialTheme.typography.labelMedium) })
+                }
+            }
+
+            Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                listOf("EN", "HI", "PA").forEachIndexed { i, lbl ->
+                    FilterChip(selected = selectedLang == i, onClick = { selectedLang = i }, label = { Text(lbl) })
+                }
+            }
+
+            val langCfg = currentLangConfig()
+
+            if (selectedLang > 0) {
+                Row(Modifier.fillMaxWidth(), Arrangement.SpaceBetween, Alignment.CenterVertically) {
+                    Column {
+                        Text("Inherit from English", style = MaterialTheme.typography.bodyMedium)
+                        Text(if (langCfg.inherit) "Using English AI settings" else "Custom settings enabled", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    }
+                    Switch(
+                        checked = langCfg.inherit,
+                        onCheckedChange = { inherit ->
+                            saveLangConfig(if (inherit) langCfg.copy(inherit = true) else currentFn().en.copy(inherit = false))
+                        },
+                    )
+                }
+                HorizontalDivider(Modifier.padding(top = 4.dp))
+            }
+
+            if (!langCfg.inherit) {
+                LlmSettingsCard(config = langCfg.llm, onChange = { saveLangConfig(langCfg.copy(llm = it)) })
+                TtsSettingsCard(config = langCfg.tts, onChange = { saveLangConfig(langCfg.copy(tts = it)) })
+                if (selectedFunction != 1) {
+                    SttSettingsCard(config = langCfg.stt, onChange = { saveLangConfig(langCfg.copy(stt = it)) })
+                }
+            }
+        }
+        Spacer(Modifier.height(32.dp))
+    }
+
+    if (showPinDialog) {
+        ChangePinDialog(
+            onDismiss = { showPinDialog = false },
+            onConfirm = { old, new ->
+                val ok = settingsVm.changePin(old, new)
+                if (ok) Toast.makeText(context, "PIN changed successfully", Toast.LENGTH_SHORT).show()
+                ok
+            },
+        )
     }
 
     if (showCreateDialog) {
@@ -419,183 +227,193 @@ fun ParentDashboardScreen(
             title = { Text("Create AI Assessment", fontWeight = FontWeight.Bold) },
             text = {
                 Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                    Text("Select options to generate a new custom assessment for ${childState.name}.")
-                    
-                    // Subject Selection
+                    Text("Generate a new assessment for ${childState.name}.")
                     Text("Subject", style = MaterialTheme.typography.labelLarge)
                     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                             listOf("Hindi", "English", "Punjabi").forEach { subj ->
-                                FilterChip(
-                                    selected = createSubject == subj,
-                                    onClick = { 
-                                        createSubject = subj 
-                                        createLang = when (subj) {
-                                            "Hindi" -> "hi"
-                                            "Punjabi" -> "pa"
-                                            else -> "en"
-                                        }
-                                    },
-                                    label = { Text(subj) }
-                                )
+                                FilterChip(selected = createSubject == subj, onClick = { createSubject = subj; createLang = when (subj) { "Hindi" -> "hi"; "Punjabi" -> "pa"; else -> "en" } }, label = { Text(subj) })
                             }
                         }
                         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                             listOf("Mathematics", "Science", "Social Studies").forEach { subj ->
-                                FilterChip(
-                                    selected = createSubject == subj,
-                                    onClick = { 
-                                        createSubject = subj 
-                                        createLang = "en"
-                                    },
-                                    label = { Text(subj) }
-                                )
+                                FilterChip(selected = createSubject == subj, onClick = { createSubject = subj; createLang = "en" }, label = { Text(subj) })
                             }
                         }
                         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                            listOf("Computer").forEach { subj ->
-                                FilterChip(
-                                    selected = createSubject == subj,
-                                    onClick = { 
-                                        createSubject = subj 
-                                        createLang = "en"
-                                    },
-                                    label = { Text(subj) }
-                                )
-                            }
+                            FilterChip(selected = createSubject == "Computer", onClick = { createSubject = "Computer"; createLang = "en" }, label = { Text("Computer") })
                         }
                     }
-                    
-                    // Class Selection
                     Text("Class", style = MaterialTheme.typography.labelLarge)
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        listOf("6", "7", "8", "9", "10").forEach { cls ->
-                            FilterChip(
-                                selected = createClass == cls,
-                                onClick = { createClass = cls },
-                                label = { Text(cls) }
-                            )
-                        }
+                        listOf("6", "7", "8", "9", "10").forEach { cls -> FilterChip(selected = createClass == cls, onClick = { createClass = cls }, label = { Text(cls) }) }
                     }
-                    
                     if (quizState.generating) {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.spacedBy(8.dp),
-                            modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-                        ) {
-                            CircularProgressIndicator(modifier = Modifier.size(20.dp), strokeWidth = 2.dp)
-                            Text("Generating questions via Gemini AI...")
+                        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
+                            CircularProgressIndicator(Modifier.size(20.dp), strokeWidth = 2.dp)
+                            Text("Generating questions via AI…")
                         }
                     }
-                    
-                    quizState.error?.let { err ->
-                        Text(err, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall)
-                    }
+                    quizState.error?.let { Text(it, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall) }
                 }
             },
             confirmButton = {
-                if (!quizState.generating) {
-                    Button(
-                        onClick = {
-                            assessmentVm.generateAssessment(
-                                childName = childState.name,
-                                subject = createSubject,
-                                classNum = createClass,
-                                lang = createLang
-                            )
-                        }
-                    ) {
-                        Text("Generate")
-                    }
-                }
+                if (!quizState.generating) Button(onClick = { assessmentVm.generateAssessment(childState.name, createSubject, createClass, createLang) }) { Text("Generate") }
             },
-            dismissButton = {
-                if (!quizState.generating) {
-                    TextButton(onClick = { showCreateDialog = false }) {
-                        Text("Cancel")
+            dismissButton = { if (!quizState.generating) TextButton(onClick = { showCreateDialog = false }) { Text("Cancel") } },
+        )
+    }
+}
+
+@Composable
+private fun LlmSettingsCard(config: ModelConfig, onChange: (ModelConfig) -> Unit) {
+    val selectedProvider = AiCatalogue.llmProviders.find { it.id == config.provider } ?: AiCatalogue.llmProviders.first()
+    val selectedModel    = selectedProvider.models.find { it.id == config.model } ?: selectedProvider.models.first()
+
+    ElevatedCard(Modifier.fillMaxWidth(), shape = RoundedCornerShape(12.dp)) {
+        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
+            Text("Language Model (LLM)", style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold), color = MaterialTheme.colorScheme.primary)
+            SettingLabel("Provider")
+            Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                AiCatalogue.llmProviders.forEach { provider ->
+                    FilterChip(
+                        selected = selectedProvider.id == provider.id,
+                        onClick = {
+                            if (selectedProvider.id != provider.id) {
+                                val m = provider.models.first()
+                                onChange(config.copy(provider = provider.id, model = m.id, temperature = if (m.supportsTemperature) config.temperature else 0.7, reasoningLevel = if (m.supportsReasoning) config.reasoningLevel else 0))
+                            }
+                        },
+                        label = { Text(provider.name) },
+                    )
+                }
+            }
+            ModelDropdown(label = "Model", models = selectedProvider.models, selected = selectedModel, onSelected = { m -> onChange(config.copy(model = m.id, temperature = if (m.supportsTemperature) config.temperature else 0.7)) })
+            if (selectedModel.supportsReasoning) {
+                SettingLabel("Reasoning")
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                    AiCatalogue.reasoningLabels.forEachIndexed { index, label ->
+                        FilterChip(selected = config.reasoningLevel == index, onClick = { onChange(config.copy(reasoningLevel = index)) }, label = { Text(label, style = MaterialTheme.typography.labelSmall) }, modifier = Modifier.weight(1f))
                     }
                 }
             }
-        )
-    }
-}
-
-@Composable
-private fun DifficultySlider(lang: String, value: Float, onValueChange: (Float) -> Unit) {
-    Column {
-        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-            Text(lang, style = MaterialTheme.typography.bodyMedium)
-            Text("${value.toInt()}/10", style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant)
+            if (selectedModel.supportsTemperature) {
+                var sliderTemp by remember(config.temperature) { mutableStateOf(config.temperature.toFloat()) }
+                Column {
+                    Row(Modifier.fillMaxWidth(), Arrangement.SpaceBetween) {
+                        SettingLabel("Temperature")
+                        Text("%.2f".format(sliderTemp), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    }
+                    Slider(value = sliderTemp, onValueChange = { sliderTemp = it }, onValueChangeFinished = { onChange(config.copy(temperature = sliderTemp.toDouble())) }, valueRange = 0f..1f, steps = 19)
+                }
+            }
         }
-        Slider(
-            value         = value,
-            onValueChange = onValueChange,
-            valueRange    = 1f..10f,
-            steps         = 8,
-        )
     }
 }
 
 @Composable
-private fun <T> PremiumDropdownSelector(
-    label: String,
-    selected: T,
-    options: List<Pair<T, String>>,
-    onSelected: (T) -> Unit
-) {
-    var expanded by remember { mutableStateOf(false) }
-    val selectedLabel = options.firstOrNull { it.first == selected }?.second ?: selected?.toString() ?: "None"
+private fun TtsSettingsCard(config: TtsConfig, onChange: (TtsConfig) -> Unit) {
+    val selectedProvider = AiCatalogue.ttsProviders.find { it.id == config.provider } ?: AiCatalogue.ttsProviders.first()
+    val selectedModel    = selectedProvider.models.find { it.id == config.model } ?: selectedProvider.models.first()
 
-    Column(modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)) {
-        Text(
-            text = label,
-            style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold),
-            color = MaterialTheme.colorScheme.onSurfaceVariant
-        )
+    ElevatedCard(Modifier.fillMaxWidth(), shape = RoundedCornerShape(12.dp)) {
+        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
+            Text("Text to Speech (TTS)", style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold), color = MaterialTheme.colorScheme.primary)
+            SettingLabel("Provider")
+            Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                AiCatalogue.ttsProviders.forEach { provider ->
+                    FilterChip(selected = selectedProvider.id == provider.id, onClick = { if (selectedProvider.id != provider.id) { val m = provider.models.first(); onChange(TtsConfig(provider.id, m.id)) } }, label = { Text(provider.name) })
+                }
+            }
+            ModelDropdown(label = "Model", models = selectedProvider.models, selected = selectedModel, onSelected = { m -> onChange(config.copy(model = m.id)) })
+        }
+    }
+}
+
+@Composable
+private fun SttSettingsCard(config: SttConfig, onChange: (SttConfig) -> Unit) {
+    val selectedProvider = AiCatalogue.sttProviders.find { it.id == config.provider } ?: AiCatalogue.sttProviders.first()
+    val selectedModel    = selectedProvider.models.find { it.id == config.model } ?: selectedProvider.models.first()
+
+    ElevatedCard(Modifier.fillMaxWidth(), shape = RoundedCornerShape(12.dp)) {
+        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
+            Text("Speech to Text (STT)", style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold), color = MaterialTheme.colorScheme.primary)
+            SettingLabel("Provider")
+            Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                AiCatalogue.sttProviders.forEach { provider ->
+                    FilterChip(selected = selectedProvider.id == provider.id, onClick = { if (selectedProvider.id != provider.id) { val m = provider.models.first(); onChange(SttConfig(provider.id, m.id)) } }, label = { Text(provider.name) })
+                }
+            }
+            ModelDropdown(label = "Model", models = selectedProvider.models, selected = selectedModel, onSelected = { m -> onChange(config.copy(model = m.id)) })
+        }
+    }
+}
+
+@Composable
+private fun SettingLabel(text: String) {
+    Text(text, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+}
+
+@Composable
+private fun ModelDropdown(label: String, models: List<ModelInfo>, selected: ModelInfo, onSelected: (ModelInfo) -> Unit) {
+    var expanded by remember { mutableStateOf(false) }
+    Column {
+        SettingLabel(label)
         Spacer(Modifier.height(4.dp))
         Box(
-            modifier = Modifier
+            Modifier
                 .fillMaxWidth()
-                .background(
-                    color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.3f),
-                    shape = RoundedCornerShape(8.dp)
-                )
-                .border(
-                    width = 1.dp,
-                    color = MaterialTheme.colorScheme.outline.copy(alpha = 0.5f),
-                    shape = RoundedCornerShape(8.dp)
-                )
+                .background(MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.3f), RoundedCornerShape(8.dp))
+                .border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.5f), RoundedCornerShape(8.dp))
                 .clickable { expanded = true }
-                .padding(horizontal = 16.dp, vertical = 12.dp)
+                .padding(horizontal = 16.dp, vertical = 12.dp),
         ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(selectedLabel, style = MaterialTheme.typography.bodyMedium)
-                Icon(
-                    imageVector = Icons.Default.ArrowDropDown,
-                    contentDescription = "Expand dropdown",
-                    tint = MaterialTheme.colorScheme.onSurfaceVariant
-                )
+            Row(Modifier.fillMaxWidth(), Arrangement.SpaceBetween, Alignment.CenterVertically) {
+                Column(Modifier.weight(1f)) {
+                    Text(selected.name, style = MaterialTheme.typography.bodyMedium)
+                    selected.badge?.let { Text(it, style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.primary) }
+                }
+                Icon(Icons.Default.ArrowDropDown, null, tint = MaterialTheme.colorScheme.onSurfaceVariant)
             }
-            DropdownMenu(
-                expanded = expanded,
-                onDismissRequest = { expanded = false }
-            ) {
-                options.forEach { (value, name) ->
+            DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
+                models.forEach { model ->
                     DropdownMenuItem(
-                        text = { Text(name) },
-                        onClick = {
-                            onSelected(value)
-                            expanded = false
-                        }
+                        text = { Column { Text(model.name); model.badge?.let { Text(it, style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.primary) } } },
+                        onClick = { onSelected(model); expanded = false },
                     )
                 }
             }
         }
     }
+}
+
+@Composable
+private fun ChangePinDialog(onDismiss: () -> Unit, onConfirm: (oldPin: String, newPin: String) -> Boolean) {
+    var currentPin by remember { mutableStateOf("") }
+    var newPin     by remember { mutableStateOf("") }
+    var confirmPin by remember { mutableStateOf("") }
+    var error      by remember { mutableStateOf<String?>(null) }
+
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text("Change PIN", fontWeight = FontWeight.Bold) },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                OutlinedTextField(value = currentPin, onValueChange = { if (it.length <= 6 && it.all(Char::isDigit)) currentPin = it }, label = { Text("Current PIN") }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword), singleLine = true, modifier = Modifier.fillMaxWidth())
+                OutlinedTextField(value = newPin, onValueChange = { if (it.length <= 6 && it.all(Char::isDigit)) newPin = it }, label = { Text("New PIN") }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword), singleLine = true, modifier = Modifier.fillMaxWidth())
+                OutlinedTextField(value = confirmPin, onValueChange = { if (it.length <= 6 && it.all(Char::isDigit)) confirmPin = it }, label = { Text("Confirm New PIN") }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword), singleLine = true, modifier = Modifier.fillMaxWidth())
+                error?.let { Text(it, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall) }
+            }
+        },
+        confirmButton = {
+            Button(onClick = {
+                error = when {
+                    newPin.length < 4    -> "PIN must be at least 4 digits"
+                    newPin != confirmPin -> "PINs don't match"
+                    else -> { val ok = onConfirm(currentPin, newPin); if (!ok) "Incorrect current PIN" else null }
+                }
+            }) { Text("Change") }
+        },
+        dismissButton = { TextButton(onClick = onDismiss) { Text("Cancel") } },
+    )
 }

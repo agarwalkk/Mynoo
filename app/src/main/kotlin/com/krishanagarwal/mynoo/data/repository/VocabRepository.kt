@@ -28,6 +28,7 @@ data class VocabEntry(
     val meaning:     String,
     val translation: String,
     val audioPath:   String,
+    val timingsPath: String?  = null,
     val llmInputJson: String? = null,
     val llmOutputJson: String? = null,
     val ttsModelUsed: String? = null,
@@ -35,21 +36,23 @@ data class VocabEntry(
 )
 
 data class TtsResult(
-    val audio: ByteArray,
-    val model: String,
-    val tokens: Int,
+    val audio:   ByteArray,
+    val model:   String,
+    val tokens:  Int,
+    val timings: List<WordTiming>? = null,
 )
 
 @Singleton
 class VocabRepository @Inject constructor(
-    private val client: OkHttpClient,
-    private val prefsStore: MynooPrefsStore,
-    private val db: FirebaseFirestore,
-    private val placementRepo: PlacementRepository,
-    private val geminiApi: GeminiApi,
-    private val openAiApi: OpenAiApi,
-    private val xaiApi: XaiApi,
-    private val sarvamChatApi: SarvamChatApi,
+    private val client:              OkHttpClient,
+    private val prefsStore:          MynooPrefsStore,
+    private val db:                  FirebaseFirestore,
+    private val placementRepo:       PlacementRepository,
+    private val geminiApi:           GeminiApi,
+    private val openAiApi:           OpenAiApi,
+    private val xaiApi:              XaiApi,
+    private val sarvamChatApi:       SarvamChatApi,
+    private val globalSettingsRepo:  GlobalSettingsRepository,
 ) {
     private val bucket  = "aaravtutor-1e880.firebasestorage.app"
     private val project = "aaravtutor-1e880"
@@ -109,11 +112,12 @@ class VocabRepository @Inject constructor(
     // ── Senses subcollection ─────────────────────────────────────────────────
 
     private data class VocabSense(
-        val speakText:   String,
-        val meaning:     String,
-        val translation: String,
-        val audioPath:   String,
-        val vector:      List<Double>,
+        val speakText:    String,
+        val meaning:      String,
+        val translation:  String,
+        val audioPath:    String,
+        val vector:       List<Double>,
+        val timingsPath:  String?  = null,
         val llmInputJson: String? = null,
         val llmOutputJson: String? = null,
         val ttsModelUsed: String? = null,
@@ -132,11 +136,12 @@ class VocabRepository @Inject constructor(
                 v.optDouble("doubleValue").takeIf { !it.isNaN() } ?: v.optDouble("integerValue", 0.0)
             } else emptyList()
             VocabSense(
-                speakText   = fsStr(f, "speakText"),
-                meaning     = fsStr(f, "meaning"),
-                translation = fsStr(f, "translation"),
-                audioPath   = fsStr(f, "audioPath"),
-                vector      = vec,
+                speakText    = fsStr(f, "speakText"),
+                meaning      = fsStr(f, "meaning"),
+                translation  = fsStr(f, "translation"),
+                audioPath    = fsStr(f, "audioPath"),
+                vector       = vec,
+                timingsPath  = fsStr(f, "timingsPath").takeIf { it.isNotBlank() },
                 llmInputJson = fsStr(f, "llmInputJson").takeIf { it.isNotBlank() },
                 llmOutputJson = fsStr(f, "llmOutputJson").takeIf { it.isNotBlank() },
                 ttsModelUsed = fsStr(f, "ttsModelUsed").takeIf { it.isNotBlank() },
@@ -159,11 +164,12 @@ class VocabRepository @Inject constructor(
             val norm = word.lowercase().filter { it.isLetter() }
             if (norm.length >= 3 && meaning.lowercase().filter { it.isLetter() } == norm) return null
             return VocabEntry(
-                word        = fsStr(f, "word").ifBlank { word },
-                speakText   = fsStr(f, "speakText"),
-                meaning     = meaning,
-                translation = translation,
-                audioPath   = fsStr(f, "audioPath").ifBlank { "vocab/$word.mp3" },
+                word         = fsStr(f, "word").ifBlank { word },
+                speakText    = fsStr(f, "speakText"),
+                meaning      = meaning,
+                translation  = translation,
+                audioPath    = fsStr(f, "audioPath").ifBlank { "vocab/$word.mp3" },
+                timingsPath  = fsStr(f, "timingsPath").takeIf { it.isNotBlank() },
                 llmInputJson = fsStr(f, "llmInputJson").takeIf { it.isNotBlank() },
                 llmOutputJson = fsStr(f, "llmOutputJson").takeIf { it.isNotBlank() },
                 ttsModelUsed = fsStr(f, "ttsModelUsed").takeIf { it.isNotBlank() },
@@ -181,6 +187,7 @@ class VocabRepository @Inject constructor(
             meaning       = best.meaning,
             translation   = best.translation,
             audioPath     = best.audioPath,
+            timingsPath   = best.timingsPath,
             llmInputJson  = best.llmInputJson,
             llmOutputJson = best.llmOutputJson,
             ttsModelUsed  = best.ttsModelUsed,
@@ -280,9 +287,8 @@ class VocabRepository @Inject constructor(
         else            -> "9FTUWXd0yHJL1ZiZ71RK"  // Matilda
     }
 
-    private suspend fun callElevenLabs(speakText: String, subject: String): TtsResult =
+    private suspend fun callElevenLabs(speakText: String, subject: String, modelId: String = "eleven_v3"): TtsResult =
         withContext(Dispatchers.IO) {
-            val modelId = "eleven_v3"
             val body = JSONObject().apply {
                 put("text", speakText)
                 put("model_id", modelId)
@@ -291,32 +297,82 @@ class VocabRepository @Inject constructor(
                     .put("similarity_boost", 0.75))
             }.toString()
             val req = Request.Builder()
-                .url("https://api.elevenlabs.io/v1/text-to-speech/${voiceId(subject)}")
+                .url("https://api.elevenlabs.io/v1/text-to-speech/${voiceId(subject)}/stream/with-timestamps")
                 .addHeader("xi-api-key", BuildConfig.ELEVENLABS_API_KEY)
                 .addHeader("Content-Type", "application/json")
                 .post(body.toRequestBody("application/json".toMediaType()))
                 .build()
             val resp = client.newCall(req).execute()
             if (!resp.isSuccessful) throw Exception("ElevenLabs TTS error ${resp.code}: ${resp.message}")
-            val audio = resp.body!!.bytes()
-            TtsResult(audio, modelId, speakText.length)
+
+            val audioParts = mutableListOf<ByteArray>()
+            val chars      = mutableListOf<String>()
+            val startMs    = mutableListOf<Int>()
+            val durMs      = mutableListOf<Int>()
+
+            resp.body!!.charStream().buffered().forEachLine { line ->
+                if (line.isBlank()) return@forEachLine
+                runCatching {
+                    val obj = JSONObject(line)
+                    val audioB64 = obj.optString("audio_base64", "")
+                    if (audioB64.isNotEmpty()) audioParts += Base64.decode(audioB64, Base64.DEFAULT)
+                    val alignment = obj.optJSONObject("normalizedAlignment") ?: return@runCatching
+                    val charArr  = alignment.optJSONArray("chars")              ?: return@runCatching
+                    val startArr = alignment.optJSONArray("charStartTimesMs")   ?: return@runCatching
+                    val durArr   = alignment.optJSONArray("charDurationsMs")    ?: return@runCatching
+                    for (i in 0 until charArr.length()) {
+                        chars   += charArr.getString(i)
+                        startMs += startArr.getInt(i)
+                        durMs   += durArr.getInt(i)
+                    }
+                }
+            }
+
+            val audio   = audioParts.fold(ByteArray(0)) { acc, arr -> acc + arr }
+            val timings = charsToWordTimings(chars, startMs, durMs).takeIf { it.isNotEmpty() }
+            TtsResult(audio, modelId, speakText.length, timings)
         }
 
-    private suspend fun callSarvamTts(text: String, subject: String): TtsResult =
+    /** Groups ElevenLabs character-level alignment arrays into word-level WordTimings. */
+    private fun charsToWordTimings(
+        chars:   List<String>,
+        startMs: List<Int>,
+        durMs:   List<Int>,
+    ): List<WordTiming> {
+        val timings = mutableListOf<WordTiming>()
+        val buf     = StringBuilder()
+        var wStart  = 0
+        var wEnd    = 0
+        for (i in chars.indices) {
+            val c = chars[i]
+            if (c == " " || c == "\n") {
+                if (buf.isNotEmpty()) {
+                    timings += WordTiming(word = buf.toString(), start = wStart / 1000.0, end = wEnd / 1000.0)
+                    buf.clear()
+                }
+            } else {
+                if (buf.isEmpty()) wStart = startMs[i]
+                buf.append(c)
+                wEnd = startMs[i] + durMs[i]
+            }
+        }
+        if (buf.isNotEmpty()) timings += WordTiming(word = buf.toString(), start = wStart / 1000.0, end = wEnd / 1000.0)
+        return timings
+    }
+
+    private suspend fun callSarvamTts(text: String, subject: String, modelId: String = "bulbul:v3"): TtsResult =
         withContext(Dispatchers.IO) {
             val targetLang = when (subject.lowercase()) {
-                "hindi" -> "hi-IN"
+                "hindi"   -> "hi-IN"
                 "punjabi" -> "pa-IN"
-                else -> "hi-IN"
+                else      -> "hi-IN"
             }
-            val modelId = "bulbul:v2"
+            // Note: bulbul:v3 does NOT support pitch or loudness — omit them
             val body = JSONObject().apply {
                 put("inputs", JSONArray().put(text))
                 put("target_language_code", targetLang)
-                put("speaker", "anushka")
-                put("pitch", 0)
-                put("pace", 0.85)
-                put("loudness", 1.5)
+                put("speaker", "kavya")   // valid for hi-IN and pa-IN on bulbul:v3
+                put("pace", 0.9)
                 put("speech_sample_rate", 22050)
                 put("enable_preprocessing", true)
                 put("model", modelId)
@@ -337,9 +393,8 @@ class VocabRepository @Inject constructor(
             TtsResult(audio, modelId, text.length)
         }
 
-    private suspend fun callGeminiTts(text: String, subject: String): TtsResult =
+    private suspend fun callGeminiTts(text: String, subject: String, modelId: String = "gemini-3.1-flash-tts-preview"): TtsResult =
         withContext(Dispatchers.IO) {
-            val modelId = "gemini-3.1-flash-tts-preview"
             val request = GeminiRequest(
                 contents = listOf(GeminiContent(parts = listOf(GeminiPart(text = text)))),
                 generationConfig = GeminiGenConfig(
@@ -437,6 +492,26 @@ class VocabRepository @Inject constructor(
         return header + pcmBytes
     }
 
+    /** Serialise word timings to a compact JSON byte array for Storage upload. */
+    private fun wordTimingsToJson(timings: List<WordTiming>): ByteArray {
+        val arr = JSONArray()
+        for (t in timings) arr.put(JSONObject().put("word", t.word).put("start", t.start).put("end", t.end))
+        return arr.toString().toByteArray(Charsets.UTF_8)
+    }
+
+    /** Download and parse a word-timings JSON file previously stored in Firebase Storage. */
+    suspend fun loadTimings(timingsPath: String): List<WordTiming>? = withContext(Dispatchers.IO) {
+        runCatching {
+            val resp = client.newCall(Request.Builder().url(storageUrl(timingsPath)).build()).execute()
+            if (!resp.isSuccessful) return@withContext null
+            val json = JSONArray(resp.body!!.string())
+            (0 until json.length()).map { i ->
+                val o = json.getJSONObject(i)
+                WordTiming(word = o.getString("word"), start = o.getDouble("start"), end = o.getDouble("end"))
+            }
+        }.getOrNull()
+    }
+
     // ── Firebase Storage upload ──────────────────────────────────────────────
 
     private suspend fun uploadStorage(path: String, data: ByteArray, mime: String): String =
@@ -466,8 +541,9 @@ class VocabRepository @Inject constructor(
                 put("generatedAt", JSONObject().put("timestampValue", Instant.now().toString()))
                 entry.llmInputJson?.let { put("llmInputJson", JSONObject().put("stringValue", it)) }
                 entry.llmOutputJson?.let { put("llmOutputJson", JSONObject().put("stringValue", it)) }
-                entry.ttsModelUsed?.let { put("ttsModelUsed", JSONObject().put("stringValue", it)) }
+                entry.ttsModelUsed?.let  { put("ttsModelUsed",  JSONObject().put("stringValue",  it)) }
                 entry.ttsTokenUsage?.let { put("ttsTokenUsage", JSONObject().put("integerValue", it.toString())) }
+                entry.timingsPath?.let   { put("timingsPath",   JSONObject().put("stringValue",  it)) }
             }).toString()
             val req = Request.Builder()
                 .url(firestoreDocUrl(entry.word))
@@ -485,26 +561,19 @@ class VocabRepository @Inject constructor(
         onProgress: (status: String) -> Unit = {}
     ): VocabEntry {
         val childName = prefsStore.lastChildName.first()
-        var model = "gemini-3.5-flash"
-        var temp = 0.2
+        var model       = "gemini-3.5-flash"
+        var temp        = 0.2
         var ttsProvider = "elevenlabs"
+        var ttsModel: String? = null
 
-        if (childName.isNotBlank()) {
-            try {
-                val sDoc = db.collection("kids").document(childName)
-                    .collection("config").document("settings").get().await()
-                if (sDoc.exists()) {
-                    val readerModel = sDoc.getString("readerModel")
-                    val geminiModel = sDoc.getString("geminiModel") ?: "gemini-3.5-flash"
-                    model = readerModel ?: geminiModel
-                    temp = sDoc.getDouble("globalTemperature") ?: 0.2
-
-                    val ttsMap = sDoc.get("ttsProvider") as? Map<*, *>
-                    ttsProvider = ttsMap?.get("chapterReading") as? String ?: "elevenlabs"
-                }
-            } catch (e: Exception) {
-                Log.w("VocabRepo", "Error reading settings, using defaults", e)
-            }
+        try {
+            val langConfig = globalSettingsRepo.load().resolve("read", "en")
+            model       = langConfig.llm.model
+            temp        = langConfig.llm.temperature
+            ttsProvider = langConfig.tts.provider
+            ttsModel    = langConfig.tts.model
+        } catch (e: Exception) {
+            Log.w("VocabRepo", "Error reading global settings, using defaults", e)
         }
 
         // Fetch prompt from Gist
@@ -550,7 +619,7 @@ class VocabRepository @Inject constructor(
                     model = model,
                     input = user,
                     instructions = system,
-                    temperature = temp,
+                    temperature = null, // Grok does not support temperature parameter
                     maxOutputTokens = 512,
                     text = LlmTextFormat(LlmJsonSchemaFormat(name = "vocab_meaning", schema = schemaJson))
                 )
@@ -652,27 +721,31 @@ class VocabRepository @Inject constructor(
         val meaning = p.optString("meaning", "")
         val translation = p.optString("translation", "")
 
-        val ttsModelName = when (ttsProvider) {
+        val resolvedTtsModel = ttsModel ?: when (ttsProvider) {
             "elevenlabs" -> "eleven_v3"
-            "sarvam" -> "bulbul:v2"
-            else -> "gemini-3.1-flash-tts-preview"
+            "sarvam"     -> "bulbul:v3"
+            else         -> "gemini-3.1-flash-tts-preview"
         }
-        onProgress("Generating audio using $ttsModelName...")
+        onProgress("Generating audio using $resolvedTtsModel…")
 
         // Generate TTS based on settings
         val ttsResult = when (ttsProvider) {
-            "elevenlabs" -> callElevenLabs(speakText, subject)
-            "sarvam" -> callSarvamTts(speakText, subject)
-            else -> callGeminiTts(speakText, subject)
+            "elevenlabs" -> callElevenLabs(speakText, subject, resolvedTtsModel)
+            "sarvam"     -> callSarvamTts(speakText, subject, resolvedTtsModel)
+            else         -> callGeminiTts(speakText, subject, resolvedTtsModel)
         }
 
         val audioPath = uploadStorage("vocab/$word.mp3", ttsResult.audio, "audio/mpeg")
+        val timingsPath = ttsResult.timings
+            ?.let { timings -> wordTimingsToJson(timings) }
+            ?.let { json   -> uploadStorage("vocab/${word}_timings.json", json, "application/json") }
         val entry = VocabEntry(
             word          = word,
             speakText     = speakText,
             meaning       = meaning,
             translation   = translation,
             audioPath     = audioPath,
+            timingsPath   = timingsPath,
             llmInputJson  = llmInputJson,
             llmOutputJson = llmOutputJson,
             ttsModelUsed  = ttsResult.model,

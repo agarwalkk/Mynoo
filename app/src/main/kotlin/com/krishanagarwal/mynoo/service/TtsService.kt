@@ -35,7 +35,7 @@ class TtsService @Inject constructor(
 ) {
     private var mediaPlayer: MediaPlayer? = null
 
-    suspend fun speak(text: String, lang: String = "en", provider: String? = null) = withContext(Dispatchers.IO) {
+    suspend fun speak(text: String, lang: String = "en", provider: String? = null, model: String? = null) = withContext(Dispatchers.IO) {
         stop()
         val clean = cleanForSpeech(text)
         if (clean.isBlank()) return@withContext
@@ -43,9 +43,9 @@ class TtsService @Inject constructor(
         try {
             val isMp3 = provider == "elevenlabs"
             val audioBytes = when (provider) {
-                "elevenlabs" -> callElevenLabsTts(clean, lang)
-                "sarvam" -> callSarvamTts(clean, lang)
-                else -> callGeminiTts(clean, lang)
+                "elevenlabs" -> callElevenLabsTts(clean, lang, model ?: "eleven_v3")
+                "sarvam"     -> callSarvamTts(clean, lang, model ?: "bulbul:v3")
+                else         -> callGeminiTts(clean, lang, model ?: "gemini-3.1-flash-tts-preview")
             }
             playAudioBytes(audioBytes, isMp3)
         } catch (e: Exception) {
@@ -103,11 +103,11 @@ class TtsService @Inject constructor(
         else            -> "9FTUWXd0yHJL1ZiZ71RK"  // Matilda — multilingual (Hindi)
     }
 
-    private suspend fun callElevenLabsTts(text: String, lang: String): ByteArray =
+    private suspend fun callElevenLabsTts(text: String, lang: String, modelId: String = "eleven_v3"): ByteArray =
         withContext(Dispatchers.IO) {
             val body = JSONObject().apply {
                 put("text", text)
-                put("model_id", "eleven_v3")
+                put("model_id", modelId)
                 put("voice_settings", JSONObject()
                     .put("stability", 0.5)
                     .put("similarity_boost", 0.75))
@@ -123,23 +123,22 @@ class TtsService @Inject constructor(
             resp.body!!.bytes()
         }
 
-    private suspend fun callSarvamTts(text: String, lang: String): ByteArray =
+    private suspend fun callSarvamTts(text: String, lang: String, modelId: String = "bulbul:v3"): ByteArray =
         withContext(Dispatchers.IO) {
             val targetLang = when (lang.lowercase()) {
                 "hindi", "hi" -> "hi-IN"
                 "punjabi", "pa" -> "pa-IN"
                 else -> "hi-IN"
             }
+            // Note: bulbul:v3 does NOT support pitch or loudness — omit them
             val body = JSONObject().apply {
                 put("inputs", JSONArray().put(text))
                 put("target_language_code", targetLang)
-                put("speaker", "anushka")
-                put("pitch", 0)
-                put("pace", 0.85)
-                put("loudness", 1.5)
+                put("speaker", "kavya")   // valid for hi-IN and pa-IN on bulbul:v3
+                put("pace", 0.9)
                 put("speech_sample_rate", 22050)
                 put("enable_preprocessing", true)
-                put("model", "bulbul:v2")
+                put("model", modelId)
             }.toString()
             val req = Request.Builder()
                 .url("https://api.sarvam.ai/text-to-speech")
@@ -156,10 +155,10 @@ class TtsService @Inject constructor(
             Base64.decode(audios.getString(0), Base64.DEFAULT)
         }
 
-    private suspend fun callGeminiTts(text: String, lang: String): ByteArray =
+    private suspend fun callGeminiTts(text: String, lang: String, modelId: String = "gemini-3.1-flash-tts-preview"): ByteArray =
         withContext(Dispatchers.IO) {
             val response = geminiApi.generateSpeech(
-                model   = "gemini-3.1-flash-tts-preview",
+                model   = modelId,
                 apiKey  = BuildConfig.GEMINI_API_KEY,
                 request = GeminiRequest(
                     contents = listOf(GeminiContent(parts = listOf(GeminiPart(text = text)))),

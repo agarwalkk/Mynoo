@@ -453,7 +453,7 @@ class PlacementViewModel @Inject constructor(
                         model = model,
                         input = deltaInput,
                         previousResponseId = prevId,
-                        temperature = temp,
+                        temperature = null, // Grok does not support temperature
                         maxOutputTokens = 4096,
                         text = LlmTextFormat(LlmJsonSchemaFormat(name = "next_question", schema = schemaJson))
                     )
@@ -462,7 +462,7 @@ class PlacementViewModel @Inject constructor(
                         model = model,
                         input = content,
                         instructions = system,
-                        temperature = temp,
+                        temperature = null, // Grok does not support temperature
                         maxOutputTokens = 4096,
                         text = LlmTextFormat(LlmJsonSchemaFormat(name = "next_question", schema = schemaJson))
                     )
@@ -814,7 +814,7 @@ class PlacementViewModel @Inject constructor(
                             model = model,
                             input = shortPrompt,
                             previousResponseId = prevId,
-                            temperature = 0.2,
+                            temperature = null, // Grok does not support temperature
                             maxOutputTokens = 2048,
                             text = LlmTextFormat(LlmJsonSchemaFormat(name = "final_assessment", schema = schemaJson))
                         )

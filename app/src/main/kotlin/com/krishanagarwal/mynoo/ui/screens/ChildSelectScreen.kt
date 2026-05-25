@@ -257,16 +257,18 @@ fun ChildSelectScreen(
                     OutlinedTextField(
                         value = parentPinInput,
                         onValueChange = { 
-                            if (it.length <= 4 && it.all { char -> char.isDigit() }) {
+                            if (it.length <= 6 && it.all { char -> char.isDigit() }) {
                                 parentPinInput = it
                                 pinError = false
-                                if (it.length == 4) {
-                                    if (it == "1234") {
-                                        showParentPinDialog = false
-                                        parentPinInput = ""
-                                        onNavigateToParentDashboard()
-                                    } else {
-                                        pinError = true
+                                if (it.length >= 4) {
+                                    vm.verifyPin(it) { correct ->
+                                        if (correct) {
+                                            showParentPinDialog = false
+                                            parentPinInput = ""
+                                            onNavigateToParentDashboard()
+                                        } else if (it.length >= 6) {
+                                            pinError = true
+                                        }
                                     }
                                 }
                             }
@@ -290,12 +292,14 @@ fun ChildSelectScreen(
             confirmButton = {
                 Button(
                     onClick = {
-                        if (parentPinInput == "1234") {
-                            showParentPinDialog = false
-                            parentPinInput = ""
-                            onNavigateToParentDashboard()
-                        } else {
-                            pinError = true
+                        vm.verifyPin(parentPinInput) { correct ->
+                            if (correct) {
+                                showParentPinDialog = false
+                                parentPinInput = ""
+                                onNavigateToParentDashboard()
+                            } else {
+                                pinError = true
+                            }
                         }
                     }
                 ) {
