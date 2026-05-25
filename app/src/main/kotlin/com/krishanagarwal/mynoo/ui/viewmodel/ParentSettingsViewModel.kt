@@ -27,6 +27,9 @@ class ParentSettingsViewModel @Inject constructor(
     private val _saveStatus = MutableStateFlow(SaveStatus.IDLE)
     val saveStatus: StateFlow<SaveStatus> = _saveStatus
 
+    private val _saveError = MutableStateFlow<String?>(null)
+    val saveError: StateFlow<String?> = _saveError
+
     init {
         viewModelScope.launch {
             _settings.value = globalSettingsRepo.load()
@@ -37,13 +40,15 @@ class ParentSettingsViewModel @Inject constructor(
     fun updateSettings(newSettings: GlobalSettings) {
         _settings.value = newSettings
         _saveStatus.value = SaveStatus.SAVING
+        _saveError.value = null
         viewModelScope.launch {
             try {
                 globalSettingsRepo.save(newSettings)
                 _saveStatus.value = SaveStatus.SAVED
                 delay(2000)
                 _saveStatus.value = SaveStatus.IDLE
-            } catch (_: Exception) {
+            } catch (e: Exception) {
+                _saveError.value = e.message ?: e.javaClass.simpleName
                 _saveStatus.value = SaveStatus.ERROR
             }
         }

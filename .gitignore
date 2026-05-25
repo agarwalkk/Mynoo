@@ -40,3 +40,4 @@ Desktop.ini
 
 # ── Node / tooling (if any frontend tooling is added) ───────────────────────
 node_modules/
+*google-services.json

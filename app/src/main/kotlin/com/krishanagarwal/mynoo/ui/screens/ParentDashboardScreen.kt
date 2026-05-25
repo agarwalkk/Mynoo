@@ -60,6 +60,7 @@ fun ParentDashboardScreen(
     val settings   by settingsVm.settings.collectAsState()
     val isLoading  by settingsVm.isLoading.collectAsState()
     val saveStatus by settingsVm.saveStatus.collectAsState()
+    val saveError  by settingsVm.saveError.collectAsState()
     val listState  by assessmentVm.list.collectAsState()
     val quizState  by assessmentVm.quiz.collectAsState()
 
@@ -161,7 +162,7 @@ fun ParentDashboardScreen(
                     Icon(Icons.Default.Check, null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(14.dp))
                     Text("Saved", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.primary)
                 }
-                SaveStatus.ERROR  -> Text("Save failed", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.error)
+                SaveStatus.ERROR  -> Text("Save failed: ${saveError ?: "unknown error"}", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.error)
                 else              -> {}
             }
         }
