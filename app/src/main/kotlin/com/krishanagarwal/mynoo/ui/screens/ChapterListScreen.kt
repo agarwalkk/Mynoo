@@ -9,6 +9,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ChevronRight
+import androidx.compose.material.icons.filled.CloudDone
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -93,6 +94,15 @@ fun ChapterListScreen(
                                 )
                             }
                             Spacer(Modifier.width(8.dp))
+                            // Cached indicator
+                            if (chapter.isCached) {
+                                Icon(
+                                    imageVector        = Icons.Default.CloudDone,
+                                    contentDescription = "Cached offline",
+                                    tint               = Color(0xFF2E7D32),
+                                    modifier           = Modifier.padding(end = 4.dp).size(20.dp),
+                                )
+                            }
                             // Chevron
                             Icon(
                                 imageVector        = Icons.Default.ChevronRight,

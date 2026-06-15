@@ -63,6 +63,9 @@ data class ReaderUiState(
     val vocabActiveWordIndex: Int?             = null,
     val vocabTimings:        List<WordTiming>? = null,
     val resumeFromId:        String?           = null,
+    val cacheDownloadProgress: Float?          = null,
+    val cacheDownloadComplete: Boolean         = false,
+    val isRefreshing:        Boolean           = false,
 )
 
 private data class AudioSegment(val id: String, val kind: String)
@@ -122,8 +125,12 @@ class LearnViewModel @Inject constructor(
         _reader.update { ReaderUiState(loading = true, title = title) }
         viewModelScope.launch {
             try {
-                val content = repo.getContent(classNum, subject, chapterId)
+                val isAlreadyCached = repo.isChapterCached(classNum, subject, chapterId)
+                val content = repo.getContent(classNum, subject, chapterId, forceRefresh = false)
                 _reader.update { it.copy(content = content, loading = false) }
+                if (!isAlreadyCached) {
+                    startBackgroundCacheDownload(classNum, subject, chapterId, content, forceRefresh = false)
+                }
             } catch (e: Exception) {
                 _reader.update { it.copy(loading = false, error = e.message) }
             }
@@ -169,8 +176,8 @@ class LearnViewModel @Inject constructor(
                     val timings = withContext(Dispatchers.IO) {
                         repo.getWordTimings(classNum, subject, chapterId, seg.id, seg.kind)
                     }
-                    val url = repo.audioUrl(classNum, subject, chapterId, seg.id, seg.kind, audioExt)
-                    playAndWait(url, timings)
+                    val audioSource = repo.getAudioSource(classNum, subject, chapterId, seg.id, seg.kind, audioExt)
+                    playAndWait(audioSource, timings)
                 }
                 completedNaturally = true
             } finally {
@@ -428,14 +435,14 @@ class LearnViewModel @Inject constructor(
                     activeSentenceId = sentenceId, activeWordIndex = null,
                 )
             }
-            val kind = if (_reader.value.content.paragraphs.any { it.id == sentenceId }) "paragraph" else "sentence"
+            val kind = if (sentenceId.contains("-item-") || _reader.value.content.paragraphs.any { it.id == sentenceId }) "paragraph" else "sentence"
             playJob = viewModelScope.launch(Dispatchers.Main) {
                 try {
                     val timings = withContext(Dispatchers.IO) {
                         repo.getWordTimings(classNum, subject, chapterId, sentenceId, kind)
                     }
-                    val url = repo.audioUrl(classNum, subject, chapterId, sentenceId, kind, audioExt)
-                    playAndWait(url, timings)
+                    val audioSource = repo.getAudioSource(classNum, subject, chapterId, sentenceId, kind, audioExt)
+                    playAndWait(audioSource, timings)
                 } finally {
                     _reader.update {
                         it.copy(
@@ -459,7 +466,10 @@ class LearnViewModel @Inject constructor(
             val validSents = para.sentences.filter { it.id.isNotBlank() }
             when {
                 validSents.isNotEmpty() ->
-                    validSents.forEach { sent -> result += AudioSegment(sent.id, "sentence") }
+                    validSents.forEach { sent ->
+                        val kind = if (sent.id.contains("-item-")) "paragraph" else "sentence"
+                        result += AudioSegment(sent.id, kind)
+                    }
                 para.id.isNotBlank() ->
                     result += AudioSegment(para.id, "paragraph")
             }
@@ -638,8 +648,71 @@ class LearnViewModel @Inject constructor(
         _reader.update { it.copy(vocabWordPlaying = false, vocabActiveWordIndex = null, vocabTimings = null) }
     }
 
+    private var cacheDownloadJob: Job? = null
+
+    fun refreshContent(classNum: String, subject: String, chapterId: String, title: String) {
+        _reader.update { it.copy(isRefreshing = true) }
+        viewModelScope.launch {
+            try {
+                val content = repo.getContent(classNum, subject, chapterId, forceRefresh = true)
+                _reader.update { it.copy(content = content, isRefreshing = false, error = null) }
+                startBackgroundCacheDownload(classNum, subject, chapterId, content, forceRefresh = true)
+            } catch (e: Exception) {
+                _reader.update { it.copy(isRefreshing = false, error = e.message) }
+            }
+        }
+    }
+
+    private fun startBackgroundCacheDownload(
+        classNum: String,
+        subject: String,
+        chapterId: String,
+        content: ChapterContent,
+        forceRefresh: Boolean
+    ) {
+        cacheDownloadJob?.cancel()
+        cacheDownloadJob = viewModelScope.launch(Dispatchers.IO) {
+            if (!forceRefresh && repo.isChapterFullyCached(classNum, subject, chapterId, content)) {
+                withContext(Dispatchers.Main) {
+                    _reader.update { it.copy(cacheDownloadProgress = null, cacheDownloadComplete = false) }
+                }
+                return@launch
+            }
+
+            withContext(Dispatchers.Main) {
+                _reader.update { it.copy(cacheDownloadProgress = 0f, cacheDownloadComplete = false) }
+            }
+
+            try {
+                repo.downloadChapterCache(classNum, subject, chapterId, content, forceRefresh) { progress ->
+                    viewModelScope.launch(Dispatchers.Main) {
+                        _reader.update { it.copy(cacheDownloadProgress = progress) }
+                    }
+                }
+
+                withContext(Dispatchers.Main) {
+                    _reader.update { it.copy(cacheDownloadProgress = 1f, cacheDownloadComplete = true) }
+                }
+
+                delay(2500)
+                withContext(Dispatchers.Main) {
+                    _reader.update { it.copy(cacheDownloadProgress = null, cacheDownloadComplete = false) }
+                }
+            } catch (e: Exception) {
+                withContext(Dispatchers.Main) {
+                    _reader.update { it.copy(cacheDownloadProgress = null, cacheDownloadComplete = false) }
+                }
+            }
+        }
+    }
+
+    fun getImageSource(classNum: String, subject: String, chapterId: String, url: String): String {
+        return repo.getImageSource(classNum, subject, chapterId, url)
+    }
+
     override fun onCleared() {
         super.onCleared()
+        cacheDownloadJob?.cancel(); cacheDownloadJob = null
         positionPollingScope?.cancel(); positionPollingScope = null
         wordScope?.cancel(); wordScope = null
         vocabWordScope?.cancel(); vocabWordScope = null

@@ -1,0 +1,1858 @@
+{
+  "title": "Understanding the Weather",
+  "paragraphs": [
+    {
+      "id": "p01-h1",
+      "type": "heading",
+      "text": "Understanding the Weather"
+    },
+    {
+      "id": "p01-q1",
+      "type": "blockquote",
+      "sentences": [
+        {
+          "id": "p01-q1-s1",
+          "text": "A change in the weather is sufficient to create the world and oneself anew.",
+          "meaning": "**Sufficient** — enough | **Anew** — in a new or different way\nमौसम में एक बदलाव ही दुनिया को और खुद को नए सिरे से बनाने के लिए काफी है। (A change in the weather is enough to remake the world and oneself in a new way.)"
+        }
+      ]
+    },
+    {
+      "id": "p01-a1",
+      "type": "attribution",
+      "text": "Marcel Proust, French novelist"
+    },
+    {
+      "id": "p01-media1",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p01-00.png",
+          "caption": "Sand dunes in a desert under a clear sky."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p01-03.png",
+          "caption": "A vast, snow-covered landscape with a fence."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p01-02.png",
+          "caption": "A dramatic storm brewing over a yellow field."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p01-04.png",
+          "caption": "A vibrant field of red and yellow tulips."
+        }
+      ]
+    },
+    {
+      "id": "p01-sh1",
+      "type": "subheading",
+      "text": "The Big Questions"
+    },
+    {
+      "id": "p01-l1",
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "How can we measure and monitor the weather around us?",
+        "How do weather predictions help us prepare for events like heavy rain, storms, drought and heat waves?"
+      ]
+    },
+    {
+      "id": "p02-h1",
+      "type": "heading",
+      "text": "Weather and its Elements"
+    },
+    {
+      "id": "p02-p1",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p02-p1-s1",
+          "text": "You wake up one winter morning and shiver.",
+          "meaning": "**Shiver** — to shake slightly because you are cold\nआप एक सर्दियों की सुबह उठते हैं और कांपते हैं। (You wake up one winter morning and tremble.)"
+        },
+        {
+          "id": "p02-p1-s2",
+          "text": "You reach for thick clothes to keep yourself warm.",
+          "meaning": "**Thick** — not thin\nआप खुद को गर्म रखने के लिए मोटे कपड़े पहनते हैं। (You reach for heavy clothes to keep yourself warm.)"
+        },
+        {
+          "id": "p02-p1-s3",
+          "text": "In the summer, you choose clothes that keep you cool and comfortable.",
+          "meaning": "**Comfortable** — feeling relaxed\nगर्मियों में, आप ऐसे कपड़े चुनते हैं जो आपको ठंडा और आरामदायक रखें। (In summer, you choose clothes that keep you cool and relaxed.)"
+        },
+        {
+          "id": "p02-p1-s4",
+          "text": "You are responding to your body's signals; your body is sensing the weather.",
+          "meaning": "**Responding** — reacting | **Sensing** — feeling or becoming aware of something\nआप अपने शरीर के संकेतों पर प्रतिक्रिया दे रहे हैं; आपका शरीर मौसम को महसूस कर रहा है। (You are reacting to your body's signals; your body is feeling the weather.)"
+        }
+      ]
+    },
+    {
+      "id": "p02-sh1",
+      "type": "subheading",
+      "text": "What is weather?"
+    },
+    {
+      "id": "p02-media1",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p02-00.png",
+          "caption": "Fig. 2.2: Layers of the Earth's atmosphere including the Troposphere, Tropopause, Stratosphere, and Ozone Layer."
+        }
+      ]
+    },
+    {
+      "id": "p02-p2",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p02-p2-s1",
+          "text": "Weather is a state of the Earth's atmosphere at a particular time and place.",
+          "meaning": "**Atmosphere** — the layer of gases surrounding the Earth | **Particular** — specific\nमौसम किसी विशेष समय और स्थान पर पृथ्वी के वायुमंडल की स्थिति है। (Weather is the condition of the Earth's atmosphere at a specific time and place.)"
+        },
+        {
+          "id": "p02-p2-s2",
+          "text": "But what is an atmosphere?",
+          "meaning": "**Atmosphere** — the mixture of gases around a planet\nलेकिन वायुमंडल क्या है? (But what is an atmosphere?)"
+        },
+        {
+          "id": "p02-p2-s3",
+          "text": "In simple terms, it is the layer of gases that surround some planets—in the case of our Earth, we call these gases ‘air'.",
+          "meaning": "**Gases** — substances like oxygen or nitrogen that are not liquid or solid\nसरल शब्दों में, यह गैसों की वह परत है जो कुछ ग्रहों को घेरे रहती है—हमारी पृथ्वी के मामले में, हम इन गैसों को 'हवा' कहते हैं। (In simple terms, it is the layer of gases that surrounds some planets—in the case of our Earth, we call these gases 'air'.)"
+        }
+      ]
+    },
+    {
+      "id": "p02-p3",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p02-p3-s1",
+          "text": "The Earth's atmosphere may be compared to a cake with several layers.",
+          "meaning": "**Compared** — to examine or look for the difference between two or more things\nपृथ्वी के वायुमंडल की तुलना कई परतों वाले केक से की जा सकती है। (The Earth's atmosphere can be likened to a cake with many layers.)"
+        },
+        {
+          "id": "p02-p3-s2",
+          "text": "The layer closest to the surface of the Earth is called the ‘troposphere', and that is where all land-based plants and animals (including humans!) live and breathe.",
+          "meaning": "**Troposphere** — the lowest region of the atmosphere\nपृथ्वी की सतह के सबसे करीब की परत को 'क्षोभमंडल' कहा जाता है, और यहीं पर सभी भूमि-आधारित पौधे और जानवर (मनुष्यों सहित!) रहते और सांस लेते हैं। (The layer nearest to the Earth's surface is called the 'troposphere', and this is where all land-based plants and animals, including humans, live and breathe.)"
+        }
+      ]
+    },
+    {
+      "id": "p02-p4",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p02-p4-s1",
+          "text": "It is also where almost all weather phenomena, which we will explore in this chapter, take place.",
+          "meaning": "**Phenomena** — facts or situations that are observed to exist or happen\nयह वह जगह भी है जहाँ लगभग सभी मौसम संबंधी घटनाएँ होती हैं, जिनके बारे में हम इस अध्याय में जानेंगे। (This is also the place where almost all weather-related events, which we will learn about in this chapter, occur.)"
+        },
+        {
+          "id": "p02-p4-s2",
+          "text": "The troposphere extends to a height of 6 to 18 kilometres from the ground; it is less thick at the poles (where the cold air contracts) and thicker in the tropical zone (where the warmer air expands).",
+          "meaning": "**Contracts** — becomes smaller | **Expands** — becomes larger\nक्षोभमंडल जमीन से 6 से 18 किलोमीटर की ऊंचाई तक फैला हुआ है; यह ध्रुवों पर कम मोटा होता है (जहां ठंडी हवा सिकुड़ती है) और उष्णकटिबंधीय क्षेत्र में मोटा होता है (जहां गर्म हवा फैलती है)। (The troposphere extends from 6 to 18 kilometers above the ground; it is less thick at the poles (where cold air shrinks) and thicker in the tropical zone (where warm air gets bigger).)"
+        },
+        {
+          "id": "p02-p4-s3",
+          "text": "You will study more about the other layers in your Science classes.",
+          "meaning": "**Layers** — different levels of a material\nआप अपनी विज्ञान की कक्षाओं में अन्य परतों के बारे में और अधिक अध्ययन करेंगे। (You will study more about the other levels in your Science classes.)"
+        }
+      ]
+    },
+    {
+      "id": "p02-p5",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p02-p5-s1",
+          "text": "We use many words to describe the weather — hot, cold, rainy, cloudy, humid, snowy, windy, and so on.",
+          "meaning": "**Humid** — having a high level of water vapor in the atmosphere\nहम मौसम का वर्णन करने के लिए कई शब्दों का उपयोग करते हैं - गर्म, ठंडा, बरसात, बादल, आर्द्र, बर्फीला, हवादार, इत्यादि। (We use many words to describe the weather — hot, cold, rainy, cloudy, moist, snowy, windy, and so on.)"
+        },
+        {
+          "id": "p02-p5-s2",
+          "text": "They describe the different ways in which we experience the elements of weather.",
+          "meaning": "**Elements of weather** — the different components that make up weather, like temperature and rain\nवे उन विभिन्न तरीकों का वर्णन करते हैं जिनसे हम मौसम के तत्वों का अनुभव करते हैं। (They describe the different ways we experience the components of weather.)"
+        }
+      ]
+    },
+    {
+      "id": "p02-act1",
+      "type": "activity",
+      "title": "LET'S EXPLORE",
+      "sentences": [
+        {
+          "id": "p02-act1-s1",
+          "text": "What are some of the words in your local language that you use to describe the weather?",
+          "meaning": "**Local language** — the language spoken in your area\nआपकी स्थानीय भाषा में मौसम का वर्णन करने के लिए कौन से शब्द हैं? (What are some of the words in your regional language that you use to describe the weather?)"
+        },
+        {
+          "id": "p02-act1-s2",
+          "text": "Hot, cold, warm, chilly, crisp, pleasant, and so on, are commonly used terms in English.",
+          "meaning": "**Chilly** — unpleasantly cold | **Crisp** — (of weather) cool, fresh, and invigorating | **Pleasant** — enjoyable\nअंग्रेजी में आमतौर पर हॉट, कोल्ड, वार्म, चिली, क्रिस्प, प्लेज़ेंट जैसे शब्दों का इस्तेमाल किया जाता है। (Terms like hot, cold, warm, chilly, crisp, pleasant, etc., are commonly used in English.)"
+        }
+      ]
+    },
+    {
+      "id": "p03-l1",
+      "type": "list",
+      "items": [
+        "**Temperature**: How hot or cold the atmosphere is.",
+        "**Precipitation**: Any form of water, such as rain, snow, sleet or hail, that falls from the sky.",
+        "**Atmospheric Pressure**: The weight of the air above us, felt on the Earth's surface.",
+        "**Wind**: The movement of air, including its speed and direction.",
+        "**Humidity**: The amount of water vapour in the air."
+      ]
+    },
+    {
+      "id": "p03-note1",
+      "type": "note",
+      "title": "Key Terms",
+      "sentences": [
+        {
+          "id": "p03-note1-s1",
+          "text": "Sleet: Frozen or partly frozen rain.",
+          "meaning": "**Sleet** — a form of precipitation consisting of ice pellets, often mixed with rain or snow.\nस्लीट: जमी हुई या आंशिक रूप से जमी हुई बारिश। (Sleet: Frozen or partially frozen rain.)"
+        },
+        {
+          "id": "p03-note1-s2",
+          "text": "Hail: Small, hard balls of ice that fall from the sky like rain.",
+          "meaning": "**Hail** — pellets of frozen rain that fall in showers from cumulonimbus clouds.\nओले: बर्फ की छोटी, कठोर गेंदें जो बारिश की तरह आसमान से गिरती हैं। (Hail: Small, hard balls of ice that fall from the sky like rain.)"
+        },
+        {
+          "id": "p03-note1-s3",
+          "text": "Water vapour: Water vapour is water in gaseous instead of liquid form.",
+          "meaning": "**Water vapour** — water in the form of a gas.\nजल वाष्प: जल वाष्प तरल के बजाय गैसीय रूप में पानी है। (Water vapour: Water vapour is water in a gaseous form instead of a liquid form.)"
+        },
+        {
+          "id": "p03-note1-s4",
+          "text": "Forecast: To predict or find out in advance (in our case, the weather).",
+          "meaning": "**Forecast** — to predict a future event or trend.\nपूर्वानुमान: पहले से भविष्यवाणी करना या पता लगाना (हमारे मामले में, मौसम)। (Forecast: To predict or find out in advance (in our case, the weather).)"
+        }
+      ]
+    },
+    {
+      "id": "p03-act1",
+      "type": "activity",
+      "title": "THINK ABOUT IT",
+      "sentences": [
+        {
+          "id": "p03-act1-s1",
+          "text": "Let us imagine that Krishnan from Chennai is speaking with Amir in Kashmir.",
+          "meaning": "**Imagine** — to form a mental image or concept of\nआइए कल्पना करें कि चेन्नई से कृष्णन कश्मीर में आमिर से बात कर रहे हैं। (Let's imagine that Krishnan from Chennai is talking to Amir in Kashmir.)"
+        },
+        {
+          "id": "p03-act1-s2",
+          "text": "Krishnan tells Amir that it has become chilly in Chennai after it rained the previous night.",
+          "meaning": "**Chilly** — unpleasantly cold | **Previous** — existing or occurring before in time or order\nकृष्णन आमिर को बताता है कि पिछली रात बारिश के बाद चेन्नई में ठंड हो गई है। (Krishnan tells Amir that it has become cold in Chennai after it rained the previous night.)"
+        },
+        {
+          "id": "p03-act1-s3",
+          "text": "Amir asks him how cold it is.",
+          "meaning": "**Asks** — says something in order to obtain an answer or some information\nआमिर उससे पूछता है कि कितनी ठंड है। (Amir asks him how cold it is.)"
+        },
+        {
+          "id": "p03-act1-s4",
+          "text": "How will Krishnan explain to Amir how cold it is?",
+          "meaning": "**Explain** — make (an idea, situation, or problem) clear to someone by describing it in more detail\nकृष्णन आमिर को कैसे समझाएगा कि कितनी ठंड है? (How will Krishnan make Amir understand how cold it is?)"
+        },
+        {
+          "id": "p03-act1-s5",
+          "text": "After all, what is cold for Krishnan may be quite pleasant for Amir!",
+          "meaning": "**Pleasant** — giving a sense of happy satisfaction or enjoyment\nआखिरकार, जो कृष्णन के लिए ठंडा है, वह आमिर के लिए काफी सुखद हो सकता है! (After all, what is cold for Krishnan might be quite enjoyable for Amir!)"
+        }
+      ]
+    },
+    {
+      "id": "p03-p1",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p03-p1-s1",
+          "text": "As you can see, it would be difficult for Krishnan to convey his sense of chillness to Amir unless there is a commonly agreed way to measure the temperature.",
+          "meaning": "**Convey** — to communicate a message or information | **Chillness** — a feeling of cold\nजैसा कि आप देख सकते हैं, कृष्णन के लिए आमिर को अपनी ठंडक का एहसास कराना मुश्किल होगा जब तक कि तापमान को मापने का कोई सर्वमान्य तरीका न हो। (As you can see, it would be hard for Krishnan to communicate his feeling of coldness to Amir unless there is a commonly accepted way to measure temperature.)"
+        },
+        {
+          "id": "p03-p1-s2",
+          "text": "It is the same with other elements of the weather.",
+          "meaning": "**Elements** — parts or components\nमौसम के अन्य तत्वों के साथ भी ऐसा ही है। (It is the same with other components of the weather.)"
+        },
+        {
+          "id": "p03-p1-s3",
+          "text": "In this chapter, we will learn how we measure the weather using common standards.",
+          "meaning": "**Standards** — a level of quality or attainment\nइस अध्याय में, हम सीखेंगे कि हम सामान्य मानकों का उपयोग करके मौसम को कैसे मापते हैं। (In this chapter, we will learn how we measure weather using common benchmarks.)"
+        }
+      ]
+    },
+    {
+      "id": "p03-act2",
+      "type": "activity",
+      "title": "LET'S EXPLORE",
+      "sentences": [
+        {
+          "id": "p03-act2-s1",
+          "text": "What do you think could be some other reasons to measure the weather more precisely?",
+          "meaning": "**Precisely** — in exact terms; without vagueness\nआपके अनुसार मौसम को अधिक सटीक रूप से मापने के कुछ अन्य कारण क्या हो सकते हैं? (What do you think could be some other reasons to measure the weather more accurately?)"
+        },
+        {
+          "id": "p03-act2-s2",
+          "text": "(Hint: Think how knowing the weather a few hours or a few days in advance would help you plan some activities.)",
+          "meaning": "**In advance** — ahead of time\n(संकेत: सोचें कि कुछ घंटे या कुछ दिन पहले मौसम जानने से आपको कुछ गतिविधियों की योजना बनाने में कैसे मदद मिलेगी।) (Hint: Think how knowing the weather a few hours or days beforehand would help you plan some activities.)"
+        }
+      ]
+    },
+    {
+      "id": "p03-p2",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p03-p2-s1",
+          "text": "From early times, humans have closely observed Nature and learnt to read her signals to forecast the weather.",
+          "meaning": "**Observed** — noticed or perceived something | **Forecast** — predict or estimate a future event\nप्राचीन काल से, मनुष्यों ने प्रकृति को करीब से देखा है और मौसम का पूर्वानुमान लगाने के लिए उसके संकेतों को पढ़ना सीखा है। (From early times, humans have watched Nature closely and learned to read its signs to predict the weather.)"
+        },
+        {
+          "id": "p03-p2-s2",
+          "text": "Observing birds flying low, ants carrying eggs, squirrels gathering nuts, frogs croaking loudly, or even the opening and closing of pine cones, provided valuable information about coming rain or storms.",
+          "meaning": "**Valuable** — extremely useful or important\nपक्षियों को नीची उड़ान भरते देखना, चींटियों को अंडे ले जाते देखना, गिलहरियों को मेवे इकट्ठा करते देखना, मेंढकों को जोर-जोर से टर्राते देखना, या चीड़ के शंकुओं का खुलना और बंद होना, आने वाली बारिश या तूफानों के बारे में बहुमूल्य जानकारी प्रदान करता था। (Observing birds flying low, ants carrying eggs, squirrels gathering nuts, frogs croaking loudly, or even the opening and closing of pine cones, gave important information about upcoming rain or storms.)"
+        }
+      ]
+    },
+    {
+      "id": "p03-p3",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p03-p3-s1",
+          "text": "This knowledge has been passed down from generation to generation.",
+          "meaning": "**Generation to generation** — from parents to their children, and so on over time\nयह ज्ञान पीढ़ी दर पीढ़ी हस्तांतरित होता रहा है। (This knowledge has been passed on from one generation to the next.)"
+        },
+        {
+          "id": "p03-p3-s2",
+          "text": "Even today, in many parts of India, people use traditional ways to predict the weather, especially the arrival of the monsoon.",
+          "meaning": "**Traditional** — existing in or as part of a tradition; long-established | **Monsoon** — the season of heavy rain during the summer in hot Asian countries\nआज भी, भारत के कई हिस्सों में, लोग मौसम की भविष्यवाणी करने के लिए पारंपरिक तरीकों का उपयोग करते हैं, खासकर मानसून के आगमन की। (Even today, in many parts of India, people use long-established methods to predict the weather, especially the arrival of the rainy season.)"
+        }
+      ]
+    },
+    {
+      "id": "p04-note1",
+      "type": "note",
+      "title": "Meteorology",
+      "sentences": [
+        {
+          "id": "p04-note1-s1",
+          "text": "Meteorology is the systematic study of weather and its evolution.",
+          "meaning": "**Meteorology** — the branch of science concerned with the processes and phenomena of the atmosphere, especially as a means of forecasting the weather | **Systematic** — done or acting according to a fixed plan or system; methodical | **Evolution** — the gradual development of something\nमौसम विज्ञान मौसम और उसके विकास का व्यवस्थित अध्ययन है। (Meteorology is the methodical study of weather and its gradual development.)"
+        },
+        {
+          "id": "p04-note1-s2",
+          "text": "This study is the basis for weather forecasting.",
+          "meaning": "**Basis** — the underlying support or foundation for an idea, argument, or process\nयह अध्ययन मौसम पूर्वानुमान का आधार है। (This study is the foundation for weather prediction.)"
+        }
+      ]
+    },
+    {
+      "id": "p04-sh1",
+      "type": "subheading",
+      "text": "Observing Nature's clues"
+    },
+    {
+      "id": "p04-media1",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p04-00.png",
+          "caption": "Fig. 2.3.1. Ants shifting their eggs to higher ground is a natural behaviour that indicates an expected change in the weather, especially heavy rain."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p04-01.png",
+          "caption": "Fig. 2.3.2. A frog croaking in a forest of the Western Ghats, in expectation of rain."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p04-02.png",
+          "caption": "Fig. 2.3.3. The opening and closing of pine cones are natural mechanisms driven by environmental humidity. Pine cones close in humid conditions to protect their seeds, and open in dry conditions to release them, ensuring they spread in favourable weather."
+        }
+      ]
+    },
+    {
+      "id": "p04-act1",
+      "type": "activity",
+      "title": "LET'S EXPLORE",
+      "sentences": [
+        {
+          "id": "p04-act1-s1",
+          "text": "Talk to elders in your neighbourhood and ask them how they predict the weather.",
+          "meaning": "**Elders** — people who are older | **Neighbourhood** — the area where you live\nअपने पड़ोस के बड़ों से बात करें और उनसे पूछें कि वे मौसम की भविष्यवाणी कैसे करते हैं। (Talk to older people in your area and ask them how they predict the weather.)"
+        },
+        {
+          "id": "p04-act1-s2",
+          "text": "What signs do they observe?",
+          "meaning": "**Observe** — to notice\nवे कौन से संकेत देखते हैं? (What signs do they notice?)"
+        },
+        {
+          "id": "p04-act1-s3",
+          "text": "Document any sayings in your regional language that refer to weather prediction.",
+          "meaning": "**Document** — to record in writing | **Sayings** — proverbs or common phrases\nअपनी क्षेत्रीय भाषा में मौसम की भविष्यवाणी से संबंधित किसी भी कहावत को लिखें। (Write down any proverbs in your local language that relate to weather prediction.)"
+        }
+      ]
+    },
+    {
+      "id": "p04-p1",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p04-p1-s1",
+          "text": "In the last few centuries, scientists have worked out methods to measure and monitor the elements of the weather with great precision.",
+          "meaning": "**Centuries** — periods of 100 years | **Monitor** — to observe and check the progress of something | **Precision** — accuracy\nपिछली कुछ शताब्दियों में, वैज्ञानिकों ने मौसम के तत्वों को बड़ी सटीकता के साथ मापने और निगरानी करने के तरीके विकसित किए हैं। (In the last few hundred years, scientists have developed methods to measure and track weather elements with great accuracy.)"
+        },
+        {
+          "id": "p04-p1-s2",
+          "text": "Based on those inputs, meteorologists try to predict how the weather will behave in a particular region after a few hours or a few days, or even a few weeks.",
+          "meaning": "**Meteorologists** — scientists who study meteorology | **Region** — an area\nउन सूचनाओं के आधार पर, मौसम विज्ञानी यह अनुमान लगाने की कोशिश करते हैं कि कुछ घंटों या कुछ दिनों, या कुछ हफ्तों के बाद किसी विशेष क्षेत्र में मौसम कैसा रहेगा। (Based on that information, weather scientists try to predict how the weather will act in a specific area after a few hours, days, or weeks.)"
+        }
+      ]
+    },
+    {
+      "id": "p04-p2",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p04-p2-s1",
+          "text": "How do they do it?",
+          "meaning": "यह वे कैसे करते हैं? (How do they do this?)"
+        },
+        {
+          "id": "p04-p2-s2",
+          "text": "Do they just look up at the sky and guess?",
+          "meaning": "**Guess** — to estimate without enough information to be sure\nक्या वे सिर्फ आसमान की तरफ देखकर अंदाजा लगाते हैं? (Do they just look at the sky and make a guess?)"
+        },
+        {
+          "id": "p04-p2-s3",
+          "text": "No, they've got some cool gadgets, a few of which we will now look at.",
+          "meaning": "**Gadgets** — small mechanical or electronic devices with a practical use\nनहीं, उनके पास कुछ शानदार उपकरण हैं, जिनमें से कुछ को अब हम देखेंगे। (No, they have some cool devices, a few of which we will now examine.)"
+        }
+      ]
+    },
+    {
+      "id": "p05-h1",
+      "type": "heading",
+      "text": "Weather Instruments"
+    },
+    {
+      "id": "p05-sh1",
+      "type": "subheading",
+      "text": "a) Temperature"
+    },
+    {
+      "id": "p05-act1",
+      "type": "activity",
+      "title": "LET'S REMEMBER",
+      "sentences": [
+        {
+          "id": "p05-act1-s1",
+          "text": "In your Grade 6 Science textbook, *Curiosity*, you read about different types of thermometers used for measuring the temperature—the clinical thermometer and the laboratory thermometer.",
+          "meaning": "**Thermometers** — instruments for measuring temperature | **Clinical** — relating to the observation and treatment of actual patients rather than theoretical or laboratory studies | **Laboratory** — a room or building equipped for scientific experiments\nअपनी कक्षा 6 की विज्ञान की पाठ्यपुस्तक, *जिज्ञासा* में, आपने तापमान मापने के लिए उपयोग किए जाने वाले विभिन्न प्रकार के थर्मामीटरों के बारे में पढ़ा—क्लिनिकल थर्मामीटर और प्रयोगशाला थर्मामीटर। (In your Grade 6 Science textbook, *Curiosity*, you read about different kinds of instruments for measuring temperature—the one for medical use and the one for lab use.)"
+        },
+        {
+          "id": "p05-act1-s2",
+          "text": "You also learnt about temperature scales.",
+          "meaning": "**Scales** — a system of marks at fixed intervals, used for measurement\nआपने तापमान के पैमानों के बारे में भी सीखा। (You also learned about temperature measurement systems.)"
+        },
+        {
+          "id": "p05-act1-s3",
+          "text": "One of them is the Celsius scale; another is the Fahrenheit scale.",
+          "meaning": "**Celsius** — a scale of temperature on which water freezes at 0° and boils at 100° | **Fahrenheit** — a scale of temperature on which water freezes at 32° and boils at 212°\nउनमें से एक सेल्सियस पैमाना है; दूसरा फारेनहाइट पैमाना है। (One of them is the Celsius scale; another is the Fahrenheit scale.)"
+        },
+        {
+          "id": "p05-act1-s4",
+          "text": "If, for instance, we have a cool temperature of 15 degrees Celsius (noted as 15°C), it is the same as 59 degrees Fahrenheit (noted as 59°F).",
+          "meaning": "**Instance** — an example or single occurrence of something\nउदाहरण के लिए, यदि हमारे पास 15 डिग्री सेल्सियस (15°C के रूप में लिखा गया) का ठंडा तापमान है, तो यह 59 डिग्री फारेनहाइट (59°F के रूप में लिखा गया) के बराबर है। (For example, if we have a cool temperature of 15 degrees Celsius (15°C), it is the same as 59 degrees Fahrenheit (59°F).)"
+        }
+      ]
+    },
+    {
+      "id": "p05-media1",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p05-02.png",
+          "caption": "Fig. 2.4.1. Snow melts quickly when it's warm."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p05-01.png",
+          "caption": "Fig. 2.4.2. Cloudy weather —it's getting cold."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p05-03.png",
+          "caption": "Fig. 2.4.3. In winter, coconut oil turns solid."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p05-00.png",
+          "caption": "Fig. 2.4.4. Curd takes longer to set in cold weather."
+        }
+      ]
+    },
+    {
+      "id": "p06-note1",
+      "type": "note",
+      "title": "Key Terms",
+      "sentences": [
+        {
+          "id": "p06-note1-s1",
+          "text": "Ambient: Of the immediate surroundings.",
+          "meaning": "**Ambient** — relating to the immediate surroundings of something.\nपरिवेश: तत्काल आसपास का। (Ambient: Of the immediate environment.)"
+        },
+        {
+          "id": "p06-note1-s2",
+          "text": "Statistics: The technique of gathering and analysing information or data in order to be able to detect patterns, understand events or make predictions.",
+          "meaning": "**Statistics** — the practice or science of collecting and analyzing numerical data in large quantities.\nसांख्यिकी: पैटर्न का पता लगाने, घटनाओं को समझने या भविष्यवाणियां करने के लिए जानकारी या डेटा इकट्ठा करने और उसका विश्लेषण करने की तकनीक। (Statistics: The technique of collecting and analyzing information or data to find patterns, understand events, or make predictions.)"
+        }
+      ]
+    },
+    {
+      "id": "p06-p1",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p06-p1-s1",
+          "text": "There are several types of thermometers.",
+          "meaning": "**Several** — more than two but not many\nथर्मामीटर कई प्रकार के होते हैं। (There are many types of thermometers.)"
+        },
+        {
+          "id": "p06-p1-s2",
+          "text": "Some simply measure the ambient temperature; others record the maximum and minimum temperatures during a day.",
+          "meaning": "**Ambient** — surrounding | **Maximum** — highest | **Minimum** — lowest\nकुछ केवल परिवेश के तापमान को मापते हैं; अन्य एक दिन के दौरान अधिकतम और न्यूनतम तापमान रिकॉर्ड करते हैं। (Some just measure the surrounding temperature; others record the highest and lowest temperatures during a day.)"
+        },
+        {
+          "id": "p06-p1-s3",
+          "text": "Thermometers often use a coloured liquid which expands when the temperature increases.",
+          "meaning": "**Expands** — becomes larger in size\nथर्मामीटर में अक्सर एक रंगीन तरल का उपयोग होता है जो तापमान बढ़ने पर फैलता है। (Thermometers often use a colored liquid that gets bigger when the temperature rises.)"
+        },
+        {
+          "id": "p06-p1-s4",
+          "text": "However, more and more, digital thermometers are preferred as they are more precise and can record more data.",
+          "meaning": "**Digital** — electronic | **Preferred** — liked more than another | **Precise** — accurate\nहालांकि, अधिक से अधिक, डिजिटल थर्मामीटरों को प्राथमिकता दी जाती है क्योंकि वे अधिक सटीक होते हैं और अधिक डेटा रिकॉर्ड कर सकते हैं। (However, increasingly, electronic thermometers are chosen because they are more accurate and can record more data.)"
+        }
+      ]
+    },
+    {
+      "id": "p06-p2",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p06-p2-s1",
+          "text": "Indeed, temperature recordings can be used to collect some useful statistics, including:",
+          "meaning": "**Recordings** — data that has been stored | **Statistics** — numerical data\nवास्तव में, तापमान रिकॉर्डिंग का उपयोग कुछ उपयोगी आँकड़े एकत्र करने के लिए किया जा सकता है, जिनमें शामिल हैं: (Indeed, temperature data can be used to collect some useful numerical information, including:)"
+        }
+      ]
+    },
+    {
+      "id": "p06-l1",
+      "type": "list",
+      "items": [
+        "**Range of temperature** or the maximum temperature minus the minimum temperature during a particular period of time (usually 24 hours).",
+        "**Mean daily temperature** or the maximum temperature plus the minimum temperature of the day divided by two."
+      ]
+    },
+    {
+      "id": "p06-call1",
+      "type": "callout",
+      "title": "DON'T MISS OUT",
+      "sentences": [
+        {
+          "id": "p06-call1-s1",
+          "text": "The India Meteorological Department was set up in 1875.",
+          "meaning": "**Meteorological Department** — an organization that studies weather and climate\nभारत मौसम विज्ञान विभाग की स्थापना 1875 में हुई थी। (The India Meteorological Department was established in 1875.)"
+        },
+        {
+          "id": "p06-call1-s2",
+          "text": "Its motto is *ādityāt jāyate vrishti*, which means, \"From the sun arises rain.”",
+          "meaning": "**Motto** — a short sentence or phrase chosen as encapsulating the beliefs or ideals of an individual, family, or institution\nइसका आदर्श वाक्य है *आदित्यात् जायते वृष्टि*, जिसका अर्थ है, \"सूर्य से वर्षा होती है।\" (Its motto is *ādityāt jāyate vrishti*, which means, \"Rain comes from the sun.\")"
+        },
+        {
+          "id": "p06-call1-s3",
+          "text": "The phrase comes from the ancient text *Manusmriti*, and the complete sentence reads, “From the sun arises rain, from rain comes food, and from food, living beings originate.\"",
+          "meaning": "**Ancient** — belonging to the very distant past | **Originate** — have a specified beginning\nयह वाक्यांश प्राचीन ग्रंथ *मनुस्मृति* से लिया गया है, और पूरा वाक्य है, \"सूर्य से वर्षा होती है, वर्षा से अन्न होता है, और अन्न से जीव उत्पन्न होते हैं।\" (This phrase comes from the ancient text *Manusmriti*, and the full sentence reads, \"From the sun comes rain, from rain comes food, and from food, living beings are created.\")"
+        },
+        {
+          "id": "p06-call1-s4",
+          "text": "Can you think of a reason why rain arises from the sun?",
+          "meaning": "**Arises** — emerges; becomes apparent\nक्या आप सोच सकते हैं कि सूर्य से वर्षा क्यों होती है? (Can you think of a reason why rain comes from the sun?)"
+        }
+      ]
+    },
+    {
+      "id": "p06-media1",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p06-00.png",
+          "caption": "Fig. 2.5: The logo of the India Meteorological Department."
+        }
+      ]
+    },
+    {
+      "id": "p06-act1",
+      "type": "activity",
+      "title": "LET'S EXPLORE",
+      "sentences": [
+        {
+          "id": "p06-act1-s1",
+          "text": "Here's a chart of the temperatures of a city in Madhya Pradesh.",
+          "meaning": "**Chart** — a table or diagram showing information\nयहाँ मध्य प्रदेश के एक शहर के तापमान का एक चार्ट है। (Here is a table of temperatures for a city in Madhya Pradesh.)"
+        },
+        {
+          "id": "p06-act1-s2",
+          "text": "What is the maximum temperature recorded in the week shown here?",
+          "meaning": "**Maximum** — highest\nयहाँ दिखाए गए सप्ताह में दर्ज किया गया अधिकतम तापमान क्या है? (What is the highest temperature recorded in the week shown here?)"
+        },
+        {
+          "id": "p06-act1-s3",
+          "text": "What is the minimum?",
+          "meaning": "**Minimum** — lowest\nन्यूनतम क्या है? (What is the lowest?)"
+        },
+        {
+          "id": "p06-act1-s4",
+          "text": "Calculate the range.",
+          "meaning": "**Range** — the difference between the highest and lowest values\nरेंज की गणना करें। (Calculate the difference between the highest and lowest temperature.)"
+        }
+      ]
+    },
+    {
+      "id": "p07-table1",
+      "type": "table",
+      "headers": [
+        "Date",
+        "Maximum Temperature (in °C)",
+        "Minimum Temperature (in °C)"
+      ],
+      "rows": [
+        [
+          "28.02.2025",
+          "29",
+          "16"
+        ],
+        [
+          "01.03.2025",
+          "30",
+          "15"
+        ],
+        [
+          "02.03.2025",
+          "31",
+          "17"
+        ],
+        [
+          "03.03.2025",
+          "32",
+          "18"
+        ],
+        [
+          "04.03.2025",
+          "30",
+          "17"
+        ],
+        [
+          "05.03.2025",
+          "28",
+          "14"
+        ],
+        [
+          "06.03.2025",
+          "29",
+          "15"
+        ]
+      ]
+    },
+    {
+      "id": "p07-p1",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p07-p1-s1",
+          "text": "Remember the conversation between Krishnan and Amir?",
+          "meaning": "**Conversation** — a talk between two or more people\nकृष्णन और आमिर के बीच की बातचीत याद है? (Do you remember the conversation between Krishnan and Amir?)"
+        },
+        {
+          "id": "p07-p1-s2",
+          "text": "If Krishnan said it was 20°C in Chennai and he was feeling a little cold, he and Amir would have a measure they could understand.",
+          "meaning": "**Measure** — a standard unit used to express the size, amount, or degree of something\nअगर कृष्णन ने कहा कि चेन्नई में 20°C था और उसे थोड़ी ठंड लग रही थी, तो उसके और आमिर के पास एक माप होता जिसे वे समझ सकते थे। (If Krishnan said it was 20°C in Chennai and he was feeling a bit cold, he and Amir would have a measurement they could both understand.)"
+        },
+        {
+          "id": "p07-p1-s3",
+          "text": "What do you think Amir's reaction to Krishnan's statement might be?",
+          "meaning": "**Reaction** — an action performed or a feeling experienced in response to a situation or event | **Statement** — a definite or clear expression of something in speech or writing\nआपको क्या लगता है कि कृष्णन के बयान पर आमिर की क्या प्रतिक्रिया होगी? (What do you think Amir's response to Krishnan's comment might be?)"
+        }
+      ]
+    },
+    {
+      "id": "p07-sh1",
+      "type": "subheading",
+      "text": "b) Precipitation"
+    },
+    {
+      "id": "p07-p2",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p07-p2-s1",
+          "text": "If the news says that a particular place received 30 mm of rainfall in a day, what does it mean?",
+          "meaning": "**Precipitation** — rain, snow, sleet, or hail that falls to the ground\nअगर खबर में कहा जाए कि किसी खास जगह पर एक दिन में 30 मिमी बारिश हुई, तो इसका क्या मतलब है? (If the news says a specific place got 30 mm of rain in a day, what does that mean?)"
+        },
+        {
+          "id": "p07-p2-s2",
+          "text": "How is rainfall measured?",
+          "meaning": "**Measured** — ascertained the size, amount, or degree of (something) by using an instrument or device\nवर्षा को कैसे मापा जाता है? (How is rain measured?)"
+        }
+      ]
+    },
+    {
+      "id": "p07-p3",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p07-p3-s1",
+          "text": "The amount of rainfall is measured with the help of an instrument called a rain gauge (Fig. 2.6).",
+          "meaning": "**Instrument** — a tool or implement, especially one for delicate or scientific work | **Rain gauge** — an instrument used by meteorologists to gather and measure the amount of liquid precipitation over an area in a predefined period of time\nवर्षा की मात्रा को वर्षामापी (रेन गेज) नामक उपकरण की सहायता से मापा जाता है (चित्र 2.6)। (The amount of rain is measured with a tool called a rain gauge (Fig. 2.6).)"
+        },
+        {
+          "id": "p07-p3-s2",
+          "text": "When it rains, the water falls into a funnel and is collected in a cylinder.",
+          "meaning": "**Funnel** — a tube or pipe that is wide at the top and narrow at the bottom, used for guiding liquid or powder into a small opening | **Cylinder** — a solid geometric figure with straight parallel sides and a circular or oval cross section\nजब बारिश होती है, तो पानी एक कीप में गिरता है और एक सिलेंडर में इकट्ठा हो जाता है। (When it rains, the water goes into a funnel and is gathered in a cylinder.)"
+        },
+        {
+          "id": "p07-p3-s3",
+          "text": "A scale is attached to the cylinder to measure the depth of rainwater collected.",
+          "meaning": "**Scale** — a system of marks at fixed intervals, used for measurement | **Depth** — the distance from the top or surface down to the bottom\nएकत्रित वर्षा जल की गहराई को मापने के लिए सिलेंडर से एक पैमाना जुड़ा होता है। (A scale is fixed to the cylinder to measure the depth of the collected rainwater.)"
+        },
+        {
+          "id": "p07-p3-s4",
+          "text": "For example, when the height of the water collected is 5 mm, we say that the area received 5 mm of rainfall.",
+          "meaning": "**Height** — the measurement from base to top\nउदाहरण के लिए, जब एकत्रित पानी की ऊंचाई 5 मिमी होती है, तो हम कहते हैं कि उस क्षेत्र में 5 मिमी वर्षा हुई। (For example, when the collected water's height is 5 mm, we say the area got 5 mm of rain.)"
+        }
+      ]
+    },
+    {
+      "id": "p07-media1",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p07-00.png",
+          "caption": "Fig. 2.6. A diagram of a rain gauge, showing the collecting funnel, measuring tube, and measuring scale."
+        }
+      ]
+    },
+    {
+      "id": "p08-act1",
+      "type": "activity",
+      "title": "LET'S EXPLORE",
+      "sentences": [
+        {
+          "id": "p08-act1-s1",
+          "text": "Make a rain gauge as shown in the diagram above.",
+          "meaning": "**Diagram** — a simplified drawing showing the appearance, structure, or workings of something\nऊपर दिए गए चित्र के अनुसार एक वर्षामापी बनाएं। (Make a rain gauge as shown in the drawing above.)"
+        },
+        {
+          "id": "p08-act1-s2",
+          "text": "Place the rain gauge in an open area, away from objects that might obstruct rain.",
+          "meaning": "**Obstruct** — to block\nवर्षामापी को एक खुले क्षेत्र में रखें, उन वस्तुओं से दूर जो बारिश में बाधा डाल सकती हैं। (Place the rain gauge in an open area, away from things that might block the rain.)"
+        },
+        {
+          "id": "p08-act1-s3",
+          "text": "Ensure that the rain gauge is on a flat surface and will not tilt or topple with the wind.",
+          "meaning": "**Ensure** — make certain that (something) shall occur or be the case | **Tilt** — move into a sloping position | **Topple** — overbalance or become unsteady and fall\nसुनिश्चित करें कि वर्षामापी एक समतल सतह पर है और हवा से झुकेगा या गिरेगा नहीं। (Make sure the rain gauge is on a flat surface and won't lean or fall over in the wind.)"
+        },
+        {
+          "id": "p08-act1-s4",
+          "text": "Using the measuring scale, record the amount of rainwater collected at the same time every day, for a month.",
+          "meaning": "**Record** — to write down for future reference\nमापने वाले पैमाने का उपयोग करके, एक महीने तक हर दिन एक ही समय पर एकत्रित वर्षा जल की मात्रा को रिकॉर्ड करें। (Using the measuring scale, write down the amount of rainwater collected at the same time every day for a month.)"
+        },
+        {
+          "id": "p08-act1-s5",
+          "text": "(If there is snow, allow it to melt before taking the measurement.)",
+          "meaning": "**Melt** — make or become liquefied by heat\n(यदि बर्फ है, तो माप लेने से पहले उसे पिघलने दें।) ((If there is snow, let it turn to water before taking the measurement.))"
+        },
+        {
+          "id": "p08-act1-s6",
+          "text": "Calculate the average rainfall for every week in that month and comment on the variation from week to week.",
+          "meaning": "**Average** — a number expressing the central or typical value in a set of data | **Variation** — a change or difference in condition, amount, or level\nउस महीने के प्रत्येक सप्ताह के लिए औसत वर्षा की गणना करें और सप्ताह-दर-सप्ताह भिन्नता पर टिप्पणी करें। (Calculate the typical rainfall for each week in that month and comment on the changes from one week to the next.)"
+        }
+      ]
+    },
+    {
+      "id": "p08-sh1",
+      "type": "subheading",
+      "text": "c) Atmospheric pressure"
+    },
+    {
+      "id": "p08-p1",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p08-p1-s1",
+          "text": "Our bodies are quite aware of temperature and rainfall.",
+          "meaning": "**Aware** — having knowledge or perception of a situation or fact\nहमारे शरीर तापमान और वर्षा के प्रति काफी जागरूक होते हैं। (Our bodies are quite conscious of temperature and rain.)"
+        },
+        {
+          "id": "p08-p1-s2",
+          "text": "But you may also have experienced that the weather sometimes feels 'heavy', as before a thunderstorm.",
+          "meaning": "**Experienced** — having encountered or undergone an event or situation\nलेकिन आपने यह भी अनुभव किया होगा कि कभी-कभी मौसम 'भारी' लगता है, जैसे आंधी से पहले। (But you may also have felt that the weather sometimes feels 'heavy', like before a thunderstorm.)"
+        },
+        {
+          "id": "p08-p1-s3",
+          "text": "This is related to atmospheric pressure, which is the pressure exerted by the weight of the air above and around us.",
+          "meaning": "**Atmospheric pressure** — the pressure exerted by the weight of the atmosphere | **Exerted** — applied\nयह वायुमंडलीय दबाव से संबंधित है, जो हमारे ऊपर और आसपास की हवा के वजन द्वारा डाला गया दबाव है। (This is related to the pressure from the atmosphere, which is the pressure applied by the weight of the air above and around us.)"
+        }
+      ]
+    },
+    {
+      "id": "p08-p2",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p08-p2-s1",
+          "text": "The atmospheric pressure is higher near the sea coast and lower as we go higher up into the mountains.",
+          "meaning": "**Sea coast** — the land adjacent to the sea\nवायुमंडलीय दबाव समुद्र तट के पास अधिक होता है और जैसे-जैसे हम पहाड़ों में ऊपर जाते हैं, यह कम होता जाता है। (The atmospheric pressure is greater near the sea and less as we go higher into the mountains.)"
+        },
+        {
+          "id": "p08-p2-s2",
+          "text": "When you climb a mountain, the air gets thinner than in the plain below.",
+          "meaning": "**Thinner** — less dense | **Plain** — a large area of flat land with few trees\nजब आप एक पहाड़ पर चढ़ते हैं, तो हवा नीचे के मैदान की तुलना में पतली हो जाती है। (When you climb a mountain, the air becomes less dense than in the flat land below.)"
+        },
+        {
+          "id": "p08-p2-s3",
+          "text": "As a result, the air pressure is lower, and there is less oxygen available for your lungs to take in.",
+          "meaning": "**Available** — able to be used or obtained\nपरिणामस्वरूप, हवा का दबाव कम होता है, और आपके फेफड़ों को लेने के लिए कम ऑक्सीजन उपलब्ध होती है। (As a result, the air pressure is lower, and there is less oxygen that can be used by your lungs.)"
+        }
+      ]
+    },
+    {
+      "id": "p08-media1",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p08-00.png",
+          "caption": "Fig. 2.7: A diagram illustrating that cooler air has lower pressure and warmer air has higher pressure."
+        }
+      ]
+    },
+    {
+      "id": "p09-p1",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p09-p1-s1",
+          "text": "With less oxygen getting into your blood, your body has to work harder to keep you moving!",
+          "meaning": "**Oxygen** — a colorless, odorless reactive gas, the chemical element of atomic number 8 and the life-supporting component of the air\nआपके रक्त में कम ऑक्सीजन जाने से, आपके शरीर को आपको चलाते रहने के लिए अधिक मेहनत करनी पड़ती है! (With less oxygen entering your blood, your body must work harder to keep you moving!)"
+        },
+        {
+          "id": "p09-p1-s2",
+          "text": "That's why people sometimes feel breathless, dizzy or tired at high altitudes.",
+          "meaning": "**Breathless** — having difficulty breathing | **Dizzy** — having a sensation of spinning around and losing one's balance | **Altitudes** — the height of an object or point in relation to sea level or ground level\nयही कारण है कि लोग कभी-कभी अधिक ऊंचाई पर सांस फूलना, चक्कर आना या थकान महसूस करते हैं। (That is why people sometimes have trouble breathing, feel like they are spinning, or feel tired at high places.)"
+        }
+      ]
+    },
+    {
+      "id": "p09-p2",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p09-p2-s1",
+          "text": "This does not mean that the atmospheric pressure is always high in the plains below or on the coast.",
+          "meaning": "**Atmospheric pressure** — the pressure exerted by the weight of the atmosphere\nइसका मतलब यह नहीं है कि नीचे के मैदानों में या तट पर वायुमंडलीय दबाव हमेशा अधिक होता है। (This does not mean that the air pressure is always high in the plains or on the coast.)"
+        },
+        {
+          "id": "p09-p2-s2",
+          "text": "In fact, it sometimes drops dramatically, resulting in what meteorologists call a ‘depression' or ‘low-pressure system', which can sometimes develop into a storm or even a cyclone.",
+          "meaning": "**Dramatically** — by a strikingly large amount | **Depression** — a region of low atmospheric pressure | **Cyclone** — a system of winds rotating inwards to an area of low atmospheric pressure\nवास्तव में, यह कभी-कभी नाटकीय रूप से गिर जाता है, जिसके परिणामस्वरूप मौसम विज्ञानी इसे 'अवसाद' या 'कम दबाव प्रणाली' कहते हैं, जो कभी-कभी तूफान या चक्रवात में भी विकसित हो सकता है। (In fact, it sometimes falls by a large amount, resulting in what scientists call a 'depression' or 'low-pressure system', which can sometimes grow into a storm or even a cyclone.)"
+        }
+      ]
+    },
+    {
+      "id": "p09-act1",
+      "type": "activity",
+      "title": "THINK ABOUT IT",
+      "sentences": [
+        {
+          "id": "p09-act1-s1",
+          "text": "Why do you think it would be important to measure atmospheric pressure?",
+          "meaning": "**Atmospheric pressure** — the pressure within the atmosphere of Earth\nआपको क्यों लगता है कि वायुमंडलीय दबाव को मापना महत्वपूर्ण होगा? (Why do you think it is important to measure air pressure?)"
+        },
+        {
+          "id": "p09-act1-s2",
+          "text": "Who are the people most likely to use such measurements?",
+          "meaning": "**Likely** — probable\nऐसे मापों का उपयोग करने वाले लोग सबसे अधिक कौन हैं? (Which people are most probably going to use such measurements?)"
+        }
+      ]
+    },
+    {
+      "id": "p09-p3",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p09-p3-s1",
+          "text": "The instrument used to measure atmospheric pressure is called a barometer.",
+          "meaning": "**Barometer** — an instrument measuring atmospheric pressure, used especially in forecasting the weather and determining altitude\nवायुमंडलीय दबाव को मापने के लिए उपयोग किए जाने वाले उपकरण को बैरोमीटर कहा जाता है। (The tool used to measure atmospheric pressure is called a barometer.)"
+        },
+        {
+          "id": "p09-p3-s2",
+          "text": "As with thermometers, there are several types of barometers.",
+          "meaning": "**Several** — more than two but not many\nथर्मामीटर की तरह, बैरोमीटर भी कई प्रकार के होते हैं। (Like thermometers, there are many types of barometers.)"
+        },
+        {
+          "id": "p09-p3-s3",
+          "text": "The unit they display is generally the millibar (abbreviated as mb).",
+          "meaning": "**Millibar** — a unit of atmospheric pressure | **Abbreviated** — shortened\nवे जो इकाई प्रदर्शित करते हैं वह आम तौर पर मिलीबार (संक्षेप में mb) होती है। (The unit they show is usually the millibar (shortened as mb).)"
+        },
+        {
+          "id": "p09-p3-s4",
+          "text": "The normal atmospheric pressure at the sea coast is around 1013 mb; a pressure below 1000 mb indicates a depression.",
+          "meaning": "**Normal** — usual or typical | **Indicates** — points out; shows | **Depression** — an area of low atmospheric pressure\nसमुद्र तट पर सामान्य वायुमंडलीय दबाव लगभग 1013 mb होता है; 1000 mb से नीचे का दबाव एक अवसाद को इंगित करता है। (The typical atmospheric pressure at the sea coast is around 1013 mb; a pressure below 1000 mb shows a depression.)"
+        }
+      ]
+    },
+    {
+      "id": "p09-note1",
+      "type": "note",
+      "title": "Key Term",
+      "sentences": [
+        {
+          "id": "p09-note1-s1",
+          "text": "Acclimatise: Adjust to a new climate or new condition",
+          "meaning": "**Acclimatise** — to get used to a new place, situation, or climate.\nअनुकूलन: एक नई जलवायु या नई स्थिति के अनुसार ढलना। (Acclimatise: To adapt to a new climate or new condition.)"
+        }
+      ]
+    },
+    {
+      "id": "p09-act2",
+      "type": "activity",
+      "title": "THINK ABOUT IT",
+      "sentences": [
+        {
+          "id": "p09-act2-s1",
+          "text": "People who journey to places at a high altitude are advised to make pauses on the way to allow the body to acclimatise.",
+          "meaning": "**Journey** — an act of travelling from one place to another | **Altitude** — height above sea level | **Acclimatise** — to get used to a new climate or conditions\nअधिक ऊंचाई वाले स्थानों की यात्रा करने वाले लोगों को सलाह दी जाती है कि वे शरीर को acclimatise होने देने के लिए रास्ते में रुकें। (People who travel to high-altitude places are advised to take breaks on the way to let their bodies adjust.)"
+        },
+        {
+          "id": "p09-act2-s2",
+          "text": "Our army personnel serve in high-altitude places like Khardung la in Ladakh, which is over 5600 metres above sea level.",
+          "meaning": "**Personnel** — people employed in an organization or engaged in an organized undertaking such as military service\nहमारे सेना के जवान लद्दाख में खारदुंग ला जैसी अधिक ऊंचाई वाली जगहों पर सेवा करते हैं, जो समुद्र तल से 5600 मीटर से अधिक ऊंचा है। (Our army staff serve in high-altitude places like Khardung la in Ladakh, which is over 5600 meters above sea level.)"
+        },
+        {
+          "id": "p09-act2-s3",
+          "text": "It is hard to imagine how they live and work in places where the oxygen level is so low—the atmospheric pressure there is generally about 650 millibars!",
+          "meaning": "**Imagine** — to form a mental image of | **Generally** — in most cases; usually\nयह कल्पना करना कठिन है कि वे उन जगहों पर कैसे रहते और काम करते हैं जहाँ ऑक्सीजन का स्तर इतना कम है—वहाँ वायुमंडलीय दबाव आम तौर पर लगभग 650 मिलीबार होता है! (It is difficult to imagine how they live and work in places where the oxygen level is so low—the atmospheric pressure there is usually about 650 millibars!)"
+        }
+      ]
+    },
+    {
+      "id": "p09-media1",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p09-00.png",
+          "caption": "Fig. 2.8: A sign at Khardungla Top, indicating it is the 'Highest Motorable Road in the World' at 18380 feet."
+        }
+      ]
+    },
+    {
+      "id": "p10-sh1",
+      "type": "subheading",
+      "text": "d) Wind"
+    },
+    {
+      "id": "p10-p1",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p10-p1-s1",
+          "text": "Wind is the movement of air from areas of high pressure to areas of low pressure.",
+          "meaning": "**Wind** — the perceptible natural movement of the air\nहवा उच्च दबाव वाले क्षेत्रों से कम दबाव वाले क्षेत्रों की ओर हवा की गति है। (Wind is the movement of air from high-pressure areas to low-pressure areas.)"
+        },
+        {
+          "id": "p10-p1-s2",
+          "text": "Speed and direction are two important factors when we describe the wind.",
+          "meaning": "**Factors** — circumstances or influences that contribute to a result\nजब हम हवा का वर्णन करते हैं तो गति और दिशा दो महत्वपूर्ण कारक होते हैं। (Speed and direction are two important elements when we describe the wind.)"
+        }
+      ]
+    },
+    {
+      "id": "p10-act1",
+      "type": "activity",
+      "title": "THINK ABOUT IT",
+      "sentences": [
+        {
+          "id": "p10-act1-s1",
+          "text": "Have you seen seeds like these flying in the wind?",
+          "meaning": "**Seeds** — a flowering plant's unit of reproduction, capable of developing into another such plant\nक्या आपने इस तरह के बीजों को हवा में उड़ते देखा है? (Have you seen seeds like these flying in the wind?)"
+        },
+        {
+          "id": "p10-act1-s2",
+          "text": "What would happen to the seeds if there was no wind?",
+          "meaning": "**Happen** — take place; occur\nअगर हवा न होती तो बीजों का क्या होता? (What would occur with the seeds if there was no wind?)"
+        }
+      ]
+    },
+    {
+      "id": "p10-media1",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p10-04.png",
+          "caption": "Milkweed seeds with their fluffy parachutes ready for dispersal."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p10-01.png",
+          "caption": "A close-up of dandelion seeds, which are carried by the wind."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p10-02.png",
+          "caption": "Tall, light-colored grass with fluffy seed heads blowing in the wind."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p10-03.png",
+          "caption": "A person holding a makeshift parachute made from plastic and a coin."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p10-00.png",
+          "caption": "Winged seeds of a tree, designed for wind dispersal."
+        }
+      ]
+    },
+    {
+      "id": "p10-p2",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p10-p2-s1",
+          "text": "The wind is an important element of the weather.",
+          "meaning": "**Element** — a part or aspect of something\nहवा मौसम का एक महत्वपूर्ण तत्व है। (The wind is an important part of the weather.)"
+        },
+        {
+          "id": "p10-p2-s2",
+          "text": "Its direction and speed help in weather forecasting.",
+          "meaning": "**Forecasting** — predicting\nइसकी दिशा और गति मौसम की भविष्यवाणी में मदद करती है। (Its direction and speed help in predicting the weather.)"
+        },
+        {
+          "id": "p10-p2-s3",
+          "text": "Besides, air pilots and sailors need to be aware of wind data, as the wind has a great influence on flying or sailing.",
+          "meaning": "**Influence** — the capacity to have an effect on the character, development, or behavior of someone or something\nइसके अलावा, हवाई पायलटों और नाविकों को हवा के आंकड़ों से अवगत रहने की आवश्यकता है, क्योंकि हवा का उड़ान या नौकायन पर बहुत प्रभाव पड़ता है। (Besides, air pilots and sailors need to know about wind data, as the wind has a big effect on flying or sailing.)"
+        },
+        {
+          "id": "p10-p2-s4",
+          "text": "Farmers also use the wind direction to predict where rain might come from.",
+          "meaning": "**Predict** — to say or estimate that (a specified thing) will happen in the future\nकिसान भी हवा की दिशा का उपयोग यह अनुमान लगाने के लिए करते हैं कि बारिश कहाँ से आ सकती है। (Farmers also use the wind's direction to estimate where rain might come from.)"
+        },
+        {
+          "id": "p10-p2-s5",
+          "text": "Also, a greater wind speed will cause the soil to dry faster.",
+          "meaning": "**Soil** — the upper layer of earth in which plants grow\nसाथ ही, हवा की अधिक गति से मिट्टी तेजी से सूखेगी। (Also, a higher wind speed will make the soil dry more quickly.)"
+        }
+      ]
+    },
+    {
+      "id": "p10-p3",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p10-p3-s1",
+          "text": "So, how do we measure this direction and speed?",
+          "meaning": "**Measure** — to find the size, amount, or degree of something\nतो, हम इस दिशा और गति को कैसे मापते हैं? (So, how do we find out this direction and speed?)"
+        },
+        {
+          "id": "p10-p3-s2",
+          "text": "A wind vane (or weather vane) has a rotating arm with a pointer at one end and a tail at the other.",
+          "meaning": "**Wind vane** — a device that measures the direction of the wind | **Rotating** — moving in a circle around an axis or center\nएक पवन चक्की (या मौसम चक्की) में एक घूमने वाली भुजा होती है जिसके एक सिरे पर एक सूचक और दूसरे सिरे पर एक पूंछ होती है। (A wind vane has a spinning arm with a pointer at one end and a tail at the other.)"
+        },
+        {
+          "id": "p10-p3-s3",
+          "text": "When the wind blows, the tail is pushed, and the pointer turns in the direction of the wind.",
+          "meaning": "**Pointer** — a long, thin piece of metal on a scale or dial that moves to indicate a figure or position\nजब हवा चलती है, तो पूंछ को धक्का लगता है, और सूचक हवा की दिशा में घूमता है। (When the wind blows, the tail is pushed, and the indicator turns in the direction of the wind.)"
+        },
+        {
+          "id": "p10-p3-s4",
+          "text": "It responds even to a light breeze.",
+          "meaning": "**Responds** — reacts | **Breeze** — a gentle wind\nयह हल्की हवा पर भी प्रतिक्रिया करता है। (It reacts even to a gentle wind.)"
+        }
+      ]
+    },
+    {
+      "id": "p11-media1",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p11-01.png",
+          "caption": "Fig. 2.10. Left: A windsock on a tarmac at an airport."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p11-00.png",
+          "caption": "Fig. 2.10. Right: An anemometer with three cups to measure wind speed."
+        }
+      ]
+    },
+    {
+      "id": "p11-p1",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p11-p1-s1",
+          "text": "This wind vane on the tarmac is called a ‘wind sock'.",
+          "meaning": "**Tarmac** — material used for surfacing roads or other outdoor areas | **Wind sock** — a cloth cone mounted on a mast to show the direction of the wind\nटारमैक पर इस पवन चक्की को 'विंड सॉक' कहा जाता है। (This wind vane on the airport runway is called a 'wind sock'.)"
+        },
+        {
+          "id": "p11-p1-s2",
+          "text": "It gives pilots an indication of the direction of the wind during take-off and landing.",
+          "meaning": "**Indication** — a sign or piece of information that indicates something\nयह पायलटों को उड़ान भरने और उतरने के दौरान हवा की दिशा का संकेत देता है। (It gives pilots a sign of the wind's direction during take-off and landing.)"
+        },
+        {
+          "id": "p11-p1-s3",
+          "text": "Similar socks are used in industries that release ash or gases.",
+          "meaning": "**Industries** — economic activity concerned with the processing of raw materials and manufacture of goods in factories | **Release** — allow or enable to escape from confinement\nइसी तरह के सॉक्स का उपयोग उन उद्योगों में किया जाता है जो राख या गैस छोड़ते हैं। (Similar socks are used in factories that let out ash or gases.)"
+        }
+      ]
+    },
+    {
+      "id": "p11-p2",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p11-p2-s1",
+          "text": "The simplest instrument to measure the wind direction and speed is the anemometer.",
+          "meaning": "**Anemometer** — an instrument for measuring the speed of the wind\nहवा की दिशा और गति को मापने का सबसे सरल उपकरण एनीमोमीटर है। (The simplest tool to measure wind direction and speed is the anemometer.)"
+        },
+        {
+          "id": "p11-p2-s2",
+          "text": "It has three or four metal cups that rotate on a vertical shaft when the wind blows—the stronger the wind, the faster the rotation.",
+          "meaning": "**Rotate** — move in a circle | **Vertical shaft** — a rod that goes up and down\nइसमें तीन या चार धातु के कप होते हैं जो हवा चलने पर एक ऊर्ध्वाधर शाफ्ट पर घूमते हैं—हवा जितनी तेज होती है, घुमाव उतना ही तेज होता है। (It has three or four metal cups that spin on an upright rod when the wind blows—the stronger the wind, the faster they spin.)"
+        },
+        {
+          "id": "p11-p2-s3",
+          "text": "A meter attached at the bottom counts how many times the anemometer spins in a certain period of time and calculates the wind speed in kilometres per hour (km/h).",
+          "meaning": "**Calculates** — determines mathematically\nनीचे लगा एक मीटर यह गिनता है कि एनीमोमीटर एक निश्चित समय में कितनी बार घूमता है और हवा की गति को किलोमीटर प्रति घंटे (किमी/घंटा) में गणना करता है। (A meter at the bottom counts how many times the anemometer spins in a set time and works out the wind speed in kilometers per hour (km/h).)"
+        }
+      ]
+    },
+    {
+      "id": "p11-sh1",
+      "type": "subheading",
+      "text": "e) Humidity"
+    },
+    {
+      "id": "p11-p3",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p11-p3-s1",
+          "text": "Humidity is the last element of the weather on our list.",
+          "meaning": "**Humidity** — the amount of water vapor in the air\nआर्द्रता हमारी सूची में मौसम का अंतिम तत्व है। (Humidity is the last weather element on our list.)"
+        },
+        {
+          "id": "p11-p3-s2",
+          "text": "It refers to the amount of water vapour present in the air.",
+          "meaning": "**Water vapour** — water in a gaseous state\nयह हवा में मौजूद जल वाष्प की मात्रा को संदर्भित करता है। (It refers to the amount of water gas present in the air.)"
+        },
+        {
+          "id": "p11-p3-s3",
+          "text": "It also depends on factors like temperature, wind, pressure and location.",
+          "meaning": "**Factors** — contributing elements | **Location** — a particular place or position\nयह तापमान, हवा, दबाव और स्थान जैसे कारकों पर भी निर्भर करता है। (It also depends on things like temperature, wind, pressure, and place.)"
+        }
+      ]
+    },
+    {
+      "id": "p11-act1",
+      "type": "activity",
+      "title": "LET'S EXPLORE",
+      "sentences": [
+        {
+          "id": "p11-act1-s1",
+          "text": "Where do you think humidity is likely to be more, Kochi or Jaipur?",
+          "meaning": "**Likely** — probably\nआपको क्या लगता है कि आर्द्रता कहाँ अधिक होने की संभावना है, कोच्चि या जयपुर में? (Where do you think humidity is probably higher, in Kochi or Jaipur?)"
+        },
+        {
+          "id": "p11-act1-s2",
+          "text": "You might guess that Kochi has higher humidity than Jaipur because it is located near the sea.",
+          "meaning": "**Guess** — estimate or suppose (something) without sufficient information to be sure of being correct\nआप अनुमान लगा सकते हैं कि कोच्चि में जयपुर की तुलना में अधिक आर्द्रता है क्योंकि यह समुद्र के पास स्थित है। (You might suppose that Kochi has more humidity than Jaipur because it is located near the sea.)"
+        },
+        {
+          "id": "p11-act1-s3",
+          "text": "But how will we know for sure?",
+          "meaning": "**For sure** — certainly\nलेकिन हम निश्चित रूप से कैसे जानेंगे? (But how will we know for certain?)"
+        },
+        {
+          "id": "p11-act1-s4",
+          "text": "If we had to compare the humidity level between Kochi and Mangaluru, how would we do it?",
+          "meaning": "**Compare** — estimate, measure, or note the similarity or dissimilarity between\nअगर हमें कोच्चि और मंगलुरु के बीच आर्द्रता के स्तर की तुलना करनी हो, तो हम यह कैसे करेंगे? (If we had to compare the humidity level between Kochi and Mangaluru, how would we do it?)"
+        },
+        {
+          "id": "p11-act1-s5",
+          "text": "Discuss with your classmates.",
+          "meaning": "**Discuss** — talk about (something) with another person or group of people\nअपने सहपाठियों के साथ चर्चा करें। (Talk about it with your classmates.)"
+        }
+      ]
+    },
+    {
+      "id": "p12-p1",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p12-p1-s1",
+          "text": "We can answer these questions more precisely by learning how to measure humidity.",
+          "meaning": "**Precisely** — accurately\nहम इन सवालों का जवाब अधिक सटीक रूप से आर्द्रता को मापना सीखकर दे सकते हैं। (We can answer these questions more accurately by learning how to measure humidity.)"
+        },
+        {
+          "id": "p12-p1-s2",
+          "text": "Before we move forward, we need to remember our Science lesson from Grade 6 about the states of water.",
+          "meaning": "**States of water** — the different forms water can take (solid, liquid, gas)\nआगे बढ़ने से पहले, हमें कक्षा 6 से पानी की अवस्थाओं के बारे में हमारे विज्ञान के पाठ को याद करने की आवश्यकता है। (Before we go on, we need to remember our Science lesson from Grade 6 about the different forms of water.)"
+        },
+        {
+          "id": "p12-p1-s3",
+          "text": "This will help us to understand how humidity is measured.",
+          "meaning": "**Measured** — ascertained the size, amount, or degree of something\nइससे हमें यह समझने में मदद मिलेगी कि आर्द्रता को कैसे मापा जाता है। (This will help us understand how humidity is measured.)"
+        }
+      ]
+    },
+    {
+      "id": "p12-act1",
+      "type": "activity",
+      "title": "LET'S REMEMBER",
+      "sentences": [
+        {
+          "id": "p12-act1-s1",
+          "text": "When water evaporates, it causes a cooling effect.",
+          "meaning": "**Evaporates** — turns from liquid into vapor | **Cooling effect** — the process of becoming less hot\nजब पानी वाष्पित होता है, तो यह शीतलन प्रभाव पैदा करता है। (When water turns into vapor, it causes a cooling effect.)"
+        },
+        {
+          "id": "p12-act1-s2",
+          "text": "If the amount of water in the air is already high (more humidity), water evaporates slowly.",
+          "meaning": "**Slowly** — at a slow speed; not quickly\nयदि हवा में पानी की मात्रा पहले से ही अधिक है (अधिक आर्द्रता), तो पानी धीरे-धीरे वाष्पित होता है। (If the amount of water in the air is already high (more humidity), water turns to vapor slowly.)"
+        },
+        {
+          "id": "p12-act1-s3",
+          "text": "That is typically the case on a rainy day.",
+          "meaning": "**Typically** — in most cases; usually\nयह आमतौर पर बरसात के दिन होता है। (This is usually the situation on a rainy day.)"
+        }
+      ]
+    },
+    {
+      "id": "p12-p2",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p12-p2-s1",
+          "text": "Humidity of the air is measured as relative humidity: air that would contain absolutely no water vapour (which is impossible in natural conditions) is rated at 0%, while air saturated with water vapour will have a humidity of 100%.",
+          "meaning": "**Relative humidity** — the amount of water vapor present in air expressed as a percentage of the amount needed for saturation at the same temperature | **Saturated** — holding as much water or moisture as can be absorbed\nहवा की आर्द्रता को सापेक्ष आर्द्रता के रूप में मापा जाता है: हवा जिसमें बिल्कुल भी जल वाष्प नहीं होता (जो प्राकृतिक परिस्थितियों में असंभव है) को 0% पर रेट किया जाता है, जबकि जल वाष्प से संतृप्त हवा में 100% की आर्द्रता होगी। (Air humidity is measured as relative humidity: air with no water vapor is rated at 0%, while air full of water vapor will have 100% humidity.)"
+        },
+        {
+          "id": "p12-p2-s2",
+          "text": "In practice, dry weather has a relative humidity range between 20% and 40%, while humid weather usually falls between 60% and 80% relative humidity.",
+          "meaning": "**Practice** — in reality | **Humid** — marked by a relatively high level of water vapor in the atmosphere\nव्यवहार में, शुष्क मौसम में सापेक्ष आर्द्रता 20% और 40% के बीच होती है, जबकि आर्द्र मौसम में आमतौर पर 60% और 80% सापेक्ष आर्द्रता के बीच होती है। (In reality, dry weather has a relative humidity between 20% and 40%, while moist weather is usually between 60% and 80% relative humidity.)"
+        }
+      ]
+    },
+    {
+      "id": "p12-act2",
+      "type": "activity",
+      "title": "THINK ABOUT IT",
+      "sentences": [
+        {
+          "id": "p12-act2-s1",
+          "text": "If the humidity in Delhi is at 52% while in Kochi it is 84%, in which of the two places are wet clothes likely to dry faster?",
+          "meaning": "**Likely** — probably\nयदि दिल्ली में आर्द्रता 52% है जबकि कोच्चि में यह 84% है, तो दोनों में से किस स्थान पर गीले कपड़े जल्दी सूखने की संभावना है? (If the humidity in Delhi is 52% and in Kochi it is 84%, in which of the two places will wet clothes probably dry faster?)"
+        },
+        {
+          "id": "p12-act2-s2",
+          "text": "And where are you likely to sweat more, assuming the temperature is the same in both places?",
+          "meaning": "**Sweat** — to excrete sweat through the pores of the skin | **Assuming** — supposing to be the case, without proof\nऔर आपको कहाँ अधिक पसीना आने की संभावना है, यह मानते हुए कि दोनों स्थानों पर तापमान समान है? (And where are you probably going to sweat more, if we suppose the temperature is the same in both places?)"
+        }
+      ]
+    },
+    {
+      "id": "p12-p3",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p12-p3-s1",
+          "text": "But how do we measure such numbers?",
+          "meaning": "**Measure** — to find the size or amount of something\nलेकिन हम ऐसी संख्याओं को कैसे मापते हैं? (But how do we find out such numbers?)"
+        },
+        {
+          "id": "p12-p3-s2",
+          "text": "This is done through an instrument called a hygrometer.",
+          "meaning": "**Hygrometer** — an instrument for measuring the humidity of the air or a gas\nयह एक उपकरण के माध्यम से किया जाता है जिसे हाइग्रोमीटर कहा जाता है। (This is done using a tool called a hygrometer.)"
+        },
+        {
+          "id": "p12-p3-s3",
+          "text": "Again, there are several types of hygrometers, depending on the principle they are based on.",
+          "meaning": "**Principle** — a fundamental truth or proposition that serves as the foundation for a system of belief or behavior\nफिर से, हाइग्रोमीटर कई प्रकार के होते हैं, जो उस सिद्धांत पर निर्भर करते हैं जिस पर वे आधारित होते हैं। (Again, there are many types of hygrometers, depending on the basic idea they work on.)"
+        },
+        {
+          "id": "p12-p3-s4",
+          "text": "The measurement of humidity is of great importance in many industrial processes, such as food processing.",
+          "meaning": "**Importance** — the state or fact of being of great significance or value | **Industrial processes** — procedures involving chemical, physical, electrical or mechanical steps to aid in the manufacturing of an item\nकई औद्योगिक प्रक्रियाओं, जैसे खाद्य प्रसंस्करण में आर्द्रता का मापन बहुत महत्वपूर्ण है। (The measurement of humidity is very significant in many industrial procedures, like food processing.)"
+        },
+        {
+          "id": "p12-p3-s5",
+          "text": "Museums also monitor humidity as they need to maintain a dry environment to preserve their exhibit.",
+          "meaning": "**Monitor** — observe and check the progress or quality of (something) over a period of time | **Preserve** — maintain (something) in its original or existing state | **Exhibit** — an object or collection of objects on public display in a museum\nसंग्रहालय भी आर्द्रता की निगरानी करते हैं क्योंकि उन्हें अपने प्रदर्शन को संरक्षित करने के लिए एक शुष्क वातावरण बनाए रखने की आवश्यकता होती है। (Museums also check humidity as they need to keep a dry environment to protect their displays.)"
+        }
+      ]
+    },
+    {
+      "id": "p13-h1",
+      "type": "heading",
+      "text": "Weather Stations"
+    },
+    {
+      "id": "p13-p1",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p13-p1-s1",
+          "text": "As you can see, we need several instruments to measure the weather at a particular place and time.",
+          "meaning": "**Instruments** — tools for scientific work | **Particular** — specific\nजैसा कि आप देख सकते हैं, हमें किसी विशेष स्थान और समय पर मौसम को मापने के लिए कई उपकरणों की आवश्यकता होती है। (As you can see, we need several tools to measure the weather at a specific place and time.)"
+        },
+        {
+          "id": "p13-p1-s2",
+          "text": "A weather station brings all these instruments together, making it easy to measure and track the weather.",
+          "meaning": "**Weather station** — a place where meteorological observations are made | **Track** — follow the course or progress of\nएक मौसम स्टेशन इन सभी उपकरणों को एक साथ लाता है, जिससे मौसम को मापना और ट्रैक करना आसान हो जाता है। (A weather station brings all these tools together, making it easy to measure and follow the weather.)"
+        },
+        {
+          "id": "p13-p1-s3",
+          "text": "Readings of all the measurements are taken at regular intervals, which helps in mapping and forecasting the weather.",
+          "meaning": "**Readings** — the figures shown on a measuring instrument | **Intervals** — periods of time between events | **Mapping** — creating a map of an area | **Forecasting** — predicting\nसभी मापों की रीडिंग नियमित अंतराल पर ली जाती है, जो मौसम की मैपिंग और पूर्वानुमान में मदद करती है। (The measurements are taken at regular time periods, which helps in creating maps and predicting the weather.)"
+        }
+      ]
+    },
+    {
+      "id": "p13-media1",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p13-00.png",
+          "caption": "Fig. 2.11: An automated weather station with a solar panel."
+        }
+      ]
+    },
+    {
+      "id": "p13-sh1",
+      "type": "subheading",
+      "text": "An automated weather station"
+    },
+    {
+      "id": "p13-p2",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p13-p2-s1",
+          "text": "An Automated Weather Station (AWS) is a self-operating system that uses various sensors to measure and record weather data, such as temperature, humidity, wind speed and direction, precipitation, and atmospheric pressure.",
+          "meaning": "**Automated** — operated by machines or computers | **Sensors** — devices that detect or measure a physical property | **Precipitation** — rain, snow, sleet, or hail\nएक स्वचालित मौसम स्टेशन (AWS) एक स्व-संचालित प्रणाली है जो तापमान, आर्द्रता, हवा की गति और दिशा, वर्षा और वायुमंडलीय दबाव जैसे मौसम डेटा को मापने और रिकॉर्ड करने के लिए विभिन्न सेंसर का उपयोग करती है। (An Automated Weather Station (AWS) is a self-running system that uses different sensors to measure and record weather data like temperature, humidity, wind speed and direction, rain, and atmospheric pressure.)"
+        },
+        {
+          "id": "p13-p2-s2",
+          "text": "Such stations are widely used in fields like agriculture, aviation, navigation, environmental monitoring, and so on, providing accurate and timely weather information without the need for human intervention.",
+          "meaning": "**Aviation** — the flying or operating of aircraft | **Navigation** — the process of accurately ascertaining one's position and planning and following a route | **Intervention** — the action of becoming involved in a difficult situation in order to improve it\nऐसे स्टेशनों का व्यापक रूप से कृषि, विमानन, नेविगेशन, पर्यावरण निगरानी आदि जैसे क्षेत्रों में उपयोग किया जाता है, जो मानव हस्तक्षेप के बिना सटीक और समय पर मौसम की जानकारी प्रदान करते हैं। (Such stations are widely used in areas like farming, flying, route planning, and environmental monitoring, giving accurate and timely weather information without needing human involvement.)"
+        }
+      ]
+    },
+    {
+      "id": "p13-call1",
+      "type": "callout",
+      "title": "DON'T MISS OUT",
+      "sentences": [
+        {
+          "id": "p13-call1-s1",
+          "text": "In 2023, the National Disaster Management Authority set up an AWS at a glacial lake of Sikkim at an altitude of more than 4800 metres above sea level.",
+          "meaning": "**Disaster** — a sudden event that causes great damage or loss of life | **Glacial lake** — a lake with origins in a melted glacier | **Altitude** — height above sea level\n2023 में, राष्ट्रीय आपदा प्रबंधन प्राधिकरण ने सिक्किम की एक हिमनद झील पर समुद्र तल से 4800 मीटर से अधिक की ऊंचाई पर एक AWS स्थापित किया। (In 2023, the National Disaster Management Authority set up an AWS at a lake formed by a melted glacier in Sikkim, at a height of more than 4800 meters above sea level.)"
+        },
+        {
+          "id": "p13-call1-s2",
+          "text": "The AWS provides early information about upcoming weather conditions.",
+          "meaning": "**Upcoming** — about to happen\nAWS आने वाली मौसम की स्थितियों के बारे में प्रारंभिक जानकारी प्रदान करता है। (The AWS gives early information about weather conditions that are about to happen.)"
+        }
+      ]
+    },
+    {
+      "id": "p13-media2",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p13-01.png",
+          "caption": "Fig. 2.12. An Automated Weather Station (AWS) at a glacial lake of Sikkim."
+        }
+      ]
+    },
+    {
+      "id": "p13-sh2",
+      "type": "subheading",
+      "text": "Predicting the Weather"
+    },
+    {
+      "id": "p13-p3",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p13-p3-s1",
+          "text": "Meteorologists collect data using these instruments over long periods of time.",
+          "meaning": "**Meteorologists** — weather scientists\nमौसम विज्ञानी इन उपकरणों का उपयोग करके लंबे समय तक डेटा एकत्र करते हैं। (Weather scientists collect data using these instruments over long periods of time.)"
+        },
+        {
+          "id": "p13-p3-s2",
+          "text": "They study the data and use scientific methods to try and predict the weather.",
+          "meaning": "**Scientific methods** — procedures for the systematic pursuit of knowledge involving the recognition and formulation of a problem, the collection of data through observation and experiment, and the formulation and testing of hypotheses\nवे डेटा का अध्ययन करते हैं और मौसम की भविष्यवाणी करने के लिए वैज्ञानिक तरीकों का उपयोग करते हैं। (They study the data and use scientific procedures to try and predict the weather.)"
+        }
+      ]
+    },
+    {
+      "id": "p14-p1",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p14-p1-s1",
+          "text": "Such predictions are very important nowadays, as climate change makes extreme weather, such as droughts, floods, cyclones, etc., more frequent.",
+          "meaning": "**Predictions** — forecasts | **Nowadays** — at the present time | **Extreme weather** — unusual, severe, or unseasonal weather | **Frequent** — happening often\nऐसी भविष्यवाणियां आजकल बहुत महत्वपूर्ण हैं, क्योंकि जलवायु परिवर्तन सूखे, बाढ़, चक्रवात आदि जैसे चरम मौसम को अधिक लगातार बनाता है। (Such forecasts are very important at the present time, as climate change makes severe weather, like droughts, floods, and cyclones, happen more often.)"
+        }
+      ]
+    },
+    {
+      "id": "p14-media1",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p14-00.png",
+          "caption": "Fig. 2.13. India: weather warning for India on 19 May 2024. The map shows various weather warnings like heat waves, thunderstorms, and heavy rain across different subdivisions, color-coded by severity (No Warning, Watch, Alert, Warning)."
+        }
+      ]
+    },
+    {
+      "id": "p15-p1",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p15-p1-s1",
+          "text": "Accurate predictions help us to be ready for such events.",
+          "meaning": "**Accurate** — correct in all details; exact | **Predictions** — forecasts\nसटीक भविष्यवाणियां हमें ऐसी घटनाओं के लिए तैयार रहने में मदद करती हैं। (Correct forecasts help us to be ready for such events.)"
+        },
+        {
+          "id": "p15-p1-s2",
+          "text": "They also enable local governments to mobilise resources and prepare for any disasters.",
+          "meaning": "**Enable** — give (someone or something) the authority or means to do something | **Mobilise** — organize and encourage (a group of people) to take collective action in pursuit of a particular objective | **Disasters** — sudden events that cause great damage or loss of life\nवे स्थानीय सरकारों को संसाधन जुटाने और किसी भी आपदा के लिए तैयार रहने में भी सक्षम बनाती हैं। (They also allow local governments to gather resources and prepare for any disasters.)"
+        },
+        {
+          "id": "p15-p1-s3",
+          "text": "For example, if stormy weather is expected at sea, fishermen are warned about venturing out in their boats, or an entire coastal area might have to be evacuated if a cyclone is expected.",
+          "meaning": "**Venturing** — undertaking a risky or daring journey | **Coastal** — relating to the coast | **Evacuated** — removed from a place of danger to a safer place\nउदाहरण के लिए, यदि समुद्र में तूफानी मौसम की उम्मीद है, तो मछुआरों को अपनी नावों में बाहर निकलने के बारे में चेतावनी दी जाती है, या यदि चक्रवात की उम्मीद है तो पूरे तटीय क्षेत्र को खाली करना पड़ सकता है। (For example, if stormy weather is expected at sea, fishermen are warned about going out in their boats, or a whole coastal area might have to be emptied if a cyclone is expected.)"
+        }
+      ]
+    },
+    {
+      "id": "p15-act1",
+      "type": "activity",
+      "title": "LET'S EXPLORE",
+      "sentences": [
+        {
+          "id": "p15-act1-s1",
+          "text": "Discuss, in pairs, different situations in which weather predictions are helpful.",
+          "meaning": "**Situations** — a set of circumstances | **Helpful** — useful\nजोड़ों में, उन विभिन्न स्थितियों पर चर्चा करें जिनमें मौसम की भविष्यवाणियां सहायक होती हैं। (In pairs, discuss different circumstances in which weather forecasts are useful.)"
+        },
+        {
+          "id": "p15-act1-s2",
+          "text": "Make a list, and after you have completed it, share it and discuss it with the pair sitting next to you.",
+          "meaning": "**Completed** — finished\nएक सूची बनाएं, और इसे पूरा करने के बाद, इसे साझा करें और अपने बगल में बैठे जोड़े के साथ इस पर चर्चा करें। (Make a list, and after you have finished it, share it and discuss it with the pair sitting next to you.)"
+        },
+        {
+          "id": "p15-act1-s3",
+          "text": "How many different categories of situations have you been able to identify?",
+          "meaning": "**Categories** — classes or divisions of people or things regarded as having particular shared characteristics | **Identify** — establish or indicate who or what (someone or something) is\nआप कितनी विभिन्न श्रेणियों की स्थितियों की पहचान करने में सक्षम हुए हैं? (How many different types of situations have you been able to recognize?)"
+        }
+      ]
+    },
+    {
+      "id": "p15-p2",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p15-p2-s1",
+          "text": "Look carefully at the map of India above.",
+          "meaning": "**Carefully** — in a way that deliberately avoids harm or errors\nऊपर दिए गए भारत के नक्शे को ध्यान से देखें। (Look at the map of India above with care.)"
+        },
+        {
+          "id": "p15-p2-s2",
+          "text": "This map was issued by the India Meteorological Department on 19 May 2024.",
+          "meaning": "**Issued** — formally sent out or made available\nयह नक्शा भारत मौसम विज्ञान विभाग द्वारा 19 मई 2024 को जारी किया गया था। (This map was released by the India Meteorological Department on 19 May 2024.)"
+        },
+        {
+          "id": "p15-p2-s3",
+          "text": "Study the icons and connect them to the conditions shown on the map.",
+          "meaning": "**Icons** — symbols or graphic representations | **Connect** — bring together or into contact so that a real or notional link is established\nआइकनों का अध्ययन करें और उन्हें नक्शे पर दिखाई गई स्थितियों से जोड़ें। (Study the symbols and link them to the conditions shown on the map.)"
+        }
+      ]
+    },
+    {
+      "id": "p15-act2",
+      "type": "activity",
+      "title": "LET'S EXPLORE",
+      "sentences": [
+        {
+          "id": "p15-act2-s1",
+          "text": "What do you observe happening on that day?",
+          "meaning": "**Observe** — notice or perceive\nआप उस दिन क्या होता हुआ देखते हैं? (What do you notice happening on that day?)"
+        },
+        {
+          "id": "p15-act2-s2",
+          "text": "What are the various weather conditions that the IMD is alerting people to?",
+          "meaning": "**Various** — different kinds of | **Alerting** — warning\nविभिन्न मौसम की स्थितियाँ क्या हैं जिनके बारे में IMD लोगों को सचेत कर रहा है? (What are the different weather conditions that the IMD is warning people about?)"
+        },
+        {
+          "id": "p15-act2-s3",
+          "text": "Which states have warning signs?",
+          "meaning": "**Warning signs** — signs that indicate a potential danger, problem, or other unpleasant situation\nकिन राज्यों में चेतावनी के संकेत हैं? (Which states have warning signs?)"
+        },
+        {
+          "id": "p15-act2-s4",
+          "text": "Which parts of India are likely to be free from severe weather?",
+          "meaning": "**Likely** — probably | **Severe** — very great; intense\nभारत के कौन से हिस्से गंभीर मौसम से मुक्त रहने की संभावना है? (Which parts of India are probably going to be free from intense weather?)"
+        },
+        {
+          "id": "p15-act2-s5",
+          "text": "Which states are likely to face heat wave conditions?",
+          "meaning": "**Heat wave** — a prolonged period of abnormally hot weather\nकिन राज्यों में लू की स्थिति का सामना करने की संभावना है? (Which states are likely to experience a period of very hot weather?)"
+        },
+        {
+          "id": "p15-act2-s6",
+          "text": "What are the causes for warning in Tripura and Lakshadweep?",
+          "meaning": "**Causes** — persons or things that give rise to an action, phenomenon, or condition\nत्रिपुरा और लक्षद्वीप में चेतावनी के क्या कारण हैं? (What are the reasons for the warning in Tripura and Lakshadweep?)"
+        }
+      ]
+    },
+    {
+      "id": "p15-sh1",
+      "type": "subheading",
+      "text": "Before we move on ..."
+    },
+    {
+      "id": "p15-l1",
+      "type": "list",
+      "items": [
+        "Temperature, humidity, precipitation, wind and atmospheric pressure together define the weather at a particular place.",
+        "The condition of these elements is measured using special instruments. Data collected from these help us to monitor and predict the weather."
+      ]
+    },
+    {
+      "id": "p16-l1",
+      "type": "list",
+      "items": [
+        "In different times or situations, one of the elements is dominant — for example, rainfall in July, the temperature in May and December, atmospheric pressure when a cyclone is moving, and wind when a loo (strong, hot and dusty winds that blow in north India in summers) is blowing, or forest fires are spreading.",
+        "Weather is closely linked to climate. We will discuss this in the next chapter."
+      ]
+    },
+    {
+      "id": "p16-h1",
+      "type": "heading",
+      "text": "Questions and activities"
+    },
+    {
+      "id": "p16-act1",
+      "type": "activity",
+      "sentences": [
+        {
+          "id": "p16-act1-s1",
+          "text": "1. Match the instrument with the weather element it measures.",
+          "meaning": "**Instrument** — a tool or implement, especially one for delicate or scientific work | **Element** — a part or aspect of something\n1. उपकरण को उस मौसम तत्व से मिलाएं जिसे वह मापता है। (1. Match the tool with the weather component it measures.)"
+        }
+      ]
+    },
+    {
+      "id": "p16-table1",
+      "type": "table",
+      "headers": [
+        "",
+        "Instrument used",
+        "",
+        "Element of the Weather"
+      ],
+      "rows": [
+        [
+          "(1)",
+          "Hygrometer",
+          "(a)",
+          "Precipitation"
+        ],
+        [
+          "(2)",
+          "Anemometer",
+          "(b)",
+          "Atmospheric pressure"
+        ],
+        [
+          "(3)",
+          "Barometer",
+          "(c)",
+          "Wind direction and speed"
+        ],
+        [
+          "(4)",
+          "Thermometer",
+          "(d)",
+          "Humidity"
+        ],
+        [
+          "(5)",
+          "Rain gauge",
+          "(e)",
+          "Temperature"
+        ]
+      ]
+    },
+    {
+      "id": "p16-act2",
+      "type": "activity",
+      "sentences": [
+        {
+          "id": "p16-act2-s1",
+          "text": "2. Jyotsna is deciding what clothes to pack for her school trip to Mumbai in June.",
+          "meaning": "**Deciding** — making a choice from a number of alternatives\n2. ज्योत्सना यह तय कर रही है कि जून में मुंबई की अपनी स्कूल यात्रा के लिए कौन से कपड़े पैक करने हैं। (2. Jyotsna is choosing what clothes to pack for her school trip to Mumbai in June.)"
+        },
+        {
+          "id": "p16-act2-s2",
+          "text": "She looks at the weather forecast, which predicts 29°C and 84% humidity.",
+          "meaning": "**Forecast** — a prediction or estimate of future events | **Predicts** — says or estimates that (a specified thing) will happen in the future\nवह मौसम का पूर्वानुमान देखती है, जो 29°C और 84% आर्द्रता की भविष्यवाणी करता है। (She looks at the weather prediction, which estimates 29°C and 84% humidity.)"
+        },
+        {
+          "id": "p16-act2-s3",
+          "text": "What would be your advice to her?",
+          "meaning": "**Advice** — guidance or recommendations offered with regard to prudent action\nआप उसे क्या सलाह देंगे? (What guidance would you offer her?)"
+        }
+      ]
+    },
+    {
+      "id": "p16-act3",
+      "type": "activity",
+      "sentences": [
+        {
+          "id": "p16-act3-s1",
+          "text": "3. Imagine that a small group of students is setting up a rain gauge.",
+          "meaning": "**Imagine** — form a mental image or concept of | **Setting up** — establishing\n3. कल्पना कीजिए कि छात्रों का एक छोटा समूह एक वर्षामापी स्थापित कर रहा है। (3. Imagine that a small group of students is establishing a rain gauge.)"
+        },
+        {
+          "id": "p16-act3-s2",
+          "text": "Here are some options for the site.",
+          "meaning": "**Options** — choices | **Site** — a location\nसाइट के लिए यहां कुछ विकल्प दिए गए हैं। (Here are some choices for the location.)"
+        }
+      ]
+    },
+    {
+      "id": "p16-l2",
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "The school vegetable garden.",
+        "The terrace of the school building.",
+        "Open ground with elevated platform.",
+        "Compound wall of school.",
+        "Verandah of the school laboratory."
+      ]
+    },
+    {
+      "id": "p17-p1",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p17-p1-s1",
+          "text": "Discuss in your group and finalise the site.",
+          "meaning": "**Finalise** — to complete the last details of a plan\nअपने समूह में चर्चा करें और साइट को अंतिम रूप दें। (Discuss in your group and complete the plan for the site.)"
+        },
+        {
+          "id": "p17-p1-s2",
+          "text": "Write down the reasons for your decision.",
+          "meaning": "**Decision** — a conclusion or resolution reached after consideration\nअपने निर्णय के कारण लिखें। (Write down the reasons for your conclusion.)"
+        }
+      ]
+    },
+    {
+      "id": "p17-act1",
+      "type": "activity",
+      "sentences": [
+        {
+          "id": "p17-act1-s1",
+          "text": "4. Below is a chart taken from IMD, Jammu and Kashmir.",
+          "meaning": "**Chart** — a table, graph, or diagram\n4. नीचे IMD, जम्मू और कश्मीर से लिया गया एक चार्ट है। (4. Below is a table taken from IMD, Jammu and Kashmir.)"
+        },
+        {
+          "id": "p17-act1-s2",
+          "text": "Looking at the data available, write a short script to report the weather conditions in different parts of Jammu and Kashmir on the date shown.",
+          "meaning": "**Script** — the written text of a play, movie, or broadcast | **Report** — give a spoken or written account of something\nउपलब्ध आंकड़ों को देखते हुए, दिखाए गए तारीख पर जम्मू और कश्मीर के विभिन्न हिस्सों में मौसम की स्थिति पर रिपोर्ट करने के लिए एक छोटी स्क्रिप्ट लिखें। (Looking at the available data, write a short text to give an account of the weather conditions in different parts of Jammu and Kashmir on the date shown.)"
+        },
+        {
+          "id": "p17-act1-s3",
+          "text": "(Hint: Cover the temperature range, maximum and minimum temperatures, humidity, precipitation, etc.)",
+          "meaning": "**Range** — the area of variation between upper and lower limits on a particular scale\n(संकेत: तापमान सीमा, अधिकतम और न्यूनतम तापमान, आर्द्रता, वर्षा आदि को कवर करें।) ((Hint: Include the temperature range, maximum and minimum temperatures, humidity, precipitation, etc.))"
+        }
+      ]
+    },
+    {
+      "id": "p17-table1",
+      "type": "table",
+      "caption": "DAILY WEATHER PARAMETERS\nJammu & Kashmir (EVENING)\nDATE: 01-02-2024",
+      "headers": [
+        "Station",
+        "Max Temp Actual (°C)",
+        "Max Temp Normal (°C)",
+        "Max Temp Dep (°C)",
+        "Min Temp Actual (°C)",
+        "Min Temp Normal (°C)",
+        "Min Temp Dep (°C)",
+        "Rainfall (mm) [0830-1730]",
+        "Snowfall (cm) [0830-1730]",
+        "Rainfall (mm) [24hr]",
+        "Snowfall (cm) [24hr]",
+        "Rel. Humidity 0830 (%)",
+        "Rel. Humidity 1730 (%)"
+      ],
+      "rows": [
+        [
+          "SRINAGAR",
+          "6.5",
+          "8.9",
+          "-2.4",
+          "0.2",
+          "-0.7",
+          "0.9",
+          "TR",
+          "0.0",
+          "13.4",
+          "2.4",
+          "89",
+          "89"
+        ],
+        [
+          "QAZIGUND",
+          "3.2",
+          "8.5",
+          "-5.3",
+          "-0.4",
+          "-2.1",
+          "1.7",
+          "11.8",
+          "10.0",
+          "36.2",
+          "22.0",
+          "97",
+          "90"
+        ],
+        [
+          "PAHALGAM",
+          "1.1",
+          "5.6",
+          "-4.5",
+          "-4.1",
+          "-6.1",
+          "2.0",
+          "6.0",
+          "8.0",
+          "19.4",
+          "23.0",
+          "96",
+          "96"
+        ],
+        [
+          "KUPWARA",
+          "5.1",
+          "8.5",
+          "-3.4",
+          "-0.7",
+          "-2.3",
+          "1.6",
+          "0.5",
+          "0.0",
+          "21.9",
+          "10.0",
+          "97",
+          "94"
+        ],
+        [
+          "KUKERNAG",
+          "2.6",
+          "6.6",
+          "-4.0",
+          "-1.4",
+          "-2.4",
+          "1.0",
+          "12.0",
+          "8.0",
+          "35.2",
+          "30.0",
+          "96",
+          "97"
+        ],
+        [
+          "GULMARG",
+          "-2.6",
+          "1.4",
+          "-4.0",
+          "-7.6",
+          "-7.6",
+          "0.0",
+          "8.2",
+          "6.35",
+          "35.2",
+          "35.0",
+          "76",
+          "100"
+        ],
+        [
+          "MUZAFARABAD",
+          "8.5",
+          "–",
+          "–",
+          "5.6",
+          "–",
+          "–",
+          "–",
+          "–",
+          "25.8",
+          "–",
+          "93",
+          "–"
+        ]
+      ]
+    },
+    {
+      "id": "p17-note1",
+      "type": "note",
+      "sentences": [
+        {
+          "id": "p17-note1-s1",
+          "text": "Note: ACT means actual; NOR means normal; DEP is departure from normal; R/F is rainfall; S/N is snowfall; TR means trace amount.",
+          "meaning": "**Actual** — existing in fact | **Normal** — conforming to a standard; usual | **Departure** — the action of leaving | **Trace amount** — a very small quantity\nनोट: ACT का मतलब वास्तविक है; NOR का मतलब सामान्य है; DEP सामान्य से विचलन है; R/F वर्षा है; S/N हिमपात है; TR का मतलब ट्रेस राशि है। (Note: ACT means real; NOR means usual; DEP is deviation from normal; R/F is rainfall; S/N is snowfall; TR means a very small amount.)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── App settings (PIN-protected in UI, no Firebase Auth) ─────────────
+    match /settings/{doc} {
+      allow read, write: if true;
+    }
+
+    // ── Child profiles, sessions, assessments ────────────────────────────
+    match /kids/{name} {
+      allow read, write: if true;
+      match /{subcollection}/{docId} {
+        allow read, write: if true;
+      }
+    }
+
+    // ── Curriculum ───────────────────────────────────────────────────────
+    match /classes/{classNum} {
+      allow read, write: if true;
+      match /{document=**} {
+        allow read, write: if true;
+      }
+    }
+
+    // ── Vocabulary cache ─────────────────────────────────────────────────
+    match /vocab/{word} {
+      allow read, write: if true;
+    }
+
+  }
+}

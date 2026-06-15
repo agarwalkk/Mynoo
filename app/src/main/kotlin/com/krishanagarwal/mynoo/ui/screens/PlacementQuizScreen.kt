@@ -15,6 +15,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.VolumeUp
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -512,7 +513,7 @@ private fun QuizView(
                                         onClick = { vm.speakQuestion() },
                                         modifier = Modifier.size(32.dp)
                                     ) {
-                                        Icon(Icons.Default.VolumeUp, contentDescription = "Speak", tint = currentLangColor)
+                                        Icon(Icons.AutoMirrored.Filled.VolumeUp, contentDescription = "Speak", tint = currentLangColor)
                                     }
                                 }
                             }

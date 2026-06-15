@@ -208,18 +208,28 @@ class ChapterManagementViewModel @Inject constructor(
 
                 for (p in content.paragraphs) {
                     if (noAudioTypes.contains(p.type)) continue
-                    if (p.type == "list" && p.items.isNotEmpty()) {
-                        p.items.forEachIndexed { idx, item ->
-                            val id = "${p.id}-item-$idx"
-                            val text = cleanMarkdown(item)
-                            if (text.isNotBlank()) {
-                                segments.add(SegmentItem(id, text, "paragraph"))
+                    if (p.type == "list") {
+                        if (p.sentences.isNotEmpty()) {
+                            for (s in p.sentences) {
+                                if (s.id.isNotBlank() && s.text.isNotBlank()) {
+                                    val kind = if (s.id.contains("-item-")) "paragraph" else "sentence"
+                                    segments.add(SegmentItem(s.id, cleanMarkdown(s.text), kind))
+                                }
+                            }
+                        } else if (p.items.isNotEmpty()) {
+                            p.items.forEachIndexed { idx, item ->
+                                val id = "${p.id}-item-$idx"
+                                val text = cleanMarkdown(item)
+                                if (text.isNotBlank()) {
+                                    segments.add(SegmentItem(id, text, "paragraph"))
+                                }
                             }
                         }
                     } else if (p.sentences.isNotEmpty()) {
                         for (s in p.sentences) {
                             if (s.id.isNotBlank() && s.text.isNotBlank()) {
-                                segments.add(SegmentItem(s.id, cleanMarkdown(s.text), "sentence"))
+                                val kind = if (s.id.contains("-item-")) "paragraph" else "sentence"
+                                segments.add(SegmentItem(s.id, cleanMarkdown(s.text), kind))
                             }
                         }
                     } else if (p.text.isNotBlank()) {

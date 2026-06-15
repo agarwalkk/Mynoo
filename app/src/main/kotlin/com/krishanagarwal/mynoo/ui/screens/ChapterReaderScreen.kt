@@ -3,6 +3,9 @@ package com.krishanagarwal.mynoo.ui.screens
 import androidx.compose.foundation.background
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
@@ -12,6 +15,8 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.VolumeOff
+import androidx.compose.material.icons.automirrored.filled.VolumeUp
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.*
@@ -30,6 +35,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.material3.pulltorefresh.pullToRefresh
+import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
+import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
@@ -130,6 +138,14 @@ fun ChapterReaderScreen(
             onFontSizeIncrease = { fontSizeOffset = (fontSizeOffset + 1).coerceAtMost(12) },
         )
 
+        if (ui.cacheDownloadProgress != null) {
+            CacheDownloadProgressBand(
+                progress = ui.cacheDownloadProgress!!,
+                complete = ui.cacheDownloadComplete,
+                themeColor = themeColor
+            )
+        }
+
         Box(Modifier.weight(1f)) {
             when {
                 ui.loading -> Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
@@ -141,31 +157,51 @@ fun ChapterReaderScreen(
                 ) {
                     Text(ui.error!!, color = MaterialTheme.colorScheme.error)
                 }
-                else -> LazyColumn(
-                    state          = listState,
-                    modifier       = Modifier
-                        .fillMaxSize()
-                        .padding(horizontal = 16.dp),
-                    contentPadding = PaddingValues(
-                        top    = 16.dp,
-                        bottom = if (ui.isPlaying || ui.isPaused) 120.dp else 16.dp,
-                    ),
-                    verticalArrangement = Arrangement.spacedBy(12.dp),
-                ) {
-                    items(paragraphs, key = { it.id }) { para ->
-                        ParagraphBlock(
-                            para             = para,
-                            activeSentenceId = ui.activeSentenceId,
-                            // Suppress word highlight on underlying text while popup is playing
-                            activeWordIndex  = if (ui.popupIsPlaying) null else ui.activeWordIndex,
-                            subject          = subject,
-                            fontSizeOffset   = fontSizeOffset,
-                            onLongPress      = {
-                                meaningPopup = it
-                                vm.setResumePoint(it.id)
-                            },
-                            onWordTap        = onWordTap,
-                            onMediaClick     = { item -> mediaPopup = item },
+                else -> {
+                    val pullToRefreshState = rememberPullToRefreshState()
+                    Box(
+                        modifier = Modifier
+                            .pullToRefresh(
+                                state = pullToRefreshState,
+                                isRefreshing = ui.isRefreshing,
+                                onRefresh = { vm.refreshContent(classNum, subject, chapterId, title) },
+                                threshold = 160.dp
+                            )
+                            .fillMaxSize()
+                    ) {
+                        LazyColumn(
+                            state          = listState,
+                            modifier       = Modifier
+                                .fillMaxSize()
+                                .padding(horizontal = 16.dp),
+                            contentPadding = PaddingValues(
+                                top    = 16.dp,
+                                bottom = if (ui.isPlaying || ui.isPaused) 120.dp else 16.dp,
+                            ),
+                            verticalArrangement = Arrangement.spacedBy(12.dp),
+                        ) {
+                            items(paragraphs, key = { it.id }) { para ->
+                                ParagraphBlock(
+                                    para             = para,
+                                    activeSentenceId = ui.activeSentenceId,
+                                    // Suppress word highlight on underlying text while popup is playing
+                                    activeWordIndex  = if (ui.popupIsPlaying) null else ui.activeWordIndex,
+                                    subject          = subject,
+                                    themeColor       = themeColor,
+                                    fontSizeOffset   = fontSizeOffset,
+                                    onLongPress      = {
+                                        meaningPopup = it
+                                        vm.setResumePoint(it.id)
+                                    },
+                                    onWordTap        = onWordTap,
+                                    onMediaClick     = { item -> mediaPopup = item },
+                                )
+                            }
+                        }
+                        PullToRefreshDefaults.Indicator(
+                            state = pullToRefreshState,
+                            isRefreshing = ui.isRefreshing,
+                            modifier = Modifier.align(Alignment.TopCenter)
                         )
                     }
                 }
@@ -281,6 +317,9 @@ fun ChapterReaderScreen(
     // ── Photo viewer dialog ─────────────────────────────────────────────────────────
     mediaPopup?.let { item ->
         val ctx = LocalContext.current
+        val imgSource = remember(item.url) {
+            vm.getImageSource(classNum, subject, chapterId, item.url)
+        }
         Dialog(
             onDismissRequest = { mediaPopup = null },
             properties       = DialogProperties(usePlatformDefaultWidth = false),
@@ -292,7 +331,7 @@ fun ChapterReaderScreen(
             ) {
                 AsyncImage(
                     model             = ImageRequest.Builder(ctx)
-                        .data(item.url)
+                        .data(imgSource)
                         .addHeader("User-Agent", "Mozilla/5.0")
                         .build(),
                     contentDescription = item.caption.ifBlank { "Photo" },
@@ -480,6 +519,7 @@ private fun ParagraphBlock(
     activeSentenceId: String?,
     activeWordIndex:  Int?,
     subject:          String,
+    themeColor:       Color,
     fontSizeOffset:   Int,
     onLongPress:      (ChapterSentence) -> Unit,
     onWordTap:        (word: String, sentenceText: String) -> Unit,
@@ -502,6 +542,20 @@ private fun ParagraphBlock(
         }
     }
 
+    val isTimeline = remember(para.title, para.type) {
+        para.type == "note" && para.title.isNotBlank() && (
+            para.title.contains(Regex("""\d+""")) && (
+                para.title.contains("BCE", ignoreCase = true) ||
+                para.title.contains("CE", ignoreCase = true) ||
+                para.title.contains("BC", ignoreCase = true) ||
+                para.title.contains("AD", ignoreCase = true) ||
+                para.title.contains("century", ignoreCase = true) ||
+                para.title.contains("-") ||
+                para.title.contains("–")
+            )
+        )
+    }
+
     when (para.type) {
         "heading" -> Text(
             text  = para.text.stripMd(),
@@ -521,93 +575,332 @@ private fun ParagraphBlock(
             modifier  = Modifier.fillMaxWidth(),
         )
         "verse" -> {
-            ParagraphText(
-                sentences        = sentences,
-                activeSentenceId = activeSentenceId,
-                activeWordIndex  = activeWordIndex,
-                subject          = subject,
-                onLongPress      = onLongPress,
-                onWordTap        = onWordTap,
-                paraId           = para.id,
-                separator        = "\n",
-                style            = MaterialTheme.typography.bodyMedium.copy(
-                    fontStyle  = FontStyle.Italic,
-                    lineHeight = 28.sp,
-                ).scale(fontSizeOffset),
-                modifier         = Modifier
+            Card(
+                modifier = Modifier
                     .fillMaxWidth()
-                    .background(
-                        MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.45f),
-                        RoundedCornerShape(8.dp),
-                    )
-                    .padding(horizontal = 16.dp, vertical = 12.dp),
-            )
-        }
-        "equation" -> OutlinedCard(modifier = Modifier.fillMaxWidth()) {
-            Text(
-                text      = para.text,
-                style     = MaterialTheme.typography.bodyLarge.scale(fontSizeOffset),
-                textAlign = TextAlign.Center,
-                modifier  = Modifier
-                    .fillMaxWidth()
-                    .padding(12.dp),
-            )
-        }
-        "blockquote" -> Surface(
-            shape    = RoundedCornerShape(8.dp),
-            color    = MaterialTheme.colorScheme.secondaryContainer,
-            modifier = Modifier.fillMaxWidth(),
-        ) {
-            ParagraphText(
-                sentences        = sentences,
-                activeSentenceId = activeSentenceId,
-                activeWordIndex  = activeWordIndex,
-                subject          = subject,
-                onLongPress      = onLongPress,
-                onWordTap        = onWordTap,
-                paraId           = para.id,
-                modifier         = Modifier.padding(12.dp),
-                style            = MaterialTheme.typography.bodyMedium.copy(
-                    fontStyle  = FontStyle.Italic,
-                    lineHeight = 26.sp,
-                ).scale(fontSizeOffset),
-            )
-        }
-        "activity", "callout", "note" -> {
-            val label = para.title.ifBlank { para.type.replaceFirstChar { it.uppercase() } }
-            Surface(
-                shape    = RoundedCornerShape(12.dp),
-                color    = MaterialTheme.colorScheme.tertiaryContainer,
-                modifier = Modifier.fillMaxWidth(),
+                    .padding(vertical = 6.dp),
+                shape = RoundedCornerShape(topStart = 0.dp, bottomStart = 0.dp, topEnd = 12.dp, bottomEnd = 12.dp),
+                colors = CardDefaults.cardColors(containerColor = Color(0xFFFCF8F2)),
+                border = BorderStroke(1.dp, Color(0xFFF0E4D2)),
+                elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
             ) {
-                Column(Modifier.padding(12.dp)) {
+                Row(
+                    modifier = Modifier.drawBehind {
+                        drawRect(
+                            color = themeColor,
+                            size = androidx.compose.ui.geometry.Size(4.dp.toPx(), size.height)
+                        )
+                    }.padding(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 16.dp),
+                    verticalAlignment = Alignment.Top,
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)
+                ) {
                     Text(
-                        text  = label,
-                        style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.Bold).scale(fontSizeOffset),
-                        color = MaterialTheme.colorScheme.onTertiaryContainer,
+                        text = "❝",
+                        style = MaterialTheme.typography.titleLarge.copy(
+                            fontWeight = FontWeight.Bold,
+                            color = themeColor.copy(alpha = 0.6f)
+                        )
                     )
-                    Spacer(Modifier.height(4.dp))
                     ParagraphText(
                         sentences        = sentences,
                         activeSentenceId = activeSentenceId,
                         activeWordIndex  = activeWordIndex,
                         subject          = subject,
+                        themeColor       = themeColor,
                         onLongPress      = onLongPress,
                         onWordTap        = onWordTap,
                         paraId           = para.id,
-                        style            = MaterialTheme.typography.bodyMedium.copy(lineHeight = 24.sp).scale(fontSizeOffset),
+                        separator        = "\n",
+                        style            = MaterialTheme.typography.bodyLarge.copy(
+                            fontStyle  = FontStyle.Italic,
+                            fontFamily = FontFamily.Serif,
+                            lineHeight = 28.sp,
+                            color      = Color(0xFF4E3629)
+                        ).scale(fontSizeOffset),
+                        modifier         = Modifier.weight(1f)
                     )
                 }
             }
         }
-        "list" -> Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-            para.items.forEachIndexed { i, item ->
-                Row {
-                    Text(
-                        text  = if (para.ordered) "${i + 1}. " else "• ",
-                        style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold).scale(fontSizeOffset),
+        "equation" -> Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 6.dp),
+            shape = RoundedCornerShape(12.dp),
+            colors = CardDefaults.cardColors(containerColor = Color(0xFF1E272C)),
+            border = BorderStroke(1.5.dp, Color(0xFF37474F)),
+            elevation = CardDefaults.cardElevation(defaultElevation = 3.dp)
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    text      = para.text,
+                    style     = MaterialTheme.typography.titleMedium.copy(
+                        fontFamily = FontFamily.Monospace,
+                        fontWeight = FontWeight.Bold,
+                        color      = Color(0xFFE0F7FA)
+                    ).scale(fontSizeOffset),
+                    textAlign = TextAlign.Center,
+                    modifier  = Modifier.fillMaxWidth()
+                )
+            }
+        }
+        "blockquote" -> Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 6.dp),
+            shape = RoundedCornerShape(8.dp),
+            colors = CardDefaults.cardColors(containerColor = Color(0xFFFAF4E8)),
+            border = BorderStroke(2.dp, Color(0xFFD4C5A9)),
+            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+        ) {
+            Row(
+                modifier = Modifier.padding(16.dp),
+                verticalAlignment = Alignment.Top,
+                horizontalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                Text(
+                    text = "📜",
+                    style = MaterialTheme.typography.titleLarge
+                )
+                ParagraphText(
+                    sentences        = sentences,
+                    activeSentenceId = activeSentenceId,
+                    activeWordIndex  = activeWordIndex,
+                    subject          = subject,
+                    themeColor       = themeColor,
+                    onLongPress      = onLongPress,
+                    onWordTap        = onWordTap,
+                    paraId           = para.id,
+                    style            = MaterialTheme.typography.bodyLarge.copy(
+                        fontStyle  = FontStyle.Italic,
+                        fontFamily = FontFamily.Serif,
+                        lineHeight = 28.sp,
+                        color      = Color(0xFF5C4E37)
+                    ).scale(fontSizeOffset),
+                    modifier         = Modifier.weight(1f)
+                )
+            }
+        }
+        "activity", "callout", "note" -> {
+            if (isTimeline) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 4.dp),
+                    verticalAlignment = Alignment.Top
+                ) {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        modifier = Modifier.width(72.dp)
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .size(48.dp)
+                                .background(themeColor, RoundedCornerShape(50))
+                                .padding(4.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                text = para.title,
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color.White,
+                                    textAlign = TextAlign.Center,
+                                    lineHeight = 12.sp
+                                ),
+                                maxLines = 2,
+                                overflow = TextOverflow.Ellipsis
+                            )
+                        }
+                        Box(
+                            modifier = Modifier
+                                .width(2.dp)
+                                .height(60.dp)
+                                .background(themeColor.copy(alpha = 0.3f))
+                        )
+                    }
+                    Card(
+                        modifier = Modifier
+                            .weight(1f)
+                            .padding(start = 8.dp, bottom = 16.dp),
+                        shape = RoundedCornerShape(12.dp),
+                        colors = CardDefaults.cardColors(containerColor = Color(0xFFFAF8F5)),
+                        border = BorderStroke(1.dp, themeColor.copy(alpha = 0.2f))
+                    ) {
+                        ParagraphText(
+                            sentences        = sentences,
+                            activeSentenceId = activeSentenceId,
+                            activeWordIndex  = activeWordIndex,
+                            subject          = subject,
+                            themeColor       = themeColor,
+                            onLongPress      = onLongPress,
+                            onWordTap        = onWordTap,
+                            paraId           = para.id,
+                            style            = MaterialTheme.typography.bodyLarge.copy(lineHeight = 28.sp).scale(fontSizeOffset),
+                            modifier         = Modifier.padding(16.dp)
+                        )
+                    }
+                }
+            } else {
+                val boxBg = when (para.type) {
+                    "activity" -> Color(0xFFEBF5FB)
+                    "callout" -> Color(0xFFFDF2E9)
+                    else -> Color(0xFFFEF9E7)
+                }
+                val boxBorder = when (para.type) {
+                    "activity" -> Color(0xFF3498DB)
+                    "callout" -> Color(0xFFE67E22)
+                    else -> Color(0xFFF1C40F)
+                }
+                val icon = when (para.type) {
+                    "activity" -> "✍️"
+                    "callout" -> "💡"
+                    else -> "📌"
+                }
+                val label = para.title.ifBlank { para.type.replaceFirstChar { it.uppercase() } }
+                
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 4.dp),
+                    shape = RoundedCornerShape(12.dp),
+                    colors = CardDefaults.cardColors(containerColor = boxBg),
+                    border = BorderStroke(2.dp, boxBorder),
+                    elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+                ) {
+                    Column(Modifier.padding(16.dp)) {
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            Text(text = icon, style = MaterialTheme.typography.titleMedium)
+                            Text(
+                                text  = label,
+                                style = MaterialTheme.typography.titleMedium.copy(
+                                    fontWeight = FontWeight.Bold,
+                                    color = boxBorder
+                                ).scale(fontSizeOffset),
+                            )
+                        }
+                        Spacer(Modifier.height(8.dp))
+                        ParagraphText(
+                            sentences        = sentences,
+                            activeSentenceId = activeSentenceId,
+                            activeWordIndex  = activeWordIndex,
+                            subject          = subject,
+                            themeColor       = themeColor,
+                            onLongPress      = onLongPress,
+                            onWordTap        = onWordTap,
+                            paraId           = para.id,
+                            style            = MaterialTheme.typography.bodyLarge.copy(lineHeight = 26.sp).scale(fontSizeOffset),
+                        )
+                    }
+                }
+            }
+        }
+        "list" -> Column(
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
+        ) {
+            sentences.forEachIndexed { i, sent ->
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.Top
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .padding(end = 12.dp, top = 2.dp)
+                            .size(24.dp)
+                            .background(themeColor.copy(alpha = 0.12f), RoundedCornerShape(50)),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            text = if (para.ordered) "${i + 1}" else "•",
+                            style = MaterialTheme.typography.bodyMedium.copy(
+                                fontWeight = FontWeight.Bold,
+                                color = themeColor
+                            ).scale(fontSizeOffset)
+                        )
+                    }
+                    ParagraphText(
+                        sentences        = listOf(sent),
+                        activeSentenceId = activeSentenceId,
+                        activeWordIndex  = activeWordIndex,
+                        subject          = subject,
+                        themeColor       = themeColor,
+                        onLongPress      = onLongPress,
+                        onWordTap        = onWordTap,
+                        paraId           = para.id,
+                        style            = MaterialTheme.typography.bodyLarge.copy(lineHeight = 28.sp).scale(fontSizeOffset),
+                        modifier         = Modifier.weight(1f)
                     )
-                    Text(renderInline(item), style = MaterialTheme.typography.bodyMedium.scale(fontSizeOffset))
+                }
+            }
+        }
+        "table" -> {
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 8.dp),
+                shape = RoundedCornerShape(12.dp),
+                colors = CardDefaults.cardColors(containerColor = Color(0xFFFDFBF7)),
+                elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+                border = BorderStroke(1.dp, themeColor.copy(alpha = 0.3f))
+            ) {
+                Column {
+                    if (para.caption.isNotBlank()) {
+                        Text(
+                            text = para.caption,
+                            style = MaterialTheme.typography.titleMedium.copy(
+                                fontWeight = FontWeight.Bold,
+                                color = themeColor
+                            ).scale(fontSizeOffset),
+                            modifier = Modifier.padding(16.dp)
+                        )
+                    }
+                    Box(modifier = Modifier.horizontalScroll(rememberScrollState())) {
+                        Column {
+                            if (para.headers.isNotEmpty()) {
+                                Row(
+                                    modifier = Modifier
+                                        .background(themeColor)
+                                        .padding(vertical = 12.dp, horizontal = 16.dp)
+                                ) {
+                                    para.headers.forEach { header ->
+                                        Text(
+                                            text = header,
+                                            style = MaterialTheme.typography.bodyMedium.copy(
+                                                fontWeight = FontWeight.Bold,
+                                                color = Color.White
+                                            ).scale(fontSizeOffset),
+                                            modifier = Modifier.widthIn(min = 120.dp).padding(end = 16.dp)
+                                        )
+                                    }
+                                }
+                            }
+                            para.rows.forEachIndexed { rowIndex, rowData ->
+                                val rowBg = if (rowIndex % 2 == 0) Color.Transparent else Color(0xFFF5F2EB)
+                                Row(
+                                    modifier = Modifier
+                                        .background(rowBg)
+                                        .padding(vertical = 12.dp, horizontal = 16.dp)
+                                ) {
+                                    rowData.forEach { cell ->
+                                        Text(
+                                            text = renderInline(cell),
+                                            style = MaterialTheme.typography.bodyMedium.scale(fontSizeOffset),
+                                            modifier = Modifier.widthIn(min = 120.dp).padding(end = 16.dp)
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -654,6 +947,7 @@ private fun ParagraphBlock(
                 activeSentenceId = activeSentenceId,
                 activeWordIndex  = activeWordIndex,
                 subject          = subject,
+                themeColor       = themeColor,
                 onLongPress      = onLongPress,
                 onWordTap        = onWordTap,
                 paraId           = para.id,
@@ -671,6 +965,7 @@ private fun ParagraphText(
     activeSentenceId: String?,
     activeWordIndex:  Int?,
     subject:          String,
+    themeColor:       Color,
     onLongPress:      (ChapterSentence) -> Unit,
     onWordTap:        (word: String, sentenceText: String) -> Unit,
     paraId:           String   = "",
@@ -680,7 +975,7 @@ private fun ParagraphText(
 ) {
     if (sentences.isEmpty()) return
 
-    val activeBg   = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.5f)
+    val activeBg   = themeColor.copy(alpha = 0.15f)
     val wordHighBg = MaterialTheme.colorScheme.tertiary.copy(alpha = 0.35f)
 
     // Paragraph-level active: activeSentenceId is the paragraph's own ID
@@ -895,7 +1190,7 @@ private fun ChapterHeader(
                 )
                 hasAudio -> IconButton(onClick = onListenClick) {
                     Icon(
-                        imageVector        = if (isPlaying) Icons.Default.Stop else Icons.Default.VolumeUp,
+                        imageVector        = if (isPlaying) Icons.Default.Stop else Icons.AutoMirrored.Filled.VolumeUp,
                         contentDescription = if (isPlaying) "Stop" else "Listen to chapter",
                         tint               = if (isPlaying) Color(0xFFFADBD8)
                                              else Color.White,
@@ -903,7 +1198,7 @@ private fun ChapterHeader(
                 }
                 else -> IconButton(onClick = {}, enabled = false) {
                     Icon(
-                        imageVector        = Icons.Default.VolumeOff,
+                        imageVector        = Icons.AutoMirrored.Filled.VolumeOff,
                         contentDescription = "No audio available",
                         tint               = Color.White.copy(alpha = 0.4f),
                     )
@@ -1017,7 +1312,7 @@ private fun VocabPopupDialog(
                                     modifier = Modifier.size(32.dp)
                                 ) {
                                     Icon(
-                                        imageVector = if (playing) Icons.Default.Stop else Icons.Default.VolumeUp,
+                                        imageVector = if (playing) Icons.Default.Stop else Icons.AutoMirrored.Filled.VolumeUp,
                                         contentDescription = if (playing) "Stop" else "Listen to word",
                                         tint = tintColor,
                                         modifier = Modifier.size(20.dp)
@@ -1293,4 +1588,51 @@ private fun TextStyle.scale(offset: Int): TextStyle {
         this.lineHeight
     }
     return this.copy(fontSize = newFontSize, lineHeight = newLineHeight)
+}
+
+@Composable
+private fun CacheDownloadProgressBand(
+    progress: Float,
+    complete: Boolean,
+    themeColor: Color,
+) {
+    val backgroundColor = if (complete) Color(0xFFE8F5E9) else themeColor.copy(alpha = 0.08f)
+    val contentColor = if (complete) Color(0xFF2E7D32) else MaterialTheme.colorScheme.onSurface
+    val statusText = if (complete) "Chapter available offline!" else "Syncing for offline use... ${(progress * 100).toInt()}%"
+    
+    Surface(
+        modifier = Modifier.fillMaxWidth(),
+        color = backgroundColor,
+        contentColor = contentColor
+    ) {
+        Column(modifier = Modifier.fillMaxWidth()) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp, vertical = 10.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(10.dp)
+            ) {
+                Icon(
+                    imageVector = if (complete) Icons.Default.CheckCircle else Icons.Default.CloudDownload,
+                    contentDescription = null,
+                    tint = if (complete) Color(0xFF2E7D32) else themeColor,
+                    modifier = Modifier.size(20.dp)
+                )
+                Text(
+                    text = statusText,
+                    style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Medium),
+                    modifier = Modifier.weight(1f)
+                )
+            }
+            if (!complete) {
+                LinearProgressIndicator(
+                    progress = { progress },
+                    modifier = Modifier.fillMaxWidth().height(2.dp),
+                    color = themeColor,
+                    trackColor = themeColor.copy(alpha = 0.15f)
+                )
+            }
+        }
+    }
 }

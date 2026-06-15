@@ -1,0 +1,2531 @@
+{
+  "title": "The Rise of Empires",
+  "paragraphs": [
+    {
+      "id": "p01",
+      "type": "heading",
+      "text": "The Rise of Empires"
+    },
+    {
+      "id": "p02",
+      "type": "blockquote",
+      "sentences": [
+        {
+          "id": "p02-s01",
+          "text": "There cannot be a country without people and there is no kingdom without a country.",
+          "meaning": "**kingdom** — a country, state, or territory ruled by a king or queen.\nएक देश लोगों के बिना नहीं हो सकता और एक राज्य देश के बिना नहीं हो सकता।"
+        }
+      ]
+    },
+    {
+      "id": "p03",
+      "type": "attribution",
+      "text": "Kauțilya in Arthaśhāstra"
+    },
+    {
+      "id": "media-p1",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p01-01.png",
+          "caption": "Fig. 5.1. Rock-cut cave in Barabar Hills, Bihar"
+        }
+      ]
+    },
+    {
+      "id": "p04",
+      "type": "subheading",
+      "text": "The Big Questions"
+    },
+    {
+      "id": "p05",
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "What is an empire?",
+        "How did empires rise and shape Indian civilisation?",
+        "What factors facilitated the transition from kingdoms to empires?",
+        "What was life like from the 6th to the 2nd century BCE?"
+      ]
+    },
+    {
+      "id": "p06",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p06-s01",
+          "text": "Bhavisha and Dhruv were thrilled; they had just activated their new device, 'Itihāsa', a time machine to travel to the past!",
+          "meaning": "**thrilled** — very excited and happy | **activated** — made something start working | **device** — a machine or tool that does a special job.\nBhavisha और Dhruv बहुत रोमांचित थे; उन्होंने अभी-अभी अपना नया device, 'Itihāsa' activate किया था, जो past में travel करने के लिए एक time machine थी!"
+        },
+        {
+          "id": "p06-s02",
+          "text": "Taking a clue from their history lesson, they decided to visit Pāțaliputra for their first journey - they knew it was about the same location as modern-day Patna.",
+          "meaning": "**clue** — a piece of information that helps you solve a problem or answer a question | **journey** — an act of travelling from one place to another.\nअपने history lesson से idea लेकर, उन्होंने अपनी पहली journey के लिए पाटलिपुत्र जाने का decide किया - वे जानते थे कि यह almost वही location है जहाँ आज का पटना city है।"
+        }
+      ]
+    },
+    {
+      "id": "media-p2-3",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p02-00.png",
+          "caption": "Fig. 5.2. An artistic representation of Pațaliputra, located around modern-day Patna"
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p03-01.png",
+          "caption": "Bhavisha and Dhruv arrive in ancient Pāțaliputra."
+        }
+      ]
+    },
+    {
+      "id": "p07",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p07-s01",
+          "text": "Landing on the outskirts of the great city, a little dizzy, they saw a girl talking to a person on horseback dressed in strange clothes.",
+          "meaning": "**outskirts** — the outer parts of a town or city | **dizzy** — feeling as if everything is turning around and that you are not able to balance.\nबड़े शहर के बाहरी इलाके में उतरकर, थोड़ा चक्कर महसूस करते हुए, उन्होंने एक लड़की को अजीब कपड़ों में घोड़े पर बैठे एक व्यक्ति से बात करते देखा।"
+        },
+        {
+          "id": "p07-s02",
+          "text": "As he left, she turned to them, and they asked her for her name.",
+          "meaning": "जैसे ही वह चला गया, वह उनकी ओर मुड़ी, और उन्होंने उससे उसका नाम पूछा।"
+        }
+      ]
+    },
+    {
+      "id": "p08",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p08-s01",
+          "text": "“My name is Ira, daughter of Kanhadas, the ironsmith.",
+          "meaning": "**ironsmith** — a person who makes and repairs things in iron by hand.\n“मेरा नाम इरा है, मैं लोहार कन्हैयादास की बेटी हूँ।"
+        },
+        {
+          "id": "p08-s02",
+          "text": "Welcome to Pāțaliputra!”",
+          "meaning": "पाटलिपुत्र में आपका स्वागत है!”"
+        },
+        {
+          "id": "p08-s03",
+          "text": "“Glad to meet you, Ira.",
+          "meaning": "“तुमसे मिलकर खुशी हुई, इरा।"
+        },
+        {
+          "id": "p08-s04",
+          "text": "Our names are Bhavisha and Dhruv.”",
+          "meaning": "हमारे नाम भविषा और ध्रुव हैं।”"
+        }
+      ]
+    },
+    {
+      "id": "p09",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p09-s01",
+          "text": "“Sshh! Keep your voices down!",
+          "meaning": "“श्श्श! अपनी आवाजें धीमी रखो!"
+        },
+        {
+          "id": "p09-s02",
+          "text": "Do you see those soldiers marching past?",
+          "meaning": "क्या तुम उन सैनिकों को मार्च करते हुए देख रहे हो?"
+        },
+        {
+          "id": "p09-s03",
+          "text": "They're heading to battle against a neighbouring kingdom that has been troubling us.",
+          "meaning": "**neighbouring** — near or next to somewhere.\nवे एक पड़ोसी राज्य के खिलाफ लड़ाई के लिए जा रहे हैं जो हमें परेशान कर रहा है।"
+        },
+        {
+          "id": "p09-s04",
+          "text": "Our king avoids war when he can, but he also protects his people when needed.",
+          "meaning": "**avoids** — keeps away from or stops oneself from doing (something).\nहमारे राजा जब तक हो सके युद्ध से बचते हैं, लेकिन जरूरत पड़ने पर वह अपनी प्रजा की रक्षा भी करते हैं।"
+        },
+        {
+          "id": "p09-s05",
+          "text": "My father helped forge many of the swords they carry, and my uncle is one of the soldiers in the group.",
+          "meaning": "**forge** — make or shape (a metal object) by heating it in a fire or furnace and beating or hammering it.\nमेरे पिता ने उनके द्वारा ले जाई जाने वाली कई तलवारें बनाने में मदद की, और मेरे चाचा समूह के सैनिकों में से एक हैं।"
+        },
+        {
+          "id": "p09-s06",
+          "text": "I just came to see him off... I don't know when he'll return.\"",
+          "meaning": "मैं बस उसे विदा करने आई थी... मुझे नहीं पता कि वह कब लौटेगा।”"
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p10-s01",
+          "text": "(The group watches as an impressive procession of soldiers crosses a sturdy drawbridge leading out of the city, some on horseback and the army chiefs on elephant back.",
+          "meaning": "**procession** — a number of people or vehicles moving forward in an orderly fashion | **drawbridge** — a bridge, especially one over a castle's moat, that is hinged at one end so that it can be raised to prevent people's crossing or to allow vessels to pass under it.\n(समूह देखता है कि सैनिकों का एक प्रभावशाली जुलूस शहर से बाहर जाने वाले एक मजबूत ड्रॉब्रिज को पार कर रहा है, कुछ घोड़े पर और सेना प्रमुख हाथी की पीठ पर हैं।"
+        },
+        {
+          "id": "p10-s02",
+          "text": "Then, the three children cross the same drawbridge to enter the city.)",
+          "meaning": "फिर, तीनों बच्चे शहर में प्रवेश करने के लिए उसी ड्रॉब्रिज को पार करते हैं।)"
+        }
+      ]
+    },
+    {
+      "id": "media-p4",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p04-00.png",
+          "caption": "Fig. 5.3. A procession of soldiers on elephants and horses."
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p11-s01",
+          "text": "“What kind of bridge is this?” asked Bhavisha.",
+          "meaning": "“यह किस तरह का पुल है?” भविषा ने पूछा।"
+        },
+        {
+          "id": "p11-s02",
+          "text": "“And is it a river below?\"",
+          "meaning": "“और क्या इसके नीचे कोई नदी है?”"
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p12-s01",
+          "text": "“This bridge keeps us safe,\" explained Ira.",
+          "meaning": "“यह पुल हमें सुरक्षित रखता है,” इरा ने समझाया।"
+        },
+        {
+          "id": "p12-s02",
+          "text": "\"It's lifted whenever there is a danger of attack on the city.",
+          "meaning": "“जब भी शहर पर हमले का खतरा होता है तो इसे उठा लिया जाता है।"
+        },
+        {
+          "id": "p12-s03",
+          "text": "And no, it's not a river, it's a moat; once the drawbridge is lifted, it makes it more difficult to approach the fortifications.",
+          "meaning": "**moat** — a deep, wide ditch surrounding a castle, fort, or town, typically filled with water and intended as a defence against attack | **fortifications** — a defensive wall or other reinforcement built to strengthen a place against attack.\nऔर नहीं, यह नदी नहीं है, यह एक खाई है; एक बार ड्रॉब्रिज उठा लिया जाता है, तो किलेबंदी तक पहुंचना अधिक कठिन हो जाता है।"
+        },
+        {
+          "id": "p12-s04",
+          "text": "Can you see those hills and forests in the distance?",
+          "meaning": "क्या तुम दूर उन पहाड़ियों और जंगलों को देख सकते हो?"
+        },
+        {
+          "id": "p12-s05",
+          "text": "They provide us with timber, herbs, and many other valuable resources.",
+          "meaning": "**timber** — wood prepared for use in building and carpentry | **herbs** — any plant with leaves, seeds, or flowers used for flavouring, food, medicine, or perfume | **resources** — a stock or supply of money, materials, staff, and other assets that can be drawn on by a person or organization in order to function effectively.\nवे हमें लकड़ी, जड़ी-बूटियाँ और कई अन्य मूल्यवान संसाधन प्रदान करते हैं।"
+        },
+        {
+          "id": "p12-s06",
+          "text": "Elephants for the army are also captured from the forest and trained for the army.\"",
+          "meaning": "सेना के लिए हाथी भी जंगल से पकड़े जाते हैं और सेना के लिए प्रशिक्षित किए जाते हैं।”"
+        }
+      ]
+    },
+    {
+      "id": "p13",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p13-s01",
+          "text": "“What is the opening in that hill?” asked Dhruv.",
+          "meaning": "“उस पहाड़ी में वह खुला हुआ क्या है?” ध्रुव ने पूछा।"
+        },
+        {
+          "id": "p13-s02",
+          "text": "“It's a cave.",
+          "meaning": "“यह एक गुफा है।"
+        },
+        {
+          "id": "p13-s03",
+          "text": "Our king is getting it carved out for a community of monks.",
+          "meaning": "**monks** — members of a religious community of men typically living under vows of poverty, chastity, and obedience.\nहमारे राजा इसे भिक्षुओं के एक समुदाय के लिए खुदवा रहे हैं।"
+        },
+        {
+          "id": "p13-s04",
+          "text": "I hope we can visit it when it's finished!\"",
+          "meaning": "मुझे उम्मीद है कि जब यह बन जाएगी तो हम इसे देखने जा सकेंगे!”"
+        }
+      ]
+    },
+    {
+      "id": "p14",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p14-s01",
+          "text": "(As they move through Pāțaliputra, they take in its splendour—towering wooden ramparts with watch towers, majestic palaces and buildings, lively streets.",
+          "meaning": "**splendour** — magnificent and splendid appearance | **ramparts** — a defensive wall of a castle or walled city | **majestic** — having or showing impressive beauty or dignity.\n(जैसे ही वे पाटलिपुत्र से गुजरते हैं, वे इसकी भव्यता को देखते हैं - ऊँची लकड़ी की दीवारें जिन पर निगरानी टॉवर हैं, राजसी महल और इमारतें, और जीवंत सड़कें।"
+        },
+        {
+          "id": "p14-s02",
+          "text": "Ira gestures towards a bustling market filled with traders from distant lands.)",
+          "meaning": "**bustling** — full of activity | **traders** — people who buy and sell goods.\nइरा दूर-दराज के देशों के व्यापारियों से भरे एक हलचल भरे बाजार की ओर इशारा करती है।)"
+        }
+      ]
+    },
+    {
+      "id": "p15",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p15-s01",
+          "text": "“You must visit our main market before you leave!",
+          "meaning": "“जाने से पहले तुम्हें हमारे मुख्य बाजार में जरूर जाना चाहिए!"
+        },
+        {
+          "id": "p15-s02",
+          "text": "Our king welcomes travellers from all over, so you'll get silk from China, spices and gems from the south, fine clothes from different regions—there's nothing you won't find in Pāțaliputra!\"",
+          "meaning": "**gems** — precious or semiprecious stones, especially when cut and polished or engraved.\nहमारे राजा हर जगह से यात्रियों का स्वागत करते हैं, इसलिए तुम्हें चीन से रेशम, दक्षिण से मसाले और रत्न, और विभिन्न क्षेत्रों से बढ़िया कपड़े मिलेंगे - पाटलिपुत्र में ऐसा कुछ भी नहीं है जो तुम्हें नहीं मिलेगा!”"
+        }
+      ]
+    },
+    {
+      "id": "p16",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p16-s01",
+          "text": "“What are those people over there doing?” asked Dhruv.",
+          "meaning": "“वहाँ वे लोग क्या कर रहे हैं?” ध्रुव ने पूछा।"
+        },
+        {
+          "id": "p16-s02",
+          "text": "“Oh, these are street acrobats; they build human pyramids, sing and dance, or act in short plays to entertain people.",
+          "meaning": "**acrobats** — entertainers who perform spectacular gymnastic feats.\n“ओह, ये सड़क के कलाबाज़ हैं; वे लोगों का मनोरंजन करने के लिए मानव पिरामिड बनाते हैं, गाते हैं और नाचते हैं, या छोटे नाटकों में अभिनय करते हैं।"
+        },
+        {
+          "id": "p16-s03",
+          "text": "Sometimes, they perform in front of the king!”",
+          "meaning": "कभी-कभी, वे राजा के सामने भी प्रदर्शन करते हैं!”"
+        }
+      ]
+    },
+    {
+      "id": "p17",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p17-s01",
+          "text": "“Your king sounds very powerful,” remarked Bhavisha.",
+          "meaning": "**powerful** — having great power or strength.\n“तुम्हारे राजा बहुत शक्तिशाली लगते हैं,” भविषा ने कहा।"
+        },
+        {
+          "id": "p17-s02",
+          "text": "“Does he rule the region around Pāțaliputra?”",
+          "meaning": "“क्या वह पाटलिपुत्र के आसपास के क्षेत्र पर शासन करता है?”"
+        }
+      ]
+    },
+    {
+      "id": "p18",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p18-s01",
+          "text": "“Much more than that!” answered Ira.",
+          "meaning": "“उससे कहीं ज्यादा!” इरा ने जवाब दिया।"
+        },
+        {
+          "id": "p18-s02",
+          "text": "“He rules over a vast land, far, far beyond this city.",
+          "meaning": "**vast** — of very great extent or quantity; immense.\n“वह इस शहर से बहुत दूर, एक विशाल भूमि पर शासन करता है।"
+        },
+        {
+          "id": "p18-s03",
+          "text": "His authority extends over many villages, towns and kingdoms.",
+          "meaning": "**authority** — the power or right to give orders, make decisions, and enforce obedience.\nउसका अधिकार कई गाँवों, कस्बों और राज्यों तक फैला हुआ है।"
+        },
+        {
+          "id": "p18-s04",
+          "text": "My uncle told me that it takes close to two months on horseback to reach the borders of the territory!”",
+          "meaning": "**territory** — an area of land under the jurisdiction of a ruler or state.\nमेरे चाचा ने मुझे बताया था कि घोड़े पर बैठकर क्षेत्र की सीमाओं तक पहुँचने में लगभग दो महीने लगते हैं!”"
+        }
+      ]
+    },
+    {
+      "id": "p19",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p19-s01",
+          "text": "\"That sounds bigger than just a kingdom... What do you call it?\"",
+          "meaning": "“यह तो सिर्फ एक राज्य से भी बड़ा लगता है... तुम इसे क्या कहते हो?”"
+        },
+        {
+          "id": "p19-s02",
+          "text": "“It is called an Empire,” Ira stated with evident pride.",
+          "meaning": "**evident** — plain or obvious; clearly seen or understood.\n“इसे एक साम्राज्य कहा जाता है,” इरा ने स्पष्ट गर्व के साथ कहा।"
+        }
+      ]
+    },
+    {
+      "id": "callout-tributary",
+      "type": "callout",
+      "title": "Tributary",
+      "sentences": [
+        {
+          "id": "callout-tributary-s01",
+          "text": "A tributary, in our case, is a ruler or a state that has submitted to an emperor and pays tribute—that is, money, gold (or other precious metals), grain, livestock, elephants or other valuable goods produced in their kingdom and is given to the emperor as a sign of submission, loyalty or respect.",
+          "meaning": "**tributary** — a person or state that pays tribute to another state or ruler | **submission** — the action of accepting or yielding to a superior force or to the will or authority of another person.\nएक सहायक, हमारे मामले में, एक शासक या राज्य है जिसने एक सम्राट के अधीनता स्वीकार कर ली है और श्रद्धांजलि देता है - यानी, पैसा, सोना (या अन्य कीमती धातुएं), अनाज, पशुधन, हाथी या उनके राज्य में उत्पादित अन्य मूल्यवान सामान और सम्राट को अधीनता, वफादारी या सम्मान के संकेत के रूप में दिया जाता है।"
+        },
+        {
+          "id": "callout-tributary-s02",
+          "text": "A synonym for 'tributary' is 'vassal', and another way to express this is to say that the tributary or vassal kingdoms accepted the emperor's overlordship.",
+          "meaning": "**synonym** — a word or phrase that means exactly or nearly the same as another word or phrase | **vassal** — a holder of land by feudal tenure on conditions of homage and allegiance | **overlordship** — authority, rule.\n'सहायक' का एक पर्यायवाची 'जागीरदार' है, और इसे व्यक्त करने का एक और तरीका यह कहना है कि सहायक या जागीरदार राज्यों ने सम्राट की अधिपतित्व को स्वीकार कर लिया।"
+        }
+      ]
+    },
+    {
+      "id": "what-is-an-empire",
+      "type": "heading",
+      "text": "What is an Empire?"
+    },
+    {
+      "id": "p20",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p20-s01",
+          "text": "The word ‘empire’ comes from the Latin 'imperium', which means 'supreme power'.",
+          "meaning": "**empire** — an extensive group of states or countries ruled over by a single monarch, an oligarchy, or a sovereign state | **supreme power** — the highest level of authority or control.\n'साम्राज्य' शब्द लैटिन 'इम्पेरियम' से आया है, जिसका अर्थ है 'सर्वोच्च शक्ति'।"
+        },
+        {
+          "id": "p20-s02",
+          "text": "Simply put, an empire is a collection of smaller kingdoms or territories over which a powerful ruler or group of rulers exert power, often after waging war against the smaller kingdoms.",
+          "meaning": "**exert** — apply or bring to bear (a force, influence, or quality) | **waging war** — carrying on a war.\nसरल शब्दों में, एक साम्राज्य छोटे राज्यों या क्षेत्रों का एक संग्रह है, जिस पर एक शक्तिशाली शासक या शासकों का समूह शक्ति का प्रयोग करता है, अक्सर छोटे राज्यों के खिलाफ युद्ध छेड़ने के बाद।"
+        },
+        {
+          "id": "p20-s03",
+          "text": "The smaller territories still had their own rulers, but they were all **tributaries** to the emperor, who ruled the whole territory from a capital, usually a major centre of economic and administrative power.",
+          "meaning": "**tributaries** — states or rulers that pay tribute to a more powerful one | **administrative** — relating to the running of a business, organization, etc.\nछोटे क्षेत्रों के अपने शासक अभी भी थे, लेकिन वे सभी सम्राट के सहायक थे, जो एक राजधानी से पूरे क्षेत्र पर शासन करता था, जो आमतौर पर आर्थिक और प्रशासनिक शक्ति का एक प्रमुख केंद्र होता था।"
+        }
+      ]
+    },
+    {
+      "id": "p21",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p21-s01",
+          "text": "In ancient Sanskrit texts, words commonly used for ‘emperor’ made this clear; they included **samrāj**, meaning 'the lord of all' or ‘supreme ruler’; **adhirāja** or ‘overlord’; and **rājādhirāja** or 'king of kings'.",
+          "meaning": "**samrāj** — a supreme ruler or emperor in Sanskrit | **adhirāja** — an overlord or paramount sovereign in Sanskrit | **rājādhirāja** — king of kings in Sanskrit.\nप्राचीन संस्कृत ग्रंथों में, 'सम्राट' के लिए आमतौर पर इस्तेमाल किए जाने वाले शब्दों ने इसे स्पष्ट कर दिया; उनमें **सम्राज** शामिल थे, जिसका अर्थ है 'सभी का स्वामी' या 'सर्वोच्च शासक'; **अधिराज** या 'अधिपति'; और **राजाधिराज** या 'राजाओं का राजा'।"
+        }
+      ]
+    },
+    {
+      "id": "p22",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p22-s01",
+          "text": "Indian history is full of empires.",
+          "meaning": "भारतीय इतिहास साम्राज्यों से भरा है।"
+        },
+        {
+          "id": "p22-s02",
+          "text": "They rose, expanded, lasted for a while, declined, and disappeared.",
+          "meaning": "**expanded** — became or made larger or more extensive | **declined** — became smaller, fewer, or less; decreased.\nवे उठे, फैले, कुछ समय तक चले, गिरे और गायब हो गए।"
+        },
+        {
+          "id": "p22-s03",
+          "text": "In fact, the last empire that ruled the Subcontinent existed less than a century ago!",
+          "meaning": "**Subcontinent** — a large, distinguishable part of a continent, such as North America or southern Africa.\nवास्तव में, उपमहाद्वीप पर शासन करने वाला अंतिम साम्राज्य एक सदी से भी कम समय पहले अस्तित्व में था!"
+        },
+        {
+          "id": "p22-s04",
+          "text": "But now is not the time to tell that story; we start at the other end of time, so we may understand how empires functioned in the distant past and how they deeply impacted India's evolution at all levels - political, economic, social, and cultural.",
+          "meaning": "**functioned** — worked or operated in a proper or particular way | **evolution** — the gradual development of something.\nलेकिन अब वह कहानी बताने का समय नहीं है; हम समय के दूसरे छोर से शुरू करते हैं, ताकि हम समझ सकें कि दूर के अतीत में साम्राज्य कैसे काम करते थे और उन्होंने भारत के विकास को सभी स्तरों - राजनीतिक, आर्थिक, सामाजिक और सांस्कृतिक - पर कैसे गहराई से प्रभावित किया।"
+        }
+      ]
+    },
+    {
+      "id": "features-of-empire",
+      "type": "subheading",
+      "text": "Features of an empire"
+    },
+    {
+      "id": "media-p6",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p06-02.png",
+          "caption": "A diagram showing the features of an empire, with the Emperor at the center."
+        }
+      ]
+    },
+    {
+      "id": "p23",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p23-s01",
+          "text": "An emperor exerts central authority over the empire's tributary territories and kings.",
+          "meaning": "**exerts** — applies or brings to bear (a force, influence, or quality) | **central authority** — the main governing power.\nएक सम्राट साम्राज्य के सहायक क्षेत्रों और राजाओं पर केंद्रीय अधिकार का प्रयोग करता है।"
+        }
+      ]
+    },
+    {
+      "id": "p24",
+      "type": "list",
+      "items": [
+        "Maintains an army to keep the tributary states under control, expand the empire or protect it from outside aggression.",
+        "Designs and maintains an administration, with officials to manage the territories, collect taxes, maintain law and order, etc.",
+        "Makes laws, issues currencies, weights and measures, regulates trade.",
+        "Controls and regulates access to resources (mines, forest and agricultural produce, manpower).",
+        "Encourages art, literature, religions, schools of thought, centres of learning.",
+        "Maintains communication networks (roads, river and sea navigation) and other infrastructure for administration, trade and people's welfare."
+      ]
+    },
+    {
+      "id": "activity1",
+      "type": "activity",
+      "title": "LET'S EXPLORE",
+      "sentences": [
+        {
+          "id": "activity1-s01",
+          "text": "Empires extended over vast areas and had diverse people with differing languages, customs and cultures.",
+          "meaning": "**diverse** — showing a great deal of variety; very different | **customs** — a traditional and widely accepted way of behaving or doing something that is specific to a particular society, place, or time.\nसाम्राज्य विशाल क्षेत्रों में फैले हुए थे और उनमें विभिन्न भाषाओं, रीति-रिवाजों और संस्कृतियों वाले विविध लोग थे।"
+        },
+        {
+          "id": "activity1-s02",
+          "text": "How do you think the emperors made sure that they lived in harmony?",
+          "meaning": "**harmony** — the state of being in agreement or concord.\nआपको क्या लगता है कि सम्राटों ने यह कैसे सुनिश्चित किया कि वे सद्भाव में रहें?"
+        },
+        {
+          "id": "activity1-s03",
+          "text": "Discuss in groups and share your thoughts with the class.",
+          "meaning": "समूहों में चर्चा करें और अपनी कक्षा के साथ अपने विचार साझा करें।"
+        },
+        {
+          "id": "activity1-s04",
+          "text": "Looking at the many challenges involved in managing an empire, why should a king be so keen to expand his kingdom into an empire and become an emperor?",
+          "meaning": "**challenges** — tasks or situations that test someone's abilities | **keen** — having or showing eagerness or enthusiasm.\nएक साम्राज्य के प्रबंधन में शामिल कई चुनौतियों को देखते हुए, एक राजा को अपने राज्य को एक साम्राज्य में विस्तारित करने और एक सम्राट बनने के लिए इतना उत्सुक क्यों होना चाहिए?"
+        },
+        {
+          "id": "activity1-s05",
+          "text": "Here are a few possible answers; see if you can think of a few more:",
+          "meaning": "यहाँ कुछ संभावित उत्तर दिए गए हैं; देखें कि क्या आप कुछ और सोच सकते हैं:"
+        }
+      ]
+    },
+    {
+      "id": "p25",
+      "type": "list",
+      "items": [
+        "An ambition to ‘rule the entire world', a metaphor for controlling large territories and ensuring that they would be remembered for posterity;",
+        "A wish to bring large areas under control and gain access to their resources to build economic and military strength;",
+        "A desire for great wealth for himself and for the empire."
+      ]
+    },
+    {
+      "id": "callout-posterity",
+      "type": "callout",
+      "title": "Posterity",
+      "sentences": [
+        {
+          "id": "callout-posterity-s01",
+          "text": "The generations to come.",
+          "meaning": "**Posterity** — all future generations of people.\nआने वाली पीढ़ियाँ।"
+        }
+      ]
+    },
+    {
+      "id": "p26",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p26-s01",
+          "text": "In return for tribute and loyalty, emperors generally allowed regional kings or chiefs to continue to govern their areas.",
+          "meaning": "**tribute** — payment made periodically by one state or ruler to another, especially as a sign of dependence | **loyalty** — a strong feeling of support or allegiance.\nश्रद्धांजलि और वफादारी के बदले में, सम्राट आमतौर पर क्षेत्रीय राजाओं या प्रमुखों को अपने क्षेत्रों पर शासन करना जारी रखने की अनुमति देते थे।"
+        }
+      ]
+    },
+    {
+      "id": "media-p7-8",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p07-00.png",
+          "caption": "Fig. 5.4.1. Trained armies were deployed to conquer neighbouring kingdoms, maintain control over them and defend the empire's borders."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p08-00.png",
+          "caption": "Fig. 5.4.2. Fortified settlements would be built in strategic places, such as the empire's borders."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p08-02.png",
+          "caption": "Fig. 5.4.3. To expand into an empire, a kingdom might first wage war against neighbouring territories so as to conquer them."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p08-01.png",
+          "caption": "Fig. 5.4.4. Rulers endeavoured to control rivers and trade networks as that would give them control over precious resources, apart from tax revenue from the trade."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p08-03.png",
+          "caption": "Fig. 5.4.5. With many smaller kingdoms warring for control, the one with access to stronger military power and surplus resources would eventually become the overlord."
+        }
+      ]
+    },
+    {
+      "id": "activity2",
+      "type": "activity",
+      "title": "LET'S EXPLORE",
+      "sentences": [
+        {
+          "id": "activity2-s01",
+          "text": "Warfare apart, what other methods do you think the rulers might have used to expand their empires?",
+          "meaning": "**Warfare** — engagement in or the activities involved in war or conflict.\nयुद्ध के अलावा, आपको क्या लगता है कि शासकों ने अपने साम्राज्यों का विस्तार करने के लिए और कौन से तरीके अपनाए होंगे?"
+        },
+        {
+          "id": "activity2-s02",
+          "text": "Pen your ideas and share them with your class.",
+          "meaning": "अपने विचार लिखें और उन्हें अपनी कक्षा के साथ साझा करें।"
+        }
+      ]
+    },
+    {
+      "id": "trade-routes-heading",
+      "type": "heading",
+      "text": "Trade, trade routes and guilds"
+    },
+    {
+      "id": "p27",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p27-s01",
+          "text": "Conducting military campaigns, especially in distant lands, is not as simple as it might seem.",
+          "meaning": "**campaigns** — a series of military operations intended to achieve a particular objective, confined to a particular area, or involving a particular type of fighting.\nसैन्य अभियान चलाना, खासकर दूर-दराज के देशों में, उतना सरल नहीं है जितना यह लग सकता है।"
+        },
+        {
+          "id": "p27-s02",
+          "text": "Maintaining an army is a costly affair: soldiers need to be fed, clothed, equipped with weapons, and paid; elephants and horses need to be cared for; roads or ships have to be built, and so on.",
+          "meaning": "**costly affair** — an expensive activity or event.\nएक सेना को बनाए रखना एक महंगा मामला है: सैनिकों को खिलाना, कपड़े पहनाना, हथियारों से लैस करना और भुगतान करना पड़ता है; हाथियों और घोड़ों की देखभाल करनी पड़ती है; सड़कें या जहाज बनाने पड़ते हैं, और इसी तरह।"
+        },
+        {
+          "id": "p27-s03",
+          "text": "All this requires considerable economic power, control over the workforce, and access to resources.",
+          "meaning": "**considerable** — notably large in size, amount, or extent.\nइन सबके लिए काफी आर्थिक शक्ति, कार्यबल पर नियंत्रण और संसाधनों तक पहुंच की आवश्यकता होती है।"
+        }
+      ]
+    },
+    {
+      "id": "p28",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p28-s01",
+          "text": "We can now understand that economic activity—especially production and trade—is one of the keys to maintaining an empire and ensuring people's welfare and quality of life, which a good ruler should be concerned with.",
+          "meaning": "**welfare** — the health, happiness, and fortunes of a person or group.\nअब हम समझ सकते हैं कि आर्थिक गतिविधि - विशेष रूप से उत्पादन और व्यापार - एक साम्राज्य को बनाए रखने और लोगों के कल्याण और जीवन की गुणवत्ता सुनिश्चित करने की कुंजी में से एक है, जिसके बारे में एक अच्छे शासक को चिंतित होना चाहिए।"
+        },
+        {
+          "id": "p28-s02",
+          "text": "Therefore, establishing and controlling **trade routes** all over the empire's territory and beyond is of great importance.",
+          "meaning": "**trade routes** — a route used by traders for transporting goods.\nइसलिए, साम्राज्य के पूरे क्षेत्र और उससे आगे व्यापार मार्गों की स्थापना और नियंत्रण करना बहुत महत्वपूर्ण है।"
+        },
+        {
+          "id": "p28-s03",
+          "text": "That way, the goods traded will grow in quantity and variety, and more trade means more income for the producers and increased tax collections for the ruler.",
+          "meaning": "**income** — money received, especially on a regular basis, for work or through investments.\nइस तरह, व्यापार किए जाने वाले माल की मात्रा और विविधता में वृद्धि होगी, और अधिक व्यापार का मतलब उत्पादकों के लिए अधिक आय और शासक के लिए बढ़े हुए कर संग्रह है।"
+        }
+      ]
+    },
+    {
+      "id": "p29",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p29-s01",
+          "text": "Returning to the case of ancient India, what would have been the traded goods?",
+          "meaning": "प्राचीन भारत के मामले में लौटते हुए, व्यापारिक वस्तुएं क्या रही होंगी?"
+        },
+        {
+          "id": "p29-s02",
+          "text": "There is plenty of evidence on this, at least, both from the literature and archaeological excavations — textiles, spices, agricultural produce, luxury items such as gems and handicraft products, and various animals were among the main items of trade.",
+          "meaning": "**archaeological excavations** — the process of digging up the remains of the past.\nइस पर बहुत सारे सबूत हैं, कम से कम, साहित्य और पुरातात्विक उत्खनन दोनों से - वस्त्र, मसाले, कृषि उपज, रत्न और हस्तशिल्प उत्पादों जैसी विलासिता की वस्तुएं, और विभिन्न जानवर व्यापार की मुख्य वस्तुओं में से थे।"
+        },
+        {
+          "id": "p29-s03",
+          "text": "All this brisk trade was not limited to India; many Indian goods travelled towards distant countries by land or sea.",
+          "meaning": "**brisk** — active and energetic.\nयह सारा तेज व्यापार भारत तक ही सीमित नहीं था; कई भारतीय सामान भूमि या समुद्र के रास्ते दूर-दराज के देशों की ओर जाते थे।"
+        }
+      ]
+    },
+    {
+      "id": "p30",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p30-s01",
+          "text": "More often than not, traders were not just isolated individuals carrying out their own business.",
+          "meaning": "**isolated** — far away from other places, buildings, or people; remote.\nअक्सर, व्यापारी केवल अपना व्यवसाय करने वाले अलग-थलग व्यक्ति नहीं थे।"
+        },
+        {
+          "id": "p30-s02",
+          "text": "They soon understood the benefits of joining forces and creating **guilds (śhrenīs)**.",
+          "meaning": "**guilds (śhrenīs)** — associations of craftsmen or merchants, often having considerable power.\nवे जल्द ही सेना में शामिल होने और गिल्ड (श्रेणी) बनाने के लाभों को समझ गए।"
+        },
+        {
+          "id": "p30-s03",
+          "text": "Guilds were powerful associations of traders, craftsmen, moneylenders or agriculturists.",
+          "meaning": "**craftsmen** — a person who is skilled in a particular craft | **moneylenders** — a person whose business is lending money to others who pay interest | **agriculturists** — people who cultivate land; farmers.\nगिल्ड व्यापारियों, शिल्पकारों, साहूकारों या कृषकों के शक्तिशाली संघ थे।"
+        },
+        {
+          "id": "p30-s04",
+          "text": "As far as evidence shows, a guild had a head (who was usually elected) and executive officers who were supposed to have all kinds of ethical qualities.",
+          "meaning": "**executive** — relating to or having the power to put plans or actions into effect | **ethical** — relating to moral principles.\nजहां तक सबूत दिखाते हैं, एक गिल्ड का एक प्रमुख (जो आमतौर पर चुना जाता था) और कार्यकारी अधिकारी होते थे, जिनके पास सभी प्रकार के नैतिक गुण होने चाहिए थे।"
+        }
+      ]
+    },
+    {
+      "id": "media-p10",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p10-00.png",
+          "caption": "Fig. 5.5. Some important trade routes from about 500 BCE onward and major cities marked on them. Notice the Uttarapatha and the Dakshiņapatha routes."
+        }
+      ]
+    },
+    {
+      "id": "p31",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p31-s01",
+          "text": "Two things made traders' guilds a remarkable institution.",
+          "meaning": "**remarkable** — worthy of attention; striking | **institution** — an established law, practice, or custom.\nदो चीजों ने व्यापारियों के गिल्ड को एक उल्लेखनीय संस्था बना दिया।"
+        },
+        {
+          "id": "p31-s02",
+          "text": "First, they brought together people who ended up being collaborators rather than competitors, as they realised that sharing resources and information on markets, supply and demand, workforce, etc., was to everyone's benefit.",
+          "meaning": "**collaborators** — people who work jointly on an activity or project | **competitors** — people or organizations that are competing with others.\nपहला, उन्होंने ऐसे लोगों को एक साथ लाया जो प्रतिस्पर्धियों के बजाय सहयोगी बन गए, क्योंकि उन्होंने महसूस किया कि बाजारों, आपूर्ति और मांग, कार्यबल आदि पर संसाधनों और सूचनाओं को साझा करना सभी के लाभ के लिए था।"
+        },
+        {
+          "id": "p31-s03",
+          "text": "Second, as an ancient text put it, “Cultivators, traders, herdsmen, moneylenders, and artisans have authority to lay down rules for their respective classes”; in other words, guilds had the autonomy to create their own internal rules, and the king was not to interfere with them (and why should he, if trade flourished?).",
+          "meaning": "**autonomy** — the right or condition of self-government | **flourished** — grew or developed in a healthy or vigorous way.\nदूसरा, जैसा कि एक प्राचीन ग्रंथ में कहा गया है, “कृषकों, व्यापारियों, चरवाहों, साहूकारों और कारीगरों को अपने-अपने वर्गों के लिए नियम बनाने का अधिकार है”; दूसरे शब्दों में, गिल्डों को अपने स्वयं के आंतरिक नियम बनाने की स्वायत्तता थी, और राजा को उनमें हस्तक्षेप नहीं करना था (और यदि व्यापार फलता-फूलता तो वह क्यों करता?)"
+        }
+      ]
+    },
+    {
+      "id": "p32",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p32-s01",
+          "text": "Guilds spread over large parts of India and endured for centuries.",
+          "meaning": "**endured** — remained in existence; lasted.\nगिल्ड भारत के बड़े हिस्सों में फैल गए और सदियों तक चले।"
+        },
+        {
+          "id": "p32-s02",
+          "text": "Even after they ceased to exist formally, their spirit continued to influence India's trade and business activities, sometimes even to this day.",
+          "meaning": "**ceased** — came or brought to an end.\nऔपचारिक रूप से अस्तित्व में न रहने के बाद भी, उनकी भावना भारत के व्यापार और व्यावसायिक गतिविधियों को प्रभावित करती रही, कभी-कभी आज तक।"
+        },
+        {
+          "id": "p32-s03",
+          "text": "The institution of guilds provides an excellent example of the self-organising abilities of Indian society.",
+          "meaning": "**self-organising** — able to organize itself without outside control.\nगिल्डों की संस्था भारतीय समाज की स्व-संगठित क्षमताओं का एक उत्कृष्ट उदाहरण प्रदान करती है।"
+        },
+        {
+          "id": "p32-s04",
+          "text": "The ancient village unit, with its various committees and councils, provides another.",
+          "meaning": "प्राचीन ग्राम इकाई, अपनी विभिन्न समितियों और परिषदों के साथ, एक और उदाहरण प्रदान करती है।"
+        },
+        {
+          "id": "p32-s05",
+          "text": "Indeed, an enlightened ruler would let people organise themselves and refrain from interfering if the local institutions worked satisfactorily.",
+          "meaning": "**enlightened** — having or showing a rational, modern, and well-informed outlook | **refrain** — stop oneself from doing something.\nवास्तव में, एक प्रबुद्ध शासक लोगों को खुद को संगठित करने देता और यदि स्थानीय संस्थाएं संतोषजनक ढंग से काम करतीं तो हस्तक्षेप करने से बचता।"
+        }
+      ]
+    },
+    {
+      "id": "activity3",
+      "type": "activity",
+      "title": "LET'S EXPLORE",
+      "sentences": [
+        {
+          "id": "activity3-s01",
+          "text": "Observe the map of the trade routes.",
+          "meaning": "व्यापार मार्गों के नक्शे का निरीक्षण करें।"
+        },
+        {
+          "id": "activity3-s02",
+          "text": "Identify geographical features that helped the traders travel across the Subcontinent.",
+          "meaning": "**geographical features** — natural features of the Earth's surface, such as mountains, rivers, and deserts.\nउन भौगोलिक विशेषताओं की पहचान करें जिन्होंने व्यापारियों को उपमहाद्वीप में यात्रा करने में मदद की।"
+        },
+        {
+          "id": "activity3-s03",
+          "text": "What modes of transport on those roads do you think were available at the time?",
+          "meaning": "**modes of transport** — ways of travelling or moving things from one place to another.\nआपको क्या लगता है कि उस समय उन सड़कों पर परिवहन के कौन से साधन उपलब्ध थे?"
+        }
+      ]
+    },
+    {
+      "id": "rise-of-magadha-heading",
+      "type": "heading",
+      "text": "The Rise of Magadha"
+    },
+    {
+      "id": "p33",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p33-s01",
+          "text": "The period between the 6th and the 4th century BCE was one of profound change in north India.",
+          "meaning": "**profound** — very great or intense.\nछठी और चौथी शताब्दी ईसा पूर्व के बीच की अवधि उत्तर भारत में गहरे बदलाव की अवधि थी।"
+        },
+        {
+          "id": "p33-s02",
+          "text": "We briefly visited the sixteen **mahājanapadas** earlier — those large kingdoms of north and central India with their assembly system.",
+          "meaning": "**mahājanapadas** — the sixteen great kingdoms or republics that existed in ancient India from the sixth to fourth centuries BCE.\nहमने पहले सोलह **महाजनपदों** का संक्षिप्त दौरा किया था - उत्तर और मध्य भारत के वे बड़े राज्य जिनकी अपनी विधानसभा प्रणाली थी।"
+        },
+        {
+          "id": "p33-s03",
+          "text": "One of them, Magadha (modern-day south Bihar and some adjoining areas), rose in importance and set the stage for the fusion of many kingdoms into India's first empire.",
+          "meaning": "**adjoining** — next to or joined with | **fusion** — the process or result of joining two or more things together to form a single entity.\nउनमें से एक, मगध (आधुनिक दक्षिण बिहार और कुछ आस-पास के क्षेत्र), का महत्व बढ़ा और उसने कई राज्यों को भारत के पहले साम्राज्य में विलय करने के लिए मंच तैयार किया।"
+        },
+        {
+          "id": "p33-s04",
+          "text": "Powerful early kings, such as Ajātaśhatru, played a crucial role in establishing Magadha as a dominant centre of power.",
+          "meaning": "**crucial** — decisive or critical, especially in the success or failure of something | **dominant** — having power and influence over others.\nअजातशत्रु जैसे शक्तिशाली प्रारंभिक राजाओं ने मगध को शक्ति के एक प्रमुख केंद्र के रूप में स्थापित करने में महत्वपूर्ण भूमिका निभाई।"
+        }
+      ]
+    },
+    {
+      "id": "note1",
+      "type": "note",
+      "title": "DON'T MISS OUT",
+      "sentences": [
+        {
+          "id": "note1-s01",
+          "text": "Two of the most famed religious figures of the world—Siddhārtha Gautama, who became known as the Buddha, and Vardhamānan, better known as Mahāvīra—lived in the time of King Ajātaśhatru.",
+          "meaning": "**famed** — known about by many people; famous.\nदुनिया के दो सबसे प्रसिद्ध धार्मिक व्यक्ति - सिद्धार्थ गौतम, जो बुद्ध के नाम से जाने गए, और वर्धमान, जो महावीर के नाम से बेहतर जाने जाते हैं - राजा अजातशत्रु के समय में रहते थे।"
+        },
+        {
+          "id": "note1-s02",
+          "text": "Revisit their teachings in the Grade 6 textbook’s ‘India's Cultural Roots' chapter.",
+          "meaning": "कक्षा 6 की पाठ्यपुस्तक के 'भारत की सांस्कृतिक जड़ें' अध्याय में उनकी शिक्षाओं को फिर से देखें।"
+        }
+      ]
+    },
+    {
+      "id": "p34",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p34-s01",
+          "text": "Magadha was located in the resource-rich Ganga plains, with fertile land, abundant forests for timber, and elephants.",
+          "meaning": "**fertile** — producing or capable of producing abundant vegetation or crops | **abundant** — existing or available in large quantities; plentiful.\nमगध संसाधन-संपन्न गंगा के मैदानों में स्थित था, जहाँ उपजाऊ भूमि, लकड़ी के लिए प्रचुर जंगल और हाथी थे।"
+        },
+        {
+          "id": "p34-s02",
+          "text": "Also, remember how the use of iron transformed other technologies, such as agriculture and warfare.",
+          "meaning": "**transformed** — made a thorough or dramatic change in the form, appearance, or character of.\nसाथ ही, याद रखें कि कैसे लोहे के उपयोग ने कृषि और युद्ध जैसी अन्य तकनीकों को बदल दिया।"
+        },
+        {
+          "id": "p34-s03",
+          "text": "Iron ore and other minerals from the nearby hilly regions proved crucial for the expansion of the kingdom.",
+          "meaning": "**Iron ore** — a rock or mineral from which iron can be profitably extracted.\nआस-पास के पहाड़ी क्षेत्रों से लौह अयस्क और अन्य खनिजों ने राज्य के विस्तार के लिए महत्वपूर्ण साबित हुए।"
+        },
+        {
+          "id": "p34-s04",
+          "text": "The use of iron ploughs to till the land increased agricultural produce, and lighter and sharper iron weapons strengthened the capabilities of the army.",
+          "meaning": "**till** — prepare and cultivate (land) for crops | **capabilities** — the power or ability to do something.\nभूमि जोतने के लिए लोहे के हलों के उपयोग ने कृषि उपज में वृद्धि की, और हल्के और तेज लोहे के हथियारों ने सेना की क्षमताओं को मजबूत किया।"
+        }
+      ]
+    },
+    {
+      "id": "media-p12",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p12-00.png",
+          "caption": "Fig. 5.6. An elaborate panel from the Sanchi Stūpa depicting soldiers riding elephants, horses, or on foot, waging battle and laying siege to Kusinārā (today Kushinagar), a city of north India, to recover relics of the Buddha (seen carried away on an elephant in the left part of the panel)."
+        }
+      ]
+    },
+    {
+      "id": "activity4",
+      "type": "activity",
+      "title": "LET'S EXPLORE",
+      "sentences": [
+        {
+          "id": "activity4-s01",
+          "text": "Take a close look at the panel given above.",
+          "meaning": "ऊपर दिए गए पैनल को ध्यान से देखें।"
+        },
+        {
+          "id": "activity4-s02",
+          "text": "How many types of weapons can you identify?",
+          "meaning": "आप कितने प्रकार के हथियारों की पहचान कर सकते हैं?"
+        },
+        {
+          "id": "activity4-s03",
+          "text": "What different uses of iron can you make out?",
+          "meaning": "आप लोहे के कौन-कौन से विभिन्न उपयोग देख सकते हैं?"
+        },
+        {
+          "id": "activity4-s04",
+          "text": "In the left part of the panel, a parasol (chhattra) is kept over the casket containing the Buddha's relics.",
+          "meaning": "**parasol (chhattra)** — a light umbrella used to give shade from the sun | **casket** — a small ornamental box or chest for holding jewels, letters, or other valuable objects | **relics** — an object surviving from an earlier time, especially one of historical or sentimental interest.\nपैनल के बाएं हिस्से में, बुद्ध के अवशेषों वाले ताबूत के ऊपर एक छत्र (छत्र) रखा गया है।"
+        },
+        {
+          "id": "activity4-s05",
+          "text": "Why do you think this was done?",
+          "meaning": "आपको क्या लगता है कि ऐसा क्यों किया गया था?"
+        }
+      ]
+    },
+    {
+      "id": "p35",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p35-s01",
+          "text": "The production of surplus food grains allowed more people to focus on the arts and crafts, which were in demand inside and outside the empire's borders.",
+          "meaning": "**surplus** — an amount of something left over when requirements have been met; an excess of production or supply over demand.\nअधिशेष खाद्यान्न के उत्पादन ने अधिक लोगों को कला और शिल्प पर ध्यान केंद्रित करने की अनुमति दी, जिनकी मांग साम्राज्य की सीमाओं के अंदर और बाहर थी।"
+        },
+        {
+          "id": "p35-s02",
+          "text": "The Ganga and Son rivers provided a geographical advantage for trade, as they could be used for transportation.",
+          "meaning": "**geographical advantage** — a favorable condition related to the physical features of an area.\nगंगा और सोन नदियों ने व्यापार के लिए एक भौगोलिक लाभ प्रदान किया, क्योंकि उनका उपयोग परिवहन के लिए किया जा सकता था।"
+        },
+        {
+          "id": "p35-s03",
+          "text": "The flourishing trade boosted the empire's income and contributed to Magadha's rise.",
+          "meaning": "**flourishing** — developing rapidly and successfully | **boosted** — helped or encouraged to increase or improve.\nफलते-फूलते व्यापार ने साम्राज्य की आय को बढ़ाया और मगध के उदय में योगदान दिया।"
+        }
+      ]
+    },
+    {
+      "id": "media-p13-1",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p13-00.png",
+          "caption": "Fig. 5.7. A punch-marked silver coin of Mahāpadma Nanda"
+        }
+      ]
+    },
+    {
+      "id": "p36",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p36-s01",
+          "text": "Around the 5th century BCE, Mahāpadma Nanda rose to prominence in Magadha and founded the Nanda dynasty.",
+          "meaning": "**prominence** — the state of being important or famous | **founded** — established or originated (an institution or organization).\nलगभग 5वीं शताब्दी ईसा पूर्व में, महापद्म नंद मगध में प्रमुखता से उभरे और नंद वंश की स्थापना की।"
+        },
+        {
+          "id": "p36-s02",
+          "text": "He successfully unified many smaller kingdoms and extended his empire across parts of eastern and northern India.",
+          "meaning": "**unified** — made or became united, uniform, or whole.\nउन्होंने सफलतापूर्वक कई छोटे राज्यों को एकीकृत किया और अपने साम्राज्य को पूर्वी और उत्तरी भारत के कुछ हिस्सों में विस्तारित किया।"
+        },
+        {
+          "id": "p36-s03",
+          "text": "As the economy thrived, he began issuing coins, demonstrating his economic power.",
+          "meaning": "**thrived** — prospered; flourished | **demonstrating** — clearly showing the existence or truth of (something) by giving proof or evidence.\nजैसे-जैसे अर्थव्यवस्था फली-फूली, उन्होंने अपनी आर्थिक शक्ति का प्रदर्शन करते हुए सिक्के जारी करना शुरू कर दिया।"
+        },
+        {
+          "id": "p36-s04",
+          "text": "We also learn from Greek accounts that the Nanda dynasty maintained a large army.",
+          "meaning": "हम यूनानी वृत्तांतों से यह भी सीखते हैं कि नंद वंश ने एक बड़ी सेना बनाए रखी थी।"
+        }
+      ]
+    },
+    {
+      "id": "callout-sutras",
+      "type": "callout",
+      "title": "Sūtras",
+      "sentences": [
+        {
+          "id": "callout-sutras-s01",
+          "text": "Sutras are concise, carefully crafted phrases that capture knowledge and important ideas (from ancient Indian text) in a way that's easy to remember and pass on.",
+          "meaning": "**Sūtras** — a rule or aphorism in Sanskrit literature, or a set of these on a technical subject | **concise** — giving a lot of information clearly and in a few words; brief but comprehensive.\nसूत्र संक्षिप्त, सावधानीपूर्वक गढ़े गए वाक्यांश हैं जो ज्ञान और महत्वपूर्ण विचारों (प्राचीन भारतीय पाठ से) को इस तरह से पकड़ते हैं कि याद रखना और आगे बढ़ाना आसान हो।"
+        }
+      ]
+    },
+    {
+      "id": "p37",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p37-s01",
+          "text": "From various accounts of the Nanda dynasty, it appears that its last emperor, Dhana Nanda, though very rich, became highly unpopular as he oppressed and exploited his people.",
+          "meaning": "**unpopular** — not liked or popular | **oppressed** — kept in subservience and hardship, especially by the unjust exercise of authority | **exploited** — made full use of and derived benefit from (a resource), often unfairly.\nनंद वंश के विभिन्न वृत्तांतों से, ऐसा प्रतीत होता है कि इसका अंतिम सम्राट, धन नंद, बहुत अमीर होने के बावजूद, बहुत अलोकप्रिय हो गया क्योंकि उसने अपनी प्रजा पर अत्याचार किया और उनका शोषण किया।"
+        },
+        {
+          "id": "p37-s02",
+          "text": "This paved the way for the Nanda empire to be conquered and absorbed into what would become one of the largest empires India ever knew - the Maurya empire.",
+          "meaning": "**paved the way** — created the circumstances to make it possible for something to happen | **conquered** — overcome and taken control of (a place or people) by military force.\nइसने नंद साम्राज्य को जीतने और भारत के अब तक के सबसे बड़े साम्राज्यों में से एक - मौर्य साम्राज्य - में समाहित होने का मार्ग प्रशस्त किया।"
+        }
+      ]
+    },
+    {
+      "id": "note2",
+      "type": "note",
+      "title": "DON'T MISS OUT",
+      "sentences": [
+        {
+          "id": "note2-s01",
+          "text": "The famed Sanskrit grammarian Pāņini lived around the 5th century BCE, during the time of the Nandas.",
+          "meaning": "**grammarian** — a person who studies and writes about grammar.\nप्रसिद्ध संस्कृत व्याकरणविद् पाणिनि लगभग 5वीं शताब्दी ईसा पूर्व में, नंदों के समय में रहते थे।"
+        },
+        {
+          "id": "note2-s02",
+          "text": "He is known for composing the Ashțādhyāyi, an ancient text that lists the rules of Sanskrit grammar in 3,996 short sūtras.",
+          "meaning": "**composing** — writing or creating (a work of art, especially music or poetry).\nवह अष्टाध्यायी की रचना के लिए जाने जाते हैं, जो एक प्राचीन ग्रंथ है जिसमें 3,996 छोटे सूत्रों में संस्कृत व्याकरण के नियम सूचीबद्ध हैं।"
+        }
+      ]
+    },
+    {
+      "id": "media-p13-2",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p13-01.png",
+          "caption": "Fig. 5.8. An India post stamp commemorating Pāņini"
+        }
+      ]
+    },
+    {
+      "id": "arrival-of-greeks-heading",
+      "type": "heading",
+      "text": "The Arrival of the Greeks"
+    },
+    {
+      "id": "p38",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p38-s01",
+          "text": "While events unfolded in Magadha, located in the eastern part of the subcontinent, what was happening in the northwestern region?",
+          "meaning": "**unfolded** — (of events or information) gradually developed or became known.\nजब उपमहाद्वीप के पूर्वी भाग में स्थित मगध में घटनाएँ घट रही थीं, तो उत्तर-पश्चिमी क्षेत्र में क्या हो रहा था?"
+        },
+        {
+          "id": "p38-s02",
+          "text": "This area was home to smaller kingdoms along an ancient route connecting to the Mediterranean.",
+          "meaning": "**Mediterranean** — the sea connected to the Atlantic Ocean, surrounded by the Mediterranean Basin and almost completely enclosed by land.\nयह क्षेत्र भूमध्य सागर से जुड़ने वाले एक प्राचीन मार्ग के किनारे छोटे राज्यों का घर था।"
+        },
+        {
+          "id": "p38-s03",
+          "text": "Among them, according to Greek accounts, were the Pauravas, led by their king, Porus.",
+          "meaning": "यूनानी वृत्तांतों के अनुसार, उनमें से पौरव थे, जिनका नेतृत्व उनके राजा पोरस कर रहे थे।"
+        }
+      ]
+    },
+    {
+      "id": "media-p14",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p14-02.png",
+          "caption": "Fig. 5.9. Map of Alexander's Empire and his route."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p14-01.png",
+          "caption": "Fig. 5.10. A statue of Alexander the Great."
+        }
+      ]
+    },
+    {
+      "id": "note3",
+      "type": "note",
+      "title": "334-331 BCE:",
+      "sentences": [
+        {
+          "id": "note3-s01",
+          "text": "Alexander, a young and powerful Greek king from Macedonia, campaigned against the Persian Empire to avenge earlier Persian invasions of Greece (during which some Indian soldiers from the Persian-ruled northwest of India fought against Greeks!).",
+          "meaning": "**avenge** — inflict harm in return for (an injury or wrong done to oneself or another).\nसिकंदर, मैसेडोनिया का एक युवा और शक्तिशाली यूनानी राजा, ने ग्रीस पर पहले के फारसी आक्रमणों का बदला लेने के लिए फारसी साम्राज्य के खिलाफ अभियान चलाया (जिसके दौरान भारत के फारसी-शासित उत्तर-पश्चिम से कुछ भारतीय सैनिकों ने यूनानियों के खिलाफ लड़ाई लड़ी थी!)।"
+        },
+        {
+          "id": "note3-s02",
+          "text": "Alexander conquered the Persian Empire; the influence of Greek culture spread.",
+          "meaning": "सिकंदर ने फारसी साम्राज्य पर विजय प्राप्त की; यूनानी संस्कृति का प्रभाव फैल गया।"
+        },
+        {
+          "id": "note3-s03",
+          "text": "His empire now spread over three continents, one of the largest in world history.",
+          "meaning": "उसका साम्राज्य अब तीन महाद्वीपों में फैल गया, जो विश्व इतिहास में सबसे बड़े में से एक था।"
+        }
+      ]
+    },
+    {
+      "id": "note4",
+      "type": "note",
+      "title": "DON'T MISS OUT",
+      "sentences": [
+        {
+          "id": "note4-s01",
+          "text": "The satraps were governors of provinces of Persian and Greek empires who were left behind by the overlord (like Alexander) to manage the far-off territories.",
+          "meaning": "**satraps** — provincial governors in the ancient Persian empire.\nक्षत्रप फारसी और यूनानी साम्राज्यों के प्रांतों के गवर्नर थे जिन्हें अधिपति (जैसे सिकंदर) द्वारा दूर-दराज के क्षेत्रों का प्रबंधन करने के लिए पीछे छोड़ दिया गया था।"
+        },
+        {
+          "id": "note4-s02",
+          "text": "These satraps had significant power and freedom despite being mere officials of the rulers.",
+          "meaning": "**significant** — sufficiently great or important to be worthy of attention; noteworthy.\nइन क्षत्रपों के पास शासकों के मात्र अधिकारी होने के बावजूद महत्वपूर्ण शक्ति और स्वतंत्रता थी।"
+        },
+        {
+          "id": "note4-s03",
+          "text": "Can you guess how it was possible for them to exercise such power?",
+          "meaning": "क्या आप अनुमान लगा सकते हैं कि उनके लिए ऐसी शक्ति का प्रयोग करना कैसे संभव था?"
+        }
+      ]
+    },
+    {
+      "id": "activity5",
+      "type": "activity",
+      "title": "THINK ABOUT IT",
+      "sentences": [
+        {
+          "id": "activity5-s01",
+          "text": "Why do you think Alexander wanted to rule over the entire world?",
+          "meaning": "आपको क्यों लगता है कि सिकंदर पूरी दुनिया पर शासन करना चाहता था?"
+        },
+        {
+          "id": "activity5-s02",
+          "text": "What would he have gained from it?",
+          "meaning": "उसे इससे क्या हासिल होता?"
+        }
+      ]
+    },
+    {
+      "id": "activity6",
+      "type": "activity",
+      "title": "LET'S EXPLORE",
+      "sentences": [
+        {
+          "id": "activity6-s01",
+          "text": "When, after the battle, Alexander asked Porus how he wished to be treated, Porus answered, “Like a King.”",
+          "meaning": "जब, युद्ध के बाद, सिकंदर ने पोरस से पूछा कि वह कैसा व्यवहार चाहता है, तो पोरस ने उत्तर दिया, “एक राजा की तरह।”"
+        },
+        {
+          "id": "activity6-s02",
+          "text": "Alexander then left Porus at the head of his kingdom, as satrap.",
+          "meaning": "सिकंदर ने तब पोरस को उसके राज्य का प्रमुख, क्षत्रप के रूप में छोड़ दिया।"
+        },
+        {
+          "id": "activity6-s03",
+          "text": "With the help of your teachers, find more details on the battle between Porus and Alexander.",
+          "meaning": "अपने शिक्षकों की मदद से, पोरस और सिकंदर के बीच की लड़ाई के बारे में और विवरण प्राप्त करें।"
+        },
+        {
+          "id": "activity6-s04",
+          "text": "Enact a play of this battle scene using your imagination in addition to what you have discovered.",
+          "meaning": "**Enact** — act out (a role or play) on a stage.\nआपने जो खोजा है उसके अलावा अपनी कल्पना का उपयोग करके इस युद्ध के दृश्य का एक नाटक करें।"
+        }
+      ]
+    },
+    {
+      "id": "note5",
+      "type": "note",
+      "title": "327-325 BCE",
+      "sentences": [
+        {
+          "id": "note5-s01",
+          "text": "Eager to reach the “end of the world\", Alexander pushed on further east and brought his campaign to India, defeated Porus in Punjab and, encountering fierce resistance from local tribes and rulers, massacred the population of several cities.",
+          "meaning": "**fierce** — having or displaying an intense or ferocious aggressiveness | **massacred** — deliberately and brutally killed many people.\n“दुनिया के अंत” तक पहुँचने के लिए उत्सुक, सिकंदर और पूर्व की ओर बढ़ा और अपना अभियान भारत ले आया, पंजाब में पोरस को हराया और, स्थानीय जनजातियों और शासकों से भयंकर प्रतिरोध का सामना करते हुए, कई शहरों की आबादी का नरसंहार किया।"
+        },
+        {
+          "id": "note5-s02",
+          "text": "Greek records mention that in a few battles, \"women fought side by side with their men.\"",
+          "meaning": "यूनानी रिकॉर्ड में उल्लेख है कि कुछ लड़ाइयों में, “महिलाओं ने अपने पुरुषों के साथ कंधे से कंधा मिलाकर लड़ाई लड़ी।”"
+        },
+        {
+          "id": "note5-s03",
+          "text": "Alexander himself was seriously wounded in a battle.",
+          "meaning": "सिकंदर खुद एक लड़ाई में गंभीर रूप से घायल हो गया था।"
+        },
+        {
+          "id": "note5-s04",
+          "text": "Tired and homesick, his soldiers lost the will to fight and refused to move deeper into India, towards the Ganga River.",
+          "meaning": "**homesick** — experiencing a longing for one's home during a period of absence from it.\nथके हुए और घर की याद आने पर, उसके सैनिकों ने लड़ने की इच्छा खो दी और गंगा नदी की ओर, भारत में और गहराई तक जाने से इनकार कर दिया।"
+        },
+        {
+          "id": "note5-s05",
+          "text": "Alexander and part of his army retreated to Persia, but through the coastal route in the south and Iran's harsh desert regions, resulting in heavy losses to his troops out of thirst, hunger and disease.",
+          "meaning": "**retreated** — (of an army) withdrew from enemy forces as a result of their superior power or after a defeat.\nसिकंदर और उसकी सेना का एक हिस्सा फारस लौट गया, लेकिन दक्षिण में तटीय मार्ग और ईरान के कठोर रेगिस्तानी क्षेत्रों के माध्यम से, जिसके परिणामस्वरूप प्यास, भूख और बीमारी से उसके सैनिकों को भारी नुकसान हुआ।"
+        }
+      ]
+    },
+    {
+      "id": "note6",
+      "type": "note",
+      "title": "324-323 BCE",
+      "sentences": [
+        {
+          "id": "note6-s01",
+          "text": "Back in Persia, Alexander faced rebellions and political turmoil.",
+          "meaning": "**rebellions** — acts of violent or open resistance to an established government or ruler | **turmoil** — a state of great disturbance, confusion, or uncertainty.\nफारस में वापस, सिकंदर को विद्रोह और राजनीतिक उथल-पुथल का सामना करना पड़ा।"
+        },
+        {
+          "id": "note6-s02",
+          "text": "After he fell ill and died in Babylon at the age of 32, his immense empire was soon divided between his generals and the satraps, who created their own kingdoms.",
+          "meaning": "**immense** — extremely large or great, especially in scale or degree.\n32 साल की उम्र में बेबीलोन में बीमार पड़ने और मरने के बाद, उसका विशाल साम्राज्य जल्द ही उसके जनरलों और क्षत्रपों के बीच विभाजित हो गया, जिन्होंने अपने स्वयं के राज्य बनाए।"
+        }
+      ]
+    },
+    {
+      "id": "gymnosophists-subheading",
+      "type": "subheading",
+      "text": "Alexander's dialogue with the Gymnosophists"
+    },
+    {
+      "id": "p39",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p39-s01",
+          "text": "Alexander heard of a group of Indian sages whom the Greeks called 'Gymnosophists' or ‘naked philosophers' (probably because they wore very little clothing), who were renowned for their wisdom.",
+          "meaning": "**sages** — profoundly wise men, especially one who features in ancient history or legend | **renowned** — known or talked about by many people; famous.\nसिकंदर ने भारतीय ऋषियों के एक समूह के बारे में सुना जिन्हें यूनानियों ने 'जिमनोसोफिस्ट' या 'नग्न दार्शनिक' कहा (शायद इसलिए कि वे बहुत कम कपड़े पहनते थे), जो अपनी बुद्धिमत्ता के लिए प्रसिद्ध थे।"
+        },
+        {
+          "id": "p39-s02",
+          "text": "Alexander challenged them with tricky questions in the form of riddles, warning that he would put those who gave wrong answers to death.",
+          "meaning": "**riddles** — questions or statements phrased in a deliberately confusing way and posed as a problem to be solved or guessed.\nसिकंदर ने उन्हें पहेलियों के रूप में पेचीदा सवालों से चुनौती दी, यह चेतावनी देते हुए कि वह गलत जवाब देने वालों को मौत की सजा देगा।"
+        },
+        {
+          "id": "p39-s03",
+          "text": "However, the Gymnosophists responded to his questions calmly and intelligently.",
+          "meaning": "हालांकि, जिमनोसोफिस्टों ने उनके सवालों का शांति और बुद्धिमानी से जवाब दिया।"
+        },
+        {
+          "id": "p39-s04",
+          "text": "Alexander was impressed and, in the end, spared them all.",
+          "meaning": "**spared** — refrained from killing, injuring, or distressing.\nसिकंदर प्रभावित हुआ और अंत में, उन सभी को बख्श दिया।"
+        },
+        {
+          "id": "p39-s05",
+          "text": "Over the centuries, different versions of this story have been told, making it one of the most fascinating encounters in history!",
+          "meaning": "**fascinating** — extremely interesting.\nसदियों से, इस कहानी के विभिन्न संस्करण बताए गए हैं, जो इसे इतिहास की सबसे आकर्षक मुठभेड़ों में से एक बनाता है!"
+        }
+      ]
+    },
+    {
+      "id": "media-p16",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p16-01.png",
+          "caption": "Fig. 5.11. A Greek coin probably showing Alexander on horseback attacking Porus on his elephant."
+        }
+      ]
+    },
+    {
+      "id": "p40",
+      "type": "blockquote",
+      "sentences": [
+        {
+          "id": "p40-s01",
+          "text": "According to one account, Alexander asked, \"Which is stronger, life or death?\"",
+          "meaning": "एक वृत्तांत के अनुसार, सिकंदर ने पूछा, “जीवन या मृत्यु में से कौन अधिक शक्तिशाली है?”"
+        },
+        {
+          "id": "p40-s02",
+          "text": "One of the sages replied, “Life, because it endures while death does not.\"",
+          "meaning": "**endures** — remains in existence; lasts.\nएक ऋषि ने उत्तर दिया, “जीवन, क्योंकि यह तब तक बना रहता है जब तक मृत्यु नहीं होती।”"
+        },
+        {
+          "id": "p40-s03",
+          "text": "Alexander then asked, “How can a man be most loved?\"",
+          "meaning": "सिकंदर ने तब पूछा, “एक आदमी को सबसे ज्यादा प्यार कैसे किया जा सकता है?”"
+        },
+        {
+          "id": "p40-s04",
+          "text": "\"If he is most powerful and yet does not inspire fear,” came the reply, perhaps as a hint to the mighty ruler!",
+          "meaning": "**inspire** — fill (someone) with the urge or ability to do or feel something, especially to do something creative.\n“यदि वह सबसे शक्तिशाली है और फिर भी भय उत्पन्न नहीं करता है,” उत्तर आया, शायद शक्तिशाली शासक के लिए एक संकेत के रूप में!"
+        }
+      ]
+    },
+    {
+      "id": "p41",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p41-s01",
+          "text": "Historians view such exchanges as a meeting of two great traditions - Greek and Indian philosophies.",
+          "meaning": "**philosophies** — the study of the fundamental nature of knowledge, reality, and existence.\nइतिहासकार इस तरह के आदान-प्रदान को दो महान परंपराओं - यूनानी और भारतीय दर्शन - के मिलन के रूप में देखते हैं।"
+        }
+      ]
+    },
+    {
+      "id": "mighty-mauryas-heading",
+      "type": "heading",
+      "text": "The Mighty Mauryas"
+    },
+    {
+      "id": "p42",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p42-s01",
+          "text": "After that brief sojourn to the northwest, let us return to Magadha, where we witnessed the decline of the Nanda empire.",
+          "meaning": "**sojourn** — a temporary stay | **witnessed** — saw (an event, typically a crime or accident) take place.\nउत्तर-पश्चिम की उस संक्षिप्त यात्रा के बाद, आइए हम मगध लौटते हैं, जहाँ हमने नंद साम्राज्य का पतन देखा।"
+        },
+        {
+          "id": "p42-s02",
+          "text": "Around 321 BCE, just a few years after Alexander left India with his army, a new dynasty and new empire emerged: the Maurya Empire founded by Chandragupta Maurya.",
+          "meaning": "**dynasty** — a line of hereditary rulers of a country | **emerged** — moved out of or away from something and came into view.\nलगभग 321 ईसा पूर्व में, सिकंदर के अपनी सेना के साथ भारत छोड़ने के कुछ ही वर्षों बाद, एक नया राजवंश और नया साम्राज्य उभरा: चंद्रगुप्त मौर्य द्वारा स्थापित मौर्य साम्राज्य।"
+        },
+        {
+          "id": "p42-s03",
+          "text": "It quickly absorbed the Nanda empire's territories and went on expanding beyond.",
+          "meaning": "**absorbed** — took in or incorporated.\nइसने जल्दी से नंद साम्राज्य के क्षेत्रों को अपने में मिला लिया और उससे आगे विस्तार करता गया।"
+        }
+      ]
+    },
+    {
+      "id": "p43",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p43-s01",
+          "text": "As per many accounts, Chandragupta managed this feat with the help of an able mentor named Kautilya, who used his knowledge of politics, governance and economics to create an empire that remains one of the greatest in Indian history.",
+          "meaning": "**feat** — an achievement that requires great courage, skill, or strength | **mentor** — an experienced and trusted adviser | **governance** — the action or manner of governing a state, organization, etc.\nकई वृत्तांतों के अनुसार, चंद्रगुप्त ने यह उपलब्धि कौटिल्य नामक एक सक्षम गुरु की मदद से हासिल की, जिन्होंने राजनीति, शासन और अर्थशास्त्र के अपने ज्ञान का उपयोग करके एक ऐसा साम्राज्य बनाया जो भारतीय इतिहास में सबसे महान में से एक बना हुआ है।"
+        }
+      ]
+    },
+    {
+      "id": "kautilya-story-heading",
+      "type": "heading",
+      "text": "The story of Kauṭilya"
+    },
+    {
+      "id": "p44",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p44-s01",
+          "text": "According to Buddhist texts, Kautilya—sometimes referred to as Chāņakya or Vishnugupta-was a teacher at the world-renowned Takşhaśhila (modern-day Taxila) university.",
+          "meaning": "बौद्ध ग्रंथों के अनुसार, कौटिल्य - जिन्हें कभी-कभी चाणक्य या विष्णुगुप्त भी कहा जाता है - विश्व प्रसिद्ध तक्षशिला (आधुनिक तक्षशिला) विश्वविद्यालय में एक शिक्षक थे।"
+        },
+        {
+          "id": "p44-s02",
+          "text": "His legendary tale begins in the court of Dhana Nanda, who as we saw, had become highly unpopular.",
+          "meaning": "**legendary** — remarkable enough to be famous; very well known.\nउनकी प्रसिद्ध कहानी धन नंद के दरबार में शुरू होती है, जो जैसा कि हमने देखा, बहुत अलोकप्रिय हो गया था।"
+        }
+      ]
+    },
+    {
+      "id": "media-p17",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p17-00.png",
+          "caption": "Fig. 5.12. Nanda Empire"
+        }
+      ]
+    },
+    {
+      "id": "media-p18",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p18-00.png",
+          "caption": "Fig. 5.13. Maurya Empire"
+        }
+      ]
+    },
+    {
+      "id": "p45",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p45-s01",
+          "text": "Observing this, Kautilya advised Dhana Nanda to change his ways or witness the collapse of his empire.",
+          "meaning": "**collapse** — (of a structure) fall down or in; give way.\nयह देखकर, कौटिल्य ने धन नंद को अपने तरीके बदलने या अपने साम्राज्य के पतन का गवाह बनने की सलाह दी।"
+        },
+        {
+          "id": "p45-s02",
+          "text": "Angered, Dhana Nanda insulted Kautilya and threw him out of his court.",
+          "meaning": "क्रोधित होकर, धन नंद ने कौटिल्य का अपमान किया और उसे अपने दरबार से बाहर निकाल दिया।"
+        },
+        {
+          "id": "p45-s03",
+          "text": "This led to Kautilya's vow to end the ‘evil Nanda’ rule.",
+          "meaning": "**vow** — a solemn promise.\nइसके कारण कौटिल्य ने 'दुष्ट नंद' शासन को समाप्त करने की प्रतिज्ञा ली।"
+        }
+      ]
+    },
+    {
+      "id": "rise-of-chandragupta-heading",
+      "type": "heading",
+      "text": "The rise of Chandragupta Maurya"
+    },
+    {
+      "id": "p46",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p46-s01",
+          "text": "There are many stories about the origin and adventures of Chandragupta Maurya, but their common theme is that he overthrew the Nandas and took control of Magadha to establish his rule, with Pāțaliputra as his capital.",
+          "meaning": "**origin** — the point or place where something begins, arises, or is derived | **overthrew** — removed forcibly from power.\nचंद्रगुप्त मौर्य की उत्पत्ति और साहसिक कार्यों के बारे में कई कहानियाँ हैं, लेकिन उनका सामान्य विषय यह है कि उन्होंने नंदों को उखाड़ फेंका और अपना शासन स्थापित करने के लिए मगध पर नियंत्रण कर लिया, जिसमें पाटलिपुत्र उनकी राजधानी थी।"
+        }
+      ]
+    },
+    {
+      "id": "media-p19",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p19-00.png",
+          "caption": "Fig. 5.14. Megasthenes in the court of Chandragupta Maurya (A 20th-century painting by Asit Kumar Haldar)"
+        }
+      ]
+    },
+    {
+      "id": "p47",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p47-s01",
+          "text": "Do you remember that Magadha had many advantages because of its geography, an established economic system and a flourishing trade?",
+          "meaning": "क्या आपको याद है कि मगध को अपनी भूगोल, एक स्थापित आर्थिक प्रणाली और एक फलते-फूलते व्यापार के कारण कई फायदे थे?"
+        },
+        {
+          "id": "p47-s02",
+          "text": "These, combined with the advice of the master strategist, Kautilya, helped Chandragupta Maurya gradually expand his empire.",
+          "meaning": "**strategist** — a person skilled in planning action or policy, especially in war or politics.\nइनने, मास्टर रणनीतिकार कौटिल्य की सलाह के साथ मिलकर, चंद्रगुप्त मौर्य को धीरे-धीरे अपने साम्राज्य का विस्तार करने में मदद की।"
+        },
+        {
+          "id": "p47-s03",
+          "text": "He defeated the Greek satraps left behind by Alexander in the northwest and integrated the region into an empire that stretched from the northern plains to the Deccan plateau.",
+          "meaning": "**integrated** — combined (one thing) with another so that they become a whole | **Deccan plateau** — a large plateau in western and southern India.\nउन्होंने उत्तर-पश्चिम में सिकंदर द्वारा छोड़े गए यूनानी क्षत्रपों को हराया और इस क्षेत्र को एक ऐसे साम्राज्य में एकीकृत किया जो उत्तरी मैदानों से दक्कन के पठार तक फैला हुआ था।"
+        }
+      ]
+    },
+    {
+      "id": "p48",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p48-s01",
+          "text": "After Chandragupta Maurya defeated the Greeks, he maintained a diplomatic relationship with them and hosted in his court a Greek historian and diplomat, Megasthenes, who wrote about his travels in India in his book Indika—the first such written account — unfortunately lost except for some excerpts quoted by later Greek scholars.",
+          "meaning": "**diplomatic** — of or concerning the profession, activity, or skill of managing international relations | **excerpts** — short extracts from a film, broadcast, or piece of music or writing.\nचंद्रगुप्त मौर्य द्वारा यूनानियों को हराने के बाद, उन्होंने उनके साथ एक राजनयिक संबंध बनाए रखा और अपने दरबार में एक यूनानी इतिहासकार और राजनयिक, मेगस्थनीज की मेजबानी की, जिन्होंने अपनी पुस्तक इंडिका में भारत में अपनी यात्राओं के बारे में लिखा - पहला ऐसा लिखित वृत्तांत - दुर्भाग्य से बाद के यूनानी विद्वानों द्वारा उद्धृत कुछ अंशों को छोड़कर खो गया।"
+        }
+      ]
+    },
+    {
+      "id": "kautilya-concept-heading",
+      "type": "heading",
+      "text": "Kautilya's concept of a kingdom"
+    },
+    {
+      "id": "p49",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p49-s01",
+          "text": "Kautilya had a clear vision of how a kingdom (rājya) should be established, managed and consolidated.",
+          "meaning": "**vision** — the ability to think about or plan the future with imagination or wisdom | **consolidated** — made (something) physically stronger or more solid.\nकौटिल्य का एक स्पष्ट दृष्टिकोण था कि एक राज्य (राज्य) को कैसे स्थापित, प्रबंधित और समेकित किया जाना चाहिए।"
+        },
+        {
+          "id": "p49-s02",
+          "text": "In his famous work Arthaśhāstra (literally, ‘the science of governance and economics'), he listed directives in many areas like defence, economics, administration, justice, urban planning, agriculture and people's welfare.",
+          "meaning": "**directives** — official or authoritative instructions.\nअपने प्रसिद्ध ग्रंथ अर्थशास्त्र (शाब्दिक रूप से, 'शासन और अर्थशास्त्र का विज्ञान') में, उन्होंने रक्षा, अर्थशास्त्र, प्रशासन, न्याय, शहरी नियोजन, कृषि और लोगों के कल्याण जैसे कई क्षेत्रों में निर्देश सूचीबद्ध किए।"
+        }
+      ]
+    },
+    {
+      "id": "kautilya-saptanga-heading",
+      "type": "subheading",
+      "text": "Kautilya's Saptānga"
+    },
+    {
+      "id": "media-p20",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p20-07.png",
+          "caption": "Fig. 5.15. A diagram illustrating the seven elements (Saptānga) of a kingdom according to Kautilya."
+        }
+      ]
+    },
+    {
+      "id": "p50",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p50-s01",
+          "text": "One of his most important political concepts is the saptānga (see fig 5.15) or the seven parts that constitute a kingdom.",
+          "meaning": "**saptānga** — the seven limbs or elements of a state in ancient Indian political thought | **constitute** — be (a part) of a whole.\nउनकी सबसे महत्वपूर्ण राजनीतिक अवधारणाओं में से एक सप्तांग (चित्र 5.15 देखें) या सात भाग हैं जो एक राज्य का गठन करते हैं।"
+        }
+      ]
+    },
+    {
+      "id": "saptanga-list",
+      "type": "list",
+      "items": [
+        "the king (swāmi)",
+        "[the group of] councillors, ministers and other high officials (amātya)",
+        "the territory of the state along with the population inhabiting it (janapada)",
+        "the fortified towns and cities (durga)",
+        "the treasury or the wealth of the kingdom (koșha)",
+        "the forces of defence and law and order (danda), and",
+        "the allies (mitra)"
+      ]
+    },
+    {
+      "id": "p51",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p51-s01",
+          "text": "According to Kautilya, the saptānga together must create a settled, well-protected, and prosperous kingdom to be maintained both through warfare and through alliances for peace, as the case may be.",
+          "meaning": "**prosperous** — successful in material terms; flourishing financially | **alliances** — unions or associations formed for mutual benefit, especially between countries or organizations.\nकौटिल्य के अनुसार, सप्तांग को मिलकर एक बसा हुआ, अच्छी तरह से संरक्षित और समृद्ध राज्य बनाना चाहिए जिसे युद्ध और शांति के लिए गठबंधनों के माध्यम से बनाए रखा जाए, जैसा भी मामला हो।"
+        },
+        {
+          "id": "p51-s02",
+          "text": "He emphasised the importance of law and order in society, which necessitated a strong administration.",
+          "meaning": "**emphasised** — gave special importance or prominence to (something) in speaking or writing | **necessitated** — made (something) necessary as a result or consequence.\nउन्होंने समाज में कानून और व्यवस्था के महत्व पर जोर दिया, जिसके लिए एक मजबूत प्रशासन की आवश्यकता थी।"
+        },
+        {
+          "id": "p51-s03",
+          "text": "He also detailed many laws to deal with corruption and specified punishments for any activities that went against the wellbeing of the people.",
+          "meaning": "**corruption** — dishonest or fraudulent conduct by those in power, typically involving bribery.\nउन्होंने भ्रष्टाचार से निपटने के लिए कई कानूनों का भी विवरण दिया और लोगों की भलाई के खिलाफ जाने वाली किसी भी गतिविधि के लिए दंड निर्दिष्ट किया।"
+        }
+      ]
+    },
+    {
+      "id": "activity7",
+      "type": "activity",
+      "title": "THINK ABOUT IT",
+      "sentences": [
+        {
+          "id": "activity7-s01",
+          "text": "Kautilya says, “A king shall increase his power by promoting the welfare of his people, for power comes from the countryside which is the source of all economic activity.",
+          "meaning": "कौटिल्य कहते हैं, “एक राजा को अपनी प्रजा के कल्याण को बढ़ावा देकर अपनी शक्ति बढ़ानी चाहिए, क्योंकि शक्ति ग्रामीण इलाकों से आती है जो सभी आर्थिक गतिविधियों का स्रोत है।"
+        },
+        {
+          "id": "activity7-s02",
+          "text": "[The king] shall show special favours to those in the countryside who do things which benefit the people, such as building embankments or road bridges, beautifying villages, or helping to protect them.”",
+          "meaning": "**embankments** — a wall or bank of earth or stone built to prevent a river flooding an area.\n[राजा] ग्रामीण इलाकों में उन लोगों पर विशेष कृपा दिखाएगा जो लोगों को लाभ पहुंचाने वाले काम करते हैं, जैसे कि तटबंध या सड़क पुल बनाना, गांवों को सुंदर बनाना, या उनकी रक्षा करने में मदद करना।”"
+        },
+        {
+          "id": "activity7-s03",
+          "text": "Why do you think it was important to take special care of the countryside?",
+          "meaning": "आपको क्यों लगता है कि ग्रामीण इलाकों की विशेष देखभाल करना महत्वपूर्ण था?"
+        },
+        {
+          "id": "activity7-s04",
+          "text": "(Hint: Think back to what you have learnt at the beginning of this chapter)",
+          "meaning": "(संकेत: इस अध्याय की शुरुआत में आपने जो सीखा है, उसके बारे में सोचें)"
+        }
+      ]
+    },
+    {
+      "id": "p52",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p52-s01",
+          "text": "Kautilya's central philosophy of governance is in tune with Indian values: “In the happiness of his subjects lies the king's happiness; in their welfare his welfare.",
+          "meaning": "**in tune with** — in a state of agreement or harmony.\nकौटिल्य का शासन का केंद्रीय दर्शन भारतीय मूल्यों के अनुरूप है: “अपनी प्रजा की खुशी में ही राजा की खुशी निहित है; उनके कल्याण में ही उसका कल्याण है।"
+        },
+        {
+          "id": "p52-s02",
+          "text": "He shall not consider as good only that which pleases him but treat as beneficial to him whatever pleases his subjects.”",
+          "meaning": "**beneficial** — resulting in good; favourable or advantageous.\nवह केवल उसी को अच्छा नहीं मानेगा जो उसे प्रसन्न करता है, बल्कि जो कुछ भी उसकी प्रजा को प्रसन्न करता है, उसे अपने लिए लाभकारी मानेगा।”"
+        },
+        {
+          "id": "p52-s03",
+          "text": "In other words, however powerful a king may be, he must give first place to the people's interests.",
+          "meaning": "दूसरे शब्दों में, एक राजा चाहे कितना भी शक्तिशाली क्यों न हो, उसे लोगों के हितों को पहला स्थान देना चाहिए।"
+        }
+      ]
+    },
+    {
+      "id": "activity8",
+      "type": "activity",
+      "title": "LET'S EXPLORE",
+      "sentences": [
+        {
+          "id": "activity8-s01",
+          "text": "Organise a group discussion in your class and compare the features of Kautilya's idea of an empire with a modern nation.",
+          "meaning": "अपनी कक्षा में एक समूह चर्चा आयोजित करें और कौटिल्य के साम्राज्य के विचार की विशेषताओं की तुलना एक आधुनिक राष्ट्र से करें।"
+        }
+      ]
+    },
+    {
+      "id": "king-chose-peace-heading",
+      "type": "heading",
+      "text": "The King Who Chose Peace"
+    },
+    {
+      "id": "p53",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p53-s01",
+          "text": "Another king of the Maurya dynasty was Ashoka (268–232 BCE), Chandragupta's grandson, who came to be credited with major administrative and religious achievements.",
+          "meaning": "**credited with** — publicly acknowledged as having done something praiseworthy.\nमौर्य वंश का एक और राजा अशोक (268-232 ईसा पूर्व) था, जो चंद्रगुप्त का पोता था, जिसे प्रमुख प्रशासनिक और धार्मिक उपलब्धियों का श्रेय दिया गया।"
+        }
+      ]
+    },
+    {
+      "id": "media-p22",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p22-00.png",
+          "caption": "Fig. 5.16. Ashoka visiting the Ramagrama stūpa in Nepal (from a panel at the Sānchi stūpa)"
+        }
+      ]
+    },
+    {
+      "id": "p54",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p54-s01",
+          "text": "At the beginning of his reign, Ashoka was quite ambitious.",
+          "meaning": "**reign** — the period of rule of a monarch | **ambitious** — having or showing a strong desire and determination to succeed.\nअपने शासनकाल की शुरुआत में, अशोक काफी महत्वाकांक्षी था।"
+        },
+        {
+          "id": "p54-s02",
+          "text": "He had inherited a vast empire but further expanded it to cover almost the entirety of the Indian subcontinent, except for the southernmost region, but including present-day Bangladesh and Pakistan and parts of present-day Afghanistan.",
+          "meaning": "**inherited** — received (money, property, or a title) as an heir at the death of the previous holder | **entirety** — the whole of something.\nउसे एक विशाल साम्राज्य विरासत में मिला था, लेकिन उसने इसे और विस्तारित किया ताकि यह लगभग पूरे भारतीय उपमहाद्वीप को कवर कर ले, सिवाय सबसे दक्षिणी क्षेत्र के, लेकिन इसमें वर्तमान बांग्लादेश और पाकिस्तान और वर्तमान अफगानिस्तान के कुछ हिस्से शामिल थे।"
+        }
+      ]
+    },
+    {
+      "id": "callout-edict",
+      "type": "callout",
+      "title": "Edict",
+      "sentences": [
+        {
+          "id": "callout-edict-s01",
+          "text": "An official declaration issued by authorities or, in our case, a king.",
+          "meaning": "**Edict** — an official order or proclamation issued by a person in authority.\nअधिकारियों द्वारा या, हमारे मामले में, एक राजा द्वारा जारी एक आधिकारिक घोषणा।"
+        }
+      ]
+    },
+    {
+      "id": "p55",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p55-s01",
+          "text": "One encounter, however, is said to have changed the path of his life.",
+          "meaning": "हालांकि, एक मुठभेड़ ने कहा जाता है कि उसके जीवन का मार्ग बदल दिया।"
+        },
+        {
+          "id": "p55-s02",
+          "text": "According to one of his edicts he once marched on Kalinga (modern-day Odisha), where he waged a ferocious war.",
+          "meaning": "**edicts** — official orders or proclamations issued by a person in authority | **ferocious** — savagely fierce, cruel, or violent.\nउसके एक शिलालेख के अनुसार, उसने एक बार कलिंग (आधुनिक ओडिशा) पर चढ़ाई की, जहाँ उसने एक भयंकर युद्ध छेड़ा।"
+        },
+        {
+          "id": "p55-s03",
+          "text": "Seeing the enormous amount of death and destruction on the battlefield, Aśhoka chose to give up violence and, to the greatest extent possible, adopt the path of peace and non-violence that the Buddha taught.",
+          "meaning": "**enormous** — very large in size, quantity, or extent | **destruction** — the action or process of causing so much damage to something that it no longer exists or cannot be repaired.\nयुद्ध के मैदान पर भारी मात्रा में मृत्यु और विनाश को देखकर, अशोक ने हिंसा छोड़ने और, जहाँ तक संभव हो, बुद्ध द्वारा सिखाए गए शांति और अहिंसा के मार्ग को अपनाने का फैसला किया।"
+        }
+      ]
+    },
+    {
+      "id": "callout-emissary",
+      "type": "callout",
+      "title": "Emissary",
+      "sentences": [
+        {
+          "id": "callout-emissary-s01",
+          "text": "Someone sent on a special mission, often of a diplomatic nature.",
+          "meaning": "**Emissary** — a person sent on a special mission, usually as a diplomatic representative.\nकिसी विशेष मिशन पर भेजा गया कोई व्यक्ति, अक्सर राजनयिक प्रकृति का।"
+        }
+      ]
+    },
+    {
+      "id": "activity9",
+      "type": "activity",
+      "title": "THINK ABOUT IT",
+      "sentences": [
+        {
+          "id": "activity9-s01",
+          "text": "Aśhoka, in his edicts, tells the story of the Kalinga war.",
+          "meaning": "अशोक, अपने शिलालेखों में, कलिंग युद्ध की कहानी बताता है।"
+        },
+        {
+          "id": "activity9-s02",
+          "text": "He could have chosen not to mention it and maintain his image as a peaceful, benevolent king for future generations.",
+          "meaning": "**benevolent** — well meaning and kindly.\nवह इसका उल्लेख न करने और भविष्य की पीढ़ियों के लिए एक शांतिपूर्ण, परोपकारी राजा के रूप में अपनी छवि बनाए रखने का विकल्प चुन सकता था।"
+        },
+        {
+          "id": "activity9-s03",
+          "text": "Why do you think he admitted to this destructive war?",
+          "meaning": "**admitted** — confessed to be true or to be the case.\nआपको क्यों लगता है कि उसने इस विनाशकारी युद्ध को स्वीकार किया?"
+        }
+      ]
+    },
+    {
+      "id": "p56",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p56-s01",
+          "text": "Embracing Buddhist teachings, Ashoka sent emissaries to Sri Lanka, Thailand, Central Asia and beyond to spread the message of the Buddha far and wide.",
+          "meaning": "**Embracing** — accepting or supporting (a belief, theory, or change) willingly and enthusiastically | **emissaries** — persons sent on a special mission, usually as a diplomatic representative.\nबौद्ध शिक्षाओं को अपनाते हुए, अशोक ने बुद्ध के संदेश को दूर-दूर तक फैलाने के लिए श्रीलंका, थाईलैंड, मध्य एशिया और उससे आगे दूत भेजे।"
+        }
+      ]
+    },
+    {
+      "id": "p57",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p57-s01",
+          "text": "Historians have sometimes called Ashoka a 'great communicator' since he issued in many parts of his empire edicts engraved on rocks or pillars that contained his messages for the people and encouraged them to follow dharma.",
+          "meaning": "**communicator** — a person who is able to convey or share ideas and feelings effectively | **engraved** — cut or carved (a text or design) on the surface of a hard object.\nइतिहासकारों ने कभी-कभी अशोक को 'महान संचारक' कहा है क्योंकि उसने अपने साम्राज्य के कई हिस्सों में चट्टानों या स्तंभों पर खुदे हुए शिलालेख जारी किए जिनमें लोगों के लिए उसके संदेश थे और उन्हें धर्म का पालन करने के लिए प्रोत्साहित किया गया था।"
+        },
+        {
+          "id": "p57-s02",
+          "text": "Most of these edicts were inscribed in Prakrit, which was the popular language in many parts of India and written in the Brahmi script (Brahmi is the mother of all regional scripts of India).",
+          "meaning": "**inscribed** — written or carved (words or symbols) on something, especially as a formal or permanent record | **Prakrit** — any of the ancient or medieval vernacular dialects of northern and central India.\nइनमें से अधिकांश शिलालेख प्राकृत में अंकित थे, जो भारत के कई हिस्सों में लोकप्रिय भाषा थी और ब्राह्मी लिपि में लिखी गई थी (ब्राह्मी भारत की सभी क्षेत्रीय लिपियों की जननी है)।"
+        }
+      ]
+    },
+    {
+      "id": "note7",
+      "type": "note",
+      "sentences": [
+        {
+          "id": "note7-s01",
+          "text": "We have referred to the Prakrit language written in Brahmi script.",
+          "meaning": "हमने ब्राह्मी लिपि में लिखी प्राकृत भाषा का उल्लेख किया है।"
+        },
+        {
+          "id": "note7-s02",
+          "text": "What does this mean?",
+          "meaning": "इसका क्या मतलब है?"
+        },
+        {
+          "id": "note7-s03",
+          "text": "Very simply, a language is what we speak, while script is what we write a language in.",
+          "meaning": "**script** — a set of letters or symbols used for writing a particular language.\nबहुत सरल शब्दों में, भाषा वह है जो हम बोलते हैं, जबकि लिपि वह है जिसमें हम एक भाषा लिखते हैं।"
+        },
+        {
+          "id": "note7-s04",
+          "text": "Can you think of examples of this in our everyday life?",
+          "meaning": "क्या आप हमारे दैनिक जीवन में इसके उदाहरण सोच सकते हैं?"
+        }
+      ]
+    },
+    {
+      "id": "media-p23",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p23-00.png",
+          "caption": "Fig. 5.17. A few of the many Ashokan edicts across the Subcontinent"
+        }
+      ]
+    },
+    {
+      "id": "p58",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p58-s01",
+          "text": "In his edicts, Ashoka called himself ‘Devanampiya Piyadasi'; the first word means ‘Beloved of the Gods'; the second, ‘one who regards others with kindness'.",
+          "meaning": "**Devanampiya Piyadasi** — a title used by the Indian emperor Ashoka in his inscriptions, meaning 'Beloved of the Gods, He who looks on with kindness'.\nअपने शिलालेखों में, अशोक ने खुद को 'देवानांप्रिय प्रियदर्शी' कहा; पहले शब्द का अर्थ है 'देवताओं का प्रिय'; दूसरे का, 'जो दूसरों को दया से देखता है'।"
+        },
+        {
+          "id": "p58-s02",
+          "text": "And indeed, the language of the edicts makes it clear that he was interested in depicting himself as a benevolent and compassionate ruler.",
+          "meaning": "**depicting** — representing by a drawing, painting, or other art form | **compassionate** — feeling or showing sympathy and concern for others.\nऔर वास्तव में, शिलालेखों की भाषा यह स्पष्ट करती है कि वह खुद को एक परोपकारी और दयालु शासक के रूप में चित्रित करने में रुचि रखता था।"
+        },
+        {
+          "id": "p58-s03",
+          "text": "Let us see a few examples of this.",
+          "meaning": "आइए इसके कुछ उदाहरण देखें।"
+        }
+      ]
+    },
+    {
+      "id": "p59",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p59-s01",
+          "text": "Although some southern kingdoms were not part of the Mauryan kingdom, Ashoka supported their overall wellbeing.",
+          "meaning": "**wellbeing** — the state of being comfortable, healthy, or happy.\nयद्यपि कुछ दक्षिणी राज्य मौर्य साम्राज्य का हिस्सा नहीं थे, अशोक ने उनके समग्र कल्याण का समर्थन किया।"
+        },
+        {
+          "id": "p59-s02",
+          "text": "He claimed to provide medical care for people and animals even beyond his empire, prohibited hunting and cruelty to animals, and ordered medical treatment for them when necessary.",
+          "meaning": "**prohibited** — formally forbade (something) by law, rule, or other authority.\nउसने अपने साम्राज्य से परे भी लोगों और जानवरों के लिए चिकित्सा देखभाल प्रदान करने का दावा किया, जानवरों के शिकार और क्रूरता पर रोक लगाई, और आवश्यक होने पर उनके लिए चिकित्सा उपचार का आदेश दिया।"
+        }
+      ]
+    },
+    {
+      "id": "media-p24",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p24-00.png",
+          "caption": "Fig. 5.18. (Left) A reproduction of a part of Ashoka's rock edict at Girnar, Gujarat."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p24-01.png",
+          "caption": "(Right) Detail of the Topra Ashokan pillar at Feroz Shah Kotla, Delhi"
+        }
+      ]
+    },
+    {
+      "id": "p60",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p60-s01",
+          "text": "If so, Aśhoka was an early contributor to nature conservation and wildlife preservation.",
+          "meaning": "**conservation** — the protection of animals, plants, and natural resources | **preservation** — the action of preserving something.\nयदि ऐसा है, तो अशोक प्रकृति संरक्षण और वन्यजीव संरक्षण में एक प्रारंभिक योगदानकर्ता था।"
+        },
+        {
+          "id": "p60-s02",
+          "text": "He said he had established rest houses and wells at regular intervals along the main roads of his empire and got fruit and shade trees planted.",
+          "meaning": "**intervals** — a space between two things; a gap.\nउसने कहा कि उसने अपने साम्राज्य की मुख्य सड़कों पर नियमित अंतराल पर विश्राम गृह और कुएं स्थापित किए थे और फल और छायादार पेड़ लगवाए थे।"
+        },
+        {
+          "id": "p60-s03",
+          "text": "He also claimed to encourage all sects (the different schools of thought present in his time) to accept each other's best teachings and study them.",
+          "meaning": "**sects** — a group of people with somewhat different religious beliefs (typically regarded as heretical) from those of a larger group to which they belong.\nउसने यह भी दावा किया कि उसने सभी संप्रदायों (उसके समय में मौजूद विभिन्न विचारधाराओं) को एक-दूसरे की सर्वोत्तम शिक्षाओं को स्वीकार करने और उनका अध्ययन करने के लिए प्रोत्साहित किया।"
+        }
+      ]
+    },
+    {
+      "id": "p61",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p61-s01",
+          "text": "Although we need not take all of Aśhoka's claims literally, it is clear that in line with Kautilya's philosophy of governance, he paid attention to the welfare of his subjects and made efforts to reach out to them.",
+          "meaning": "**literally** — in a literal manner or sense; exactly.\nयद्यपि हमें अशोक के सभी दावों को शाब्दिक रूप से लेने की आवश्यकता नहीं है, यह स्पष्ट है कि कौटिल्य के शासन के दर्शन के अनुरूप, उसने अपनी प्रजा के कल्याण पर ध्यान दिया और उन तक पहुंचने के प्रयास किए।"
+        }
+      ]
+    },
+    {
+      "id": "note8",
+      "type": "note",
+      "title": "DON'T MISS OUT",
+      "sentences": [
+        {
+          "id": "note8-s01",
+          "text": "You read about the word ‘dharma' (dhamma in Prakrit) in Grade 6.",
+          "meaning": "**dharma** — the principle of cosmic order in Hinduism and Buddhism.\nआपने कक्षा 6 में 'धर्म' (प्राकृत में धम्म) शब्द के बारे में पढ़ा है।"
+        },
+        {
+          "id": "note8-s02",
+          "text": "Its essence cannot be easily captured.",
+          "meaning": "**essence** — the intrinsic nature or indispensable quality of something, especially something abstract, that determines its character.\nइसका सार आसानी से नहीं पकड़ा जा सकता है।"
+        },
+        {
+          "id": "note8-s03",
+          "text": "In simple terms, dharma means moral law or someone's religious or ethical duties towards family, community or country.",
+          "meaning": "**moral** — concerned with the principles of right and wrong behavior.\nसरल शब्दों में, धर्म का अर्थ है नैतिक कानून या किसी के परिवार, समुदाय या देश के प्रति धार्मिक या नैतिक कर्तव्य।"
+        },
+        {
+          "id": "note8-s04",
+          "text": "At a deeper level, however, dharma extends to living according to the order of the universe or ritam.",
+          "meaning": "**ritam** — the principle of natural order which regulates and coordinates the operation of the universe and everything within it in Hinduism.\nहालांकि, एक गहरे स्तर पर, धर्म ब्रह्मांड के क्रम या ऋतम् के अनुसार जीने तक फैला हुआ है।"
+        },
+        {
+          "id": "note8-s05",
+          "text": "This includes doing one's duty truthfully, following rules of righteous conduct and leading a life in harmony with the cosmic order.",
+          "meaning": "**righteous** — morally right or justifiable.\nइसमें ईमानदारी से अपना कर्तव्य करना, धर्मी आचरण के नियमों का पालन करना और ब्रह्मांडीय व्यवस्था के साथ सद्भाव में जीवन जीना शामिल है।"
+        },
+        {
+          "id": "note8-s06",
+          "text": "Dharma is, therefore, duty, law, truth, order and ethics—all of it together!",
+          "meaning": "इसलिए, धर्म कर्तव्य, कानून, सत्य, व्यवस्था और नैतिकता है - यह सब एक साथ!"
+        }
+      ]
+    },
+    {
+      "id": "activity10",
+      "type": "activity",
+      "title": "LET'S EXPLORE",
+      "sentences": [
+        {
+          "id": "activity10-s01",
+          "text": "Ashoka details instructions on the conduct of his officials and mentions ways to ensure that they practised fairness in one of his edicts.",
+          "meaning": "**conduct** — the manner in which a person behaves, especially in a particular place or situation.\nअशोक अपने अधिकारियों के आचरण पर निर्देश देता है और यह सुनिश्चित करने के तरीके बताता है कि वे अपने एक शिलालेख में निष्पक्षता का अभ्यास करें।"
+        },
+        {
+          "id": "activity10-s02",
+          "text": "Read the translation below and share your thoughts on whether those ways would have been successful in helping manage his empire and how.",
+          "meaning": "नीचे दिए गए अनुवाद को पढ़ें और इस पर अपने विचार साझा करें कि क्या वे तरीके उसके साम्राज्य के प्रबंधन में मदद करने में सफल रहे होंगे और कैसे।"
+        }
+      ]
+    },
+    {
+      "id": "p62",
+      "type": "blockquote",
+      "sentences": [
+        {
+          "id": "p62-s01",
+          "text": "\"By order of the Beloved of the Gods—the officers and city magistrates [...] are to be instructed thus:",
+          "meaning": "**magistrates** — civil officers who administer the law, especially one who conducts a court that deals with minor offenses and holds preliminary hearings for more serious ones.\n“देवताओं के प्रिय के आदेश से - अधिकारियों और शहर के मजिस्ट्रेटों [...] को इस प्रकार निर्देश दिया जाना है:"
+        },
+        {
+          "id": "p62-s02",
+          "text": "[...] You are in charge of many thousands of living beings.",
+          "meaning": "[...] आप कई हजारों जीवित प्राणियों के प्रभारी हैं।"
+        },
+        {
+          "id": "p62-s03",
+          "text": "You should gain the affection of men.",
+          "meaning": "**affection** — a gentle feeling of fondness or liking.\nआपको पुरुषों का स्नेह प्राप्त करना चाहिए।"
+        },
+        {
+          "id": "p62-s04",
+          "text": "All men are my children, and just as I desire for my children that they should obtain welfare and happiness both in this world and the next, the same do I desire for all men.",
+          "meaning": "सभी पुरुष मेरे बच्चे हैं, और जैसे मैं अपने बच्चों के लिए चाहता हूं कि वे इस दुनिया और अगले दोनों में कल्याण और खुशी प्राप्त करें, वैसे ही मैं सभी पुरुषों के लिए चाहता हूं।"
+        },
+        {
+          "id": "p62-s05",
+          "text": "[...] You should strive to practice impartiality.",
+          "meaning": "**strive** — make great efforts to achieve or obtain something | **impartiality** — equal treatment of all rivals or disputants; fairness.\n[...] आपको निष्पक्षता का अभ्यास करने का प्रयास करना चाहिए।"
+        },
+        {
+          "id": "p62-s06",
+          "text": "[...] The root of all this is to be even-tempered and not rash in your work.",
+          "meaning": "**even-tempered** — not easily annoyed or angered | **rash** — displaying or proceeding from a lack of careful consideration of the possible consequences of an action.\n[...] इस सब की जड़ शांत स्वभाव का होना और अपने काम में जल्दबाजी न करना है।"
+        },
+        {
+          "id": "p62-s07",
+          "text": "[...] This inscription has been engraved here in order that the city magistrates should at all times see to it that men are never imprisoned or tortured without good reason.",
+          "meaning": "**tortured** — inflicted severe pain or suffering on.\n[...] यह शिलालेख यहाँ इसलिए उकेरा गया है ताकि शहर के मजिस्ट्रेट हर समय यह सुनिश्चित करें कि पुरुषों को बिना किसी अच्छे कारण के कभी भी कैद या प्रताड़ित न किया जाए।"
+        },
+        {
+          "id": "p62-s08",
+          "text": "[...] And for this purpose, I shall send out on tour every five years, an officer who is not severe or harsh; who, having investigated this matter..., shall see that they carry out my instructions.”",
+          "meaning": "**severe** — (of something bad or undesirable) very great; intense | **harsh** — unpleasantly rough or jarring to the senses.\n[...] और इस उद्देश्य के लिए, मैं हर पांच साल में एक ऐसे अधिकारी को दौरे पर भेजूंगा जो कठोर या कठोर न हो; जो, इस मामले की जांच करने के बाद..., यह देखेगा कि वे मेरे निर्देशों का पालन करें।”"
+        }
+      ]
+    },
+    {
+      "id": "p63",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p63-s01",
+          "text": "The Maurya empire continued for half a century after Aśhoka's death.",
+          "meaning": "मौर्य साम्राज्य अशोक की मृत्यु के बाद आधी सदी तक चला।"
+        },
+        {
+          "id": "p63-s02",
+          "text": "However, his successors were unable to hold the empire together, and many of the smaller kingdoms broke off and became independent.",
+          "meaning": "**successors** — persons or things that succeed another.\nहालांकि, उसके उत्तराधिकारी साम्राज्य को एक साथ रखने में असमर्थ थे, और कई छोटे राज्य अलग हो गए और स्वतंत्र हो गए।"
+        },
+        {
+          "id": "p63-s03",
+          "text": "Around 185 BCE, India started on another phase of her journey.",
+          "meaning": "**phase** — a distinct period or stage in a series of events or a process of change or development.\nलगभग 185 ईसा पूर्व में, भारत ने अपनी यात्रा के एक और चरण की शुरुआत की।"
+        },
+        {
+          "id": "p63-s04",
+          "text": "Bhavisha and Dhruv will join us on this journey in the next chapter.",
+          "meaning": "भविषा और ध्रुव अगले अध्याय में इस यात्रा में हमारे साथ शामिल होंगे।"
+        }
+      ]
+    },
+    {
+      "id": "life-in-mauryan-period-heading",
+      "type": "heading",
+      "text": "Life in the Mauryan period"
+    },
+    {
+      "id": "p64",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p64-s01",
+          "text": "Cities like Pāțaliputra were bustling centres of governance and commerce.",
+          "meaning": "**commerce** — the activity of buying and selling, especially on a large scale.\nपाटलिपुत्र जैसे शहर शासन और वाणिज्य के हलचल भरे केंद्र थे।"
+        },
+        {
+          "id": "p64-s02",
+          "text": "They had palaces, public buildings, and well-planned streets.",
+          "meaning": "उनके पास महल, सार्वजनिक भवन और सुनियोजित सड़कें थीं।"
+        },
+        {
+          "id": "p64-s03",
+          "text": "With a well-organised taxation system and brisk trade, the treasury remained strong, fuelling the empire's growth and prosperity.",
+          "meaning": "**taxation** — the levying of tax | **treasury** — the funds or revenue of a state, institution, or society.\nएक सुव्यवस्थित कराधान प्रणाली और तेज व्यापार के साथ, खजाना मजबूत बना रहा, जिससे साम्राज्य के विकास और समृद्धि को बढ़ावा मिला।"
+        },
+        {
+          "id": "p64-s04",
+          "text": "Officials of the administration of the empire, merchants and artisans played key roles in the city life.",
+          "meaning": "**artisans** — workers in a skilled trade, especially one that involves making things by hand.\nसाम्राज्य के प्रशासन के अधिकारी, व्यापारी और कारीगरों ने शहर के जीवन में महत्वपूर्ण भूमिका निभाई।"
+        }
+      ]
+    },
+    {
+      "id": "note9",
+      "type": "note",
+      "title": "DON'T MISS OUT",
+      "sentences": [
+        {
+          "id": "note9-s01",
+          "text": "The Sohagaura copper plate inscription, dating back to the 4th-3rd century BCE, is one of India's earliest known administrative records.",
+          "meaning": "सोहगौरा ताम्रपत्र शिलालेख, जो चौथी-तीसरी शताब्दी ईसा पूर्व का है, भारत के सबसे पुराने ज्ञात प्रशासनिक अभिलेखों में से एक है।"
+        },
+        {
+          "id": "note9-s02",
+          "text": "Discovered in Sohgaura, Uttar Pradesh, it is written in Prakrit using the Brahmi script and is believed to have been issued during the reign of Chandragupta Maurya.",
+          "meaning": "उत्तर प्रदेश के सोहगौरा में खोजा गया, यह ब्राह्मी लिपि का उपयोग करके प्राकृत में लिखा गया है और माना जाता है कि यह चंद्रगुप्त मौर्य के शासनकाल के दौरान जारी किया गया था।"
+        },
+        {
+          "id": "note9-s03",
+          "text": "The inscription mentions the establishment of a granary to store grain as a precaution against famines, highlighting the state's efforts to ensure food security and support its people during times of crisis.",
+          "meaning": "**granary** — a storehouse for threshed grain | **precaution** — a measure taken in advance to prevent something dangerous, unpleasant, or inconvenient from happening.\nशिलालेख में अकाल के खिलाफ एहतियात के तौर पर अनाज जमा करने के लिए एक अन्न भंडार की स्थापना का उल्लेख है, जो खाद्य सुरक्षा सुनिश्चित करने और संकट के समय में अपने लोगों का समर्थन करने के लिए राज्य के प्रयासों को उजागर करता है।"
+        }
+      ]
+    },
+    {
+      "id": "media-p26",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p26-00.png",
+          "caption": "Fig. 5.19. The Sohagaura copper plate inscription."
+        }
+      ]
+    },
+    {
+      "id": "p65",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p65-s01",
+          "text": "Megasthenes' account also throws some light on the society of that time.",
+          "meaning": "मेगस्थनीज का वृत्तांत भी उस समय के समाज पर कुछ प्रकाश डालता है।"
+        },
+        {
+          "id": "p65-s02",
+          "text": "A substantial proportion of the population was engaged in agriculture, which was an important source of revenue for the empire.",
+          "meaning": "**substantial** — of considerable importance, size, or worth | **revenue** — income, especially when of a company or organization and of a substantial nature.\nआबादी का एक बड़ा हिस्सा कृषि में लगा हुआ था, जो साम्राज्य के लिए राजस्व का एक महत्वपूर्ण स्रोत था।"
+        },
+        {
+          "id": "p65-s03",
+          "text": "Two crops were sown in a year, as rain fell in both summer and winter.",
+          "meaning": "एक साल में दो फसलें बोई जाती थीं, क्योंकि गर्मी और सर्दी दोनों में बारिश होती थी।"
+        },
+        {
+          "id": "p65-s04",
+          "text": "This ensured that famines were rare and people had ample food.",
+          "meaning": "**famines** — extreme scarcity of food | **ample** — enough or more than enough; plentiful.\nइससे यह सुनिश्चित हुआ कि अकाल दुर्लभ थे और लोगों के पास पर्याप्त भोजन था।"
+        }
+      ]
+    },
+    {
+      "id": "p66",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p66-s01",
+          "text": "Granaries were well stocked for any eventualities.",
+          "meaning": "**eventualities** — possible events or outcomes.\nकिसी भी संभावित घटना के लिए अन्न भंडार अच्छी तरह से भरे हुए थे।"
+        },
+        {
+          "id": "p66-s02",
+          "text": "Even if war raged nearby, farmers were protected from it, and agriculture was not disturbed.",
+          "meaning": "**raged** — continued with great force or intensity.\nभले ही पास में युद्ध छिड़ा हो, किसानों को इससे बचाया गया, और कृषि में कोई बाधा नहीं आई।"
+        }
+      ]
+    },
+    {
+      "id": "p67",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p67-s01",
+          "text": "Blacksmiths, potters, carpenters, jewellers and other artisans lived in the cities.",
+          "meaning": "लोहार, कुम्हार, बढ़ई, जौहरी और अन्य कारीगर शहरों में रहते थे।"
+        },
+        {
+          "id": "p67-s02",
+          "text": "The cities were well-planned and had signage on the streets.",
+          "meaning": "**signage** — signs collectively, especially commercial or public display signs.\nशहर सुनियोजित थे और सड़कों पर साइनबोर्ड लगे थे।"
+        },
+        {
+          "id": "p67-s03",
+          "text": "Communication happened through couriers who carried messages from place to place.",
+          "meaning": "**couriers** — persons or companies that transport commercial packages and documents.\nसंचार कोरियर के माध्यम से होता था जो एक स्थान से दूसरे स्थान पर संदेश ले जाते थे।"
+        },
+        {
+          "id": "p67-s04",
+          "text": "The houses were made of wood and could be up to two storeys tall.",
+          "meaning": "**storeys** — a part of a building comprising all the rooms that are on the same level.\nघर लकड़ी के बने होते थे और दो मंजिल तक ऊंचे हो सकते थे।"
+        },
+        {
+          "id": "p67-s05",
+          "text": "The streets had vessels of water stored at regular intervals in case of fire.",
+          "meaning": "**vessels** — containers, especially for liquids.\nआग लगने की स्थिति में सड़कों पर नियमित अंतराल पर पानी के बर्तन रखे जाते थे।"
+        }
+      ]
+    },
+    {
+      "id": "p68",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p68-s01",
+          "text": "Later accounts describe the cotton dresses people wore—a lower garment that reached below the knee halfway down to the ankles and an upper garment that they threw over their shoulders.",
+          "meaning": "**garment** — an item of clothing.\nबाद के वृत्तांतों में लोगों द्वारा पहने जाने वाले सूती कपड़ों का वर्णन है - एक निचला वस्त्र जो घुटने के नीचे टखनों तक आधा पहुँचता था और एक ऊपरी वस्त्र जिसे वे अपने कंधों पर डालते थे।"
+        },
+        {
+          "id": "p68-s02",
+          "text": "Some wore leather shoes with designs and thick soles to make them look taller.",
+          "meaning": "**soles** — the undersurface of a person's foot.\nकुछ लोग लंबा दिखने के लिए डिजाइन वाले और मोटे तलवों वाले चमड़े के जूते पहनते थे।"
+        }
+      ]
+    },
+    {
+      "id": "activity11",
+      "type": "activity",
+      "title": "LET'S EXPLORE",
+      "sentences": [
+        {
+          "id": "activity11-s01",
+          "text": "Wear the hat of a historian.",
+          "meaning": "एक इतिहासकार की टोपी पहनें।"
+        },
+        {
+          "id": "activity11-s02",
+          "text": "Look carefully at the artefacts presented on the spread on the next page.",
+          "meaning": "**artefacts** — objects made by a human being, typically an item of cultural or historical interest.\nअगले पृष्ठ पर प्रस्तुत कलाकृतियों को ध्यान से देखें।"
+        },
+        {
+          "id": "activity11-s03",
+          "text": "What conclusions can you draw about people and life during the Mauryan era?",
+          "meaning": "**conclusions** — a judgement or decision reached by reasoning.\nमौर्य काल के दौरान लोगों और जीवन के बारे में आप क्या निष्कर्ष निकाल सकते हैं?"
+        }
+      ]
+    },
+    {
+      "id": "p69",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p69-s01",
+          "text": "Fig. 5.20 has many messages for us, apart from the beauty and perfection of the sculpture, and is a fine example of Mauryan art.",
+          "meaning": "**sculpture** — the art of making two- or three-dimensional representative or abstract forms, especially by carving stone or wood or by casting metal or plaster.\nचित्र 5.20 में मूर्तिकला की सुंदरता और पूर्णता के अलावा, हमारे लिए कई संदेश हैं, और यह मौर्य कला का एक अच्छा उदाहरण है।"
+        },
+        {
+          "id": "p69-s02",
+          "text": "This capital (a word which, here, means ‘top portion' or 'head') was the top of a pillar that Ashoka got erected at Sarnath, near Varanasi, where the Buddha gave his first teaching.",
+          "meaning": "**capital** — the top part of a pillar or column | **erected** — put together and set upright (a building, wall, or other structure).\nयह राजधानी (एक शब्द जिसका यहाँ अर्थ है 'शीर्ष भाग' या 'सिर') एक स्तंभ का शीर्ष था जिसे अशोक ने वाराणसी के पास सारनाथ में बनवाया था, जहाँ बुद्ध ने अपना पहला उपदेश दिया था।"
+        },
+        {
+          "id": "p69-s03",
+          "text": "The four lions symbolise the royal power; on the ring below, four powerful animals (an elephant, a bull, a horse and one more lion) are depicted, along with the dharmachakra or wheel of dharma, which symbolises the Buddha's teachings.",
+          "meaning": "**symbolise** — be a symbol of | **dharmachakra** — the 'wheel of law', a symbol representing the teachings of the Buddha.\nचार शेर शाही शक्ति का प्रतीक हैं; नीचे की अंगूठी पर, चार शक्तिशाली जानवर (एक हाथी, एक बैल, एक घोड़ा और एक और शेर) को धर्मचक्र या धर्म के पहिये के साथ चित्रित किया गया है, जो बुद्ध की शिक्षाओं का प्रतीक है।"
+        }
+      ]
+    },
+    {
+      "id": "media-p27",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p27-00.png",
+          "caption": "Fig. 5.20. The Mauryas were renowned for their highly polished stone pillars, as can be seen in this capital of the Sarnath pillar."
+        }
+      ]
+    },
+    {
+      "id": "mauryan-contributions-heading",
+      "type": "heading",
+      "text": "Some Contributions of the Mauryas"
+    },
+    {
+      "id": "life-and-people-subheading",
+      "type": "subheading",
+      "text": "Life and people"
+    },
+    {
+      "id": "media-p28",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p28-00.png",
+          "caption": "Fig. 5.21. Terracotta figurine of a dancing girl (notice her elaborate headdress, hairstyle and jewellery)."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p28-01.png",
+          "caption": "Fig. 5.22. Terracotta figurine of a female deity."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p28-02.png",
+          "caption": "Fig. 5.23. Female deity (yakshī) holding a fly whisk."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p28-03.png",
+          "caption": "Fig. 5.24. Terracotta of Saptamātrikās or seven mother goddesses (a continuing tradition)."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p28-04.png",
+          "caption": "Fig. 5.25. Head of a terracotta horse (notice the elaborate design of the bridle)."
+        }
+      ]
+    },
+    {
+      "id": "art-and-architecture-subheading",
+      "type": "subheading",
+      "text": "Art and architecture"
+    },
+    {
+      "id": "media-p29",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p29-01.png",
+          "caption": "Fig. 5.26. As one of India's oldest stone structures, the Great Stūpa at Sanchi is among the finest examples of Indian architecture. Note that the original structure was made of bricks and was later enlarged using stone. Ashoka is said to have constructed many such stūpas, chaityas, and vihāras for worship, study, and meditation."
+        },
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p29-00.png",
+          "caption": "Fig. 5.27. Rock sculpture of a life-size elephant at Dhauli (in present-day Odisha, near Bhubaneswar), which symbolises the Buddha — intelligent, powerful, patient, and calm. An edict of Ashoka was engraved on a rock nearby."
+        }
+      ]
+    },
+    {
+      "id": "media-p30-1",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p30-00.png",
+          "caption": "Fig. 5.28. The national emblem of India, with the motto 'Satyameva Jayate'."
+        }
+      ]
+    },
+    {
+      "id": "p70",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p70-s01",
+          "text": "This image may be familiar to some of you.",
+          "meaning": "यह छवि आप में से कुछ के लिए परिचित हो सकती है।"
+        },
+        {
+          "id": "p70-s02",
+          "text": "Indeed, this capital was chosen as India's national emblem, to which was added the Sanskrit motto satyameva jayate or “truth alone triumphs\" (see the national emblem on the left).",
+          "meaning": "**emblem** — a heraldic device or symbolic object as a distinctive badge of a nation, organization, or family | **motto** — a short sentence or phrase chosen as encapsulating the beliefs or ideals guiding an individual, family, or institution.\nवास्तव में, इस राजधानी को भारत के राष्ट्रीय प्रतीक के रूप में चुना गया था, जिसमें संस्कृत का आदर्श वाक्य सत्यमेव जयते या “सत्य की ही जीत होती है” जोड़ा गया था (बाईं ओर राष्ट्रीय प्रतीक देखें)।"
+        },
+        {
+          "id": "p70-s03",
+          "text": "Besides, the dharmachakra is depicted at the centre of our national flag, as you may also have noticed.",
+          "meaning": "इसके अलावा, धर्मचक्र हमारे राष्ट्रीय ध्वज के केंद्र में चित्रित है, जैसा कि आपने भी देखा होगा।"
+        },
+        {
+          "id": "p70-s04",
+          "text": "The motto comes from the Mundaka Upanishad; in full, it reads satyameva jayate nānritam, that is, “truth alone triumphs, not falsehood\".",
+          "meaning": "**Upanishad** — each of a series of Hindu sacred treatises written in Sanskrit c. 800–200 BC, expounding the Vedas in predominantly mystical and monistic terms.\nयह आदर्श वाक्य मुंडक उपनिषद से आता है; पूर्ण रूप में, यह सत्यमेव जयते नानृतम् पढ़ता है, अर्थात, “सत्य की ही जीत होती है, असत्य की नहीं”।"
+        }
+      ]
+    },
+    {
+      "id": "activity12",
+      "type": "activity",
+      "title": "LET'S EXPLORE",
+      "sentences": [
+        {
+          "id": "activity12-s01",
+          "text": "Notice the different symbols on the coins.",
+          "meaning": "सिक्कों पर विभिन्न प्रतीकों पर ध्यान दें।"
+        },
+        {
+          "id": "activity12-s02",
+          "text": "Can you guess what any of the symbols in the coins below might mean?",
+          "meaning": "क्या आप अनुमान लगा सकते हैं कि नीचे दिए गए सिक्कों में से किसी भी प्रतीक का क्या अर्थ हो सकता है?"
+        }
+      ]
+    },
+    {
+      "id": "media-p30-2",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "pdf-image://img-p30-01.png",
+          "caption": "Fig. 5.29.1. A hoard of Mauryan punch-marked coins, Fig. 5.29.2. A punch-marked coin of Ashoka"
+        }
+      ]
+    },
+    {
+      "id": "note10",
+      "type": "note",
+      "title": "DON'T MISS OUT",
+      "sentences": [
+        {
+          "id": "note10-s01",
+          "text": "The big, round hemispherical structure in the centre of the stūpa is called the aņda.",
+          "meaning": "**hemispherical** — having the shape of a half of a sphere | **stūpa** — a dome-shaped structure erected as a Buddhist shrine | **aņda** — the hemispherical dome of a stupa.\nस्तूप के केंद्र में बड़ी, गोल अर्धगोलाकार संरचना को अंड कहा जाता है।"
+        },
+        {
+          "id": "note10-s02",
+          "text": "It represents the universe and is often built to house sacred relics.",
+          "meaning": "यह ब्रह्मांड का प्रतिनिधित्व करता है और अक्सर पवित्र अवशेषों को रखने के लिए बनाया जाता है।"
+        },
+        {
+          "id": "note10-s03",
+          "text": "People walk around it in a circle as a form of worship (pradakșhiņa).",
+          "meaning": "**pradakșhiņa** — the rite of circumambulating in a clockwise direction a sacred person, object, or building.\nलोग पूजा के एक रूप (प्रदक्षिणा) के रूप में इसके चारों ओर एक घेरे में चलते हैं।"
+        }
+      ]
+    },
+    {
+      "id": "fragile-nature-heading",
+      "type": "heading",
+      "text": "The Fragile Nature of Empires"
+    },
+    {
+      "id": "p71",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p71-s01",
+          "text": "You will hear in higher grades about past mighty empires elsewhere in the world, such as the Roman, the Persian, the Ottoman, the Spanish, the Russian, the British empires, and so on.",
+          "meaning": "**mighty** — possessing great and impressive power or strength, especially on account of size.\nआप उच्च कक्षाओं में दुनिया में कहीं और के पिछले शक्तिशाली साम्राज्यों के बारे में सुनेंगे, जैसे कि रोमन, फारसी, ओटोमन, स्पेनिश, रूसी, ब्रिटिश साम्राज्य, और इसी तरह।"
+        },
+        {
+          "id": "p71-s02",
+          "text": "All of them are long gone, but historians keep debating the causes of their decline.",
+          "meaning": "**debating** — arguing about (a subject), especially in a formal manner.\nवे सभी बहुत पहले चले गए हैं, लेकिन इतिहासकार उनके पतन के कारणों पर बहस करते रहते हैं।"
+        }
+      ]
+    },
+    {
+      "id": "p72",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p72-s01",
+          "text": "One of those causes, as we saw, is the temptation for some of the empire's regions to try and become independent.",
+          "meaning": "**temptation** — the desire to do something, especially something wrong or unwise.\nउन कारणों में से एक, जैसा कि हमने देखा, साम्राज्य के कुछ क्षेत्रों के लिए स्वतंत्र होने की कोशिश करने का प्रलोभन है।"
+        },
+        {
+          "id": "p72-s02",
+          "text": "This could happen if, for example, the emperor needed more resources for long military campaigns or in times of drought; local rulers would be burdened with increasing demands for tribute, leading to resentment.",
+          "meaning": "**drought** — a prolonged period of abnormally low rainfall, leading to a shortage of water | **resentment** — bitter indignation at having been treated unfairly.\nयह हो सकता है यदि, उदाहरण के लिए, सम्राट को लंबे सैन्य अभियानों के लिए या सूखे के समय में अधिक संसाधनों की आवश्यकता हो; स्थानीय शासकों पर श्रद्धांजलि की बढ़ती मांगों का बोझ पड़ेगा, जिससे नाराजगी होगी।"
+        },
+        {
+          "id": "p72-s03",
+          "text": "Or if a powerful emperor was followed by one perceived to be weak, local kings or chieftains might simply decide to take a chance and stop paying tribute.",
+          "meaning": "**perceived** — became aware or conscious of (something); came to realize or understand | **chieftains** — the leaders of a people or clan.\nया यदि एक शक्तिशाली सम्राट के बाद एक कमजोर माना जाने वाला सम्राट आता है, तो स्थानीय राजा या सरदार बस एक मौका लेने और श्रद्धांजलि देना बंद करने का फैसला कर सकते हैं।"
+        },
+        {
+          "id": "p72-s04",
+          "text": "Also, the larger an empire, the more difficult it is to hold it together, as Alexander experienced; far-off territories are often the first to split away from the empire.",
+          "meaning": "इसके अलावा, एक साम्राज्य जितना बड़ा होता है, उसे एक साथ रखना उतना ही मुश्किल होता है, जैसा कि सिकंदर ने अनुभव किया; दूर-दराज के क्षेत्र अक्सर साम्राज्य से अलग होने वाले पहले होते हैं।"
+        },
+        {
+          "id": "p72-s05",
+          "text": "Finally, economic crises caused by natural calamities (such as a long drought or floods) could also shake an empire's structure.",
+          "meaning": "**calamities** — events causing great and often sudden damage or distress; a disaster.\nअंत में, प्राकृतिक आपदाओं (जैसे लंबा सूखा या बाढ़) के कारण होने वाले आर्थिक संकट भी एक साम्राज्य की संरचना को हिला सकते हैं।"
+        }
+      ]
+    },
+    {
+      "id": "p73",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p73-s01",
+          "text": "Empires are, therefore, something of a paradox.",
+          "meaning": "**paradox** — a seemingly absurd or self-contradictory statement or proposition that when investigated or explained may prove to be well founded or true.\nइसलिए, साम्राज्य एक तरह का विरोधाभास हैं।"
+        },
+        {
+          "id": "p73-s02",
+          "text": "On the one hand, they can bring about political unity, as the Mauryan empire did to almost the entire Subcontinent, and reduce or eliminate warfare among the smaller kingdoms — indeed, a well-managed empire could lead to greater prosperity than smaller, warring kingdoms.",
+          "meaning": "**eliminate** — completely remove or get rid of (something) | **prosperity** — the state of being prosperous.\nएक ओर, वे राजनीतिक एकता ला सकते हैं, जैसा कि मौर्य साम्राज्य ने लगभग पूरे उपमहाद्वीप के लिए किया, और छोटे राज्यों के बीच युद्ध को कम या समाप्त कर सकते हैं - वास्तव में, एक अच्छी तरह से प्रबंधित साम्राज्य छोटे, युद्धरत राज्यों की तुलना में अधिक समृद्धि ला सकता है।"
+        },
+        {
+          "id": "p73-s03",
+          "text": "On the other hand, empires have almost always been established through war and have maintained their existence through force and repression.",
+          "meaning": "**repression** — the action of subduing someone or something by force.\nदूसरी ओर, साम्राज्य लगभग हमेशा युद्ध के माध्यम से स्थापित किए गए हैं और बल और दमन के माध्यम से अपने अस्तित्व को बनाए रखा है।"
+        }
+      ]
+    },
+    {
+      "id": "p74",
+      "type": "prose",
+      "sentences": [
+        {
+          "id": "p74-s01",
+          "text": "This makes them fragile at their core and unstable over time.",
+          "meaning": "**fragile** — easily broken or damaged | **unstable** — likely to change or fail; not firm or fixed.\nयह उन्हें उनके मूल में नाजुक और समय के साथ अस्थिर बनाता है।"
+        }
+      ]
+    },
+    {
+      "id": "media-p31",
+      "type": "media",
+      "items": [
+        {
+          "mediaType": "photo",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Timeline_of_the_Rise_of_Empires_in_Ancient_India.svg/1280px-Timeline_of_the_Rise_of_Empires_in_Ancient_India.svg.png",
+          "caption": "Fig. 5.30. Timeline from Mahajanapadas to Mauryas."
+        }
+      ]
+    },
+    {
+      "id": "summary-subheading",
+      "type": "subheading",
+      "text": "Before we move on ..."
+    },
+    {
+      "id": "summary-list",
+      "type": "list",
+      "items": [
+        "An empire is a large territory made up of many smaller kingdoms or territories. Emperors expanded their kingdoms mostly to gain fame, amass power, including military power, and control resources and economic life.",
+        "The first empires of India emerged in regions blessed with abundant natural resources, rivers for irrigation and transport, and the production of a variety of goods for trade.",
+        "Alexander's campaign in northwest India had a limited political impact but opened the door for Indo-Greek cultural contacts.",
+        "The Mauryas created a vast empire with a legacy that lasted centuries. Their legacy includes strengthening trade routes and economic systems, extensive use of coins for trade, well-designed urban settlements, and an elaborate system of administration. They also promoted art and architecture.",
+        "Aśhoka was keen to advertise his achievements and project the image of a benevolent ruler who encouraged his subjects to follow dharma."
+      ]
+    },
+    {
+      "id": "questions-heading",
+      "type": "heading",
+      "text": "Questions and activities"
+    },
+    {
+      "id": "activity13",
+      "type": "activity",
+      "sentences": [
+        {
+          "id": "activity13-s01",
+          "text": "1. What are the features of an empire, and how is it different from a kingdom? Explain.",
+          "meaning": "1. एक साम्राज्य की विशेषताएं क्या हैं, और यह एक राज्य से कैसे अलग है? समझाएं।"
+        },
+        {
+          "id": "activity13-s02",
+          "text": "2. What are some important factors for the transition from kingdoms to empires?",
+          "meaning": "**transition** — the process or a period of changing from one state or condition to another.\n2. राज्यों से साम्राज्यों में संक्रमण के लिए कुछ महत्वपूर्ण कारक क्या हैं?"
+        },
+        {
+          "id": "activity13-s03",
+          "text": "3. Alexander is considered an important king in the history of the world —why do you think that is so?",
+          "meaning": "3. सिकंदर को विश्व के इतिहास में एक महत्वपूर्ण राजा माना जाता है - आपको ऐसा क्यों लगता है?"
+        },
+        {
+          "id": "activity13-s04",
+          "text": "4. In early Indian history, the Mauryas are considered important. State your reasons.",
+          "meaning": "4. प्रारंभिक भारतीय इतिहास में, मौर्यों को महत्वपूर्ण माना जाता है। अपने कारण बताएं।"
+        },
+        {
+          "id": "activity13-s05",
+          "text": "5. What were some of Kautilya's key ideas? Which ones of these can you observe even today in the world around us?",
+          "meaning": "5. कौटिल्य के कुछ प्रमुख विचार क्या थे? इनमें से कौन से आप आज भी अपने आसपास की दुनिया में देख सकते हैं?"
+        },
+        {
+          "id": "activity13-s06",
+          "text": "6. What were the unusual things about Aśhoka and his empire? What of that has continued to influence India and why? Write your opinion in about 250 words.",
+          "meaning": "**unusual** — not habitually or commonly occurring or done.\n6. अशोक और उसके साम्राज्य के बारे में असामान्य बातें क्या थीं? उसमें से क्या भारत को प्रभावित करना जारी रखा है और क्यों? अपनी राय लगभग 250 शब्दों में लिखें।"
+        }
+      ]
+    },
+    {
+      "id": "activity14",
+      "type": "activity",
+      "sentences": [
+        {
+          "id": "activity14-s01",
+          "text": "7. Thus speaks the Beloved of the Gods, the king Piyadasi: My officers of Dhamma are busy in many matters of public benefit, they are busy among members of all sects, both ascetics and householders.",
+          "meaning": "**ascetics** — people characterized by or suggesting the practice of severe self-discipline and abstention from all forms of indulgence, typically for religious reasons.\n7. इस प्रकार देवताओं के प्रिय, राजा प्रियदर्शी कहते हैं: मेरे धम्म के अधिकारी सार्वजनिक लाभ के कई मामलों में व्यस्त हैं, वे सभी संप्रदायों के सदस्यों, तपस्वियों और गृहस्थों दोनों के बीच व्यस्त हैं।"
+        },
+        {
+          "id": "activity14-s02",
+          "text": "I have appointed some to concern themselves with the Buddhist Order, with brahmans and Ājīvika..., with the Jains..., and with various sects.",
+          "meaning": "मैंने कुछ को बौद्ध संघ, ब्राह्मणों और आजीविकों..., जैनियों..., और विभिन्न संप्रदायों से संबंधित मामलों के लिए नियुक्त किया है।"
+        },
+        {
+          "id": "activity14-s03",
+          "text": "There are many categories of officers with a variety of duties, but my officers of Dhamma are busy with the affairs of these and other sects.",
+          "meaning": "विभिन्न कर्तव्यों वाले अधिकारियों की कई श्रेणियां हैं, लेकिन मेरे धम्म के अधिकारी इन और अन्य संप्रदायों के मामलों में व्यस्त हैं।"
+        },
+        {
+          "id": "activity14-s04",
+          "text": "After reading the above edict of Aśhoka, do you think he was tolerant towards other religious beliefs and schools of thought?",
+          "meaning": "**tolerant** — showing willingness to allow the existence of opinions or behavior that one does not necessarily agree with.\nअशोक के उपरोक्त शिलालेख को पढ़ने के बाद, क्या आपको लगता है कि वह अन्य धार्मिक विश्वासों और विचारधाराओं के प्रति सहिष्णु था?"
+        },
+        {
+          "id": "activity14-s05",
+          "text": "Share your opinion in the classroom.",
+          "meaning": "कक्षा में अपनी राय साझा करें।"
+        },
+        {
+          "id": "activity14-s06",
+          "text": "8. The Brahmi script was a writing system that was widely used in ancient India. Try to learn more about this script, taking help from your teacher wherever required. Create a small project and include what you have learnt about Brahmi.",
+          "meaning": "8. ब्राह्मी लिपि एक लेखन प्रणाली थी जो प्राचीन भारत में व्यापक रूप से उपयोग की जाती थी। इस लिपि के बारे में और जानने की कोशिश करें, जहाँ भी आवश्यक हो अपने शिक्षक से मदद लें। एक छोटा प्रोजेक्ट बनाएं और उसमें ब्राह्मी के बारे में आपने जो सीखा है उसे शामिल करें।"
+        },
+        {
+          "id": "activity14-s07",
+          "text": "9. Suppose you had to travel from Kauśhāmbī to Kāveripattanam in the 3rd century BCE. How would you undertake this journey, and how long would you expect it to take, with reasonable halts on the way?",
+          "meaning": "**halts** — a suspension of movement or activity, typically a brief one.\n9. मान लीजिए कि आपको तीसरी शताब्दी ईसा पूर्व में कौशांबी से कावेरीपट्टनम की यात्रा करनी थी। आप इस यात्रा को कैसे करेंगे, और आप उम्मीद करेंगे कि रास्ते में उचित ठहराव के साथ इसमें कितना समय लगेगा?"
+        }
+      ]
+    },
+    {
+      "id": "note11",
+      "type": "note",
+      "title": "Noodles",
+      "sentences": [
+        {
+          "id": "note11-s01",
+          "text": "*'Noodles' is our abbreviation for 'Notes and Doodles'!",
+          "meaning": "**abbreviation** — a shortened form of a word or phrase.\n*'नूडल्स' 'नोट्स और डूडल्स' के लिए हमारा संक्षिप्त नाम है!"
+        }
+      ]
+    }
+  ]
+}

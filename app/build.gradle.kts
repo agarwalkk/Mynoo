@@ -6,7 +6,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
     id("com.google.gms.google-services")
     id("com.google.dagger.hilt.android")
-    kotlin("kapt")
+    id("com.google.devtools.ksp")
 }
 
 // ── Read local.properties (API keys — never committed to git) ────────────────
@@ -109,7 +109,7 @@ dependencies {
 
     // ── Hilt DI ───────────────────────────────────────────────────────────────
     implementation("com.google.dagger:hilt-android:2.51.1")
-    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+    ksp("com.google.dagger:hilt-android-compiler:2.51.1")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 
     // ── Networking (Retrofit + OkHttp for Gemini / TTS / STT REST) ───────────
@@ -141,4 +141,6 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 }
 
-kapt { correctErrorTypes = true }
+ksp {
+    arg("correctErrorTypes", "true")
+}
