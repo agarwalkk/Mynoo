@@ -49,6 +49,7 @@ data class QuizState(
     val mcqSelectedIndex: Int?          = null,
     val mcqFirstWrongIndex: Int?        = null,
     val mcqPhase:      String           = "idle",
+    val debugJsons:    Map<Int, Pair<String, String>> = emptyMap(),
 )
 
 val QuizState.currentQuestion get() = assessment?.questions?.getOrNull(currentIndex)
@@ -362,7 +363,7 @@ class AssessmentViewModel @Inject constructor(
                 val a   = all.firstOrNull { it.id == assessmentId }
                 if (a != null) {
                     val savedAnswers = a.answers
-                    val resumeIdx = calculateResumeIndex(savedAnswers, a.questions.size)
+                    val resumeIdx = calculateResumeIndex(savedAnswers, a.questions)
                     _quiz.update {
                         QuizState(
                             assessment = a,
@@ -382,13 +383,26 @@ class AssessmentViewModel @Inject constructor(
         }
     }
 
-    private fun calculateResumeIndex(answers: List<Map<String, Any>?>, totalQuestions: Int): Int {
+    private fun isQuestionAnswered(q: AssessmentQuestion, ans: Map<String, Any>?): Boolean {
+        if (ans == null || ans.isEmpty()) return false
+        return if (q.type == "mcq") {
+            val selected = (ans["selectedIndex"] as? Number)?.toInt() ?: -1
+            selected >= 0
+        } else {
+            val text = ans["textAnswer"] as? String ?: ""
+            text.trim().isNotEmpty()
+        }
+    }
+
+    private fun calculateResumeIndex(answers: List<Map<String, Any>?>, questions: List<AssessmentQuestion>): Int {
         if (answers.isEmpty()) return 0
-        val firstUnanswered = answers.indexOfFirst { it == null || it.isEmpty() }
+        val firstUnanswered = questions.indices.indexOfFirst { idx ->
+            !isQuestionAnswered(questions[idx], answers.getOrNull(idx))
+        }
         return if (firstUnanswered >= 0) {
             firstUnanswered
         } else {
-            (answers.size).coerceAtMost(totalQuestions - 1).coerceAtLeast(0)
+            (answers.size).coerceAtMost(questions.size - 1).coerceAtLeast(0)
         }
     }
 
@@ -603,12 +617,83 @@ class AssessmentViewModel @Inject constructor(
                 _quiz.update { it.copy(currentIndex = idx + 1) }
                 restoreQuestionState(idx + 1)
             } else {
-                val allAnswered = (0 until total).all { i -> updatedAnswers.getOrNull(i) != null }
-                if (!allAnswered) {
-                    val firstUnanswered = (0 until total).firstOrNull { updatedAnswers.getOrNull(it) == null } ?: 0
+                val firstUnanswered = assessment.questions.indices.firstOrNull { i ->
+                    !isQuestionAnswered(assessment.questions[i], updatedAnswers.getOrNull(i))
+                }
+                if (firstUnanswered != null) {
                     _quiz.update { it.copy(currentIndex = firstUnanswered) }
                     restoreQuestionState(firstUnanswered)
-                    _quiz.update { it.copy(error = "Please answer all questions before finishing.") }
+                    _quiz.update { it.copy(error = "Please answer all questions before finishing. Taking you to the first skipped question.") }
+                } else {
+                    _quiz.update { it.copy(finished = true) }
+                    generateSummary()
+                }
+            }
+        }
+    }
+
+    fun skipCurrentQuestion() {
+        val qState = _quiz.value
+        val assessment = qState.assessment ?: return
+        val currentQ = qState.currentQuestion ?: return
+        val idx = qState.currentIndex
+        val total = assessment.questions.size
+        
+        // Build a skipped answer map
+        val ansMap = if (currentQ.type == "mcq") {
+            mapOf(
+                "questionId" to currentQ.id,
+                "type" to "mcq",
+                "selectedIndex" to -1,
+                "attempts" to 0,
+                "correct" to false
+            )
+        } else {
+            mapOf(
+                "questionId" to currentQ.id,
+                "type" to currentQ.type,
+                "textAnswer" to "",
+                "selfGrade" to "wrong",
+                "aiEarnedMarks" to 0.0,
+                "corrections" to emptyList<Any>(),
+                "correctedAnswer" to "",
+                "aiFeedback" to "Skipped",
+                "retryUsed" to false
+            )
+        }
+        
+        val updatedAnswers = qState.answers.toMutableList()
+        while (updatedAnswers.size <= idx) {
+            updatedAnswers.add(null)
+        }
+        updatedAnswers[idx] = ansMap
+        
+        _quiz.update {
+            it.copy(
+                answers = updatedAnswers,
+                validationResult = null,
+                validating = false
+            )
+        }
+        
+        viewModelScope.launch {
+            try {
+                repo.saveAssessment(currentChild, assessment.copy(status = "in_progress", answers = updatedAnswers))
+            } catch (e: Exception) {
+                Log.e("AssessmentVM", "Error saving progress in skip", e)
+            }
+            
+            if (idx + 1 < total) {
+                _quiz.update { it.copy(currentIndex = idx + 1) }
+                restoreQuestionState(idx + 1)
+            } else {
+                val firstUnanswered = assessment.questions.indices.firstOrNull { i ->
+                    !isQuestionAnswered(assessment.questions[i], updatedAnswers.getOrNull(i))
+                }
+                if (firstUnanswered != null) {
+                    _quiz.update { it.copy(currentIndex = firstUnanswered) }
+                    restoreQuestionState(firstUnanswered)
+                    _quiz.update { it.copy(error = "Please answer all questions before finishing. Taking you to the first skipped question.") }
                 } else {
                     _quiz.update { it.copy(finished = true) }
                     generateSummary()
@@ -687,15 +772,7 @@ class AssessmentViewModel @Inject constructor(
                 }
                 
                 if (childAnswer.trim().isEmpty()) {
-                    val result = mapOf(
-                        "verdict" to "wrong",
-                        "earnedMarks" to 0.0,
-                        "feedback" to "No answer was given. Review the correct answer and try next time.",
-                        "corrections" to emptyList<Any>(),
-                        "correctedAnswer" to "",
-                        "allowRetry" to false
-                    )
-                    onValidationComplete(idx, childAnswer, result)
+                    _quiz.update { it.copy(validating = false, error = "Please type or write your answer first!") }
                     return@launch
                 }
                 
@@ -730,6 +807,9 @@ class AssessmentViewModel @Inject constructor(
                     "Model answer: \"${q.answer}\"\n" +
                     "Student's answer: \"$childAnswer\"\n\n$gradingRules"
                 
+                var reqObj: Any? = null
+                var resObj: Any? = null
+
                 val rawResponse = when {
                     model.startsWith("grok-") -> {
                         val request = LlmResponseRequest(
@@ -739,7 +819,9 @@ class AssessmentViewModel @Inject constructor(
                             maxOutputTokens = 1024,
                             text = LlmTextFormat(LlmJsonSchemaFormat(name = "answer_validate", schema = buildValidationSchema()))
                         )
+                        reqObj = request
                         val res = xaiApi.createResponse("Bearer ${BuildConfig.XAI_API_KEY}", request)
+                        resObj = res
                         extractTextFromLlmResponse(res)
                     }
                     model.startsWith("gpt-") -> {
@@ -750,7 +832,9 @@ class AssessmentViewModel @Inject constructor(
                             maxOutputTokens = 1024,
                             text = LlmTextFormat(LlmJsonSchemaFormat(name = "answer_validate", schema = buildValidationSchema()))
                         )
+                        reqObj = request
                         val res = openAiApi.createResponse("Bearer ${BuildConfig.OPENAI_API_KEY}", request)
+                        resObj = res
                         extractTextFromLlmResponse(res)
                     }
                     model.startsWith("sarvam-") -> {
@@ -764,7 +848,9 @@ class AssessmentViewModel @Inject constructor(
                             maxTokens = 1024,
                             responseFormat = SarvamResponseFormat()
                         )
+                        reqObj = request
                         val res = sarvamChatApi.chatCompletions(BuildConfig.SARVAM_API_KEY, request)
+                        resObj = res
                         res.choices?.firstOrNull()?.message?.content ?: "{}"
                     }
                     else -> {
@@ -776,10 +862,14 @@ class AssessmentViewModel @Inject constructor(
                                 responseSchema = buildValidationSchema()
                             )
                         )
+                        reqObj = req
                         val resp = geminiApi.generateContent(model, BuildConfig.GEMINI_API_KEY, req)
+                        resObj = resp
                         resp.candidates?.firstOrNull()?.content?.parts?.firstOrNull()?.text ?: "{}"
                     }
                 }
+
+                saveDebugJson(idx, reqObj!!, resObj!!)
                 
                 val clean = cleanResponseText(rawResponse)
                 val parsed = parseValidationResult(clean, q.marks)
@@ -859,6 +949,7 @@ class AssessmentViewModel @Inject constructor(
                     )
                 )
                 val resp = geminiApi.generateContent(model, BuildConfig.GEMINI_API_KEY, req)
+                saveDebugJson(idx, req, resp)
                 val rawResponse = resp.candidates?.firstOrNull()?.content?.parts?.firstOrNull()?.text ?: "{}"
                 
                 val clean = cleanResponseText(rawResponse)
@@ -1296,6 +1387,21 @@ Return ONLY the JSON array, no markdown, no explanation.
             return (0 until obj.length()).map { obj.getString(it) }.joinToString("\n")
         }
         return obj.toString()
+    }
+
+    private fun saveDebugJson(idx: Int, request: Any, response: Any) {
+        try {
+            val gson = com.google.gson.GsonBuilder().setPrettyPrinting().serializeNulls().create()
+            val reqJson = gson.toJson(request)
+            val resJson = gson.toJson(response)
+            _quiz.update {
+                it.copy(
+                    debugJsons = it.debugJsons + (idx to (reqJson to resJson))
+                )
+            }
+        } catch (e: Exception) {
+            Log.e("AssessmentVM", "Failed to save debug JSON", e)
+        }
     }
 
     private fun cleanResponseText(raw: String): String {

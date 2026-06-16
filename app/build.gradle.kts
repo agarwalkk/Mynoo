@@ -1,4 +1,5 @@
 import java.util.Properties
+import com.google.firebase.appdistribution.gradle.firebaseAppDistribution
 
 plugins {
     id("com.android.application")
@@ -7,6 +8,7 @@ plugins {
     id("com.google.gms.google-services")
     id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
+    id("com.google.firebase.appdistribution")
 }
 
 // ── Read local.properties (API keys — never committed to git) ────────────────
@@ -72,6 +74,11 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            firebaseAppDistribution {
+                appId                  = "1:295058637169:android:079a66ef78fbcb638cb6d0"
+                serviceCredentialsFile = "${project.rootDir}/mynoo-1e880-serviceaccount.json"
+                testers                = lp("FIREBASE_TESTERS")
+            }
         }
     }
 
@@ -92,6 +99,7 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
     implementation("com.google.firebase:firebase-firestore-ktx")
     implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-appdistribution:16.0.0-beta19")
 
     // ── Jetpack Compose (BOM manages versions) ────────────────────────────────
     implementation(platform("androidx.compose:compose-bom:2024.12.01"))

@@ -1,1260 +1,1204 @@
 {
-  "title": "भाषा, वर्ण और शब्द-विचार",
+  "title": "The Rise of Empires",
   "passages": [],
   "questions": [
     {
       "id": "q1",
       "type": "mcq",
-      "category": "भाषा-ज्ञान",
+      "category": "Definitions",
       "marks": 1,
       "difficulty": "easy",
-      "question": "भाषा शब्द संस्कृत की किस धातु से बना है?",
+      "question": "The word 'empire' comes from the Latin word *imperium*. What does *imperium* mean?",
       "passageId": "",
-      "tag": "ch01-grammer",
+      "tag": "",
+      "hint": "",
       "options": [
         {
-          "text": "भास्",
-          "explanation": "यह गलत है। 'भास्' धातु का अर्थ चमकना होता है।"
+          "text": "Supreme power",
+          "explanation": "Correct. The chapter explicitly states 'imperium' means 'supreme power'."
         },
         {
-          "text": "भाष्",
-          "explanation": "सही उत्तर — भाषा शब्द संस्कृत की **'भाष्'** धातु से बना है, जिसका अर्थ है- बोलना।"
+          "text": "Military strength",
+          "explanation": "Incorrect. This is not the meaning given in the chapter."
         },
         {
-          "text": "भष्",
-          "explanation": "यह एक अशुद्ध विकल्प है।"
+          "text": "Vast territory",
+          "explanation": "Incorrect. While empires are vast, this is not the meaning of *imperium*."
         },
         {
-          "text": "भाष",
-          "explanation": "यह गलत है। सही धातु 'भाष्' है।"
+          "text": "Royal dynasty",
+          "explanation": "Incorrect. *Imperium* refers to power, not lineage."
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 0,
+      "correctAnswer": "Supreme power",
+      "explanation": "The chapter states: 'The word empire comes from the Latin imperium, which means supreme power.'"
     },
     {
       "id": "q2",
       "type": "mcq",
-      "category": "भाषा-ज्ञान",
+      "category": "Vocabulary",
       "marks": 1,
       "difficulty": "easy",
-      "question": "इनमें से कौन-सा भाषा का मौखिक रूप का उदाहरण है?",
+      "question": "What is a **tributary** (also called a vassal) in the context of an empire?",
       "passageId": "",
-      "tag": "ch01-grammer",
+      "tag": "",
+      "hint": "",
       "options": [
         {
-          "text": "पत्र",
-          "explanation": "पत्र भाषा का लिखित रूप है।"
+          "text": "A river that flows into another river",
+          "explanation": "Incorrect. While this is a common meaning, the chapter uses it differently."
         },
         {
-          "text": "समाचार-पत्र",
-          "explanation": "समाचार-पत्र भाषा का लिखित रूप है।"
+          "text": "A ruler or state that has submitted to an emperor and pays tribute",
+          "explanation": "Correct. The chapter's callout box clearly defines tributary this way."
         },
         {
-          "text": "भाषण",
-          "explanation": "सही उत्तर — **भाषण** भाषा का मौखिक रूप है, जिसमें वक्ता बोलकर अपने विचार प्रकट करता है।"
+          "text": "An official appointed by the emperor to manage territories",
+          "explanation": "Incorrect. That describes an administrator or satrap."
         },
         {
-          "text": "ई-मेल",
-          "explanation": "ई-मेल भाषा का लिखित रूप है।"
+          "text": "A soldier in the emperor's army",
+          "explanation": "Incorrect. Soldiers are not tributaries."
         }
       ],
-      "correctIndex": 2
+      "correctIndex": 1,
+      "correctAnswer": "A ruler or state that has submitted to an emperor and pays tribute",
+      "explanation": "The chapter defines a tributary as a ruler or state that has submitted to an emperor and pays tribute as a sign of submission, loyalty or respect."
     },
     {
       "id": "q3",
-      "type": "short_answer",
-      "category": "भाषा-ज्ञान",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "**मातृभाषा** किसे कहते हैं? एक उदाहरण दीजिए।",
+      "type": "mcq",
+      "category": "Magadha",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Magadha corresponds to which modern-day region of India?",
       "passageId": "",
-      "tag": "ch01-grammer",
-      "correctAnswer": "जो भाषा बालक अपने परिवार से सीखता है, वह मातृभाषा कहलाती है। उदाहरण के लिए, यदि किसी का जन्म हिंदीभाषी परिवार में हुआ है, तो उसकी मातृभाषा हिंदी होगी।",
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "tag": "",
+      "hint": "",
+      "options": [
+        {
+          "text": "Northern Uttar Pradesh",
+          "explanation": "Incorrect. The chapter says Magadha was in south Bihar."
+        },
+        {
+          "text": "Modern-day south Bihar and some adjoining areas",
+          "explanation": "Correct. The chapter explicitly mentions this."
+        },
+        {
+          "text": "Present-day Delhi and Haryana",
+          "explanation": "Incorrect. That was never mentioned."
+        },
+        {
+          "text": "Eastern Rajasthan",
+          "explanation": "Incorrect. Magadha was in the Ganga plains of Bihar."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "Modern-day south Bihar and some adjoining areas",
+      "explanation": "The chapter states: 'Magadha (modern-day south Bihar and some adjoining areas) rose in importance…'"
     },
     {
       "id": "q4",
-      "type": "fill_blank",
-      "category": "लिपि और व्याकरण",
+      "type": "mcq",
+      "category": "Guilds",
       "marks": 1,
       "difficulty": "easy",
-      "question": "मुख से निकली ध्वनियों को लिखने की विधि या चिह्न को ___ कहते हैं।",
+      "question": "What is the Sanskrit word used in the chapter for guilds?",
       "passageId": "",
-      "tag": "ch01-grammer",
-      "blanks": [
-        "लिपि"
+      "tag": "",
+      "hint": "",
+      "options": [
+        {
+          "text": "Sūtras",
+          "explanation": "Incorrect. Sūtras are concise phrases capturing knowledge, not guilds."
+        },
+        {
+          "text": "Śhrenīs",
+          "explanation": "Correct. The chapter explicitly states guilds were called śhrenīs."
+        },
+        {
+          "text": "Mahājanapadas",
+          "explanation": "Incorrect. Mahājanapadas were large kingdoms, not guilds."
+        },
+        {
+          "text": "Samrāj",
+          "explanation": "Incorrect. Samrāj means supreme ruler."
+        }
       ],
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "correctIndex": 1,
+      "correctAnswer": "Śhrenīs",
+      "explanation": "The chapter says traders created 'guilds (śhrenīs)' — powerful associations of traders, craftsmen, moneylenders or agriculturists."
     },
     {
       "id": "q5",
       "type": "mcq",
-      "category": "लिपि और व्याकरण",
+      "category": "Alexander the Great",
       "marks": 1,
       "difficulty": "medium",
-      "question": "पंजाबी भाषा की लिपि क्या है?",
+      "question": "According to the chapter, Alexander defeated Porus in which region of India?",
       "passageId": "",
-      "tag": "ch01-grammer",
+      "tag": "",
+      "hint": "",
       "options": [
         {
-          "text": "देवनागरी",
-          "explanation": "देवनागरी लिपि हिंदी, संस्कृत, मराठी आदि भाषाओं की है।"
+          "text": "Kashmir",
+          "explanation": "Incorrect. The chapter does not mention Kashmir."
         },
         {
-          "text": "फारसी",
-          "explanation": "फारसी लिपि उर्दू भाषा की है।"
+          "text": "Punjab",
+          "explanation": "Correct. The chapter states Alexander 'defeated Porus in Punjab'."
         },
         {
-          "text": "रोमन",
-          "explanation": "रोमन लिपि अंग्रेज़ी, जर्मन, फ्रेंच आदि भाषाओं की है।"
+          "text": "Magadha",
+          "explanation": "Incorrect. Alexander never reached Magadha — his troops refused to go further."
         },
         {
-          "text": "गुरमुखी",
-          "explanation": "सही उत्तर — पंजाबी भाषा की लिपि **गुरमुखी** है।"
+          "text": "Sindh",
+          "explanation": "Incorrect. This is not stated in the chapter."
         }
       ],
-      "correctIndex": 3
+      "correctIndex": 1,
+      "correctAnswer": "Punjab",
+      "explanation": "The chapter states Alexander 'pushed on further east...defeated Porus in Punjab'."
     },
     {
       "id": "q6",
-      "type": "short_answer",
-      "category": "साहित्य-बोध",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "**साहित्य** किसे कहते हैं? इसके दो भेद कौन-से हैं?",
+      "type": "mcq",
+      "category": "Maurya Empire",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Who was Chandragupta Maurya's able mentor who helped him build the Maurya Empire?",
       "passageId": "",
-      "tag": "ch01-grammer",
-      "correctAnswer": "ज्ञान के संचित कोष को साहित्य कहा जाता है। साहित्य के दो भेद हैं - गद्य साहित्य और पद्य साहित्य।",
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "tag": "",
+      "hint": "",
+      "options": [
+        {
+          "text": "Ajātaśhatru",
+          "explanation": "Incorrect. Ajātaśhatru was an early king of Magadha, not Chandragupta's mentor."
+        },
+        {
+          "text": "Megasthenes",
+          "explanation": "Incorrect. Megasthenes was a Greek ambassador, not a mentor."
+        },
+        {
+          "text": "Kautilya",
+          "explanation": "Correct. The chapter clearly states Chandragupta managed his feat with the help of Kautilya."
+        },
+        {
+          "text": "Dhana Nanda",
+          "explanation": "Incorrect. Dhana Nanda was the last Nanda emperor whom Chandragupta overthrew."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "Kautilya",
+      "explanation": "The chapter states: 'Chandragupta managed this feat with the help of an able mentor named Kautilya.'"
     },
     {
       "id": "q7",
       "type": "mcq",
-      "category": "भाषा-ज्ञान",
+      "category": "Vocabulary",
       "marks": 1,
-      "difficulty": "hard",
-      "question": "जब कोई बोली थोड़ी विकसित हो जाती है और उसमें साहित्य की रचना होने लगती है, तब वह क्या बन जाती है?",
+      "difficulty": "medium",
+      "question": "What does the term **Gymnosophists** mean, as used by the Greeks for Indian sages they encountered?",
       "passageId": "",
-      "tag": "ch01-grammer",
+      "tag": "",
+      "hint": "",
       "options": [
         {
-          "text": "मानक भाषा",
-          "explanation": "मानक भाषा विद्वानों द्वारा स्वीकृत भाषा का एकरूप होता है।"
+          "text": "Forest dwellers",
+          "explanation": "Incorrect. The chapter gives a different meaning."
         },
         {
-          "text": "राजभाषा",
-          "explanation": "राजभाषा सरकारी कामकाज की भाषा होती है।"
+          "text": "Naked philosophers",
+          "explanation": "Correct. The chapter states Greeks called them 'Gymnosophists' or 'naked philosophers'."
         },
         {
-          "text": "उपभाषा",
-          "explanation": "सही उत्तर — जब कोई बोली थोड़ी विकसित होकर साहित्यिक रूप ले लेती है, तो वह **उपभाषा** बन जाती है, जैसे- ब्रज, अवधी आदि।"
+          "text": "Warrior monks",
+          "explanation": "Incorrect. This meaning is not given in the chapter."
         },
         {
-          "text": "राष्ट्रभाषा",
-          "explanation": "राष्ट्रभाषा देश के अधिकतर निवासियों द्वारा प्रयोग की जाती है।"
+          "text": "Royal advisers",
+          "explanation": "Incorrect. These were independent sages, not royal advisers."
         }
       ],
-      "correctIndex": 2
+      "correctIndex": 1,
+      "correctAnswer": "Naked philosophers",
+      "explanation": "The chapter says: 'a group of Indian sages whom the Greeks called Gymnosophists or naked philosophers (probably because they wore very little clothing).'"
     },
     {
       "id": "q8",
-      "type": "fill_blank",
-      "category": "लिपि और व्याकरण",
+      "type": "mcq",
+      "category": "Nanda Dynasty",
       "marks": 1,
       "difficulty": "medium",
-      "question": "व्याकरण के चार अंग हैं- वर्ण-विचार, शब्द-विचार, पद-विचार और ___।",
+      "question": "Who founded the Nanda dynasty in Magadha?",
       "passageId": "",
-      "tag": "ch01-grammer",
-      "blanks": [
-        "वाक्य-विचार"
+      "tag": "",
+      "hint": "",
+      "options": [
+        {
+          "text": "Dhana Nanda",
+          "explanation": "Incorrect. Dhana Nanda was the last Nanda emperor."
+        },
+        {
+          "text": "Ajātaśhatru",
+          "explanation": "Incorrect. Ajātaśhatru was an early king of Magadha before the Nandas."
+        },
+        {
+          "text": "Mahāpadma Nanda",
+          "explanation": "Correct. The chapter states: 'Mahāpadma Nanda rose to prominence and founded the Nanda dynasty.'"
+        },
+        {
+          "text": "Chandragupta Maurya",
+          "explanation": "Incorrect. Chandragupta founded the Maurya dynasty, not the Nanda dynasty."
+        }
       ],
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "correctIndex": 2,
+      "correctAnswer": "Mahāpadma Nanda",
+      "explanation": "The chapter clearly states: 'Mahāpadma Nanda rose to prominence in Magadha and founded the Nanda dynasty.'"
     },
     {
       "id": "q9",
       "type": "mcq",
-      "category": "वर्ण-विचार",
+      "category": "Vocabulary",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "भाषा की सबसे छोटी इकाई क्या है, जिसके और टुकड़े नहीं किए जा सकते?",
+      "difficulty": "medium",
+      "question": "What is a **moat** as described in the chapter in the context of city defences?",
       "passageId": "",
-      "tag": "ch02-grammer",
+      "tag": "",
+      "hint": "",
       "options": [
         {
-          "text": "शब्द",
-          "explanation": "शब्द वर्णों के सार्थक मेल से बनते हैं और इनके खंड हो सकते हैं।"
+          "text": "A tall watchtower used for surveillance",
+          "explanation": "Incorrect. A watchtower is not a moat."
         },
         {
-          "text": "वाक्य",
-          "explanation": "वाक्य शब्दों के सार्थक मेल से बनते हैं।"
+          "text": "A deep, wide ditch surrounding a fort or city, typically filled with water",
+          "explanation": "Correct. The chapter defines a moat exactly this way."
         },
         {
-          "text": "वर्ण",
-          "explanation": "सही उत्तर — **वर्ण** भाषा की सबसे छोटी इकाई है, जिसके और खंड नहीं किए जा सकते।"
+          "text": "A type of drawbridge that can be raised during attack",
+          "explanation": "Incorrect. That describes a drawbridge, not a moat."
         },
         {
-          "text": "लिपि",
-          "explanation": "लिपि लिखने की विधि को कहते हैं।"
+          "text": "A thick wooden wall surrounding the city",
+          "explanation": "Incorrect. That describes ramparts."
         }
       ],
-      "correctIndex": 2
+      "correctIndex": 1,
+      "correctAnswer": "A deep, wide ditch surrounding a fort or city, typically filled with water",
+      "explanation": "The chapter states a moat is 'a deep, wide ditch surrounding a castle, fort, or town, typically filled with water and intended as a defence against attack.'"
     },
     {
       "id": "q10",
-      "type": "short_answer",
-      "category": "वर्ण-विचार",
-      "marks": 2,
-      "difficulty": "easy",
-      "question": "**वर्णमाला** किसे कहते हैं? हिंदी वर्णमाला में वर्णों के दो प्रकार कौन-से हैं?",
+      "type": "mcq",
+      "category": "Ashoka",
+      "marks": 1,
+      "difficulty": "medium",
+      "question": "The Sarnath pillar capital erected by Ashoka has four lions at the top. What do the four lions symbolise?",
       "passageId": "",
-      "tag": "ch02-grammer",
-      "correctAnswer": "वर्णों के व्यवस्थित समूह को वर्णमाला कहते हैं। हिंदी वर्णमाला में दो प्रकार के वर्ण होते हैं - स्वर और व्यंजन।",
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "tag": "",
+      "hint": "",
+      "options": [
+        {
+          "text": "The four directions of the empire",
+          "explanation": "Incorrect. The chapter does not give this meaning."
+        },
+        {
+          "text": "The four noble truths of Buddhism",
+          "explanation": "Incorrect. The dharmachakra represents Buddhist teachings, not the lions."
+        },
+        {
+          "text": "Royal power",
+          "explanation": "Correct. The chapter states: 'The four lions symbolise the royal power.'"
+        },
+        {
+          "text": "The four seasons of the year",
+          "explanation": "Incorrect. This meaning is not mentioned in the chapter."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "Royal power",
+      "explanation": "The chapter states: 'The four lions symbolise the royal power.'"
     },
     {
       "id": "q11",
       "type": "mcq",
-      "category": "वर्ण-विचार",
+      "category": "Greek Accounts",
       "marks": 1,
       "difficulty": "medium",
-      "question": "जिन स्वरों के उच्चारण में हस्व स्वर से दोगुना समय लगता है, वे क्या कहलाते हैं?",
+      "question": "Who was the Greek ambassador sent to Chandragupta Maurya's court, whose writings describe Mauryan society?",
       "passageId": "",
-      "tag": "ch02-grammer",
+      "tag": "",
+      "hint": "",
       "options": [
         {
-          "text": "हस्व स्वर",
-          "explanation": "हस्व स्वर के उच्चारण में केवल एक मात्रा का समय लगता है।"
+          "text": "Porus",
+          "explanation": "Incorrect. Porus was an Indian king who fought Alexander."
         },
         {
-          "text": "दीर्घ स्वर",
-          "explanation": "सही उत्तर — **दीर्घ स्वर** के उच्चारण में हस्व स्वर से दोगुना समय लगता है। ये सात हैं- आ, ई, ऊ, ए, ऐ, ओ, औ।"
+          "text": "Megasthenes",
+          "explanation": "Correct. Megasthenes was a Greek ambassador whose account throws light on Mauryan society."
         },
         {
-          "text": "प्लुत स्वर",
-          "explanation": "प्लुत स्वर के उच्चारण में दीर्घ स्वर से भी अधिक समय लगता है।"
+          "text": "Alexander",
+          "explanation": "Incorrect. Alexander was the Greek king, not an ambassador to India."
         },
         {
-          "text": "अयोगवाह",
-          "explanation": "अयोगवाह अं और अः को कहते हैं।"
+          "text": "Seleucus",
+          "explanation": "Incorrect. While Seleucus had dealings with Chandragupta, the ambassador mentioned is Megasthenes."
         }
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "correctAnswer": "Megasthenes",
+      "explanation": "The chapter mentions 'Megasthenes' account also throws some light on the society of that time.'"
     },
     {
       "id": "q12",
-      "type": "fill_blank",
-      "category": "वर्ण-विचार",
+      "type": "mcq",
+      "category": "Vocabulary",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "अं को ___ तथा अः को ___ कहा जाता है।",
+      "difficulty": "hard",
+      "question": "Which of the following best explains the term **posterity** as used in the chapter?",
       "passageId": "",
-      "tag": "ch02-grammer",
-      "blanks": [
-        "अनुस्वार",
-        "विसर्ग"
+      "tag": "",
+      "hint": "",
+      "options": [
+        {
+          "text": "Past generations",
+          "explanation": "Incorrect. Posterity refers to future generations, not past ones."
+        },
+        {
+          "text": "Wealth accumulated by a ruler",
+          "explanation": "Incorrect. This is not the meaning given."
+        },
+        {
+          "text": "All future generations of people",
+          "explanation": "Correct. The chapter's callout box defines posterity as 'the generations to come.'"
+        },
+        {
+          "text": "A term for a large empire",
+          "explanation": "Incorrect. Posterity has nothing to do with empires directly."
+        }
       ],
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "correctIndex": 2,
+      "correctAnswer": "All future generations of people",
+      "explanation": "The chapter's callout box defines posterity simply as 'the generations to come.'"
     },
     {
       "id": "q13",
-      "type": "short_answer",
-      "category": "वर्ण-विचार",
-      "marks": 2,
-      "difficulty": "hard",
-      "question": "**अनुस्वार** और **अनुनासिक** में क्या अंतर है? प्रत्येक का एक-एक उदाहरण दीजिए।",
+      "type": "mcq",
+      "category": "Pāṭaliputra",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "The ancient city of Pāṭaliputra is located near which modern Indian city?",
       "passageId": "",
-      "tag": "ch02-grammer",
-      "correctAnswer": "अनुस्वार (ं) एक व्यंजन ध्वनि है और इसके उच्चारण में हवा नाक से निकलती है, जैसे- हंस। अनुनासिक (ँ) स्वरों का गुण है और इसके उच्चारण में हवा नाक और मुख से समान दबाव से निकलती है, जैसे- आँख।",
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "tag": "",
+      "hint": "",
+      "options": [
+        {
+          "text": "Varanasi",
+          "explanation": "Incorrect. Varanasi is associated with Sarnath and Ashoka's pillar."
+        },
+        {
+          "text": "Delhi",
+          "explanation": "Incorrect. Delhi is not mentioned as the location of Pāṭaliputra."
+        },
+        {
+          "text": "Patna",
+          "explanation": "Correct. The chapter states Pāṭaliputra was 'about the same location as modern-day Patna.'"
+        },
+        {
+          "text": "Kolkata",
+          "explanation": "Incorrect. Kolkata is not mentioned in this context."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "Patna",
+      "explanation": "The chapter states they 'decided to visit Pāṭaliputra…they knew it was about the same location as modern-day Patna.'"
     },
     {
       "id": "q14",
       "type": "mcq",
-      "category": "वर्ण-विचार",
+      "category": "Sanskrit Terms",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "इनमें से कौन-सा वर्ण **ऊष्म व्यंजन** का उदाहरण है?",
+      "difficulty": "hard",
+      "question": "Which Sanskrit word for 'emperor' means 'king of kings'?",
       "passageId": "",
-      "tag": "ch02-grammer",
+      "tag": "",
+      "hint": "",
       "options": [
         {
-          "text": "य",
-          "explanation": "'य' अंतःस्थ व्यंजन है।"
+          "text": "Samrāj",
+          "explanation": "Incorrect. Samrāj means 'the lord of all' or 'supreme ruler'."
         },
         {
-          "text": "क",
-          "explanation": "'क' स्पर्श व्यंजन है।"
+          "text": "Adhirāja",
+          "explanation": "Incorrect. Adhirāja means 'overlord'."
         },
         {
-          "text": "श",
-          "explanation": "सही उत्तर — **'श'** ऊष्म व्यंजन है। ऊष्म व्यंजन चार हैं - श, ष, स, ह।"
+          "text": "Rājādhirāja",
+          "explanation": "Correct. The chapter states rājādhirāja means 'king of kings'."
         },
         {
-          "text": "क्ष",
-          "explanation": "'क्ष' संयुक्त व्यंजन है।"
+          "text": "Mahārāja",
+          "explanation": "Incorrect. Mahārāja is not one of the terms listed in the chapter for emperor."
         }
       ],
-      "correctIndex": 2
+      "correctIndex": 2,
+      "correctAnswer": "Rājādhirāja",
+      "explanation": "The chapter lists 'rājādhirāja or king of kings' as one of the Sanskrit words for emperor."
     },
     {
       "id": "q15",
-      "type": "match_columns",
-      "category": "वर्ण-विचार",
-      "marks": 2,
+      "type": "mcq",
+      "category": "Pāṇini",
+      "marks": 1,
       "difficulty": "hard",
-      "question": "कॉलम 'अ' के वर्णों का उनके उच्चारण-स्थान कॉलम 'ब' से सही मिलान कीजिए।",
+      "question": "How many sūtras does Pāṇini's *Aṣṭādhyāyī* contain?",
       "passageId": "",
-      "tag": "ch02-grammer",
-      "columnA": [
-        "1. क",
-        "2. च",
-        "3. ट",
-        "4. प"
+      "tag": "",
+      "hint": "",
+      "options": [
+        {
+          "text": "1,000",
+          "explanation": "Incorrect. The chapter gives a specific number."
+        },
+        {
+          "text": "3,996",
+          "explanation": "Correct. The chapter states Pāṇini composed the Aṣṭādhyāyī with '3,996 short sūtras'."
+        },
+        {
+          "text": "5,000",
+          "explanation": "Incorrect. This number is not mentioned in the chapter."
+        },
+        {
+          "text": "2,500",
+          "explanation": "Incorrect. The chapter clearly states 3,996."
+        }
       ],
-      "columnB": [
-        "A. मूर्धन्य",
-        "B. ओष्ठ्य",
-        "C. कंठ्य",
-        "D. तालव्य",
-        "E. दंत्य"
-      ]
+      "correctIndex": 1,
+      "correctAnswer": "3,996",
+      "explanation": "The chapter's note states Pāṇini is 'known for composing the Aṣṭādhyāyī…which lists the rules of Sanskrit grammar in 3,996 short sūtras.'"
     },
     {
       "id": "q16",
-      "type": "short_answer",
-      "category": "वर्ण-विचार",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "**द्वित्व व्यंजन** किसे कहते हैं? दो उदाहरण दीजिए।",
+      "type": "fill_blank",
+      "category": "Empires",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Fill in the blank: An emperor rules the entire empire from a ___, which is usually a major centre of economic and administrative power.",
       "passageId": "",
-      "tag": "ch02-grammer",
-      "correctAnswer": "जब एक व्यंजन ही दो बार एक साथ आता है, तब वह द्वित्व व्यंजन कहलाता है। इसमें पहला व्यंजन स्वर-रहित तथा दूसरा स्वर-सहित होता है। उदाहरण: पत्ता, चम्मच।",
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "tag": "",
+      "hint": "",
+      "blanks": [
+        "capital"
+      ],
+      "correctAnswer": "capital",
+      "explanation": "The chapter states the emperor 'ruled the whole territory from a capital, usually a major centre of economic and administrative power.'"
     },
     {
       "id": "q17",
       "type": "fill_blank",
-      "category": "वर्ण-विचार",
+      "category": "Alexander",
       "marks": 1,
-      "difficulty": "hard",
-      "question": "संयुक्त व्यंजन 'ज्ञ' ___ + ___ + अ के संयोग से बना है।",
+      "difficulty": "easy",
+      "question": "Fill in the blank: Alexander died in ___ at the age of 32.",
       "passageId": "",
-      "tag": "ch02-grammer",
+      "tag": "",
+      "hint": "",
       "blanks": [
-        "ज्",
-        "ञ्"
+        "Babylon"
       ],
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "correctAnswer": "Babylon",
+      "explanation": "The chapter states: 'After he fell ill and died in Babylon at the age of 32…'"
     },
     {
       "id": "q18",
-      "type": "mcq",
-      "category": "शब्द-ज्ञान",
+      "type": "fill_blank",
+      "category": "Guilds",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "'आकाश' शब्द का पर्यायवाची शब्द इनमें से कौन-सा है?",
+      "difficulty": "medium",
+      "question": "Fill in the blank: According to the chapter, a guild's head was usually ___ by the members.",
       "passageId": "",
-      "tag": "ch05-grammer-p1",
-      "options": [
-        {
-          "text": "नीर",
-          "explanation": "नीर 'पानी' का पर्यायवाची है।"
-        },
-        {
-          "text": "अनल",
-          "explanation": "यह विकल्प दिए गए पाठ में नहीं है।"
-        },
-        {
-          "text": "गगन",
-          "explanation": "सही उत्तर — **गगन** 'आकाश' का पर्यायवाची है। अन्य पर्यायवाची हैं- आसमान, व्योम, अंबर।"
-        },
-        {
-          "text": "अंशु",
-          "explanation": "अंशु 'किरण' का पर्यायवाची है।"
-        }
+      "tag": "",
+      "hint": "",
+      "blanks": [
+        "elected"
       ],
-      "correctIndex": 2
+      "correctAnswer": "elected",
+      "explanation": "The chapter states: 'a guild had a head (who was usually elected) and executive officers.'"
     },
     {
       "id": "q19",
-      "type": "mcq",
-      "category": "शब्द-ज्ञान",
+      "type": "fill_blank",
+      "category": "Magadha",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "'आदर' शब्द का विलोम शब्द क्या है?",
+      "difficulty": "medium",
+      "question": "Fill in the blank: The ___ and Son rivers gave Magadha a geographical advantage for transportation and trade.",
       "passageId": "",
-      "tag": "ch05-grammer-p1",
-      "options": [
-        {
-          "text": "निरादर",
-          "explanation": "यह 'अपमान' का पर्यायवाची है।"
-        },
-        {
-          "text": "अनादर",
-          "explanation": "सही उत्तर — **अनादर**, 'आदर' शब्द का सही विलोम है।"
-        },
-        {
-          "text": "अपमान",
-          "explanation": "यह आदर का विलोम नहीं है, बल्कि तिरस्कार का समानार्थी है।"
-        },
-        {
-          "text": "उपेक्षा",
-          "explanation": "यह भी एक गलत विकल्प है।"
-        }
+      "tag": "",
+      "hint": "",
+      "blanks": [
+        "Ganga"
       ],
-      "correctIndex": 1
+      "correctAnswer": "Ganga",
+      "explanation": "The chapter states: 'The Ganga and Son rivers provided a geographical advantage for trade, as they could be used for transportation.'"
     },
     {
       "id": "q20",
-      "type": "short_answer",
-      "category": "शब्द-ज्ञान",
-      "marks": 2,
+      "type": "fill_blank",
+      "category": "Nanda Dynasty",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "'घोड़ा' और 'इच्छा' शब्दों के दो-दो पर्यायवाची शब्द लिखिए।",
+      "question": "Fill in the blank: The last emperor of the Nanda dynasty was ___, who became unpopular for oppressing and exploiting his people.",
       "passageId": "",
-      "tag": "ch05-grammer-p1",
-      "correctAnswer": "घोड़ा के पर्यायवाची: हय, वाजि, तुरंग, अश्व। इच्छा के पर्यायवाची: लालसा, चाह, कामना, अभिलाषा। (इनमें से कोई दो लिखने हैं)",
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "tag": "",
+      "hint": "",
+      "blanks": [
+        "Dhana Nanda"
+      ],
+      "correctAnswer": "Dhana Nanda",
+      "explanation": "The chapter states: 'its last emperor, Dhana Nanda, though very rich, became highly unpopular as he oppressed and exploited his people.'"
     },
     {
       "id": "q21",
       "type": "fill_blank",
-      "category": "शब्द-ज्ञान",
+      "category": "Maurya Empire",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "'आयात' का विलोम शब्द ___ है।",
+      "difficulty": "easy",
+      "question": "Fill in the blank: The Maurya Empire was founded by ___ around 321 BCE.",
       "passageId": "",
-      "tag": "ch05-grammer-p1",
+      "tag": "",
+      "hint": "",
       "blanks": [
-        "निर्यात"
+        "Chandragupta Maurya"
       ],
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "correctAnswer": "Chandragupta Maurya",
+      "explanation": "The chapter states: 'Around 321 BCE…a new dynasty and new empire emerged: the Maurya Empire founded by Chandragupta Maurya.'"
     },
     {
       "id": "q22",
-      "type": "mcq",
-      "category": "शब्द-ज्ञान",
+      "type": "fill_blank",
+      "category": "Arthashastra",
       "marks": 1,
-      "difficulty": "hard",
-      "question": "वाक्यांश 'जिसका कोई शत्रु न हो' के लिए एक शब्द क्या है?",
+      "difficulty": "medium",
+      "question": "Fill in the blank: The quote at the beginning of Chapter 5 — 'There cannot be a country without people…' — is from Kautilya's book called ___.",
       "passageId": "",
-      "tag": "ch05-grammer-p1",
-      "options": [
-        {
-          "text": "अजेय",
-          "explanation": "अजेय का अर्थ है 'जो जीता न जा सके'।"
-        },
-        {
-          "text": "अजातशत्रु",
-          "explanation": "सही उत्तर — **अजातशत्रु** का अर्थ है 'जिसका कोई शत्रु न हो'।"
-        },
-        {
-          "text": "जितेंद्रिय",
-          "explanation": "जितेंद्रिय का अर्थ है 'जिसने इंद्रियों को जीत लिया हो'।"
-        },
-        {
-          "text": "अगम",
-          "explanation": "अगम का अर्थ है 'जहाँ पहुँचा न जा सके'।"
-        }
+      "tag": "",
+      "hint": "",
+      "blanks": [
+        "Arthaśhāstra"
       ],
-      "correctIndex": 1
+      "correctAnswer": "Arthaśhāstra",
+      "explanation": "The chapter's opening attribution reads: 'Kauṭilya in Arthaśhāstra.'"
     },
     {
       "id": "q23",
-      "type": "short_answer",
-      "category": "शब्द-ज्ञान",
-      "marks": 2,
+      "type": "fill_blank",
+      "category": "Sarnath",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "'अंबर' शब्द के कोई दो भिन्न अर्थ लिखिए।",
+      "question": "Fill in the blank: Ashoka's famous pillar capital at Sarnath is located near the city of ___, and it is the place where the Buddha gave his first teaching.",
       "passageId": "",
-      "tag": "ch05-grammer-p1",
-      "correctAnswer": "'अंबर' शब्द के दो भिन्न अर्थ हैं - वस्त्र और आकाश।",
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "tag": "",
+      "hint": "",
+      "blanks": [
+        "Varanasi"
+      ],
+      "correctAnswer": "Varanasi",
+      "explanation": "The chapter states Ashoka 'got erected at Sarnath, near Varanasi, where the Buddha gave his first teaching.'"
     },
     {
       "id": "q24",
-      "type": "mcq",
-      "category": "शब्द-ज्ञान",
+      "type": "fill_blank",
+      "category": "Trade",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "'जानने की इच्छा रखने वाला' वाक्यांश के लिए एक शब्द चुनिए।",
+      "difficulty": "hard",
+      "question": "Fill in the blank: According to the chapter, the two important ancient Indian trade routes visible on the map from around 500 BCE are the Uttarapatha and the ___.",
       "passageId": "",
-      "tag": "ch05-grammer-p1",
-      "options": [
-        {
-          "text": "हितैषी",
-          "explanation": "हितैषी का अर्थ है 'हित चाहने वाला'।"
-        },
-        {
-          "text": "सहपाठी",
-          "explanation": "सहपाठी का अर्थ है 'साथ पढ़ने वाला'।"
-        },
-        {
-          "text": "जिज्ञासु",
-          "explanation": "सही उत्तर — **जिज्ञासु** का अर्थ है 'जानने की इच्छा रखने वाला'।"
-        },
-        {
-          "text": "अनुपम",
-          "explanation": "अनुपम का अर्थ है 'जिसकी उपमा न दी जा सके'।"
-        }
+      "tag": "",
+      "hint": "",
+      "blanks": [
+        "Dakshiṇapatha"
       ],
-      "correctIndex": 2
-    },
-    {
-      "id": "q25",
-      "type": "error_correction",
-      "category": "लिपि और व्याकरण",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "दिए गए वाक्य में वर्तनी की अशुद्धि को पहचानकर उसे शुद्ध कीजिए।",
-      "passageId": "",
-      "tag": "ch02-grammer",
-      "inputSentence": "उसकी मूफ़ली खाने की इच्छा थी।",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "correctAnswer": "Dakshiṇapatha",
+      "explanation": "The chapter's map caption reads: 'Notice the Uttarapatha and the Dakshiṇapatha routes.'"
     },
     {
       "id": "q26",
-      "type": "mcq",
-      "category": "भाषा-ज्ञान",
+      "type": "error_correction",
+      "category": "Factual Accuracy",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "भारत की राजभाषा कौन सी है?",
+      "difficulty": "easy",
+      "question": "Find and correct the factual error in the following sentence.",
       "passageId": "",
-      "tag": "ch01-grammer",
-      "options": [
-        {
-          "text": "अंग्रेज़ी",
-          "explanation": "अंग्रेज़ी अमरीका की राजभाषा है।"
-        },
-        {
-          "text": "संस्कृत",
-          "explanation": "संस्कृत एक प्राचीन भाषा है, लेकिन भारत की राजभाषा नहीं है।"
-        },
-        {
-          "text": "हिंदी",
-          "explanation": "सही उत्तर — **हिंदी** भारत की राजभाषा है, जिसका प्रयोग देश के कार्यालयों व राजकाज में किया जाता है।"
-        },
-        {
-          "text": "तमिल",
-          "explanation": "तमिल एक शास्त्रीय भाषा है और 22 मान्यता प्राप्त भाषाओं में से एक है।"
-        }
-      ],
-      "correctIndex": 2
+      "tag": "",
+      "hint": "",
+      "inputSentence": "The word 'empire' comes from the Latin word 'imperium', which means 'military power'.",
+      "correctAnswer": "The word 'empire' comes from the Latin word 'imperium', which means 'supreme power'.",
+      "explanation": "The chapter clearly states imperium means 'supreme power', not 'military power'."
     },
     {
       "id": "q27",
-      "type": "short_answer",
-      "category": "लिपि और व्याकरण",
-      "marks": 2,
+      "type": "error_correction",
+      "category": "Factual Accuracy",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "**व्याकरण** हमें क्या सिखाता है?",
+      "question": "Find and correct the factual error in the following sentence.",
       "passageId": "",
-      "tag": "ch01-grammer",
-      "correctAnswer": "व्याकरण वह शास्त्र है, जो भाषा को शुद्ध रूप से बोलना, पढ़ना व लिखना सिखाता है। यह भाषा के नियम बताता है।",
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "tag": "",
+      "hint": "",
+      "inputSentence": "Alexander died in Athens at the age of 32 after facing rebellions and political turmoil.",
+      "correctAnswer": "Alexander died in Babylon at the age of 32 after facing rebellions and political turmoil.",
+      "explanation": "The chapter states Alexander died in Babylon, not Athens."
     },
     {
       "id": "q28",
-      "type": "mcq",
-      "category": "वर्ण-विचार",
+      "type": "error_correction",
+      "category": "Factual Accuracy",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "हिंदी वर्णमाला में स्वरों की संख्या कितनी है?",
+      "difficulty": "medium",
+      "question": "Find and correct the factual error in the following sentence.",
       "passageId": "",
-      "tag": "ch02-grammer",
-      "options": [
-        {
-          "text": "दस",
-          "explanation": "यह संख्या गलत है।"
-        },
-        {
-          "text": "ग्यारह",
-          "explanation": "सही उत्तर — हिंदी वर्णमाला में **ग्यारह** स्वर हैं (अ, आ, इ, ई, उ, ऊ, ऋ, ए, ऐ, ओ, औ)।"
-        },
-        {
-          "text": "तेरह",
-          "explanation": "यह संख्या अयोगवाह (अं, अः) को मिलाकर होती है, लेकिन मूल स्वर ग्यारह ही हैं।"
-        },
-        {
-          "text": "नौ",
-          "explanation": "यह संख्या गलत है।"
-        }
-      ],
-      "correctIndex": 1
+      "tag": "",
+      "hint": "",
+      "inputSentence": "Pāṇini composed the Aṣṭādhyāyī, which lists the rules of Sanskrit grammar in 3,600 short sūtras.",
+      "correctAnswer": "Pāṇini composed the Aṣṭādhyāyī, which lists the rules of Sanskrit grammar in 3,996 short sūtras.",
+      "explanation": "The chapter states the Aṣṭādhyāyī contains 3,996 sūtras, not 3,600."
     },
     {
       "id": "q29",
-      "type": "fill_blank",
-      "category": "वर्ण-विचार",
+      "type": "error_correction",
+      "category": "Factual Accuracy",
       "marks": 1,
       "difficulty": "medium",
-      "question": "अंग्रेज़ी भाषा से आई 'ऑ' ध्वनि ___ ध्वनि कहलाती है।",
+      "question": "Find and correct the factual error in the following sentence.",
       "passageId": "",
-      "tag": "ch02-grammer",
-      "blanks": [
-        "आगत"
-      ],
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "tag": "",
+      "hint": "",
+      "inputSentence": "Mahāpadma Nanda founded the Maurya dynasty around the 5th century BCE.",
+      "correctAnswer": "Mahāpadma Nanda founded the Nanda dynasty around the 5th century BCE.",
+      "explanation": "Mahāpadma Nanda founded the Nanda dynasty. The Maurya dynasty was founded by Chandragupta Maurya."
     },
     {
       "id": "q30",
-      "type": "short_answer",
-      "category": "वर्ण-विचार",
-      "marks": 2,
+      "type": "error_correction",
+      "category": "Factual Accuracy",
+      "marks": 1,
       "difficulty": "hard",
-      "question": "**वर्ण-विच्छेद** का क्या अर्थ है? 'कमल' शब्द का वर्ण-विच्छेद कीजिए।",
+      "question": "Find and correct the factual error in the following sentence.",
       "passageId": "",
-      "tag": "ch02-grammer",
-      "correctAnswer": "शब्द के वर्णों को अलग-अलग करके लिखना वर्ण-विच्छेद कहलाता है। 'कमल' का वर्ण-विच्छेद है: क् + अ + म् + अ + ल् + अ।",
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "tag": "",
+      "hint": "",
+      "inputSentence": "The Sarnath pillar capital has three lions at the top, symbolising the royal power of the Mauryas.",
+      "correctAnswer": "The Sarnath pillar capital has four lions at the top, symbolising the royal power of the Mauryas.",
+      "explanation": "The chapter clearly states 'The four lions symbolise the royal power' — it is four lions, not three."
     },
     {
       "id": "q31",
-      "type": "mcq",
-      "category": "शब्द-ज्ञान",
+      "type": "jumbled",
+      "category": "Sentence Formation",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "इनमें से कौन सा शब्द 'उत्तर' का अनेकार्थी नहीं है?",
+      "difficulty": "easy",
+      "question": "Rearrange the following words to form a meaningful sentence about empires.",
       "passageId": "",
-      "tag": "ch05-grammer-p1",
-      "options": [
-        {
-          "text": "जवाब",
-          "explanation": "'उत्तर' का एक अर्थ 'जवाब' होता है।"
-        },
-        {
-          "text": "एक दिशा",
-          "explanation": "'उत्तर' एक दिशा का नाम भी है।"
-        },
-        {
-          "text": "बाद का",
-          "explanation": "यह भी 'उत्तर' का एक अर्थ है, जैसे- उत्तर-काल।"
-        },
-        {
-          "text": "प्रश्न",
-          "explanation": "सही उत्तर — **प्रश्न**, 'उत्तर' का अनेकार्थी नहीं, बल्कि विलोम शब्द है।"
-        }
+      "tag": "",
+      "hint": "",
+      "jumbledWords": [
+        "empire",
+        "supreme",
+        "ruler",
+        "An",
+        "is",
+        "a",
+        "ruled",
+        "by",
+        "a",
+        "powerful"
       ],
-      "correctIndex": 3
+      "correctAnswer": "An empire is ruled by a powerful supreme ruler.",
+      "explanation": "This forms a correct sentence about the nature of an empire as described in the chapter."
     },
     {
       "id": "q32",
-      "type": "mcq",
-      "category": "शब्द-ज्ञान",
+      "type": "jumbled",
+      "category": "Sentence Formation",
       "marks": 1,
       "difficulty": "easy",
-      "question": "'खुश' शब्द का विलोम क्या है?",
+      "question": "Rearrange the following words to form a meaningful sentence about guilds.",
       "passageId": "",
-      "tag": "ch05-grammer-p1",
-      "options": [
-        {
-          "text": "प्रसन्न",
-          "explanation": "यह खुश का पर्यायवाची है।"
-        },
-        {
-          "text": "उदास",
-          "explanation": "सही उत्तर — **उदास**, 'खुश' शब्द का सही विलोम है।"
-        },
-        {
-          "text": "आनंद",
-          "explanation": "यह खुश का पर्यायवाची है।"
-        },
-        {
-          "text": "दुखी",
-          "explanation": "यह भी एक समानार्थी है, लेकिन दिए गए विकल्पों में 'उदास' सबसे उपयुक्त है।"
-        }
+      "tag": "",
+      "hint": "",
+      "jumbledWords": [
+        "were",
+        "Guilds",
+        "associations",
+        "powerful",
+        "craftsmen",
+        "and",
+        "of",
+        "traders"
       ],
-      "correctIndex": 1
+      "correctAnswer": "Guilds were powerful associations of traders and craftsmen.",
+      "explanation": "The chapter states: 'Guilds were powerful associations of traders, craftsmen, moneylenders or agriculturists.'"
     },
     {
       "id": "q33",
-      "type": "short_answer",
-      "category": "भाषा-ज्ञान",
-      "marks": 2,
+      "type": "jumbled",
+      "category": "Sentence Formation",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "**बोली** और **भाषा** में मुख्य अंतर क्या है?",
+      "question": "Rearrange the following words to form a meaningful sentence about Alexander.",
       "passageId": "",
-      "tag": "ch01-grammer",
-      "correctAnswer": "बोली भाषा का अल्पविकसित और क्षेत्रीय रूप है जिसका प्रयोग सीमित क्षेत्र में होता है और इसमें प्रायः साहित्य रचना नहीं होती। इसके विपरीत, भाषा बोली का विकसित रूप है, जिसका प्रयोग विस्तृत क्षेत्र में होता है और इसमें साहित्य की रचना की जाती है।",
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "tag": "",
+      "hint": "",
+      "jumbledWords": [
+        "Porus",
+        "Punjab",
+        "Alexander",
+        "defeated",
+        "in"
+      ],
+      "correctAnswer": "Alexander defeated Porus in Punjab.",
+      "explanation": "The chapter states Alexander 'defeated Porus in Punjab' during his Indian campaign (327–325 BCE)."
     },
     {
       "id": "q34",
-      "type": "mcq",
-      "category": "लिपि और व्याकरण",
+      "type": "jumbled",
+      "category": "Sentence Formation",
       "marks": 1,
       "difficulty": "medium",
-      "question": "हिंदी दिवस कब मनाया जाता है?",
+      "question": "Rearrange the following words to form a meaningful sentence about Magadha's resources.",
       "passageId": "",
-      "tag": "ch01-grammer",
-      "options": [
-        {
-          "text": "10 जनवरी",
-          "explanation": "10 जनवरी को 'विश्व हिंदी दिवस' मनाया जाता है।"
-        },
-        {
-          "text": "14 सितंबर",
-          "explanation": "सही उत्तर — प्रतिवर्ष **14 सितंबर** को हिंदी दिवस मनाया जाता है क्योंकि इसी दिन 1949 में हिंदी को भारत की राजभाषा के रूप में स्वीकार किया गया था।"
-        },
-        {
-          "text": "26 जनवरी",
-          "explanation": "26 जनवरी को भारत का गणतंत्र दिवस मनाया जाता है।"
-        },
-        {
-          "text": "15 अगस्त",
-          "explanation": "15 अगस्त को भारत का स्वतंत्रता दिवस मनाया जाता है।"
-        }
+      "tag": "",
+      "hint": "",
+      "jumbledWords": [
+        "fertile",
+        "forests",
+        "land",
+        "Magadha",
+        "elephants",
+        "abundant",
+        "and",
+        "had"
       ],
-      "correctIndex": 1
+      "correctAnswer": "Magadha had fertile land, abundant forests and elephants.",
+      "explanation": "The chapter states Magadha 'was located in the resource-rich Ganga plains, with fertile land, abundant forests for timber, and elephants.'"
     },
     {
       "id": "q35",
-      "type": "mcq",
-      "category": "वर्ण-विचार",
+      "type": "jumbled",
+      "category": "Sentence Formation",
       "marks": 1,
       "difficulty": "hard",
-      "question": "इनमें से कौन-सा वर्ण **अंतःस्थ व्यंजन** नहीं है?",
+      "question": "Rearrange the following words to form a meaningful sentence about a drawbridge.",
       "passageId": "",
-      "tag": "ch02-grammer",
-      "options": [
-        {
-          "text": "य",
-          "explanation": "'य' एक अंतःस्थ व्यंजन है।"
-        },
-        {
-          "text": "र",
-          "explanation": "'र' एक अंतःस्थ व्यंजन है।"
-        },
-        {
-          "text": "व",
-          "explanation": "'व' एक अंतःस्थ व्यंजन है।"
-        },
-        {
-          "text": "ह",
-          "explanation": "सही उत्तर — **'ह'** एक ऊष्म व्यंजन है, अंतःस्थ नहीं। अंतःस्थ व्यंजन य, र, ल, व हैं।"
-        }
+      "tag": "",
+      "hint": "",
+      "jumbledWords": [
+        "lifted",
+        "danger",
+        "bridge",
+        "of",
+        "The",
+        "is",
+        "whenever",
+        "there",
+        "attack",
+        "a",
+        "is",
+        "of"
       ],
-      "correctIndex": 3
+      "correctAnswer": "The bridge is lifted whenever there is a danger of attack.",
+      "explanation": "The chapter states: 'It's lifted whenever there is a danger of attack on the city.'"
     },
     {
       "id": "q36",
-      "type": "short_answer",
-      "category": "वर्ण-विचार",
+      "type": "match_columns",
+      "category": "Terms and Meanings",
       "marks": 2,
       "difficulty": "medium",
-      "question": "**स्पर्श व्यंजन** किन्हें कहते हैं? इनकी संख्या कितनी है?",
+      "question": "Match the Sanskrit/Latin terms in **Column A** with their meanings in **Column B**.",
       "passageId": "",
-      "tag": "ch02-grammer",
-      "correctAnswer": "जिन व्यंजनों के उच्चारण के समय श्वास-वायु जिह्वा और मुख के अलग-अलग भागों को स्पर्श करती है, वे स्पर्श व्यंजन कहलाते हैं। इनकी संख्या पच्चीस (25) है।",
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "tag": "",
+      "hint": "",
+      "columnA": [
+        "Imperium",
+        "Samrāj",
+        "Adhirāja",
+        "Rājādhirāja"
+      ],
+      "columnB": [
+        "(a) King of kings",
+        "(b) Overlord",
+        "(c) Supreme power",
+        "(d) The lord of all / Supreme ruler"
+      ],
+      "correctMatches": [
+        "c",
+        "d",
+        "b",
+        "a"
+      ],
+      "correctAnswer": "Imperium–c, Samrāj–d, Adhirāja–b, Rājādhirāja–a",
+      "explanation": "The chapter explicitly lists these terms and their meanings: Imperium = supreme power; Samrāj = lord of all; Adhirāja = overlord; Rājādhirāja = king of kings."
     },
     {
       "id": "q37",
-      "type": "mcq",
-      "category": "शब्द-ज्ञान",
-      "marks": 1,
+      "type": "match_columns",
+      "category": "Historical Figures",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "'अरि' और 'अरी' श्रुतिसम भिन्नार्थक शब्दों का सही अर्थ-युग्म क्या है?",
+      "question": "Match the historical figures in **Column A** with the descriptions in **Column B**.",
       "passageId": "",
-      "tag": "ch05-grammer-p1",
-      "options": [
-        {
-          "text": "संबोधन, शत्रु",
-          "explanation": "यह क्रम गलत है।"
-        },
-        {
-          "text": "शत्रु, संबोधन (स्त्रियों के लिए)",
-          "explanation": "सही उत्तर — **अरि** का अर्थ 'शत्रु' और **अरी** का अर्थ 'स्त्रियों के लिए संबोधन' होता है।"
-        },
-        {
-          "text": "न्याय, अन्याय",
-          "explanation": "यह गलत अर्थ-युग्म है।"
-        },
-        {
-          "text": "मित्र, सखी",
-          "explanation": "यह गलत अर्थ-युग्म है।"
-        }
+      "tag": "",
+      "hint": "",
+      "columnA": [
+        "Ajātaśhatru",
+        "Mahāpadma Nanda",
+        "Kautilya",
+        "Megasthenes"
       ],
-      "correctIndex": 1
+      "columnB": [
+        "(a) Greek ambassador to Chandragupta's court",
+        "(b) Mentor of Chandragupta Maurya",
+        "(c) Founder of the Nanda dynasty",
+        "(d) Early powerful king of Magadha"
+      ],
+      "correctMatches": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "correctAnswer": "Ajātaśhatru–d, Mahāpadma Nanda–c, Kautilya–b, Megasthenes–a",
+      "explanation": "The chapter identifies all four: Ajātaśhatru as an early Magadha king; Mahāpadma Nanda as Nanda dynasty founder; Kautilya as Chandragupta's mentor; Megasthenes as the Greek ambassador."
     },
     {
       "id": "q38",
-      "type": "fill_blank",
-      "category": "शब्द-ज्ञान",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "वाक्यांश 'साथ पढ़ने वाला' के लिए एक शब्द ___ है।",
+      "type": "match_columns",
+      "category": "Vocabulary",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Match the words in **Column A** with their correct meanings from the chapter in **Column B**.",
       "passageId": "",
-      "tag": "ch05-grammer-p1",
-      "blanks": [
-        "सहपाठी"
+      "tag": "",
+      "hint": "",
+      "columnA": [
+        "Forge",
+        "Ramparts",
+        "Tributary",
+        "Surplus"
       ],
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "columnB": [
+        "(a) An excess amount left over after requirements are met",
+        "(b) Defensive walls of a castle or city",
+        "(c) A state or ruler that pays tribute to a more powerful one",
+        "(d) To shape metal by heating and hammering"
+      ],
+      "correctMatches": [
+        "d",
+        "b",
+        "c",
+        "a"
+      ],
+      "correctAnswer": "Forge–d, Ramparts–b, Tributary–c, Surplus–a",
+      "explanation": "These are all vocabulary terms defined in the chapter: forge = shape metal; ramparts = defensive walls; tributary = state that pays tribute; surplus = excess amount."
     },
     {
       "id": "q39",
-      "type": "mcq",
-      "category": "भाषा-ज्ञान",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "भाषा का प्राचीनतम रूप कौन सा है?",
+      "type": "match_columns",
+      "category": "Dates and Events",
+      "marks": 2,
+      "difficulty": "hard",
+      "question": "Match the time periods in **Column A** with the corresponding events in **Column B**.",
       "passageId": "",
-      "tag": "ch01-grammer",
-      "options": [
-        {
-          "text": "लिखित भाषा",
-          "explanation": "लिखित भाषा का विकास बाद में हुआ।"
-        },
-        {
-          "text": "मौखिक भाषा",
-          "explanation": "सही उत्तर — **मौखिक भाषा** भाषा का प्राचीनतम रूप है, क्योंकि मनुष्य ने पहले बोलना सीखा।"
-        },
-        {
-          "text": "सांकेतिक भाषा",
-          "explanation": "यद्यपि संकेतों का प्रयोग पहले होता था, पर व्याकरण में मौखिक भाषा को प्राचीनतम रूप माना गया है।"
-        },
-        {
-          "text": "मानक भाषा",
-          "explanation": "मानक भाषा का विकास बहुत बाद में हुआ।"
-        }
+      "tag": "",
+      "hint": "",
+      "columnA": [
+        "334–331 BCE",
+        "327–325 BCE",
+        "324–323 BCE",
+        "Around 321 BCE"
       ],
-      "correctIndex": 1
+      "columnB": [
+        "(a) Chandragupta Maurya founded the Maurya Empire",
+        "(b) Alexander's campaign in India; defeat of Porus in Punjab",
+        "(c) Alexander died in Babylon; his empire was divided",
+        "(d) Alexander campaigned against the Persian Empire"
+      ],
+      "correctMatches": [
+        "d",
+        "b",
+        "c",
+        "a"
+      ],
+      "correctAnswer": "334–331 BCE–d, 327–325 BCE–b, 324–323 BCE–c, Around 321 BCE–a",
+      "explanation": "These dates and events are from the chapter's timeline notes about Alexander and the founding of the Maurya Empire."
     },
     {
       "id": "q40",
-      "type": "short_answer",
-      "category": "लिपि और व्याकरण",
+      "type": "match_columns",
+      "category": "Features of Empire",
       "marks": 2,
       "difficulty": "medium",
-      "question": "**देवनागरी लिपि** में लिखी जाने वाली किन्हीं दो भाषाओं के नाम लिखिए।",
+      "question": "Match each feature of an empire in **Column A** with the correct example or detail from the chapter in **Column B**.",
       "passageId": "",
-      "tag": "ch01-grammer",
-      "correctAnswer": "देवनागरी लिपि में लिखी जाने वाली दो भाषाएँ हैं - हिंदी और संस्कृत। (अन्य विकल्प: मराठी, नेपाली, गुजराती)",
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "tag": "",
+      "hint": "",
+      "columnA": [
+        "Issues currencies",
+        "Controls resources",
+        "Encourages learning",
+        "Maintains communication"
+      ],
+      "columnB": [
+        "(a) Couriers carried messages from place to place",
+        "(b) Mahāpadma Nanda began issuing coins",
+        "(c) Control over mines, forests and agricultural produce",
+        "(d) Art, literature, religions and centres of learning"
+      ],
+      "correctMatches": [
+        "b",
+        "c",
+        "d",
+        "a"
+      ],
+      "correctAnswer": "Issues currencies–b, Controls resources–c, Encourages learning–d, Maintains communication–a",
+      "explanation": "All these features are listed in the chapter as functions of an empire, with supporting examples from the text."
     },
     {
       "id": "q41",
-      "type": "mcq",
-      "category": "वर्ण-विचार",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "विसर्ग (:) का उच्चारण किस ध्वनि की भाँति होता है?",
+      "type": "short_answer",
+      "category": "Comprehension",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "How did Ira describe what tribute (payment) a tributary state gave to the emperor? Name **any two** things mentioned in the chapter.",
       "passageId": "",
-      "tag": "ch02-grammer",
-      "options": [
-        {
-          "text": "स",
-          "explanation": "यह गलत है।"
-        },
-        {
-          "text": "अ",
-          "explanation": "यह गलत है।"
-        },
-        {
-          "text": "ह",
-          "explanation": "सही उत्तर — विसर्ग (:) का उच्चारण **'ह'** की भाँति किया जाता है, जैसे- प्रातः।"
-        },
-        {
-          "text": "म",
-          "explanation": "यह गलत है।"
-        }
-      ],
-      "correctIndex": 2
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "According to the chapter, a tributary paid money, gold or other precious metals, grain, livestock, elephants, or other valuable goods to the emperor as a sign of submission, loyalty or respect. (Any two accepted.)",
+      "explanation": "The callout box on 'Tributary' lists: money, gold, precious metals, grain, livestock, elephants, or other valuable goods."
     },
     {
       "id": "q42",
-      "type": "fill_blank",
-      "category": "वर्ण-विचार",
-      "marks": 1,
-      "difficulty": "hard",
-      "question": "'अ-रहित' व्यंजन लिखने के लिए व्यंजन के नीचे ___ लगाया जाता है।",
+      "type": "short_answer",
+      "category": "Guilds",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "According to the chapter, what made guilds a **remarkable institution**? State the **two** key reasons given.",
       "passageId": "",
-      "tag": "ch02-grammer",
-      "blanks": [
-        "हलंत"
-      ],
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "First, guilds brought people together as collaborators rather than competitors by sharing resources and market information. Second, guilds had the autonomy to create their own internal rules without the king interfering, as an ancient text stated: 'Cultivators, traders, herdsmen, moneylenders, and artisans have authority to lay down rules for their respective classes.'",
+      "explanation": "The chapter explicitly states 'Two things made traders' guilds a remarkable institution' and lists both reasons."
     },
     {
       "id": "q43",
-      "type": "mcq",
-      "category": "शब्द-ज्ञान",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Alexander",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "'आलस्य' का सही विलोम शब्द क्या है?",
+      "question": "Why did Alexander's soldiers refuse to advance deeper into India towards the Ganga River?",
       "passageId": "",
-      "tag": "ch05-grammer-p1",
-      "options": [
-        {
-          "text": "परिश्रम",
-          "explanation": "यह एक निकटवर्ती विलोम है, पर पाठ के अनुसार सही नहीं है।"
-        },
-        {
-          "text": "स्फूर्ति",
-          "explanation": "सही उत्तर — पाठ के अनुसार, **स्फूर्ति** 'आलस्य' का सही विलोम शब्द है।"
-        },
-        {
-          "text": "काम",
-          "explanation": "यह गलत विकल्प है।"
-        },
-        {
-          "text": "मेहनत",
-          "explanation": "यह गलत विकल्प है।"
-        }
-      ],
-      "correctIndex": 1
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "According to the chapter, Alexander's soldiers were tired and homesick, and they had lost the will to fight. They refused to move deeper into India towards the Ganga River.",
+      "explanation": "The chapter states: 'Tired and homesick, his soldiers lost the will to fight and refused to move deeper into India, towards the Ganga River.'"
     },
     {
       "id": "q44",
       "type": "short_answer",
-      "category": "शब्द-ज्ञान",
+      "category": "Magadha",
       "marks": 2,
       "difficulty": "medium",
-      "question": "निम्नलिखित वाक्यांशों के लिए एक शब्द लिखिए: 1. जिसका आदि (आरंभ) न हो 2. जिसकी तुलना न की जा सके",
+      "question": "How did the use of **iron** help Magadha's rise to power? Give **two** ways mentioned in the chapter.",
       "passageId": "",
-      "tag": "ch05-grammer-p1",
-      "correctAnswer": "1. जिसका आदि न हो - अनादि\n2. जिसकी तुलना न की जा सके - अतुलनीय",
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "First, iron ploughs were used to till the land, which increased agricultural produce. Second, lighter and sharper iron weapons strengthened the capabilities of the army. (Iron ore from nearby hills also proved crucial for expanding the kingdom.)",
+      "explanation": "The chapter states: 'The use of iron ploughs to till the land increased agricultural produce, and lighter and sharper iron weapons strengthened the capabilities of the army.'"
     },
     {
       "id": "q45",
-      "type": "mcq",
-      "category": "भाषा-ज्ञान",
-      "marks": 1,
-      "difficulty": "hard",
-      "question": "विद्वानों और शिक्षाविदों द्वारा भाषा में एकरूपता लाने के लिए भाषा के जिस रूप को मान्यता दी जाती है, वह क्या कहलाती है?",
+      "type": "short_answer",
+      "category": "Pāṭaliputra",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "As described in the chapter, name **any four** goods that were available in the market of Pāṭaliputra and state **where** they came from.",
       "passageId": "",
-      "tag": "ch01-grammer",
-      "options": [
-        {
-          "text": "राजभाषा",
-          "explanation": "राजभाषा सरकारी कामकाज की भाषा है।"
-        },
-        {
-          "text": "राष्ट्रभाषा",
-          "explanation": "राष्ट्रभाषा देश के अधिकांश लोगों द्वारा बोली जाती है।"
-        },
-        {
-          "text": "मानक भाषा",
-          "explanation": "सही उत्तर — विद्वानों द्वारा स्वीकृत भाषा का एकरूप **मानक भाषा** कहलाता है।"
-        },
-        {
-          "text": "उपभाषा",
-          "explanation": "उपभाषा बोली का विकसित रूप है।"
-        }
-      ],
-      "correctIndex": 2
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "Silk came from China; spices and gems came from the south; fine clothes came from different regions of the empire. (Students may also mention textiles, handicraft products, and various animals based on the trade section.)",
+      "explanation": "The chapter mentions: 'silk from China, spices and gems from the south, fine clothes from different regions.'"
     },
     {
       "id": "q46",
-      "type": "mcq",
-      "category": "वर्ण-विचार",
+      "type": "transformation",
+      "category": "Active/Passive Voice",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "इनमें से कौन-सा हस्व स्वर है?",
+      "difficulty": "medium",
+      "question": "Change the following sentence to passive voice.",
       "passageId": "",
-      "tag": "ch02-grammer",
-      "options": [
-        {
-          "text": "आ",
-          "explanation": "'आ' दीर्घ स्वर है।"
-        },
-        {
-          "text": "ई",
-          "explanation": "'ई' दीर्घ स्वर है।"
-        },
-        {
-          "text": "उ",
-          "explanation": "सही उत्तर — **'उ'** हस्व स्वर है। अन्य हस्व स्वर अ, इ, ऋ हैं।"
-        },
-        {
-          "text": "ए",
-          "explanation": "'ए' दीर्घ स्वर है।"
-        }
-      ],
-      "correctIndex": 2
+      "tag": "Active to Passive",
+      "hint": "",
+      "inputSentence": "Chandragupta Maurya founded the Maurya Empire around 321 BCE.",
+      "transformationType": "Active to Passive",
+      "correctAnswer": "The Maurya Empire was founded by Chandragupta Maurya around 321 BCE.",
+      "explanation": "Move 'the Maurya Empire' (object) to subject position and use 'was founded by' + original subject."
     },
     {
       "id": "q47",
-      "type": "short_answer",
-      "category": "वर्ण-विचार",
-      "marks": 2,
-      "difficulty": "hard",
-      "question": "**संयुक्ताक्षर** किसे कहते हैं? 'स्वाद' शब्द में संयुक्ताक्षर का उदाहरण स्पष्ट कीजिए।",
+      "type": "transformation",
+      "category": "Active/Passive Voice",
+      "marks": 1,
+      "difficulty": "medium",
+      "question": "Change the following sentence to active voice.",
       "passageId": "",
-      "tag": "ch02-grammer",
-      "correctAnswer": "जब एक स्वर-रहित व्यंजन अन्य स्वर-सहित व्यंजन से मिलता है, तब वह संयुक्ताक्षर कहलाता है। 'स्वाद' शब्द में 'स्व' (स् + व् + अ) एक संयुक्ताक्षर है।",
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "tag": "Passive to Active",
+      "hint": "",
+      "inputSentence": "Swords were forged by Ira's father for the soldiers.",
+      "transformationType": "Passive to Active",
+      "correctAnswer": "Ira's father forged swords for the soldiers.",
+      "explanation": "Move 'Ira's father' (agent) to subject position and use the active verb 'forged'."
     },
     {
       "id": "q48",
-      "type": "mcq",
-      "category": "शब्द-ज्ञान",
+      "type": "transformation",
+      "category": "Direct/Indirect Speech",
       "marks": 1,
       "difficulty": "medium",
-      "question": "'कोस' और 'कोष' श्रुतिसम भिन्नार्थक शब्दों का सही अर्थ क्या है?",
+      "question": "Change the following sentence to indirect speech.",
       "passageId": "",
-      "tag": "ch05-grammer-p1",
-      "options": [
-        {
-          "text": "खज़ाना, दूरी का माप",
-          "explanation": "यह क्रम गलत है।"
-        },
-        {
-          "text": "सख्ती, खज़ाना",
-          "explanation": "यह गलत अर्थ-युग्म है।"
-        },
-        {
-          "text": "दूरी का माप, खज़ाना",
-          "explanation": "सही उत्तर — **कोस** का अर्थ 'दूरी का माप' और **कोष** का अर्थ 'खज़ाना' होता है।"
-        },
-        {
-          "text": "उपाय, शिक्षक",
-          "explanation": "यह 'गुर' और 'गुरु' का अर्थ है।"
-        }
-      ],
-      "correctIndex": 2
+      "tag": "Direct to Indirect",
+      "hint": "",
+      "inputSentence": "Ira said, \"It is called an Empire.\"",
+      "transformationType": "Direct to Indirect",
+      "correctAnswer": "Ira said that it was called an Empire.",
+      "explanation": "In indirect speech, 'said' is retained, 'is' changes to 'was', and quotation marks are removed."
     },
     {
       "id": "q49",
-      "type": "fill_blank",
-      "category": "भाषा-ज्ञान",
+      "type": "transformation",
+      "category": "Simple/Complex Sentence",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "भाषा के मुख्यतः दो रूप हैं- मौखिक और ___।",
+      "difficulty": "hard",
+      "question": "Combine the two sentences into one using an appropriate conjunction.",
       "passageId": "",
-      "tag": "ch01-grammer",
-      "blanks": [
-        "लिखित"
-      ],
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "tag": "Sentence Combination",
+      "hint": "",
+      "inputSentence": "Alexander was impressed by the Gymnosophists. He spared them all.",
+      "transformationType": "Sentence Combination",
+      "correctAnswer": "Alexander was so impressed by the Gymnosophists that he spared them all.",
+      "explanation": "Using 'so...that' combines cause and result into one complex sentence."
     },
     {
       "id": "q50",
-      "type": "mcq",
-      "category": "वर्ण-विचार",
+      "type": "transformation",
+      "category": "Degree of Adjective",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "कवर्ग, चवर्ग, टवर्ग, तवर्ग, पवर्ग किस प्रकार के व्यंजन हैं?",
+      "difficulty": "hard",
+      "question": "Rewrite the sentence using the **comparative** degree of the adjective.",
       "passageId": "",
-      "tag": "ch02-grammer",
-      "options": [
-        {
-          "text": "ऊष्म व्यंजन",
-          "explanation": "ऊष्म व्यंजन श, ष, स, ह हैं।"
-        },
-        {
-          "text": "अंतःस्थ व्यंजन",
-          "explanation": "अंतःस्थ व्यंजन य, र, ल, व हैं।"
-        },
-        {
-          "text": "स्पर्श व्यंजन",
-          "explanation": "सही उत्तर — ये सभी **स्पर्श व्यंजन** के वर्ग हैं।"
-        },
-        {
-          "text": "संयुक्त व्यंजन",
-          "explanation": "संयुक्त व्यंजन क्ष, त्र, ज्ञ, श्र हैं।"
-        }
-      ],
-      "correctIndex": 2
+      "tag": "Degree Change",
+      "hint": "",
+      "inputSentence": "The Maurya Empire was one of the greatest empires in Indian history.",
+      "transformationType": "Degree Change (Superlative to Comparative)",
+      "correctAnswer": "The Maurya Empire was greater than most other empires in Indian history.",
+      "explanation": "The superlative 'one of the greatest' is changed to the comparative 'greater than most others'."
     },
     {
       "id": "q51",
       "type": "short_answer",
-      "category": "शब्द-ज्ञान",
-      "marks": 2,
+      "category": "Empire Definition",
+      "marks": 3,
       "difficulty": "medium",
-      "question": "'अथ' और 'आसान' शब्दों के विलोम शब्द लिखिए।",
+      "question": "**What is an empire?** Based on the chapter, explain how an empire is different from a kingdom, mentioning at least **three** features of an empire.",
       "passageId": "",
-      "tag": "ch05-grammer-p1",
-      "correctAnswer": "'अथ' का विलोम 'इति' है।\n'आसान' का विलोम 'मुश्किल' है।",
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "An empire is a collection of smaller kingdoms or territories over which a powerful ruler (emperor) exerts supreme power. Unlike a kingdom ruled by a single king, an empire includes many tributary kingdoms. Features include: (1) Emperor exerts central authority over tributary territories. (2) Maintains a large army to control and expand. (3) Makes laws, issues currencies and regulates trade. (4) Controls access to resources. (5) Maintains communication networks.",
+      "explanation": "Based on the chapter's section 'What is an Empire?' and the 'Features of an Empire' list."
     },
     {
       "id": "q52",
-      "type": "mcq",
-      "category": "शब्द-ज्ञान",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "'पानी' शब्द का पर्यायवाची इनमें से कौन सा नहीं है?",
+      "type": "short_answer",
+      "category": "Rise of Magadha",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Explain **why Magadha** was able to rise as a dominant power in ancient India. Mention at least **three reasons** from the chapter.",
       "passageId": "",
-      "tag": "ch05-grammer-p1",
-      "options": [
-        {
-          "text": "जल",
-          "explanation": "जल, पानी का पर्यायवाची है।"
-        },
-        {
-          "text": "नीर",
-          "explanation": "नीर, पानी का पर्यायवाची है।"
-        },
-        {
-          "text": "अंबु",
-          "explanation": "अंबु, पानी का पर्यायवाची है।"
-        },
-        {
-          "text": "अंबर",
-          "explanation": "सही उत्तर — **अंबर** का अर्थ आकाश या वस्त्र होता है, यह पानी का पर्यायवाची नहीं है।"
-        }
-      ],
-      "correctIndex": 3
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "Magadha rose because: (1) It was located in the resource-rich Ganga plains with fertile land for agriculture. (2) It had abundant forests for timber and elephants for the army. (3) Iron ore and minerals from nearby hills were crucial — iron ploughs boosted agriculture and iron weapons strengthened the army. (4) The Ganga and Son rivers aided transportation and trade. (5) Flourishing trade boosted income.",
+      "explanation": "Based on the chapter's 'Rise of Magadha' section."
     },
     {
       "id": "q53",
-      "type": "error_correction",
-      "category": "भाषा-ज्ञान",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Trade and Economy",
+      "marks": 3,
       "difficulty": "medium",
-      "question": "दिए गए वाक्य में व्याकरण की अशुद्धि को पहचानकर उसे शुद्ध कीजिए।",
+      "question": "Why were **trade routes** important for an empire? What were some of the main goods traded in ancient India, based on the chapter?",
       "passageId": "",
-      "tag": "ch01-grammer",
-      "inputSentence": "हम हमारा काम करके घर जाएगा।",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "Trade routes were important because: (1) More trade meant more income for producers and increased tax collection for the ruler. (2) They helped goods grow in quantity and variety. (3) Economic activity is key to maintaining an empire and people's welfare. Main goods traded included textiles, spices, agricultural produce, luxury items such as gems and handicraft products, and various animals. Indian goods also travelled to distant countries by land and sea.",
+      "explanation": "Based on the chapter's 'Trade, trade routes and guilds' section."
     },
     {
       "id": "q54",
-      "type": "mcq",
-      "category": "वर्ण-विचार",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Kautilya",
+      "marks": 3,
       "difficulty": "hard",
-      "question": "संयुक्त व्यंजन 'क्ष' किन दो व्यंजनों के मेल से बना है?",
+      "question": "Who was Kautilya and what role did he play in the establishment of the Maurya Empire? What is he known for in Indian history?",
       "passageId": "",
-      "tag": "ch02-grammer",
-      "options": [
-        {
-          "text": "क् + श्",
-          "explanation": "यह गलत मेल है।"
-        },
-        {
-          "text": "क् + ष्",
-          "explanation": "सही उत्तर — **'क्ष'** संयुक्त व्यंजन **क् + ष्** के मेल से बनता है।"
-        },
-        {
-          "text": "च् + ष्",
-          "explanation": "यह गलत मेल है।"
-        },
-        {
-          "text": "क् + स्",
-          "explanation": "यह गलत मेल है।"
-        }
-      ],
-      "correctIndex": 1
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "Kautilya was the able mentor of Chandragupta Maurya. He used his knowledge of politics, governance and economics to help Chandragupta build the Maurya Empire — one of the greatest in Indian history. He is known for writing the Arthaśhāstra, a text on governance, economics and politics. The chapter opens with a quote from Kautilya's Arthaśhāstra: 'There cannot be a country without people and there is no kingdom without a country.'",
+      "explanation": "Based on the chapter's sections on 'The Mighty Mauryas' and 'The story of Kautilya.'"
     },
     {
       "id": "q55",
       "type": "short_answer",
-      "category": "शब्द-ज्ञान",
-      "marks": 2,
+      "category": "Alexander's Campaign",
+      "marks": 3,
       "difficulty": "medium",
-      "question": "'अज' शब्द के कोई दो अनेकार्थी अर्थ लिखिए।",
+      "question": "Briefly describe Alexander's campaign in India (327–325 BCE). What happened when he returned to Persia?",
       "passageId": "",
-      "tag": "ch05-grammer-p1",
-      "correctAnswer": "'अज' शब्द के दो अनेकार्थी अर्थ हैं - बकरा और ब्रह्मा। (अन्य विकल्प: दशरथ के पिता, चंद्रमा, भेड़ा)",
-      "inputSentence": "",
-      "transformationType": "",
-      "jumbledWords": [],
-      "columnA": [],
-      "columnB": []
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "Alexander invaded India eager to reach the 'end of the world'. He defeated Porus in Punjab and encountered fierce resistance from local tribes. Greek records mention women fought alongside men. He massacred populations of several cities. Alexander himself was seriously wounded. His tired and homesick soldiers refused to advance further towards the Ganga. He retreated through the southern coastal route and Iran's harsh desert, suffering heavy losses from thirst, hunger and disease. Back in Persia, he faced rebellions and political turmoil, and died in Babylon at age 32. His empire was then divided among his generals and satraps.",
+      "explanation": "Based on the chapter's timeline notes for 327–325 BCE and 324–323 BCE."
+    },
+    {
+      "id": "q56",
+      "type": "short_answer",
+      "category": "Life in Mauryan Times",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Based on the chapter's description of Mauryan society, describe **what daily life was like** for ordinary people during the Maurya Empire. Include details about housing, clothing, food, and occupations.",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "Daily life in Mauryan times: Houses were made of wood and could be up to two storeys tall. Streets had well-planned signage and water vessels at intervals for fire safety. People wore cotton dresses — a lower garment below the knee and an upper garment thrown over the shoulders; some wore thick-soled leather shoes to look taller. Two crops were sown annually ensuring ample food and rare famines; granaries were well stocked. Occupations included blacksmiths, potters, carpenters, jewellers and other artisans. Communication happened through couriers carrying messages.",
+      "explanation": "Based on the chapter's 'Some Contributions of the Mauryas — Life and People' section and Megasthenes' account."
+    },
+    {
+      "id": "q57",
+      "type": "short_answer",
+      "category": "Ashoka's Sarnath Pillar",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Describe the **Sarnath pillar capital** erected by Ashoka. What do its various elements symbolise? Why is it significant for India today?",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "The Sarnath pillar capital was erected by Ashoka at Sarnath, near Varanasi, where the Buddha gave his first teaching. It is the top (capital) of a highly polished stone pillar — a hallmark of Mauryan art. The four lions at the top symbolise royal power. Below the lions is a ring depicting four powerful animals (an elephant, a bull, a horse, and a lion) along with the dharmachakra or wheel of dharma, which symbolises the Buddha's teachings. It is significant because this capital (the Lion Capital of Sarnath) is India's national emblem today.",
+      "explanation": "Based on the chapter's description of Fig. 5.20 and the Sarnath pillar section."
     }
   ]
 }

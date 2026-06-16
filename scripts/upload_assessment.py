@@ -38,7 +38,7 @@ except ImportError:
 
 # ── Constants ──────────────────────────────────────────────────────────────────
 STORAGE_BUCKET   = 'aaravtutor-1e880.firebasestorage.app'
-SERVICE_ACCOUNT  = _REPO_ROOT / 'aaravtutor-1e880-serviceaccount.json'
+SERVICE_ACCOUNT  = _REPO_ROOT / 'mynoo-1e880-serviceaccount.json'
 
 # Subject → language code (matches app logic)
 SUBJECT_LANG: dict[str, str] = {
@@ -172,6 +172,9 @@ def _build_payload(
     enriched: list[dict] = []
     for q in questions:
         eq = dict(q)
+        if 'correctAnswer' in eq and 'answer' not in eq:
+            eq['answer'] = eq['correctAnswer']
+
         pid = str(eq.get('passageId', '')).strip()
         if pid and pid in passages and 'passage' not in eq:
             eq['passage'] = passages[pid]

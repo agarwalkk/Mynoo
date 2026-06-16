@@ -31,6 +31,8 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalClipboardManager
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.AnnotatedString
@@ -56,7 +58,9 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.foundation.gestures.detectDragGestures
 
-@OptIn(ExperimentalMaterial3Api::class)
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
 fun AssessmentScreen(
     assessmentId: String,
@@ -65,6 +69,15 @@ fun AssessmentScreen(
     vm: AssessmentViewModel = hiltViewModel(),
 ) {
     val quiz by vm.quiz.collectAsState()
+
+    val allFillBlankAnswers = remember(quiz.assessment) {
+        quiz.assessment?.questions
+            ?.filter { it.type == "fill_blank" }
+            ?.flatMap { it.blanks }
+            ?.distinct()
+            ?.sortedWith(String.CASE_INSENSITIVE_ORDER)
+            ?: emptyList()
+    }
 
     LaunchedEffect(assessmentId, childName) {
         if (quiz.assessment == null) vm.loadAssessment(childName, assessmentId)
@@ -185,7 +198,11 @@ fun AssessmentScreen(
                         onCheckHandwritten = { b64, key -> vm.validateCurrentHandwrittenAnswer(b64, key) },
                         onRetryText      = { vm.retryCurrentQuestion() },
                         onPrev           = { vm.prev() },
-                        onNext           = { text -> vm.next(text) }
+                        onNext           = { text -> vm.next(text) },
+                        onSkip           = { vm.skipCurrentQuestion() },
+                        themeColor       = themeColor,
+                        debugJsonPair    = quiz.debugJsons[idx],
+                        allFillBlankAnswers = allFillBlankAnswers
                     )
                 }
             }
@@ -193,6 +210,7 @@ fun AssessmentScreen(
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun QuestionView(
     question:           AssessmentQuestion,
@@ -211,7 +229,11 @@ private fun QuestionView(
     onCheckHandwritten: (String, String) -> Unit,
     onRetryText:        () -> Unit,
     onPrev:             () -> Unit,
-    onNext:             (String) -> Unit
+    onNext:             (String) -> Unit,
+    onSkip:             () -> Unit,
+    themeColor:         Color,
+    debugJsonPair:      Pair<String, String>? = null,
+    allFillBlankAnswers: List<String> = emptyList()
 ) {
     val isMCQ = question.type == "mcq"
     val isAnswered = answered != null || mcqPhase == "done" || validationResult != null
@@ -445,11 +467,44 @@ private fun QuestionView(
             }
 
             // Question Text
-            Text(
-                text = renderMarkdown(question.question),
-                style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Normal, lineHeight = 24.sp),
-                color = Color(0xFF2C3E50)
-            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.Top
+            ) {
+                Text(
+                    text = renderMarkdown(question.question),
+                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Normal, lineHeight = 24.sp),
+                    color = Color(0xFF2C3E50),
+                    modifier = Modifier.weight(1f)
+                )
+                if (debugJsonPair != null) {
+                    val clipboardManager = LocalClipboardManager.current
+                    val context = LocalContext.current
+                    IconButton(
+                        onClick = {
+                            val combinedJson = """
+                            {
+                              "request": ${debugJsonPair.first},
+                              "response": ${debugJsonPair.second}
+                            }
+                            """.trimIndent()
+                            clipboardManager.setText(AnnotatedString(combinedJson))
+                            android.widget.Toast.makeText(context, "Copied AI Request & Response JSON!", android.widget.Toast.LENGTH_SHORT).show()
+                        },
+                        modifier = Modifier
+                            .size(24.dp)
+                            .padding(start = 4.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Info,
+                            contentDescription = "Copy AI JSON debug logs",
+                            tint = Color(0xFF95A5A6),
+                            modifier = Modifier.size(16.dp)
+                        )
+                    }
+                }
+            }
 
             // Hint Text (if present)
             if (question.hint.isNotBlank()) {
@@ -461,12 +516,89 @@ private fun QuestionView(
             }
 
             // Blanks Word Bank
-            if (question.blanks.isNotEmpty()) {
-                Text(
-                    text = "Word bank: ${question.blanks.joinToString(", ")}",
-                    style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.Medium),
-                    color = MaterialTheme.colorScheme.primary
-                )
+            if (question.type == "fill_blank") {
+                val displayBlanks = remember(question, allFillBlankAnswers) {
+                    if (question.blanks.size <= 1 && allFillBlankAnswers.size > 1) {
+                        allFillBlankAnswers
+                    } else {
+                        question.blanks
+                    }
+                }
+                if (displayBlanks.isNotEmpty()) {
+                    Text(
+                        text = "Word bank: ${displayBlanks.joinToString(", ")}",
+                        style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.Medium),
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                }
+            }
+
+            // Jumbled Word Bank
+            if (question.type == "jumbled" && question.jumbledWords.isNotEmpty()) {
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(
+                        text = "Word Bank (tap to construct your answer):",
+                        style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
+                        color = Color(0xFF7F8C8D)
+                    )
+                    
+                    var selectedIndices by remember(index) { mutableStateOf(emptyList<Int>()) }
+                    
+                    LaunchedEffect(textValue.text) {
+                        if (textValue.text.isBlank()) {
+                            selectedIndices = emptyList()
+                        }
+                    }
+                    
+                    FlowRow(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        question.jumbledWords.forEachIndexed { i, word ->
+                            val isSelected = selectedIndices.contains(i)
+                            val chipColor = if (isSelected) Color(0xFFF1F5F9) else themeColor.copy(alpha = 0.08f)
+                            val textColor = if (isSelected) Color(0xFF94A3B8) else themeColor
+                            val borderColor = if (isSelected) Color(0xFFE2E8F0) else themeColor.copy(alpha = 0.3f)
+                            
+                            Surface(
+                                shape = RoundedCornerShape(8.dp),
+                                color = chipColor,
+                                border = BorderStroke(1.dp, borderColor),
+                                modifier = Modifier
+                                    .clickable(enabled = !isSelected && !isAnswered && !validating) {
+                                        val currentText = textValue.text.trim()
+                                        val newText = if (currentText.isEmpty()) word else "$currentText $word"
+                                        textValue = TextFieldValue(newText, selection = androidx.compose.ui.text.TextRange(newText.length))
+                                        selectedIndices = selectedIndices + i
+                                    }
+                            ) {
+                                Text(
+                                    text = word,
+                                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
+                                    style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Medium),
+                                    color = textColor
+                                )
+                            }
+                        }
+                    }
+                    
+                    if (selectedIndices.isNotEmpty() && !isAnswered && !validating) {
+                        TextButton(
+                            onClick = {
+                                textValue = TextFieldValue("")
+                                selectedIndices = emptyList()
+                            },
+                            colors = ButtonDefaults.textButtonColors(contentColor = Color(0xFFE74C3C)),
+                            modifier = Modifier.align(Alignment.End)
+                        ) {
+                            Text("Clear ⌫", style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.Bold))
+                        }
+                    }
+                }
             }
 
             Spacer(Modifier.height(4.dp))
@@ -758,7 +890,7 @@ private fun QuestionView(
                         placeholder   = {
                             Text(
                                 text = when (question.type) {
-                                    "fill_blank" -> "Write the complete sentence with blanks filled in..."
+                                    "fill_blank" -> "Type the answer..."
                                     "jumbled" -> "Type the sentence in the correct order..."
                                     "translation" -> "Write your translation here..."
                                     "error_correction" -> "Write the corrected sentence..."
@@ -849,8 +981,16 @@ private fun QuestionView(
 
                     // AI Verdict Banner
                     if (savedAnswerResult != null) {
-                        val verdict = savedAnswerResult["verdict"] as? String ?: "wrong"
-                        val feedback = savedAnswerResult["feedback"] as? String ?: ""
+                        val verdict = savedAnswerResult["verdict"] as? String 
+                            ?: when (savedAnswerResult["selfGrade"] as? String) {
+                                "got_it" -> "correct"
+                                "partial" -> "partial"
+                                "wrong" -> "wrong"
+                                else -> "wrong"
+                            }
+                        val feedback = savedAnswerResult["feedback"] as? String 
+                            ?: savedAnswerResult["aiFeedback"] as? String 
+                            ?: ""
                         
                         val verdictLabel = when (verdict) {
                             "correct" -> "Correct!"
@@ -900,7 +1040,13 @@ private fun QuestionView(
                     }
 
                     // Retry button (One-time, descriptive question, > 2 marks, verdict != correct, not yet used)
-                    val verdict = savedAnswerResult?.get("verdict") as? String ?: "wrong"
+                    val verdict = savedAnswerResult?.get("verdict") as? String 
+                        ?: when (savedAnswerResult?.get("selfGrade") as? String) {
+                            "got_it" -> "correct"
+                            "partial" -> "partial"
+                            "wrong" -> "wrong"
+                            else -> "wrong"
+                        }
                     if (!retryUsed && marks > 2 && verdict != "correct") {
                         Button(
                             onClick = { onRetryText() },
@@ -983,23 +1129,33 @@ private fun QuestionView(
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
 
-                // Next / Finish Button
-                val nextLabel = when {
-                    index == total - 1 -> "Finish 🎊"
-                    isAnswered -> "Next →"
-                    else -> "Skip →"
-                }
-
-                Button(
-                    onClick = {
-                        val currentTyped = textValue.text
-                        onNext(currentTyped)
-                    },
-                    enabled = !validating,
-                    shape = RoundedCornerShape(10.dp),
-                    modifier = Modifier.width(100.dp)
-                ) {
-                    Text(nextLabel)
+                // Next / Finish / Skip Button
+                if (isAnswered) {
+                    val nextLabel = if (index == total - 1) "Finish 🎊" else "Next →"
+                    Button(
+                        onClick = {
+                            val currentTyped = textValue.text
+                            onNext(currentTyped)
+                        },
+                        enabled = !validating,
+                        shape = RoundedCornerShape(10.dp),
+                        modifier = Modifier.width(100.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = themeColor)
+                    ) {
+                        Text(nextLabel)
+                    }
+                } else {
+                    val skipLabel = if (index == total - 1) "Finish 🎊" else "Skip →"
+                    OutlinedButton(
+                        onClick = onSkip,
+                        enabled = !validating,
+                        shape = RoundedCornerShape(10.dp),
+                        modifier = Modifier.width(100.dp),
+                        colors = ButtonDefaults.outlinedButtonColors(contentColor = themeColor),
+                        border = BorderStroke(1.dp, themeColor)
+                    ) {
+                        Text(skipLabel)
+                    }
                 }
             }
         }

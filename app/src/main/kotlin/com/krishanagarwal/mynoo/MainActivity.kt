@@ -5,6 +5,7 @@ import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import com.google.firebase.appdistribution.FirebaseAppDistribution
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -37,6 +38,12 @@ class MainActivity : ComponentActivity() {
 
         // Keep screen on during tutoring sessions (mirrors expo-keep-awake)
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+
+        // Check for Firebase App Distribution updates (in-app alerts for testers)
+        FirebaseAppDistribution.getInstance().updateIfNewReleaseAvailable()
+            .addOnFailureListener { e ->
+                e.printStackTrace()
+            }
 
         setContent {
             MynooTheme {
