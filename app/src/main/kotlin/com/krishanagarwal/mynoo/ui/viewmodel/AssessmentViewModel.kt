@@ -776,6 +776,12 @@ class AssessmentViewModel @Inject constructor(
                     return@launch
                 }
                 
+                if (q.type == "match_columns") {
+                    val result = gradeMatchColumnsLocally(q, childAnswer)
+                    onValidationComplete(idx, childAnswer, result)
+                    return@launch
+                }
+                
                 val validationData = try {
                     val gistContent = placementRepo.getGistFile("aarav_assessment_validation.json")
                     val jsonObj = JSONObject(gistContent)
@@ -1084,6 +1090,77 @@ class AssessmentViewModel @Inject constructor(
 
     private fun isExactMatch(childAnswer: String, correctAnswer: String): Boolean {
         return normalise(childAnswer) == normalise(correctAnswer)
+    }
+
+    private fun gradeMatchColumnsLocally(q: AssessmentQuestion, childAnswer: String): Map<String, Any> {
+        val totalItems = q.columnA.size
+        if (totalItems == 0) {
+            return mapOf(
+                "verdict" to "wrong",
+                "earnedMarks" to 0.0,
+                "feedback" to "Not quite.",
+                "corrections" to emptyList<Any>(),
+                "correctedAnswer" to "",
+                "allowRetry" to false
+            )
+        }
+        
+        var correctCount = 0
+        
+        // Normalize child answer for searching: replace all spaces and make lowercase.
+        val normalizedAns = childAnswer.lowercase()
+            .replace(" ", "")
+            .replace("–", "-") // convert en-dash to hyphen
+            .replace("—", "-") // convert em-dash to hyphen
+            
+        q.columnA.forEachIndexed { idx, itemA ->
+            val correctLetter = q.correctMatches.getOrNull(idx)?.lowercase() ?: ""
+            if (correctLetter.isNotBlank()) {
+                val cleanItemA = itemA.lowercase().replace(" ", "")
+                val expectedPattern1 = "$cleanItemA-$correctLetter"
+                val expectedPattern2 = "${idx + 1}-$correctLetter"
+                if (normalizedAns.contains(expectedPattern1) || normalizedAns.contains(expectedPattern2)) {
+                    correctCount++
+                }
+            }
+        }
+        
+        val marksPerMatch = q.marks / totalItems
+        var earned = correctCount * marksPerMatch
+        
+        // Round earned marks to steps of 0.5
+        earned = Math.round(earned * 2.0) / 2.0
+        
+        // If correctCount > 0, ensure it is at least 0.5 marks
+        if (correctCount > 0 && earned < 0.5) {
+            earned = 0.5
+        }
+        
+        // Ensure it does not exceed total marks
+        if (earned > q.marks) {
+            earned = q.marks
+        }
+        
+        val verdict = when {
+            earned >= q.marks -> "correct"
+            earned > 0.0 -> "partial"
+            else -> "wrong"
+        }
+        
+        val feedback = when (verdict) {
+            "correct" -> "✓ Perfect matching! All $correctCount correct."
+            "partial" -> "🟡 Partially correct! You matched $correctCount out of $totalItems correctly."
+            else -> "💪 Not quite. Check the correct matches below."
+        }
+        
+        return mapOf(
+            "verdict" to verdict,
+            "earnedMarks" to earned,
+            "feedback" to feedback,
+            "corrections" to emptyList<Any>(),
+            "correctedAnswer" to "",
+            "allowRetry" to false
+        )
     }
 
     private fun generateSummary() {
