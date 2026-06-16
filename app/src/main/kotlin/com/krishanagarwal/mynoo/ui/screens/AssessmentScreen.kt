@@ -601,6 +601,195 @@ private fun QuestionView(
                 }
             }
 
+            // Match Columns Layout
+            if (question.type == "match_columns" && question.columnA.isNotEmpty() && question.columnB.isNotEmpty()) {
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(12.dp),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    var selectedLeftIndex by remember(index) { mutableStateOf<Int?>(null) }
+                    var activeMatches by remember(index) { mutableStateOf(emptyMap<Int, Int>()) } // leftIdx -> rightIdx
+                    
+                    fun getColumnBLetter(item: String): String {
+                        val match = Regex("\\(([^)]+)\\)").find(item)
+                        return match?.groupValues?.get(1)?.lowercase() ?: ""
+                    }
+                    
+                    LaunchedEffect(activeMatches) {
+                        if (activeMatches.isNotEmpty()) {
+                            val text = question.columnA.mapIndexedNotNull { leftIdx, itemA ->
+                                val rightIdx = activeMatches[leftIdx]
+                                if (rightIdx != null) {
+                                    val itemB = question.columnB.getOrNull(rightIdx) ?: ""
+                                    val letter = getColumnBLetter(itemB)
+                                    "$itemA–$letter"
+                                } else null
+                            }.joinToString(", ")
+                            textValue = TextFieldValue(text, selection = androidx.compose.ui.text.TextRange(text.length))
+                        }
+                    }
+                    
+                    LaunchedEffect(textValue.text) {
+                        if (textValue.text.isBlank()) {
+                            activeMatches = emptyMap()
+                            selectedLeftIndex = null
+                        }
+                    }
+                    
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(12.dp)
+                    ) {
+                        // Column A (Left)
+                        Column(
+                            modifier = Modifier.weight(1f),
+                            verticalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            Text(
+                                text = "Column A",
+                                style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
+                                color = Color(0xFF2C3E50)
+                            )
+                            question.columnA.forEachIndexed { i, itemA ->
+                                val isSelected = selectedLeftIndex == i
+                                val isMatched = activeMatches.containsKey(i)
+                                val matchRightIdx = activeMatches[i]
+                                val matchLetter = if (matchRightIdx != null) {
+                                    val itemB = question.columnB.getOrNull(matchRightIdx) ?: ""
+                                    getColumnBLetter(itemB).uppercase()
+                                } else ""
+                                
+                                val cardBg = when {
+                                    isSelected -> themeColor.copy(alpha = 0.15f)
+                                    isMatched -> Color(0xFFF0FDF4)
+                                    else -> Color.White
+                                }
+                                val cardBorderColor = when {
+                                    isSelected -> themeColor
+                                    isMatched -> Color(0xFF86EFAC)
+                                    else -> Color(0xFFE2E8F0)
+                                }
+                                val cardBorderThickness = if (isSelected) 2.dp else 1.dp
+                                
+                                Card(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .clickable(enabled = !isAnswered && !validating) {
+                                            selectedLeftIndex = if (isSelected) null else i
+                                        },
+                                    colors = CardDefaults.cardColors(containerColor = cardBg),
+                                    border = BorderStroke(cardBorderThickness, cardBorderColor),
+                                    shape = RoundedCornerShape(8.dp)
+                                ) {
+                                    Row(
+                                        modifier = Modifier.padding(12.dp),
+                                        horizontalArrangement = Arrangement.SpaceBetween,
+                                        verticalAlignment = Alignment.CenterVertically
+                                    ) {
+                                        Text(
+                                            text = "${i + 1}. $itemA",
+                                            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Medium),
+                                            color = Color(0xFF2C3E50),
+                                            modifier = Modifier.weight(1f)
+                                        )
+                                        if (isMatched) {
+                                            Surface(
+                                                shape = RoundedCornerShape(4.dp),
+                                                color = Color(0xFFDCFCE7),
+                                                contentColor = Color(0xFF15803D)
+                                            ) {
+                                                Text(
+                                                    text = "➜ $matchLetter",
+                                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
+                                                    style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold)
+                                                )
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                        // Column B (Right)
+                        Column(
+                            modifier = Modifier.weight(1f),
+                            verticalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            Text(
+                                text = "Column B",
+                                style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
+                                color = Color(0xFF2C3E50)
+                            )
+                            question.columnB.forEachIndexed { i, itemB ->
+                                val isMatched = activeMatches.containsValue(i)
+                                val isRightClickable = selectedLeftIndex != null && !isAnswered && !validating
+                                
+                                val cardBg = when {
+                                    isMatched -> Color(0xFFF0FDF4)
+                                    isRightClickable -> themeColor.copy(alpha = 0.05f)
+                                    else -> Color.White
+                                }
+                                val cardBorderColor = when {
+                                    isMatched -> Color(0xFF86EFAC)
+                                    isRightClickable -> themeColor.copy(alpha = 0.3f)
+                                    else -> Color(0xFFE2E8F0)
+                                }
+                                
+                                Card(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .clickable(enabled = isRightClickable) {
+                                            val leftIdx = selectedLeftIndex
+                                            if (leftIdx != null) {
+                                                activeMatches = activeMatches + (leftIdx to i)
+                                                selectedLeftIndex = null
+                                            }
+                                        },
+                                    colors = CardDefaults.cardColors(containerColor = cardBg),
+                                    border = BorderStroke(1.dp, cardBorderColor),
+                                    shape = RoundedCornerShape(8.dp)
+                                ) {
+                                    Row(
+                                        modifier = Modifier.padding(12.dp),
+                                        horizontalArrangement = Arrangement.SpaceBetween,
+                                        verticalAlignment = Alignment.CenterVertically
+                                    ) {
+                                        Text(
+                                            text = itemB,
+                                            style = MaterialTheme.typography.bodyMedium,
+                                            color = if (isMatched) Color(0xFF1E293B) else Color(0xFF475569),
+                                            modifier = Modifier.weight(1f)
+                                        )
+                                        if (isMatched) {
+                                            Text(
+                                                text = "✓",
+                                                color = Color(0xFF15803D),
+                                                fontWeight = FontWeight.Bold,
+                                                style = MaterialTheme.typography.bodyMedium
+                                            )
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    if (activeMatches.isNotEmpty() && !isAnswered && !validating) {
+                        TextButton(
+                            onClick = {
+                                textValue = TextFieldValue("")
+                                activeMatches = emptyMap()
+                                selectedLeftIndex = null
+                            },
+                            colors = ButtonDefaults.textButtonColors(contentColor = Color(0xFFE74C3C)),
+                            modifier = Modifier.align(Alignment.End)
+                        ) {
+                            Text("Reset Matches ⌫", style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.Bold))
+                        }
+                    }
+                }
+            }
+
             Spacer(Modifier.height(4.dp))
 
             // MCQ Options / Descriptive Input
