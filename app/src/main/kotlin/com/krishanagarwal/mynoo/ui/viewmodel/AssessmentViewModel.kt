@@ -265,7 +265,7 @@ class AssessmentViewModel @Inject constructor(
 
                 val prompt = "$instructions\n\n$lines"
 
-                val summary = when {
+                val resObj: Any = when {
                     model.startsWith("grok-") -> {
                         val request = LlmResponseRequest(
                             model = model,
@@ -273,8 +273,7 @@ class AssessmentViewModel @Inject constructor(
                             temperature = null,
                             maxOutputTokens = 1024
                         )
-                        val res = xaiApi.createResponse("Bearer ${BuildConfig.XAI_API_KEY}", request)
-                        extractTextFromLlmResponse(res)
+                        xaiApi.createResponse("Bearer ${BuildConfig.XAI_API_KEY}", request)
                     }
                     model.startsWith("gpt-") -> {
                         val request = LlmResponseRequest(
@@ -283,8 +282,7 @@ class AssessmentViewModel @Inject constructor(
                             temperature = temp,
                             maxOutputTokens = 1024
                         )
-                        val res = openAiApi.createResponse("Bearer ${BuildConfig.OPENAI_API_KEY}", request)
-                        extractTextFromLlmResponse(res)
+                        openAiApi.createResponse("Bearer ${BuildConfig.OPENAI_API_KEY}", request)
                     }
                     model.startsWith("sarvam-") -> {
                         val request = SarvamChatRequest(
@@ -293,17 +291,30 @@ class AssessmentViewModel @Inject constructor(
                             temperature = temp,
                             maxTokens = 1024
                         )
-                        val res = sarvamChatApi.chatCompletions(BuildConfig.SARVAM_API_KEY, request)
-                        res.choices?.firstOrNull()?.message?.content ?: ""
+                        sarvamChatApi.chatCompletions(BuildConfig.SARVAM_API_KEY, request)
                     }
                     else -> {
                         val req = GeminiRequest(
                             contents = listOf(GeminiContent(parts = listOf(GeminiPart(text = prompt))))
                         )
-                        val resp = geminiApi.generateContent(model, BuildConfig.GEMINI_API_KEY, req)
-                        resp.candidates?.firstOrNull()?.content?.parts?.firstOrNull()?.text ?: ""
+                        geminiApi.generateContent(model, BuildConfig.GEMINI_API_KEY, req)
                     }
                 }
+
+                val summary = when (resObj) {
+                    is LlmResponseResponse -> extractTextFromLlmResponse(resObj)
+                    is SarvamChatResponse -> resObj.choices?.firstOrNull()?.message?.content ?: ""
+                    is GeminiResponse -> resObj.candidates?.firstOrNull()?.content?.parts?.firstOrNull()?.text ?: ""
+                    else -> ""
+                }
+
+                logLlmUsage(
+                    childName = childName,
+                    purpose = "assessment",
+                    model = model,
+                    lang = assessment.lang,
+                    resObj = resObj
+                )
 
                 if (assessment.id.isNotBlank()) {
                     repo.saveSummary(childName, assessment.id, summary, finalScore, assessment.answers)
@@ -409,9 +420,10 @@ class AssessmentViewModel @Inject constructor(
     fun restoreQuestionState(idx: Int) {
         val q = _quiz.value
         val savedAns = q.answers.getOrNull(idx)
+        val question = q.assessment?.questions?.getOrNull(idx)
         val isRetryUsed = q.retryUsed.contains(idx) || (savedAns?.get("retryUsed") as? Boolean == true)
         
-        if (savedAns == null || savedAns.isEmpty()) {
+        if (savedAns == null || savedAns.isEmpty() || (question != null && !isQuestionAnswered(question, savedAns))) {
             _quiz.update {
                 it.copy(
                     mcqSelectedIndex = null,
@@ -589,7 +601,8 @@ class AssessmentViewModel @Inject constructor(
         val total = assessment.questions.size
         
         val isTextQ = currentQ.type != "mcq"
-        val hasTyped = isTextQ && currentTypedAnswer.trim().isNotEmpty() && q.validationResult == null && q.answers.getOrNull(idx) == null
+        val isSavedAnswered = isQuestionAnswered(currentQ, q.answers.getOrNull(idx))
+        val hasTyped = isTextQ && currentTypedAnswer.trim().isNotEmpty() && q.validationResult == null && !isSavedAnswered
         if (hasTyped) {
             validateCurrentAnswer(currentTypedAnswer)
             return
@@ -597,7 +610,7 @@ class AssessmentViewModel @Inject constructor(
         
         val updatedAnswers = q.answers.toMutableList()
         val hasAnswered = q.mcqPhase == "done" || q.validationResult != null
-        if (hasAnswered && q.answers.getOrNull(idx) == null) {
+        if (hasAnswered && !isSavedAnswered) {
             val ansMap = buildAnswerMap(currentQ, currentTypedAnswer)
             while (updatedAnswers.size <= idx) {
                 updatedAnswers.add(null)
@@ -877,6 +890,16 @@ class AssessmentViewModel @Inject constructor(
 
                 saveDebugJson(idx, reqObj!!, resObj!!)
                 
+                resObj?.let {
+                    logLlmUsage(
+                        childName = currentChild,
+                        purpose = "assessment",
+                        model = model,
+                        lang = assessment.lang,
+                        resObj = it
+                    )
+                }
+                
                 val clean = cleanResponseText(rawResponse)
                 val parsed = parseValidationResult(clean, q.marks)
                 onValidationComplete(idx, childAnswer, parsed)
@@ -956,6 +979,13 @@ class AssessmentViewModel @Inject constructor(
                 )
                 val resp = geminiApi.generateContent(model, BuildConfig.GEMINI_API_KEY, req)
                 saveDebugJson(idx, req, resp)
+                logLlmUsage(
+                    childName = currentChild,
+                    purpose = "assessment",
+                    model = model,
+                    lang = assessment.lang,
+                    resObj = resp
+                )
                 val rawResponse = resp.candidates?.firstOrNull()?.content?.parts?.firstOrNull()?.text ?: "{}"
                 
                 val clean = cleanResponseText(rawResponse)
@@ -1212,7 +1242,7 @@ class AssessmentViewModel @Inject constructor(
 
                 val prompt = "$instructions\n\n$lines"
 
-                val summary = when {
+                val resObj: Any = when {
                     model.startsWith("grok-") -> {
                         val request = LlmResponseRequest(
                             model = model,
@@ -1220,8 +1250,7 @@ class AssessmentViewModel @Inject constructor(
                             temperature = null, // Grok does not support temperature parameter
                             maxOutputTokens = 1024
                         )
-                        val res = xaiApi.createResponse("Bearer ${BuildConfig.XAI_API_KEY}", request)
-                        extractTextFromLlmResponse(res)
+                        xaiApi.createResponse("Bearer ${BuildConfig.XAI_API_KEY}", request)
                     }
                     model.startsWith("gpt-") -> {
                         val request = LlmResponseRequest(
@@ -1230,8 +1259,7 @@ class AssessmentViewModel @Inject constructor(
                             temperature = temp,
                             maxOutputTokens = 1024
                         )
-                        val res = openAiApi.createResponse("Bearer ${BuildConfig.OPENAI_API_KEY}", request)
-                        extractTextFromLlmResponse(res)
+                        openAiApi.createResponse("Bearer ${BuildConfig.OPENAI_API_KEY}", request)
                     }
                     model.startsWith("sarvam-") -> {
                         val request = SarvamChatRequest(
@@ -1240,17 +1268,30 @@ class AssessmentViewModel @Inject constructor(
                             temperature = temp,
                             maxTokens = 1024
                         )
-                        val res = sarvamChatApi.chatCompletions(BuildConfig.SARVAM_API_KEY, request)
-                        res.choices?.firstOrNull()?.message?.content ?: ""
+                        sarvamChatApi.chatCompletions(BuildConfig.SARVAM_API_KEY, request)
                     }
                     else -> {
                         val req = GeminiRequest(
                             contents = listOf(GeminiContent(parts = listOf(GeminiPart(text = prompt))))
                         )
-                        val resp = geminiApi.generateContent(model, BuildConfig.GEMINI_API_KEY, req)
-                        resp.candidates?.firstOrNull()?.content?.parts?.firstOrNull()?.text ?: ""
+                        geminiApi.generateContent(model, BuildConfig.GEMINI_API_KEY, req)
                     }
                 }
+
+                val summary = when (resObj) {
+                    is LlmResponseResponse -> extractTextFromLlmResponse(resObj)
+                    is SarvamChatResponse -> resObj.choices?.firstOrNull()?.message?.content ?: ""
+                    is GeminiResponse -> resObj.candidates?.firstOrNull()?.content?.parts?.firstOrNull()?.text ?: ""
+                    else -> ""
+                }
+
+                logLlmUsage(
+                    childName = currentChild,
+                    purpose = "assessment",
+                    model = model,
+                    lang = assessment.lang,
+                    resObj = resObj
+                )
 
                 if (assessment.id.isNotBlank()) {
                     repo.saveSummary(currentChild, assessment.id, summary, finalScore, quizState.answers)
@@ -1293,7 +1334,7 @@ class AssessmentViewModel @Inject constructor(
             buildGeneratePrompt(subject, classNum, lang)
         }
 
-        val rawResponse = when {
+        val resObj: Any = when {
             model.startsWith("grok-") -> {
                 val schemaJson = buildGenerateSchema()
                 val request = LlmResponseRequest(
@@ -1303,8 +1344,7 @@ class AssessmentViewModel @Inject constructor(
                     maxOutputTokens = 4096,
                     text = LlmTextFormat(LlmJsonSchemaFormat(name = "assessment_generate", schema = schemaJson))
                 )
-                val res = xaiApi.createResponse("Bearer ${BuildConfig.XAI_API_KEY}", request)
-                extractTextFromLlmResponse(res)
+                xaiApi.createResponse("Bearer ${BuildConfig.XAI_API_KEY}", request)
             }
             model.startsWith("gpt-") -> {
                 val schemaJson = buildGenerateSchema()
@@ -1315,8 +1355,7 @@ class AssessmentViewModel @Inject constructor(
                     maxOutputTokens = 4096,
                     text = LlmTextFormat(LlmJsonSchemaFormat(name = "assessment_generate", schema = schemaJson))
                 )
-                val res = openAiApi.createResponse("Bearer ${BuildConfig.OPENAI_API_KEY}", request)
-                extractTextFromLlmResponse(res)
+                openAiApi.createResponse("Bearer ${BuildConfig.OPENAI_API_KEY}", request)
             }
             model.startsWith("sarvam-") -> {
                 val request = SarvamChatRequest(
@@ -1329,8 +1368,7 @@ class AssessmentViewModel @Inject constructor(
                     maxTokens = 4096,
                     responseFormat = SarvamResponseFormat()
                 )
-                val res = sarvamChatApi.chatCompletions(BuildConfig.SARVAM_API_KEY, request)
-                res.choices?.firstOrNull()?.message?.content ?: "[]"
+                sarvamChatApi.chatCompletions(BuildConfig.SARVAM_API_KEY, request)
             }
             else -> {
                 val req = GeminiRequest(
@@ -1340,10 +1378,24 @@ class AssessmentViewModel @Inject constructor(
                         responseMimeType = "application/json"
                     )
                 )
-                val resp = geminiApi.generateContent(model, BuildConfig.GEMINI_API_KEY, req)
-                resp.candidates?.firstOrNull()?.content?.parts?.firstOrNull()?.text ?: "[]"
+                geminiApi.generateContent(model, BuildConfig.GEMINI_API_KEY, req)
             }
         }
+
+        val rawResponse = when (resObj) {
+            is LlmResponseResponse -> extractTextFromLlmResponse(resObj)
+            is SarvamChatResponse -> resObj.choices?.firstOrNull()?.message?.content ?: "[]"
+            is GeminiResponse -> resObj.candidates?.firstOrNull()?.content?.parts?.firstOrNull()?.text ?: "[]"
+            else -> "[]"
+        }
+
+        logLlmUsage(
+            childName = currentChild,
+            purpose = "assessment",
+            model = model,
+            lang = lang,
+            resObj = resObj
+        )
 
         val clean = cleanResponseText(rawResponse)
         return parseQuestions(clean)
@@ -1438,6 +1490,50 @@ Return ONLY the JSON array, no markdown, no explanation.
         } catch (e: Exception) {
             Log.e("AssessmentVM", "Error parsing questions", e)
             emptyList()
+        }
+    }
+
+    private fun logLlmUsage(
+        childName: String,
+        purpose: String,
+        model: String,
+        lang: String,
+        resObj: Any
+    ) {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                if (childName.isBlank()) return@launch
+                var inputTokens = 0
+                var outputTokens = 0
+                var cachedTokens = 0
+                when (resObj) {
+                    is LlmResponseResponse -> {
+                        inputTokens = resObj.usage?.inputTokens ?: 0
+                        outputTokens = resObj.usage?.outputTokens ?: 0
+                        cachedTokens = resObj.usage?.details?.cachedTokens ?: 0
+                    }
+                    is SarvamChatResponse -> {
+                        inputTokens = resObj.usage?.promptTokens ?: 0
+                        outputTokens = resObj.usage?.completionTokens ?: 0
+                    }
+                    is GeminiResponse -> {
+                        inputTokens = resObj.usageMetadata?.promptTokenCount ?: 0
+                        outputTokens = resObj.usageMetadata?.candidatesTokenCount ?: 0
+                        cachedTokens = resObj.usageMetadata?.cachedContentTokenCount ?: 0
+                    }
+                }
+                usageRepo.recordLlm(
+                    childName = childName,
+                    purpose = purpose,
+                    provider = model,
+                    language = lang,
+                    inputTokens = inputTokens,
+                    outputTokens = outputTokens,
+                    cachedInputTokens = cachedTokens
+                )
+            } catch (e: Exception) {
+                Log.e("AssessmentVM", "Error recording LLM usage in logLlmUsage", e)
+            }
         }
     }
 

@@ -48,7 +48,7 @@ except ImportError:
 
 # ── Constants ──────────────────────────────────────────────────────────────────
 STORAGE_BUCKET  = 'aaravtutor-1e880.firebasestorage.app'
-SERVICE_ACCOUNT = _REPO_ROOT / 'aaravtutor-1e880-serviceaccount.json'
+SERVICE_ACCOUNT = _REPO_ROOT / 'mynoo-1e880-serviceaccount.json'
 
 # Subject slug → language code (matches app logic)
 SUBJECT_LANG: dict[str, str] = {
@@ -546,7 +546,7 @@ def main() -> None:
     parser.add_argument('--preserve-audio', action='store_true',
                         help='Reupload content.json only — keep existing audio files intact. '
                              'Prints a warning if sentence IDs have changed.')
-    parser.add_argument('--images-dir', default='',
+    parser.add_argument('--images-dir', '--images_dir', default='',
                         help='Directory containing PDF-extracted images (e.g. scripts/ch01-geo/images). '
                              'Auto-detected from --file if omitted and the default folder exists.')
     args = parser.parse_args()

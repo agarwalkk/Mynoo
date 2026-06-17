@@ -236,35 +236,48 @@ private fun QuestionView(
     allFillBlankAnswers: List<String> = emptyList()
 ) {
     val isMCQ = question.type == "mcq"
-    val isAnswered = answered != null || mcqPhase == "done" || validationResult != null
+    val isAnswered = remember(answered, mcqPhase, validationResult, question) {
+        val hasValidAnswer = if (answered == null) {
+            false
+        } else if (question.type == "mcq") {
+            val selected = (answered["selectedIndex"] as? Number)?.toInt() ?: -1
+            selected >= 0
+        } else {
+            val text = answered["textAnswer"] as? String ?: ""
+            text.trim().isNotEmpty()
+        }
+        hasValidAnswer || mcqPhase == "done" || validationResult != null
+    }
 
     // Determine marks earned
     val marks = question.marks
     var earnedMarks: Double? = null
-    if (answered != null) {
-        val type = answered["type"] as? String ?: ""
-        if (type == "mcq") {
-            val correct = answered["correct"] as? Boolean ?: false
-            val attempts = (answered["attempts"] as? Number)?.toInt() ?: 1
-            if (correct) {
-                earnedMarks = if (attempts == 2) marks / 2.0 else marks
+    if (isAnswered) {
+        if (answered != null) {
+            val type = answered["type"] as? String ?: ""
+            if (type == "mcq") {
+                val correct = answered["correct"] as? Boolean ?: false
+                val attempts = (answered["attempts"] as? Number)?.toInt() ?: 1
+                if (correct) {
+                    earnedMarks = if (attempts == 2) marks / 2.0 else marks
+                } else {
+                    earnedMarks = 0.0
+                }
             } else {
-                earnedMarks = 0.0
+                earnedMarks = (answered["aiEarnedMarks"] as? Number)?.toDouble() ?: 0.0
             }
         } else {
-            earnedMarks = (answered["aiEarnedMarks"] as? Number)?.toDouble() ?: 0.0
-        }
-    } else if (isAnswered) {
-        if (isMCQ) {
-            val correct = mcqSelectedIndex == question.correctIndex
-            val attempts = if (mcqFirstWrongIndex != null) 2 else 1
-            if (correct) {
-                earnedMarks = if (attempts == 2) marks / 2.0 else marks
-            } else {
-                earnedMarks = 0.0
+            if (isMCQ) {
+                val correct = mcqSelectedIndex == question.correctIndex
+                val attempts = if (mcqFirstWrongIndex != null) 2 else 1
+                if (correct) {
+                    earnedMarks = if (attempts == 2) marks / 2.0 else marks
+                } else {
+                    earnedMarks = 0.0
+                }
+            } else if (validationResult != null) {
+                earnedMarks = (validationResult["earnedMarks"] as? Number)?.toDouble() ?: 0.0
             }
-        } else if (validationResult != null) {
-            earnedMarks = (validationResult["earnedMarks"] as? Number)?.toDouble() ?: 0.0
         }
     }
 
