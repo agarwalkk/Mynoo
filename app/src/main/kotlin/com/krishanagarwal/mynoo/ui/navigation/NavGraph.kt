@@ -18,6 +18,8 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavType
@@ -63,6 +65,7 @@ fun MynooNavGraph(
     val navController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
+    var isTutorSessionActive by remember { androidx.compose.runtime.mutableStateOf(false) }
 
     val subjectArg = navBackStackEntry?.arguments?.getString("subject").orEmpty()
     val isChapterList = currentRoute == Screen.ChapterList.route
@@ -129,14 +132,14 @@ fun MynooNavGraph(
                         }
                     },
                     navigationIcon = {
-                        if (currentRoute !in bottomNavRoutes && currentRoute != Screen.ChildSelect.route) {
+                        if (currentRoute !in bottomNavRoutes && currentRoute != Screen.ChildSelect.route && !isTutorSessionActive) {
                             IconButton(onClick = { navController.popBackStack() }) {
                                 Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back", tint = topBarContentColor)
                             }
                         }
                     },
                     actions = {
-                        if (currentRoute in bottomNavRoutes) {
+                        if (currentRoute in bottomNavRoutes && !isTutorSessionActive) {
                             IconButton(onClick = {
                                 onChildSet(ChildState())
                                 navController.navigate(Screen.ChildSelect.route) {
@@ -157,7 +160,7 @@ fun MynooNavGraph(
             }
         },
         bottomBar = {
-            if (currentRoute in bottomNavRoutes) {
+            if (currentRoute in bottomNavRoutes && !isTutorSessionActive) {
                 MynooBottomBar(navController = navController)
             }
         }
@@ -175,7 +178,8 @@ fun MynooNavGraph(
                     onChildReset = { onChildSet(ChildState()) },
                     onNavigateToPlacementQuiz = { childName ->
                         navController.navigate(Screen.PlacementQuiz.route(childName))
-                    }
+                    },
+                    onSessionActiveChange = { isTutorSessionActive = it }
                 )
             }
             composable(Screen.Learn.route) {

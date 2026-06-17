@@ -11,6 +11,7 @@ import com.google.gson.JsonParser
 import com.krishanagarwal.mynoo.BuildConfig
 import com.krishanagarwal.mynoo.data.api.*
 import com.krishanagarwal.mynoo.data.repository.PlacementRepository
+import com.krishanagarwal.mynoo.data.repository.UsageRepository
 import com.krishanagarwal.mynoo.service.AudioRecorderService
 import com.krishanagarwal.mynoo.service.TtsService
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -130,7 +131,8 @@ class PlacementViewModel @Inject constructor(
     private val xaiApi: XaiApi,
     private val ttsService: TtsService,
     private val recorder: AudioRecorderService,
-    private val db: FirebaseFirestore
+    private val db: FirebaseFirestore,
+    private val usageRepo: UsageRepository
 ) : ViewModel() {
 
     private val gson = Gson()
@@ -438,7 +440,7 @@ class PlacementViewModel @Inject constructor(
         var rawResponse = ""
         var responseId: String? = null
 
-        when {
+        val resObj: Any = when {
             // Grok model
             model.startsWith("grok-") -> {
                 val auth = "Bearer ${BuildConfig.XAI_API_KEY}"
@@ -470,6 +472,7 @@ class PlacementViewModel @Inject constructor(
                 val res = xaiApi.createResponse(auth, request)
                 responseId = res.id
                 rawResponse = extractTextFromLlmResponse(res)
+                res
             }
             // OpenAI model
             model.startsWith("gpt-") -> {
@@ -505,6 +508,7 @@ class PlacementViewModel @Inject constructor(
                 val res = openAiApi.createResponse(auth, request)
                 responseId = res.id
                 rawResponse = extractTextFromLlmResponse(res)
+                res
             }
             // Sarvam model
             model.startsWith("sarvam-") -> {
@@ -520,6 +524,7 @@ class PlacementViewModel @Inject constructor(
                 val res = sarvamChatApi.chatCompletions(BuildConfig.SARVAM_API_KEY, request)
                 val rawContent = res.choices?.firstOrNull()?.message?.content ?: "{}"
                 rawResponse = cleanSarvamResponse(rawContent)
+                res
             }
             // Gemini model (default fallback)
             else -> {
@@ -533,7 +538,41 @@ class PlacementViewModel @Inject constructor(
                 )
                 val res = geminiApi.generateContent(model, BuildConfig.GEMINI_API_KEY, request)
                 rawResponse = res.candidates?.firstOrNull()?.content?.parts?.firstOrNull()?.text ?: "{}"
+                res
             }
+        }
+
+        try {
+            var inputTokens = 0
+            var outputTokens = 0
+            var cachedTokens = 0
+            when (resObj) {
+                is LlmResponseResponse -> {
+                    inputTokens = resObj.usage?.inputTokens ?: 0
+                    outputTokens = resObj.usage?.outputTokens ?: 0
+                    cachedTokens = resObj.usage?.details?.cachedTokens ?: 0
+                }
+                is SarvamChatResponse -> {
+                    inputTokens = resObj.usage?.promptTokens ?: 0
+                    outputTokens = resObj.usage?.completionTokens ?: 0
+                }
+                is GeminiResponse -> {
+                    inputTokens = resObj.usageMetadata?.promptTokenCount ?: 0
+                    outputTokens = resObj.usageMetadata?.candidatesTokenCount ?: 0
+                    cachedTokens = resObj.usageMetadata?.cachedContentTokenCount ?: 0
+                }
+            }
+            usageRepo.recordLlm(
+                childName = childName,
+                purpose = "assessment",
+                provider = model,
+                language = langKey,
+                inputTokens = inputTokens,
+                outputTokens = outputTokens,
+                cachedInputTokens = cachedTokens
+            )
+        } catch (e: Exception) {
+            Log.e("PlacementVM", "Error recording LLM usage in fetchNextQuestion", e)
         }
 
         // Save Response Thread ID
@@ -672,6 +711,17 @@ class PlacementViewModel @Inject constructor(
                 val result = recorder.record()
                 _ui.update { it.copy(voiceStatus = VoiceStatus.PROCESSING) }
 
+                try {
+                    usageRepo.recordStt(
+                        childName = childName,
+                        purpose = "assessment",
+                        provider = "saarika:v2.5",
+                        durationMs = result.durationMs
+                    )
+                } catch (e: Exception) {
+                    Log.e("PlacementVM", "Error recording STT usage", e)
+                }
+
                 val filePart = MultipartBody.Part.createFormData(
                     "file", result.wavFile.name,
                     result.wavFile.asRequestBody("audio/wav".toMediaType()),
@@ -747,7 +797,12 @@ class PlacementViewModel @Inject constructor(
 
         viewModelScope.launch {
             try {
-                ttsService.speak(spokenText)
+                ttsService.speak(
+                    text = spokenText,
+                    lang = currentLang.key,
+                    childName = childName,
+                    purpose = "assessment"
+                )
             } catch (e: Exception) {
                 Log.e("PlacementVM", "TTS playback failed", e)
             }
@@ -804,7 +859,7 @@ class PlacementViewModel @Inject constructor(
             val model = getActiveModelForLang(currentLang.key)
             var rawResponse = ""
 
-            when {
+            val resObj: Any = when {
                 model.startsWith("grok-") && threadResponseIds[currentLang.key] != null -> {
                     val prevId = threadResponseIds[currentLang.key]
                     val shortPrompt = "Quiz is complete. $childName answered $correct/$total correctly at average difficulty ${String.format("%.1f", avgDiff)}/100 in ${currentLang.label}.\nProduce the final assessment now."
@@ -820,6 +875,7 @@ class PlacementViewModel @Inject constructor(
                         )
                     )
                     rawResponse = extractTextFromLlmResponse(res)
+                    res
                 }
                 model.startsWith("gpt-") && threadResponseIds[currentLang.key] != null -> {
                     val prevId = threadResponseIds[currentLang.key]
@@ -836,6 +892,7 @@ class PlacementViewModel @Inject constructor(
                         )
                     )
                     rawResponse = extractTextFromLlmResponse(res)
+                    res
                 }
                 model.startsWith("sarvam-") -> {
                     val request = SarvamChatRequest(
@@ -850,6 +907,7 @@ class PlacementViewModel @Inject constructor(
                     val res = sarvamChatApi.chatCompletions(BuildConfig.SARVAM_API_KEY, request)
                     val rawContent = res.choices?.firstOrNull()?.message?.content ?: "{}"
                     rawResponse = cleanSarvamResponse(rawContent)
+                    res
                 }
                 else -> {
                     val request = GeminiRequest(
@@ -862,7 +920,41 @@ class PlacementViewModel @Inject constructor(
                     )
                     val res = geminiApi.generateContent(model, BuildConfig.GEMINI_API_KEY, request)
                     rawResponse = res.candidates?.firstOrNull()?.content?.parts?.firstOrNull()?.text ?: "{}"
+                    res
                 }
+            }
+
+            try {
+                var inputTokens = 0
+                var outputTokens = 0
+                var cachedTokens = 0
+                when (resObj) {
+                    is LlmResponseResponse -> {
+                        inputTokens = resObj.usage?.inputTokens ?: 0
+                        outputTokens = resObj.usage?.outputTokens ?: 0
+                        cachedTokens = resObj.usage?.details?.cachedTokens ?: 0
+                    }
+                    is SarvamChatResponse -> {
+                        inputTokens = resObj.usage?.promptTokens ?: 0
+                        outputTokens = resObj.usage?.completionTokens ?: 0
+                    }
+                    is GeminiResponse -> {
+                        inputTokens = resObj.usageMetadata?.promptTokenCount ?: 0
+                        outputTokens = resObj.usageMetadata?.candidatesTokenCount ?: 0
+                        cachedTokens = resObj.usageMetadata?.cachedContentTokenCount ?: 0
+                    }
+                }
+                usageRepo.recordLlm(
+                    childName = childName,
+                    purpose = "assessment",
+                    provider = model,
+                    language = currentLang.key,
+                    inputTokens = inputTokens,
+                    outputTokens = outputTokens,
+                    cachedInputTokens = cachedTokens
+                )
+            } catch (e: Exception) {
+                Log.e("PlacementVM", "Error recording LLM usage in computeResult", e)
             }
 
             val parsed = gson.fromJson(rawResponse, JsonObject::class.java)

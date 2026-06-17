@@ -60,6 +60,7 @@ data class GeminiUsageMetadata(
     @SerializedName("promptTokenCount") val promptTokenCount: Int = 0,
     @SerializedName("candidatesTokenCount") val candidatesTokenCount: Int = 0,
     @SerializedName("totalTokenCount") val totalTokenCount: Int = 0,
+    @SerializedName("cachedContentTokenCount") val cachedContentTokenCount: Int = 0,
 )
 
 data class GeminiResponse(

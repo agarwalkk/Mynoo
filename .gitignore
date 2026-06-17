@@ -42,3 +42,6 @@ node_modules/
 .venv/
 
 mynoo-1e880-serviceaccount.json
+scripts/*.json
+scripts/*.pdf
+scripts/*/*

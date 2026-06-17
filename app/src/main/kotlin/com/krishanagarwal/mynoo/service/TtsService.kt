@@ -1,5 +1,5 @@
 package com.krishanagarwal.mynoo.service
-
+ 
 import android.content.Context
 import android.media.AudioAttributes
 import android.media.MediaPlayer
@@ -14,6 +14,7 @@ import com.krishanagarwal.mynoo.data.api.GeminiPrebuiltVoice
 import com.krishanagarwal.mynoo.data.api.GeminiRequest
 import com.krishanagarwal.mynoo.data.api.GeminiSpeechConfig
 import com.krishanagarwal.mynoo.data.api.GeminiVoiceConfig
+import com.krishanagarwal.mynoo.data.repository.UsageRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -32,10 +33,19 @@ class TtsService @Inject constructor(
     @ApplicationContext private val context: Context,
     private val geminiApi: GeminiApi,
     private val client: OkHttpClient,
+    private val usageRepo: UsageRepository,
 ) {
+    private var activePlaybackJob: kotlinx.coroutines.CompletableDeferred<Unit>? = null
     private var mediaPlayer: MediaPlayer? = null
 
-    suspend fun speak(text: String, lang: String = "en", provider: String? = null, model: String? = null) = withContext(Dispatchers.IO) {
+    suspend fun speak(
+        text: String,
+        lang: String = "en",
+        provider: String? = null,
+        model: String? = null,
+        childName: String? = null,
+        purpose: String? = null,
+    ) = withContext(Dispatchers.IO) {
         stop()
         val clean = cleanForSpeech(text)
         if (clean.isBlank()) return@withContext
@@ -47,9 +57,22 @@ class TtsService @Inject constructor(
                 "sarvam"     -> callSarvamTts(clean, lang, model ?: "bulbul:v3")
                 else         -> callGeminiTts(clean, lang, model ?: "gemini-3.1-flash-tts-preview")
             }
-            playAudioBytes(audioBytes, isMp3)
+            if (childName != null && purpose != null) {
+                val resolvedModel = model ?: when (provider) {
+                    "elevenlabs" -> "eleven_v3"
+                    "sarvam"     -> "bulbul:v3"
+                    else         -> "gemini-3.1-flash-tts-preview"
+                }
+                usageRepo.recordTts(childName, purpose, resolvedModel, clean.length)
+            }
+            val job = kotlinx.coroutines.CompletableDeferred<Unit>()
+            activePlaybackJob = job
+            playAudioBytes(audioBytes, isMp3, job)
+            job.await()
         } catch (e: Exception) {
             Log.e("TtsService", "TTS synthesis failed for provider: $provider", e)
+        } finally {
+            activePlaybackJob = null
         }
     }
 
@@ -63,9 +86,11 @@ class TtsService @Inject constructor(
             } catch (_: Exception) {}
         }
         mediaPlayer = null
+        activePlaybackJob?.complete(Unit)
+        activePlaybackJob = null
     }
 
-    private fun playAudioBytes(bytes: ByteArray, isMp3: Boolean) {
+    private fun playAudioBytes(bytes: ByteArray, isMp3: Boolean, playbackJob: kotlinx.coroutines.CompletableDeferred<Unit>) {
         try {
             val tempFile = File.createTempFile("tts_", if (isMp3) ".mp3" else ".wav", context.cacheDir)
             tempFile.writeBytes(bytes)
@@ -83,10 +108,12 @@ class TtsService @Inject constructor(
                     it.release()
                     tempFile.delete()
                     if (mediaPlayer == it) mediaPlayer = null
+                    playbackJob.complete(Unit)
                 }
                 setOnErrorListener { mpError, _, _ ->
                     tempFile.delete()
                     if (mediaPlayer == mpError) mediaPlayer = null
+                    playbackJob.complete(Unit)
                     true
                 }
             }
@@ -94,6 +121,7 @@ class TtsService @Inject constructor(
             mp.prepareAsync()
         } catch (e: Exception) {
             Log.e("TtsService", "Error playing audio bytes", e)
+            playbackJob.complete(Unit)
         }
     }
 

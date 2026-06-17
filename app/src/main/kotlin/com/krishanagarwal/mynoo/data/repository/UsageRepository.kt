@@ -1,6 +1,8 @@
 package com.krishanagarwal.mynoo.data.repository
 
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.Source
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.tasks.await
@@ -20,7 +22,8 @@ data class UsageDay(
 data class ProviderStats(
     val calls: Int = 0,
     val inputTokens: Int = 0,
-    val outputTokens: Int = 0
+    val outputTokens: Int = 0,
+    val cachedTokens: Int = 0
 )
 
 data class LlmStats(
@@ -41,12 +44,20 @@ data class TtsProviderStats(
 data class TtsStats(
     val calls: Int = 0,
     val charCount: Int = 0,
-    val byProvider: Map<String, TtsProviderStats> = emptyMap()
+    val byProvider: Map<String, TtsProviderStats> = emptyMap(),
+    val byPurpose: Map<String, TtsProviderStats> = emptyMap()
+)
+
+data class SttProviderStats(
+    val calls: Int = 0,
+    val durationMs: Long = 0L
 )
 
 data class SttStats(
     val calls: Int = 0,
-    val durationMs: Long = 0L
+    val durationMs: Long = 0L,
+    val byProvider: Map<String, SttProviderStats> = emptyMap(),
+    val byPurpose: Map<String, SttProviderStats> = emptyMap()
 )
 
 data class UsageSummary(
@@ -61,6 +72,93 @@ class UsageRepository @Inject constructor(
     private val db: FirebaseFirestore
 ) {
     private val col = db.collection("usageLogs")
+
+    suspend fun recordLlm(
+        childName: String,
+        purpose: String,
+        provider: String,
+        language: String,
+        inputTokens: Int,
+        outputTokens: Int,
+        cachedInputTokens: Int = 0
+    ) = withContext(Dispatchers.IO) {
+        if (childName.isBlank()) return@withContext
+        val date = LocalDate.now().format(DateTimeFormatter.ISO_DATE)
+        val docId = "${childName}_${date}_llm_${purpose}_${provider}_${language}"
+        try {
+            col.document(docId).set(
+                mapOf(
+                    "childName" to childName,
+                    "date" to date,
+                    "service" to "llm",
+                    "purpose" to purpose,
+                    "provider" to provider,
+                    "language" to language,
+                    "calls" to FieldValue.increment(1),
+                    "inputTokens" to FieldValue.increment(inputTokens.toLong()),
+                    "outputTokens" to FieldValue.increment(outputTokens.toLong()),
+                    "cachedInputTokens" to FieldValue.increment(cachedInputTokens.toLong())
+                ),
+                SetOptions.merge()
+            ).await()
+        } catch (e: Exception) {
+            android.util.Log.e("UsageRepo", "Error recording LLM usage", e)
+        }
+    }
+
+    suspend fun recordTts(
+        childName: String,
+        purpose: String,
+        provider: String,
+        charCount: Int
+    ) = withContext(Dispatchers.IO) {
+        if (childName.isBlank()) return@withContext
+        val date = LocalDate.now().format(DateTimeFormatter.ISO_DATE)
+        val docId = "${childName}_${date}_tts_${purpose}_${provider}"
+        try {
+            col.document(docId).set(
+                mapOf(
+                    "childName" to childName,
+                    "date" to date,
+                    "service" to "tts",
+                    "purpose" to purpose,
+                    "provider" to provider,
+                    "calls" to FieldValue.increment(1),
+                    "charCount" to FieldValue.increment(charCount.toLong())
+                ),
+                SetOptions.merge()
+            ).await()
+        } catch (e: Exception) {
+            android.util.Log.e("UsageRepo", "Error recording TTS usage", e)
+        }
+    }
+
+    suspend fun recordStt(
+        childName: String,
+        purpose: String,
+        provider: String,
+        durationMs: Long
+    ) = withContext(Dispatchers.IO) {
+        if (childName.isBlank()) return@withContext
+        val date = LocalDate.now().format(DateTimeFormatter.ISO_DATE)
+        val docId = "${childName}_${date}_stt_${purpose}_${provider}"
+        try {
+            col.document(docId).set(
+                mapOf(
+                    "childName" to childName,
+                    "date" to date,
+                    "service" to "stt",
+                    "purpose" to purpose,
+                    "provider" to provider,
+                    "calls" to FieldValue.increment(1),
+                    "durationMs" to FieldValue.increment(durationMs)
+                ),
+                SetOptions.merge()
+            ).await()
+        } catch (e: Exception) {
+            android.util.Log.e("UsageRepo", "Error recording STT usage", e)
+        }
+    }
 
     suspend fun getUsageStats(childName: String, periodDays: Int): UsageSummary = withContext(Dispatchers.IO) {
         val formatter = DateTimeFormatter.ISO_DATE
@@ -96,9 +194,12 @@ class UsageRepository @Inject constructor(
         var ttsCalls = 0
         var ttsChar = 0
         val ttsProvider = mutableMapOf<String, TtsProviderStats>()
+        val ttsPurpose = mutableMapOf<String, TtsProviderStats>()
 
         var sttCalls = 0
         var sttDur = 0L
+        val sttProvider = mutableMapOf<String, SttProviderStats>()
+        val sttPurpose = mutableMapOf<String, SttProviderStats>()
 
         // Initialize day map
         val dayMap = mutableMapOf<String, UsageDay>()
@@ -133,7 +234,8 @@ class UsageRepository @Inject constructor(
                     llmPurpose[purpose] = ProviderStats(
                         calls = prevPurpose.calls + calls,
                         inputTokens = prevPurpose.inputTokens + inp,
-                        outputTokens = prevPurpose.outputTokens + out
+                        outputTokens = prevPurpose.outputTokens + out,
+                        cachedTokens = prevPurpose.cachedTokens + cach
                     )
 
                     // Aggregate by provider
@@ -141,7 +243,8 @@ class UsageRepository @Inject constructor(
                     llmProvider[provider] = ProviderStats(
                         calls = prevProvider.calls + calls,
                         inputTokens = prevProvider.inputTokens + inp,
-                        outputTokens = prevProvider.outputTokens + out
+                        outputTokens = prevProvider.outputTokens + out,
+                        cachedTokens = prevProvider.cachedTokens + cach
                     )
 
                     // Aggregate by language
@@ -149,7 +252,8 @@ class UsageRepository @Inject constructor(
                     llmLanguage[language] = ProviderStats(
                         calls = prevLang.calls + calls,
                         inputTokens = prevLang.inputTokens + inp,
-                        outputTokens = prevLang.outputTokens + out
+                        outputTokens = prevLang.outputTokens + out,
+                        cachedTokens = prevLang.cachedTokens + cach
                     )
 
                     dayMap[date] = currentDay.copy(
@@ -160,14 +264,23 @@ class UsageRepository @Inject constructor(
                     val calls = (doc.get("calls") as? Number)?.toInt() ?: 0
                     val chars = (doc.get("charCount") as? Number)?.toInt() ?: 0
                     val provider = doc.getString("provider") ?: "unknown"
+                    val purpose = doc.getString("purpose") ?: "unknown"
 
                     ttsCalls += calls
                     ttsChar += chars
 
+                    // Aggregate by provider
                     val prevTts = ttsProvider[provider] ?: TtsProviderStats()
                     ttsProvider[provider] = TtsProviderStats(
                         calls = prevTts.calls + calls,
                         charCount = prevTts.charCount + chars
+                    )
+
+                    // Aggregate by purpose
+                    val prevPurpose = ttsPurpose[purpose] ?: TtsProviderStats()
+                    ttsPurpose[purpose] = TtsProviderStats(
+                        calls = prevPurpose.calls + calls,
+                        charCount = prevPurpose.charCount + chars
                     )
 
                     dayMap[date] = currentDay.copy(
@@ -177,9 +290,25 @@ class UsageRepository @Inject constructor(
                 "stt" -> {
                     val calls = (doc.get("calls") as? Number)?.toInt() ?: 0
                     val dur = (doc.get("durationMs") as? Number)?.toLong() ?: 0L
+                    val provider = doc.getString("provider") ?: "unknown"
+                    val purpose = doc.getString("purpose") ?: "unknown"
 
                     sttCalls += calls
                     sttDur += dur
+
+                    // Aggregate by provider
+                    val prevStt = sttProvider[provider] ?: SttProviderStats()
+                    sttProvider[provider] = SttProviderStats(
+                        calls = prevStt.calls + calls,
+                        durationMs = prevStt.durationMs + dur
+                    )
+
+                    // Aggregate by purpose
+                    val prevPurpose = sttPurpose[purpose] ?: SttProviderStats()
+                    sttPurpose[purpose] = SttProviderStats(
+                        calls = prevPurpose.calls + calls,
+                        durationMs = prevPurpose.durationMs + dur
+                    )
 
                     dayMap[date] = currentDay.copy(
                         sttCalls = currentDay.sttCalls + calls
@@ -201,11 +330,14 @@ class UsageRepository @Inject constructor(
             tts = TtsStats(
                 calls = ttsCalls,
                 charCount = ttsChar,
-                byProvider = ttsProvider
+                byProvider = ttsProvider,
+                byPurpose = ttsPurpose
             ),
             stt = SttStats(
                 calls = sttCalls,
-                durationMs = sttDur
+                durationMs = sttDur,
+                byProvider = sttProvider,
+                byPurpose = sttPurpose
             ),
             days = dayMap.values.sortedBy { it.date }
         )

@@ -1170,32 +1170,111 @@ fun ParentDashboardScreen(
                         Text("🤖 Language Models (LLM)", style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold))
                         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
                             Text("Calls: ${stats.llm.calls}", style = MaterialTheme.typography.bodySmall)
-                            Text("Tokens: ${stats.llm.inputTokens + stats.llm.outputTokens}", style = MaterialTheme.typography.bodySmall)
+                            Text("Total Tokens: ${stats.llm.inputTokens + stats.llm.outputTokens}", style = MaterialTheme.typography.bodySmall)
                         }
-                        stats.llm.byProvider.forEach { (provider, data) ->
-                            Text("$provider: ${data.calls} calls (${data.inputTokens + data.outputTokens} tokens)", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        Text(
+                            text = "Input: ${stats.llm.inputTokens} • Cached Input: ${stats.llm.cachedInputTokens} • Output: ${stats.llm.outputTokens}",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                        
+                        if (stats.llm.byProvider.isNotEmpty()) {
+                            Spacer(modifier = Modifier.height(4.dp))
+                            Text("Breakdown by Model:", style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold))
+                            stats.llm.byProvider.forEach { (provider, data) ->
+                                Column(modifier = Modifier.padding(start = 8.dp, bottom = 4.dp)) {
+                                    Text("• $provider: ${data.calls} calls", style = MaterialTheme.typography.labelSmall, fontWeight = FontWeight.SemiBold)
+                                    Text(
+                                        "  Tokens: ${data.inputTokens + data.outputTokens} (In: ${data.inputTokens}, Cache: ${data.cachedTokens}, Out: ${data.outputTokens})",
+                                        style = MaterialTheme.typography.labelSmall,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                                    )
+                                }
+                            }
+                        }
+
+                        if (stats.llm.byPurpose.isNotEmpty()) {
+                            Spacer(modifier = Modifier.height(4.dp))
+                            Text("Breakdown by Type of Use:", style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold))
+                            stats.llm.byPurpose.forEach { (purpose, data) ->
+                                val cleanPurpose = when (purpose) {
+                                    "talk" -> "Talk (AI Tutor)"
+                                    "assessment" -> "Assessment"
+                                    "word_tap" -> "Word Tap"
+                                    else -> purpose.replaceFirstChar { it.uppercase() }
+                                }
+                                Column(modifier = Modifier.padding(start = 8.dp, bottom = 4.dp)) {
+                                    Text("• $cleanPurpose: ${data.calls} calls", style = MaterialTheme.typography.labelSmall, fontWeight = FontWeight.SemiBold)
+                                    Text(
+                                        "  Tokens: ${data.inputTokens + data.outputTokens} (In: ${data.inputTokens}, Cache: ${data.cachedTokens}, Out: ${data.outputTokens})",
+                                        style = MaterialTheme.typography.labelSmall,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                                    )
+                                }
+                            }
                         }
 
                         // TTS details
                         if (stats.tts.calls > 0) {
-                            Spacer(modifier = Modifier.height(4.dp))
+                            Spacer(modifier = Modifier.height(8.dp))
                             Text("🔊 Text to Speech (TTS)", style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold))
                             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
                                 Text("Calls: ${stats.tts.calls}", style = MaterialTheme.typography.bodySmall)
                                 Text("Characters: ${stats.tts.charCount}", style = MaterialTheme.typography.bodySmall)
                             }
-                            stats.tts.byProvider.forEach { (provider, data) ->
-                                Text("$provider: ${data.calls} calls (${data.charCount} chars)", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            
+                            if (stats.tts.byProvider.isNotEmpty()) {
+                                Spacer(modifier = Modifier.height(4.dp))
+                                Text("Breakdown by Model:", style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold))
+                                stats.tts.byProvider.forEach { (provider, data) ->
+                                    Text("• $provider: ${data.calls} calls (${data.charCount} chars)", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.padding(start = 8.dp))
+                                }
+                            }
+                            
+                            if (stats.tts.byPurpose.isNotEmpty()) {
+                                Spacer(modifier = Modifier.height(4.dp))
+                                Text("Breakdown by Type of Use:", style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold))
+                                stats.tts.byPurpose.forEach { (purpose, data) ->
+                                    val cleanPurpose = when (purpose) {
+                                        "talk" -> "Talk (AI Tutor)"
+                                        "assessment" -> "Assessment"
+                                        "word_tap" -> "Word Tap"
+                                        else -> purpose.replaceFirstChar { it.uppercase() }
+                                    }
+                                    Text("• $cleanPurpose: ${data.calls} calls (${data.charCount} chars)", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.padding(start = 8.dp))
+                                }
                             }
                         }
 
                         // STT details
                         if (stats.stt.calls > 0) {
-                            Spacer(modifier = Modifier.height(4.dp))
+                            Spacer(modifier = Modifier.height(8.dp))
                             Text("🎙️ Speech to Text (STT)", style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold))
                             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
                                 Text("Calls: ${stats.stt.calls}", style = MaterialTheme.typography.bodySmall)
                                 Text("Duration: ${stats.stt.durationMs / 1000}s", style = MaterialTheme.typography.bodySmall)
+                            }
+                            
+                            if (stats.stt.byProvider.isNotEmpty()) {
+                                Spacer(modifier = Modifier.height(4.dp))
+                                Text("Breakdown by Model:", style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold))
+                                stats.stt.byProvider.forEach { (provider, data) ->
+                                    Text("• $provider: ${data.calls} calls (${data.durationMs / 1000}s)", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.padding(start = 8.dp))
+                                }
+                            }
+                            
+                            if (stats.stt.byPurpose.isNotEmpty()) {
+                                Spacer(modifier = Modifier.height(4.dp))
+                                Text("Breakdown by Type of Use:", style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold))
+                                stats.stt.byPurpose.forEach { (purpose, data) ->
+                                    val cleanPurpose = when (purpose) {
+                                        "talk" -> "Talk (AI Tutor)"
+                                        "assessment" -> "Assessment"
+                                        "word_tap" -> "Word Tap"
+                                        else -> purpose.replaceFirstChar { it.uppercase() }
+                                    }
+                                    Text("• $cleanPurpose: ${data.calls} calls (${data.durationMs / 1000}s)", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.padding(start = 8.dp))
+                                }
                             }
                         }
                     } else {

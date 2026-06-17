@@ -374,9 +374,13 @@ def upload_pdf_images(
     if not unique_refs:
         return content_str
 
-    if images_dir is None or not images_dir.is_dir():
+    if images_dir is None:
         print(f'⚠️   {len(unique_refs)} pdf-image:// reference(s) found but no images directory provided.')
         print(f'    Pass --images-dir to upload images and resolve URLs.')
+        return content_str
+
+    if not images_dir.is_dir():
+        print(f'⚠️   {len(unique_refs)} pdf-image:// reference(s) found but images directory does not exist: {images_dir}')
         return content_str
 
     print(f'🖼   Uploading {len(unique_refs)} PDF image(s) from {images_dir} ...')
@@ -613,14 +617,11 @@ def main() -> None:
         return
 
     # Resolve images directory (auto-detect: <json_stem>/images/ beside the JSON file)
-    images_dir: Path | None = None
     if args.images_dir:
         images_dir = Path(args.images_dir)
     else:
-        auto_dir = json_path.parent / json_path.stem / 'images'
-        if auto_dir.is_dir():
-            images_dir = auto_dir
-            print(f'🖼   Auto-detected images directory: {images_dir}')
+        images_dir = json_path.parent / json_path.stem / 'images'
+        print(f'🖼   Using images directory: {images_dir}')
 
     content_bytes = json_path.read_bytes()
     upload_to_firebase(

@@ -53,6 +53,7 @@ class VocabRepository @Inject constructor(
     private val xaiApi:              XaiApi,
     private val sarvamChatApi:       SarvamChatApi,
     private val globalSettingsRepo:  GlobalSettingsRepository,
+    private val usageRepo:           UsageRepository,
 ) {
     private val bucket  = "aaravtutor-1e880.firebasestorage.app"
     private val project = "aaravtutor-1e880"
@@ -610,6 +611,7 @@ class VocabRepository @Inject constructor(
 
         var llmInputJson = ""
         var llmOutputJson = ""
+        var resObj: Any? = null
 
         // Call multi-engine LLM
         val rawResponse = when {
@@ -625,6 +627,7 @@ class VocabRepository @Inject constructor(
                 )
                 llmInputJson = com.google.gson.Gson().toJson(request)
                 val res = xaiApi.createResponse("Bearer ${BuildConfig.XAI_API_KEY}", request)
+                resObj = res
                 llmOutputJson = com.google.gson.Gson().toJson(res)
                 extractTextFromLlmResponse(res)
             }
@@ -640,6 +643,7 @@ class VocabRepository @Inject constructor(
                 )
                 llmInputJson = com.google.gson.Gson().toJson(request)
                 val res = openAiApi.createResponse("Bearer ${BuildConfig.OPENAI_API_KEY}", request)
+                resObj = res
                 llmOutputJson = com.google.gson.Gson().toJson(res)
                 extractTextFromLlmResponse(res)
             }
@@ -656,6 +660,7 @@ class VocabRepository @Inject constructor(
                 )
                 llmInputJson = com.google.gson.Gson().toJson(request)
                 val res = sarvamChatApi.chatCompletions(BuildConfig.SARVAM_API_KEY, request)
+                resObj = res
                 llmOutputJson = com.google.gson.Gson().toJson(res)
                 res.choices?.firstOrNull()?.message?.content ?: "{}"
             }
@@ -671,6 +676,7 @@ class VocabRepository @Inject constructor(
                 )
                 llmInputJson = com.google.gson.Gson().toJson(request)
                 val res = geminiApi.generateContent(model, BuildConfig.GEMINI_API_KEY, request)
+                resObj = res
                 llmOutputJson = com.google.gson.Gson().toJson(res)
                 if (res.error != null) {
                     throw Exception("Gemini content generation error ${res.error.code}: ${res.error.message}")
@@ -678,6 +684,44 @@ class VocabRepository @Inject constructor(
                 res.candidates?.firstOrNull()?.content?.parts?.firstOrNull()?.text
                     ?: throw Exception("Gemini content generation returned no candidates")
             }
+        }
+
+        try {
+            var inputTokens = 0
+            var outputTokens = 0
+            var cachedTokens = 0
+            when (resObj) {
+                is LlmResponseResponse -> {
+                    inputTokens = resObj.usage?.inputTokens ?: 0
+                    outputTokens = resObj.usage?.outputTokens ?: 0
+                    cachedTokens = resObj.usage?.details?.cachedTokens ?: 0
+                }
+                is SarvamChatResponse -> {
+                    inputTokens = resObj.usage?.promptTokens ?: 0
+                    outputTokens = resObj.usage?.completionTokens ?: 0
+                }
+                is GeminiResponse -> {
+                    inputTokens = resObj.usageMetadata?.promptTokenCount ?: 0
+                    outputTokens = resObj.usageMetadata?.candidatesTokenCount ?: 0
+                    cachedTokens = resObj.usageMetadata?.cachedContentTokenCount ?: 0
+                }
+            }
+            val usageLang = when (subject.lowercase()) {
+                "punjabi" -> "pa"
+                "hindi" -> "hi"
+                else -> "en"
+            }
+            usageRepo.recordLlm(
+                childName = childName,
+                purpose = "word_tap",
+                provider = model,
+                language = usageLang,
+                inputTokens = inputTokens,
+                outputTokens = outputTokens,
+                cachedInputTokens = cachedTokens
+            )
+        } catch (e: Exception) {
+            Log.e("VocabRepo", "Error recording word_tap LLM usage", e)
         }
 
         val clean = cleanResponseText(rawResponse)
@@ -751,6 +795,16 @@ class VocabRepository @Inject constructor(
             ttsModelUsed  = ttsResult.model,
             ttsTokenUsage = ttsResult.tokens,
         )
+        try {
+            usageRepo.recordTts(
+                childName = childName,
+                purpose = "word_tap",
+                provider = ttsResult.model,
+                charCount = ttsResult.tokens
+            )
+        } catch (e: Exception) {
+            Log.e("VocabRepo", "Error recording word_tap TTS usage", e)
+        }
         writeFirestore(entry, subject)
         return entry
     }
