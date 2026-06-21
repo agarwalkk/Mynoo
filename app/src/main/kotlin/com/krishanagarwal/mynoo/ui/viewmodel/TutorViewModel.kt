@@ -442,7 +442,7 @@ class TutorViewModel @Inject constructor(
 
             try {
                 activeChildState?.name?.let { name ->
-                    if (name.isNotBlank() && resObj != null) {
+                    if (name.isNotBlank()) {
                         var inputTokens = 0
                         var outputTokens = 0
                         var cachedTokens = 0

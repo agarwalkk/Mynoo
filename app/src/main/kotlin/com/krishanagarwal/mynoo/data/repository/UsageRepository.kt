@@ -173,6 +173,7 @@ class UsageRepository @Inject constructor(
                 .get(Source.DEFAULT)
                 .await()
         } catch (e: Exception) {
+            android.util.Log.e("UsageRepo", "Error fetching usage stats", e)
             return@withContext UsageSummary()
         }
 

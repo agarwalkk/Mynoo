@@ -166,6 +166,13 @@ class LearnViewModel @Inject constructor(
             try {
                 for (seg in segs) {
                     if (!isActive) break
+
+                    // Wait if paused
+                    while (_reader.value.isPaused && isActive) {
+                        delay(100)
+                    }
+                    if (!isActive) break
+
                     _reader.update {
                         it.copy(
                             activeSentenceId = seg.id,
@@ -177,6 +184,13 @@ class LearnViewModel @Inject constructor(
                         repo.getWordTimings(classNum, subject, chapterId, seg.id, seg.kind)
                     }
                     val audioSource = repo.getAudioSource(classNum, subject, chapterId, seg.id, seg.kind, audioExt)
+
+                    // Wait if paused (in case pause was pressed while fetching timings/source)
+                    while (_reader.value.isPaused && isActive) {
+                        delay(100)
+                    }
+                    if (!isActive) break
+
                     playAndWait(audioSource, timings)
                 }
                 completedNaturally = true
@@ -216,24 +230,32 @@ class LearnViewModel @Inject constructor(
     }
 
     fun pauseResume() {
-        val mp = mediaPlayer ?: return
+        if (!_reader.value.isPlaying) return
+
         if (_reader.value.isPaused) {
-            // Resume audio at the stored speed
-            try {
-                mp.start()
-                if (playbackSpeed != 1.0f) {
-                    mp.playbackParams = PlaybackParams().setSpeed(playbackSpeed).setPitch(1.0f)
-                }
-            } catch (_: Exception) {}
-            // Re-schedule highlights for remaining words from where we paused
-            scheduleWordHighlights(currentTimings, fromSec = pausePosSec)
+            // Resume
             _reader.update { it.copy(isPaused = false) }
+            val mp = mediaPlayer
+            if (mp != null) {
+                try {
+                    mp.start()
+                    if (playbackSpeed != 1.0f) {
+                        mp.playbackParams = PlaybackParams().setSpeed(playbackSpeed).setPitch(1.0f)
+                    }
+                } catch (_: Exception) {}
+                scheduleWordHighlights(currentTimings, fromSec = pausePosSec)
+            }
         } else {
-            // Record position then cancel pending highlights before pausing audio
-            pausePosSec = try { mp.currentPosition / 1000.0 } catch (_: Exception) { 0.0 }
-            wordScope?.cancel(); wordScope = null
-            try { mp.pause() } catch (_: Exception) {}
+            // Pause
             _reader.update { it.copy(isPaused = true) }
+            wordScope?.cancel(); wordScope = null
+            val mp = mediaPlayer
+            if (mp != null) {
+                pausePosSec = try { mp.currentPosition / 1000.0 } catch (_: Exception) { 0.0 }
+                try { mp.pause() } catch (_: Exception) {}
+            } else {
+                pausePosSec = 0.0
+            }
         }
     }
 
@@ -456,7 +478,7 @@ class LearnViewModel @Inject constructor(
     }
 
     private fun buildSegments(content: ChapterContent): List<AudioSegment> {
-        val noAudio = setOf("heading", "subheading", "attribution", "table", "media")
+        val noAudio = setOf("table", "media", "assessment")
         val result  = mutableListOf<AudioSegment>()
         for (para in content.paragraphs) {
             if (para.type in noAudio) continue

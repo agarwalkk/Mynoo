@@ -28,5 +28,10 @@ service cloud.firestore {
       allow read, write: if true;
     }
 
+    // ── Usage logs ───────────────────────────────────────────────────────
+    match /usageLogs/{doc} {
+      allow read, write: if true;
+    }
+
   }
 }

@@ -204,7 +204,7 @@ class ChapterManagementViewModel @Inject constructor(
                 // 1. Fetch content JSON to parse segments
                 val content = repo.getContent(classNum, subject, chapterId)
                 val segments = mutableListOf<SegmentItem>()
-                val noAudioTypes = setOf("heading", "attribution", "subheading", "table", "note")
+                val noAudioTypes = setOf("table", "media", "assessment")
 
                 for (p in content.paragraphs) {
                     if (noAudioTypes.contains(p.type)) continue

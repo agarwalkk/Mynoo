@@ -8,6 +8,12 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.gestures.detectVerticalDragGestures
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.tween
+import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.unit.IntOffset
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -52,10 +58,20 @@ import coil.request.ImageRequest
 import com.krishanagarwal.mynoo.data.repository.ChapterParagraph
 import com.krishanagarwal.mynoo.data.repository.ChapterSentence
 import com.krishanagarwal.mynoo.data.repository.MediaItem
+import com.krishanagarwal.mynoo.data.repository.TableCell
+import kotlinx.coroutines.launch
 import com.krishanagarwal.mynoo.data.repository.WordTiming
 import com.krishanagarwal.mynoo.ui.theme.LocalMynooExtras
 import com.krishanagarwal.mynoo.ui.viewmodel.LearnViewModel
 import com.krishanagarwal.mynoo.ui.viewmodel.VocabPopupState
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.Spring
+import androidx.compose.foundation.Canvas
+import androidx.compose.ui.graphics.graphicsLayer
 
 @OptIn(ExperimentalMaterial3Api::class)
 
@@ -86,6 +102,7 @@ fun ChapterReaderScreen(
         }
     }
 
+    val checkedSteps       = remember { mutableStateMapOf<String, Boolean>() }
     var meaningPopup       by remember { mutableStateOf<ChapterSentence?>(null) }
     var mediaPopup         by remember { mutableStateOf<MediaItem?>(null) }
     var sliderDragPosition by remember { mutableStateOf<Float?>(null) }
@@ -110,7 +127,16 @@ fun ChapterReaderScreen(
         val paraIdx = paragraphs.indexOfFirst { para ->
             para.sentences.any { it.id == id } || para.id == id
         }
-        if (paraIdx >= 0) listState.animateScrollToItem(paraIdx.coerceAtLeast(0))
+        if (paraIdx >= 0) {
+            val viewportHeight = listState.layoutInfo.viewportSize.height
+            val offset = if (viewportHeight > 0) {
+                // Position the paragraph 35% of the viewport height below the top
+                -(viewportHeight * 0.35f).toInt()
+            } else {
+                0
+            }
+            listState.animateScrollToItem(paraIdx.coerceAtLeast(0), offset)
+        }
     }
 
     // Stop playback when the screen leaves composition
@@ -189,6 +215,7 @@ fun ChapterReaderScreen(
                                     subject          = subject,
                                     themeColor       = themeColor,
                                     fontSizeOffset   = fontSizeOffset,
+                                    checkedSteps     = checkedSteps,
                                     onLongPress      = {
                                         meaningPopup = it
                                         vm.setResumePoint(it.id)
@@ -202,6 +229,14 @@ fun ChapterReaderScreen(
                             state = pullToRefreshState,
                             isRefreshing = ui.isRefreshing,
                             modifier = Modifier.align(Alignment.TopCenter)
+                        )
+                        SmartScrollbar(
+                            listState = listState,
+                            themeColor = themeColor,
+                            modifier = Modifier
+                                .align(Alignment.CenterEnd)
+                                .fillMaxHeight()
+                                .padding(end = 4.dp, top = 16.dp, bottom = if (ui.isPlaying || ui.isPaused) 120.dp else 16.dp)
                         )
                     }
                 }
@@ -511,6 +546,272 @@ fun ChapterReaderScreen(
     }
 }
 
+@Composable
+private fun AssessmentBlock(
+    para:             ChapterParagraph,
+    activeSentenceId: String?,
+    themeColor:       Color,
+    fontSizeOffset:   Int,
+) {
+    val isMcq = para.assessmentType == "mcq"
+    val isParagraphActive = para.id.isNotBlank() && activeSentenceId == para.id
+
+    var selectedOptionIdx by remember { mutableStateOf<Int?>(null) }
+    var isSolutionRevealed by remember { mutableStateOf(false) }
+    var isAnswerChecked by remember { mutableStateOf(false) }
+    var isCorrect by remember { mutableStateOf(false) }
+    var showCelebrate by remember { mutableStateOf(false) }
+
+    val correctIdx = remember(para.meaning) { getCorrectOptionIndex(para.meaning) }
+
+    val isActiveBorder = if (isParagraphActive) BorderStroke(2.5.dp, themeColor) else BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f))
+
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = if (isParagraphActive) themeColor.copy(alpha = 0.03f) else MaterialTheme.colorScheme.surface
+        ),
+        border = isActiveBorder,
+        elevation = CardDefaults.cardElevation(defaultElevation = if (isParagraphActive) 4.dp else 2.dp)
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                Text(
+                    text = if (isMcq) "🧩 MCQ" else "❓ Short Answer",
+                    style = MaterialTheme.typography.labelMedium.copy(
+                        fontWeight = FontWeight.Bold,
+                        color = themeColor
+                    ).scale(fontSizeOffset),
+                    modifier = Modifier
+                        .background(themeColor.copy(alpha = 0.1f), RoundedCornerShape(8.dp))
+                        .padding(horizontal = 8.dp, vertical = 4.dp)
+                )
+            }
+
+            Text(
+                text = renderInline(para.question),
+                style = MaterialTheme.typography.titleMedium.copy(
+                    fontWeight = FontWeight.Bold,
+                    lineHeight = 24.sp
+                ).scale(fontSizeOffset),
+                color = MaterialTheme.colorScheme.onSurface
+            )
+
+            if (isMcq) {
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    para.options.forEachIndexed { idx, option ->
+                        val isSelected = selectedOptionIdx == idx
+                        val isThisCorrectIdx = (correctIdx != null && idx == correctIdx)
+                        
+                        val cardScale by animateFloatAsState(
+                            targetValue = if (isAnswerChecked && isThisCorrectIdx && isSelected) 1.05f else 1.0f,
+                            animationSpec = spring(
+                                dampingRatio = Spring.DampingRatioHighBouncy,
+                                stiffness = Spring.StiffnessMedium
+                            ),
+                            label = "cardScale"
+                        )
+
+                        val targetBorder = when {
+                            isAnswerChecked && isThisCorrectIdx -> BorderStroke(2.dp, Color(0xFF2ECC71))
+                            isAnswerChecked && isSelected && !isCorrect -> BorderStroke(2.dp, Color(0xFFE74C3C))
+                            isSelected -> BorderStroke(2.dp, themeColor)
+                            else -> BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.3f))
+                        }
+
+                        val targetContainer = when {
+                            isAnswerChecked && isThisCorrectIdx -> Color(0xFFE8F8F5)
+                            isAnswerChecked && isSelected && !isCorrect -> Color(0xFFFDEDEC)
+                            isSelected -> themeColor.copy(alpha = 0.08f)
+                            else -> MaterialTheme.colorScheme.surface
+                        }
+
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .graphicsLayer {
+                                    scaleX = cardScale
+                                    scaleY = cardScale
+                                },
+                            contentAlignment = Alignment.Center
+                        ) {
+                            OutlinedCard(
+                                onClick = {
+                                    selectedOptionIdx = idx
+                                    isAnswerChecked = false
+                                    isSolutionRevealed = false
+                                    showCelebrate = false
+                                },
+                                shape = RoundedCornerShape(12.dp),
+                                border = targetBorder,
+                                colors = CardDefaults.outlinedCardColors(
+                                    containerColor = targetContainer
+                                ),
+                                modifier = Modifier.fillMaxWidth()
+                            ) {
+                                Row(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(horizontal = 16.dp, vertical = 12.dp),
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.spacedBy(12.dp)
+                                ) {
+                                    val optionLetter = ('A' + idx).toString()
+                                    
+                                    val badgeBg = when {
+                                        isAnswerChecked && isThisCorrectIdx -> Color(0xFF2ECC71)
+                                        isAnswerChecked && isSelected && !isCorrect -> Color(0xFFE74C3C)
+                                        isSelected -> themeColor
+                                        else -> MaterialTheme.colorScheme.surfaceVariant
+                                    }
+                                    
+                                    Box(
+                                        modifier = Modifier
+                                            .size(28.dp)
+                                            .background(
+                                                color = badgeBg,
+                                                shape = RoundedCornerShape(50)
+                                            ),
+                                        contentAlignment = Alignment.Center
+                                    ) {
+                                        Text(
+                                            text = optionLetter,
+                                            style = MaterialTheme.typography.bodyMedium.copy(
+                                                fontWeight = FontWeight.Bold,
+                                                color = if (isSelected || (isAnswerChecked && isThisCorrectIdx)) Color.White else MaterialTheme.colorScheme.onSurfaceVariant
+                                            ).scale(fontSizeOffset)
+                                        )
+                                    }
+
+                                    Text(
+                                        text = renderInline(option),
+                                        style = MaterialTheme.typography.bodyMedium.copy(
+                                            fontWeight = if (isSelected) FontWeight.SemiBold else FontWeight.Normal
+                                        ).scale(fontSizeOffset),
+                                        color = if (isAnswerChecked && isThisCorrectIdx) Color(0xFF117A65) else MaterialTheme.colorScheme.onSurface
+                                    )
+                                }
+                            }
+                            if (isThisCorrectIdx) {
+                                ParticleBurstEffect(
+                                    trigger = showCelebrate,
+                                    modifier = Modifier.matchParentSize()
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+
+            val isEnabled = !isMcq || selectedOptionIdx != null
+            val buttonText = if (isSolutionRevealed) "Hide Explanation" else if (isMcq) "Check Answer" else "Reveal Answer"
+
+            Button(
+                onClick = {
+                    if (isSolutionRevealed) {
+                        isSolutionRevealed = false
+                        isAnswerChecked = false
+                        showCelebrate = false
+                    } else {
+                        if (isMcq && selectedOptionIdx != null) {
+                            val correct = (correctIdx != null && selectedOptionIdx == correctIdx)
+                            isCorrect = correct
+                            isAnswerChecked = true
+                            isSolutionRevealed = true
+                            if (correct) {
+                                showCelebrate = true
+                            }
+                        } else {
+                            // Short answer
+                            isSolutionRevealed = true
+                        }
+                    }
+                },
+                enabled = isEnabled,
+                shape = RoundedCornerShape(50),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = themeColor,
+                    contentColor = Color.White
+                ),
+                modifier = Modifier.align(Alignment.End)
+            ) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(6.dp)
+                ) {
+                    Icon(
+                        imageVector = if (isSolutionRevealed) Icons.Default.VisibilityOff else Icons.Default.Visibility,
+                        contentDescription = null,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Text(
+                        text = buttonText,
+                        style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.Bold)
+                    )
+                }
+            }
+
+            if (isSolutionRevealed) {
+                if (isMcq && isAnswerChecked) {
+                    FeedbackBanner(
+                        isCorrect = isCorrect,
+                        explanation = para.meaning,
+                        fontSizeOffset = fontSizeOffset,
+                        themeColor = themeColor
+                    )
+                } else {
+                    Card(
+                        modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
+                        shape = RoundedCornerShape(12.dp),
+                        colors = CardDefaults.cardColors(containerColor = Color(0xFFF4F6F6)),
+                        border = BorderStroke(1.dp, Color(0xFFD5DBDB))
+                    ) {
+                        Column(
+                            modifier = Modifier.padding(16.dp),
+                            verticalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.spacedBy(8.dp)
+                            ) {
+                                Text(text = "💡", style = MaterialTheme.typography.titleMedium)
+                                Text(
+                                    text = "Explanation:",
+                                    style = MaterialTheme.typography.titleSmall.copy(
+                                        fontWeight = FontWeight.Bold,
+                                        color = Color(0xFF1B4F72)
+                                    ).scale(fontSizeOffset)
+                                )
+                            }
+                            Text(
+                                text = renderMeaning(para.meaning),
+                                style = MaterialTheme.typography.bodyMedium.copy(
+                                    lineHeight = 22.sp,
+                                    color = MaterialTheme.colorScheme.onSurface
+                                ).scale(fontSizeOffset)
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 // ── Paragraph renderer ────────────────────────────────────────────────────────
 
 @Composable
@@ -521,6 +822,7 @@ private fun ParagraphBlock(
     subject:          String,
     themeColor:       Color,
     fontSizeOffset:   Int,
+    checkedSteps:     MutableMap<String, Boolean>,
     onLongPress:      (ChapterSentence) -> Unit,
     onWordTap:        (word: String, sentenceText: String) -> Unit,
     onMediaClick:     (MediaItem) -> Unit,
@@ -622,31 +924,122 @@ private fun ParagraphBlock(
                 }
             }
         }
-        "equation" -> Card(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 6.dp),
-            shape = RoundedCornerShape(12.dp),
-            colors = CardDefaults.cardColors(containerColor = Color(0xFF1E272C)),
-            border = BorderStroke(1.5.dp, Color(0xFF37474F)),
-            elevation = CardDefaults.cardElevation(defaultElevation = 3.dp)
-        ) {
-            Column(
+        "assessment" -> {
+            AssessmentBlock(
+                para = para,
+                activeSentenceId = activeSentenceId,
+                themeColor = themeColor,
+                fontSizeOffset = fontSizeOffset
+            )
+        }
+        "equation" -> {
+            val isActive = para.id.isNotBlank() && activeSentenceId == para.id
+            val blueprintBorder = if (isActive) {
+                BorderStroke(2.5.dp, Color(0xFF00E5FF))
+            } else {
+                BorderStroke(1.5.dp, Color(0xFF00E5FF).copy(alpha = 0.4f))
+            }
+            Card(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(16.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
+                    .padding(vertical = 8.dp)
+                    .drawBehind {
+                        val gridSpacing = 16.dp.toPx()
+                        val gridColor = Color(0xFF00E5FF).copy(alpha = 0.08f)
+                        val strokeWidth = 1.dp.toPx()
+                        // Draw vertical lines
+                        var x = 0f
+                        while (x < size.width) {
+                            drawLine(gridColor, Offset(x, 0f), Offset(x, size.height), strokeWidth)
+                            x += gridSpacing
+                        }
+                        // Draw horizontal lines
+                        var y = 0f
+                        while (y < size.height) {
+                            drawLine(gridColor, Offset(0f, y), Offset(size.width, y), strokeWidth)
+                            y += gridSpacing
+                        }
+                    },
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(containerColor = Color(0xFF0B1E36)),
+                border = blueprintBorder,
+                elevation = CardDefaults.cardElevation(defaultElevation = if (isActive) 6.dp else 4.dp)
             ) {
-                Text(
-                    text      = para.text,
-                    style     = MaterialTheme.typography.titleMedium.copy(
-                        fontFamily = FontFamily.Monospace,
-                        fontWeight = FontWeight.Bold,
-                        color      = Color(0xFFE0F7FA)
-                    ).scale(fontSizeOffset),
-                    textAlign = TextAlign.Center,
-                    modifier  = Modifier.fillMaxWidth()
-                )
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(6.dp),
+                        modifier = Modifier
+                            .background(Color(0xFF00E5FF).copy(alpha = 0.15f), RoundedCornerShape(8.dp))
+                            .padding(horizontal = 10.dp, vertical = 4.dp)
+                    ) {
+                        Text(
+                            text = "🧪 Blueprint Lab",
+                            style = MaterialTheme.typography.labelMedium.copy(
+                                fontWeight = FontWeight.Bold,
+                                color = Color(0xFF00E5FF)
+                              ).scale(fontSizeOffset)
+                        )
+                    }
+
+                    val equationLines = para.text.split("\n")
+                    val reactionLine = equationLines.firstOrNull() ?: ""
+                    val explanationLines = equationLines.drop(1)
+
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .horizontalScroll(rememberScrollState())
+                            .padding(vertical = 8.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        val reactionParts = reactionLine.split(Regex("""\s*(→|->)\s*"""))
+                        if (reactionParts.size >= 2) {
+                            val reactants = reactionParts[0].split("+")
+                            reactants.forEachIndexed { rIdx, reactant ->
+                                SubstanceBadge(text = reactant.trim(), isProduct = false, fontSizeOffset = fontSizeOffset)
+                                if (rIdx < reactants.lastIndex) {
+                                    EquationOperator(text = "+", isArrow = false, fontSizeOffset = fontSizeOffset)
+                                }
+                            }
+                            
+                            EquationOperator(text = "→", isArrow = true, fontSizeOffset = fontSizeOffset)
+
+                            val products = reactionParts[1].split("+")
+                            products.forEachIndexed { pIdx, product ->
+                                SubstanceBadge(text = product.trim(), isProduct = true, fontSizeOffset = fontSizeOffset)
+                                if (pIdx < products.lastIndex) {
+                                    EquationOperator(text = "+", isArrow = false, fontSizeOffset = fontSizeOffset)
+                                }
+                            }
+                        } else {
+                            SubstanceBadge(text = reactionLine.trim(), isProduct = false, fontSizeOffset = fontSizeOffset)
+                        }
+                    }
+
+                    if (explanationLines.isNotEmpty()) {
+                        Spacer(Modifier.height(4.dp))
+                        explanationLines.forEach { line ->
+                            Text(
+                                text = line.trim(),
+                                style = MaterialTheme.typography.bodySmall.copy(
+                                    fontFamily = FontFamily.Monospace,
+                                    color = Color(0xFF94A3B8),
+                                    lineHeight = 16.sp
+                                ).scale(fontSizeOffset),
+                                textAlign = TextAlign.Center,
+                                modifier = Modifier.fillMaxWidth()
+                            )
+                        }
+                    }
+                }
             }
         }
         "blockquote" -> Card(
@@ -788,17 +1181,102 @@ private fun ParagraphBlock(
                             )
                         }
                         Spacer(Modifier.height(8.dp))
-                        ParagraphText(
-                            sentences        = sentences,
-                            activeSentenceId = activeSentenceId,
-                            activeWordIndex  = activeWordIndex,
-                            subject          = subject,
-                            themeColor       = themeColor,
-                            onLongPress      = onLongPress,
-                            onWordTap        = onWordTap,
-                            paraId           = para.id,
-                            style            = MaterialTheme.typography.bodyLarge.copy(lineHeight = 26.sp).scale(fontSizeOffset),
-                        )
+                        val isScienceActivity = remember(para.type, subject) {
+                            para.type == "activity" && subject.lowercase().trim() == "science"
+                        }
+                        if (isScienceActivity) {
+                            val steps = remember(para.sentences, para.items, para.text) {
+                                if (para.sentences.isNotEmpty()) {
+                                    para.sentences
+                                } else if (para.items.isNotEmpty()) {
+                                    para.items.mapIndexed { idx, itemText ->
+                                        ChapterSentence(id = "${para.id}-step-$idx", text = itemText, meaning = "")
+                                    }
+                                } else if (para.text.isNotBlank()) {
+                                    para.text.split("\n")
+                                        .filter { it.isNotBlank() }
+                                        .mapIndexed { idx, line ->
+                                            ChapterSentence(id = "${para.id}-step-$idx", text = line, meaning = "")
+                                        }
+                                } else {
+                                    emptyList()
+                                }
+                            }
+                            Column(
+                                verticalArrangement = Arrangement.spacedBy(8.dp),
+                                modifier = Modifier.fillMaxWidth().padding(top = 4.dp)
+                            ) {
+                                steps.forEach { step ->
+                                    val isChecked = checkedSteps[step.id] ?: false
+                                    val textAlpha by animateFloatAsState(
+                                        targetValue = if (isChecked) 0.5f else 1f,
+                                        animationSpec = tween(durationMillis = 300),
+                                        label = "textAlpha"
+                                    )
+                                    val strikeThroughProgress by animateFloatAsState(
+                                        targetValue = if (isChecked) 1f else 0f,
+                                        animationSpec = spring(
+                                            dampingRatio = Spring.DampingRatioMediumBouncy,
+                                            stiffness = Spring.StiffnessLow
+                                        ),
+                                        label = "strikeThrough"
+                                    )
+                                    Row(
+                                        modifier = Modifier.fillMaxWidth(),
+                                        verticalAlignment = Alignment.Top,
+                                        horizontalArrangement = Arrangement.spacedBy(10.dp)
+                                    ) {
+                                        AnimatedCheckbox(
+                                            checked = isChecked,
+                                            onCheckedChange = { checked ->
+                                                checkedSteps[step.id] = checked
+                                            },
+                                            themeColor = themeColor,
+                                            modifier = Modifier.padding(top = 2.dp)
+                                        )
+                                        ParagraphText(
+                                            sentences = listOf(step),
+                                            activeSentenceId = activeSentenceId,
+                                            activeWordIndex = activeWordIndex,
+                                            subject = subject,
+                                            themeColor = themeColor,
+                                            onLongPress = onLongPress,
+                                            onWordTap = onWordTap,
+                                            paraId = para.id,
+                                            style = MaterialTheme.typography.bodyLarge.copy(lineHeight = 26.sp).scale(fontSizeOffset),
+                                            modifier = Modifier
+                                                .weight(1f)
+                                                .alpha(textAlpha)
+                                                .drawBehind {
+                                                    if (strikeThroughProgress > 0f) {
+                                                        val y = size.height / 2f
+                                                        val lineLength = size.width * strikeThroughProgress
+                                                        drawLine(
+                                                            color = themeColor.copy(alpha = 0.7f),
+                                                            start = Offset(0f, y),
+                                                            end = Offset(lineLength, y),
+                                                            strokeWidth = 2.dp.toPx(),
+                                                            cap = StrokeCap.Round
+                                                        )
+                                                    }
+                                                }
+                                        )
+                                    }
+                                }
+                            }
+                        } else {
+                            ParagraphText(
+                                sentences        = sentences,
+                                activeSentenceId = activeSentenceId,
+                                activeWordIndex  = activeWordIndex,
+                                subject          = subject,
+                                themeColor       = themeColor,
+                                onLongPress      = onLongPress,
+                                onWordTap        = onWordTap,
+                                paraId           = para.id,
+                                style            = MaterialTheme.typography.bodyLarge.copy(lineHeight = 26.sp).scale(fontSizeOffset),
+                            )
+                        }
                     }
                 }
             }
@@ -843,6 +1321,34 @@ private fun ParagraphBlock(
             }
         }
         "table" -> {
+            val numCols = remember(para.headers, para.rows) {
+                maxOf(
+                    para.headers.size,
+                    para.rows.maxOfOrNull { it.size } ?: 0
+                )
+            }
+            val colWeights = remember(para.headers, para.rows, numCols) {
+                if (numCols == 0) emptyList<Float>()
+                else {
+                    val lengths = IntArray(numCols) { 10 }
+                    para.headers.forEachIndexed { idx, header ->
+                        if (idx < numCols) {
+                            lengths[idx] = maxOf(lengths[idx], header.length)
+                        }
+                    }
+                    para.rows.forEach { row ->
+                        row.forEachIndexed { idx, cell ->
+                            if (idx < numCols) {
+                                val badgeExtra = if (!cell.colorHint.isNullOrBlank()) 12 else 0
+                                lengths[idx] = maxOf(lengths[idx], cell.value.length + badgeExtra)
+                            }
+                        }
+                    }
+                    val sum = lengths.sum().toFloat()
+                    lengths.map { if (sum > 0f) it.toFloat() / sum else 1f / numCols }
+                }
+            }
+
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -852,7 +1358,7 @@ private fun ParagraphBlock(
                 elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
                 border = BorderStroke(1.dp, themeColor.copy(alpha = 0.3f))
             ) {
-                Column {
+                Column(modifier = Modifier.fillMaxWidth()) {
                     if (para.caption.isNotBlank()) {
                         Text(
                             text = para.caption,
@@ -863,39 +1369,78 @@ private fun ParagraphBlock(
                             modifier = Modifier.padding(16.dp)
                         )
                     }
-                    Box(modifier = Modifier.horizontalScroll(rememberScrollState())) {
-                        Column {
-                            if (para.headers.isNotEmpty()) {
-                                Row(
-                                    modifier = Modifier
-                                        .background(themeColor)
-                                        .padding(vertical = 12.dp, horizontal = 16.dp)
-                                ) {
-                                    para.headers.forEach { header ->
-                                        Text(
-                                            text = header,
-                                            style = MaterialTheme.typography.bodyMedium.copy(
-                                                fontWeight = FontWeight.Bold,
-                                                color = Color.White
-                                            ).scale(fontSizeOffset),
-                                            modifier = Modifier.widthIn(min = 120.dp).padding(end = 16.dp)
-                                        )
-                                    }
+                    Column(modifier = Modifier.fillMaxWidth()) {
+                        if (para.headers.isNotEmpty()) {
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .background(themeColor)
+                                    .padding(vertical = 12.dp, horizontal = 16.dp)
+                            ) {
+                                para.headers.forEachIndexed { idx, header ->
+                                    val weight = colWeights.getOrNull(idx) ?: (1f / numCols)
+                                    Text(
+                                        text = header,
+                                        style = MaterialTheme.typography.bodyMedium.copy(
+                                            fontWeight = FontWeight.Bold,
+                                            color = Color.White
+                                        ).scale(fontSizeOffset),
+                                        modifier = Modifier
+                                            .weight(weight)
+                                            .padding(end = 8.dp)
+                                    )
                                 }
                             }
-                            para.rows.forEachIndexed { rowIndex, rowData ->
-                                val rowBg = if (rowIndex % 2 == 0) Color.Transparent else Color(0xFFF5F2EB)
-                                Row(
-                                    modifier = Modifier
-                                        .background(rowBg)
-                                        .padding(vertical = 12.dp, horizontal = 16.dp)
-                                ) {
-                                    rowData.forEach { cell ->
-                                        Text(
-                                            text = renderInline(cell),
-                                            style = MaterialTheme.typography.bodyMedium.scale(fontSizeOffset),
-                                            modifier = Modifier.widthIn(min = 120.dp).padding(end = 16.dp)
-                                        )
+                        }
+                        para.rows.forEachIndexed { rowIndex, rowData ->
+                            val rowBg = if (rowIndex % 2 == 0) Color.Transparent else Color(0xFFF5F2EB)
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .background(rowBg)
+                                    .padding(vertical = 12.dp, horizontal = 16.dp)
+                            ) {
+                                rowData.forEachIndexed { idx, cell ->
+                                    val weight = colWeights.getOrNull(idx) ?: (1f / numCols)
+                                    Box(
+                                        modifier = Modifier
+                                            .weight(weight)
+                                            .padding(end = 8.dp),
+                                        contentAlignment = Alignment.CenterStart
+                                    ) {
+                                        if (!cell.colorHint.isNullOrBlank()) {
+                                            val badgeColor = getColorForHint(cell.colorHint)
+                                            val isLightBg = (0.2126f * badgeColor.red + 0.7152f * badgeColor.green + 0.0722f * badgeColor.blue) > 0.5f
+                                            val contrastTextColor = if (isLightBg) Color(0xFF1E293B) else Color.White
+                                            Surface(
+                                                shape = RoundedCornerShape(50),
+                                                color = badgeColor,
+                                                border = BorderStroke(1.dp, badgeColor.copy(alpha = 0.2f)),
+                                                modifier = Modifier.fillMaxWidth().padding(vertical = 2.dp)
+                                            ) {
+                                                Box(
+                                                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
+                                                    contentAlignment = Alignment.Center
+                                                ) {
+                                                    Text(
+                                                        text = renderInline(cell.value),
+                                                        style = MaterialTheme.typography.bodyMedium.copy(
+                                                            fontWeight = FontWeight.Bold,
+                                                            color = contrastTextColor
+                                                        ).scale(fontSizeOffset),
+                                                        maxLines = 2,
+                                                        overflow = TextOverflow.Ellipsis,
+                                                        textAlign = TextAlign.Center
+                                                    )
+                                                }
+                                            }
+                                        } else {
+                                            Text(
+                                                text = renderInline(cell.value),
+                                                style = MaterialTheme.typography.bodyMedium.scale(fontSizeOffset),
+                                                modifier = Modifier.padding(vertical = 8.dp)
+                                            )
+                                        }
                                     }
                                 }
                             }
@@ -1223,6 +1768,20 @@ private fun VocabPopupDialog(
     onPlayStop:          () -> Unit,
     onDismiss:           () -> Unit,
 ) {
+    val slug = remember(subject) { subject.lowercase().trim() }
+    val (cardBg, cardBorderColor) = remember(slug) {
+        when (slug) {
+            "science" -> Color(0xFFEBF5FB) to Color(0xFF16A085)
+            "punjabi" -> Color(0xFFF5EEF8) to Color(0xFF8E44AD)
+            "hindi" -> Color(0xFFFDF2E9) to Color(0xFFE67E22)
+            "english" -> Color(0xFFE8F8F5) to Color(0xFF27AE60)
+            "mathematics", "math" -> Color(0xFFEBF5FB) to Color(0xFF2980B9)
+            "social studies", "social_studies" -> Color(0xFFFDEDEC) to Color(0xFFC0392B)
+            "computer" -> Color(0xFFF2F4F4) to Color(0xFF7F8C8D)
+            else -> Color(0xFFFAF8F5) to Color(0xFF2980B9)
+        }
+    }
+
     Dialog(
         onDismissRequest = onDismiss,
         properties = DialogProperties(usePlatformDefaultWidth = false)
@@ -1237,8 +1796,9 @@ private fun VocabPopupDialog(
                     .wrapContentHeight(),
                 shape = RoundedCornerShape(24.dp),
                 colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.surface
+                    containerColor = cardBg
                 ),
+                border = BorderStroke(2.dp, cardBorderColor),
                 elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
             ) {
                 Column(
@@ -1283,7 +1843,7 @@ private fun VocabPopupDialog(
                                 Icon(
                                     imageVector = Icons.Default.Refresh,
                                     contentDescription = "Refresh",
-                                    tint = MaterialTheme.colorScheme.primary,
+                                    tint = cardBorderColor,
                                     modifier = Modifier.size(20.dp)
                                 )
                             }
@@ -1306,7 +1866,7 @@ private fun VocabPopupDialog(
                                 style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold).scale(fontSizeOffset)
                             )
                             if (state is VocabPopupState.Found) {
-                                val tintColor = if (playing) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.primary
+                                val tintColor = if (playing) MaterialTheme.colorScheme.error else cardBorderColor
                                 IconButton(
                                     onClick = onPlayStop,
                                     modifier = Modifier.size(32.dp)
@@ -1355,7 +1915,7 @@ private fun VocabPopupDialog(
                                 Icon(
                                     imageVector = Icons.Default.Info,
                                     contentDescription = "Info",
-                                    tint = MaterialTheme.colorScheme.primary,
+                                    tint = cardBorderColor,
                                     modifier = Modifier.size(20.dp)
                                 )
                             }
@@ -1381,7 +1941,7 @@ private fun VocabPopupDialog(
                         }
                     }
 
-                    HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f))
+                    HorizontalDivider(color = cardBorderColor.copy(alpha = 0.3f))
 
                     Box(
                         modifier = Modifier
@@ -1394,7 +1954,7 @@ private fun VocabPopupDialog(
                                 verticalAlignment     = Alignment.CenterVertically,
                                 horizontalArrangement = Arrangement.Center,
                             ) {
-                                CircularProgressIndicator(Modifier.size(24.dp), strokeWidth = 2.dp)
+                                CircularProgressIndicator(Modifier.size(24.dp), strokeWidth = 2.dp, color = cardBorderColor)
                                 Spacer(Modifier.width(12.dp))
                                 Text("Finding meaning…", style = MaterialTheme.typography.bodyMedium.scale(fontSizeOffset))
                             }
@@ -1411,8 +1971,8 @@ private fun VocabPopupDialog(
                                                 if (idx > 0) append(" ")
                                                 if (idx == vocabActiveWordIndex) {
                                                     withStyle(SpanStyle(
-                                                        background  = MaterialTheme.colorScheme.primaryContainer,
-                                                        color       = MaterialTheme.colorScheme.onPrimaryContainer,
+                                                        background  = cardBorderColor.copy(alpha = 0.25f),
+                                                        color       = Color.Unspecified,
                                                         fontWeight  = FontWeight.Bold,
                                                     )) { append(timing.word) }
                                                 } else {
@@ -1430,7 +1990,7 @@ private fun VocabPopupDialog(
                                         ).scale(fontSizeOffset),
                                         modifier = Modifier.fillMaxWidth(),
                                     )
-                                    HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.3f))
+                                    HorizontalDivider(color = cardBorderColor.copy(alpha = 0.2f))
                                 }
                                 Text(
                                     text  = state.entry.meaning,
@@ -1438,7 +1998,7 @@ private fun VocabPopupDialog(
                                     modifier = Modifier.fillMaxWidth()
                                 )
                                 if (state.entry.translation.isNotBlank()) {
-                                    HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.3f))
+                                    HorizontalDivider(color = cardBorderColor.copy(alpha = 0.2f))
                                     Text(
                                         text  = state.entry.translation,
                                         style = MaterialTheme.typography.bodyMedium.copy(
@@ -1447,6 +2007,25 @@ private fun VocabPopupDialog(
                                         ).scale(fontSizeOffset),
                                         modifier = Modifier.fillMaxWidth()
                                     )
+                                }
+                                if (slug == "science") {
+                                    val contextInfo = getScienceContext(state.word)
+                                    if (contextInfo != null) {
+                                        HorizontalDivider(color = cardBorderColor.copy(alpha = 0.2f))
+                                        Text(
+                                            text = "🔬 Science Context",
+                                            style = MaterialTheme.typography.titleSmall.copy(
+                                                fontWeight = FontWeight.Bold,
+                                                color = cardBorderColor
+                                            ).scale(fontSizeOffset),
+                                            modifier = Modifier.fillMaxWidth()
+                                        )
+                                        Text(
+                                            text = renderMeaning(contextInfo),
+                                            style = MaterialTheme.typography.bodyMedium.scale(fontSizeOffset),
+                                            modifier = Modifier.fillMaxWidth()
+                                        )
+                                    }
                                 }
                             }
 
@@ -1472,7 +2051,7 @@ private fun VocabPopupDialog(
                                 verticalAlignment     = Alignment.CenterVertically,
                                 horizontalArrangement = Arrangement.Center,
                             ) {
-                                CircularProgressIndicator(Modifier.size(24.dp), strokeWidth = 2.dp)
+                                CircularProgressIndicator(Modifier.size(24.dp), strokeWidth = 2.dp, color = cardBorderColor)
                                 Spacer(Modifier.width(12.dp))
                                 Text(state.status, style = MaterialTheme.typography.bodyMedium.scale(fontSizeOffset))
                             }
@@ -1519,7 +2098,7 @@ private fun VocabPopupDialog(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         TextButton(onClick = onDismiss) {
-                            Text("Close", style = MaterialTheme.typography.labelLarge)
+                            Text("Close", style = MaterialTheme.typography.labelLarge, color = cardBorderColor)
                         }
 
                         val hasAction = state is VocabPopupState.Ask || state is VocabPopupState.Error
@@ -1529,14 +2108,22 @@ private fun VocabPopupDialog(
                                 is VocabPopupState.Ask ->
                                     Button(
                                         onClick = { onGenerate(state.word, state.sentence) },
-                                        shape = RoundedCornerShape(50)
+                                        shape = RoundedCornerShape(50),
+                                        colors = ButtonDefaults.buttonColors(
+                                            containerColor = cardBorderColor,
+                                            contentColor = Color.White
+                                        )
                                     ) {
                                         Text("Yes, generate!")
                                     }
                                 is VocabPopupState.Error ->
                                     Button(
                                         onClick = { onRetry(state.word, state.sentence) },
-                                        shape = RoundedCornerShape(50)
+                                        shape = RoundedCornerShape(50),
+                                        colors = ButtonDefaults.buttonColors(
+                                            containerColor = cardBorderColor,
+                                            contentColor = Color.White
+                                        )
                                     ) {
                                         Icon(Icons.Default.Refresh, contentDescription = null, modifier = Modifier.size(16.dp))
                                         Spacer(Modifier.width(6.dp))
@@ -1636,3 +2223,493 @@ private fun CacheDownloadProgressBand(
         }
     }
 }
+
+@Composable
+private fun SmartScrollbar(
+    listState: androidx.compose.foundation.lazy.LazyListState,
+    themeColor: Color,
+    modifier: Modifier = Modifier
+) {
+    val coroutineScope = rememberCoroutineScope()
+    var isDragging by remember { mutableStateOf(false) }
+    var trackHeightPx by remember { mutableStateOf(0f) }
+
+    val canScroll = listState.canScrollForward || listState.canScrollBackward
+    if (!canScroll) return
+
+    val scrollPercent by remember(listState) {
+        derivedStateOf {
+            val layoutInfo = listState.layoutInfo
+            val visibleItems = layoutInfo.visibleItemsInfo
+            val totalItems = layoutInfo.totalItemsCount
+            if (visibleItems.isEmpty() || totalItems <= 1) {
+                0f
+            } else {
+                val firstVisible = visibleItems.first()
+                val lastVisible = visibleItems.last()
+                
+                if (lastVisible.index == totalItems - 1 && lastVisible.offset + lastVisible.size <= layoutInfo.viewportEndOffset) {
+                    1f
+                } else {
+                    val firstVisibleIndex = firstVisible.index
+                    val firstVisibleOffset = -firstVisible.offset.toFloat()
+                    val firstVisibleHeight = firstVisible.size.toFloat()
+                    val fraction = if (firstVisibleHeight > 0f) firstVisibleOffset / firstVisibleHeight else 0f
+                    val progress = (firstVisibleIndex + fraction) / (totalItems - 1f)
+                    progress.coerceIn(0f, 1f)
+                }
+            }
+        }
+    }
+
+    val alpha = remember { Animatable(0f) }
+    val isScrollInProgress = listState.isScrollInProgress
+
+    LaunchedEffect(isScrollInProgress, isDragging) {
+        if (isScrollInProgress || isDragging) {
+            alpha.animateTo(1f, animationSpec = tween(150))
+        } else {
+            kotlinx.coroutines.delay(1500)
+            alpha.animateTo(0f, animationSpec = tween(500))
+        }
+    }
+
+    Box(
+        modifier = modifier
+            .width(48.dp)
+            .alpha(alpha.value)
+            .onGloballyPositioned { coords -> trackHeightPx = coords.size.height.toFloat() }
+            .pointerInput(trackHeightPx) {
+                if (trackHeightPx <= 0f) return@pointerInput
+                detectTapGestures(
+                    onPress = { offset ->
+                        isDragging = true
+                        val y = offset.y.coerceIn(0f, trackHeightPx)
+                        val pct = y / trackHeightPx
+                        val totalItems = listState.layoutInfo.totalItemsCount
+                        if (totalItems > 0) {
+                            val targetIndex = (pct * (totalItems - 1)).toInt().coerceIn(0, totalItems - 1)
+                            coroutineScope.launch {
+                                listState.scrollToItem(targetIndex)
+                            }
+                        }
+                        tryAwaitRelease()
+                        isDragging = false
+                    }
+                )
+            }
+            .pointerInput(trackHeightPx) {
+                if (trackHeightPx <= 0f) return@pointerInput
+                detectVerticalDragGestures(
+                    onDragStart = { isDragging = true },
+                    onDragEnd = { isDragging = false },
+                    onDragCancel = { isDragging = false },
+                    onVerticalDrag = { change, _ ->
+                        change.consume()
+                        val y = change.position.y.coerceIn(0f, trackHeightPx)
+                        val pct = y / trackHeightPx
+                        val totalItems = listState.layoutInfo.totalItemsCount
+                        if (totalItems > 0) {
+                            val targetIndex = (pct * (totalItems - 1)).toInt().coerceIn(0, totalItems - 1)
+                            coroutineScope.launch {
+                                listState.scrollToItem(targetIndex)
+                            }
+                        }
+                    }
+                )
+            }
+    ) {
+        // Track
+        Box(
+            modifier = Modifier
+                .fillMaxHeight()
+                .width(4.dp)
+                .align(Alignment.CenterEnd)
+                .padding(end = 12.dp)
+                .background(
+                    color = themeColor.copy(alpha = 0.15f),
+                    shape = RoundedCornerShape(2.dp)
+                )
+        )
+
+        // Handle + Percentage Badge
+        val handleHeight = 48.dp
+        val handleHeightPx = with(androidx.compose.ui.platform.LocalDensity.current) { handleHeight.toPx() }
+
+        val maxOffsetPx = (trackHeightPx - handleHeightPx).coerceAtLeast(0f)
+        val currentOffsetPx = scrollPercent * maxOffsetPx
+        val currentOffsetY = with(androidx.compose.ui.platform.LocalDensity.current) { currentOffsetPx.toDp() }
+
+        Row(
+            modifier = Modifier
+                .offset(y = currentOffsetY)
+                .align(Alignment.TopEnd)
+                .padding(end = 6.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(6.dp)
+        ) {
+            // Percentage badge
+            Surface(
+                shape = RoundedCornerShape(8.dp),
+                color = MaterialTheme.colorScheme.inverseSurface.copy(alpha = 0.85f),
+                tonalElevation = 4.dp,
+                modifier = Modifier.padding(end = 4.dp)
+            ) {
+                Text(
+                    text = "${(scrollPercent * 100).toInt()}%",
+                    color = MaterialTheme.colorScheme.inverseOnSurface,
+                    style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
+                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 3.dp)
+                )
+            }
+
+            // Handle (thumb)
+            Box(
+                modifier = Modifier
+                    .width(6.dp)
+                    .height(handleHeight)
+                    .background(
+                        color = if (isDragging) themeColor else themeColor.copy(alpha = 0.7f),
+                        shape = RoundedCornerShape(3.dp)
+                    )
+            )
+        }
+    }
+}
+
+private fun getColorForHint(hint: String): Color {
+    val h = hint.lowercase().trim()
+    return when {
+        h.contains("dark pink") -> Color(0xFFC2185B)
+        h.contains("pink") -> Color(0xFFE91E63)
+        h.contains("red") -> Color(0xFFE74C3C)
+        h.contains("blue") -> Color(0xFF3498DB)
+        h.contains("green") -> Color(0xFF2ECC71)
+        h.contains("yellow") -> Color(0xFFF1C40F)
+        h.contains("orange") -> Color(0xFFE67E22)
+        h.contains("colourless") || h.contains("colorless") -> Color(0xFF7F8C8D)
+        else -> Color(0xFF7F8C8D)
+    }
+}
+
+private fun getPastelColorForHint(hint: String): Color {
+    val h = hint.lowercase().trim()
+    return when {
+        h.contains("dark pink") -> Color(0xFFF8BBD0)
+        h.contains("pink") -> Color(0xFFFCE4EC)
+        h.contains("red") -> Color(0xFFFDEDEC)
+        h.contains("blue") -> Color(0xFFEBF5FB)
+        h.contains("green") -> Color(0xFFE8F8F5)
+        h.contains("yellow") -> Color(0xFFFEF9E7)
+        h.contains("orange") -> Color(0xFFFDF2E9)
+        h.contains("colourless") || h.contains("colorless") -> Color(0xFFF2F4F4)
+        else -> Color(0xFFF8F9F9)
+    }
+}
+
+private fun convertUnicodeSubscriptsToNormal(text: String): String {
+    val subscriptMap = mapOf(
+        '₀' to '0', '₁' to '1', '₂' to '2', '₃' to '3', '₄' to '4',
+        '₅' to '5', '₆' to '6', '₇' to '7', '₈' to '8', '₉' to '9'
+    )
+    return text.map { char -> subscriptMap[char] ?: char }.joinToString("")
+}
+
+private fun parseChemicalEquation(text: String): AnnotatedString {
+    val normalizedText = convertUnicodeSubscriptsToNormal(text)
+    val regex = Regex("""([A-Z][a-z]?)(\d+)""")
+    return buildAnnotatedString {
+        var lastIndex = 0
+        regex.findAll(normalizedText).forEach { matchResult ->
+            val matchRange = matchResult.range
+            if (matchRange.first > lastIndex) {
+                append(normalizedText.substring(lastIndex, matchRange.first))
+            }
+            val element = matchResult.groupValues[1]
+            append(element)
+            val number = matchResult.groupValues[2]
+            withStyle(SpanStyle(
+                baselineShift = androidx.compose.ui.text.style.BaselineShift.Subscript,
+                fontSize = 11.sp
+            )) {
+                append(number)
+            }
+            lastIndex = matchRange.last + 1
+        }
+        if (lastIndex < normalizedText.length) {
+            append(normalizedText.substring(lastIndex))
+        }
+    }
+}
+
+@Composable
+private fun AnimatedCheckbox(
+    checked: Boolean,
+    onCheckedChange: (Boolean) -> Unit,
+    themeColor: Color,
+    modifier: Modifier = Modifier
+) {
+    val checkProgress by animateFloatAsState(
+        targetValue = if (checked) 1f else 0f,
+        animationSpec = spring(
+            dampingRatio = Spring.DampingRatioHighBouncy,
+            stiffness = Spring.StiffnessMedium
+        ),
+        label = "checkbox"
+    )
+
+    Box(
+        modifier = modifier
+            .size(24.dp)
+            .pointerInput(Unit) {
+                detectTapGestures { onCheckedChange(!checked) }
+            }
+            .background(
+                color = themeColor.copy(alpha = checkProgress * 0.15f),
+                shape = RoundedCornerShape(50)
+            )
+            .drawBehind {
+                val radius = size.minDimension / 2f
+                // Draw circle outline
+                drawCircle(
+                    color = themeColor.copy(alpha = 0.5f + checkProgress * 0.5f),
+                    radius = radius - 1.dp.toPx(),
+                    style = Stroke(width = 2.dp.toPx())
+                )
+                // Draw filled inner circle
+                if (checkProgress > 0f) {
+                    drawCircle(
+                        color = themeColor,
+                        radius = (radius - 2.dp.toPx()) * checkProgress
+                    )
+                }
+            },
+        contentAlignment = Alignment.Center
+    ) {
+        if (checked) {
+            Icon(
+                imageVector = Icons.Default.Check,
+                contentDescription = null,
+                tint = Color.White,
+                modifier = Modifier
+                    .size(16.dp)
+                    .graphicsLayer {
+                        scaleX = checkProgress
+                        scaleY = checkProgress
+                    }
+            )
+        }
+    }
+}
+
+private class Particle(
+    val angle: Double,
+    val speed: Float,
+    val color: Color,
+    val maxRadius: Float
+)
+
+@Composable
+private fun ParticleBurstEffect(
+    trigger: Boolean,
+    modifier: Modifier = Modifier
+) {
+    if (!trigger) return
+    val animProgress = remember { Animatable(0f) }
+
+    LaunchedEffect(trigger) {
+        animProgress.snapTo(0f)
+        animProgress.animateTo(
+            targetValue = 1f,
+            animationSpec = tween(durationMillis = 800)
+        )
+    }
+
+    val particles = remember(trigger) {
+        val colors = listOf(Color(0xFF2ECC71), Color(0xFFF1C40F), Color(0xFF3498DB), Color(0xFFE74C3C), Color(0xFF9B59B6))
+        List(24) {
+            Particle(
+                angle = Math.random() * 2 * Math.PI,
+                speed = (20..80).random().toFloat(),
+                color = colors.random(),
+                maxRadius = (4..10).random().toFloat()
+            )
+        }
+    }
+
+    if (animProgress.value < 1f) {
+        Canvas(modifier = modifier.fillMaxSize()) {
+            val center = size / 2f
+            particles.forEach { p ->
+                val progress = animProgress.value
+                val dist = p.speed * progress * 3f
+                val x = center.width + (dist * Math.cos(p.angle)).toFloat()
+                val y = center.height + (dist * Math.sin(p.angle)).toFloat()
+                val radius = p.maxRadius * (1f - progress)
+                val alpha = 1f - progress
+                if (radius > 0f) {
+                    drawCircle(
+                        color = p.color,
+                        radius = radius,
+                        center = Offset(x, y),
+                        alpha = alpha
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun FeedbackBanner(
+    isCorrect: Boolean,
+    explanation: String,
+    fontSizeOffset: Int,
+    themeColor: Color
+) {
+    val containerColor = if (isCorrect) Color(0xFFEBF5FB) else Color(0xFFFEF9E7)
+    val borderColor = if (isCorrect) Color(0xFF3498DB) else Color(0xFFF1C40F)
+    val titleColor = if (isCorrect) Color(0xFF2980B9) else Color(0xFFB7950B)
+    val emoji = if (isCorrect) "🎉" else "💡"
+    val title = if (isCorrect) "Awesome Job!" else "Let's think about this..."
+
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 8.dp),
+        shape = RoundedCornerShape(12.dp),
+        colors = CardDefaults.cardColors(containerColor = containerColor),
+        border = BorderStroke(1.5.dp, borderColor)
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                Text(text = emoji, style = MaterialTheme.typography.titleLarge)
+                Text(
+                    text = title,
+                    style = MaterialTheme.typography.titleMedium.copy(
+                        fontWeight = FontWeight.Bold,
+                        color = titleColor
+                    ).scale(fontSizeOffset)
+                )
+            }
+            HorizontalDivider(color = borderColor.copy(alpha = 0.3f), thickness = 1.dp)
+            Text(
+                text = renderMeaning(explanation),
+                style = MaterialTheme.typography.bodyMedium.copy(
+                    lineHeight = 22.sp,
+                    color = MaterialTheme.colorScheme.onSurface
+                ).scale(fontSizeOffset)
+            )
+        }
+    }
+}
+
+private fun getScienceContext(word: String): String? {
+    val w = word.lowercase().trim().removeSuffix("s").removeSuffix("es")
+    val staticCtx = when (w) {
+        "acid" -> "⚡ **Definition**: Releases hydrogen ions (H⁺) in water.\n🍎 **Analogy**: Sour like lemon juice or vinegar."
+        "base" -> "🧼 **Definition**: Produces hydroxide ions (OH⁻) in water.\n👋 **Analogy**: Slippery like soap or bitter like baking soda."
+        "salt" -> "🧂 **Definition**: A neutral compound formed from acid + base.\n🍳 **Analogy**: Table salt (NaCl) used in cooking."
+        "neutral" -> "💧 **Definition**: Neither acidic nor basic (pH = 7).\n🥛 **Analogy**: Pure water, which does not change indicator colors."
+        "indicator" -> "🎨 **Definition**: Changes color/smell to detect acids and bases.\n👕 **Analogy**: Turmeric curry stains turning red when washed with soap."
+        "litmus" -> "🌿 **Definition**: A natural pH indicator dye from lichens.\n🔄 **States**: Turns red in acid and blue in base."
+        "dilute" -> "💧 **Definition**: A solution containing a large amount of water.\n🍊 **Analogy**: Adding water to strong orange juice to make it milder."
+        "concentrated" -> "🍯 **Definition**: A solution with very little water.\n🍯 **Analogy**: Thick honey straight from the hive, before mixing."
+        "neutralisation", "neutralization" -> "🤝 **Process**: Acid + Base → Salt + Water.\n🤢 **Analogy**: Eating an antacid tablet (base) to cure stomach acidity (acid)."
+        "ion" -> "⚛️ **Definition**: An atom or molecule with an electrical charge.\n🔋 **Types**: Cations (+ve) and Anions (-ve)."
+        "alkali" -> "💧 **Definition**: A base that dissolves completely in water.\n🧼 **Analogy**: Soapy water or lime water."
+        "electrolyte" -> "🔋 **Definition**: A liquid conducting electricity via moving ions.\n🌊 **Analogy**: A flowing river carrying boats (ions) that deliver energy."
+        "vinegar" -> "🥗 **Definition**: A dilute solution of acetic acid (CH₃COOH).\n🥒 **Analogy**: Sour liquid used to keep pickles fresh."
+        "turmeric" -> "💛 **Definition**: A natural yellow spice that acts as a base indicator.\n🧺 **Analogy**: Curry stains that turn reddish-brown when soap is applied."
+        "phenolphthalein" -> "🧪 **Definition**: A synthetic indicator used in chemistry.\n💗 **Color Change**: Turns bright pink in base, stays colorless in acid."
+        "methyl orange" -> "🍊 **Definition**: A synthetic pH indicator.\n🔄 **Color Change**: Red in acid, yellow in basic solutions."
+        "hydrogen" -> "🎈 **Physical State**: A lightweight gas.\n🧪 **Science Fact**: Hydrogen ions (H⁺) are what make acids sour."
+        "hydroxide" -> "🧪 **Definition**: A diatomic anion (OH⁻).\n🧼 **Science Fact**: Released by bases in water, causing a slippery feel."
+        "calcium hydroxide" -> "🧱 **Formula**: Ca(OH)₂ (Slaked lime).\n🏠 **Analogy**: Used in whitewash solutions to paint walls."
+        "sodium hydroxide" -> "🧼 **Formula**: NaOH (Caustic soda).\n🧼 **Everyday Use**: A strong base used in manufacturing soaps."
+        "sulphuric acid", "sulfuric acid" -> "🔋 **Formula**: H₂SO₄.\n🚗 **Everyday Use**: A strong acid found in car and inverter batteries."
+        "hydrochloric acid" -> "🧪 **Formula**: HCl.\n🥩 **Science Fact**: A strong acid in our stomach that digests food."
+        "nitric acid" -> "👑 **Formula**: HNO₃.\n🏆 **Everyday Use**: A strong acid used to purify gold and silver."
+        else -> null
+    }
+    if (staticCtx != null) return staticCtx
+
+    return when {
+        w.endsWith("acid") -> "🧪 **Type**: Acidic Compound\n⚡ **Fact**: It likely releases hydrogen ions (H⁺) in solution and tastes sour."
+        w.endsWith("hydroxide") -> "🧼 **Type**: Basic Compound\n👋 **Fact**: It contains hydroxide ions (OH⁻) and feels slippery."
+        w.endsWith("solution") -> "🧪 **Type**: Mixture\n💧 **Fact**: A homogeneous mixture of substances dissolved in a solvent (usually water)."
+        w.contains("reaction") -> "🤝 **Type**: Chemical Change\n🔄 **Fact**: A process where substances transform into new substances."
+        else -> null
+    }
+}
+
+@Composable
+private fun SubstanceBadge(text: String, isProduct: Boolean, fontSizeOffset: Int) {
+    Surface(
+        shape = RoundedCornerShape(8.dp),
+        color = if (isProduct) Color(0xFF2ECC71).copy(alpha = 0.15f) else Color(0xFF1E88E5).copy(alpha = 0.15f),
+        border = BorderStroke(1.dp, if (isProduct) Color(0xFF2ECC71).copy(alpha = 0.6f) else Color(0xFF00E5FF).copy(alpha = 0.6f)),
+        modifier = Modifier.padding(horizontal = 4.dp, vertical = 2.dp)
+    ) {
+        Text(
+            text = parseChemicalEquation(text),
+            style = MaterialTheme.typography.titleMedium.copy(
+                fontFamily = FontFamily.Monospace,
+                fontWeight = FontWeight.Bold,
+                color = if (isProduct) Color(0xFFA3E4D7) else Color(0xFF80DEEA),
+                letterSpacing = 1.sp
+            ).scale(fontSizeOffset),
+            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
+        )
+    }
+}
+
+@Composable
+private fun EquationOperator(text: String, isArrow: Boolean, fontSizeOffset: Int) {
+    val color = if (isArrow) Color(0xFFF1C40F) else Color(0xFFE2E8F0)
+    Box(
+        modifier = Modifier.padding(horizontal = 6.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            text = text,
+            style = MaterialTheme.typography.titleLarge.copy(
+                fontWeight = FontWeight.Bold,
+                color = color
+            ).scale(fontSizeOffset)
+        )
+    }
+}
+
+private fun getCorrectOptionIndex(meaning: String): Int? {
+    val match = Regex("""(?i)correct\s+answer\s+is\s+\(?([a-z])\)?""").find(meaning)
+    if (match != null) {
+        val letter = match.groupValues[1].lowercase()
+        if (letter.length == 1 && letter[0] in 'a'..'z') {
+            return letter[0] - 'a'
+        }
+    }
+    val match2 = Regex("""(?i)correct\s+(?:choice|option)\s+is\s+\(?([a-z])\)?""").find(meaning)
+    if (match2 != null) {
+        val letter = match2.groupValues[1].lowercase()
+        if (letter.length == 1 && letter[0] in 'a'..'z') {
+            return letter[0] - 'a'
+        }
+    }
+    val matchHindi = Regex("""सही\s+(?:जवाब|उत्तर)\s+\(?([a-z])\)?\s+है""").find(meaning)
+    if (matchHindi != null) {
+        val letter = matchHindi.groupValues[1].lowercase()
+        if (letter.length == 1 && letter[0] in 'a'..'z') {
+            return letter[0] - 'a'
+        }
+    }
+    return null
+}
+
+

@@ -57,7 +57,7 @@ SUBJECT_LANG: dict[str, str] = {
 }
 
 # Paragraph types that have no playable audio / are decorative
-NO_AUDIO_TYPES = {'heading', 'attribution', 'subheading', 'table', 'note', 'media'}
+NO_AUDIO_TYPES = {'table', 'media', 'assessment'}
 
 # All recognised paragraph types
 VALID_PARA_TYPES = {
@@ -66,6 +66,8 @@ VALID_PARA_TYPES = {
     'subheading', 'list', 'table', 'equation', 'activity', 'note', 'callout',
     # Tappable media cards (video / photo links)
     'media',
+    # Interactive assessments
+    'assessment',
 }
 
 
@@ -178,14 +180,27 @@ def _validate_content(data: dict) -> list[str]:
                 errors.append(f'{label}: type "list" must NOT have a "text" field')
 
         elif ptype == 'table':
-            # rows is required (2-D array), headers optional
+            # rows is required (2-D array of cells), headers optional
             rows = p.get('rows')
             if not isinstance(rows, list) or len(rows) == 0:
                 errors.append(f'{label}: type "table" must have a non-empty "rows" array')
             else:
                 for r, row in enumerate(rows):
                     if not isinstance(row, list) or len(row) == 0:
-                        errors.append(f'{label}.rows[{r}]: each row must be a non-empty array of strings')
+                        errors.append(f'{label}.rows[{r}]: each row must be a non-empty array of cells')
+                    else:
+                        for c, cell in enumerate(row):
+                            if isinstance(cell, str):
+                                continue
+                            elif isinstance(cell, dict):
+                                if 'value' not in cell:
+                                    errors.append(f'{label}.rows[{r}][{c}]: cell object is missing the "value" key')
+                                elif not isinstance(cell['value'], str):
+                                    errors.append(f'{label}.rows[{r}][{c}]: cell "value" must be a string')
+                                if 'colorHint' in cell and cell['colorHint'] is not None and not isinstance(cell['colorHint'], str):
+                                    errors.append(f'{label}.rows[{r}][{c}]: cell "colorHint" must be a string')
+                            else:
+                                errors.append(f'{label}.rows[{r}][{c}]: cell must be a string or a cell object with a "value" key')
             headers = p.get('headers')
             if headers is not None and not isinstance(headers, list):
                 errors.append(f'{label}: "headers" must be an array of strings')
@@ -216,6 +231,27 @@ def _validate_content(data: dict) -> list[str]:
             if p.get('sentences') or str(p.get('text', '')).strip():
                 errors.append(f'{label}: type "media" must NOT have "text" or "sentences"')
 
+        elif ptype == 'assessment':
+            # Must have assessmentType, question, and meaning.
+            # If assessmentType == 'mcq', must have options array.
+            atype = str(p.get('assessmentType', '')).strip().lower()
+            if atype not in ('mcq', 'short_answer'):
+                errors.append(f'{label}: type "assessment" must have "assessmentType" as "mcq" or "short_answer", got "{atype}"')
+            if not str(p.get('question', '')).strip():
+                errors.append(f'{label}: type "assessment" must have a non-empty "question" field')
+            if not str(p.get('meaning', '')).strip():
+                errors.append(f'{label}: type "assessment" must have a non-empty "meaning" field (used for the solution explanation)')
+            if atype == 'mcq':
+                options = p.get('options')
+                if not isinstance(options, list) or len(options) == 0:
+                    errors.append(f'{label}: type "assessment" with "mcq" must have a non-empty "options" array')
+                else:
+                    for k, option in enumerate(options):
+                        if not str(option).strip():
+                            errors.append(f'{label}.options[{k}]: option text is empty')
+            if p.get('sentences') or str(p.get('text', '')).strip():
+                errors.append(f'{label}: type "assessment" must NOT have "text" or "sentences"')
+
         elif ptype in ('prose', 'blockquote', 'activity', 'callout', 'note'):
             # Sentence-level: must have sentences[], must NOT have paragraph-level text
             sentences = p.get('sentences')
@@ -239,54 +275,53 @@ def _validate_content(data: dict) -> list[str]:
     return errors
 
 
-# Types that use sentence-level audio segments
-_SENTENCE_AUDIO_TYPES = {'prose', 'blockquote', 'activity', 'callout'}
-
-
 def _count_paragraphs_and_sentences(paragraphs: list) -> tuple[int, int]:
     playable = sum(1 for p in paragraphs if p.get('type', 'prose') not in NO_AUDIO_TYPES)
     # Count audio segments:
-    #   prose/blockquote/activity/callout → each sentence is a segment
+    #   any type with "sentences" array → each sentence is a segment
     #   list → each sentence/item is a segment
-    #   verse/equation → the whole paragraph is one segment (counted in playable)
+    #   other types with "text" → the whole paragraph is one segment
     sentences = 0
     for p in paragraphs:
         ptype = p.get('type', 'prose')
         if ptype in NO_AUDIO_TYPES:
             continue
-        if ptype in _SENTENCE_AUDIO_TYPES and isinstance(p.get('sentences'), list):
-            sentences += len(p['sentences'])
-        elif ptype == 'list':
-            if isinstance(p.get('sentences'), list):
-                sentences += len(p['sentences'])
+        sentences_list = p.get('sentences')
+        if ptype == 'list':
+            if isinstance(sentences_list, list) and sentences_list:
+                sentences += len(sentences_list)
             elif isinstance(p.get('items'), list):
                 sentences += len(p['items'])
+        elif isinstance(sentences_list, list) and sentences_list:
+            sentences += len(sentences_list)
+        elif str(p.get('text', '')).strip():
+            sentences += 1
     return playable, sentences
 
 
 # ── Firebase upload ────────────────────────────────────────────────────────────
 
 def _collect_sentence_ids(paragraphs: list) -> set[str]:
-    """Return every audio-segment ID from the parsed paragraphs (mirrors handleGenerateChapterAudio)."""
+    """Return every audio-segment ID from the parsed paragraphs (mirrors Kotlin logic)."""
     ids: set[str] = set()
     for p in paragraphs:
         ptype = p.get('type', 'prose')
         if ptype in NO_AUDIO_TYPES:
             continue
+        sentences = p.get('sentences')
         if ptype == 'list':
-            if isinstance(p.get('sentences'), list):
-                for s in p['sentences']:
+            if isinstance(sentences, list) and sentences:
+                for s in sentences:
                     if s.get('id'):
                         ids.add(s['id'])
             elif isinstance(p.get('items'), list):
                 for idx in range(len(p['items'])):
                     ids.add(f"{p['id']}-item-{idx}")
-        elif ptype in _SENTENCE_AUDIO_TYPES and isinstance(p.get('sentences'), list):
-            for s in p['sentences']:
+        elif isinstance(sentences, list) and sentences:
+            for s in sentences:
                 if s.get('id'):
                     ids.add(s['id'])
-        else:
-            # verse / equation with paragraph-level audio
+        elif str(p.get('text', '')).strip():
             if p.get('id'):
                 ids.add(p['id'])
     return ids

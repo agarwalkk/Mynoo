@@ -40,19 +40,27 @@ data class MediaItem(
     val caption:   String = "",
 )
 
+data class TableCell(
+    val value:     String = "",
+    val colorHint: String? = null,
+)
+
 data class ChapterParagraph(
-    val id:         String                = "",
-    val type:       String                = "prose",
-    val text:       String                = "",
-    val meaning:    String                = "",
-    val sentences:  List<ChapterSentence> = emptyList(),
-    val title:      String                = "",
-    val items:      List<String>          = emptyList(),
-    val mediaItems: List<MediaItem>       = emptyList(),
-    val ordered:    Boolean               = false,
-    val headers:    List<String>          = emptyList(),
-    val rows:       List<List<String>>    = emptyList(),
-    val caption:    String                = "",
+    val id:             String                = "",
+    val type:           String                = "prose",
+    val text:           String                = "",
+    val meaning:        String                = "",
+    val sentences:      List<ChapterSentence> = emptyList(),
+    val title:          String                = "",
+    val items:          List<String>          = emptyList(),
+    val mediaItems:     List<MediaItem>       = emptyList(),
+    val ordered:        Boolean               = false,
+    val headers:        List<String>          = emptyList(),
+    val rows:           List<List<TableCell>> = emptyList(),
+    val caption:        String                = "",
+    val assessmentType: String                = "",
+    val question:       String                = "",
+    val options:        List<String>          = emptyList(),
 )
 
 data class ChapterContent(val paragraphs: List<ChapterParagraph> = emptyList())
@@ -71,6 +79,8 @@ class ChapterRepository @Inject constructor(
     private val db:     FirebaseFirestore,
     private val client: OkHttpClient,
 ) {
+    private val chapterAudioExtensions = java.util.concurrent.ConcurrentHashMap<String, Map<String, String>>()
+
     suspend fun getChapters(classNum: String, subject: String): List<ChapterMeta> {
         val slug = subject.lowercase().replace(' ', '_')
         val col  = db.collection("classes").document(classNum)
@@ -163,18 +173,21 @@ class ChapterRepository @Inject constructor(
                 }
             }
             paragraphs += ChapterParagraph(
-                id         = pid,
-                type       = ptype,
-                text       = p.optString("text"),
-                meaning    = p.optString("meaning"),
-                title      = p.optString("title"),
-                caption    = p.optString("caption"),
-                ordered    = p.optBoolean("ordered", false),
-                sentences  = sentences,
-                items      = items,
-                mediaItems = parseMediaItems(p.optJSONArray("items")),
-                headers    = parseStringItems(p.optJSONArray("headers")),
-                rows       = parseRows(p.optJSONArray("rows")),
+                id             = pid,
+                type           = ptype,
+                text           = p.optString("text"),
+                meaning        = p.optString("meaning"),
+                title          = p.optString("title"),
+                caption        = p.optString("caption"),
+                ordered        = p.optBoolean("ordered", false),
+                sentences      = sentences,
+                items          = items,
+                mediaItems     = parseMediaItems(p.optJSONArray("items")),
+                headers        = parseStringItems(p.optJSONArray("headers")),
+                rows           = parseRows(p.optJSONArray("rows")),
+                assessmentType = p.optString("assessmentType"),
+                question       = p.optString("question"),
+                options        = parseStringItems(p.optJSONArray("options")),
             )
         }
         return ChapterContent(paragraphs)
@@ -225,12 +238,23 @@ class ChapterRepository @Inject constructor(
         return result
     }
 
-    private fun parseRows(arr: JSONArray?): List<List<String>> {
+    private fun parseRows(arr: JSONArray?): List<List<TableCell>> {
         arr ?: return emptyList()
-        val result = mutableListOf<List<String>>()
+        val result = mutableListOf<List<TableCell>>()
         for (i in 0 until arr.length()) {
             val row = arr.optJSONArray(i) ?: continue
-            result += parseStringItems(row)
+            val rowCells = mutableListOf<TableCell>()
+            for (j in 0 until row.length()) {
+                val cellObj = row.optJSONObject(j)
+                if (cellObj != null) {
+                    val valueStr = cellObj.optString("value", "")
+                    val colorHint = cellObj.optString("colorHint").takeIf { it.isNotEmpty() }
+                    rowCells.add(TableCell(valueStr, colorHint))
+                } else {
+                    rowCells.add(TableCell(value = row.optString(j, "")))
+                }
+            }
+            result += rowCells
         }
         return result
     }
@@ -258,56 +282,78 @@ class ChapterRepository @Inject constructor(
      * Returns (exists, ext) where ext is "mp3" or "wav".
      */
     suspend fun checkAudioExists(classNum: String, subject: String, chapterId: String, forceRefresh: Boolean = false): Pair<Boolean, String> {
+        val cacheKey = "$classNum::$subject::$chapterId"
         val localFile = File(context.filesDir, "chapters_cache/$classNum/$subject/$chapterId/audio_info.json")
         if (localFile.exists() && !forceRefresh) {
             try {
                 val json = JSONObject(localFile.readText())
-                return json.getBoolean("hasAudio") to json.getString("audioExt")
+                val hasAudio = json.getBoolean("hasAudio")
+                val audioExtVal = json.getString("audioExt")
+                val segsJson = json.optJSONObject("segmentExtensions")
+                val segsMap = mutableMapOf<String, String>()
+                if (segsJson != null) {
+                    val keys = segsJson.keys()
+                    while (keys.hasNext()) {
+                        val k = keys.next()
+                        segsMap[k] = segsJson.getString(k)
+                    }
+                }
+                chapterAudioExtensions[cacheKey] = segsMap
+                return hasAudio to audioExtVal
             } catch (_: Exception) {}
         }
 
         val slug    = subject.lowercase().replace(' ', '_')
         val prefix  = "classes/$classNum/$slug/$chapterId/audio/"
         val listUrl = "https://firebasestorage.googleapis.com/v0/b/$STORAGE_BUCKET/o" +
-            "?prefix=${URLEncoder.encode(prefix, "UTF-8")}&maxResults=20"
+            "?prefix=${URLEncoder.encode(prefix, "UTF-8")}&maxResults=1000"
         val result = withContext(Dispatchers.IO) {
             try {
                 val req      = Request.Builder().url(listUrl).build()
                 val bodyText = client.newCall(req).execute().use { resp ->
-                    if (!resp.isSuccessful) return@withContext false to "mp3"
-                    resp.body?.string() ?: return@withContext false to "mp3"
+                    if (!resp.isSuccessful) return@withContext Triple(false, "mp3", emptyMap<String, String>())
+                    resp.body?.string() ?: return@withContext Triple(false, "mp3", emptyMap<String, String>())
                 }
-                val items = JSONObject(bodyText).optJSONArray("items") ?: return@withContext false to "mp3"
+                val items = JSONObject(bodyText).optJSONArray("items") ?: return@withContext Triple(false, "mp3", emptyMap<String, String>())
                 var hasAudio = false
-                var ext = "mp3"
+                val segsMap = mutableMapOf<String, String>()
                 for (i in 0 until items.length()) {
                     val name = items.optJSONObject(i)?.optString("name") ?: continue
-                    if (name.endsWith(".mp3")) {
-                        hasAudio = true
-                        ext = "mp3"
-                        break
-                    }
-                    if (name.endsWith(".wav")) {
-                        hasAudio = true
-                        ext = "wav"
-                        break
+                    val base = name.split('/').lastOrNull() ?: continue
+                    val segId = base.replace(Regex("\\.(mp3|wav|json)$"), "")
+                    if (segId.isNotEmpty()) {
+                        if (name.endsWith(".mp3")) {
+                            hasAudio = true
+                            segsMap[segId] = "mp3"
+                        } else if (name.endsWith(".wav")) {
+                            hasAudio = true
+                            segsMap[segId] = "wav"
+                        }
                     }
                 }
-                hasAudio to ext
+                val mp3Count = segsMap.values.count { it == "mp3" }
+                val wavCount = segsMap.values.count { it == "wav" }
+                val ext = if (wavCount > mp3Count) "wav" else "mp3"
+                Triple(hasAudio, ext, segsMap)
             } catch (_: Exception) {
-                false to "mp3"
+                Triple(false, "mp3", emptyMap<String, String>())
             }
         }
+
+        chapterAudioExtensions[cacheKey] = result.third
 
         try {
             localFile.parentFile?.mkdirs()
             val json = JSONObject()
             json.put("hasAudio", result.first)
             json.put("audioExt", result.second)
+            val segsJson = JSONObject()
+            result.third.forEach { (k, v) -> segsJson.put(k, v) }
+            json.put("segmentExtensions", segsJson)
             localFile.writeText(json.toString())
         } catch (_: Exception) {}
 
-        return result
+        return result.first to result.second
     }
 
     /**
@@ -602,10 +648,12 @@ class ChapterRepository @Inject constructor(
         val (hasAudio, ext) = checkAudioExists(classNum, subject, chapterId, forceRefresh = false)
         if (hasAudio) {
             val segments = buildSegments(content)
+            val cacheKey = "$classNum::$subject::$chapterId"
             for (seg in segments) {
+                val segmentExt = chapterAudioExtensions[cacheKey]?.get(seg.id) ?: ext
                 val folder = if (seg.kind == "sentence") "sentences" else "paragraphs"
                 val timingFile = File(context.filesDir, "chapters_cache/$classNum/$subject/$chapterId/audio/$folder/${seg.id}.json")
-                val audioFile = File(context.filesDir, "chapters_cache/$classNum/$subject/$chapterId/audio/$folder/${seg.id}.$ext")
+                val audioFile = File(context.filesDir, "chapters_cache/$classNum/$subject/$chapterId/audio/$folder/${seg.id}.$segmentExt")
                 if (!timingFile.exists() || !audioFile.exists()) {
                     return false
                 }
@@ -622,13 +670,16 @@ class ChapterRepository @Inject constructor(
         kind: String,
         ext: String
     ): String {
+        val cacheKey = "$classNum::$subject::$chapterId"
+        val segmentExt = chapterAudioExtensions[cacheKey]?.get(segId) ?: ext
         val folder = if (kind == "sentence") "sentences" else "paragraphs"
-        val localFile = File(context.filesDir, "chapters_cache/$classNum/$subject/$chapterId/audio/$folder/$segId.$ext")
-        return if (localFile.exists()) {
-            localFile.absolutePath
-        } else {
-            audioUrl(classNum, subject, chapterId, segId, kind, ext)
-        }
+        
+        val localMp3 = File(context.filesDir, "chapters_cache/$classNum/$subject/$chapterId/audio/$folder/$segId.mp3")
+        val localWav = File(context.filesDir, "chapters_cache/$classNum/$subject/$chapterId/audio/$folder/$segId.wav")
+        if (localMp3.exists()) return localMp3.absolutePath
+        if (localWav.exists()) return localWav.absolutePath
+        
+        return audioUrl(classNum, subject, chapterId, segId, kind, segmentExt)
     }
 
     suspend fun downloadAudioFile(
@@ -640,11 +691,13 @@ class ChapterRepository @Inject constructor(
         ext: String,
         forceRefresh: Boolean = false
     ) {
+        val cacheKey = "$classNum::$subject::$chapterId"
+        val segmentExt = chapterAudioExtensions[cacheKey]?.get(segId) ?: ext
         val folder = if (kind == "sentence") "sentences" else "paragraphs"
-        val localFile = File(context.filesDir, "chapters_cache/$classNum/$subject/$chapterId/audio/$folder/$segId.$ext")
+        val localFile = File(context.filesDir, "chapters_cache/$classNum/$subject/$chapterId/audio/$folder/$segId.$segmentExt")
         if (localFile.exists() && !forceRefresh) return
 
-        val url = audioUrl(classNum, subject, chapterId, segId, kind, ext)
+        val url = audioUrl(classNum, subject, chapterId, segId, kind, segmentExt)
         withContext(Dispatchers.IO) {
             try {
                 val req = Request.Builder().url(url).build()
@@ -716,7 +769,7 @@ class ChapterRepository @Inject constructor(
     }
 
     private fun buildSegments(content: ChapterContent): List<AudioSegment> {
-        val noAudio = setOf("heading", "subheading", "attribution", "table", "media")
+        val noAudio = setOf("table", "media", "assessment")
         val result = mutableListOf<AudioSegment>()
         for (para in content.paragraphs) {
             if (para.type in noAudio) continue

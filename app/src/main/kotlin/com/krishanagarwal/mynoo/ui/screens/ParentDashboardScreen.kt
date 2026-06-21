@@ -735,7 +735,7 @@ fun ParentDashboardScreen(
                         Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                             Text("Subject:", style = MaterialTheme.typography.labelMedium, modifier = Modifier.width(60.dp))
                             Row(modifier = Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                                listOf("English", "Hindi", "Punjabi").forEach { sub ->
+                                listOf("English", "Hindi", "Punjabi", "Mathematics", "Science", "Social Studies", "Computer").forEach { sub ->
                                     FilterChip(
                                         selected = chapMgmtSubject == sub,
                                         onClick = { chapMgmtSubject = sub },
@@ -1778,7 +1778,7 @@ fun ParentDashboardScreen(
                     }
                     Text("Subject", style = MaterialTheme.typography.labelMedium)
                     Row(modifier = Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                        listOf("English", "Hindi", "Punjabi").forEach { sub ->
+                        listOf("English", "Hindi", "Punjabi", "Mathematics", "Science", "Social Studies", "Computer").forEach { sub ->
                             FilterChip(
                                 selected = chapterSubject == sub,
                                 onClick = { chapterSubject = sub },

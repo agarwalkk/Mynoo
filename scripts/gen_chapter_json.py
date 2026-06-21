@@ -69,6 +69,7 @@ def _get_local_property(key: str, default: str = "") -> str:
 GEMINI_API_KEY = _get_local_property("GEMINI_API_KEY", "")
 DEFAULT_YT_KEY = _get_local_property("DEFAULT_YT_KEY", "")   
 MODEL          = "gemini-2.5-pro"
+MEANING_MODEL  = "gemini-2.5-flash-lite"
 
 _client = genai.Client(api_key=GEMINI_API_KEY)
 
@@ -283,8 +284,7 @@ IDs use letters, digits, and hyphens only. No spaces. No dots. No underscores.
 
 Before finalising output, verify:
   □ "title" present at root level
-  □ All paragraph "id" values are unique
-  □ All sentence "id" values are unique
+  □ All paragraph "id" and sentence "id"values are unique
   □ prose / blockquote / activity / callout / note → "sentences" array (never "text")
   □ verse → has both "text" and "meaning"
   □ equation → has "text"
@@ -321,6 +321,25 @@ When the user lists media map entries in the prompt (format: VIDEO|url|caption o
 - Create a media paragraph of type "video" (for VIDEO) or "photo" (for PHOTO) placed immediately after the prose or activity paragraph that discusses the topic.
 - Use the exact URL and caption provided in the Media Maps. Do NOT modify the URL.
 - If a media map entry matches the content, prioritize using it to provide real, working video/photo links.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CRITICAL ENHANCEMENTS FOR SCIENCE SCHEMAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. RICH TABLES WITH COLOR HINTS:
+   When rendering columns mapping indicator tests or color changes, populate the optional "colorHint" field per cell if the cell value references a color change.
+   - Example color values: "Red", "Blue", "Dark pink", "Green", "Brownish red", "Pink", "Colourless".
+   - If no color change is explicitly mentioned, omit the "colorHint" key.
+
+2. INTERACTIVE ASSESSMENT BLOCKS:
+   Never lump Intext Questions or Exercises into standard text paragraphs. Extract them into the "assessment" type:
+   - "assessmentType": Use "mcq" if options like (a), (b), (c), (d) are found. Use "short_answer" for direct questions.
+   - "question": Clean verbatim question text.
+   - "options": Array of text choices extracted from options. Strip prefixes like "(a)", "(b)".
+   - "meaning": The complete step-by-step resolution or answer written in friendly conversational Hinglish.
+
+3. NOTATIONS IN CHEMICAL EQUATIONS:
+   For "type": "equation", clearly parse complex reaction layouts. Use plain numeric indicators for molecules, but use standard programmatic strings that your parser can read without text drops. Ensure raw layouts do not merge subscripts cleanly away.
 """
 
 # ── 1.3 ARGUMENT PARSER AND INITIALIZATION ──
@@ -487,10 +506,35 @@ AARAVTUTOR_SCHEMA = {
                         "type": "object",
                         "properties": {
                             "id": {"type": "string"},
+                            "type": {"type": "string", "enum": ["assessment"]},
+                            "assessmentType": {"type": "string", "enum": ["mcq", "short_answer"]},
+                            "question": {"type": "string"},
+                            "options": {"type": "array", "items": {"type": "string"}},
+                            "meaning": {"type": "string"}
+                        },
+                        "required": ["id", "type", "assessmentType", "question", "meaning"]
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "id": {"type": "string"},
                             "type": {"type": "string", "enum": ["table"]},
                             "caption": {"type": "string"},
                             "headers": {"type": "array", "items": {"type": "string"}},
-                            "rows": {"type": "array", "items": {"type": "array", "items": {"type": "string"}}}
+                            "rows": {
+                                "type": "array",
+                                "items": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "value": {"type": "string"},
+                                            "colorHint": {"type": "string"}
+                                        },
+                                        "required": ["value"]
+                                    }
+                                }
+                            }
                         },
                         "required": ["id", "type", "rows"]
                     },
@@ -768,8 +812,13 @@ def find_media_links(pdf_bytes: bytes, cached_topics=None) -> str:
             else:
                 print(f"          -> No working video link found")
         else:
-            print(f"        Searching Wikimedia: '{query}'")
-            url = search_wikimedia(query)
+            optimized_query = query if "diagram" in query.lower() else f"{query} diagram schematic"
+            print(f"        Searching Wikimedia: '{optimized_query}'")
+            url = search_wikimedia(optimized_query)
+            
+            if not url:
+                print(f"          -> Retrying broad query: '{query}'")
+                url = search_wikimedia(query)
             if url:
                 print(f"          -> Found: {url}")
                 media_lines.append(f"PHOTO|{url}|{caption}")
@@ -841,6 +890,30 @@ else:
     ckpt["images"] = pdf_images
     _save_checkpoint(PDF_PATH, pdf_md5, ckpt)
 
+# Dynamic URL schema constraint based on extracted local images (Option A)
+valid_local_images = [f"pdf-image://{img['filename']}" for img in (pdf_images or [])]
+if valid_local_images:
+    AARAVTUTOR_SCHEMA["properties"]["paragraphs"]["items"]["anyOf"][6]["properties"]["items"]["items"]["properties"]["url"] = {
+        "anyOf": [
+            {
+                "type": "string",
+                "enum": valid_local_images,
+                "description": "Must match one of the extracted PDF image filenames exactly."
+            },
+            {
+                "type": "string",
+                "pattern": "^https?://",
+                "description": "A valid external HTTP/HTTPS URL (e.g. YouTube or Wikimedia Commons link)."
+            }
+        ]
+    }
+else:
+    AARAVTUTOR_SCHEMA["properties"]["paragraphs"]["items"]["anyOf"][6]["properties"]["items"]["items"]["properties"]["url"] = {
+        "type": "string",
+        "pattern": "^https?://",
+        "description": "A valid external HTTP/HTTPS URL."
+    }
+
 # Step 3: Media Topics Extraction
 if "topics" in ckpt:
     topics = ckpt["topics"]
@@ -869,7 +942,10 @@ else:
     pdf_part = types.Part.from_bytes(data=pdf_bytes, mime_type="application/pdf")
     
     usable_images = [img for img in pdf_images if img.get("description") and img["description"] != "DECORATIVE"]
-    image_section = "\n".join([f"pdf-image://{i['filename']} | {i['description']}" for i in usable_images])
+    image_section = "\n".join([
+        f"Filename: pdf-image://{i['filename']} (Page {i['page']}) | Description: {i['description']}" 
+        for i in usable_images
+    ])
 
     collected_chunks = []
     output_chars = 0
@@ -919,7 +995,7 @@ if "chapter_json_meanings_updated" in ckpt:
     chapter_json = ckpt["chapter_json_meanings_updated"]
     print("[6/9] Meaning Recalculation: Loaded updated meanings from cache.")
 elif args.step == "meaning":
-    print("[6/9] Meaning Recalculation: Recalculating sentence meanings via Gemini...")
+    print("[6/9] Meaning Recalculation: Recalculating sentence meanings 1-by-1 via Gemini...")
     # Load raw stream text from _raw.json or checkpoint cache
     output_raw_path = PDF_PATH.replace(".pdf", "_raw.json")
     if Path(output_raw_path).exists():
@@ -929,29 +1005,131 @@ elif args.step == "meaning":
         
     chapter_json = json.loads(raw_stream_text)
     
-    response = _client.models.generate_content(
-        model=MODEL,
-        contents=[
-            "You are provided with a structured AaravTutor JSON object. "
-            "Your task is to update and recalculate the 'meaning' field for every sentence "
-            "in the paragraphs to strictly adhere to the MEANING FIELD RULES (Hinglish/script rules). "
-            "Do not modify the sentences' 'id' or 'text', and keep the structure exactly the same.\n\n"
-            f"JSON to update:\n{json.dumps(chapter_json, ensure_ascii=False, indent=2)}"
-        ],
-        config=types.GenerateContentConfig(
-            system_instruction=SYSTEM_PROMPT,
-            response_mime_type="application/json",
-            response_schema=AARAVTUTOR_SCHEMA,
-            max_output_tokens=100000,
-            temperature=0.1
+    print("\n--- Custom System Prompt for Meaning Recalculation ---")
+    user_prompt_input = input("Enter custom system prompt (Press Enter to use default script-conversion prompt):\n").strip()
+    if not user_prompt_input:
+        user_prompt_input = (
+            "You are a transliterator/translator. Your task is to update the 'meaning' field by converting "
+            "Hindi/Hinglish words from Roman/Latin script to Devanagari script (e.g., convert 'hota hai' to 'होता है', "
+            "'aur' to 'और'). Keep English terms in English only (do not convert English words to Hindi or Devanagari)."
         )
-    )
-    chapter_json = json.loads(response.text)
-    updated_json_str = json.dumps(chapter_json, ensure_ascii=False, indent=2)
-    ckpt["chapter_json_meanings_updated"] = chapter_json
-    # Write back to _raw.json to preserve updated meanings in unescaped format
-    Path(output_raw_path).write_text(updated_json_str, encoding="utf-8")
-    _save_checkpoint(PDF_PATH, pdf_md5, ckpt)
+    
+    processed_meanings = ckpt.setdefault("meanings_processed", {})
+    if processed_meanings:
+        resume_choice = input(f"Detected {len(processed_meanings)} already recalculated meanings. Resume? [Y/n]: ").strip().lower()
+        if resume_choice == "n":
+            processed_meanings.clear()
+            ckpt["meanings_processed"] = {}
+            _save_checkpoint(PDF_PATH, pdf_md5, ckpt)
+
+    # First, collect all items that have a meaning field to calculate total
+    meaning_items = []
+    
+    for p_idx, para in enumerate(chapter_json.get("paragraphs", [])):
+        p_id = para.get("id") or f"p{p_idx}"
+        p_type = para.get("type")
+        
+        if "sentences" in para:
+            for s_idx, sent in enumerate(para["sentences"]):
+                s_id = sent.get("id") or f"s{s_idx}"
+                if sent.get("meaning"):
+                    meaning_items.append({
+                        "key": f"{p_id}_{s_id}",
+                        "original": sent["meaning"],
+                        "target_ref": (sent, "meaning")
+                    })
+        elif p_type in ("verse", "assessment") and para.get("meaning"):
+            meaning_items.append({
+                "key": f"{p_id}_{p_type}",
+                "original": para["meaning"],
+                "target_ref": (para, "meaning")
+            })
+        elif p_type == "media" and "items" in para:
+            for m_idx, item in enumerate(para["items"]):
+                if item.get("meaning"):
+                    meaning_items.append({
+                        "key": f"{p_id}_media_{m_idx}",
+                        "original": item["meaning"],
+                        "target_ref": (item, "meaning")
+                    })
+                    
+    total_items = len(meaning_items)
+    print(f"Found {total_items} meaning fields to process.")
+    
+    # Process each item
+    for idx, item in enumerate(meaning_items):
+        item_key = item["key"]
+        orig_meaning = item["original"]
+        target_dict, field_name = item["target_ref"]
+        
+        # Check if already processed
+        if item_key in processed_meanings:
+            target_dict[field_name] = processed_meanings[item_key]
+            continue
+            
+        print(f"[{idx + 1}/{total_items}] Recalculating meaning for {item_key}...")
+        print(f"      Original: {orig_meaning.replace(chr(10), ' | ')}")
+        
+        # Call Gemini with retry logic
+        import time
+        max_retries = 5
+        retry_delay = 2.0
+        success = False
+        new_meaning = orig_meaning
+        
+        for attempt in range(max_retries):
+            try:
+                response = _client.models.generate_content(
+                    model=MEANING_MODEL,
+                    contents=[
+                        f"{user_prompt_input}\n\n"
+                        "Here is the current meaning text to process:\n"
+                        f"{orig_meaning}"
+                    ],
+                    config=types.GenerateContentConfig(
+                        max_output_tokens=2000,
+                        temperature=0.1
+                    )
+                )
+                if response and response.text:
+                    new_meaning = response.text.strip()
+                    # Clean markdown code blocks if the model wrapped it
+                    if new_meaning.startswith("```"):
+                        lines = new_meaning.splitlines()
+                        if len(lines) > 2 and lines[0].startswith("```"):
+                            if lines[-1].startswith("```"):
+                                new_meaning = "\n".join(lines[1:-1])
+                            else:
+                                new_meaning = "\n".join(lines[1:])
+                        new_meaning = new_meaning.strip()
+                    # Clean wrapping quotes
+                    if (new_meaning.startswith('"') and new_meaning.endswith('"')) or (new_meaning.startswith("'") and new_meaning.endswith("'")):
+                        new_meaning = new_meaning[1:-1].strip()
+                    success = True
+                    break
+            except Exception as e:
+                if "exhausted" in str(e).lower() or "429" in str(e):
+                    print(f"          [Rate Limit] Hit 429. Waiting {retry_delay}s and retrying...")
+                else:
+                    print(f"          [API Error] {e}. Retrying in {retry_delay}s...")
+                time.sleep(retry_delay)
+                retry_delay *= 2
+                
+        if not success:
+            print(f"      [Warning] Failed to translate {item_key}. Keeping original.")
+            new_meaning = orig_meaning
+            
+        print(f"      Updated : {new_meaning.replace(chr(10), ' | ')}")
+        
+        # Update target dict in-place and update cache
+        target_dict[field_name] = new_meaning
+        processed_meanings[item_key] = new_meaning
+        
+        # Write back to raw json and save checkpoint after every single item
+        updated_json_str = json.dumps(chapter_json, ensure_ascii=False, indent=2)
+        Path(output_raw_path).write_text(updated_json_str, encoding="utf-8")
+        ckpt["chapter_json_meanings_updated"] = chapter_json
+        _save_checkpoint(PDF_PATH, pdf_md5, ckpt)
 else:
     print("[6/9] Meaning Recalculation: Skipped (using original meanings).")
 
@@ -992,8 +1170,16 @@ else:
     print("[8/9] Polishing: Performing structural cleanup and formatting fixes...")
     # ── STRUCTURAL POLISHING & ENUM FALLBACK CLEANERS ──
     for p in chapter_json.get("paragraphs", []):
+        # Science Post-Processing: Normalize chemical formulas and text symbols
+        if "text" in p and isinstance(p["text"], str):
+            p["text"] = p["text"].replace("->", "→").replace("-->", "→").replace("° C", "°C")
+        if "sentences" in p and isinstance(p["sentences"], list):
+            for s in p["sentences"]:
+                if "text" in s and isinstance(s["text"], str):
+                    s["text"] = s["text"].replace("->", "→").replace("-->", "→").replace("° C", "°C")
         ptype = p.get("type", "")
-        if ptype in ('heading', 'subheading', 'attribution', 'verse', 'equation', 'table', 'media'):
+        # Keep 'verse' out of this exclusion so its root text and meaning fields survive!
+        if ptype in ('heading', 'subheading', 'attribution', 'equation', 'table', 'media'):
             p.pop("sentences", None)
         if ptype in ('prose', 'blockquote', 'activity', 'callout', 'note', 'list'):
             p.pop("text", None)

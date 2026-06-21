@@ -37,19 +37,74 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.animation.core.rememberInfiniteTransition
-import androidx.compose.animation.core.animateFloat
-import androidx.compose.animation.core.infiniteRepeatable
-import androidx.compose.animation.core.tween
-import androidx.compose.animation.core.RepeatMode
-import androidx.compose.animation.core.FastOutSlowInEasing
-import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.*
+import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.draw.alpha
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.animation.animateColorAsState
+import kotlinx.coroutines.delay
 
 private val AVATARS = listOf("🧒", "👦", "🧑", "👧", "🐯", "🦁", "🚀", "🌟", "🎯", "🦋", "🐬", "🌈")
 private val CLASSES = listOf("6", "7", "8", "9", "10")
 
 private fun avatarFor(name: String): String =
     AVATARS[(name.firstOrNull()?.code ?: 0) % AVATARS.size]
+
+@Composable
+private fun PinInputDots(
+    pin: String,
+    isError: Boolean,
+    modifier: Modifier = Modifier
+) {
+    Row(
+        modifier = modifier,
+        horizontalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterHorizontally),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        val activeColor = if (isError) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.primary
+        val inactiveColor = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.3f)
+        
+        for (i in 0 until 4) {
+            val isFilled = i < pin.length
+            val dotColor = if (isFilled) activeColor else inactiveColor
+            val scale = if (isFilled) 1.25f else 1.0f
+            
+            val animatedScale by animateFloatAsState(
+                targetValue = scale,
+                animationSpec = spring(
+                    dampingRatio = 0.6f,
+                    stiffness = 300f
+                ),
+                label = "dot_scale_$i"
+            )
+            val animatedColor by animateColorAsState(
+                targetValue = dotColor,
+                animationSpec = tween(durationMillis = 150),
+                label = "dot_color_$i"
+            )
+            
+            Box(
+                modifier = Modifier
+                    .size(20.dp)
+                    .graphicsLayer {
+                        scaleX = animatedScale
+                        scaleY = animatedScale
+                    }
+                    .border(
+                        width = 2.dp,
+                        color = animatedColor,
+                        shape = CircleShape
+                    )
+                    .background(
+                        color = if (isFilled) animatedColor else Color.Transparent,
+                        shape = CircleShape
+                    )
+            )
+        }
+    }
+}
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -208,6 +263,15 @@ fun ChildSelectScreen(
     }
 
     if (showParentPinDialog) {
+        val focusRequester = remember { FocusRequester() }
+        
+        LaunchedEffect(showParentPinDialog) {
+            if (showParentPinDialog) {
+                delay(150)
+                focusRequester.requestFocus()
+            }
+        }
+
         AlertDialog(
             onDismissRequest = { 
                 showParentPinDialog = false
@@ -216,40 +280,63 @@ fun ChildSelectScreen(
             },
             title = { Text("Parent Verification", fontWeight = FontWeight.Bold) },
             text = {
-                Column {
-                    Text("Please enter the 4-digit parent PIN to access parent settings.")
-                    Spacer(Modifier.height(16.dp))
-                    OutlinedTextField(
-                        value = parentPinInput,
-                        onValueChange = { 
-                            if (it.length <= 6 && it.all { char -> char.isDigit() }) {
-                                parentPinInput = it
-                                pinError = false
-                                if (it.length >= 4) {
-                                    vm.verifyPin(it) { correct ->
-                                        if (correct) {
-                                            showParentPinDialog = false
-                                            parentPinInput = ""
-                                            onNavigateToParentDashboard()
-                                        } else if (it.length >= 6) {
-                                            pinError = true
+                Column(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text("Please enter the 4-digit parent PIN to access parent settings.", textAlign = TextAlign.Center)
+                    Spacer(Modifier.height(24.dp))
+                    
+                    Box(
+                        contentAlignment = Alignment.Center,
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        BasicTextField(
+                            value = parentPinInput,
+                            onValueChange = { 
+                                if (it.length <= 4 && it.all { char -> char.isDigit() }) {
+                                    parentPinInput = it
+                                    pinError = false
+                                    if (it.length == 4) {
+                                        vm.verifyPin(it) { correct ->
+                                            if (correct) {
+                                                showParentPinDialog = false
+                                                parentPinInput = ""
+                                                onNavigateToParentDashboard()
+                                            } else {
+                                                pinError = true
+                                                parentPinInput = ""
+                                            }
                                         }
                                     }
                                 }
+                            },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                            modifier = Modifier
+                                .size(1.dp)
+                                .alpha(0f)
+                                .focusRequester(focusRequester)
+                        )
+                        
+                        PinInputDots(
+                            pin = parentPinInput,
+                            isError = pinError,
+                            modifier = Modifier.clickable(
+                                interactionSource = remember { MutableInteractionSource() },
+                                indication = null
+                            ) {
+                                focusRequester.requestFocus()
                             }
-                        },
-                        label = { Text("Parent PIN") },
-                        singleLine = true,
-                        isError = pinError,
-                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-                        modifier = Modifier.fillMaxWidth()
-                    )
+                        )
+                    }
                     if (pinError) {
+                        Spacer(Modifier.height(16.dp))
                         Text(
                             text = "Incorrect PIN. Please try again.",
                             color = MaterialTheme.colorScheme.error,
                             style = MaterialTheme.typography.bodySmall,
-                            modifier = Modifier.padding(top = 4.dp)
+                            modifier = Modifier.padding(top = 4.dp),
+                            textAlign = TextAlign.Center
                         )
                     }
                 }
@@ -264,9 +351,11 @@ fun ChildSelectScreen(
                                 onNavigateToParentDashboard()
                             } else {
                                 pinError = true
+                                parentPinInput = ""
                             }
                         }
-                    }
+                    },
+                    enabled = parentPinInput.length == 4
                 ) {
                     Text("Verify")
                 }

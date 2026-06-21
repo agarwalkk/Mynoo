@@ -878,7 +878,7 @@ class AssessmentViewModel @Inject constructor(
                             generationConfig = GeminiGenConfig(
                                 temperature = 0.1,
                                 responseMimeType = "application/json",
-                                responseSchema = buildValidationSchema()
+                                responseSchema = buildGeminiValidationSchema()
                             )
                         )
                         reqObj = req
@@ -906,15 +906,12 @@ class AssessmentViewModel @Inject constructor(
                 
             } catch (e: Exception) {
                 Log.e("AssessmentVM", "Validation error", e)
-                val fallback = mapOf(
-                    "verdict" to "wrong",
-                    "earnedMarks" to 0.0,
-                    "feedback" to "Could not verify automatically — check the correct answer below.",
-                    "corrections" to emptyList<Any>(),
-                    "correctedAnswer" to "",
-                    "allowRetry" to false
-                )
-                onValidationComplete(idx, childAnswer, fallback)
+                _quiz.update {
+                    it.copy(
+                        validating = false,
+                        error = "Assessment failed:\n${getFullErrorDescription(e)}"
+                    )
+                }
             }
         }
     }
@@ -974,7 +971,7 @@ class AssessmentViewModel @Inject constructor(
                     generationConfig = GeminiGenConfig(
                         temperature = 0.1,
                         responseMimeType = "application/json",
-                        responseSchema = buildValidationSchema()
+                        responseSchema = buildGeminiValidationSchema()
                     )
                 )
                 val resp = geminiApi.generateContent(model, BuildConfig.GEMINI_API_KEY, req)
@@ -994,15 +991,12 @@ class AssessmentViewModel @Inject constructor(
                 
             } catch (e: Exception) {
                 Log.e("AssessmentVM", "Vision validation error", e)
-                val fallback = mapOf(
-                    "verdict" to "wrong",
-                    "earnedMarks" to 0.0,
-                    "feedback" to "Could not verify automatically — check the correct answer below.",
-                    "corrections" to emptyList<Any>(),
-                    "correctedAnswer" to "",
-                    "allowRetry" to false
-                )
-                onValidationComplete(idx, displayKey, fallback)
+                _quiz.update {
+                    it.copy(
+                        validating = false,
+                        error = "Assessment failed:\n${getFullErrorDescription(e)}"
+                    )
+                }
             }
         }
     }
@@ -1041,6 +1035,12 @@ class AssessmentViewModel @Inject constructor(
             })
             addProperty("additionalProperties", false)
         }
+    }
+
+    private fun buildGeminiValidationSchema(): com.google.gson.JsonElement {
+        val schema = buildValidationSchema().asJsonObject.deepCopy()
+        schema.remove("additionalProperties")
+        return schema
     }
 
     private fun parseValidationResult(raw: String, questionMarks: Double): Map<String, Any> {
@@ -1552,6 +1552,21 @@ Return ONLY the JSON array, no markdown, no explanation.
         } catch (_: Exception) {
             0.7
         }
+    }
+
+    private fun getFullErrorDescription(e: Throwable): String {
+        var details = ""
+        if (e is retrofit2.HttpException) {
+            val errorBody = try {
+                e.response()?.errorBody()?.string()
+            } catch (_: Exception) {
+                null
+            }
+            if (!errorBody.isNullOrBlank()) {
+                details = "API Error: $errorBody\n"
+            }
+        }
+        return if (details.isNotEmpty()) details else "${e.javaClass.simpleName}: ${e.message ?: "Unknown error"}"
     }
 
     private fun joinLines(obj: Any?): String {
