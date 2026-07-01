@@ -79,31 +79,7 @@ def gemini_generate(*args, **kwargs):
 # ── SYSTEM PROMPT ──
 SYSTEM_PROMPT = """You are **Mynoo Formatter**, a content-structuring AI for Mynoo — a school tutoring app for classes 6–12.
 
-Your sole job is to read raw textbook or lesson content provided by the user and convert it into a valid Mynoo chapter JSON object. You are precise, faithful to the source, and never improvise facts.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  GOLDEN RULES
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-1. Output RAW JSON ONLY — no code fences, no prose before or after, no comments.
-2. Never invent or assume facts not present in the source material.
-3. Never include "_doc", "_guide", "_audio", or "_format_version" fields anywhere.
-4. Every paragraph "id" must be unique across the entire chapter.
-5. Every sentence "id" must be unique across the entire chapter.
-6. Paragraph array order = reading order. Preserve the original flow.
-7. Group 2–5 sentences per paragraph. Start a new paragraph at every topic shift.
-8. VERBATIM FIDELITY — Copy every sentence from the source exactly as written. Do NOT paraphrase, summarise, shorten, merge, or skip any sentence. Every word in the source must appear in the output. Missing content is a critical error.
-9. PRESERVE HEADERS — Every chapter title, section heading, and sub-section heading in the source must appear as a "heading" or "subheading" paragraph in the output. Do not fold headings into prose.
-10. PRESERVE FORMATTING — If the source renders a word or phrase in bold or italic, reproduce it as **bold** or *italic* in the "text" field. Retain all such formatting from the original.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TOP-LEVEL SHAPE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-{
-  "title": "Chapter or Lesson Title",
-  "paragraphs": [ ...paragraph objects... ]
-}
+Your sole job is to read raw textbook or lesson content provided by the user and convert it into a valid Mynoo chapter JSON object having verbatim fidelity (no additions, no summaries, no omissions, preserve the original formatting & flow). You are precise. Every paragraph "id" and sentence "id" must be unique across the entire chapter. Missing content is a critical error.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   PARAGRAPH TYPES
@@ -135,10 +111,6 @@ AUDIO types (each sentence or item → one MP3):
   "text":    "Sentence text.",
   "meaning": "**term** — def"
 }
-
-  id      → REQUIRED. Unique across chapter.
-  text    → REQUIRED. Use inline Markdown (see formatting section).
-  meaning → REQUIRED for every sentence without exception. Must include word-level glosses for key terms AND a full sentence-level meaning on a new \n line.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   MEANING FORMAT & RULES
@@ -433,10 +405,10 @@ if not args.text_only and not args.step and not args.restart and not args.resume
 YOUTUBE_KEY = args.youtube_key or os.environ.get("YOUTUBE_API_KEY", DEFAULT_YT_KEY)
 
 # ── 3. JSON SCHEMAS ────────────────────────────────────────────────────────────
-AARAVTUTOR_SCHEMA = {
+MYNOO_SCHEMA = {
     "type": "object",
     "properties": {
-        "title": {"type": "string"},
+        "title": {"type": "string", "description": "The title of the chapter."},
         "paragraphs": {
             "type": "array",
             "items": {
@@ -893,7 +865,7 @@ else:
 # Dynamic URL schema constraint based on extracted local images (Option A)
 valid_local_images = [f"pdf-image://{img['filename']}" for img in (pdf_images or [])]
 if valid_local_images:
-    AARAVTUTOR_SCHEMA["properties"]["paragraphs"]["items"]["anyOf"][6]["properties"]["items"]["items"]["properties"]["url"] = {
+    MYNOO_SCHEMA["properties"]["paragraphs"]["items"]["anyOf"][6]["properties"]["items"]["items"]["properties"]["url"] = {
         "anyOf": [
             {
                 "type": "string",
@@ -908,7 +880,7 @@ if valid_local_images:
         ]
     }
 else:
-    AARAVTUTOR_SCHEMA["properties"]["paragraphs"]["items"]["anyOf"][6]["properties"]["items"]["items"]["properties"]["url"] = {
+    MYNOO_SCHEMA["properties"]["paragraphs"]["items"]["anyOf"][6]["properties"]["items"]["items"]["properties"]["url"] = {
         "type": "string",
         "pattern": "^https?://",
         "description": "A valid external HTTP/HTTPS URL."
@@ -947,6 +919,23 @@ else:
         for i in usable_images
     ])
 
+    system_instruction_to_use = SYSTEM_PROMPT
+    if not usable_images:
+        start_idx = system_instruction_to_use.find("PDF BOOK IMAGES")
+        end_idx = system_instruction_to_use.find("MEDIA MAPS")
+        if start_idx != -1 and end_idx != -1:
+            sep_before = system_instruction_to_use.rfind("━━", 0, start_idx)
+            sep_after = system_instruction_to_use.rfind("━━", 0, end_idx)
+            if sep_before != -1 and sep_after != -1:
+                system_instruction_to_use = (
+                    system_instruction_to_use[:sep_before] + 
+                    system_instruction_to_use[sep_after:]
+                )
+        system_instruction_to_use += (
+            "\n\nCRITICAL: NO PDF book images are available/extracted for this chapter. "
+            "You MUST NOT generate any 'pdf-image://' URLs. Only use URLs from the Media Maps."
+        )
+
     collected_chunks = []
     output_chars = 0
     t_start = time.time()  
@@ -964,9 +953,9 @@ else:
             f"PDF Images:\n{image_section}"
         ],
         config=types.GenerateContentConfig(
-            system_instruction=SYSTEM_PROMPT,
+            system_instruction=system_instruction_to_use,
             response_mime_type="application/json",
-            response_schema=AARAVTUTOR_SCHEMA,
+            response_schema=MYNOO_SCHEMA,
             max_output_tokens=100000,
             temperature=0.1
         )

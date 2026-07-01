@@ -1,1204 +1,726 @@
 {
-  "title": "The Rise of Empires",
+  "title": "The Gupta Era: An Age of Tireless Creativity",
   "passages": [],
   "questions": [
     {
       "id": "q1",
       "type": "mcq",
-      "category": "Definitions",
+      "category": "Difficult Words",
       "marks": 1,
       "difficulty": "easy",
-      "question": "The word 'empire' comes from the Latin word *imperium*. What does *imperium* mean?",
+      "question": "In the chapter, the term 'classical age' refers to a period of high artistic and cultural achievement.",
       "passageId": "",
-      "tag": "",
-      "hint": "",
+      "tag": "Vocabulary",
+      "hint": "Look at the Big Questions section.",
       "options": [
         {
-          "text": "Supreme power",
-          "explanation": "Correct. The chapter explicitly states 'imperium' means 'supreme power'."
+          "text": "A period of foreign rule",
+          "explanation": "This is incorrect because the chapter defines 'classical age' as a period of high artistic and cultural achievement, not foreign rule. [file:1]"
         },
         {
-          "text": "Military strength",
-          "explanation": "Incorrect. This is not the meaning given in the chapter."
+          "text": "A period of high artistic and cultural achievement",
+          "explanation": "This is correct because the chapter explains that 'classical age' means a period considered to be of high artistic and cultural achievement. [file:1]"
         },
         {
-          "text": "Vast territory",
-          "explanation": "Incorrect. While empires are vast, this is not the meaning of *imperium*."
+          "text": "A period with no kingdoms",
+          "explanation": "This is incorrect because the chapter says many kingdoms coexisted during this time. [file:1]"
         },
         {
-          "text": "Royal dynasty",
-          "explanation": "Incorrect. *Imperium* refers to power, not lineage."
-        }
-      ],
-      "correctIndex": 0,
-      "correctAnswer": "Supreme power",
-      "explanation": "The chapter states: 'The word empire comes from the Latin imperium, which means supreme power.'"
-    },
-    {
-      "id": "q2",
-      "type": "mcq",
-      "category": "Vocabulary",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "What is a **tributary** (also called a vassal) in the context of an empire?",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "options": [
-        {
-          "text": "A river that flows into another river",
-          "explanation": "Incorrect. While this is a common meaning, the chapter uses it differently."
-        },
-        {
-          "text": "A ruler or state that has submitted to an emperor and pays tribute",
-          "explanation": "Correct. The chapter's callout box clearly defines tributary this way."
-        },
-        {
-          "text": "An official appointed by the emperor to manage territories",
-          "explanation": "Incorrect. That describes an administrator or satrap."
-        },
-        {
-          "text": "A soldier in the emperor's army",
-          "explanation": "Incorrect. Soldiers are not tributaries."
+          "text": "A period of only military expansion",
+          "explanation": "This is incorrect because the chapter links the term mainly with cultural, literary, scientific and artistic growth. [file:1]"
         }
       ],
       "correctIndex": 1,
-      "correctAnswer": "A ruler or state that has submitted to an emperor and pays tribute",
-      "explanation": "The chapter defines a tributary as a ruler or state that has submitted to an emperor and pays tribute as a sign of submission, loyalty or respect."
+      "correctAnswer": "A period of high artistic and cultural achievement",
+      "explanation": "The meaning is stated directly in the chapter glossary under the Big Questions section. [file:1]"
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "category": "Inscriptions and Monuments",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Fill in the blank: The Iron Pillar was dedicated to ___.",
+      "passageId": "",
+      "tag": "Fact Recall",
+      "hint": "Read the tour guide's explanation.",
+      "blanks": [
+        "Vishnu"
+      ],
+      "correctAnswer": "Vishnu",
+      "explanation": "The chapter states that the pillar was dedicated to Viṣhṇu. [file:1]"
     },
     {
       "id": "q3",
       "type": "mcq",
-      "category": "Magadha",
+      "category": "Difficult Words",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Magadha corresponds to which modern-day region of India?",
+      "question": "In the chapter, 'tribute' means:",
       "passageId": "",
-      "tag": "",
-      "hint": "",
+      "tag": "Vocabulary",
+      "hint": "See the explanation near Samudragupta's campaigns.",
       "options": [
         {
-          "text": "Northern Uttar Pradesh",
-          "explanation": "Incorrect. The chapter says Magadha was in south Bihar."
+          "text": "A new kind of temple",
+          "explanation": "This is incorrect because tribute is not a temple. [file:1]"
         },
         {
-          "text": "Modern-day south Bihar and some adjoining areas",
-          "explanation": "Correct. The chapter explicitly mentions this."
+          "text": "A payment made by one ruler to another as a sign of submission",
+          "explanation": "This is correct because the chapter defines tribute in exactly this way. [file:1]"
         },
         {
-          "text": "Present-day Delhi and Haryana",
-          "explanation": "Incorrect. That was never mentioned."
+          "text": "A title used by Gupta rulers",
+          "explanation": "This is incorrect because titles such as samrāt and chakravartin are discussed separately. [file:1]"
         },
         {
-          "text": "Eastern Rajasthan",
-          "explanation": "Incorrect. Magadha was in the Ganga plains of Bihar."
+          "text": "A tax collected only from traders",
+          "explanation": "This is incorrect because the chapter does not define tribute as a trader-only tax. [file:1]"
         }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Modern-day south Bihar and some adjoining areas",
-      "explanation": "The chapter states: 'Magadha (modern-day south Bihar and some adjoining areas) rose in importance…'"
+      "correctAnswer": "A payment made by one ruler to another as a sign of submission",
+      "explanation": "The glossary attached to the Samudragupta section defines tribute clearly. [file:1]"
     },
     {
       "id": "q4",
-      "type": "mcq",
-      "category": "Guilds",
+      "type": "fill_blank",
+      "category": "Sources of History",
       "marks": 1,
       "difficulty": "easy",
-      "question": "What is the Sanskrit word used in the chapter for guilds?",
+      "question": "Fill in the blank: The *prayāga praśhasti* praises the achievements of ___.",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "options": [
-        {
-          "text": "Sūtras",
-          "explanation": "Incorrect. Sūtras are concise phrases capturing knowledge, not guilds."
-        },
-        {
-          "text": "Śhrenīs",
-          "explanation": "Correct. The chapter explicitly states guilds were called śhrenīs."
-        },
-        {
-          "text": "Mahājanapadas",
-          "explanation": "Incorrect. Mahājanapadas were large kingdoms, not guilds."
-        },
-        {
-          "text": "Samrāj",
-          "explanation": "Incorrect. Samrāj means supreme ruler."
-        }
+      "tag": "Inscription",
+      "hint": "Read the section titled 'The warrior king'.",
+      "blanks": [
+        "Samudragupta"
       ],
-      "correctIndex": 1,
-      "correctAnswer": "Śhrenīs",
-      "explanation": "The chapter says traders created 'guilds (śhrenīs)' — powerful associations of traders, craftsmen, moneylenders or agriculturists."
+      "correctAnswer": "Samudragupta",
+      "explanation": "The chapter says the *prayāga praśhasti* praises the achievements of Samudragupta, Chandragupta II's father. [file:1]"
     },
     {
       "id": "q5",
       "type": "mcq",
-      "category": "Alexander the Great",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "According to the chapter, Alexander defeated Porus in which region of India?",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "options": [
-        {
-          "text": "Kashmir",
-          "explanation": "Incorrect. The chapter does not mention Kashmir."
-        },
-        {
-          "text": "Punjab",
-          "explanation": "Correct. The chapter states Alexander 'defeated Porus in Punjab'."
-        },
-        {
-          "text": "Magadha",
-          "explanation": "Incorrect. Alexander never reached Magadha — his troops refused to go further."
-        },
-        {
-          "text": "Sindh",
-          "explanation": "Incorrect. This is not stated in the chapter."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "Punjab",
-      "explanation": "The chapter states Alexander 'pushed on further east...defeated Porus in Punjab'."
-    },
-    {
-      "id": "q6",
-      "type": "mcq",
-      "category": "Maurya Empire",
+      "category": "Travellers' Accounts",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Who was Chandragupta Maurya's able mentor who helped him build the Maurya Empire?",
+      "question": "Faxian came to India mainly to:",
       "passageId": "",
-      "tag": "",
-      "hint": "",
+      "tag": "Traveller",
+      "hint": "Read why he undertook his pilgrimage.",
       "options": [
         {
-          "text": "Ajātaśhatru",
-          "explanation": "Incorrect. Ajātaśhatru was an early king of Magadha, not Chandragupta's mentor."
+          "text": "Conquer Indian kingdoms",
+          "explanation": "This is incorrect because Faxian was a traveller and pilgrim, not a conqueror. [file:1]"
         },
         {
-          "text": "Megasthenes",
-          "explanation": "Incorrect. Megasthenes was a Greek ambassador, not a mentor."
+          "text": "Trade in gemstones and ivory",
+          "explanation": "This is incorrect because the chapter mentions these exports in trade, not as Faxian's purpose. [file:1]"
         },
         {
-          "text": "Kautilya",
-          "explanation": "Correct. The chapter clearly states Chandragupta managed his feat with the help of Kautilya."
+          "text": "Visit sacred Buddhist sites, learn from scholars, and collect manuscripts",
+          "explanation": "This is correct because the chapter gives these three purposes for his journey. [file:1]"
         },
         {
-          "text": "Dhana Nanda",
-          "explanation": "Incorrect. Dhana Nanda was the last Nanda emperor whom Chandragupta overthrew."
+          "text": "Build Buddhist monasteries in India",
+          "explanation": "This is incorrect because the chapter does not say he came to build monasteries. [file:1]"
         }
       ],
       "correctIndex": 2,
-      "correctAnswer": "Kautilya",
-      "explanation": "The chapter states: 'Chandragupta managed this feat with the help of an able mentor named Kautilya.'"
+      "correctAnswer": "Visit sacred Buddhist sites, learn from scholars, and collect manuscripts",
+      "explanation": "The chapter directly lists these as Faxian's reasons for travelling to India. [file:1]"
+    },
+    {
+      "id": "q6",
+      "type": "fill_blank",
+      "category": "Economy",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Fill in the blank: The primary source of Gupta revenue was ___ tax.",
+      "passageId": "",
+      "tag": "Economy",
+      "hint": "See the section 'Thriving trade'.",
+      "blanks": [
+        "land"
+      ],
+      "correctAnswer": "land",
+      "explanation": "The chapter states that land tax was the primary source of revenue of the Guptas. [file:1]"
     },
     {
       "id": "q7",
       "type": "mcq",
-      "category": "Vocabulary",
+      "category": "Difficult Words",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "What does the term **Gymnosophists** mean, as used by the Greeks for Indian sages they encountered?",
+      "difficulty": "easy",
+      "question": "In the chapter, 'pilgrimage' means:",
       "passageId": "",
-      "tag": "",
-      "hint": "",
+      "tag": "Vocabulary",
+      "hint": "Check the note beside Faxian's journey.",
       "options": [
         {
-          "text": "Forest dwellers",
-          "explanation": "Incorrect. The chapter gives a different meaning."
+          "text": "A journey to a sacred place",
+          "explanation": "This is correct because the chapter defines pilgrimage as a journey to a sacred place. [file:1]"
         },
         {
-          "text": "Naked philosophers",
-          "explanation": "Correct. The chapter states Greeks called them 'Gymnosophists' or 'naked philosophers'."
+          "text": "A battle between two kingdoms",
+          "explanation": "This is incorrect because pilgrimage is not a battle. [file:1]"
         },
         {
-          "text": "Warrior monks",
-          "explanation": "Incorrect. This meaning is not given in the chapter."
+          "text": "A donation to a temple",
+          "explanation": "This is incorrect because the chapter does not define pilgrimage as a donation. [file:1]"
         },
         {
-          "text": "Royal advisers",
-          "explanation": "Incorrect. These were independent sages, not royal advisers."
+          "text": "A formal royal title",
+          "explanation": "This is incorrect because pilgrimage is a journey, not a title. [file:1]"
         }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "Naked philosophers",
-      "explanation": "The chapter says: 'a group of Indian sages whom the Greeks called Gymnosophists or naked philosophers (probably because they wore very little clothing).'"
+      "correctIndex": 0,
+      "correctAnswer": "A journey to a sacred place",
+      "explanation": "The glossary in the Faxian section gives this exact meaning. [file:1]"
     },
     {
       "id": "q8",
-      "type": "mcq",
-      "category": "Nanda Dynasty",
+      "type": "fill_blank",
+      "category": "Trade",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "Who founded the Nanda dynasty in Magadha?",
+      "difficulty": "easy",
+      "question": "Fill in the blank: Socotra Island is located in the ___ Sea.",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "options": [
-        {
-          "text": "Dhana Nanda",
-          "explanation": "Incorrect. Dhana Nanda was the last Nanda emperor."
-        },
-        {
-          "text": "Ajātaśhatru",
-          "explanation": "Incorrect. Ajātaśhatru was an early king of Magadha before the Nandas."
-        },
-        {
-          "text": "Mahāpadma Nanda",
-          "explanation": "Correct. The chapter states: 'Mahāpadma Nanda rose to prominence and founded the Nanda dynasty.'"
-        },
-        {
-          "text": "Chandragupta Maurya",
-          "explanation": "Incorrect. Chandragupta founded the Maurya dynasty, not the Nanda dynasty."
-        }
+      "tag": "Trade Routes",
+      "hint": "Read the paragraph on Mediterranean trade routes.",
+      "blanks": [
+        "Arabian"
       ],
-      "correctIndex": 2,
-      "correctAnswer": "Mahāpadma Nanda",
-      "explanation": "The chapter clearly states: 'Mahāpadma Nanda rose to prominence in Magadha and founded the Nanda dynasty.'"
+      "correctAnswer": "Arabian",
+      "explanation": "The chapter says Socotra Island was strategically located in the Arabian Sea. [file:1]"
     },
     {
       "id": "q9",
       "type": "mcq",
-      "category": "Vocabulary",
+      "category": "Science and Mathematics",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "What is a **moat** as described in the chapter in the context of city defences?",
+      "difficulty": "easy",
+      "question": "The *Āryabhaṭīya* is a treatise on:",
       "passageId": "",
-      "tag": "",
-      "hint": "",
+      "tag": "Scholar",
+      "hint": "Read the note on Āryabhața.",
       "options": [
         {
-          "text": "A tall watchtower used for surveillance",
-          "explanation": "Incorrect. A watchtower is not a moat."
+          "text": "Only medicine",
+          "explanation": "This is incorrect because the chapter links medicine with Ayurvedic texts, not the *Āryabhaṭīya*. [file:1]"
         },
         {
-          "text": "A deep, wide ditch surrounding a fort or city, typically filled with water",
-          "explanation": "Correct. The chapter defines a moat exactly this way."
+          "text": "Mathematics and astronomy",
+          "explanation": "This is correct because the chapter says Āryabhața authored a short treatise of mathematics and astronomy called *Āryabhaṭīya*. [file:1]"
         },
         {
-          "text": "A type of drawbridge that can be raised during attack",
-          "explanation": "Incorrect. That describes a drawbridge, not a moat."
+          "text": "Poetry and drama",
+          "explanation": "This is incorrect because poetry is connected with Kālidāsa. [file:1]"
         },
         {
-          "text": "A thick wooden wall surrounding the city",
-          "explanation": "Incorrect. That describes ramparts."
+          "text": "Architecture and town planning",
+          "explanation": "This is incorrect because those subjects are linked with Varāhamihira's *Brihat Samhitā*. [file:1]"
         }
       ],
       "correctIndex": 1,
-      "correctAnswer": "A deep, wide ditch surrounding a fort or city, typically filled with water",
-      "explanation": "The chapter states a moat is 'a deep, wide ditch surrounding a castle, fort, or town, typically filled with water and intended as a defence against attack.'"
+      "correctAnswer": "Mathematics and astronomy",
+      "explanation": "The chapter states this directly in the note on Āryabhața. [file:1]"
     },
     {
       "id": "q10",
-      "type": "mcq",
-      "category": "Ashoka",
+      "type": "fill_blank",
+      "category": "Literature",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "The Sarnath pillar capital erected by Ashoka has four lions at the top. What do the four lions symbolise?",
+      "difficulty": "easy",
+      "question": "Fill in the blank: *Meghadūtam* means 'The ___ Messenger'.",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "options": [
-        {
-          "text": "The four directions of the empire",
-          "explanation": "Incorrect. The chapter does not give this meaning."
-        },
-        {
-          "text": "The four noble truths of Buddhism",
-          "explanation": "Incorrect. The dharmachakra represents Buddhist teachings, not the lions."
-        },
-        {
-          "text": "Royal power",
-          "explanation": "Correct. The chapter states: 'The four lions symbolise the royal power.'"
-        },
-        {
-          "text": "The four seasons of the year",
-          "explanation": "Incorrect. This meaning is not mentioned in the chapter."
-        }
+      "tag": "Literature",
+      "hint": "Read the note on Kālidāsa.",
+      "blanks": [
+        "Cloud"
       ],
-      "correctIndex": 2,
-      "correctAnswer": "Royal power",
-      "explanation": "The chapter states: 'The four lions symbolise the royal power.'"
+      "correctAnswer": "Cloud",
+      "explanation": "The chapter says *Meghadūtam* means 'The Cloud Messenger'. [file:1]"
     },
     {
       "id": "q11",
-      "type": "mcq",
-      "category": "Greek Accounts",
-      "marks": 1,
+      "type": "match_columns",
+      "category": "People and Sources",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "Who was the Greek ambassador sent to Chandragupta Maurya's court, whose writings describe Mauryan society?",
+      "question": "Match Column A with Column B.",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "options": [
-        {
-          "text": "Porus",
-          "explanation": "Incorrect. Porus was an Indian king who fought Alexander."
-        },
-        {
-          "text": "Megasthenes",
-          "explanation": "Correct. Megasthenes was a Greek ambassador whose account throws light on Mauryan society."
-        },
-        {
-          "text": "Alexander",
-          "explanation": "Incorrect. Alexander was the Greek king, not an ambassador to India."
-        },
-        {
-          "text": "Seleucus",
-          "explanation": "Incorrect. While Seleucus had dealings with Chandragupta, the ambassador mentioned is Megasthenes."
-        }
+      "tag": "Key Figures",
+      "hint": "Connect each person with the correct description.",
+      "columnA": [
+        "Chandragupta II",
+        "Samudragupta",
+        "Faxian",
+        "Prabhāvatī Gupta"
       ],
-      "correctIndex": 1,
-      "correctAnswer": "Megasthenes",
-      "explanation": "The chapter mentions 'Megasthenes' account also throws some light on the society of that time.'"
+      "columnB": [
+        "(a) Chinese traveller",
+        "(b) Regent ruler of the Vākāțaka kingdom",
+        "(c) Also known as Vikramāditya",
+        "(d) Praised in the *prayāga praśhasti*"
+      ],
+      "correctMatches": [
+        "c",
+        "d",
+        "a",
+        "b"
+      ],
+      "correctAnswer": "1-c, 2-d, 3-a, 4-b",
+      "explanation": "The chapter identifies Chandragupta II as Vikramāditya, Samudragupta as the ruler praised in the *prayāga praśhasti*, Faxian as the Chinese traveller, and Prabhāvatī Gupta as the regent ruler of the Vākāțaka kingdom. [file:1]"
     },
     {
       "id": "q12",
-      "type": "mcq",
-      "category": "Vocabulary",
-      "marks": 1,
-      "difficulty": "hard",
-      "question": "Which of the following best explains the term **posterity** as used in the chapter?",
+      "type": "match_columns",
+      "category": "Places and Features",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Match Column A with Column B.",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "options": [
-        {
-          "text": "Past generations",
-          "explanation": "Incorrect. Posterity refers to future generations, not past ones."
-        },
-        {
-          "text": "Wealth accumulated by a ruler",
-          "explanation": "Incorrect. This is not the meaning given."
-        },
-        {
-          "text": "All future generations of people",
-          "explanation": "Correct. The chapter's callout box defines posterity as 'the generations to come.'"
-        },
-        {
-          "text": "A term for a large empire",
-          "explanation": "Incorrect. Posterity has nothing to do with empires directly."
-        }
+      "tag": "Locations",
+      "hint": "Use the map-based and monument-based details from the chapter.",
+      "columnA": [
+        "Mehrauli",
+        "Udayagiri",
+        "Kānchipuram",
+        "Socotra Island"
       ],
-      "correctIndex": 2,
-      "correctAnswer": "All future generations of people",
-      "explanation": "The chapter's callout box defines posterity simply as 'the generations to come.'"
+      "columnB": [
+        "(a) Probable original location of the Iron Pillar",
+        "(b) Capital of the Pallavas",
+        "(c) Place where the Iron Pillar now stands",
+        "(d) Significant stop toward Mediterranean markets"
+      ],
+      "correctMatches": [
+        "c",
+        "a",
+        "b",
+        "d"
+      ],
+      "correctAnswer": "1-c, 2-a, 3-b, 4-d",
+      "explanation": "The chapter places the Iron Pillar at Mehrauli, says it was probably first erected before the Udayagiri caves, identifies Kānchipuram as the Pallava capital, and names Socotra as a significant stop on the trade route. [file:1]"
     },
     {
       "id": "q13",
-      "type": "mcq",
-      "category": "Pāṭaliputra",
-      "marks": 1,
+      "type": "match_columns",
+      "category": "Difficult Words",
+      "marks": 2,
       "difficulty": "easy",
-      "question": "The ancient city of Pāṭaliputra is located near which modern Indian city?",
+      "question": "Match Column A with Column B.",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "options": [
-        {
-          "text": "Varanasi",
-          "explanation": "Incorrect. Varanasi is associated with Sarnath and Ashoka's pillar."
-        },
-        {
-          "text": "Delhi",
-          "explanation": "Incorrect. Delhi is not mentioned as the location of Pāṭaliputra."
-        },
-        {
-          "text": "Patna",
-          "explanation": "Correct. The chapter states Pāṭaliputra was 'about the same location as modern-day Patna.'"
-        },
-        {
-          "text": "Kolkata",
-          "explanation": "Incorrect. Kolkata is not mentioned in this context."
-        }
+      "tag": "Vocabulary",
+      "hint": "These meanings are given in the chapter itself.",
+      "columnA": [
+        "Tribute",
+        "Pilgrimage",
+        "Metallurgy",
+        "Corroborate"
       ],
-      "correctIndex": 2,
-      "correctAnswer": "Patna",
-      "explanation": "The chapter states they 'decided to visit Pāṭaliputra…they knew it was about the same location as modern-day Patna.'"
+      "columnB": [
+        "(a) Confirm or support an understanding",
+        "(b) Science of metals",
+        "(c) Payment made as a sign of submission",
+        "(d) Journey to a sacred place"
+      ],
+      "correctMatches": [
+        "c",
+        "d",
+        "b",
+        "a"
+      ],
+      "correctAnswer": "1-c, 2-d, 3-b, 4-a",
+      "explanation": "All four meanings are stated in the chapter glossary attached to the relevant sections. [file:1]"
     },
     {
       "id": "q14",
-      "type": "mcq",
-      "category": "Sanskrit Terms",
-      "marks": 1,
-      "difficulty": "hard",
-      "question": "Which Sanskrit word for 'emperor' means 'king of kings'?",
+      "type": "match_columns",
+      "category": "Scholars and Works",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Match Column A with Column B.",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "options": [
-        {
-          "text": "Samrāj",
-          "explanation": "Incorrect. Samrāj means 'the lord of all' or 'supreme ruler'."
-        },
-        {
-          "text": "Adhirāja",
-          "explanation": "Incorrect. Adhirāja means 'overlord'."
-        },
-        {
-          "text": "Rājādhirāja",
-          "explanation": "Correct. The chapter states rājādhirāja means 'king of kings'."
-        },
-        {
-          "text": "Mahārāja",
-          "explanation": "Incorrect. Mahārāja is not one of the terms listed in the chapter for emperor."
-        }
+      "tag": "Classical Age",
+      "hint": "Link each scholar with the work mentioned in the chapter.",
+      "columnA": [
+        "Āryabhața",
+        "Varāhamihira",
+        "Kālidāsa",
+        "Faxian"
       ],
-      "correctIndex": 2,
-      "correctAnswer": "Rājādhirāja",
-      "explanation": "The chapter lists 'rājādhirāja or king of kings' as one of the Sanskrit words for emperor."
+      "columnB": [
+        "(a) *Meghadūtam*",
+        "(b) *Brihat Samhitā*",
+        "(c) *Āryabhaṭīya*",
+        "(d) *A Record of Buddhistic Kingdoms*"
+      ],
+      "correctMatches": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "correctAnswer": "1-c, 2-b, 3-a, 4-d",
+      "explanation": "The chapter links Āryabhața with *Āryabhaṭīya*, Varāhamihira with *Brihat Samhitā*, Kālidāsa with *Meghadūtam*, and Faxian with *A Record of Buddhistic Kingdoms*. [file:1]"
     },
     {
       "id": "q15",
-      "type": "mcq",
-      "category": "Pāṇini",
-      "marks": 1,
-      "difficulty": "hard",
-      "question": "How many sūtras does Pāṇini's *Aṣṭādhyāyī* contain?",
+      "type": "match_columns",
+      "category": "Kingdoms and Regions",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Match Column A with Column B.",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "options": [
-        {
-          "text": "1,000",
-          "explanation": "Incorrect. The chapter gives a specific number."
-        },
-        {
-          "text": "3,996",
-          "explanation": "Correct. The chapter states Pāṇini composed the Aṣṭādhyāyī with '3,996 short sūtras'."
-        },
-        {
-          "text": "5,000",
-          "explanation": "Incorrect. This number is not mentioned in the chapter."
-        },
-        {
-          "text": "2,500",
-          "explanation": "Incorrect. The chapter clearly states 3,996."
-        }
+      "tag": "Regional Powers",
+      "hint": "Read the section on the south and northeast carefully.",
+      "columnA": [
+        "Pallavas",
+        "Kāmarūpa",
+        "Hūņas",
+        "Vākāțakas"
       ],
-      "correctIndex": 1,
-      "correctAnswer": "3,996",
-      "explanation": "The chapter's note states Pāṇini is 'known for composing the Aṣṭādhyāyī…which lists the rules of Sanskrit grammar in 3,996 short sūtras.'"
+      "columnB": [
+        "(a) Neighbours of the Guptas to the south",
+        "(b) Powerful dynasty in parts of south India",
+        "(c) Fierce tribe from central Asia",
+        "(d) Kingdom over the Brahmaputra valley"
+      ],
+      "correctMatches": [
+        "b",
+        "d",
+        "c",
+        "a"
+      ],
+      "correctAnswer": "1-b, 2-d, 3-c, 4-a",
+      "explanation": "The chapter describes the Pallavas as a southern dynasty, Kāmarūpa as extending over the Brahmaputra valley, the Hūņas as a fierce tribe from central Asia, and the Vākāțakas as the Guptas' southern neighbours. [file:1]"
     },
     {
       "id": "q16",
-      "type": "fill_blank",
-      "category": "Empires",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Inscriptions and Monuments",
+      "marks": 2,
       "difficulty": "easy",
-      "question": "Fill in the blank: An emperor rules the entire empire from a ___, which is usually a major centre of economic and administrative power.",
+      "question": "Why is the Iron Pillar of Delhi considered remarkable? Give any two points.",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": [
-        "capital"
-      ],
-      "correctAnswer": "capital",
-      "explanation": "The chapter states the emperor 'ruled the whole territory from a capital, usually a major centre of economic and administrative power.'"
+      "tag": "Monument",
+      "hint": "Think about age and metallurgy.",
+      "correctAnswer": "It is over 1,600 years old and still has not rusted. [file:1] It also shows the advanced metallurgical skills of ancient India. [file:1]",
+      "explanation": "The chapter highlights both its age and its rust-resistant composition as reasons for its importance. [file:1]"
     },
     {
       "id": "q17",
-      "type": "fill_blank",
-      "category": "Alexander",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "Fill in the blank: Alexander died in ___ at the age of 32.",
+      "type": "short_answer",
+      "category": "Classical Age",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Why is the Gupta period sometimes called the 'classical age' of India? Give two reasons.",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": [
-        "Babylon"
-      ],
-      "correctAnswer": "Babylon",
-      "explanation": "The chapter states: 'After he fell ill and died in Babylon at the age of 32…'"
+      "tag": "Concept",
+      "hint": "Look at the section on new ideas and wonders.",
+      "correctAnswer": "It is called the classical age because art, literature, science and architecture flourished during this period. [file:1] It was also a time when earlier knowledge was consolidated and compiled into many texts. [file:1]",
+      "explanation": "The chapter connects the term with both creative achievements and the compilation of knowledge. [file:1]"
     },
     {
       "id": "q18",
-      "type": "fill_blank",
-      "category": "Guilds",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Sources of History",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "Fill in the blank: According to the chapter, a guild's head was usually ___ by the members.",
+      "question": "What does the inscription on the Iron Pillar tell us about the pillar and the king connected with it?",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": [
-        "elected"
-      ],
-      "correctAnswer": "elected",
-      "explanation": "The chapter states: 'a guild had a head (who was usually elected) and executive officers.'"
+      "tag": "Inscription",
+      "hint": "Read the paragraphs after the children visit Mehrauli.",
+      "correctAnswer": "The inscription speaks of a king named 'Chandra', who is identified with Chandragupta II. [file:1] It also celebrates the king's achievements and shows that the pillar was dedicated to Viṣhṇu. [file:1]",
+      "explanation": "These details come directly from the chapter's discussion of the pillar inscription. [file:1]"
     },
     {
       "id": "q19",
-      "type": "fill_blank",
-      "category": "Magadha",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Gupta Rulers",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "Fill in the blank: The ___ and Son rivers gave Magadha a geographical advantage for transportation and trade.",
+      "question": "What role did Chandragupta I play in the early growth of the Gupta Empire?",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": [
-        "Ganga"
-      ],
-      "correctAnswer": "Ganga",
-      "explanation": "The chapter states: 'The Ganga and Son rivers provided a geographical advantage for trade, as they could be used for transportation.'"
+      "tag": "Expansion",
+      "hint": "See the note explaining why historians call Chandragupta II by that number.",
+      "correctAnswer": "Chandragupta I played a crucial role in the early expansion of the Gupta Empire. [file:1] He is remembered for his coins and strategic alliances, which helped him consolidate power and lay the foundation of a strong empire. [file:1]",
+      "explanation": "The chapter states that his alliances and coins are key to understanding the early strengthening of Gupta power. [file:1]"
     },
     {
       "id": "q20",
-      "type": "fill_blank",
-      "category": "Nanda Dynasty",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Samudragupta",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "Fill in the blank: The last emperor of the Nanda dynasty was ___, who became unpopular for oppressing and exploiting his people.",
+      "question": "Who wrote the *prayāga praśhasti*, and what ambition of Samudragupta does it mention?",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": [
-        "Dhana Nanda"
-      ],
-      "correctAnswer": "Dhana Nanda",
-      "explanation": "The chapter states: 'its last emperor, Dhana Nanda, though very rich, became highly unpopular as he oppressed and exploited his people.'"
+      "tag": "Inscription",
+      "hint": "The answer is in 'The warrior king'.",
+      "correctAnswer": "The court poet Harisena wrote the *prayāga praśhasti*. [file:1] He says that Samudragupta's ambition was to be 'dharaņi-bandha' or to 'unify the Earth'. [file:1]",
+      "explanation": "Both the author and the stated ambition are directly mentioned in the chapter. [file:1]"
     },
     {
       "id": "q21",
-      "type": "fill_blank",
-      "category": "Maurya Empire",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "Fill in the blank: The Maurya Empire was founded by ___ around 321 BCE.",
+      "type": "short_answer",
+      "category": "Samudragupta",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "What happened to many defeated kings after Samudragupta's campaigns?",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": [
-        "Chandragupta Maurya"
-      ],
-      "correctAnswer": "Chandragupta Maurya",
-      "explanation": "The chapter states: 'Around 321 BCE…a new dynasty and new empire emerged: the Maurya Empire founded by Chandragupta Maurya.'"
+      "tag": "Campaigns",
+      "hint": "Read what Harisena wrote about defeated rulers.",
+      "correctAnswer": "Many defeated kings were reinstated to their thrones and offered tribute to Samudragupta. [file:1] Others submitted without protest because they feared his might. [file:1]",
+      "explanation": "The chapter explains that Samudragupta often allowed local rulers to continue under his authority. [file:1]"
     },
     {
       "id": "q22",
-      "type": "fill_blank",
-      "category": "Arthashastra",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Travellers' Accounts",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "Fill in the blank: The quote at the beginning of Chapter 5 — 'There cannot be a country without people…' — is from Kautilya's book called ___.",
+      "question": "Write any two observations made by Faxian about Indian society in the Gupta age.",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": [
-        "Arthaśhāstra"
-      ],
-      "correctAnswer": "Arthaśhāstra",
-      "explanation": "The chapter's opening attribution reads: 'Kauṭilya in Arthaśhāstra.'"
+      "tag": "Society",
+      "hint": "Use the excerpt from his travelogue.",
+      "correctAnswer": "Faxian wrote that the people were numerous and happy. [file:1] He also noted that wealthy Vaishya families supported charity, medicines, food and treatment for the poor, the sick and orphans. [file:1]",
+      "explanation": "These points are drawn from the excerpt quoted in the chapter. [file:1]"
     },
     {
       "id": "q23",
-      "type": "fill_blank",
-      "category": "Sarnath",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Historical Method",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "Fill in the blank: Ashoka's famous pillar capital at Sarnath is located near the city of ___, and it is the place where the Buddha gave his first teaching.",
+      "question": "Why does the chapter remind us to use multiple sources before drawing conclusions about history?",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": [
-        "Varanasi"
-      ],
-      "correctAnswer": "Varanasi",
-      "explanation": "The chapter states Ashoka 'got erected at Sarnath, near Varanasi, where the Buddha gave his first teaching.'"
+      "tag": "Sources",
+      "hint": "Read the paragraph after the note on outcastes.",
+      "correctAnswer": "A single source reflects only the writer's perspective and often describes only a limited part of society. [file:1] Historians therefore compare more sources to corroborate their understanding and to reach better conclusions. [file:1]",
+      "explanation": "The chapter uses Faxian's account to show both the value and the limits of individual sources. [file:1]"
     },
     {
       "id": "q24",
-      "type": "fill_blank",
-      "category": "Trade",
-      "marks": 1,
-      "difficulty": "hard",
-      "question": "Fill in the blank: According to the chapter, the two important ancient Indian trade routes visible on the map from around 500 BCE are the Uttarapatha and the ___.",
+      "type": "short_answer",
+      "category": "Governance and Administration",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "How was the Gupta Empire administered? Mention any two features.",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": [
-        "Dakshiṇapatha"
-      ],
-      "correctAnswer": "Dakshiṇapatha",
-      "explanation": "The chapter's map caption reads: 'Notice the Uttarapatha and the Dakshiṇapatha routes.'"
+      "tag": "Administration",
+      "hint": "Read the section 'Governance and administration'.",
+      "correctAnswer": "The empire was divided into provinces instead of being controlled entirely from one central authority. [file:1] The rulers also granted land to local rulers, priests and chieftains, and these grants were recorded on copper plates. [file:1]",
+      "explanation": "These features are presented in the chapter as parts of the well-organised Gupta administrative system. [file:1]"
+    },
+    {
+      "id": "q25",
+      "type": "short_answer",
+      "category": "Economy",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Name any two sources of Gupta revenue other than land tax, and state one use of this revenue.",
+      "passageId": "",
+      "tag": "Revenue",
+      "hint": "Read the start of 'Thriving trade'.",
+      "correctAnswer": "Other sources of revenue included fines, taxes on mines, irrigation, trade and crafts. [file:1] This revenue was used for administration, the army, temples, infrastructure, and support for scholars and artists. [file:1]",
+      "explanation": "The chapter lists several income sources and explains how the state used that money. [file:1]"
     },
     {
       "id": "q26",
-      "type": "error_correction",
-      "category": "Factual Accuracy",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "Find and correct the factual error in the following sentence.",
+      "type": "short_answer",
+      "category": "Trade",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "What goods did India export in the Gupta era, and with which regions did it trade?",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "inputSentence": "The word 'empire' comes from the Latin word 'imperium', which means 'military power'.",
-      "correctAnswer": "The word 'empire' comes from the Latin word 'imperium', which means 'supreme power'.",
-      "explanation": "The chapter clearly states imperium means 'supreme power', not 'military power'."
+      "tag": "Trade Networks",
+      "hint": "See the middle of the section 'Thriving trade'.",
+      "correctAnswer": "India exported textiles, spices, ivory and gemstones. [file:1] It traded with the Mediterranean world, Southeast Asia and China. [file:1]",
+      "explanation": "The chapter gives both the export goods and the main trade regions directly. [file:1]"
     },
     {
       "id": "q27",
-      "type": "error_correction",
-      "category": "Factual Accuracy",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Religion and Culture",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "Find and correct the factual error in the following sentence.",
+      "question": "How does the chapter show that the Gupta rulers were religiously devoted yet inclusive?",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "inputSentence": "Alexander died in Athens at the age of 32 after facing rebellions and political turmoil.",
-      "correctAnswer": "Alexander died in Babylon at the age of 32 after facing rebellions and political turmoil.",
-      "explanation": "The chapter states Alexander died in Babylon, not Athens."
+      "tag": "Religious Policy",
+      "hint": "Read the opening lines of 'New Ideas and Wonders: The Classical Age'.",
+      "correctAnswer": "The Gupta rulers were devout followers of Viṣhṇu, which is reflected in their coins and inscriptions. [file:1] At the same time, they supported other traditions and patronised Buddhist institutions such as Nālandā and other vihāras. [file:1]",
+      "explanation": "The chapter presents their religious outlook as both devoted and open. [file:1]"
     },
     {
       "id": "q28",
-      "type": "error_correction",
-      "category": "Factual Accuracy",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Women in History",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "Find and correct the factual error in the following sentence.",
+      "question": "Who was Prabhāvatī Gupta, and why was she important?",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "inputSentence": "Pāṇini composed the Aṣṭādhyāyī, which lists the rules of Sanskrit grammar in 3,600 short sūtras.",
-      "correctAnswer": "Pāṇini composed the Aṣṭādhyāyī, which lists the rules of Sanskrit grammar in 3,996 short sūtras.",
-      "explanation": "The chapter states the Aṣṭādhyāyī contains 3,996 sūtras, not 3,600."
+      "tag": "Political Role",
+      "hint": "Read the section on matrimonial alliances.",
+      "correctAnswer": "Prabhāvatī Gupta was the daughter of Chandragupta II and was married to a prince of the Vākāțaka kingdom. [file:1] After the prince died early, she became the regent ruler and kept the ties between the Vākāțakas and the Guptas strong. [file:1]",
+      "explanation": "The chapter highlights both her political position and her role in maintaining an important alliance. [file:1]"
     },
     {
       "id": "q29",
-      "type": "error_correction",
-      "category": "Factual Accuracy",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Science and Mathematics",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "Find and correct the factual error in the following sentence.",
+      "question": "Mention any two contributions of Āryabhața.",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "inputSentence": "Mahāpadma Nanda founded the Maurya dynasty around the 5th century BCE.",
-      "correctAnswer": "Mahāpadma Nanda founded the Nanda dynasty around the 5th century BCE.",
-      "explanation": "Mahāpadma Nanda founded the Nanda dynasty. The Maurya dynasty was founded by Chandragupta Maurya."
+      "tag": "Scholar",
+      "hint": "Read the note titled Āryabhața.",
+      "correctAnswer": "Āryabhața proposed that the Earth spins on its axis, explaining day and night. [file:1] He also gave a correct explanation for solar and lunar eclipses and calculated the length of the year very closely to the modern value. [file:1]",
+      "explanation": "The chapter lists several of his contributions in astronomy and mathematics. [file:1]"
     },
     {
       "id": "q30",
-      "type": "error_correction",
-      "category": "Factual Accuracy",
-      "marks": 1,
-      "difficulty": "hard",
-      "question": "Find and correct the factual error in the following sentence.",
+      "type": "short_answer",
+      "category": "Science and Knowledge",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Who was Varāhamihira, and what does the chapter say about *Brihat Samhitā*?",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "inputSentence": "The Sarnath pillar capital has three lions at the top, symbolising the royal power of the Mauryas.",
-      "correctAnswer": "The Sarnath pillar capital has four lions at the top, symbolising the royal power of the Mauryas.",
-      "explanation": "The chapter clearly states 'The four lions symbolise the royal power' — it is four lions, not three."
+      "tag": "Scholar",
+      "hint": "Read the note titled Varāhamihira.",
+      "correctAnswer": "Varāhamihira was a mathematician, astronomer and astrologer who lived in Ujjayinī. [file:1] His encyclopedic work *Brihat Samhitā* covered astronomy, astrology, weather forecasting, architecture, town planning and farming. [file:1]",
+      "explanation": "The chapter presents him as a broad-minded scholar whose work covered many fields. [file:1]"
     },
     {
       "id": "q31",
-      "type": "jumbled",
-      "category": "Sentence Formation",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "Rearrange the following words to form a meaningful sentence about empires.",
+      "type": "short_answer",
+      "category": "Inscriptions and Monuments",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Write a short note on the Iron Pillar of Delhi using any three points from the chapter.",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "jumbledWords": [
-        "empire",
-        "supreme",
-        "ruler",
-        "An",
-        "is",
-        "a",
-        "ruled",
-        "by",
-        "a",
-        "powerful"
-      ],
-      "correctAnswer": "An empire is ruled by a powerful supreme ruler.",
-      "explanation": "This forms a correct sentence about the nature of an empire as described in the chapter."
+      "tag": "Monument",
+      "hint": "Include age, ruler, location, dedication or metallurgy.",
+      "correctAnswer": "The Iron Pillar of Delhi is over 1,600 years old and has remained rust-resistant. [file:1] The 6-tonne pillar was erected during the reign of Chandragupta II, was probably first set up near the Udayagiri caves, and was later brought to Delhi. [file:1] It was dedicated to Viṣhṇu, and its inscription celebrates the king's achievements while also showing advanced metallurgical skill. [file:1]",
+      "explanation": "A full answer should combine factual, historical and scientific details mentioned in the chapter. [file:1]"
     },
     {
       "id": "q32",
-      "type": "jumbled",
-      "category": "Sentence Formation",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "Rearrange the following words to form a meaningful sentence about guilds.",
+      "type": "short_answer",
+      "category": "Samudragupta",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Describe Samudragupta as both a warrior and a patron of culture.",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "jumbledWords": [
-        "were",
-        "Guilds",
-        "associations",
-        "powerful",
-        "craftsmen",
-        "and",
-        "of",
-        "traders"
-      ],
-      "correctAnswer": "Guilds were powerful associations of traders and craftsmen.",
-      "explanation": "The chapter states: 'Guilds were powerful associations of traders, craftsmen, moneylenders or agriculturists.'"
+      "tag": "Ruler Profile",
+      "hint": "Use the *prayāga praśhasti* and the coin evidence.",
+      "correctAnswer": "Samudragupta fought many wars, defeated kings, took over kingdoms and expanded his empire in pursuit of the ambition to 'unify the Earth'. [file:1] Many defeated rulers were reinstated and paid tribute, while others submitted out of fear. [file:1] Harisena also wrote that he supported art, learning and trade, and one of his coins portrays him playing the veena. [file:1]",
+      "explanation": "The chapter presents Samudragupta as a conquering ruler who also valued artistic and economic growth. [file:1]"
     },
     {
       "id": "q33",
-      "type": "jumbled",
-      "category": "Sentence Formation",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Rearrange the following words to form a meaningful sentence about Alexander.",
+      "type": "short_answer",
+      "category": "Expansion of Empire",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Explain how the Gupta rulers expanded and consolidated their empire.",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "jumbledWords": [
-        "Porus",
-        "Punjab",
-        "Alexander",
-        "defeated",
-        "in"
-      ],
-      "correctAnswer": "Alexander defeated Porus in Punjab.",
-      "explanation": "The chapter states Alexander 'defeated Porus in Punjab' during his Indian campaign (327–325 BCE)."
+      "tag": "Strategies",
+      "hint": "Think of more than one strategy.",
+      "correctAnswer": "The Gupta rulers used military conquests, diplomacy and alliances to expand and consolidate their empire. [file:1] They also used matrimonial alliances, as shown by the marriage of Prabhāvatī Gupta into the Vākāțaka kingdom. [file:1] In addition, some defeated kings were allowed to keep their thrones as tributaries, which helped maintain control and peaceful relations. [file:1]",
+      "explanation": "The chapter emphasizes that Gupta power grew through a combination of force, political skill and alliance-building. [file:1]"
     },
     {
       "id": "q34",
-      "type": "jumbled",
-      "category": "Sentence Formation",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Rearrange the following words to form a meaningful sentence about Magadha's resources.",
+      "type": "short_answer",
+      "category": "Governance and Administration",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Explain the main features of Gupta administration and show how this system helped the empire.",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "jumbledWords": [
-        "fertile",
-        "forests",
-        "land",
-        "Magadha",
-        "elephants",
-        "abundant",
-        "and",
-        "had"
-      ],
-      "correctAnswer": "Magadha had fertile land, abundant forests and elephants.",
-      "explanation": "The chapter states Magadha 'was located in the resource-rich Ganga plains, with fertile land, abundant forests for timber, and elephants.'"
+      "tag": "Administration",
+      "hint": "Write about provinces, local control and records.",
+      "correctAnswer": "The Gupta Empire had a well-organised administration and did not control everything from a single central authority. [file:1] The empire was divided into provinces, and land was granted to local rulers, priests and chieftains. [file:1] These grants were inscribed on copper plates, which helped keep accurate records, ensure proper tax collection, and allow efficient rule while giving local leaders some control. [file:1]",
+      "explanation": "A strong answer should connect structure, record-keeping and efficiency, all of which are mentioned in the chapter. [file:1]"
     },
     {
       "id": "q35",
-      "type": "jumbled",
-      "category": "Sentence Formation",
-      "marks": 1,
-      "difficulty": "hard",
-      "question": "Rearrange the following words to form a meaningful sentence about a drawbridge.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "jumbledWords": [
-        "lifted",
-        "danger",
-        "bridge",
-        "of",
-        "The",
-        "is",
-        "whenever",
-        "there",
-        "attack",
-        "a",
-        "is",
-        "of"
-      ],
-      "correctAnswer": "The bridge is lifted whenever there is a danger of attack.",
-      "explanation": "The chapter states: 'It's lifted whenever there is a danger of attack on the city.'"
-    },
-    {
-      "id": "q36",
-      "type": "match_columns",
-      "category": "Terms and Meanings",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Match the Sanskrit/Latin terms in **Column A** with their meanings in **Column B**.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "columnA": [
-        "Imperium",
-        "Samrāj",
-        "Adhirāja",
-        "Rājādhirāja"
-      ],
-      "columnB": [
-        "(a) King of kings",
-        "(b) Overlord",
-        "(c) Supreme power",
-        "(d) The lord of all / Supreme ruler"
-      ],
-      "correctMatches": [
-        "c",
-        "d",
-        "b",
-        "a"
-      ],
-      "correctAnswer": "Imperium–c, Samrāj–d, Adhirāja–b, Rājādhirāja–a",
-      "explanation": "The chapter explicitly lists these terms and their meanings: Imperium = supreme power; Samrāj = lord of all; Adhirāja = overlord; Rājādhirāja = king of kings."
-    },
-    {
-      "id": "q37",
-      "type": "match_columns",
-      "category": "Historical Figures",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Match the historical figures in **Column A** with the descriptions in **Column B**.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "columnA": [
-        "Ajātaśhatru",
-        "Mahāpadma Nanda",
-        "Kautilya",
-        "Megasthenes"
-      ],
-      "columnB": [
-        "(a) Greek ambassador to Chandragupta's court",
-        "(b) Mentor of Chandragupta Maurya",
-        "(c) Founder of the Nanda dynasty",
-        "(d) Early powerful king of Magadha"
-      ],
-      "correctMatches": [
-        "d",
-        "c",
-        "b",
-        "a"
-      ],
-      "correctAnswer": "Ajātaśhatru–d, Mahāpadma Nanda–c, Kautilya–b, Megasthenes–a",
-      "explanation": "The chapter identifies all four: Ajātaśhatru as an early Magadha king; Mahāpadma Nanda as Nanda dynasty founder; Kautilya as Chandragupta's mentor; Megasthenes as the Greek ambassador."
-    },
-    {
-      "id": "q38",
-      "type": "match_columns",
-      "category": "Vocabulary",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Match the words in **Column A** with their correct meanings from the chapter in **Column B**.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "columnA": [
-        "Forge",
-        "Ramparts",
-        "Tributary",
-        "Surplus"
-      ],
-      "columnB": [
-        "(a) An excess amount left over after requirements are met",
-        "(b) Defensive walls of a castle or city",
-        "(c) A state or ruler that pays tribute to a more powerful one",
-        "(d) To shape metal by heating and hammering"
-      ],
-      "correctMatches": [
-        "d",
-        "b",
-        "c",
-        "a"
-      ],
-      "correctAnswer": "Forge–d, Ramparts–b, Tributary–c, Surplus–a",
-      "explanation": "These are all vocabulary terms defined in the chapter: forge = shape metal; ramparts = defensive walls; tributary = state that pays tribute; surplus = excess amount."
-    },
-    {
-      "id": "q39",
-      "type": "match_columns",
-      "category": "Dates and Events",
-      "marks": 2,
-      "difficulty": "hard",
-      "question": "Match the time periods in **Column A** with the corresponding events in **Column B**.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "columnA": [
-        "334–331 BCE",
-        "327–325 BCE",
-        "324–323 BCE",
-        "Around 321 BCE"
-      ],
-      "columnB": [
-        "(a) Chandragupta Maurya founded the Maurya Empire",
-        "(b) Alexander's campaign in India; defeat of Porus in Punjab",
-        "(c) Alexander died in Babylon; his empire was divided",
-        "(d) Alexander campaigned against the Persian Empire"
-      ],
-      "correctMatches": [
-        "d",
-        "b",
-        "c",
-        "a"
-      ],
-      "correctAnswer": "334–331 BCE–d, 327–325 BCE–b, 324–323 BCE–c, Around 321 BCE–a",
-      "explanation": "These dates and events are from the chapter's timeline notes about Alexander and the founding of the Maurya Empire."
-    },
-    {
-      "id": "q40",
-      "type": "match_columns",
-      "category": "Features of Empire",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Match each feature of an empire in **Column A** with the correct example or detail from the chapter in **Column B**.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "columnA": [
-        "Issues currencies",
-        "Controls resources",
-        "Encourages learning",
-        "Maintains communication"
-      ],
-      "columnB": [
-        "(a) Couriers carried messages from place to place",
-        "(b) Mahāpadma Nanda began issuing coins",
-        "(c) Control over mines, forests and agricultural produce",
-        "(d) Art, literature, religions and centres of learning"
-      ],
-      "correctMatches": [
-        "b",
-        "c",
-        "d",
-        "a"
-      ],
-      "correctAnswer": "Issues currencies–b, Controls resources–c, Encourages learning–d, Maintains communication–a",
-      "explanation": "All these features are listed in the chapter as functions of an empire, with supporting examples from the text."
-    },
-    {
-      "id": "q41",
-      "type": "short_answer",
-      "category": "Comprehension",
-      "marks": 2,
-      "difficulty": "easy",
-      "question": "How did Ira describe what tribute (payment) a tributary state gave to the emperor? Name **any two** things mentioned in the chapter.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "According to the chapter, a tributary paid money, gold or other precious metals, grain, livestock, elephants, or other valuable goods to the emperor as a sign of submission, loyalty or respect. (Any two accepted.)",
-      "explanation": "The callout box on 'Tributary' lists: money, gold, precious metals, grain, livestock, elephants, or other valuable goods."
-    },
-    {
-      "id": "q42",
-      "type": "short_answer",
-      "category": "Guilds",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "According to the chapter, what made guilds a **remarkable institution**? State the **two** key reasons given.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "First, guilds brought people together as collaborators rather than competitors by sharing resources and market information. Second, guilds had the autonomy to create their own internal rules without the king interfering, as an ancient text stated: 'Cultivators, traders, herdsmen, moneylenders, and artisans have authority to lay down rules for their respective classes.'",
-      "explanation": "The chapter explicitly states 'Two things made traders' guilds a remarkable institution' and lists both reasons."
-    },
-    {
-      "id": "q43",
-      "type": "short_answer",
-      "category": "Alexander",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Why did Alexander's soldiers refuse to advance deeper into India towards the Ganga River?",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "According to the chapter, Alexander's soldiers were tired and homesick, and they had lost the will to fight. They refused to move deeper into India towards the Ganga River.",
-      "explanation": "The chapter states: 'Tired and homesick, his soldiers lost the will to fight and refused to move deeper into India, towards the Ganga River.'"
-    },
-    {
-      "id": "q44",
-      "type": "short_answer",
-      "category": "Magadha",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "How did the use of **iron** help Magadha's rise to power? Give **two** ways mentioned in the chapter.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "First, iron ploughs were used to till the land, which increased agricultural produce. Second, lighter and sharper iron weapons strengthened the capabilities of the army. (Iron ore from nearby hills also proved crucial for expanding the kingdom.)",
-      "explanation": "The chapter states: 'The use of iron ploughs to till the land increased agricultural produce, and lighter and sharper iron weapons strengthened the capabilities of the army.'"
-    },
-    {
-      "id": "q45",
-      "type": "short_answer",
-      "category": "Pāṭaliputra",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "As described in the chapter, name **any four** goods that were available in the market of Pāṭaliputra and state **where** they came from.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "Silk came from China; spices and gems came from the south; fine clothes came from different regions of the empire. (Students may also mention textiles, handicraft products, and various animals based on the trade section.)",
-      "explanation": "The chapter mentions: 'silk from China, spices and gems from the south, fine clothes from different regions.'"
-    },
-    {
-      "id": "q46",
-      "type": "transformation",
-      "category": "Active/Passive Voice",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Change the following sentence to passive voice.",
-      "passageId": "",
-      "tag": "Active to Passive",
-      "hint": "",
-      "inputSentence": "Chandragupta Maurya founded the Maurya Empire around 321 BCE.",
-      "transformationType": "Active to Passive",
-      "correctAnswer": "The Maurya Empire was founded by Chandragupta Maurya around 321 BCE.",
-      "explanation": "Move 'the Maurya Empire' (object) to subject position and use 'was founded by' + original subject."
-    },
-    {
-      "id": "q47",
-      "type": "transformation",
-      "category": "Active/Passive Voice",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Change the following sentence to active voice.",
-      "passageId": "",
-      "tag": "Passive to Active",
-      "hint": "",
-      "inputSentence": "Swords were forged by Ira's father for the soldiers.",
-      "transformationType": "Passive to Active",
-      "correctAnswer": "Ira's father forged swords for the soldiers.",
-      "explanation": "Move 'Ira's father' (agent) to subject position and use the active verb 'forged'."
-    },
-    {
-      "id": "q48",
-      "type": "transformation",
-      "category": "Direct/Indirect Speech",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Change the following sentence to indirect speech.",
-      "passageId": "",
-      "tag": "Direct to Indirect",
-      "hint": "",
-      "inputSentence": "Ira said, \"It is called an Empire.\"",
-      "transformationType": "Direct to Indirect",
-      "correctAnswer": "Ira said that it was called an Empire.",
-      "explanation": "In indirect speech, 'said' is retained, 'is' changes to 'was', and quotation marks are removed."
-    },
-    {
-      "id": "q49",
-      "type": "transformation",
-      "category": "Simple/Complex Sentence",
-      "marks": 1,
-      "difficulty": "hard",
-      "question": "Combine the two sentences into one using an appropriate conjunction.",
-      "passageId": "",
-      "tag": "Sentence Combination",
-      "hint": "",
-      "inputSentence": "Alexander was impressed by the Gymnosophists. He spared them all.",
-      "transformationType": "Sentence Combination",
-      "correctAnswer": "Alexander was so impressed by the Gymnosophists that he spared them all.",
-      "explanation": "Using 'so...that' combines cause and result into one complex sentence."
-    },
-    {
-      "id": "q50",
-      "type": "transformation",
-      "category": "Degree of Adjective",
-      "marks": 1,
-      "difficulty": "hard",
-      "question": "Rewrite the sentence using the **comparative** degree of the adjective.",
-      "passageId": "",
-      "tag": "Degree Change",
-      "hint": "",
-      "inputSentence": "The Maurya Empire was one of the greatest empires in Indian history.",
-      "transformationType": "Degree Change (Superlative to Comparative)",
-      "correctAnswer": "The Maurya Empire was greater than most other empires in Indian history.",
-      "explanation": "The superlative 'one of the greatest' is changed to the comparative 'greater than most others'."
-    },
-    {
-      "id": "q51",
-      "type": "short_answer",
-      "category": "Empire Definition",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "**What is an empire?** Based on the chapter, explain how an empire is different from a kingdom, mentioning at least **three** features of an empire.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "An empire is a collection of smaller kingdoms or territories over which a powerful ruler (emperor) exerts supreme power. Unlike a kingdom ruled by a single king, an empire includes many tributary kingdoms. Features include: (1) Emperor exerts central authority over tributary territories. (2) Maintains a large army to control and expand. (3) Makes laws, issues currencies and regulates trade. (4) Controls access to resources. (5) Maintains communication networks.",
-      "explanation": "Based on the chapter's section 'What is an Empire?' and the 'Features of an Empire' list."
-    },
-    {
-      "id": "q52",
-      "type": "short_answer",
-      "category": "Rise of Magadha",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Explain **why Magadha** was able to rise as a dominant power in ancient India. Mention at least **three reasons** from the chapter.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "Magadha rose because: (1) It was located in the resource-rich Ganga plains with fertile land for agriculture. (2) It had abundant forests for timber and elephants for the army. (3) Iron ore and minerals from nearby hills were crucial — iron ploughs boosted agriculture and iron weapons strengthened the army. (4) The Ganga and Son rivers aided transportation and trade. (5) Flourishing trade boosted income.",
-      "explanation": "Based on the chapter's 'Rise of Magadha' section."
-    },
-    {
-      "id": "q53",
       "type": "short_answer",
       "category": "Trade and Economy",
       "marks": 3,
-      "difficulty": "medium",
-      "question": "Why were **trade routes** important for an empire? What were some of the main goods traded in ancient India, based on the chapter?",
+      "difficulty": "hard",
+      "question": "Describe the trade network of the Gupta period and explain the importance of Socotra Island.",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "Trade routes were important because: (1) More trade meant more income for producers and increased tax collection for the ruler. (2) They helped goods grow in quantity and variety. (3) Economic activity is key to maintaining an empire and people's welfare. Main goods traded included textiles, spices, agricultural produce, luxury items such as gems and handicraft products, and various animals. Indian goods also travelled to distant countries by land and sea.",
-      "explanation": "Based on the chapter's 'Trade, trade routes and guilds' section."
+      "tag": "Trade Routes",
+      "hint": "Mention goods, regions and archaeological evidence.",
+      "correctAnswer": "During the Gupta era, India traded with the Mediterranean world, Southeast Asia and China through a vibrant internal and external trade system. [file:1] It exported textiles, spices, ivory and gemstones, and the Indian Ocean trade network linked Indian ports with distant markets. [file:1] Socotra Island was an important stop on the route to Mediterranean markets, and archaeological evidence there, including pottery, Brahmi inscriptions and Buddhist stūpa designs, shows the presence of Indian traders over several centuries. [file:1]",
+      "explanation": "The chapter uses Socotra as an example of both long-distance trade and cultural exchange. [file:1]"
     },
     {
-      "id": "q54",
+      "id": "q36",
       "type": "short_answer",
-      "category": "Kautilya",
+      "category": "Travellers' Accounts",
       "marks": 3,
       "difficulty": "hard",
-      "question": "Who was Kautilya and what role did he play in the establishment of the Maurya Empire? What is he known for in Indian history?",
+      "question": "Why is Faxian's travelogue useful to historians, and why must it also be used carefully?",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "Kautilya was the able mentor of Chandragupta Maurya. He used his knowledge of politics, governance and economics to help Chandragupta build the Maurya Empire — one of the greatest in Indian history. He is known for writing the Arthaśhāstra, a text on governance, economics and politics. The chapter opens with a quote from Kautilya's Arthaśhāstra: 'There cannot be a country without people and there is no kingdom without a country.'",
-      "explanation": "Based on the chapter's sections on 'The Mighty Mauryas' and 'The story of Kautilya.'"
+      "tag": "Historical Sources",
+      "hint": "Answer in two parts: value and limitation.",
+      "correctAnswer": "Faxian's travelogue is useful because it records observations about culture, governance and society in early 5th century India. [file:1] It gives details such as prosperous cities, charity by wealthy Vaishya families, and care for the poor and the sick. [file:1] However, the chapter warns that such accounts reflect only the writer's perspective and only a limited part of society, as seen in Faxian's mention elsewhere of the harsh treatment of chandālas, so historians must compare multiple sources before concluding. [file:1]",
+      "explanation": "The chapter explicitly teaches students to value the source while also checking its limits and biases. [file:1]"
     },
     {
-      "id": "q55",
+      "id": "q37",
       "type": "short_answer",
-      "category": "Alexander's Campaign",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Briefly describe Alexander's campaign in India (327–325 BCE). What happened when he returned to Persia?",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "Alexander invaded India eager to reach the 'end of the world'. He defeated Porus in Punjab and encountered fierce resistance from local tribes. Greek records mention women fought alongside men. He massacred populations of several cities. Alexander himself was seriously wounded. His tired and homesick soldiers refused to advance further towards the Ganga. He retreated through the southern coastal route and Iran's harsh desert, suffering heavy losses from thirst, hunger and disease. Back in Persia, he faced rebellions and political turmoil, and died in Babylon at age 32. His empire was then divided among his generals and satraps.",
-      "explanation": "Based on the chapter's timeline notes for 327–325 BCE and 324–323 BCE."
-    },
-    {
-      "id": "q56",
-      "type": "short_answer",
-      "category": "Life in Mauryan Times",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Based on the chapter's description of Mauryan society, describe **what daily life was like** for ordinary people during the Maurya Empire. Include details about housing, clothing, food, and occupations.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "Daily life in Mauryan times: Houses were made of wood and could be up to two storeys tall. Streets had well-planned signage and water vessels at intervals for fire safety. People wore cotton dresses — a lower garment below the knee and an upper garment thrown over the shoulders; some wore thick-soled leather shoes to look taller. Two crops were sown annually ensuring ample food and rare famines; granaries were well stocked. Occupations included blacksmiths, potters, carpenters, jewellers and other artisans. Communication happened through couriers carrying messages.",
-      "explanation": "Based on the chapter's 'Some Contributions of the Mauryas — Life and People' section and Megasthenes' account."
-    },
-    {
-      "id": "q57",
-      "type": "short_answer",
-      "category": "Ashoka's Sarnath Pillar",
+      "category": "Classical Age",
       "marks": 3,
       "difficulty": "hard",
-      "question": "Describe the **Sarnath pillar capital** erected by Ashoka. What do its various elements symbolise? Why is it significant for India today?",
+      "question": "Explain why some historians describe the Gupta period as a 'classical age' of India.",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "The Sarnath pillar capital was erected by Ashoka at Sarnath, near Varanasi, where the Buddha gave his first teaching. It is the top (capital) of a highly polished stone pillar — a hallmark of Mauryan art. The four lions at the top symbolise royal power. Below the lions is a ring depicting four powerful animals (an elephant, a bull, a horse, and a lion) along with the dharmachakra or wheel of dharma, which symbolises the Buddha's teachings. It is significant because this capital (the Lion Capital of Sarnath) is India's national emblem today.",
-      "explanation": "Based on the chapter's description of Fig. 5.20 and the Sarnath pillar section."
+      "tag": "Achievements",
+      "hint": "Include peace, learning and cultural output.",
+      "correctAnswer": "Some historians call the Gupta period a classical age because a prolonged phase of peace and stability promoted notable achievements in many fields. [file:1] Knowledge from earlier eras was consolidated and compiled into numerous texts, while Sanskrit literature flourished through figures such as Kālidāsa and major Purāņas. [file:1] Mathematics, astronomy, medicine and metallurgy also advanced, and the state could support scholars, artists and scientists, leading to cultural and intellectual growth. [file:1]",
+      "explanation": "The chapter links the label 'classical age' with both broad stability and exceptional achievements in culture and knowledge. [file:1]"
+    },
+    {
+      "id": "q38",
+      "type": "short_answer",
+      "category": "Science and Knowledge",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Write a short note on the scientific contributions of Āryabhața and Varāhamihira.",
+      "passageId": "",
+      "tag": "Scholars",
+      "hint": "Mention at least one contribution of each.",
+      "correctAnswer": "Āryabhața authored the *Āryabhaṭīya*, proposed that the Earth spins on its axis, explained solar and lunar eclipses correctly, and gave a very accurate value for the length of the year. [file:1] Varāhamihira lived in Ujjayinī and wrote the encyclopedic *Brihat Samhitā*. [file:1] His work covered subjects such as astronomy, astrology, weather forecasting, architecture, town planning and farming, showing his broad scientific outlook. [file:1]",
+      "explanation": "The chapter uses both scholars to show the range of scientific thought in the Gupta age. [file:1]"
+    },
+    {
+      "id": "q39",
+      "type": "short_answer",
+      "category": "Art and Architecture",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Describe Gupta art with reference to any three examples from the chapter.",
+      "passageId": "",
+      "tag": "Art Centres",
+      "hint": "You may use Sārnāth, Ajanta, Udayagiri or Deogarh.",
+      "correctAnswer": "The chapter says Gupta rulers created an environment in which creativity and craftsmanship thrived and high standards of beauty were achieved. [file:1] Sārnāth became known for exquisite sculptures of the Buddha, Ajanta for its awe-inspiring caves and murals, and Udayagiri for its rock-cut caves and detailed carvings of deities. [file:1] The Daśhāvatāra temple at Deogarh is also presented as an important example of Gupta-style architecture and sculpture. [file:1]",
+      "explanation": "A complete answer should show that Gupta art included sculpture, cave architecture, painting and temple building. [file:1]"
+    },
+    {
+      "id": "q40",
+      "type": "short_answer",
+      "category": "Decline and Regional Powers",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "State the main reasons for the decline of the Gupta Empire and mention what was happening in the south or northeast at the same time.",
+      "passageId": "",
+      "tag": "Transition",
+      "hint": "Use the last two sections of the chapter.",
+      "correctAnswer": "By the 6th century CE, the Gupta Empire began to decline because later rulers faced repeated attacks from the Hūņas and also internal conflicts caused by rising regional rulers. [file:1] At the same time, the Pallavas were consolidating power in parts of south India, while in the northeast the Kāmarūpa kingdom under the Varman dynasty extended over the Brahmaputra valley and nearby regions. [file:1] This shows that while Gupta power weakened, other regional powers were growing. [file:1]",
+      "explanation": "The chapter presents decline not as an empty end, but as a shift within a wider political landscape. [file:1]"
     }
   ]
 }
