@@ -204,6 +204,20 @@ fun AssessmentScreen(
                         debugJsonPair    = quiz.debugJsons[idx],
                         allFillBlankAnswers = allFillBlankAnswers
                     )
+
+                    EvaluationOverlay(
+                        show = quiz.evaluationOverlayState.show,
+                        category = quiz.evaluationOverlayState.category,
+                        earnedMarks = quiz.evaluationOverlayState.earnedMarks,
+                        maxMarks = quiz.evaluationOverlayState.maxMarks,
+                        soundText = quiz.evaluationOverlayState.soundText,
+                        variationIndex = quiz.evaluationOverlayState.variationIndex,
+                        onDismiss = { vm.dismissEvaluationOverlay() },
+                        onRetryClicked = {
+                            vm.dismissEvaluationOverlay()
+                            vm.retryCurrentQuestion()
+                        }
+                    )
                 }
             }
         }

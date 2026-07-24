@@ -15,6 +15,7 @@ import com.krishanagarwal.mynoo.data.repository.GlobalSettingsRepository
 import com.krishanagarwal.mynoo.data.repository.PlacementRepository
 import com.krishanagarwal.mynoo.data.repository.UsageRepository
 import com.krishanagarwal.mynoo.data.repository.UsageSummary
+import com.krishanagarwal.mynoo.data.repository.EvaluationSoundRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -35,6 +36,15 @@ data class AssessmentListState(
     val error:       String?          = null,
 )
 
+data class EvaluationOverlayState(
+    val show: Boolean = false,
+    val category: String = "", // full_marks, partial_marks, no_marks, retry_available
+    val earnedMarks: Double = 0.0,
+    val maxMarks: Double = 0.0,
+    val soundText: String = "",
+    val variationIndex: Int = 0,
+)
+
 data class QuizState(
     val assessment:    Assessment?     = null,
     val currentIndex:  Int             = 0,
@@ -51,6 +61,7 @@ data class QuizState(
     val mcqFirstWrongIndex: Int?        = null,
     val mcqPhase:      String           = "idle",
     val debugJsons:    Map<Int, Pair<String, String>> = emptyMap(),
+    val evaluationOverlayState: EvaluationOverlayState = EvaluationOverlayState(),
 )
 
 val QuizState.currentQuestion get() = assessment?.questions?.getOrNull(currentIndex)
@@ -95,6 +106,7 @@ class AssessmentViewModel @Inject constructor(
     private val placementRepo:       PlacementRepository,
     private val globalSettingsRepo:  GlobalSettingsRepository,
     private val usageRepo:          UsageRepository,
+    private val evaluationSoundRepo: EvaluationSoundRepository,
 ) : ViewModel() {
 
     private val _list = MutableStateFlow(AssessmentListState())
@@ -370,6 +382,15 @@ class AssessmentViewModel @Inject constructor(
         currentChild = childName
         _quiz.update { QuizState(generating = true) }
         viewModelScope.launch {
+            // Trigger background one-time inventory population to Firebase if needed
+            launch {
+                try {
+                    evaluationSoundRepo.ensureInventoryPopulated()
+                } catch (e: Exception) {
+                    Log.e("AssessmentVM", "Error populating evaluation sound inventory", e)
+                }
+            }
+
             try {
                 val all = repo.getAssessments(childName)
                 val a   = all.firstOrNull { it.id == assessmentId }
@@ -492,7 +513,18 @@ class AssessmentViewModel @Inject constructor(
         val currentIdx = qState.currentIndex
         val isCorrect = selectedOptionIndex == q.correctIndex
         
+        val category: String
+        val earned: Double
+        val maxMarks = q.marks
+
         if (qState.mcqPhase == "idle") {
+            if (isCorrect) {
+                category = "full_marks"
+                earned = maxMarks
+            } else {
+                category = "retry_available"
+                earned = 0.0
+            }
             _quiz.update {
                 it.copy(
                     mcqSelectedIndex = selectedOptionIndex,
@@ -503,6 +535,13 @@ class AssessmentViewModel @Inject constructor(
             saveMCQAnswer(selectedOptionIndex, if (isCorrect) null else selectedOptionIndex, 1, isCorrect)
         } else if (qState.mcqPhase == "first_wrong") {
             if (selectedOptionIndex == qState.mcqFirstWrongIndex) return
+            if (isCorrect) {
+                category = "partial_marks"
+                earned = maxMarks / 2.0
+            } else {
+                category = "no_marks"
+                earned = 0.0
+            }
             _quiz.update {
                 it.copy(
                     mcqSelectedIndex = selectedOptionIndex,
@@ -510,6 +549,21 @@ class AssessmentViewModel @Inject constructor(
                 )
             }
             saveMCQAnswer(selectedOptionIndex, qState.mcqFirstWrongIndex, 2, selectedOptionIndex == q.correctIndex)
+        } else return
+
+        evaluationSoundRepo.playEvaluationSound(category) { text, idx ->
+            _quiz.update {
+                it.copy(
+                    evaluationOverlayState = EvaluationOverlayState(
+                        show = true,
+                        category = category,
+                        earnedMarks = earned,
+                        maxMarks = maxMarks,
+                        soundText = text,
+                        variationIndex = idx
+                    )
+                )
+            }
         }
     }
 
@@ -1104,6 +1158,39 @@ class AssessmentViewModel @Inject constructor(
         } catch (e: Exception) {
             Log.e("AssessmentVM", "Error saving progress in validation complete", e)
         }
+
+        val verdict = result["verdict"] as? String ?: "wrong"
+        val earnedMarks = (result["earnedMarks"] as? Number)?.toDouble() ?: 0.0
+        val maxMarks = currentQ.marks
+        val isRetryUsed = q.retryUsed.contains(idx)
+        val isRetryAvailable = !isRetryUsed && maxMarks > 2 && verdict != "correct"
+
+        val category = when {
+            isRetryAvailable -> "retry_available"
+            earnedMarks >= maxMarks -> "full_marks"
+            earnedMarks > 0.0 -> "partial_marks"
+            else -> "no_marks"
+        }
+
+        evaluationSoundRepo.playEvaluationSound(category) { soundTxt, varIdx ->
+            _quiz.update {
+                it.copy(
+                    evaluationOverlayState = EvaluationOverlayState(
+                        show = true,
+                        category = category,
+                        earnedMarks = earnedMarks,
+                        maxMarks = maxMarks,
+                        soundText = soundTxt,
+                        variationIndex = varIdx
+                    )
+                )
+            }
+        }
+    }
+
+    fun dismissEvaluationOverlay() {
+        _quiz.update { it.copy(evaluationOverlayState = it.evaluationOverlayState.copy(show = false)) }
+        evaluationSoundRepo.stopSound()
     }
 
     private fun normalise(s: String): String {
