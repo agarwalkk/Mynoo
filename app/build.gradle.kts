@@ -16,7 +16,7 @@ val localProps = Properties().apply {
     val f = rootProject.file("local.properties")
     if (f.exists()) load(f.inputStream())
 }
-fun lp(key: String): String = localProps.getProperty(key, "")
+fun lp(key: String, default: String = ""): String = localProps.getProperty(key, default).ifEmpty { default }
 
 android {
     namespace   = "com.krishanagarwal.mynoo"
@@ -77,7 +77,7 @@ android {
             firebaseAppDistribution {
                 appId                  = "1:295058637169:android:079a66ef78fbcb638cb6d0"
                 serviceCredentialsFile = "${project.rootDir}/mynoo-1e880-serviceaccount.json"
-                testers                = lp("FIREBASE_TESTERS")
+                testers                = lp("FIREBASE_TESTERS", "agarwal.krishank@gmail.com, anish.agr14@gmail.com")
             }
         }
     }

@@ -47,6 +47,23 @@ data class Assessment(
     val answers:       List<Map<String, Any>?> = emptyList(),
 )
 
+fun Map<String, Any>?.isAnswered(): Boolean {
+    if (this == null || isEmpty()) return false
+    val type = get("type") as? String ?: ""
+    if (type == "mcq" || containsKey("selectedIndex")) {
+        val selectedIndex = (get("selectedIndex") as? Number)?.toInt() ?: -1
+        return selectedIndex >= 0
+    } else {
+        val text = (get("textAnswer") as? String)?.trim() ?: ""
+        val feedback = (get("aiFeedback") as? String)?.trim() ?: ""
+        return text.isNotEmpty() && text != "(skipped)" && feedback != "Skipped"
+    }
+}
+
+val Assessment.answeredCount: Int
+    get() = answers.count { it.isAnswered() }
+
+
 @Singleton
 class AssessmentRepository @Inject constructor(
     private val db: FirebaseFirestore,

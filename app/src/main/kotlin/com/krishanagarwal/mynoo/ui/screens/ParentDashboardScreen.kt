@@ -33,6 +33,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.SpanStyle
+import com.krishanagarwal.mynoo.data.repository.isAnswered
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -1633,8 +1634,10 @@ fun ParentDashboardScreen(
                         val ans = a.answers.getOrNull(i)
                         val isMCQ = q.type == "mcq"
 
-                        val result = if (ans == null) {
+                        val result = if (ans == null || ans.isEmpty()) {
                             "unanswered"
+                        } else if (!ans.isAnswered()) {
+                            "skipped"
                         } else if (isMCQ) {
                             if (ans["correct"] == true) "correct" else "wrong"
                         } else {
@@ -1645,12 +1648,14 @@ fun ParentDashboardScreen(
                         val cardBg = when (result) {
                             "correct" -> Color(0xFFF0FBF5)
                             "partial" -> Color(0xFFFFF8EE)
+                            "skipped" -> Color(0xFFFFF8EE)
                             else -> Color(0xFFFDF0F0)
                         }
 
                         val borderColor = when (result) {
                             "correct" -> Color(0xFF27AE60)
                             "partial" -> Color(0xFFE67E22)
+                            "skipped" -> Color(0xFFE67E22)
                             else -> Color(0xFFE74C3C)
                         }
 
@@ -1666,6 +1671,7 @@ fun ParentDashboardScreen(
                                         text = when (result) {
                                             "correct" -> "✓ Correct"
                                             "partial" -> "½ Partial"
+                                            "skipped" -> "⏭ Skipped"
                                             else -> "✗ Wrong"
                                         },
                                         style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
@@ -1676,7 +1682,7 @@ fun ParentDashboardScreen(
 
                                 if (isMCQ) {
                                     q.options.forEachIndexed { oIdx, opt ->
-                                        val isCorrect = oIdx == q.correctIndex
+                                        val isCorrect = oIdx == q.correctIndex && result != "skipped"
                                         val isSelected = oIdx == (ans?.get("selectedIndex") as? Number)?.toInt()
                                         Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(start = 8.dp)) {
                                             Text("${(65 + oIdx).toChar()}. ", style = MaterialTheme.typography.bodySmall)
@@ -1689,7 +1695,7 @@ fun ParentDashboardScreen(
                                             )
                                         }
                                     }
-                                } else if (ans != null) {
+                                } else if (ans != null && ans.isAnswered()) {
                                     val textAnswer = ans["textAnswer"] as? String ?: ""
                                     val corrections = ans["corrections"] as? List<*>
                                     if (textAnswer.isNotEmpty()) {
@@ -1701,7 +1707,7 @@ fun ParentDashboardScreen(
                                         Text("Corrected:", style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold, color = Color(0xFF2471A3)))
                                         Text(correctedAnswer, style = MaterialTheme.typography.bodySmall.copy(color = Color(0xFF1A5276)))
                                     }
-                                    if (q.answer.isNotEmpty()) {
+                                    if (q.answer.isNotEmpty() && result != "skipped") {
                                         Text("Model Answer:", style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold, color = Color(0xFF27AE60)))
                                         Text(q.answer, style = MaterialTheme.typography.bodySmall.copy(color = Color(0xFF27AE60)))
                                     }

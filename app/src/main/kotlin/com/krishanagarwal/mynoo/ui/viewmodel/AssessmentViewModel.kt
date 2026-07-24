@@ -10,6 +10,7 @@ import com.krishanagarwal.mynoo.data.model.ReasoningMapper
 import com.krishanagarwal.mynoo.data.repository.Assessment
 import com.krishanagarwal.mynoo.data.repository.AssessmentQuestion
 import com.krishanagarwal.mynoo.data.repository.AssessmentRepository
+import com.krishanagarwal.mynoo.data.repository.isAnswered
 import com.krishanagarwal.mynoo.data.repository.GlobalSettingsRepository
 import com.krishanagarwal.mynoo.data.repository.PlacementRepository
 import com.krishanagarwal.mynoo.data.repository.UsageRepository
@@ -395,14 +396,7 @@ class AssessmentViewModel @Inject constructor(
     }
 
     private fun isQuestionAnswered(q: AssessmentQuestion, ans: Map<String, Any>?): Boolean {
-        if (ans == null || ans.isEmpty()) return false
-        return if (q.type == "mcq") {
-            val selected = (ans["selectedIndex"] as? Number)?.toInt() ?: -1
-            selected >= 0
-        } else {
-            val text = ans["textAnswer"] as? String ?: ""
-            text.trim().isNotEmpty()
-        }
+        return ans.isAnswered()
     }
 
     private fun calculateResumeIndex(answers: List<Map<String, Any>?>, questions: List<AssessmentQuestion>): Int {
@@ -443,11 +437,14 @@ class AssessmentViewModel @Inject constructor(
         if (type == "mcq") {
             val selected = (savedAns["selectedIndex"] as? Number)?.toInt()
             val firstWrong = (savedAns["firstWrongIndex"] as? Number)?.toInt()
+            val attempts = (savedAns["attempts"] as? Number)?.toInt() ?: 1
+            val correct = savedAns["correct"] as? Boolean ?: false
+            val phase = if (firstWrong != null && !correct && attempts == 1) "first_wrong" else "done"
             _quiz.update {
                 it.copy(
                     mcqSelectedIndex = selected,
                     mcqFirstWrongIndex = firstWrong,
-                    mcqPhase = "done",
+                    mcqPhase = phase,
                     validationResult = null,
                     validating = false
                 )
@@ -503,9 +500,7 @@ class AssessmentViewModel @Inject constructor(
                     mcqFirstWrongIndex = if (isCorrect) null else selectedOptionIndex
                 )
             }
-            if (isCorrect) {
-                saveMCQAnswer(selectedOptionIndex, null, 1, true)
-            }
+            saveMCQAnswer(selectedOptionIndex, if (isCorrect) null else selectedOptionIndex, 1, isCorrect)
         } else if (qState.mcqPhase == "first_wrong") {
             if (selectedOptionIndex == qState.mcqFirstWrongIndex) return
             _quiz.update {
@@ -718,7 +713,7 @@ class AssessmentViewModel @Inject constructor(
     private fun buildAnswerMap(q: AssessmentQuestion, currentTypedAnswer: String): Map<String, Any> {
         val quizState = _quiz.value
         return if (q.type == "mcq") {
-            val selected = quizState.mcqSelectedIndex ?: 0
+            val selected = quizState.mcqSelectedIndex ?: -1
             val firstWrong = quizState.mcqFirstWrongIndex
             val correct = selected == q.correctIndex
             val attempts = if (firstWrong != null) 2 else 1

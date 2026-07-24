@@ -26,6 +26,8 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import com.krishanagarwal.mynoo.data.repository.Assessment
 import com.krishanagarwal.mynoo.data.repository.AssessmentQuestion
+import com.krishanagarwal.mynoo.data.repository.answeredCount
+import com.krishanagarwal.mynoo.data.repository.isAnswered
 import com.krishanagarwal.mynoo.ui.viewmodel.AssessmentViewModel
 
 private val SUBJECTS = listOf(
@@ -117,19 +119,24 @@ private fun copyDetail(context: Context, a: Assessment) {
             val ansType = childAns["type"] as? String ?: ""
             if (ansType == "mcq") {
                 val selectedIndex = (childAns["selectedIndex"] as? Number)?.toInt()
-                val chosen = if (selectedIndex != null) q.options.getOrNull(selectedIndex) ?: "opt$selectedIndex" else "—"
+                val chosen = if (selectedIndex != null && selectedIndex >= 0) q.options.getOrNull(selectedIndex) ?: "opt$selectedIndex" else "Skipped"
                 givenStr = chosen
                 val correct = childAns["correct"] as? Boolean ?: false
                 val attempts = (childAns["attempts"] as? Number)?.toInt() ?: 1
-                result = if (correct) {
+                result = if (selectedIndex == null || selectedIndex < 0) {
+                    "skipped"
+                } else if (correct) {
                     if (attempts == 1) "correct" else "correct(2nd try)"
                 } else {
                     "wrong"
                 }
             } else {
-                givenStr = (childAns["textAnswer"] as? String)?.trim() ?: "—"
+                val txt = (childAns["textAnswer"] as? String)?.trim() ?: ""
+                givenStr = if (txt.isBlank() || txt == "(skipped)") "Skipped" else txt
                 val selfGrade = childAns["selfGrade"] as? String ?: ""
-                result = when (selfGrade) {
+                result = if (txt.isBlank() || txt == "(skipped)") {
+                    "skipped"
+                } else when (selfGrade) {
                     "got_it" -> "correct"
                     "partial" -> "partial"
                     else -> "wrong"
@@ -177,20 +184,20 @@ private fun getProgressLine(assessment: Assessment): String? {
     if (assessment.status != "in_progress" || assessment.questions.isEmpty()) return null
     val answers = assessment.answers
     val questions = assessment.questions
-    val answered = answers.count { it != null && it.isNotEmpty() }
+    val answered = assessment.answeredCount
     val total = questions.size
 
     var earned = 0.0
     var answeredMarks = 0
 
     answers.forEachIndexed { i, ansMap ->
-        if (ansMap == null || ansMap.isEmpty()) return@forEachIndexed
+        if (!ansMap.isAnswered()) return@forEachIndexed
         val q = questions.getOrNull(i) ?: return@forEachIndexed
         val marks = q.marks
         val halfMarks = marks / 2.0
         answeredMarks += marks.toInt()
 
-        val ansType = ansMap["type"] as? String ?: ""
+        val ansType = ansMap!!["type"] as? String ?: ""
         if (ansType == "mcq") {
             val correct = ansMap["correct"] as? Boolean ?: false
             val attempts = (ansMap["attempts"] as? Number)?.toInt() ?: 1
@@ -629,7 +636,7 @@ private fun AssessmentDetailDialog(
                                         modifier = Modifier.padding(top = 4.dp)
                                     )
                                 } else if (!isCompleted) {
-                                    val answered = a.answers.count { it != null && it.isNotEmpty() }
+                                    val answered = a.answeredCount
                                     val total = a.questions.size
                                     Text(
                                         text = "$answered / $total answered",
@@ -692,7 +699,7 @@ private fun AssessmentDetailDialog(
                     // 4. Questions Header
                     item {
                         val answeredCount = if (a.status == "in_progress") {
-                            a.answers.count { it != null && it.isNotEmpty() }
+                            a.answeredCount
                         } else {
                             a.questions.size
                         }
@@ -731,28 +738,31 @@ private fun QuestionDetailCard(
     ans: Map<String, Any>?,
     index: Int
 ) {
-    val answered = ans != null && ans.isNotEmpty()
+    val answered = ans.isAnswered()
     val isMCQ = q.type == "mcq"
 
     var result = "unanswered"
     if (answered) {
         if (isMCQ) {
-            val correct = ans["correct"] as? Boolean ?: false
+            val correct = ans!!["correct"] as? Boolean ?: false
             result = if (correct) "correct" else "wrong"
         } else {
-            val selfGrade = ans["selfGrade"] as? String ?: ""
+            val selfGrade = ans!!["selfGrade"] as? String ?: ""
             result = when (selfGrade) {
                 "got_it" -> "correct"
                 "partial" -> "partial"
                 else -> "wrong"
             }
         }
+    } else if (ans != null && ans.isNotEmpty()) {
+        result = "skipped"
     }
 
     val cardBg = when (result) {
         "correct" -> Color(0xFFF0FBF5)
         "partial" -> Color(0xFFFFF8EE)
         "wrong" -> Color(0xFFFDF0F0)
+        "skipped" -> Color(0xFFFFF8EE)
         else -> Color(0xFFF8F9FA)
     }
 
@@ -760,12 +770,14 @@ private fun QuestionDetailCard(
         "correct" -> Color(0xFF27AE60)
         "partial" -> Color(0xFFE67E22)
         "wrong" -> Color(0xFFE74C3C)
+        "skipped" -> Color(0xFFE67E22)
         else -> Color(0xFFE2E8F0)
     }
 
     val badgeColor = when (result) {
         "correct" -> Color(0xFF27AE60)
         "partial" -> Color(0xFFE67E22)
+        "skipped" -> Color(0xFFE67E22)
         else -> Color(0xFFE74C3C)
     }
 
@@ -773,6 +785,7 @@ private fun QuestionDetailCard(
         "correct" -> "✓"
         "partial" -> "½"
         "wrong" -> "✗"
+        "skipped" -> "⏭"
         else -> ""
     }
 
@@ -858,7 +871,7 @@ private fun QuestionDetailCard(
                 if (isMCQ) {
                     val selectedIndex = (ans?.get("selectedIndex") as? Number)?.toInt() ?: -1
                     q.options.forEachIndexed { oi, opt ->
-                        val isCorrect = oi == q.correctIndex
+                        val isCorrect = oi == q.correctIndex && result != "skipped"
                         val isSelected = oi == selectedIndex
                         val optColor = when {
                             isCorrect -> Color(0xFF1A7A4A)
@@ -929,7 +942,7 @@ private fun QuestionDetailCard(
                         }
                     }
 
-                    if (q.answer.isNotBlank()) {
+                    if (q.answer.isNotBlank() && result != "skipped" && answered) {
                         Row(
                             modifier = Modifier.padding(top = 2.dp),
                             horizontalArrangement = Arrangement.spacedBy(4.dp)
@@ -963,7 +976,7 @@ private fun QuestionDetailCard(
                     )
                 }
 
-                if (answered && q.explanation.isNotBlank()) {
+                if (answered && q.explanation.isNotBlank() && result != "skipped") {
                     Text(
                         text = "💡 ${q.explanation}",
                         style = MaterialTheme.typography.bodySmall.copy(

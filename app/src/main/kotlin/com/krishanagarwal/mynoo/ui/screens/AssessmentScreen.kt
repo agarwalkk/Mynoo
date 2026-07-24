@@ -246,7 +246,7 @@ private fun QuestionView(
             val text = answered["textAnswer"] as? String ?: ""
             text.trim().isNotEmpty()
         }
-        hasValidAnswer || mcqPhase == "done" || validationResult != null
+        hasValidAnswer || mcqPhase == "done" || mcqPhase == "first_wrong" || validationResult != null
     }
 
     // Determine marks earned
@@ -808,9 +808,11 @@ private fun QuestionView(
             // MCQ Options / Descriptive Input
             if (isMCQ) {
                 val labels = listOf("A", "B", "C", "D")
-                val activeSelected = answered?.get("selectedIndex") as? Int ?: mcqSelectedIndex
-                val firstWrong = answered?.get("firstWrongIndex") as? Int ?: mcqFirstWrongIndex
-                val isMcqDone = answered != null || mcqPhase == "done"
+                val activeSelected = (answered?.get("selectedIndex") as? Number)?.toInt() ?: mcqSelectedIndex
+                val firstWrong = (answered?.get("firstWrongIndex") as? Number)?.toInt() ?: mcqFirstWrongIndex
+                val savedAttempts = (answered?.get("attempts") as? Number)?.toInt() ?: 0
+                val savedCorrect = answered?.get("correct") as? Boolean ?: false
+                val isMcqDone = mcqPhase == "done" || savedCorrect || savedAttempts >= 2
                 val isRetryState = mcqPhase == "first_wrong"
 
                 question.options.forEachIndexed { i, opt ->
@@ -1054,14 +1056,19 @@ private fun QuestionView(
                     }
 
                     if (validating) {
+                        val (progressColor, progressText) = when (answerMode) {
+                            "camera" -> Color(0xFF1A6FA8) to "Evaluating your photo..."
+                            "draw" -> Color(0xFF8E44AD) to "Reading your handwriting..."
+                            else -> Color(0xFF16A085) to "Checking your answer..."
+                        }
                         Box(Modifier.fillMaxWidth().padding(16.dp), contentAlignment = Alignment.Center) {
                             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                                CircularProgressIndicator(color = if (answerMode == "camera") Color(0xFF1A6FA8) else Color(0xFF8E44AD))
+                                CircularProgressIndicator(color = progressColor)
                                 Spacer(Modifier.height(8.dp))
                                 Text(
-                                    text = if (answerMode == "camera") "Evaluating your photo..." else "Reading your handwriting...",
+                                    text = progressText,
                                     style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
-                                    color = if (answerMode == "camera") Color(0xFF1A6FA8) else Color(0xFF8E44AD)
+                                    color = progressColor
                                 )
                             }
                         }
