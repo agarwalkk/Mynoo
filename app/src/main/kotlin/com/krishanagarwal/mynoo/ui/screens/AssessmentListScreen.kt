@@ -781,13 +781,31 @@ private fun QuestionDetailCard(
         else -> Color(0xFFE74C3C)
     }
 
-    val badgeText = when (result) {
-        "correct" -> "✓"
-        "partial" -> "½"
-        "wrong" -> "✗"
-        "skipped" -> "⏭"
-        else -> ""
-    }
+    val earnedMarks: Double = if (answered) {
+        if (isMCQ) {
+            val correct = ans!!["correct"] as? Boolean ?: false
+            val attempts = (ans["attempts"] as? Number)?.toInt() ?: 1
+            if (correct) {
+                if (attempts == 2) q.marks / 2.0 else q.marks
+            } else 0.0
+        } else {
+            val aiEarned = (ans!!["aiEarnedMarks"] as? Number)?.toDouble()
+            if (aiEarned != null) {
+                aiEarned
+            } else {
+                val selfGrade = ans["selfGrade"] as? String ?: ""
+                when (selfGrade) {
+                    "got_it" -> q.marks
+                    "partial" -> q.marks / 2.0
+                    else -> 0.0
+                }
+            }
+        }
+    } else 0.0
+
+    val earnedStr = if (earnedMarks % 1.0 == 0.0) earnedMarks.toInt().toString() else earnedMarks.toString()
+    val maxStr = if (q.marks % 1.0 == 0.0) q.marks.toInt().toString() else q.marks.toString()
+    val marksBadgeText = if (result != "unanswered") "$earnedStr/$maxStr marks" else ""
 
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -842,10 +860,10 @@ private fun QuestionDetailCard(
                                 color = Color(0xFF856404)
                             )
                         }
-                        if (badgeText.isNotBlank()) {
+                        if (marksBadgeText.isNotBlank()) {
                             Text(
-                                text = badgeText,
-                                style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.ExtraBold),
+                                text = marksBadgeText,
+                                style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold),
                                 color = badgeColor
                             )
                         }
@@ -961,20 +979,7 @@ private fun QuestionDetailCard(
                     }
                 }
 
-                if (result == "partial") {
-                    val aiEarned = ans?.get("aiEarnedMarks") as? Number
-                    val earnedStr = if (aiEarned != null) {
-                        if (aiEarned.toDouble() % 1.0 == 0.0) aiEarned.toInt().toString() else aiEarned.toString()
-                    } else {
-                        "½"
-                    }
-                    Text(
-                        text = "$earnedStr / ${q.marks.toInt()} marks",
-                        style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
-                        color = Color(0xFFE67E22),
-                        modifier = Modifier.padding(top = 2.dp)
-                    )
-                }
+
 
                 if (answered && q.explanation.isNotBlank() && result != "skipped") {
                     Text(

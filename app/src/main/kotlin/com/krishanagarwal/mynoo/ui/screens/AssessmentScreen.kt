@@ -906,6 +906,9 @@ private fun QuestionView(
                 }
 
                 if (isRetryState) {
+                    val halfM = question.marks / 2.0
+                    val halfStr = if (halfM % 1.0 == 0.0) halfM.toInt().toString() else halfM.toString()
+                    val maxStr = if (question.marks % 1.0 == 0.0) question.marks.toInt().toString() else question.marks.toString()
                     Surface(
                         color = Color(0xFFFFF3CD),
                         border = BorderStroke(1.dp, Color(0xFFFFE0B2)),
@@ -913,7 +916,7 @@ private fun QuestionView(
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         Text(
-                            text = "❌ Incorrect — try again! Half marks if correct on retry.",
+                            text = "❌ Incorrect — try again! $halfStr/$maxStr marks if correct on retry.",
                             modifier = Modifier.padding(12.dp),
                             style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.Bold),
                             color = Color(0xFF856404)
@@ -924,8 +927,11 @@ private fun QuestionView(
                 // Show Explanation Box once checked
                 if (isMcqDone) {
                     val correctedOnRetry = firstWrong != null && activeSelected == question.correctIndex
+                    val halfM = question.marks / 2.0
+                    val halfStr = if (halfM % 1.0 == 0.0) halfM.toInt().toString() else halfM.toString()
+                    val maxStr = if (question.marks % 1.0 == 0.0) question.marks.toInt().toString() else question.marks.toString()
                     val explanationTitle = when {
-                        correctedOnRetry -> "✅ Correct on retry! (½ marks)"
+                        correctedOnRetry -> "✅ Correct on retry! ($halfStr/$maxStr marks)"
                         activeSelected == question.correctIndex -> "🎉 Correct!"
                         else -> "❌ Not quite"
                     }

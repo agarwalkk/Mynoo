@@ -1,1064 +1,771 @@
 {
-  "title": "The Rise of Empires",
+  "title": "The Constitution of India Master Assessment",
   "passages": [],
   "questions": [
     {
       "id": "q1",
       "type": "mcq",
-      "category": "Definitions",
+      "category": "Preservation of the Constitution",
       "marks": 1,
       "difficulty": "easy",
-      "question": "The word *empire* comes from the Latin *imperium*. What does *imperium* mean?",
+      "question": "Which gas is filled inside the glass case in the Parliament to preserve the original manuscript of the Constitution of India?[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
+      "tag": "Preservation",
+      "hint": "It is a gas that does not react with paper or ink.[cite: 1]",
       "options": [
-        {
-          "text": "Supreme power",
-          "explanation": "Correct. The chapter states that *imperium* means 'supreme power'."
-        },
-        {
-          "text": "Military camp",
-          "explanation": "Incorrect. This is not the meaning given in the chapter."
-        },
-        {
-          "text": "Small kingdom",
-          "explanation": "Incorrect. The chapter does not use this meaning."
-        },
-        {
-          "text": "Royal tax",
-          "explanation": "Incorrect. This is unrelated to the Latin word."
-        }
+        { "text": "Oxygen", "explanation": "Oxygen is highly reactive and would support degradation, so it is incorrect." },
+        { "text": "Helium", "explanation": "Helium is an inert gas that does not react with paper or ink, helping to preserve the document safely over time.[cite: 1]" },
+        { "text": "Nitrogen", "explanation": "Nitrogen is not mentioned as the preserving gas in this chapter." },
+        { "text": "Hydrogen", "explanation": "Hydrogen is highly flammable and reactive, making it unsuitable for preservation." }
       ],
-      "correctIndex": 0,
-      "correctAnswer": "Supreme power",
-      "explanation": "The chapter states that *imperium* means 'supreme power'."
+      "correctIndex": 1,
+      "correctAnswer": "Helium",
+      "explanation": "According to the chapter text and figures, the Constitution of India is preserved in a helium-filled glass case because helium does not react with paper or ink.[cite: 1]"
     },
     {
       "id": "q2",
       "type": "mcq",
-      "category": "Vocabulary",
+      "category": "Key Dates",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "What is a **tributary** in the context of an empire?",
+      "difficulty": "medium",
+      "question": "On which exact date did the Constituent Assembly complete and adopt the Constitution of India?[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
+      "tag": "Key Dates",
+      "hint": "This day is celebrated in schools and institutions but is different from Republic Day.",
       "options": [
-        {
-          "text": "A ruler or state that pays tribute to an emperor",
-          "explanation": "Correct. This is the chapter's definition."
-        },
-        {
-          "text": "A river that joins a larger river",
-          "explanation": "Incorrect. That is a different meaning."
-        },
-        {
-          "text": "A fort wall around a city",
-          "explanation": "Incorrect. That describes ramparts."
-        },
-        {
-          "text": "A soldier who guards the palace",
-          "explanation": "Incorrect. The chapter uses tributary for a dependent ruler or state."
-        }
+        { "text": "26 January 1950", "explanation": "This is the date when the Constitution came into effect, celebrated as Republic Day.[cite: 1]" },
+        { "text": "9 December 1946", "explanation": "This is the date when the Constituent Assembly was first formed.[cite: 1]" },
+        { "text": "26 November 1949", "explanation": "This is the date when the drafting work was completed and the Constitution was adopted.[cite: 1]" },
+        { "text": "15 August 1947", "explanation": "This is India's Independence Day." }
       ],
-      "correctIndex": 0,
-      "correctAnswer": "A ruler or state that pays tribute to an emperor",
-      "explanation": "The chapter defines a tributary as a ruler or state that submits to an emperor and pays tribute."
+      "correctIndex": 2,
+      "correctAnswer": "26 November 1949",
+      "explanation": "The textbook explicitly states that the drafting work was completed and adopted as the Constitution of India on 26 November 1949.[cite: 1]"
     },
     {
       "id": "q3",
       "type": "mcq",
-      "category": "Pāṭaliputra",
+      "category": "Constituent Assembly Composition",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "Pāṭaliputra was located near which modern city?",
+      "difficulty": "hard",
+      "question": "How many women members were initially part of the 389-member Constituent Assembly formed in 1946?[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
+      "tag": "Assembly Composition",
+      "hint": "It is a double-digit prime number under 20.",
       "options": [
-        {
-          "text": "Patna",
-          "explanation": "Correct. The chapter says it was about the same location as modern-day Patna."
-        },
-        {
-          "text": "Delhi",
-          "explanation": "Incorrect. This is not mentioned in the chapter."
-        },
-        {
-          "text": "Mumbai",
-          "explanation": "Incorrect. This is not the correct location."
-        },
-        {
-          "text": "Kolkata",
-          "explanation": "Incorrect. The chapter does not say this."
-        }
+        { "text": "9 members", "explanation": "Incorrect based on the chapter details." },
+        { "text": "15 members", "explanation": "The text states that out of the initial members, 15 were women.[cite: 1]" },
+        { "text": "22 members", "explanation": "Incorrect. 22 was the original number of Parts in the Constitution.[cite: 1]" },
+        { "text": "12 members", "explanation": "Incorrect. 12 is the current number of schedules, not the number of women.[cite: 1]" }
       ],
-      "correctIndex": 0,
-      "correctAnswer": "Patna",
-      "explanation": "The chapter directly links Pāṭaliputra with modern-day Patna."
+      "correctIndex": 1,
+      "correctAnswer": "15 members",
+      "explanation": "The text states: 'a Constituent Assembly was formed in 1946, initially with 389 members... of which 15 were women.'[cite: 1]"
     },
     {
       "id": "q4",
       "type": "mcq",
-      "category": "Guilds",
+      "category": "Preamble Vocabulary",
       "marks": 1,
       "difficulty": "medium",
-      "question": "What is the Sanskrit word used in the chapter for guilds?",
+      "question": "According to the Preamble, what does the term **'REPUBLIC'** signify regarding the head of the state?[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
+      "tag": "Preamble Principles",
+      "hint": "Think about how our President gets office versus a King.",
       "options": [
-        {
-          "text": "Śhrenīs",
-          "explanation": "Correct. The chapter uses this word for guilds."
-        },
-        {
-          "text": "Mahājanapadas",
-          "explanation": "Incorrect. These were large states, not guilds."
-        },
-        {
-          "text": "Samrāj",
-          "explanation": "Incorrect. This refers to a supreme ruler."
-        },
-        {
-          "text": "Arthaśhāstra",
-          "explanation": "Incorrect. This is the title of Kautilya's book."
-        }
+        { "text": "The head of the state is a hereditary king.", "explanation": "A hereditary position belongs to a monarchy, not a republic.[cite: 1]" },
+        { "text": "The head of the state is nominated by an outside foreign power.", "explanation": "This contradicts sovereignty and the definition of a republic.[cite: 1]" },
+        { "text": "The head of the state is an elected person and not a hereditary position.", "explanation": "The Preamble infobox defines Republic as having an elected head rather than a hereditary system.[cite: 1]" },
+        { "text": "The head of the state has absolute power to alter the rulebook at will.", "explanation": "Even the head of state must follow the constitutional provisions.[cite: 1]" }
       ],
-      "correctIndex": 0,
-      "correctAnswer": "Śhrenīs",
-      "explanation": "The chapter says traders created guilds called śhrenīs."
+      "correctIndex": 2,
+      "correctAnswer": "The head of the state is an elected person and not a hereditary position.",
+      "explanation": "The text under the Preamble chart clarifies: 'REPUBLIC: The head of the state is an elected person and not a hereditary position.'[cite: 1]"
     },
     {
       "id": "q5",
       "type": "mcq",
-      "category": "Alexander",
+      "category": "Constitutional Amendments",
       "marks": 1,
       "difficulty": "medium",
-      "question": "In which region did Alexander defeat Porus?",
+      "question": "Which specific Constitutional Amendment Act integrated the **Panchayati Raj System** into the Constitution of India in 1992?[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
+      "tag": "Amendments",
+      "hint": "It is a number in the seventies.",
       "options": [
-        {
-          "text": "Punjab",
-          "explanation": "Correct. The chapter states that Alexander defeated Porus in Punjab."
-        },
-        {
-          "text": "Bengal",
-          "explanation": "Incorrect. The chapter does not mention Bengal."
-        },
-        {
-          "text": "Gujarat",
-          "explanation": "Incorrect. This is not the correct region."
-        },
-        {
-          "text": "Assam",
-          "explanation": "Incorrect. The chapter does not mention Assam."
-        }
+        { "text": "42nd Constitutional Amendment Act", "explanation": "The 42nd Amendment occurred in 1976 and added words to the Preamble and Part IV-A.[cite: 1]" },
+        { "text": "73rd Constitutional Amendment Act", "explanation": "The text explicitly states that the Panchayati Raj System was integrated in 1992 with the 73rd Constitutional Amendment Act.[cite: 1]" },
+        { "text": "86th Constitutional Amendment Act", "explanation": "Incorrect based on the provided text." },
+        { "text": "50th Constitutional Amendment Act", "explanation": "Incorrect based on the provided text." }
       ],
-      "correctIndex": 0,
-      "correctAnswer": "Punjab",
-      "explanation": "The chapter specifically mentions Alexander defeating Porus in Punjab."
+      "correctIndex": 1,
+      "correctAnswer": "73rd Constitutional Amendment Act",
+      "explanation": "The textbook states under 'Let's Explore': 'This was not a part of the original Constitution; it was integrated in it in 1992 with the 73rd Constitutional Amendment Act.'[cite: 1]"
     },
     {
       "id": "q6",
       "type": "mcq",
-      "category": "Maurya Empire",
+      "category": "Constitutional Structure",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Who founded the Maurya Empire?",
+      "question": "How many **Parts** and **Schedules** did the Constitution of India contain when it originally came into effect in 1950?[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
+      "tag": "Structure",
+      "hint": "Look under the 'Don't Miss Out' section regarding historical figures.[cite: 1]",
       "options": [
-        {
-          "text": "Chandragupta Maurya",
-          "explanation": "Correct. The chapter states that he founded the Maurya Empire."
-        },
-        {
-          "text": "Ashoka",
-          "explanation": "Incorrect. Ashoka was a later Mauryan ruler."
-        },
-        {
-          "text": "Mahāpadma Nanda",
-          "explanation": "Incorrect. He founded the Nanda dynasty."
-        },
-        {
-          "text": "Alexander",
-          "explanation": "Incorrect. He was a foreign conqueror, not the founder of the Maurya Empire."
-        }
+        { "text": "25 parts and 12 schedules", "explanation": "This is the current structural composition of the Constitution, not the original one.[cite: 1]" },
+        { "text": "22 parts and 8 schedules", "explanation": "The textbook explicitly states: 'When it came into effect, it had 22 Parts and 8 schedules.'[cite: 1]" },
+        { "text": "15 parts and 10 schedules", "explanation": "Incorrect structural division." },
+        { "text": "389 parts and 299 schedules", "explanation": "These numbers represent the membership counts of the Constituent Assembly.[cite: 1]" }
       ],
-      "correctIndex": 0,
-      "correctAnswer": "Chandragupta Maurya",
-      "explanation": "The chapter says the Maurya Empire was founded by Chandragupta Maurya."
+      "correctIndex": 1,
+      "correctAnswer": "22 parts and 8 schedules",
+      "explanation": "The 'Don't Miss Out' box states: 'When it came into effect, it had 22 Parts and 8 schedules.'[cite: 1]"
     },
     {
       "id": "q7",
       "type": "mcq",
-      "category": "Vocabulary",
+      "category": "Art and Calligraphy",
       "marks": 1,
       "difficulty": "medium",
-      "question": "What does **posterity** mean?",
+      "question": "Who was the handwritten calligrapher of the initial text of the Indian Constitution?[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
+      "tag": "Art and Calligraphy",
+      "hint": "His full name is mentioned in the final sections as a key artist.[cite: 1]",
       "options": [
-        {
-          "text": "The generations to come",
-          "explanation": "Correct. This is the chapter's definition."
-        },
-        {
-          "text": "Ancient warriors",
-          "explanation": "Incorrect. The chapter does not define it this way."
-        },
-        {
-          "text": "Royal property",
-          "explanation": "Incorrect. This is unrelated."
-        },
-        {
-          "text": "A group of traders",
-          "explanation": "Incorrect. This describes guilds, not posterity."
-        }
+        { "text": "Nandalal Bose", "explanation": "Nandalal Bose and his team illustrated the pages, but did not write the text.[cite: 1]" },
+        { "text": "Dr. B.R. Ambedkar", "explanation": "Dr. Ambedkar was the chairman of the Drafting Committee, not the calligrapher.[cite: 1]" },
+        { "text": "Prem Behari Narain Raizada", "explanation": "The text states: 'Calligrapher Prem Behari Narain Raizada wrote its text by hand'.[cite: 1]" },
+        { "text": "Dr. Rajendra Prasad", "explanation": "Dr. Rajendra Prasad was the Chairman of the Constituent Assembly.[cite: 1]" }
       ],
-      "correctIndex": 0,
-      "correctAnswer": "The generations to come",
-      "explanation": "The chapter's callout defines posterity as the generations to come."
+      "correctIndex": 2,
+      "correctAnswer": "Prem Behari Narain Raizada",
+      "explanation": "The text clarifies that the document is a work of art where Calligrapher Prem Behari Narain Raizada penned the text by hand.[cite: 1]"
     },
     {
       "id": "q8",
       "type": "mcq",
-      "category": "Vocabulary",
+      "category": "Global Learnings",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "What are **Gymnosophists**?",
+      "difficulty": "hard",
+      "question": "From which country's constitution did the makers of the Indian Constitution derive inspiration for the **Directive Principles of State Policy (DPSP)**?[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
+      "tag": "Global Influences",
+      "hint": "It is an island nation in Europe.",
       "options": [
-        {
-          "text": "Naked philosophers",
-          "explanation": "Correct. The chapter says the Greeks called the sages Gymnosophists or naked philosophers."
-        },
-        {
-          "text": "Forest hunters",
-          "explanation": "Incorrect. The chapter gives a different meaning."
-        },
-        {
-          "text": "Army generals",
-          "explanation": "Incorrect. They were sages, not generals."
-        },
-        {
-          "text": "Temple builders",
-          "explanation": "Incorrect. This is not the meaning given."
-        }
+        { "text": "French Constitution", "explanation": "The French Constitution inspired the ideals of liberty, equality, and fraternity.[cite: 1]" },
+        { "text": "American Constitution", "explanation": "The American Constitution helped shape the concept of an independent judiciary.[cite: 1]" },
+        { "text": "Irish Constitution", "explanation": "The text explicitly states: 'the idea of the Directive Principles of State Policy... was inspired by the Irish Constitution'.[cite: 1]" },
+        { "text": "British Constitution", "explanation": "Incorrect based on the detailed influences section." }
       ],
-      "correctIndex": 0,
-      "correctAnswer": "Naked philosophers",
-      "explanation": "The chapter explains that Gymnosophists means naked philosophers."
+      "correctIndex": 2,
+      "correctAnswer": "Irish Constitution",
+      "explanation": "The text states under 'Learnings from across the world' that the idea of the Directive Principles of State Policy was inspired by the Irish Constitution.[cite: 1]"
     },
     {
       "id": "q9",
       "type": "mcq",
-      "category": "Trade",
+      "category": "Preamble History",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "Which of the following was mentioned as a traded good in ancient India?",
+      "difficulty": "hard",
+      "question": "Which of the following sets of terms were added to the Preamble later through the **42nd Constitutional Amendment in 1976**?[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
+      "tag": "Preamble",
+      "hint": "Check the footnote note near the bottom of the Preamble image.[cite: 1]",
       "options": [
-        {
-          "text": "Textiles",
-          "explanation": "Correct. Textiles are listed among the traded goods."
-        },
-        {
-          "text": "Cement",
-          "explanation": "Incorrect. The chapter does not mention cement."
-        },
-        {
-          "text": "Plastic",
-          "explanation": "Incorrect. This is not from the chapter."
-        },
-        {
-          "text": "Glass bottles",
-          "explanation": "Incorrect. Not listed in the chapter."
-        }
+        { "text": "Sovereign, Democratic, Republic", "explanation": "These were part of the original Preamble formulation.[cite: 1]" },
+        { "text": "Justice, Liberty, Equality", "explanation": "These core values were in the original draft text.[cite: 1]" },
+        { "text": "Socialist, Secular, Integrity", "explanation": "The note explicitly states: 'The terms \"Socialist\", \"Secular\" and \"Integrity\" were added in the Preamble through the 42nd Constitutional Amendment in 1976.'[cite: 1]" },
+        { "text": "Fraternity, Status, Opportunity", "explanation": "These terms were already present in the initial adoption.[cite: 1]" }
       ],
-      "correctIndex": 0,
-      "correctAnswer": "Textiles",
-      "explanation": "The chapter lists textiles, spices, agricultural produce, gems, handicrafts, and animals among trade goods."
+      "correctIndex": 2,
+      "correctAnswer": "Socialist, Secular, Integrity",
+      "explanation": "The note below the Preamble box directly details: 'The terms \"Socialist\", \"Secular\" and \"Integrity\" were added in the Preamble through the 42nd Constitutional Amendment in 1976.'[cite: 1]"
     },
     {
       "id": "q10",
       "type": "mcq",
-      "category": "Ashoka",
+      "category": "Fundamental Rights",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "Where was the Sarnath pillar capital erected by Ashoka?",
+      "difficulty": "easy",
+      "question": "Under which **Article** of the Constitution of India is the **'Right to Education'** protected?[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
+      "tag": "Rights",
+      "hint": "It is attached as a sub-clause letter to Article 21.[cite: 1]",
       "options": [
-        {
-          "text": "Near Varanasi",
-          "explanation": "Correct. The chapter says it was erected at Sarnath, near Varanasi."
-        },
-        {
-          "text": "Near Patna",
-          "explanation": "Incorrect. Patna is linked with Pāṭaliputra."
-        },
-        {
-          "text": "Near Delhi",
-          "explanation": "Incorrect. The chapter does not mention Delhi."
-        },
-        {
-          "text": "Near Ujjain",
-          "explanation": "Incorrect. This is not given in the chapter."
-        }
+        { "text": "Article 14", "explanation": "Article 14 is the Right to Equality (Equality before law).[cite: 1]" },
+        { "text": "Article 21-A", "explanation": "The infographic layout links 'Article 21-A. (Right to education)' under Fundamental Rights.[cite: 1]" },
+        { "text": "Article 38", "explanation": "Article 38 is related to Directive Principles for social, political, and economic justice.[cite: 1]" },
+        { "text": "Article 44", "explanation": "Article 44 is the Uniform Civil Code under DPSP.[cite: 1]" }
       ],
-      "correctIndex": 0,
-      "correctAnswer": "Near Varanasi",
-      "explanation": "The chapter says Ashoka had it erected at Sarnath, near Varanasi."
+      "correctIndex": 1,
+      "correctAnswer": "Article 21-A",
+      "explanation": "The infographic charting the organisation of the Constitution explicitly lists 'Article 21-A. (Right to education)' as a Fundamental Right.[cite: 1]"
     },
     {
       "id": "q11",
-      "type": "mcq",
-      "category": "Vocabulary",
+      "type": "fill_blank",
+      "category": "Preservation of the Constitution",
       "marks": 1,
-      "difficulty": "hard",
-      "question": "What does **ramparts** mean?",
+      "difficulty": "easy",
+      "question": "Fill in the blank: To keep the original copy of the Constitution safe, it is preserved in a glass case located in the Parliament building filled with ___.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "options": [
-        {
-          "text": "Defensive walls of a castle or city",
-          "explanation": "Correct. This is the chapter meaning."
-        },
-        {
-          "text": "A type of trade route",
-          "explanation": "Incorrect. Trade routes are separate."
-        },
-        {
-          "text": "A royal title",
-          "explanation": "Incorrect. This is not a title."
-        },
-        {
-          "text": "A religious teacher",
-          "explanation": "Incorrect. This is not the meaning."
-        }
-      ],
-      "correctIndex": 0,
-      "correctAnswer": "Defensive walls of a castle or city",
-      "explanation": "The chapter defines ramparts as defensive walls."
+      "tag": "Preservation",
+      "hint": "An inert gas starting with the letter H.",
+      "blanks": ["helium"],
+      "correctAnswer": "helium",
+      "explanation": "The text states that the Constitution is carefully preserved in a helium-filled glass case in Parliament.[cite: 1]"
     },
     {
       "id": "q12",
-      "type": "mcq",
-      "category": "Vocabulary",
+      "type": "fill_blank",
+      "category": "Leadership",
       "marks": 1,
-      "difficulty": "hard",
-      "question": "Which Sanskrit word means 'king of kings'?",
+      "difficulty": "easy",
+      "question": "Fill in the blank: The Chairman of the Constituent Assembly who later became the first President of India was Dr. ___.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "options": [
-        {
-          "text": "Rājādhirāja",
-          "explanation": "Correct. The chapter states that this means 'king of kings'."
-        },
-        {
-          "text": "Samrāj",
-          "explanation": "Incorrect. This means 'lord of all' or 'supreme ruler'."
-        },
-        {
-          "text": "Adhirāja",
-          "explanation": "Incorrect. This means 'overlord'."
-        },
-        {
-          "text": "Vassal",
-          "explanation": "Incorrect. This is the English equivalent of a tributary."
-        }
-      ],
-      "correctIndex": 0,
-      "correctAnswer": "Rājādhirāja",
-      "explanation": "The chapter explains that rājādhirāja means king of kings."
+      "tag": "Leadership",
+      "hint": "His quotes open the chapter introduction.[cite: 1]",
+      "blanks": ["Rajendra Prasad"],
+      "correctAnswer": "Rajendra Prasad",
+      "explanation": "The text names Dr. Rajendra Prasad as the Chairman of the Constituent Assembly and the first President of India.[cite: 1]"
     },
     {
       "id": "q13",
-      "type": "mcq",
-      "category": "Vocabulary",
+      "type": "fill_blank",
+      "category": "Constitutional Structure",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "What does **moat** mean?",
+      "difficulty": "medium",
+      "question": "Fill in the blank: The modern Constitution of India contains exactly ___ parts and 12 schedules.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "options": [
-        {
-          "text": "A deep, wide ditch around a fort or town, often filled with water",
-          "explanation": "Correct. This is the definition given in the chapter."
-        },
-        {
-          "text": "A palace hall",
-          "explanation": "Incorrect. This is not a moat."
-        },
-        {
-          "text": "A tax collector",
-          "explanation": "Incorrect. This is unrelated."
-        },
-        {
-          "text": "A trade road",
-          "explanation": "Incorrect. This is not the meaning."
-        }
-      ],
-      "correctIndex": 0,
-      "correctAnswer": "A deep, wide ditch around a fort or town, often filled with water",
-      "explanation": "The chapter clearly defines a moat in this way."
+      "tag": "Structure",
+      "hint": "It is a number equal to a quarter of a century.",
+      "blanks": ["25"],
+      "correctAnswer": "25",
+      "explanation": "The text mentions that today the Constitution of India has 25 parts and 12 schedules.[cite: 1]"
     },
     {
       "id": "q14",
-      "type": "mcq",
-      "category": "Vocabulary",
+      "type": "fill_blank",
+      "category": "Drafting Committee",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "What does **fortifications** mean in the chapter?",
+      "difficulty": "easy",
+      "question": "Fill in the blank: The initial text of the Constitution was prepared by a Drafting Committee chaired by Dr. ___.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "options": [
-        {
-          "text": "Defensive walls or reinforcements built to protect a place",
-          "explanation": "Correct. This is the chapter meaning."
-        },
-        {
-          "text": "A royal dance performance",
-          "explanation": "Incorrect. This is unrelated."
-        },
-        {
-          "text": "A market area",
-          "explanation": "Incorrect. The chapter uses the term for defence."
-        },
-        {
-          "text": "A river crossing",
-          "explanation": "Incorrect. That is a bridge."
-        }
-      ],
-      "correctIndex": 0,
-      "correctAnswer": "Defensive walls or reinforcements built to protect a place",
-      "explanation": "The chapter defines fortifications as defensive walls or other reinforcements."
+      "tag": "Drafting Committee",
+      "hint": "He was the first Law and Justice minister of independent India.[cite: 1]",
+      "blanks": ["B.R. Ambedkar"],
+      "correctAnswer": "B.R. Ambedkar",
+      "explanation": "The text specifies that the initial text was prepared by a Drafting Committee chaired by Dr. B.R. Ambedkar.[cite: 1]"
     },
     {
       "id": "q15",
-      "type": "mcq",
-      "category": "Pāṇini",
+      "type": "fill_blank",
+      "category": "Fundamental Duties",
       "marks": 1,
-      "difficulty": "hard",
-      "question": "How many short sūtras does the Aṣṭādhyāyī contain?",
+      "difficulty": "medium",
+      "question": "Fill in the blank: 'Part IV-A: Fundamental Duties' was not present in the original text but was added to the Constitution in the year ___.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "options": [
-        {
-          "text": "3,996",
-          "explanation": "Correct. The chapter gives this exact number."
-        },
-        {
-          "text": "2,996",
-          "explanation": "Incorrect. The chapter says 3,996."
-        },
-        {
-          "text": "4,996",
-          "explanation": "Incorrect. This is not the number in the chapter."
-        },
-        {
-          "text": "1,996",
-          "explanation": "Incorrect. The chapter gives 3,996."
-        }
-      ],
-      "correctIndex": 0,
-      "correctAnswer": "3,996",
-      "explanation": "The chapter states that the Aṣṭādhyāyī has 3,996 short sūtras."
+      "tag": "Amendments",
+      "hint": "It happened in the same year the 42nd amendment was initiated.[cite: 1]",
+      "blanks": ["1976"],
+      "correctAnswer": "1976",
+      "explanation": "The text states: 'For example, \"Part IV-A: Fundamental Duties\" was added in 1976.'[cite: 1]"
     },
     {
       "id": "q16",
       "type": "fill_blank",
-      "category": "Empires",
+      "category": "Preamble Principles",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "Fill in the blank: An emperor rules the empire from a ___.",
+      "difficulty": "medium",
+      "question": "Fill in the blank: In the Preamble, the term ___ implies that citizens have complete freedom to follow any religion, and there is no official state religion.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": ["capital"],
-      "correctAnswer": "capital",
-      "explanation": "The chapter says the emperor ruled from a capital."
+      "tag": "Preamble",
+      "hint": "Starts with 'SEC...'",
+      "blanks": ["Secular"],
+      "correctAnswer": "Secular",
+      "explanation": "The Preamble breakdown describes 'SECULAR' as: 'Citizens have complete freedom to follow any religion. But there is no official religion.'[cite: 1]"
     },
     {
       "id": "q17",
       "type": "fill_blank",
-      "category": "Alexander",
+      "category": "Constituent Assembly Dates",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "Fill in the blank: Alexander died in ___.",
+      "difficulty": "medium",
+      "question": "Fill in the blank: The Constituent Assembly officially formed and held its initial meeting on 9 December ___.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": ["Babylon"],
-      "correctAnswer": "Babylon",
-      "explanation": "The chapter states that Alexander died in Babylon."
+      "tag": "Assembly Timeline",
+      "hint": "One year before independence.",
+      "blanks": ["1946"],
+      "correctAnswer": "1946",
+      "explanation": "The text states: 'It was formed on 9 December 1946, with its members elected by the legislative assemblies.'[cite: 1]"
     },
     {
       "id": "q18",
       "type": "fill_blank",
-      "category": "Guilds",
+      "category": "Constitutional Art",
       "marks": 1,
       "difficulty": "medium",
-      "question": "Fill in the blank: A guild's head was usually ___.",
+      "question": "Fill in the blank: The master artist ___ and his team decorated the pages of the original Constitution with scenes from Indian history.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": ["elected"],
-      "correctAnswer": "elected",
-      "explanation": "The chapter states that a guild had a head who was usually elected."
+      "tag": "Illustrations",
+      "hint": "He worked out of Shantiniketan.",
+      "blanks": ["Nandalal Bose"],
+      "correctAnswer": "Nandalal Bose",
+      "explanation": "The text explicitly names 'Nandalal Bose and his team' as the illustrators who adorned the historical manuscript pages.[cite: 1]"
     },
     {
       "id": "q19",
       "type": "fill_blank",
-      "category": "Magadha",
+      "category": "Preamble Principles",
       "marks": 1,
       "difficulty": "medium",
-      "question": "Fill in the blank: The ___ and Son rivers gave Magadha a geographical advantage.",
+      "question": "Fill in the blank: The phrase '___' at the very beginning of the Preamble emphasizes that the power of the Constitution comes from the citizens themselves and not from any king or outside ruler.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": ["Ganga"],
-      "correctAnswer": "Ganga",
-      "explanation": "The chapter mentions the Ganga and Son rivers as an advantage for Magadha."
+      "tag": "Preamble Opening",
+      "hint": "Copy the exact four words used as the header.[cite: 1]",
+      "blanks": ["WE, THE PEOPLE OF INDIA"],
+      "correctAnswer": "WE, THE PEOPLE OF INDIA",
+      "explanation": "The Preamble infographic defines the phrase 'WE, THE PEOPLE OF INDIA' to indicate that it has been drawn up and enacted by the people through representatives.[cite: 1]"
     },
     {
       "id": "q20",
       "type": "fill_blank",
-      "category": "Nanda Dynasty",
+      "category": "Directive Principles",
       "marks": 1,
       "difficulty": "medium",
-      "question": "Fill in the blank: The last emperor of the Nanda dynasty was ___.",
+      "question": "Fill in the blank: Article 44 under the Directive Principles of State Policy outlines the implementation of a ___ Civil Code.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": ["Dhana Nanda"],
-      "correctAnswer": "Dhana Nanda",
-      "explanation": "The chapter names Dhana Nanda as the last Nanda emperor."
+      "tag": "DPSP",
+      "hint": "Meaning matching or standardized across all citizens.",
+      "blanks": ["Uniform"],
+      "correctAnswer": "Uniform",
+      "explanation": "The infographic mapping outlines: 'Article 44: Uniform Civil Code'.[cite: 1]"
     },
     {
       "id": "q21",
-      "type": "fill_blank",
-      "category": "Maurya Empire",
+      "type": "transformation",
+      "category": "Constitutional Definitions",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Fill in the blank: The Maurya Empire was founded by ___.",
+      "question": "Reframe the following statement to define what a basic Constitution is based on the introductory text.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": ["Chandragupta Maurya"],
-      "correctAnswer": "Chandragupta Maurya",
-      "explanation": "The chapter states that Chandragupta Maurya founded the Maurya Empire."
+      "tag": "Definitions",
+      "hint": "Refer to the simple answer provided under 'What is a Constitution?'.[cite: 1]",
+      "inputSentence": "A constitution is just an old textbook containing chapters.",
+      "transformationType": "Correction based on text definition",
+      "correctAnswer": "A constitution is a document that spells out a nation's basic principles and laws.[cite: 1]",
+      "explanation": "The textbook directly provides the definition: 'A simple answer is that it is a document that spells out a nation's basic principles and laws.'[cite: 1]"
     },
     {
       "id": "q22",
-      "type": "fill_blank",
-      "category": "Arthashastra",
+      "type": "transformation",
+      "category": "Rights vs Duties Modification",
       "marks": 1,
       "difficulty": "medium",
-      "question": "Fill in the blank: Kautilya's famous book is called ___.",
+      "question": "Transform the given statement to accurately state the legal distinction between Fundamental Rights and Directive Principles if a rule is broken.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": ["Arthaśhāstra"],
-      "correctAnswer": "Arthaśhāstra",
-      "explanation": "The chapter attributes the opening quote to Kautilya in the Arthaśhāstra."
+      "tag": "DPSP vs Rights",
+      "hint": "Can you go to a judge if a DPSP is violated?[cite: 1]",
+      "inputSentence": "If the government fails to follow Directive Principles, citizens can immediately sue the government in court just like they do for Fundamental Rights.",
+      "transformationType": "Factual Correction of Judicial enforceability",
+      "correctAnswer": "If the government does not follow Directive Principles, one cannot go to a judge to complain, whereas violating Fundamental Rights allows citizens to seek help from a court.[cite: 1]",
+      "explanation": "The text states that DPSPs are like guidelines rather than strict rules, meaning you cannot complain to a judge if the government fails to follow them immediately, unlike Fundamental Rights.[cite: 1]"
     },
     {
       "id": "q23",
-      "type": "fill_blank",
-      "category": "Ashoka",
+      "type": "transformation",
+      "category": "Constituent Assembly Membership",
       "marks": 1,
       "difficulty": "medium",
-      "question": "Fill in the blank: The Sarnath pillar capital is near ___.",
+      "question": "Reframe the sentence to show the membership change of the Constituent Assembly caused by the Partition of India.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": ["Varanasi"],
-      "correctAnswer": "Varanasi",
-      "explanation": "The chapter states it was erected at Sarnath, near Varanasi."
+      "tag": "Assembly History",
+      "hint": "State the initial count and what it was reduced to.[cite: 1]",
+      "inputSentence": "The Constituent Assembly had 389 members throughout its history regardless of partition.",
+      "transformationType": "Factual Correction",
+      "correctAnswer": "The Constituent Assembly was formed with 389 members, which was later reduced to 299 after the Partition of India.[cite: 1]",
+      "explanation": "The text states: 'initially with 389 members (later reduced to 299 after the Partition of India).'[cite: 1]"
     },
     {
       "id": "q24",
-      "type": "fill_blank",
-      "category": "Trade",
+      "type": "transformation",
+      "category": "Artistic Components",
       "marks": 1,
-      "difficulty": "hard",
-      "question": "Fill in the blank: One of the ancient trade routes mentioned in the chapter is the ___.",
+      "difficulty": "medium",
+      "question": "Transform the text statement to properly distinguish between the roles of Prem Behari Narain Raizada and Nandalal Bose.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": ["Dakshiṇapatha"],
-      "correctAnswer": "Dakshiṇapatha",
-      "explanation": "The chapter mentions the Uttarapatha and the Dakshiṇapatha routes."
+      "tag": "Artistic Production",
+      "hint": "Who did the writing and who did the illustration?[cite: 1]",
+      "inputSentence": "Nandalal Bose wrote the entire Constitution by hand and Prem Behari Narain Raizada drew historical scenes on it.",
+      "transformationType": "Correction of roles",
+      "correctAnswer": "Prem Behari Narain Raizada wrote the text of the Constitution by hand, while Nandalal Bose and his team illustrated its pages.[cite: 1]",
+      "explanation": "The text confirms: 'Calligrapher Prem Behari Narain Raizada wrote its text by hand, while Nandalal Bose and his team illustrated its pages...'[cite: 1]"
     },
     {
       "id": "q25",
-      "type": "fill_blank",
-      "category": "Vocabulary",
+      "type": "transformation",
+      "category": "Government Organs",
       "marks": 1,
-      "difficulty": "hard",
-      "question": "Fill in the blank: Provincial governors in Persian and Greek empires were called ___.",
+      "difficulty": "easy",
+      "question": "Transform the incorrect description of the Executive organ into its correct function as specified by the text.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": ["satraps"],
-      "correctAnswer": "satraps",
-      "explanation": "The chapter's note explains this term."
+      "tag": "Organs of Government",
+      "hint": "Who makes the laws and who implements them?[cite: 1]",
+      "inputSentence": "The Executive organ of the government is responsible for making the laws of the nation.",
+      "transformationType": "Factual Correction",
+      "correctAnswer": "The legislature makes the laws, while the law is implemented by the executive.[cite: 1]",
+      "explanation": "The textbook rules outline: 'The legislature makes the laws. The law is implemented by the executive...'[cite: 1]"
     },
     {
       "id": "q26",
       "type": "error_correction",
-      "category": "Factual Accuracy",
+      "category": "Judiciary Organs",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Find and correct the error.",
+      "question": "Find and correct the factual error regarding the function of the judiciary.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "inputSentence": "The word empire comes from imperium, which means military power.",
-      "correctAnswer": "The word empire comes from imperium, which means supreme power.",
-      "explanation": "The chapter defines imperium as supreme power."
+      "tag": "Judiciary",
+      "hint": "Look at the definition of the judiciary's role under Grade 6 revision points.[cite: 1]",
+      "inputSentence": "The judiciary organ of government implements the laws under the leadership of the Prime Minister.",
+      "correctAnswer": "The judiciary ensures that all laws made are in accordance with the Constitution and decides punishments.[cite: 1]",
+      "explanation": "The text clarifies that the executive implements the law under the Prime Minister, whereas the judiciary checks its alignment with the Constitution and adjudicates violations.[cite: 1]"
     },
     {
       "id": "q27",
       "type": "error_correction",
-      "category": "Factual Accuracy",
+      "category": "Sovereignty Definition",
       "marks": 1,
       "difficulty": "medium",
-      "question": "Find and correct the error.",
+      "question": "Find and correct the mistake regarding the definition of 'Sovereign' in the Preamble.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "inputSentence": "Alexander died in Athens at the age of 32.",
-      "correctAnswer": "Alexander died in Babylon at the age of 32.",
-      "explanation": "The chapter states that Alexander died in Babylon."
+      "tag": "Preamble",
+      "hint": "Can an external power dictate terms to a sovereign government?[cite: 1]",
+      "inputSentence": "Being Sovereign means external global powers can dictate and control the internal decisions of the Indian government.",
+      "correctAnswer": "Being Sovereign means no external power can dictate the government of India, and the people have supreme rights.[cite: 1]",
+      "explanation": "The Preamble chart defines Sovereign as: 'The people have supreme right to make decisions... No external power can dictate the government of India.'[cite: 1]"
     },
     {
       "id": "q28",
       "type": "error_correction",
-      "category": "Factual Accuracy",
+      "category": "Flag Flying Rights",
       "marks": 1,
       "difficulty": "medium",
-      "question": "Find and correct the error.",
+      "question": "Find and correct the error regarding the timeline and cause of changes to national flag rules.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "inputSentence": "Pāṇini composed the Aṣṭādhyāyī with 3,600 short sūtras.",
-      "correctAnswer": "Pāṇini composed the Aṣṭādhyāyī with 3,996 short sūtras.",
-      "explanation": "The chapter gives the number as 3,996."
+      "tag": "Amendments",
+      "hint": "Which year did the Supreme Court change this rule, and under which right?[cite: 1]",
+      "inputSentence": "Citizens were always allowed to fly the flag at home until the Supreme Court banned it in 2004.",
+      "correctAnswer": "People were not allowed to fly the national flag at home until a citizen successfully challenged the rule in court in 2004.[cite: 1]",
+      "explanation": "The text states: 'There was a time when people were not allowed to fly the national flag at their homes. This changed in 2004... flying the flag is part of the Fundamental Right to Freedom of Expression.'[cite: 1]"
     },
     {
       "id": "q29",
       "type": "error_correction",
-      "category": "Factual Accuracy",
+      "category": "Preamble Terminology",
       "marks": 1,
       "difficulty": "medium",
-      "question": "Find and correct the error.",
+      "question": "Identify and fix the historical error concerning the word 'Socialist' in the Preamble.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "inputSentence": "Mahāpadma Nanda founded the Maurya dynasty.",
-      "correctAnswer": "Mahāpadma Nanda founded the Nanda dynasty.",
-      "explanation": "The Maurya dynasty was founded by Chandragupta Maurya."
+      "tag": "Preamble",
+      "hint": "Was it there from the beginning in 1949?[cite: 1]",
+      "inputSentence": "The term 'Socialist' was included from the very first day the Constituent Assembly adopted the text in 1949.",
+      "correctAnswer": "The term 'Socialist' was added to the Preamble later through the 42nd Constitutional Amendment in 1976.[cite: 1]",
+      "explanation": "The Preamble section directly notes that 'Socialist', 'Secular' and 'Integrity' were added later by the 42nd Amendment in 1976.[cite: 1]"
     },
     {
       "id": "q30",
       "type": "error_correction",
-      "category": "Factual Accuracy",
+      "category": "Directive Principles",
       "marks": 1,
-      "difficulty": "hard",
-      "question": "Find and correct the error.",
+      "difficulty": "medium",
+      "question": "Find the error regarding environmental policy matching.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "inputSentence": "The Sarnath pillar capital has three lions at the top.",
-      "correctAnswer": "The Sarnath pillar capital has four lions at the top.",
-      "explanation": "The chapter clearly says the four lions symbolise royal power."
+      "tag": "DPSP",
+      "hint": "Check the Article number for Environment and Wildlife protection.[cite: 1]",
+      "inputSentence": "Article 49 mandates the protection of the environment, forests, lakes, rivers, and wildlife.",
+      "correctAnswer": "Article 48-A mandates environment and wildlife protection, while Article 49 protects monuments.[cite: 1]",
+      "explanation": "According to the DPSP infographic layout, Article 48-A corresponds to Environment and Wildlife Protection, whereas Article 49 is for Protection of monuments.[cite: 1]"
     },
     {
       "id": "q31",
       "type": "jumbled",
-      "category": "Sentence Formation",
+      "category": "Key Quotes",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Rearrange the words to form a correct sentence.",
+      "question": "Rearrange the words to reconstruct the ancient phrase meaning 'the world is one family' incorporated into India's heritage.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "jumbledWords": ["An", "empire", "is", "ruled", "by", "a", "powerful", "supreme", "ruler"],
-      "correctAnswer": "An empire is ruled by a powerful supreme ruler.",
-      "explanation": "This sentence matches the chapter's idea of an empire."
+      "tag": "Civilisational Values",
+      "hint": "It is a classical Sanskrit phrase mentioned on page 216.[cite: 1]",
+      "jumbledWords": ["kutumbakam", "vasudhaiva"],
+      "correctAnswer": "vasudhaiva kutumbakam",
+      "explanation": "The text lists 'vasudhaiva kutumbakam' alongside its translation meaning 'the world is one family'.[cite: 1]"
     },
     {
       "id": "q32",
       "type": "jumbled",
-      "category": "Sentence Formation",
+      "category": "Heritage Phrasing",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "Rearrange the words to form a correct sentence.",
+      "difficulty": "medium",
+      "question": "Rearrange the following words to form the ancient Sanskrit invocation meaning well-being for all creatures mentioned in the text.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "jumbledWords": ["Guilds", "were", "powerful", "associations", "of", "traders", "and", "craftsmen"],
-      "correctAnswer": "Guilds were powerful associations of traders and craftsmen.",
-      "explanation": "This matches the chapter's definition of guilds."
+      "tag": "Civilisational Values",
+      "hint": "Look under page 216/217 concepts.[cite: 1]",
+      "jumbledWords": ["bhavantu", "sukhinah", "sarve"],
+      "correctAnswer": "sarve bhavantu sukhinah",
+      "explanation": "The chapter highlights 'sarve bhavantu sukhinah' as an invocation for the well-being of all creatures embedded in Indian culture.[cite: 1]"
     },
     {
       "id": "q33",
       "type": "jumbled",
-      "category": "Sentence Formation",
+      "category": "Global Learning Quotes",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "Rearrange the words to form a correct sentence.",
+      "difficulty": "hard",
+      "question": "Rearrange these words to show the traditional motto used by the makers to welcome good practices from external democratic nations.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "jumbledWords": ["Alexander", "defeated", "Porus", "in", "Punjab"],
-      "correctAnswer": "Alexander defeated Porus in Punjab.",
-      "explanation": "The chapter mentions this event clearly."
+      "tag": "Global Influence",
+      "hint": "Translates to: 'Let noble thoughts come to me from every side.'[cite: 1]",
+      "jumbledWords": ["bhadrah", "vishwatah", "yantu", "no", "kratavo", "a"],
+      "correctAnswer": "a no bhadrah kratavo yantu vishwatah",
+      "explanation": "The text references this quote: 'a no bhadrah kratavo yantu vishwatah - \"Let noble thoughts come to me from every side\"' to justify studying global constitutions.[cite: 1]"
     },
     {
       "id": "q34",
       "type": "jumbled",
-      "category": "Sentence Formation",
+      "category": "Government Structure",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "Rearrange the words to form a correct sentence.",
+      "difficulty": "easy",
+      "question": "Rearrange the items to declare the three tiers of the Indian governing system from highest to lowest level.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "jumbledWords": ["Magadha", "had", "fertile", "land", "and", "abundant", "forests"],
-      "correctAnswer": "Magadha had fertile land and abundant forests.",
-      "explanation": "This is based on the chapter's description of Magadha."
+      "tag": "System of Government",
+      "hint": "Central is the largest tier.[cite: 1]",
+      "jumbledWords": ["local", "central", "state"],
+      "correctAnswer": "central state local",
+      "explanation": "The revision notes mention a 'three-tier system of government—central, state and local'.[cite: 1]"
     },
     {
       "id": "q35",
       "type": "jumbled",
-      "category": "Sentence Formation",
+      "category": "Constitutional Traits",
       "marks": 1,
-      "difficulty": "hard",
-      "question": "Rearrange the words to form a correct sentence.",
+      "difficulty": "medium",
+      "question": "Rearrange these jumbled descriptors to form the common characterization of our constitution as it changes over time.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "jumbledWords": ["The", "bridge", "is", "lifted", "whenever", "there", "is", "a", "danger", "of", "attack"],
-      "correctAnswer": "The bridge is lifted whenever there is a danger of attack.",
-      "explanation": "This sentence comes directly from the chapter's description of the drawbridge."
+      "tag": "Living Document",
+      "hint": "Look at the main sub-heading of page 223.[cite: 1]",
+      "jumbledWords": ["document", "living", "a"],
+      "correctAnswer": "a living document",
+      "explanation": "The text headings label the Constitution explicitly as 'a Living Document'.[cite: 1]"
     },
     {
       "id": "q36",
       "type": "match_columns",
-      "category": "Terms and Meanings",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Match the terms in Column A with their meanings in Column B.",
+      "category": "Global Constitutional Sources",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Match the core feature or ideal adopted into the Indian Constitution with the country's constitution it was derived from.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "columnA": ["Imperium", "Samrāj", "Adhirāja", "Rājādhirāja"],
-      "columnB": ["(a) King of kings", "(b) Overlord", "(c) Supreme power", "(d) The lord of all / supreme ruler"],
-      "correctMatches": ["c", "d", "b", "a"],
-      "correctAnswer": "Imperium–c, Samrāj–d, Adhirāja–b, Rājādhirāja–a",
-      "explanation": "These meanings are given in the chapter."
+      "tag": "Global Borrowing",
+      "hint": "Think about where the 1789 revolution happened and where independent judiciary comes from.[cite: 1]",
+      "columnA": ["If it is the Ideals of Liberty, Equality, and Fraternity,", "If it is the Directive Principles of State Policy,", "If it helps shape an Independent Judiciary,"],
+      "columnB": ["(a) it reflects the American Constitution.", "(b) it stems from France's constitution.", "(c) it was inspired by the Irish Constitution.", "(d) it relates to the British system."],
+      "correctMatches": ["b", "c", "a"],
+      "correctAnswer": "1-b, 2-c, 3-a",
+      "explanation": "The text lists that liberty, equality, and fraternity came from France; Directive Principles from Ireland; and the independent judiciary layout from America.[cite: 1]"
     },
     {
       "id": "q37",
       "type": "match_columns",
-      "category": "Historical Figures",
-      "marks": 2,
+      "category": "Preamble Principles Definition",
+      "marks": 3,
       "difficulty": "medium",
-      "question": "Match the figures in Column A with the descriptions in Column B.",
+      "question": "Match the core Preamble term on the left with its exact textual definition on the right.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "columnA": ["Ajātaśhatru", "Mahāpadma Nanda", "Kautilya", "Megasthenes"],
-      "columnB": ["(a) Greek ambassador to Chandragupta's court", "(b) Mentor of Chandragupta Maurya", "(c) Founder of the Nanda dynasty", "(d) Early powerful king of Magadha"],
-      "correctMatches": ["d", "c", "b", "a"],
-      "correctAnswer": "Ajātaśhatru–d, Mahāpadma Nanda–c, Kautilya–b, Megasthenes–a",
-      "explanation": "These identities are mentioned in the chapter."
+      "tag": "Preamble Core",
+      "hint": "Look closely at the word charts on the Preamble page.[cite: 1]",
+      "columnA": ["When looking at SOVEREIGN,", "When looking at SOCIALIST,", "When looking at FRATERNITY,"],
+      "columnB": ["(a) it implies wealth is generated socially and shared by society.", "(b) it requires behaving as if we are members of the same family.", "(c) it means no external power can dictate the government of India.", "(d) it indicates an official state religion exists."],
+      "correctMatches": ["c", "a", "b"],
+      "correctAnswer": "1-c, 2-a, 3-b",
+      "explanation": "Based on the text: Sovereign means no external power can dictate; Socialist relates to social generation/sharing of wealth; Fraternity means behaving like family members.[cite: 1]"
     },
     {
       "id": "q38",
       "type": "match_columns",
-      "category": "Vocabulary",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Match the words in Column A with their meanings in Column B.",
+      "category": "Artistic Document Visuals",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Match the Part of the original Constitution document with the specific historical illustration scene painted on it by Nandalal Bose's team.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "columnA": ["Forge", "Ramparts", "Tributary", "Surplus"],
-      "columnB": ["(a) Excess amount left over", "(b) Defensive walls of a city", "(c) A dependent ruler or state", "(d) To shape metal by heating and hammering"],
-      "correctMatches": ["d", "b", "c", "a"],
-      "correctAnswer": "Forge–d, Ramparts–b, Tributary–c, Surplus–a",
-      "explanation": "All four meanings are based on chapter vocabulary."
+      "tag": "Illustrations",
+      "hint": "Check figures 10.6 through 10.9 carefully.[cite: 1]",
+      "columnA": ["When opening Part II (Citizenship),", "When opening Part III (Fundamental Rights),", "When opening Part IV (Directive Principles of State Policy),"],
+      "columnB": ["(a) it opens with a scene from the Ramayana: Rama's conquest of Lanka.", "(b) it displays a scene from the Mahabharata: Krishna propounding the Gita.", "(c) it features a scene from an ancient gurukula.", "(d) it exhibits a scene depicting Nalanda University."],
+      "correctMatches": ["c", "a", "b"],
+      "correctAnswer": "1-c, 2-a, 3-b",
+      "explanation": "Figure 10.6 links Part II to a gurukula scene; Figure 10.7 links Part III to the Ramayana; Figure 10.8 links Part IV to the Mahabharata Gita propounding scene.[cite: 1]"
     },
     {
       "id": "q39",
       "type": "match_columns",
-      "category": "Dates and Events",
-      "marks": 2,
-      "difficulty": "hard",
-      "question": "Match the dates in Column A with the correct events in Column B.",
+      "category": "Crossword Historical Review",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Match the clue text with the exact term solving the crossword puzzle at the end of Chapter 10.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "columnA": ["334–331 BCE", "327–325 BCE", "324–323 BCE", "Around 321 BCE"],
-      "columnB": ["(a) Chandragupta Maurya founded the Maurya Empire", "(b) Alexander's campaign in India and defeat of Porus", "(c) Alexander died in Babylon and his empire was divided", "(d) Alexander campaigned against the Persian Empire"],
-      "correctMatches": ["d", "b", "c", "a"],
-      "correctAnswer": "334–331 BCE–d, 327–325 BCE–b, 324–323 BCE–c, Around 321 BCE–a",
-      "explanation": "These events and dates appear in the chapter's timeline notes."
+      "tag": "Crossword",
+      "hint": "Review the Across and Down clues on page 228.[cite: 1]",
+      "columnA": ["If looking for the branch that makes laws,", "If searching for the statement outlining fundamental values,", "If identifying the gas used to preserve the manuscript safely,"],
+      "columnB": ["(a) the answer is the Preamble.", "(b) the solution is Helium.", "(c) the answer is the Legislature.", "(d) the answer is the Executive."],
+      "correctMatches": ["c", "a", "b"],
+      "correctAnswer": "1-c, 2-a, 3-b",
+      "explanation": "The crossword keys map Across 2 as 'Legislature', Down 3 as 'Preamble', and Down 5 as 'Helium'.[cite: 1]"
     },
     {
       "id": "q40",
       "type": "match_columns",
-      "category": "Features of Empire",
-      "marks": 2,
+      "category": "Constitutional Articles Mapping",
+      "marks": 3,
       "difficulty": "medium",
-      "question": "Match the feature of empire in Column A with the correct detail in Column B.",
+      "question": "Match the Constitutional Article number with its corresponding domain according to the chapter infographic.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "columnA": ["Issues currencies", "Controls resources", "Encourages learning", "Maintains communication"],
-      "columnB": ["(a) Couriers carry messages", "(b) Coins are issued", "(c) Mines, forests and agricultural produce", "(d) Art, literature and centres of learning"],
-      "correctMatches": ["b", "c", "d", "a"],
-      "correctAnswer": "Issues currencies–b, Controls resources–c, Encourages learning–d, Maintains communication–a",
-      "explanation": "These are all features listed in the chapter."
+      "tag": "Articles Layout",
+      "hint": "Check the specific numbers for environment and monuments.[cite: 1]",
+      "columnA": ["If evaluating Article 48-A,", "If examining Article 49,", "If validating Article 14,"],
+      "columnB": ["(a) it establishes equality before law.", "(b) it concerns Environment and Wildlife Protection.", "(c) it covers protection of monuments, places, and objects of national importance.", "(d) it relates to the Right to Education."],
+      "correctMatches": ["b", "c", "a"],
+      "correctAnswer": "1-b, 2-c, 3-a",
+      "explanation": "According to Figure 10.14: Article 48-A covers environment/wildlife, Article 49 covers national monuments, and Article 14 establishes equality before law.[cite: 1]"
     },
     {
       "id": "q41",
       "type": "short_answer",
-      "category": "Comprehension",
+      "category": "Core Functions of a Constitution",
       "marks": 2,
       "difficulty": "easy",
-      "question": "Name any two things a tributary state could pay to the emperor as tribute.",
+      "question": "List two primary structural frameworks that a national constitution lays out according to the section 'What is a Constitution?'.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "Any two of the following: money, gold, other precious metals, grain, livestock, elephants, or other valuable goods.",
-      "explanation": "The chapter lists several items that could be given as tribute."
+      "tag": "Functions",
+      "hint": "Think about the framework of organs and rights.[cite: 1]",
+      "correctAnswer": "1. The framework of the three organs of government (legislature, executive, and judiciary).[cite: 1]\n2. The rights and duties of the citizens.[cite: 1]",
+      "explanation": "The text lists four elements including the framework of the three organs, checks and balances, rights/duties of citizens, and long-term goals.[cite: 1]"
     },
     {
       "id": "q42",
       "type": "short_answer",
-      "category": "Guilds",
+      "category": "Constituent Assembly Background",
       "marks": 2,
       "difficulty": "medium",
-      "question": "Why were guilds considered a remarkable institution? Give two reasons.",
+      "question": "Who was the Chairman of the Constituent Assembly, and who was the Chairman of the Drafting Committee?[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "First, they brought people together as collaborators rather than competitors by sharing resources and information. Second, they had autonomy to make their own internal rules without the king interfering.",
-      "explanation": "The chapter gives these two reasons directly."
+      "tag": "Assembly Leaders",
+      "hint": "One became President; the other was the first Law Minister.[cite: 1]",
+      "correctAnswer": "Dr. Rajendra Prasad was the Chairman of the Constituent Assembly, and Dr. B.R. Ambedkar was the Chairman of the Drafting Committee.[cite: 1]",
+      "explanation": "The text explicitly distinguishes both positions on page 214.[cite: 1]"
     },
     {
       "id": "q43",
       "type": "short_answer",
-      "category": "Alexander",
+      "category": "Preamble Historical Footnotes",
       "marks": 2,
       "difficulty": "medium",
-      "question": "Why did Alexander's soldiers refuse to move deeper into India?",
+      "question": "Which three specific words were added to the Preamble by the 42nd Constitutional Amendment Act of 1976?[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "They were tired and homesick and had lost the will to fight.",
-      "explanation": "The chapter says this clearly."
+      "tag": "Amendments",
+      "hint": "Check the footnote note below the Preamble image.[cite: 1]",
+      "correctAnswer": "Socialist, Secular, and Integrity.[cite: 1]",
+      "explanation": "The footnote and note at the bottom of the Preamble section verify these three terms were added in 1976.[cite: 1]"
     },
     {
       "id": "q44",
       "type": "short_answer",
-      "category": "Magadha",
+      "category": "Artistic Production Elements",
       "marks": 2,
-      "difficulty": "medium",
-      "question": "How did iron help Magadha rise to power? Mention two ways.",
+      "difficulty": "hard",
+      "question": "Describe the unique artistic contribution of Prem Behari Narain Raizada towards the production of the original Indian Constitution document.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "Iron ploughs increased agricultural produce, and iron weapons strengthened the army.",
-      "explanation": "The chapter states both of these points."
+      "tag": "Art and Calligraphy",
+      "hint": "How did he document the text?[cite: 1]",
+      "correctAnswer": "Prem Behari Narain Raizada served as the calligrapher who wrote the entire text of the Constitution of India completely by hand.[cite: 1]",
+      "explanation": "The text under the art subsection confirms: 'Calligrapher Prem Behari Narain Raizada wrote its text by hand'.[cite: 1]"
     },
     {
       "id": "q45",
       "type": "short_answer",
-      "category": "Pāṭaliputra",
+      "category": "Preamble Values: Liberty",
       "marks": 2,
       "difficulty": "medium",
-      "question": "Name two goods mentioned in the chapter that were available in Pāṭaliputra's market.",
+      "question": "Explain the concept of **'LIBERTY'** as defined in the infographic breakdown of the Preamble.[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "Any two of the following: silk from China, spices from the south, gems from the south, fine clothes from different regions.",
-      "explanation": "These goods are listed in the chapter."
+      "tag": "Preamble Principles",
+      "hint": "What are the rules regarding unreasonable restrictions on thoughts?[cite: 1]",
+      "correctAnswer": "Liberty means there are no unreasonable restrictions on citizens in what they think, how they wish to express their thoughts, and the way they wish to follow up their thoughts in action.[cite: 1]",
+      "explanation": "The Preamble breakdown on page 225 details the exact parameters of Liberty guaranteed to Indian citizens.[cite: 1]"
     },
     {
       "id": "q46",
-      "type": "transformation",
-      "category": "Active/Passive Voice",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Three Organs Matrix",
+      "marks": 3,
       "difficulty": "medium",
-      "question": "Change to passive voice.",
+      "question": "Name the three organs of the Indian government and state the primary role of each organ as defined in the chapter.[cite: 1]",
       "passageId": "",
-      "tag": "Active to Passive",
-      "hint": "",
-      "inputSentence": "Chandragupta Maurya founded the Maurya Empire.",
-      "transformationType": "Active to Passive",
-      "correctAnswer": "The Maurya Empire was founded by Chandragupta Maurya.",
-      "explanation": "The object becomes the subject and the verb changes to passive form."
+      "tag": "Organs of Government",
+      "hint": "Review the three bullet points under Grade 6 revision notes.[cite: 1]",
+      "correctAnswer": "1. Legislature: Makes the laws.[cite: 1]\n2. Executive: Implements the laws (headed by the Prime Minister).[cite: 1]\n3. Judiciary: Ensures all laws follow the Constitution, decides if a law is broken, and determines punishment.[cite: 1]",
+      "explanation": "The textbook comprehensively defines the roles of the Legislature, Executive, and Judiciary in its core revision summary.[cite: 1]"
     },
     {
       "id": "q47",
-      "type": "transformation",
-      "category": "Active/Passive Voice",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Change to active voice.",
+      "type": "short_answer",
+      "category": "Civilisational Heritage Values",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "How did India's ancient civilisational heritage and culture influence the values embedded inside the Constitution? Mention at least two Sanskrit concepts cited in the text.[cite: 1]",
       "passageId": "",
-      "tag": "Passive to Active",
-      "hint": "",
-      "inputSentence": "The swords were forged by Ira's father.",
-      "transformationType": "Passive to Active",
-      "correctAnswer": "Ira's father forged the swords.",
-      "explanation": "The subject and verb are changed into active voice."
+      "tag": "Cultural Heritage",
+      "hint": "Look at the heritage section mentioning diversity, unity, and fundamental duties.[cite: 1]",
+      "correctAnswer": "India's heritage emphasizes community duties and the acceptance of different points of view. Key cultural concepts like 'vasudhaiva kutumbakam' (the world is one family) and 'sarve bhavantu sukhinah' (invocation for the well-being of all creatures) directly inspired the inclusion of values like fundamental duties and equality.[cite: 1]",
+      "explanation": "The textbook describes how traditional principles find a place in the Constitution under the sub-section 'India's civilisational heritage and history'.[cite: 1]"
     },
     {
       "id": "q48",
-      "type": "transformation",
-      "category": "Direct/Indirect Speech",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Change to indirect speech.",
+      "type": "short_answer",
+      "category": "Living Document Amendment Procedure",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Why is the Constitution of India called a 'Living Document'? Detail the social checks required before any change is accepted.[cite: 1]",
       "passageId": "",
-      "tag": "Direct to Indirect",
-      "hint": "",
-      "inputSentence": "Ira said, \"It is called an Empire.\"",
-      "transformationType": "Direct to Indirect",
-      "correctAnswer": "Ira said that it was called an Empire.",
-      "explanation": "In indirect speech, tense changes from present to past."
+      "tag": "Living Document",
+      "hint": "Think about debates, legislative assembly inputs, and popular movements.[cite: 1]",
+      "correctAnswer": "It is called a 'Living Document' because it can be changed or improved over time as new needs emerge. Before changes ('amendments') are accepted, they must be rigorously debated in Parliament. Some require debate in state legislative assemblies, seeking opinions from the general public, or can be initiated by popular movements.[cite: 1]",
+      "explanation": "The section 'The Constitution is a Living Document' sets out the capacity for growth and the rigorous democratic debate processes required for amendments.[cite: 1]"
     },
     {
       "id": "q49",
-      "type": "transformation",
-      "category": "Sentence Combination",
-      "marks": 1,
-      "difficulty": "hard",
-      "question": "Combine the sentences into one.",
+      "type": "short_answer",
+      "category": "Preamble Values: Justice",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "According to the Preamble, what does **'JUSTICE'** mean for the citizens, and what is the government's role in achieving it?[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "inputSentence": "Alexander was impressed by the Gymnosophists. He spared them all.",
-      "transformationType": "Sentence Combination",
-      "correctAnswer": "Alexander was so impressed by the Gymnosophists that he spared them all.",
-      "explanation": "The conjunction 'so...that' shows the result clearly."
+      "tag": "Preamble Principles",
+      "hint": "Look at the grounds of discrimination and less advantaged groups.[cite: 1]",
+      "correctAnswer": "Justice means citizens cannot be discriminated against on the grounds of caste, religion, and gender. It requires social inequalities to be reduced, and the government should actively work for the welfare of all, especially less advantaged groups.[cite: 1]",
+      "explanation": "The Preamble text definition block for 'JUSTICE' explicitly states these constraints and welfare imperatives.[cite: 1]"
     },
     {
       "id": "q50",
-      "type": "transformation",
-      "category": "Degree of Adjective",
-      "marks": 1,
-      "difficulty": "hard",
-      "question": "Rewrite using the comparative degree.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "inputSentence": "The Maurya Empire was one of the greatest empires in Indian history.",
-      "transformationType": "Degree Change",
-      "correctAnswer": "The Maurya Empire was greater than most other empires in Indian history.",
-      "explanation": "The superlative is changed into the comparative form."
-    },
-    {
-      "id": "q51",
       "type": "short_answer",
-      "category": "Empire Definition",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "What is an empire? Explain with at least three features.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "An empire is a collection of smaller kingdoms or territories ruled by a powerful emperor. It has central authority, tributary kingdoms, an army, administration, laws, trade control, and resource control.",
-      "explanation": "This is based on the chapter's definition and list of empire features."
-    },
-    {
-      "id": "q52",
-      "type": "short_answer",
-      "category": "Rise of Magadha",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Why did Magadha rise as a dominant power? Mention any three reasons.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "Reasons include fertile land in the Ganga plains, abundant forests and elephants, iron ore and weapons, and river routes for transport and trade.",
-      "explanation": "All these reasons are given in the chapter."
-    },
-    {
-      "id": "q53",
-      "type": "short_answer",
-      "category": "Trade and Economy",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Why were trade routes important for an empire? Mention some traded goods as well.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "Trade routes increased income, tax collection, and the quantity and variety of goods. Goods mentioned include textiles, spices, agricultural produce, gems, handicraft products, and animals.",
-      "explanation": "The chapter explains the importance of trade routes and lists goods."
-    },
-    {
-      "id": "q54",
-      "type": "short_answer",
-      "category": "Kautilya",
+      "category": "Historical Quotes Analysis",
       "marks": 3,
       "difficulty": "hard",
-      "question": "Who was Kautilya and what was his role in the Maurya Empire?",
+      "question": "In his opening statement to the Constituent Assembly, what did Dr. Sachidananda Sinha state was the ultimate vision or goal for writing the Constitution of India?[cite: 1]",
       "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "Kautilya was Chandragupta Maurya's mentor. He helped in building the Maurya Empire and is known for the Arthaśhāstra.",
-      "explanation": "The chapter names Kautilya as Chandragupta's mentor and links him to the Arthaśhāstra."
-    },
-    {
-      "id": "q55",
-      "type": "short_answer",
-      "category": "Alexander's Campaign",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Briefly describe Alexander's campaign in India.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "Alexander invaded India, defeated Porus in Punjab, faced resistance, and his tired soldiers refused to go farther. He later died in Babylon and his empire was divided.",
-      "explanation": "These events are described in the chapter's timeline notes."
-    },
-    {
-      "id": "q56",
-      "type": "short_answer",
-      "category": "Ashoka's Pillar",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "Describe the Sarnath pillar capital and its significance.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "It was erected by Ashoka at Sarnath near Varanasi. The four lions symbolise royal power, and the pillar capital is significant because it is India's national emblem today.",
-      "explanation": "The chapter clearly discusses the Sarnath pillar capital and its meaning."
+      "tag": "Assembly Debates",
+      "hint": "Look at the block quote on page 213 highlighting pristine glory.[cite: 1]",
+      "correctAnswer": "Dr. Sachidananda Sinha invoked that the proceedings be marked by wisdom, toleration, justice, and fairness to all, with an ultimate vision to restore India to her pristine glory and give her a place of honour and equality among the great nations of the world.[cite: 1]",
+      "explanation": "Dr. Sachidananda Sinha's historic quote at the start of the writing process explicitly outlines this vision for independent India.[cite: 1]"
     }
   ]
 }
