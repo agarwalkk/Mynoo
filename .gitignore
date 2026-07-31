@@ -44,3 +44,5 @@ node_modules/
 mynoo-1e880-serviceaccount.json
 scripts/*.pdf
 scripts/*/*
+imagemagick
+asy_build

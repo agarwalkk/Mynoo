@@ -435,32 +435,155 @@ def render_diagram_spec(spec: dict) -> str:
     return ""
 
 
+def normalize_asy_backslashes(code: str) -> str:
+    """Fix over-escaped LaTeX backslashes in Asymptote code.
+
+    JSON files often contain doubly-escaped backslashes (e.g. \\\\circ instead
+    of \\circ).  After json.loads() this results in \\\\circ in the Python
+    string, but Asymptote / LaTeX needs exactly \\circ (one backslash).
+
+    This collapses runs of 2+ backslashes before known LaTeX command names
+    down to a single backslash.
+    """
+    # Known LaTeX commands used in geometry Asymptote code
+    latex_cmds = (
+        'circ', 'angle', 'degree', 'triangle', 'square', 'perp',
+        'parallel', 'approx', 'neq', 'leq', 'geq', 'le', 'ge',
+        'times', 'div', 'pi', 'theta', 'alpha', 'beta', 'gamma',
+        'delta', 'frac', 'sqrt', 'implies', 'infty', 'pm', 'mp',
+        'cdot', 'ldots', 'cdots', 'text', 'mathrm', 'mathbf',
+        'overline', 'underline', 'hat', 'bar', 'vec', 'tilde',
+    )
+    pattern = r'\\{2,}(' + '|'.join(latex_cmds) + r')'
+    return re.sub(pattern, r'\\\1', code)
+
+
+def fix_asy_format_int_real(code: str) -> str:
+    """Fix Asymptote 3.x incompatibility: format("%d", expr) fails when expr is real.
+
+    In Asymptote 3.x, integer division (e.g. i/10) returns a real, but
+    format("%d", ...) requires an int argument.  This wraps the argument
+    in an explicit (int)(...) cast to make it compatible.
+
+    Handles patterns like:
+      format("%d", i/10)  ->  format("%d", (int)(i/10))
+    """
+    # Match format("%d", <expr>) where expr doesn't already start with (int)
+    def _fix_match(m):
+        expr = m.group(1).strip()
+        if expr.startswith('(int)'):
+            return m.group(0)  # already cast
+        return f'format("%d", (int)({expr}))'
+
+    return re.sub(r'format\s*\(\s*"%d"\s*,\s*([^)]+)\)', _fix_match, code)
+
+
+def sanitize_asy_code(code: str) -> str:
+    """Apply all Asymptote code sanitization/normalization steps."""
+    code = normalize_asy_backslashes(code)
+    code = fix_asy_format_int_real(code)
+    return code
+
+
 def convert_asy_to_svg(asy_code: str) -> str:
     """Convert Asymptote (or TikZ) vector graphics code into an SVG string.
-    Uses native 'asy' CLI if available; falls back to enhanced Python drawsvg parser.
+    Uses native 'asy' CLI if available; falls back to PyMuPDF and drawsvg parser.
     """
     if not asy_code or not asy_code.strip():
         return ""
 
-    code = asy_code.strip()
+    code = sanitize_asy_code(asy_code.strip())
 
     # --- Strategy 1: Try native 'asy' CLI executable if installed ---
-    asy_bin = shutil.which("asy")
+    asy_candidates = [
+        r"C:\Program Files\Asymptote\asy.exe",
+        shutil.which("asy"),
+        r"C:\Program Files (x86)\Asymptote\asy.exe",
+        r"C:\Asymptote\asy.exe",
+        r"c:\Apps\Mynoo\asy_bin\asy.exe",
+    ]
+    asy_bin = next((path for path in asy_candidates if path and Path(path).exists()), None)
+
     if asy_bin:
         try:
-            with tempfile.TemporaryDirectory() as tmpdir:
-                asy_file = Path(tmpdir) / "diagram.asy"
-                svg_file = Path(tmpdir) / "diagram.svg"
-                asy_file.write_text(code, encoding="utf-8")
+            # Build environment PATH with MiKTeX & Ghostscript binary directories
+            import os
+            env = dict(os.environ)
+            extra_paths = [
+                r"C:\Program Files\Asymptote",
+                r"C:\Users\agarw\AppData\Local\Programs\MiKTeX\miktex\bin\x64",
+                r"C:\Program Files\MiKTeX\miktex\bin\x64",
+                r"C:\Program Files\gs\gs10.07.1\bin",
+            ]
+            # Search for any ghostscript bin folders
+            gs_base = Path(r"C:\Program Files\gs")
+            if gs_base.exists():
+                for sub in gs_base.glob("gs*/bin"):
+                    extra_paths.append(str(sub))
 
-                cmd = [asy_bin, "-f", "svg", "-o", str(svg_file), str(asy_file)]
-                res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=10, text=True)
-                if res.returncode == 0 and svg_file.exists():
-                    svg_content = svg_file.read_text(encoding="utf-8")
-                    if "<svg" in svg_content:
-                        return svg_content
-        except Exception:
-            pass
+            env['PATH'] = ";".join([p for p in extra_paths if Path(p).exists()]) + ";" + env.get('PATH', '')
+            env['LIBGS'] = r"C:\Program Files\gs\gs10.07.1\bin\gsdll64.dll"
+            env['ASYMPTOTE_GS'] = r"C:\Program Files\gs\gs10.07.1\bin\gswin64c.exe"
+            env['MIKTEX_ENABLE_INSTALL'] = '0'
+            env['MIKTEX_AUTO_INSTALL'] = '2'
+            env['MIKTEX_NONINTERACTIVE'] = '1'
+
+            # Add helper preamble if using common unimported functions like rightanglemark
+            preamble = ""
+            if "rightanglemark" in code and "path rightanglemark" not in code:
+                preamble += (
+                    "path rightanglemark(pair A, pair B, pair C, real size=1) {\n"
+                    "    pair u = unit(A-B)*size;\n"
+                    "    pair v = unit(C-B)*size;\n"
+                    "    return B+u--B+u+v--B+v;\n"
+                    "}\n"
+                )
+
+            full_code = preamble + code
+
+            with tempfile.TemporaryDirectory() as tmpdir:
+                tmp_path = Path(tmpdir)
+                asy_file = tmp_path / "diagram.asy"
+                out_prefix = tmp_path / "diagram"
+                asy_file.write_text(full_code, encoding="utf-8")
+
+                # Strategy 1a: Native asy -f svg (using latex + dvisvgm)
+                cmd = [asy_bin, "-f", "svg", "-o", str(out_prefix), str(asy_file)]
+                try:
+                    res = subprocess.run(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=15, text=True, env=env)
+                    svg_files = list(tmp_path.glob("*.svg"))
+                    if res.returncode == 0 and svg_files:
+                        svg_content = svg_files[0].read_text(encoding="utf-8")
+                        if "<svg" in svg_content:
+                            return svg_content
+                    else:
+                        stderr_msg = (res.stderr or '').strip()[:200]
+                        print(f"⚠️ asy SVG failed (exit {res.returncode}): {stderr_msg}")
+                except subprocess.TimeoutExpired:
+                    print("⚠️ asy SVG timed out after 15s")
+
+                # Strategy 1b: PDF generation with -tex none + PyMuPDF
+                pdf_cmd = [asy_bin, "-f", "pdf", "-tex", "none", "-o", str(out_prefix), str(asy_file)]
+                try:
+                    res_pdf = subprocess.run(pdf_cmd, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=5, text=True, env=env)
+                    pdf_files = list(tmp_path.glob("*.pdf"))
+                    if res_pdf.returncode == 0 and pdf_files:
+                        try:
+                            import fitz
+                            doc = fitz.open(pdf_files[0])
+                            svg_content = doc[0].get_svg_image()
+                            doc.close()
+                            if "<svg" in svg_content:
+                                return svg_content
+                        except Exception:
+                            pass
+                    else:
+                        stderr_msg = (res_pdf.stderr or '').strip()[:200]
+                        print(f"⚠️ asy PDF fallback failed (exit {res_pdf.returncode}): {stderr_msg}")
+                except subprocess.TimeoutExpired:
+                    print("⚠️ asy PDF fallback timed out after 5s")
+        except Exception as err:
+            print(f"⚠️ asy execution warning: {err}")
 
     # --- Strategy 2: Enhanced Python Vector Parser using drawsvg ---
     if draw is None:
@@ -771,6 +894,94 @@ def build_payload(
     return payload
 
 
+def convert_assessment_json_asy_to_svg(json_path: Path) -> Path:
+    """Pre-process an assessment JSON file to convert all non-blank 'asy' fields to 'svg'.
+    Saves the converted JSON to <filename>_svg.json alongside the original file,
+    and returns the Path to the new SVG-version JSON file.
+    If no non-blank 'asy' code is found, returns the original file path unchanged.
+    """
+    if not json_path.exists():
+        sys.exit(f'❌  File not found: {json_path}')
+
+    raw_text = json_path.read_text(encoding='utf-8')
+    try:
+        data = json.loads(raw_text)
+    except json.JSONDecodeError:
+        sanitized = _sanitize_latex_in_json(raw_text)
+        try:
+            data = json.loads(sanitized)
+        except json.JSONDecodeError as e:
+            sys.exit(f'❌  Invalid JSON in {json_path.name}: {e}')
+
+    if isinstance(data, list):
+        questions = data
+        passages = []
+        file_title = None
+    elif isinstance(data, dict):
+        questions = data.get('questions', [])
+        passages = data.get('passages', [])
+        file_title = data.get('title')
+    else:
+        return json_path
+
+    # Collect all targets with non-blank asy code
+    asy_targets = []
+    for q in questions:
+        qid = q.get('id', 'question')
+        q_asy = q.get('asy') or q.get('asymptote') or q.get('tikz')
+        if q_asy and str(q_asy).strip():
+            asy_targets.append(('question', q, qid, str(q_asy).strip()))
+
+        opts = q.get('options')
+        if isinstance(opts, list):
+            for opt_idx, opt in enumerate(opts):
+                if isinstance(opt, dict):
+                    opt_asy = opt.get('asy') or opt.get('asymptote') or opt.get('tikz')
+                    if opt_asy and str(opt_asy).strip():
+                        asy_targets.append(('option', opt, f"{qid} option {opt_idx+1}", str(opt_asy).strip()))
+
+    total_targets = len(asy_targets)
+    if total_targets == 0:
+        print(f"ℹ️  No non-blank Asymptote code found in {json_path.name}. Using original file.\n")
+        return json_path
+
+    print(f"🎨 Found {total_targets} non-blank Asymptote diagram(s) in {json_path.name}. Converting to SVG...")
+    converted_count = 0
+
+    for i, (target_type, obj, label, code) in enumerate(asy_targets, 1):
+        print(f"  [{i}/{total_targets}] Converting diagram for {label}...", end=" ", flush=True)
+        svg_str = convert_asy_to_svg(code)
+        if svg_str and "<svg" in svg_str:
+            obj['svg'] = svg_str
+            obj.pop('asy', None)
+            obj.pop('asymptote', None)
+            obj.pop('tikz', None)
+            converted_count += 1
+            print(f"✅ Done ({len(svg_str)} chars)")
+        else:
+            print("❌ Failed (Asymptote conversion error)")
+
+    # Determine output path: e.g. assessment.json -> assessment_svg.json
+    if json_path.name.endswith("_svg.json"):
+        out_path = json_path
+    else:
+        out_name = f"{json_path.stem}_svg{json_path.suffix}"
+        out_path = json_path.parent / out_name
+
+    if isinstance(data, dict):
+        out_data = {
+            "title": file_title,
+            "passages": passages,
+            "questions": questions
+        }
+    else:
+        out_data = questions
+
+    out_path.write_text(json.dumps(out_data, indent=2, ensure_ascii=False), encoding='utf-8')
+    print(f"\n💾 Saved SVG-converted assessment file: {out_path.name} ({converted_count}/{total_targets} diagrams converted to SVG)\n")
+    return out_path
+
+
 # ── Firebase upload ────────────────────────────────────────────────────────────
 
 def upload_to_firestore(payload: dict, dry_run: bool) -> str | None:
@@ -826,6 +1037,9 @@ def main() -> None:
         candidate = _REPO_ROOT / json_path
         if candidate.exists():
             json_path = candidate
+
+    # First, convert asy code in input JSON to SVG and save as <filename>_svg.json
+    json_path = convert_assessment_json_asy_to_svg(json_path)
 
     questions, passages, file_title = _load_and_validate(json_path)
 

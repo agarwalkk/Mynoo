@@ -1,80 +1,80 @@
 {
-  "title": "Parallel and Intersecting Lines",
+  "title": "Lines & Decimals",
   "passages": [],
   "questions": [
     {
       "id": "q1",
       "type": "mcq",
-      "category": "Intersecting Lines",
+      "category": "Linear Pair of Angles",
       "marks": 2,
       "difficulty": "medium",
-      "question": "Two straight lines intersect at a point. If one of the angles formed is $120^\\circ$, what is the measure of its adjacent angle?",
+      "question": "In the figure, ray OR stands on the straight line POQ. If $a = 55^\\circ$, find the value of $x$.",
       "passageId": "",
-      "tag": "Conceptual",
-      "hint": "Adjacent angles formed by intersecting lines form a linear pair.",
-      "asy": "size(120); pair O=(2,2); pair A=(0,2.5); pair B=(4,1.5); pair C=(1,0); pair D=(3,4); draw(A--B, black+1pt); draw(C--D, black+1pt); dot(O); label(\"O\", O, S); draw(arc(O, 0.4, 26, 63)); label(\"$120^\\\\circ$\", O + 0.6*dir(45));",
+      "tag": "Diagram-Based",
+      "hint": "Angles on a straight line always add up to $180^\\circ$.",
+      "asy": "size(190);\npair O=(0,0);\npair Qp=(2.100,0.000);\npair Pp=(-2.100,0.000);\npair Rp=(0.975,1.393);\ndraw(Pp--Qp, black+1.2pt);\ndraw(O--Rp, black+1.2pt);\ndot(O);\nlabel(\"O\", O, S);\nlabel(\"P\", Pp, W);\nlabel(\"Q\", Qp, E);\nlabel(\"R\", Rp, N);\ndraw(arc(O,0.55,0,55), blue);\nlabel(\"$55^\\\\circ$\", O+0.85*dir(27.5), N);\ndraw(arc(O,0.4,55,180), heavygreen);\nlabel(\"$x^\\\\circ$\", O+0.85*dir(117.5), N);\n",
       "options": [
         {
-          "text": "$45^\\circ$",
+          "text": "$35^\\circ$",
           "asy": "",
-          "explanation": "Incorrect. The sum must be $180^\\circ$."
+          "explanation": "Incorrect subtraction; check $180-55$ again."
         },
         {
-          "text": "$60^\\circ$",
+          "text": "$55^\\circ$",
           "asy": "",
-          "explanation": "Correct. Adjacent angles form a linear pair, so $180^\\circ - 120^\\circ = 60^\\circ$."
-        },
-        {
-          "text": "$120^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect. This is the vertically opposite angle, not the adjacent one."
+          "explanation": "This is the value of $a$, not $x$."
         },
         {
           "text": "$90^\\circ$",
           "asy": "",
-          "explanation": "Incorrect. The angles are not perpendicular."
+          "explanation": "Angles on a straight line add to $180^\\circ$, not $90^\\circ$."
+        },
+        {
+          "text": "$125^\\circ$",
+          "asy": "",
+          "explanation": "Correct: a linear pair of angles always adds up to $180^\\circ$."
         }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "$60^\\circ$",
-      "explanation": "When two lines intersect, adjacent angles form a linear pair. The sum of a linear pair is always $180^\\circ$. Therefore, the adjacent angle is $180^\\circ - 120^\\circ = 60^\\circ$."
+      "correctIndex": 3,
+      "correctAnswer": "$125^\\circ$",
+      "explanation": "Angles $a$ and $x$ form a linear pair (they lie on the straight line POQ), so $a + x = 180^\\circ$. Thus $x = 180^\\circ - 55^\\circ = 125^\\circ$."
     },
     {
       "id": "q2",
       "type": "mcq",
-      "category": "Intersecting Lines",
+      "category": "Vertically Opposite Angles",
       "marks": 2,
-      "difficulty": "easy",
-      "question": "If two lines intersect each other and one of the angles is $75^\\circ$, what is the measure of its vertically opposite angle?",
+      "difficulty": "medium",
+      "question": "Two straight lines AC and BD intersect at O. If $\\angle AOB = 70^\\circ$, find $\\angle COD$ (marked $x$).",
       "passageId": "",
-      "tag": "Fundamental",
-      "hint": "Recall the property of vertically opposite angles.",
-      "asy": "",
+      "tag": "Diagram-Based",
+      "hint": "Vertically opposite angles are always equal to each other.",
+      "asy": "size(190);\npair O=(0,0);\npair A=(2.000,0.000);\npair B=(0.684,1.879);\npair C=(-2.000,0.000);\npair D=(-0.684,-1.879);\ndraw(A--C, black+1.2pt);\ndraw(B--D, black+1.2pt);\ndot(O);\nlabel(\"A\", A, E);\nlabel(\"B\", B, NE);\nlabel(\"C\", C, W);\nlabel(\"D\", D, SW);\ndraw(arc(O,0.5,0,70), blue);\nlabel(\"$70^\\\\circ$\", O+0.8*dir(35.0), N);\ndraw(arc(O,0.4,180,250), heavygreen);\nlabel(\"$x^\\\\circ$\", O+0.8*dir(215.0), dir(215.0));\n",
       "options": [
         {
-          "text": "$105^\\circ$",
+          "text": "$35^\\circ$",
           "asy": "",
-          "explanation": "Incorrect. This is the measure of the adjacent linear pair."
+          "explanation": "Halving the given angle is not the correct rule here."
         },
         {
-          "text": "$150^\\circ$",
+          "text": "$180^\\circ$",
           "asy": "",
-          "explanation": "Incorrect. This is double the angle."
+          "explanation": "That is the full straight angle, not a single wedge."
         },
         {
-          "text": "$75^\\circ$",
+          "text": "$70^\\circ$",
           "asy": "",
-          "explanation": "Correct. Vertically opposite angles are always equal."
+          "explanation": "Correct: vertically opposite angles are always equal."
         },
         {
-          "text": "$90^\\circ$",
+          "text": "$110^\\circ$",
           "asy": "",
-          "explanation": "Incorrect."
+          "explanation": "This would be the adjacent (linear pair) angle, not the vertically opposite one."
         }
       ],
       "correctIndex": 2,
-      "correctAnswer": "$75^\\circ$",
-      "explanation": "When two lines intersect, the vertically opposite angles are always equal to each other. Hence, the angle is $75^\\circ$."
+      "correctAnswer": "$70^\\circ$",
+      "explanation": "$\\angle AOB$ and $\\angle COD$ are vertically opposite angles formed by two intersecting lines, so they are always equal: $x = 70^\\circ$."
     },
     {
       "id": "q3",
@@ -82,1035 +82,1035 @@
       "category": "Perpendicular Lines",
       "marks": 2,
       "difficulty": "medium",
-      "question": "Two lines intersect such that all four angles formed are equal. What is the measure of each angle, and what are such lines called?",
+      "question": "Lines $l$ and $m$ intersect at O as shown, with a right-angle mark at O. What is the value of $x$?",
       "passageId": "",
-      "tag": "Definitions",
-      "hint": "The sum of all four angles around a point is $360^\\circ$.",
-      "asy": "size(100); draw((0,2)--(4,2), black+1pt); draw((2,0)--(2,4), black+1pt); draw(rightanglemark((4,2),(2,2),(2,4), 2));",
+      "tag": "Diagram-Based",
+      "hint": "The small square symbol at the vertex always means a right angle.",
+      "asy": "size(170);\npair O=(0,0);\npair A=(2.000,0.000); pair B=(0.000,2.000); pair C=(-2.000,0.000); pair D=(-0.000,-2.000);\ndraw(A--C, black+1.2pt);\ndraw(B--D, black+1.2pt);\ndot(O);\nlabel(\"l\", A, E);\nlabel(\"m\", B, N);\ndraw((0.28,0)--(0.28,0.28)--(0,0.28));\nlabel(\"$x^\\\\circ$\", (0.55,0.55));\n",
       "options": [
-        {
-          "text": "$90^\\circ$, Perpendicular lines",
-          "asy": "",
-          "explanation": "Correct. $360^\\circ / 4 = 90^\\circ$, and intersecting lines at $90^\\circ$ are perpendicular."
-        },
-        {
-          "text": "$45^\\circ$, Parallel lines",
-          "asy": "",
-          "explanation": "Incorrect. Parallel lines do not intersect."
-        },
-        {
-          "text": "$180^\\circ$, Straight lines",
-          "asy": "",
-          "explanation": "Incorrect. $180^\\circ$ represents a straight angle, not the intersecting angle."
-        },
-        {
-          "text": "$90^\\circ$, Parallel lines",
-          "asy": "",
-          "explanation": "Incorrect. Lines intersecting at $90^\\circ$ are perpendicular, not parallel."
-        }
-      ],
-      "correctIndex": 0,
-      "correctAnswer": "$90^\\circ$, Perpendicular lines",
-      "explanation": "The sum of angles around a point is $360^\\circ$. If all four are equal, each is $360^\\circ / 4 = 90^\\circ$. A pair of lines that intersect at right angles are called perpendicular lines."
-    },
-    {
-      "id": "q4",
-      "type": "mcq",
-      "category": "Parallel Lines",
-      "marks": 2,
-      "difficulty": "easy",
-      "question": "Which of the following best describes parallel lines?",
-      "passageId": "",
-      "tag": "Conceptual",
-      "hint": "Think about lines drawn on a flat surface like a blackboard.",
-      "asy": "",
-      "options": [
-        {
-          "text": "Lines that meet at exactly one point.",
-          "asy": "",
-          "explanation": "Incorrect. These are intersecting lines."
-        },
-        {
-          "text": "Lines that lie on the same plane and never meet, no matter how far they are extended.",
-          "asy": "",
-          "explanation": "Correct. This is the exact geometric definition of parallel lines."
-        },
-        {
-          "text": "Lines that intersect at exactly $90^\\circ$.",
-          "asy": "",
-          "explanation": "Incorrect. These are perpendicular lines."
-        },
-        {
-          "text": "Lines that share two common points.",
-          "asy": "",
-          "explanation": "Incorrect. Straight lines can only share one point unless they are the same line."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "Lines that lie on the same plane and never meet, no matter how far they are extended.",
-      "explanation": "Parallel lines are a pair of lines that lie on the same plane and do not meet however far we extend them at both ends."
-    },
-    {
-      "id": "q5",
-      "type": "mcq",
-      "category": "Transversals",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "A transversal $t$ intersects two parallel lines $l$ and $m$. Which of the following angle pairs are ALWAYS equal?",
-      "passageId": "",
-      "tag": "Property",
-      "hint": "Consider the positions of angles relative to the transversal.",
-      "asy": "",
-      "options": [
-        {
-          "text": "Interior angles on the same side of the transversal",
-          "asy": "",
-          "explanation": "Incorrect. These add up to $180^\\circ$."
-        },
-        {
-          "text": "Linear pairs",
-          "asy": "",
-          "explanation": "Incorrect. Linear pairs add up to $180^\\circ$."
-        },
-        {
-          "text": "Corresponding angles",
-          "asy": "",
-          "explanation": "Correct. Corresponding angles formed by a transversal on parallel lines are equal."
-        },
-        {
-          "text": "Adjacent angles",
-          "asy": "",
-          "explanation": "Incorrect. Adjacent angles forming a line sum to $180^\\circ$."
-        }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "Corresponding angles",
-      "explanation": "When a transversal intersects two parallel lines, the corresponding angles formed are always equal to each other."
-    },
-    {
-      "id": "q6",
-      "type": "mcq",
-      "category": "Transversals",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "If the interior angles on the same side of a transversal intersecting two lines sum to $180^\\circ$, what can be concluded about the two lines?",
-      "passageId": "",
-      "tag": "Property",
-      "hint": "This property is the converse of a primary parallel line theorem.",
-      "asy": "",
-      "options": [
-        {
-          "text": "The lines are perpendicular.",
-          "asy": "",
-          "explanation": "Incorrect. They are parallel."
-        },
-        {
-          "text": "The lines are intersecting.",
-          "asy": "",
-          "explanation": "Incorrect. They do not intersect."
-        },
-        {
-          "text": "The lines are parallel.",
-          "asy": "",
-          "explanation": "Correct. This condition ensures the lines are parallel."
-        },
-        {
-          "text": "The lines are coincident.",
-          "asy": "",
-          "explanation": "Incorrect."
-        }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "The lines are parallel.",
-      "explanation": "The sum of interior angles on the same side of the transversal being exactly $180^\\circ$ is a sufficient condition to prove that the two lines are parallel."
-    },
-    {
-      "id": "q7",
-      "type": "mcq",
-      "category": "Intersecting Lines",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Two adjacent angles on a straight line are in the ratio of $2:3$. What are the measures of these angles?",
-      "passageId": "",
-      "tag": "Calculation",
-      "hint": "Adjacent angles on a straight line add up to $180^\\circ$.",
-      "asy": "",
-      "options": [
-        {
-          "text": "$72^\\circ$ and $108^\\circ$",
-          "asy": "",
-          "explanation": "Correct. $2x + 3x = 180^\\circ$, so $5x = 180^\\circ \\implies x = 36^\\circ$. The angles are $2(36) = 72^\\circ$ and $3(36) = 108^\\circ$."
-        },
-        {
-          "text": "$60^\\circ$ and $120^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect. Ratio is 1:2."
-        },
-        {
-          "text": "$80^\\circ$ and $100^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect. Ratio is 4:5."
-        },
-        {
-          "text": "$40^\\circ$ and $140^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect. Ratio is 2:7."
-        }
-      ],
-      "correctIndex": 0,
-      "correctAnswer": "$72^\\circ$ and $108^\\circ$",
-      "explanation": "Since they form a linear pair, their sum is $180^\\circ$. Let the angles be $2x$ and $3x$. $2x + 3x = 180^\\circ \\implies 5x = 180^\\circ \\implies x = 36^\\circ$. The angles are $72^\\circ$ and $108^\\circ$."
-    },
-    {
-      "id": "q8",
-      "type": "mcq",
-      "category": "Transversals",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "A transversal intersects two non-parallel lines. Will the alternate interior angles be equal?",
-      "passageId": "",
-      "tag": "Conceptual",
-      "hint": "Think about whether non-parallel lines hold the same properties as parallel ones.",
-      "asy": "",
-      "options": [
-        {
-          "text": "Yes, always.",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "No, they are never equal.",
-          "asy": "",
-          "explanation": "Correct. They are only equal if the lines are parallel."
-        },
-        {
-          "text": "They sum to $180^\\circ$.",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "They are complementary.",
-          "asy": "",
-          "explanation": "Incorrect."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "No, they are never equal.",
-      "explanation": "Alternate interior angles are equal strictly when the transversal intersects a pair of parallel lines. If the lines are not parallel, these angles are unequal."
-    },
-    {
-      "id": "q9",
-      "type": "mcq",
-      "category": "Intersecting Lines",
-      "marks": 2,
-      "difficulty": "easy",
-      "question": "In a linear pair, if one angle is acute, what type of angle must the other be?",
-      "passageId": "",
-      "tag": "Property",
-      "hint": "Acute angles are less than $90^\\circ$, and the sum must be $180^\\circ$.",
-      "asy": "",
-      "options": [
-        {
-          "text": "Acute angle",
-          "asy": "",
-          "explanation": "Incorrect. Two acute angles sum to less than $180^\\circ$."
-        },
-        {
-          "text": "Right angle",
-          "asy": "",
-          "explanation": "Incorrect. A right angle pairs with another right angle."
-        },
-        {
-          "text": "Obtuse angle",
-          "asy": "",
-          "explanation": "Correct. To sum to $180^\\circ$, an angle less than $90^\\circ$ needs an angle greater than $90^\\circ$."
-        },
-        {
-          "text": "Reflex angle",
-          "asy": "",
-          "explanation": "Incorrect."
-        }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "Obtuse angle",
-      "explanation": "A linear pair adds up to $180^\\circ$. If one angle is acute (less than $90^\\circ$), the other must be obtuse (greater than $90^\\circ$) to complete the straight angle."
-    },
-    {
-      "id": "q10",
-      "type": "mcq",
-      "category": "Parallel Lines",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "If two distinct lines on a plane are both perpendicular to a third line, what is the relationship between the two distinct lines?",
-      "passageId": "",
-      "tag": "Deduction",
-      "hint": "Draw a transversal and two lines intersecting it at $90^\\circ$.",
-      "asy": "size(120); draw((0,2)--(4,2), black+1pt); draw((0,0)--(4,0), black+1pt); draw((2,-1)--(2,3), black+1pt); draw(rightanglemark((4,2),(2,2),(2,3), 2)); draw(rightanglemark((4,0),(2,0),(2,1), 2));",
-      "options": [
-        {
-          "text": "They are intersecting.",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "They are perpendicular.",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "They are parallel.",
-          "asy": "",
-          "explanation": "Correct. Both corresponding angles are $90^\\circ$, hence they are parallel."
-        },
-        {
-          "text": "They overlap exactly.",
-          "asy": "",
-          "explanation": "Incorrect."
-        }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "They are parallel.",
-      "explanation": "Since both lines are perpendicular to the third line, their corresponding angles with this transversal are both $90^\\circ$. Because the corresponding angles are equal, the two lines must be parallel."
-    },
-    {
-      "id": "q11",
-      "type": "mcq",
-      "category": "Transversals",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "In a given figure, parallel lines $l$ and $m$ are intersected by transversal $t$. If one of the exterior angles $\\angle 6$ is $135^\\circ$, what is the measure of the vertically opposite angle to its corresponding angle?",
-      "passageId": "",
-      "tag": "Calculation",
-      "hint": "Identify the corresponding angle first, then apply the vertically opposite angle rule.",
-      "asy": "size(150); pair A=(0,2), B=(5,2), C=(0,0), D=(5,0); draw(A--B, black+1pt); draw(C--D, black+1pt); pair P=(1,3), Q=(4,-1); draw(P--Q, black+1pt); label(\"$l$\", B, E); label(\"$m$\", D, E); label(\"$t$\", Q, SE); label(\"$\\angle 2$\", (2.2,2.2)); label(\"$\\angle 6=135^\\circ$\", (3.2,0.2));",
-      "options": [
-        {
-          "text": "$45^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect. This is the measure of the linear pair to $135^\\circ$."
-        },
-        {
-          "text": "$135^\\circ$",
-          "asy": "",
-          "explanation": "Correct. The corresponding angle is $135^\\circ$, and its vertically opposite angle is also $135^\\circ$."
-        },
-        {
-          "text": "$90^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
         {
           "text": "$180^\\circ$",
           "asy": "",
-          "explanation": "Incorrect."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "$135^\\circ$",
-      "explanation": "Since $l$ and $m$ are parallel, the corresponding angle to $\\angle 6$ is equal to $135^\\circ$. The vertically opposite angle of this corresponding angle will also be equal to $135^\\circ$."
-    },
-    {
-      "id": "q12",
-      "type": "mcq",
-      "category": "Transversals",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Lines $l$ and $m$ are intersected by transversal $t$. If an interior angle is $120^\\circ$ and the interior angle on the same side of the transversal is $70^\\circ$, are lines $l$ and $m$ parallel?",
-      "passageId": "",
-      "tag": "Proof",
-      "hint": "Check the sum of interior angles on the same side of the transversal.",
-      "asy": "size(140); pair A=(0,2), B=(4,2), C=(0,0), D=(4.5,-0.5); draw(A--B, black+1pt); draw(C--D, black+1pt); pair P=(1,3), Q=(3,-1.5); draw(P--Q, black+1pt); label(\"$120^\\\\circ$\", (1.8, 1.8), SE); label(\"$70^\\\\circ$\", (2.6, 0.2), NW);",
-      "options": [
-        {
-          "text": "Yes, because $120^\\circ + 70^\\circ = 190^\\circ$.",
-          "asy": "",
-          "explanation": "Incorrect logic."
-        },
-        {
-          "text": "No, because the corresponding angles are equal.",
-          "asy": "",
-          "explanation": "Incorrect reasoning."
-        },
-        {
-          "text": "Yes, because they form a linear pair.",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "No, because the sum of interior angles on the same side is $190^\\circ$, not $180^\\circ$.",
-          "asy": "",
-          "explanation": "Correct. They must sum exactly to $180^\\circ$ to be parallel."
-        }
-      ],
-      "correctIndex": 3,
-      "correctAnswer": "No, because the sum of interior angles on the same side is $190^\\circ$, not $180^\\circ$.",
-      "explanation": "For lines to be parallel, the interior angles on the same side of the transversal must add up to exactly $180^\\circ$. Here, $120^\\circ + 70^\\circ = 190^\\circ$. Therefore, the lines are not parallel."
-    },
-    {
-      "id": "q13",
-      "type": "mcq",
-      "category": "Transversals",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Parallel lines $l$ and $m$ are intersected by transversal $t$. If interior angle $\\angle 3 = 50^\\circ$, what is the measure of $\\angle 6$, which is the interior angle on the same side of the transversal?",
-      "passageId": "",
-      "tag": "Calculation",
-      "hint": "Interior angles on the same side of a transversal are supplementary.",
-      "asy": "size(130); pair A=(0,2), B=(4,2), C=(0,0), D=(4,0); draw(A--B, black+1pt); draw(C--D, black+1pt); pair P=(1,3), Q=(3,-1); draw(P--Q, black+1pt); label(\"$\\angle 3 = 50^\\\\circ$\", (2.5,1.7)); label(\"$\\angle 6$\", (2.7,0.3));",
-      "options": [
-        {
-          "text": "$50^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect. This would be true for alternate interior angles."
-        },
-        {
-          "text": "$130^\\circ$",
-          "asy": "",
-          "explanation": "Correct. $180^\\circ - 50^\\circ = 130^\\circ$."
-        },
-        {
-          "text": "$40^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$180^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "$130^\\circ$",
-      "explanation": "The sum of interior angles on the same side of the transversal formed by parallel lines is always $180^\\circ$. Therefore, $\\angle 6 = 180^\\circ - 50^\\circ = 130^\\circ$."
-    },
-    {
-      "id": "q14",
-      "type": "mcq",
-      "category": "Parallel Lines",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "In a quadrilateral where opposite sides $AB \\parallel CD$ and $AD \\parallel BC$, line segment $AC$ is drawn. If $\\angle ADC = 60^\\circ$ and $\\angle DAC = 65^\\circ$, what is the measure of $\\angle CAB$?",
-      "passageId": "",
-      "tag": "Calculation",
-      "hint": "First, find $\\angle DAB$ using the sum of interior angles on the transversal $AD$. Then, use $\\angle DAB = \\angle DAC + \\angle CAB$.",
-      "asy": "size(150); pair D=(0,0), C=(4,0), A=(2,3.464), B=(6,3.464); draw(A--B--C--D--cycle, black+1pt); draw(A--C, black+1pt); label(\"D\", D, SW); label(\"C\", C, SE); label(\"B\", B, NE); label(\"A\", A, NW); label(\"$60^\\\\circ$\", D + (0.5,0.3)); label(\"$65^\\\\circ$\", A + (0.3,-0.6));",
-      "options": [
-        {
-          "text": "$55^\\circ$",
-          "asy": "",
-          "explanation": "Correct. $\\angle DAB = 180^\\circ - 60^\\circ = 120^\\circ$. $\\angle CAB = 120^\\circ - 65^\\circ = 55^\\circ$."
-        },
-        {
-          "text": "$65^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$60^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$120^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        }
-      ],
-      "correctIndex": 0,
-      "correctAnswer": "$55^\\circ$",
-      "explanation": "Since $AB \\parallel CD$ and $AD$ is a transversal, the interior angles $\\angle ADC$ and $\\angle DAB$ sum to $180^\\circ$. Thus, $\\angle DAB = 180^\\circ - 60^\\circ = 120^\\circ$. Since $\\angle DAB = \\angle DAC + \\angle CAB$, we have $120^\\circ = 65^\\circ + \\angle CAB$. Solving for $\\angle CAB$ gives $55^\\circ$."
-    },
-    {
-      "id": "q15",
-      "type": "mcq",
-      "category": "Parallel Lines",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Using the same quadrilateral where $AD \\parallel BC$ and $AB \\parallel CD$, if $\\angle ADC = 60^\\circ$, what is the measure of $\\angle BCD$?",
-      "passageId": "",
-      "tag": "Calculation",
-      "hint": "Consider $CD$ as the transversal intersecting the parallel lines $AD$ and $BC$.",
-      "asy": "",
-      "options": [
-        {
-          "text": "$60^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect. Consecutive angles in a parallelogram are supplementary, not equal."
-        },
-        {
-          "text": "$180^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$120^\\circ$",
-          "asy": "",
-          "explanation": "Correct. $180^\\circ - 60^\\circ = 120^\\circ$."
-        },
-        {
-          "text": "$90^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "$120^\\circ$",
-      "explanation": "Line segments $AD$ and $BC$ are parallel, and $CD$ acts as a transversal. The interior angles on the same side of the transversal sum to $180^\\circ$. Therefore, $\\angle ADC + \\angle BCD = 180^\\circ \\implies 60^\\circ + \\angle BCD = 180^\\circ \\implies \\angle BCD = 120^\\circ$."
-    },
-    {
-      "id": "q16",
-      "type": "mcq",
-      "category": "Corresponding Angles",
-      "marks": 3,
-      "difficulty": "easy",
-      "question": "Two parallel lines are intersected by a transversal. If an acute angle formed is $48^\\circ$, what is the measure of its corresponding angle $a$?",
-      "passageId": "",
-      "tag": "Direct Application",
-      "hint": "Corresponding angles hold a direct equality relationship when lines are parallel.",
-      "asy": "size(120); pair A=(0,2), B=(4,2), C=(0,0), D=(4,0); draw(A--B, black+1pt, Arrows); draw(C--D, black+1pt, Arrows); pair P=(1,3), Q=(3,-1); draw(P--Q, black+1pt, Arrows); label(\"$48^\\\\circ$\", (2.5,2.2)); label(\"$a$\", (2.5,0.2));",
-      "options": [
-        {
-          "text": "$132^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect. This is the supplementary angle."
-        },
-        {
-          "text": "$48^\\circ$",
-          "asy": "",
-          "explanation": "Correct. Corresponding angles are equal."
-        },
-        {
-          "text": "$90^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$42^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "$48^\\circ$",
-      "explanation": "When two parallel lines are intersected by a transversal, corresponding angles are always exactly equal. Therefore, $a = 48^\\circ$."
-    },
-    {
-      "id": "q17",
-      "type": "mcq",
-      "category": "Alternate Angles",
-      "marks": 3,
-      "difficulty": "easy",
-      "question": "Two parallel lines are intersected by a transversal. If an angle is $52^\\circ$, what is the measure of its alternate interior angle $b$?",
-      "passageId": "",
-      "tag": "Direct Application",
-      "hint": "Recall the theorem regarding alternate interior angles.",
-      "asy": "size(120); pair A=(0,2), B=(4,2), C=(0,0), D=(4,0); draw(A--B, black+1pt, Arrows); draw(C--D, black+1pt, Arrows); pair P=(1,3), Q=(3,-1); draw(P--Q, black+1pt, Arrows); label(\"$52^\\\\circ$\", (2.5,1.7)); label(\"$b^\\\\circ$\", (1.5,0.3));",
-      "options": [
-        {
-          "text": "$128^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$48^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$52^\\circ$",
-          "asy": "",
-          "explanation": "Correct. Alternate interior angles are equal."
-        },
-        {
-          "text": "$142^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "$52^\\circ$",
-      "explanation": "Alternate interior angles formed by a transversal intersecting a pair of parallel lines are always equal. Hence, $b = 52^\\circ$."
-    },
-    {
-      "id": "q18",
-      "type": "mcq",
-      "category": "Transversals",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Two parallel lines are intersected by a transversal. If the interior angles on the same side are $99^\\circ$ and $81^\\circ$, what is the measure of the alternate interior angle to the $99^\\circ$ angle?",
-      "passageId": "",
-      "tag": "Conceptual",
-      "hint": "Locate the alternate position relative to the $99^\\circ$ angle.",
-      "asy": "",
-      "options": [
-        {
-          "text": "$81^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect. This is the adjacent interior angle."
-        },
-        {
-          "text": "$90^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$180^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$99^\\circ$",
-          "asy": "",
-          "explanation": "Correct. Alternate interior angles are strictly equal."
-        }
-      ],
-      "correctIndex": 3,
-      "correctAnswer": "$99^\\circ$",
-      "explanation": "The alternate interior angle to any angle is equal to the angle itself when the lines are parallel. Therefore, the alternate angle to $99^\\circ$ is $99^\\circ$."
-    },
-    {
-      "id": "q19",
-      "type": "mcq",
-      "category": "Transversals",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "Two parallel lines are cut by a transversal. If an interior angle is $69^\\circ$, what is the measure of the vertically opposite angle to its alternate interior angle?",
-      "passageId": "",
-      "tag": "Multi-step",
-      "hint": "Trace the equality: Alternate interior angles are equal, and vertically opposite angles are also equal.",
-      "asy": "",
-      "options": [
-        {
-          "text": "$111^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect. That is the supplementary angle."
-        },
-        {
-          "text": "$69^\\circ$",
-          "asy": "",
-          "explanation": "Correct. Equalities cascade: Interior -> Alternate Interior -> Vertically Opposite."
-        },
-        {
-          "text": "$21^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$180^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "$69^\\circ$",
-      "explanation": "The alternate interior angle to the $69^\\circ$ angle is also $69^\\circ$. The vertically opposite angle to this $69^\\circ$ angle is, again, equal to $69^\\circ$."
-    },
-    {
-      "id": "q20",
-      "type": "mcq",
-      "category": "Algebraic Application",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Two parallel lines are intersected by a transversal. The interior angles on the same side of the transversal are given as $2x^\\circ$ and $3x^\\circ$. What is the measure of the larger angle?",
-      "passageId": "",
-      "tag": "Algebraic",
-      "hint": "Set up an equation knowing these angles must sum to $180^\\circ$.",
-      "asy": "size(120); draw((0,2)--(4,2), black+1pt); draw((0,0)--(4,0), black+1pt); draw((1,3)--(3,-1), black+1pt); label(\"$2x$\", (2.6, 1.7)); label(\"$3x$\", (2.6, 0.3));",
-      "options": [
-        {
-          "text": "$72^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect. This is the smaller angle."
-        },
-        {
-          "text": "$108^\\circ$",
-          "asy": "",
-          "explanation": "Correct. $2x + 3x = 180 \\implies 5x = 180 \\implies x = 36$. The larger is $3(36) = 108^\\circ$."
-        },
-        {
-          "text": "$36^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect. This is just the value of $x$."
-        },
-        {
-          "text": "$180^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "$108^\\circ$",
-      "explanation": "Interior angles on the same side of the transversal sum to $180^\\circ$. So, $2x + 3x = 180^\\circ \\implies 5x = 180^\\circ \\implies x = 36^\\circ$. The larger angle is $3x = 3 \\times 36 = 108^\\circ$."
-    },
-    {
-      "id": "q21",
-      "type": "mcq",
-      "category": "Transversals",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Two parallel horizontal lines are intersected by a transversal. If an acute vertically opposite angle formed at one intersection is $65^\\circ$, what is the measure of the alternate interior angle at the other intersection?",
-      "passageId": "",
-      "tag": "Multi-step",
-      "hint": "Identify the interior angle corresponding to the vertically opposite angle, then find its alternate angle.",
-      "asy": "",
-      "options": [
-        {
-          "text": "$115^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$65^\\circ$",
-          "asy": "",
-          "explanation": "Correct. The interior angle is $65^\\circ$, making its alternate interior angle $65^\\circ$."
-        },
-        {
-          "text": "$90^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$130^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "$65^\\circ$",
-      "explanation": "The vertically opposite angle of $65^\\circ$ means the original angle is $65^\\circ$. Its corresponding and alternate interior angles at the other intersection will also measure $65^\\circ$."
-    },
-    {
-      "id": "q22",
-      "type": "mcq",
-      "category": "Algebraic Application",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "A transversal cuts two parallel lines. If the measure of an interior angle is $(5x - 20)^\\circ$ and its alternate interior angle is $80^\\circ$, what is the value of $x$?",
-      "passageId": "",
-      "tag": "Calculation",
-      "hint": "Alternate interior angles are equal.",
-      "asy": "",
-      "options": [
-        {
-          "text": "$12$",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$20$",
-          "asy": "",
-          "explanation": "Correct. $5x - 20 = 80 \\implies 5x = 100 \\implies x = 20$."
-        },
-        {
-          "text": "$100$",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$16$",
-          "asy": "",
-          "explanation": "Incorrect."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "$20$",
-      "explanation": "Alternate interior angles between parallel lines are equal. Therefore, $5x - 20 = 80$. Adding 20 to both sides gives $5x = 100$, and dividing by 5 gives $x = 20$."
-    },
-    {
-      "id": "q23",
-      "type": "mcq",
-      "category": "Algebraic Application",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "Two parallel lines are cut by a transversal. If two corresponding angles measure $(4y - 10)^\\circ$ and $(3y + 20)^\\circ$, what is the value of $y$?",
-      "passageId": "",
-      "tag": "Calculation",
-      "hint": "Corresponding angles are equal when lines are parallel.",
-      "asy": "",
-      "options": [
-        {
-          "text": "$10$",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$20$",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$30$",
-          "asy": "",
-          "explanation": "Correct. $4y - 10 = 3y + 20 \\implies y = 30$."
-        },
-        {
-          "text": "$40$",
-          "asy": "",
-          "explanation": "Incorrect."
-        }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "$30$",
-      "explanation": "Corresponding angles are equal. Set up the equation: $4y - 10 = 3y + 20$. Subtracting $3y$ from both sides gives $y - 10 = 20$. Adding $10$ gives $y = 30$."
-    },
-    {
-      "id": "q24",
-      "type": "mcq",
-      "category": "Transversals",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "Lines $l$ and $m$ are parallel. A transversal intersects them such that the difference between the two interior angles on the same side of the transversal is $40^\\circ$. What is the measure of the smaller angle?",
-      "passageId": "",
-      "tag": "Multi-step",
-      "hint": "Let the angles be $A$ and $B$. You know $A + B = 180^\\circ$ and $A - B = 40^\\circ$.",
-      "asy": "",
-      "options": [
-        {
-          "text": "$110^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect. This is the larger angle."
-        },
-        {
-          "text": "$70^\\circ$",
-          "asy": "",
-          "explanation": "Correct. Solving the system yields $B = 70^\\circ$."
-        },
-        {
-          "text": "$40^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$140^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "$70^\\circ$",
-      "explanation": "Let the two interior angles be $A$ and $B$. Since they are on the same side of the transversal, $A + B = 180^\\circ$. We are given $A - B = 40^\\circ$. Adding the two equations: $2A = 220^\\circ \\implies A = 110^\\circ$. Subtracting gives $B = 180^\\circ - 110^\\circ = 70^\\circ$. The smaller angle is $70^\\circ$."
-    },
-    {
-      "id": "q25",
-      "type": "mcq",
-      "category": "Ratio and Proportion",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "The ratio of two interior angles on the same side of a transversal intersecting two parallel lines is $4:5$. What is the measure of the larger angle?",
-      "passageId": "",
-      "tag": "Calculation",
-      "hint": "The sum of the angles is $180^\\circ$.",
-      "asy": "",
-      "options": [
-        {
-          "text": "$80^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect. This is the smaller angle."
+          "explanation": "That is a straight angle, not the marked right angle."
         },
         {
           "text": "$100^\\circ$",
           "asy": "",
-          "explanation": "Correct. $4x + 5x = 180 \\implies 9x = 180 \\implies x = 20$. The larger is $5(20) = 100^\\circ$."
+          "explanation": "The small square symbol always denotes exactly $90^\\circ$."
         },
         {
-          "text": "$120^\\circ$",
+          "text": "$45^\\circ$",
           "asy": "",
-          "explanation": "Incorrect."
+          "explanation": "A right angle is $90^\\circ$, not $45^\\circ$."
         },
         {
           "text": "$90^\\circ$",
           "asy": "",
-          "explanation": "Incorrect."
+          "explanation": "Correct: the right-angle mark shows the lines are perpendicular."
         }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "$100^\\circ$",
-      "explanation": "Let the angles be $4x$ and $5x$. Since they are interior angles on the same side, their sum is $180^\\circ$. $4x + 5x = 180^\\circ \\implies 9x = 180^\\circ \\implies x = 20^\\circ$. The larger angle is $5x = 5 \\times 20^\\circ = 100^\\circ$."
+      "correctIndex": 3,
+      "correctAnswer": "$90^\\circ$",
+      "explanation": "The small square symbol at O is the standard notation for a right angle. Two lines that meet at a right angle are called perpendicular lines, so $x = 90^\\circ$."
     },
     {
-      "id": "q26",
+      "id": "q4",
       "type": "mcq",
-      "category": "Complex Transversals",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "A zigzag set of line segments $MN$, $NO$, $OP$ are drawn such that $LM \\parallel PQ$. By drawing auxiliary lines parallel to $LM$ through points $N$ and $O$, the alternating angles can be mapped. If $\\angle M = 40^\\circ$ and the upper part of $\\angle N$ is its alternate interior angle, what is the measure of this upper part of $\\angle N$?",
-      "passageId": "",
-      "tag": "Multi-step",
-      "hint": "Apply the alternate interior angle property to the first segment $MN$ with the auxiliary line.",
-      "asy": "size(160); pair M=(0,0), N=(2,3), O=(4,1), P=(6,4); draw(M--N--O--P, black+1pt); draw((0,3.5)--(0,-0.5), black+1pt, Arrows); draw((6,4.5)--(6,0.5), black+1pt, Arrows); label(\"L\", (0,3.5), N); label(\"M\", M, S); label(\"N\", N, N); label(\"O\", O, S); label(\"P\", P, N); label(\"Q\", (6,0.5), S); label(\"$40^\\\\circ$\", (0.3,0.5));",
-      "options": [
-        {
-          "text": "$40^\\circ$",
-          "asy": "",
-          "explanation": "Correct. The alternate angle to $\\angle M$ along the transversal $MN$ is $40^\\circ$."
-        },
-        {
-          "text": "$50^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$96^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect. This would be the total angle $\\angle N$, not the alternate part."
-        },
-        {
-          "text": "$140^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect."
-        }
-      ],
-      "correctIndex": 0,
-      "correctAnswer": "$40^\\circ$",
-      "explanation": "By drawing an auxiliary line through $N$ parallel to $LM$, the segment $MN$ becomes a transversal. The alternate interior angle to $\\angle M$ ($40^\\circ$) is the upper part of $\\angle N$, which must strictly equal $40^\\circ$."
-    },
-    {
-      "id": "q27",
-      "type": "mcq",
-      "category": "Paper Folding",
-      "marks": 3,
+      "category": "Angles formed by a Transversal",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "According to the paper folding activities in the chapter, if a square sheet of paper is folded horizontally in half, and then folded horizontally again, how many parallel crease lines are created in the middle of the sheet upon unfolding?",
+      "question": "A transversal $t$ cuts two lines $l$ and $m$, forming 8 angles in total (4 at each point of intersection, as shown). How many **pairs of vertically opposite angles** are formed in this figure altogether?",
       "passageId": "",
-      "tag": "Visual Spatial",
-      "hint": "Think about the number of segments the paper is divided into versus the number of lines separating them.",
-      "asy": "",
+      "tag": "Diagram-Based",
+      "hint": "Work out how many vertically opposite pairs are formed at just ONE crossing point first.",
+      "asy": "size(230);\npair Pv=(0.000,1.300);\npair Qv=(-1.625,-1.300);\ndraw((-3.0,1.3)--(3.0,1.3), black+1.2pt);\ndraw((-3.0,-1.3)--(3.0,-1.3), black+1.2pt);\ndraw((0.742,2.487)--(-2.367,-2.487), black+1.2pt);\ndot(Pv); dot(Qv);\n",
       "options": [
         {
-          "text": "1",
+          "text": "4",
           "asy": "",
-          "explanation": "Incorrect. One fold makes 1 crease."
+          "explanation": "Correct: each intersection point gives 2 pairs of vertically opposite angles, and there are 2 intersection points, so $2\\times2=4$ pairs in total."
+        },
+        {
+          "text": "8",
+          "asy": "",
+          "explanation": "This is the total number of angles, not the number of vertically-opposite PAIRS."
         },
         {
           "text": "2",
           "asy": "",
-          "explanation": "Incorrect."
+          "explanation": "This is only the number of pairs at ONE intersection point."
         },
         {
-          "text": "3",
+          "text": "6",
           "asy": "",
-          "explanation": "Correct. Two successive half-folds divide the paper into 4 segments, creating 3 inner parallel creases."
+          "explanation": "Recount carefully: each crossing point contributes exactly 2 pairs."
+        }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "4",
+      "explanation": "At each of the two points where the transversal meets a line, 4 angles are formed, giving 2 pairs of vertically opposite angles at that point. Since there are 2 intersection points (one on line $l$, one on line $m$), the total number of vertically opposite pairs is $2 + 2 = 4$."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "category": "Parallel Lines - Notation",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "In the figure, lines $p$ and $q$ are marked with a single arrow ($>$), while lines $r$ and $s$ are marked with a double arrow ($>\\!>$). Based on this notation, which statement is true?",
+      "passageId": "",
+      "tag": "Diagram-Based",
+      "hint": "Lines are parallel to each other only when they carry the SAME arrow symbol.",
+      "asy": "size(210);\npair p1=(-2.3,1); pair p2=(2.3,1);\npair q1=(-2.3,0.2); pair q2=(2.3,0.2);\npair r1=(-2.3,-1.2); pair r2=(0.3,-2.6);\npair s1=(-0.7,-1.2); pair s2=(1.9,-2.6);\ndraw(p1--p2, black+1.2pt); draw(q1--q2, black+1.2pt);\ndraw(r1--r2, black+1.2pt); draw(s1--s2, black+1.2pt);\nlabel(\"p\", p2, E); label(\"q\", q2, E);\nlabel(\"r\", r2, S); label(\"s\", s2, S);\npair pm=(p1+p2)/2; pair qm=(q1+q2)/2;\npair rm=(r1+r2)/2; pair sm=(s1+s2)/2;\ndraw((pm.x-0.15,pm.y)--(pm.x+0.15,pm.y+0.001), Arrow(6));\ndraw((qm.x-0.15,qm.y)--(qm.x+0.15,qm.y+0.001), Arrow(6));\ndraw((rm.x-0.08,rm.y-0.05)--(rm.x+0.08,rm.y+0.13), Arrow(6));\ndraw((rm.x-0.08+0.18,rm.y-0.05)--(rm.x+0.08+0.18,rm.y+0.13), Arrow(6));\ndraw((sm.x-0.08,sm.y-0.05)--(sm.x+0.08,sm.y+0.13), Arrow(6));\ndraw((sm.x-0.08+0.18,sm.y-0.05)--(sm.x+0.08+0.18,sm.y+0.13), Arrow(6));\n",
+      "options": [
+        {
+          "text": "$p \\parallel r$ and $q \\parallel s$",
+          "asy": "",
+          "explanation": "Arrows of a different type (single vs double) do not indicate a parallel pair."
         },
         {
-          "text": "4",
+          "text": "All four lines are parallel to one another",
           "asy": "",
-          "explanation": "Incorrect."
+          "explanation": "Lines with different arrow types are not necessarily parallel to each other."
+        },
+        {
+          "text": "None of the lines are parallel",
+          "asy": "",
+          "explanation": "The matching arrow marks specifically indicate parallel pairs."
+        },
+        {
+          "text": "$p \\parallel q$ and $r \\parallel s$",
+          "asy": "",
+          "explanation": "Correct: matching arrow marks (single or double) indicate which lines are parallel to each other."
+        }
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "$p \\parallel q$ and $r \\parallel s$",
+      "explanation": "By convention, arrow marks on lines show which lines are parallel: lines carrying the same number of arrowheads are parallel to each other. Here $p$ and $q$ both carry a single arrow, so $p \\parallel q$; $r$ and $s$ both carry a double arrow, so $r \\parallel s$."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "category": "Corresponding Angles",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "In the figure, $l \\parallel m$ and $t$ is a transversal. If the marked angle at $l$ is $118^\\circ$, find the marked angle $x$ at $m$.",
+      "passageId": "",
+      "tag": "Diagram-Based",
+      "hint": "First find the corresponding angle on line $m$, then use the linear-pair property to get $x$.",
+      "asy": "size(230);\npair Pv=(0.000,1.300);\npair Qv=(1.382,-1.300);\ndraw((-3.0,1.3)--(3.0,1.3), black+1.2pt);\ndraw((-3.0,-1.3)--(3.0,-1.3), black+1.2pt);\ndraw((-0.657,2.536)--(2.040,-2.536), black+1.2pt);\ndot(Pv); dot(Qv);\nlabel(\"l\", (3.0,1.3), E);\nlabel(\"m\", (3.0,-1.3), E);\nlabel(\"t\", (-0.657,2.536), NE);\ndraw((-2.6,1.48)--(-2.3,1.48), Arrow(5));\ndraw((-2.6,-1.12)--(-2.3,-1.12), Arrow(5));\ndraw(arc(Pv,0.5,0,118), blue);\nlabel(\"$118^\\\\circ$\", Pv+0.78*dir(59.0));\ndraw(arc(Qv,0.34,118,180), heavygreen);\nlabel(\"$x^\\\\circ$\", Qv+0.78*dir(149.0));\n",
+      "options": [
+        {
+          "text": "$118^\\circ$",
+          "asy": "",
+          "explanation": "This confuses $x$ with its corresponding angle, which is $118^\\circ$ — but $x$ is the linear pair of that angle, not the angle itself."
+        },
+        {
+          "text": "$28^\\circ$",
+          "asy": "",
+          "explanation": "This does not follow from either the corresponding angle or linear pair property here."
+        },
+        {
+          "text": "$52^\\circ$",
+          "asy": "",
+          "explanation": "Check the subtraction: $180 - 118 = 62$, not $52$."
+        },
+        {
+          "text": "$62^\\circ$",
+          "asy": "",
+          "explanation": "Correct — found using the corresponding angle property, then the linear pair property."
+        }
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "$62^\\circ$",
+      "explanation": "Since $l \\parallel m$, the angle corresponding to the given $118^\\circ$ angle (at the same relative position on line $m$) is also $118^\\circ$. The angle $x$ is the linear pair of that corresponding angle (they lie on the straight line $m$ together), so $x = 180^\\circ - 118^\\circ = 62^\\circ$."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "category": "Testing Lines for Parallelism",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "In the figure, a transversal $t$ cuts lines $l$ and $m$. The angles marked (at the same relative position on each line) are $125^\\circ$ and $130^\\circ$. Are lines $l$ and $m$ parallel?",
+      "passageId": "",
+      "tag": "Diagram-Based",
+      "hint": "Recall the converse of the corresponding angles property: equal corresponding angles $\\Leftrightarrow$ parallel lines.",
+      "asy": "size(210);\npair Pt=(0.000,1.300);\npair Qt=(0.000,-1.300);\npair la=(1.802,0.038); pair lb=(-1.802,2.562);\npair ma=(-1.685,0.114); pair mb=(1.685,-2.714);\ndraw(la--lb, black+1.2pt);\ndraw(ma--mb, black+1.2pt);\ndraw((0,2.4)--(0,-2.4), black+1.2pt);\ndot(Pt); dot(Qt);\nlabel(\"l\", lb, W);\nlabel(\"m\", mb, W);\nlabel(\"t\", (0,2.4), N);\ndraw(arc(Pt,0.55,-35,90), blue);\nlabel(\"$125^\\\\circ$\", Pt+0.85*dir(27.5));\ndraw(arc(Qt,0.5,140,270), purple);\nlabel(\"$130^\\\\circ$\", Qt+0.85*dir(205.0));\n",
+      "options": [
+        {
+          "text": "Yes, because both angles are obtuse",
+          "asy": "",
+          "explanation": "Both angles being obtuse says nothing about parallelism."
+        },
+        {
+          "text": "No, because the corresponding angles are not equal",
+          "asy": "",
+          "explanation": "Correct: for $l \\parallel m$, the corresponding angles must be equal, but $125^\\circ \\ne 130^\\circ$."
+        },
+        {
+          "text": "Yes, because the two angles are supplementary",
+          "asy": "",
+          "explanation": "$125^\\circ + 130^\\circ = 255^\\circ \\ne 180^\\circ$, so they are not even supplementary."
+        },
+        {
+          "text": "Cannot be determined from the given information",
+          "asy": "",
+          "explanation": "The corresponding-angle test is exactly the information needed here."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "No, because the corresponding angles are not equal",
+      "explanation": "Two lines cut by a transversal are parallel **only if** the corresponding angles are equal. Here the corresponding angles are $125^\\circ$ and $130^\\circ$, which are not equal ($125^\\circ \\ne 130^\\circ$). Therefore, lines $l$ and $m$ are **not** parallel."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "category": "Alternate Interior Angles",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "In the figure, $l \\parallel m$. If one marked (interior) angle is $128^\\circ$, find the alternate interior angle $x$ on line $m$.",
+      "passageId": "",
+      "tag": "Diagram-Based",
+      "hint": "Alternate interior angles lie on opposite sides of the transversal, between the two parallel lines, and are equal.",
+      "asy": "size(230);\npair Pv=(0.000,1.300);\npair Qv=(2.031,-1.300);\ndraw((-3.0,1.3)--(3.0,1.3), black+1.2pt);\ndraw((-3.0,-1.3)--(3.0,-1.3), black+1.2pt);\ndraw((-0.862,2.403)--(2.893,-2.403), black+1.2pt);\ndot(Pv); dot(Qv);\nlabel(\"l\", (3.0,1.3), E);\nlabel(\"m\", (3.0,-1.3), E);\nlabel(\"t\", (-0.862,2.403), NE);\ndraw((-2.6,1.48)--(-2.3,1.48), Arrow(5));\ndraw((-2.6,-1.12)--(-2.3,-1.12), Arrow(5));\ndraw(arc(Pv,0.5,180,308), blue);\nlabel(\"$128^\\\\circ$\", Pv+0.78*dir(244.0));\ndraw(arc(Qv,0.34,0,128), heavygreen);\nlabel(\"$x^\\\\circ$\", Qv+0.78*dir(64.0));\n",
+      "options": [
+        {
+          "text": "$52^\\circ$",
+          "asy": "",
+          "explanation": "This is $180 - 128$, the co-interior (supplementary) angle, not the alternate interior angle."
+        },
+        {
+          "text": "$64^\\circ$",
+          "asy": "",
+          "explanation": "Halving the given angle is not the correct rule for alternate interior angles."
+        },
+        {
+          "text": "$128^\\circ$",
+          "asy": "",
+          "explanation": "Correct: alternate interior angles are equal when the lines are parallel."
+        },
+        {
+          "text": "$180^\\circ$",
+          "asy": "",
+          "explanation": "That would only be true if the two rays formed a straight line, which is not the case here."
         }
       ],
       "correctIndex": 2,
-      "correctAnswer": "3",
-      "explanation": "The first horizontal fold creates 1 crease in the middle. Folding it again halves those segments, dividing the paper into 4 equal horizontal sections. These 4 sections are separated by exactly 3 parallel crease lines."
+      "correctAnswer": "$128^\\circ$",
+      "explanation": "Since $l \\parallel m$ and $t$ is a transversal, alternate interior angles (on opposite sides of the transversal, between the two lines) are equal. So $x = 128^\\circ$."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "category": "Co-interior (Allied) Angles",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "In the figure, $l \\parallel m$. One marked interior angle is $72^\\circ$. Find the co-interior (same-side interior) angle $x$ on line $m$.",
+      "passageId": "",
+      "tag": "Diagram-Based",
+      "hint": "Co-interior angles always add up to $180^\\circ$ when the lines are parallel.",
+      "asy": "size(230);\npair Pv=(0.000,1.300);\npair Qv=(-0.845,-1.300);\ndraw((-3.0,1.3)--(3.0,1.3), black+1.2pt);\ndraw((-3.0,-1.3)--(3.0,-1.3), black+1.2pt);\ndraw((0.433,2.631)--(-1.277,-2.631), black+1.2pt);\ndot(Pv); dot(Qv);\nlabel(\"l\", (3.0,1.3), E);\nlabel(\"m\", (3.0,-1.3), E);\nlabel(\"t\", (0.433,2.631), NE);\ndraw((-2.6,1.48)--(-2.3,1.48), Arrow(5));\ndraw((-2.6,-1.12)--(-2.3,-1.12), Arrow(5));\ndraw(arc(Pv,0.5,180,252), blue);\nlabel(\"$72^\\\\circ$\", Pv+0.78*dir(216.0));\ndraw(arc(Qv,0.34,72,180), heavygreen);\nlabel(\"$x^\\\\circ$\", Qv+0.78*dir(126.0));\n",
+      "options": [
+        {
+          "text": "$108^\\circ$",
+          "asy": "",
+          "explanation": "Correct: co-interior angles are supplementary, so $x = 180^\\circ - 72^\\circ$."
+        },
+        {
+          "text": "$18^\\circ$",
+          "asy": "",
+          "explanation": "This is not obtained by any valid angle relationship here."
+        },
+        {
+          "text": "$72^\\circ$",
+          "asy": "",
+          "explanation": "This would be true for alternate or corresponding angles, but co-interior angles are supplementary, not equal."
+        },
+        {
+          "text": "$252^\\circ$",
+          "asy": "",
+          "explanation": "An angle in this figure cannot exceed $180^\\circ$; recheck the co-interior rule."
+        }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "$108^\\circ$",
+      "explanation": "Since $l \\parallel m$, co-interior (same-side interior) angles are supplementary: their sum is $180^\\circ$. So $x = 180^\\circ - 72^\\circ = 108^\\circ$."
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "category": "Angles in a Parallelogram",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "In parallelogram ABCD, $AB \\parallel DC$ and $AD \\parallel BC$. Diagonal AC is drawn. If $\\angle ADC = 55^\\circ$ and $\\angle DAC = 70^\\circ$, find $\\angle CAB$ (marked $x$).",
+      "passageId": "",
+      "tag": "Diagram-Based",
+      "hint": "First find the full angle $\\angle DAB$ using the co-interior angle property with side AD as the transversal.",
+      "asy": "size(220);\npair A=(2.000,2.856);\npair B=(6.000,2.856);\npair C=(4.000,0.000);\npair D=(0.000,0.000);\ndraw(A--B--C--D--cycle, black+1.2pt);\ndraw(A--C, gray+0.8pt+dashed);\ndot(A); dot(B); dot(C); dot(D);\nlabel(\"A\", A, N);\nlabel(\"B\", B, N);\nlabel(\"C\", C, SE);\nlabel(\"D\", D, SW);\ndraw((D.x+0.35,D.y)--(D.x+0.30,D.y+0.18)--(D.x+0.12,D.y+0.10));\ndraw(arc(A,0.55,-55.00000000000001,-125.00000000000001), blue);\ndraw(arc(A,0.4,0.0,-55.00000000000001), heavygreen);\nlabel(\"$55^\\\\circ$\", D+0.55*dir(25.45675271974063));\nlabel(\"$70^\\\\circ$\", A+0.9*dir(-90.00000000000001));\nlabel(\"$x^\\\\circ$\", A+0.9*dir(-25.456752719740635));\n",
+      "options": [
+        {
+          "text": "$125^\\circ$",
+          "asy": "",
+          "explanation": "This is $\\angle DAB$ (the full angle at A), not just $\\angle CAB$."
+        },
+        {
+          "text": "$60^\\circ$",
+          "asy": "",
+          "explanation": "Recheck the co-interior angle subtraction: $180 - 55 = 125$, then $125 - 70 = 55$."
+        },
+        {
+          "text": "$55^\\circ$",
+          "asy": "",
+          "explanation": "Correct — found using co-interior angles, then subtraction."
+        },
+        {
+          "text": "$70^\\circ$",
+          "asy": "",
+          "explanation": "This is $\\angle DAC$ itself, not $\\angle CAB$."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "$55^\\circ$",
+      "explanation": "Since $AD \\parallel BC$ is not needed here; instead use $AB \\parallel DC$ with transversal $AD$: $\\angle DAB$ and $\\angle ADC$ are co-interior angles, so $\\angle DAB = 180^\\circ - 55^\\circ = 125^\\circ$. Since $\\angle DAB = \\angle DAC + \\angle CAB$, we get $\\angle CAB = 125^\\circ - 70^\\circ = 55^\\circ$."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "category": "Angles at a Point",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Three lines AD, BE and CF pass through a common point O, as shown. If $\\angle AOB = 50^\\circ$ and $\\angle BOC = 70^\\circ$, find $\\angle AOF$ (marked $x$).",
+      "passageId": "",
+      "tag": "Diagram-Based",
+      "hint": "First find $\\angle COD$ using the fact that A, O, D lie on a straight line. Then use vertically opposite angles.",
+      "asy": "size(220);\npair O=(0,0);\npair A=(2.000,0.000);\npair B=(1.286,1.532);\npair C=(-1.000,1.732);\npair D=(-2.000,0.000);\npair E=(-1.286,-1.532);\npair F=(1.000,-1.732);\ndraw(A--D, black+1.2pt);\ndraw(B--E, black+1.2pt);\ndraw(C--F, black+1.2pt);\ndot(O);\nlabel(\"A\", A, dir(0));\nlabel(\"B\", B, dir(50));\nlabel(\"C\", C, dir(120));\nlabel(\"D\", D, dir(180));\nlabel(\"E\", E, dir(230));\nlabel(\"F\", F, dir(300));\ndraw(arc(O,0.5,0,50), blue);\nlabel(\"$50^\\\\circ$\", O+0.8*dir(25.0));\ndraw(arc(O,0.5,50,120), purple);\nlabel(\"$70^\\\\circ$\", O+0.8*dir(85.0));\ndraw(arc(O,0.35,300,360), heavygreen);\nlabel(\"$x^\\\\circ$\", O+0.8*dir(330.0));\n",
+      "options": [
+        {
+          "text": "$130^\\circ$",
+          "asy": "",
+          "explanation": "This does not match any valid angle relationship in the figure."
+        },
+        {
+          "text": "$120^\\circ$",
+          "asy": "",
+          "explanation": "This is $\\angle AOC$ ($50^\\circ+70^\\circ$), not $\\angle AOF$."
+        },
+        {
+          "text": "$50^\\circ$",
+          "asy": "",
+          "explanation": "This is just $\\angle AOB$; the marked angle $x$ also depends on $\\angle BOC$."
+        },
+        {
+          "text": "$60^\\circ$",
+          "asy": "",
+          "explanation": "Correct: $x = \\angle AOF$ is vertically opposite to $\\angle COD$."
+        }
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "$60^\\circ$",
+      "explanation": "Since AD is a straight line, $\\angle AOB + \\angle BOC + \\angle COD = 180^\\circ$, so $\\angle COD = 180^\\circ - 50^\\circ - 70^\\circ = 60^\\circ$. Since ray OF is opposite to ray OC and ray OA is opposite to ray OD, $\\angle AOF$ is vertically opposite to $\\angle COD$. Vertically opposite angles are equal, so $x = \\angle AOF = \\angle COD = 60^\\circ$."
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "category": "Three Parallel Lines cut by a Transversal",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Lines $l$, $m$ and $n$ are all parallel to one another, and a transversal $t$ cuts all three. If the marked interior angle between $l$ and $m$ is $47^\\circ$, find the co-interior angle $x$ (also between $l$ and $m$, on the same side of the transversal).",
+      "passageId": "",
+      "tag": "Diagram-Based",
+      "hint": "Focus only on the pair of lines $l$ and $m$ — line $n$ is extra information here.",
+      "asy": "size(230);\npair Pv=(0.000,1.300);\npair Qv=(-2.425,-1.300);\ndraw((-3.0,1.3)--(3.0,1.3), black+1.2pt);\ndraw((-3.0,-1.3)--(3.0,-1.3), black+1.2pt);\ndraw((0.955,2.324)--(-3.379,-2.324), black+1.2pt);\ndot(Pv); dot(Qv);\nlabel(\"l\\ (top)\", (3.0,1.3), E);\nlabel(\"m\\ (middle)\", (3.0,-1.3), E);\nlabel(\"t\", (0.955,2.324), NE);\ndraw((-2.6,1.48)--(-2.3,1.48), Arrow(5));\ndraw((-2.6,-1.12)--(-2.3,-1.12), Arrow(5));\ndraw(arc(Pv,0.5,180,227), blue);\nlabel(\"$47^\\\\circ$\", Pv+0.78*dir(203.5));\ndraw(arc(Qv,0.34,47,180), heavygreen);\nlabel(\"$x^\\\\circ$\", Qv+0.78*dir(113.5));\ndraw((-3.0,-2.9)--(3.0,-2.9), black+1.2pt);\nlabel(\"n\\ (bottom)\", (3.0,-2.9), E);\n",
+      "options": [
+        {
+          "text": "$43^\\circ$",
+          "asy": "",
+          "explanation": "Recheck the subtraction: $180 - 47 = 133$, not $43$."
+        },
+        {
+          "text": "$90^\\circ$",
+          "asy": "",
+          "explanation": "There is no right-angle relationship indicated in this figure."
+        },
+        {
+          "text": "$47^\\circ$",
+          "asy": "",
+          "explanation": "Equal angles would be the alternate or corresponding angle, not the co-interior angle."
+        },
+        {
+          "text": "$133^\\circ$",
+          "asy": "",
+          "explanation": "Correct: co-interior angles between the same pair of parallel lines are supplementary."
+        }
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "$133^\\circ$",
+      "explanation": "Since $l \\parallel m$, the two marked angles are co-interior (same-side interior) angles for this pair of lines, so they are supplementary: $x = 180^\\circ - 47^\\circ = 133^\\circ$. (Line $n$ is also parallel to both but is not needed for this particular pair of angles.)"
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "category": "Real-Life Application: Parallel Lines",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Two railway tracks run parallel to each other, and a straight road crosses both tracks like a transversal. If the road meets the first track at $62^\\circ$, what angle $x$ does it make with the second track at the corresponding position?",
+      "passageId": "",
+      "tag": "Diagram-Based",
+      "hint": "Corresponding angles formed by a transversal crossing two parallel lines are always equal.",
+      "asy": "size(230);\npair Pv=(0.000,1.300);\npair Qv=(-1.382,-1.300);\ndraw((-3.0,1.3)--(3.0,1.3), black+1.2pt);\ndraw((-3.0,-1.3)--(3.0,-1.3), black+1.2pt);\ndraw((0.657,2.536)--(-2.040,-2.536), black+1.2pt);\ndot(Pv); dot(Qv);\nlabel(\"Track\\ 1\", (3.0,1.3), E);\nlabel(\"Track\\ 2\", (3.0,-1.3), E);\nlabel(\"t\", (0.657,2.536), NE);\ndraw((-2.6,1.48)--(-2.3,1.48), Arrow(5));\ndraw((-2.6,-1.12)--(-2.3,-1.12), Arrow(5));\ndraw(arc(Pv,0.5,0,62), blue);\nlabel(\"$62^\\\\circ$\", Pv+0.78*dir(31.0));\ndraw(arc(Qv,0.34,0,62), heavygreen);\nlabel(\"$x^\\\\circ$\", Qv+0.78*dir(31.0));\n",
+      "options": [
+        {
+          "text": "$180^\\circ$",
+          "asy": "",
+          "explanation": "This would only be true for a full straight angle, not the marked angle."
+        },
+        {
+          "text": "$118^\\circ$",
+          "asy": "",
+          "explanation": "This is the co-interior/supplementary angle, not the corresponding angle."
+        },
+        {
+          "text": "$62^\\circ$",
+          "asy": "",
+          "explanation": "Correct: since the tracks are parallel, corresponding angles with the same transversal are equal."
+        },
+        {
+          "text": "$28^\\circ$",
+          "asy": "",
+          "explanation": "This does not follow from the corresponding angle property here."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "$62^\\circ$",
+      "explanation": "Since the two railway tracks are parallel and the road is a common transversal, the corresponding angles formed are equal. So $x = 62^\\circ$, the same as the given angle."
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "category": "Angle Chasing with a Bent Path (Zig-Zag)",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "In the figure, ray $A$-$A_{up}$ and ray $B$-$B_{up}$ both point straight up, so they are parallel. A path bends once at $M$, joining $A$ to $B$. The angle between the ray at $A$ (extended downward, dashed) and $AM$ is $40^\\circ$, and the angle between the ray at $B$ (extended downward, dashed) and $BM$ is $35^\\circ$. Find $\\angle AMB$ (marked $x$).",
+      "passageId": "",
+      "tag": "Diagram-Based",
+      "hint": "Draw a line through M parallel to both given rays, and use the alternate angle property twice.",
+      "asy": "size(230);\npair A=(-2.000,2.000);\npair Aup=(-2.000,3.500);\npair Adown=(-2.000,0.900);\npair B=(2.000,2.000);\npair Bup=(2.000,3.500);\npair Bdown=(2.000,0.900);\npair M=(0.180,-0.599);\ndraw(A--Aup, black+1.2pt, Arrow(6));\ndraw(A--Adown, gray+0.8pt+dashed);\ndraw(B--Bup, black+1.2pt, Arrow(6));\ndraw(B--Bdown, gray+0.8pt+dashed);\ndraw(A--M--B, black+1.2pt);\ndot(A); dot(B); dot(M);\nlabel(\"A\", A, W);\nlabel(\"B\", B, E);\nlabel(\"M\", M, S);\ndraw(arc(A,0.5,270.0,310.0), blue);\nlabel(\"$40^\\\\circ$\", A+0.85*dir(290.0));\ndraw(arc(B,0.5,234.99999999999994,270.0), purple);\nlabel(\"$35^\\\\circ$\", B+0.85*dir(252.49999999999997));\ndraw(arc(M,0.4,54.99999999999998,130.0), heavygreen);\nlabel(\"$x^\\\\circ$\", M+0.7*dir(92.49999999999999));\n",
+      "options": [
+        {
+          "text": "$140^\\circ$",
+          "asy": "",
+          "explanation": "This does not match the auxiliary-line construction; recheck the angle addition."
+        },
+        {
+          "text": "$180^\\circ$",
+          "asy": "",
+          "explanation": "A, M and B do not lie on a single straight line here, so this cannot be $180^\\circ$."
+        },
+        {
+          "text": "$5^\\circ$",
+          "asy": "",
+          "explanation": "This is the difference, not the sum, of the two given angles — the bend angle uses their sum."
+        },
+        {
+          "text": "$75^\\circ$",
+          "asy": "",
+          "explanation": "Correct: draw an auxiliary vertical line through M parallel to both rays, then add the two alternate angles."
+        }
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "$75^\\circ$",
+      "explanation": "Draw an auxiliary line through $M$ parallel to both AAup and BBup (all three lines are then parallel). By the alternate angle property, the angle between this auxiliary line and $MA$ equals $40^\\circ$, and the angle between the auxiliary line and $MB$ equals $35^\\circ$. Since these two angles together make up $\\angle AMB$, we get $x = 40^\\circ + 35^\\circ = 75^\\circ$."
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "category": "Vertically Opposite Angles (Algebraic)",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Two lines AC and BD intersect at O. $\\angle AOB = 3x^\\circ$ and $\\angle COD = (2x+50)^\\circ$ are vertically opposite angles. Find the value of $x$.",
+      "passageId": "",
+      "tag": "Assertion-Reasoning",
+      "hint": "Set the two vertically opposite angle expressions equal to each other and solve for $x$.",
+      "asy": "size(190);\npair O=(0,0);\npair A=(2.000,0.000);\npair B=(-1.732,1.000);\npair C=(-2.000,0.000);\npair D=(1.732,-1.000);\ndraw(A--C, black+1.2pt);\ndraw(B--D, black+1.2pt);\ndot(O);\nlabel(\"A\", A, E);\nlabel(\"B\", B, NE);\nlabel(\"C\", C, W);\nlabel(\"D\", D, SW);\ndraw(arc(O,0.5,0,150), blue);\nlabel(\"$3x^\\circ$\", O+0.8*dir(75.0), N);\ndraw(arc(O,0.4,180,330), heavygreen);\nlabel(\"$(2x+50)^\\circ$\", O+0.8*dir(255.0), dir(255.0));\n",
+      "options": [
+        {
+          "text": "$x = 50$",
+          "asy": "",
+          "explanation": "Correct: vertically opposite angles are equal, so $3x = 2x+50 \\Rightarrow x=50$."
+        },
+        {
+          "text": "$x = 25$",
+          "asy": "",
+          "explanation": "Solving $3x = 2x+50$ gives $x=50$, not $25$."
+        },
+        {
+          "text": "$x = 100$",
+          "asy": "",
+          "explanation": "Substituting $x=100$ gives $3x=300^\\circ$, which is not a valid angle here."
+        },
+        {
+          "text": "$x = 10$",
+          "asy": "",
+          "explanation": "This does not satisfy $3x = 2x + 50$."
+        }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "$x = 50$",
+      "explanation": "Since $\\angle AOB$ and $\\angle COD$ are vertically opposite angles, they are equal: $3x = 2x + 50 \\Rightarrow x = 50$. (Check: $3(50)=150^\\circ$ and $2(50)+50=150^\\circ$ — equal, as expected.)"
+    },
+    {
+      "id": "q16",
+      "type": "mcq",
+      "category": "Reading Decimal Lengths (Ruler)",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "The ruler below is marked in millimetres, from 0 cm to 6 cm. What length, in centimetres, is the red arrow pointing to?",
+      "passageId": "",
+      "tag": "Diagram-Based",
+      "hint": "Remember: 1 mm = 0.1 cm, so divide the mm value by 10.",
+      "asy": "size(300,90);\nreal u=0.05500000000000001;\ndraw((0,0)--(60*u,0), black+1.2pt);\nfor(int i=0; i<=60; ++i){\n  real h = (i%10==0) ? 0.35 : ((i%5==0) ? 0.22 : 0.13);\n  draw((i*u,0)--(i*u,h), black+0.6pt);\n}\nfor(int i=0; i<=60; i+=10){\n  label(format(\"%d\", i/10), (i*u,-0.28));\n}\ndraw((27*u,-0.55)--(27*u,0.05), red+1.3pt, Arrow(6));\n",
+      "options": [
+        {
+          "text": "27 cm",
+          "asy": "",
+          "explanation": "This is ten times too large; the ruler only goes up to 6 cm."
+        },
+        {
+          "text": "2.7 cm",
+          "asy": "",
+          "explanation": "Correct: 27 mm = 2.7 cm."
+        },
+        {
+          "text": "0.27 cm",
+          "asy": "",
+          "explanation": "This is ten times too small; 27 mm is much longer than 0.27 cm."
+        },
+        {
+          "text": "2.07 cm",
+          "asy": "",
+          "explanation": "27 mm equals 2.7 cm, not 2.07 cm — check the place value."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "2.7 cm",
+      "explanation": "Since $1\\,\\text{mm} = 0.1\\,\\text{cm}$, a mark at 27 mm corresponds to $27 \\times 0.1 = 2.7$ cm."
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "category": "Fractions to Decimals (Tenths)",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Write $\\dfrac{7}{10}$ as a decimal.",
+      "passageId": "",
+      "tag": "",
+      "hint": "A fraction over 10 has exactly one digit after the decimal point.",
+      "asy": "",
+      "options": [
+        {
+          "text": "7.0",
+          "asy": "",
+          "explanation": "This represents the whole number 7, not seven-tenths."
+        },
+        {
+          "text": "70.0",
+          "asy": "",
+          "explanation": "This is far too large; recheck the place value of tenths."
+        },
+        {
+          "text": "0.07",
+          "asy": "",
+          "explanation": "This represents $\\dfrac{7}{100}$, not $\\dfrac{7}{10}$."
+        },
+        {
+          "text": "0.7",
+          "asy": "",
+          "explanation": "Correct: a fraction with denominator 10 is written with one digit after the decimal point."
+        }
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "0.7",
+      "explanation": "$\\dfrac{7}{10}$ means 7 parts out of 10, which is written in decimal form as $0.7$ (7 in the tenths place)."
+    },
+    {
+      "id": "q18",
+      "type": "mcq",
+      "category": "Decimal Place Value",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "What is the place value of the digit $7$ in the number $45.278$?",
+      "passageId": "",
+      "tag": "",
+      "hint": "Count the position of the digit after the decimal point: 1st position = tenths.",
+      "asy": "",
+      "options": [
+        {
+          "text": "7",
+          "asy": "",
+          "explanation": "This would be its place value only if it were in the units (ones) place, but here it is in the tenths place."
+        },
+        {
+          "text": "70",
+          "asy": "",
+          "explanation": "This is the place value of a digit in the tens place, which is far from the decimal point here."
+        },
+        {
+          "text": "0.7",
+          "asy": "",
+          "explanation": "Correct: the digit 7 is in the tenths place, so its place value is $7 \\times \\dfrac{1}{10} = 0.7$."
+        },
+        {
+          "text": "0.07",
+          "asy": "",
+          "explanation": "This is the place value of a digit in the hundredths place, not the tenths place."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "0.7",
+      "explanation": "In $45.278$, reading after the decimal point the digits are tenths (7), hundredths (2), thousandths-level (8, though this chapter focuses on tenths/hundredths). The digit 7 is in the tenths place, so its place value is $\\dfrac{7}{10} = 0.7$."
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "category": "Comparing Decimals",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Which of the following is greater: $3.45$ or $3.5$?",
+      "passageId": "",
+      "tag": "",
+      "hint": "Write both decimals with the same number of digits after the decimal point before comparing.",
+      "asy": "",
+      "options": [
+        {
+          "text": "Cannot be compared",
+          "asy": "",
+          "explanation": "Decimals can always be compared by writing them with the same number of decimal places."
+        },
+        {
+          "text": "They are equal",
+          "asy": "",
+          "explanation": "$3.45$ and $3.50$ are different numbers — they are not equal."
+        },
+        {
+          "text": "3.45",
+          "asy": "",
+          "explanation": "Rewriting $3.5$ as $3.50$ makes it clear that $3.50 > 3.45$."
+        },
+        {
+          "text": "3.5",
+          "asy": "",
+          "explanation": "Correct: $3.5 = 3.50$, and $3.50 > 3.45$ since $50$ hundredths is more than $45$ hundredths."
+        }
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "3.5",
+      "explanation": "Write both numbers with two decimal places: $3.45$ and $3.50$. Comparing hundredths, $50 > 45$, so $3.5 > 3.45$."
+    },
+    {
+      "id": "q20",
+      "type": "mcq",
+      "category": "Converting Millimetres to Centimetres",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "The ruler below is marked in millimetres, from 0 cm to 8 cm. Convert the length shown by the red arrow (56 mm) into centimetres.",
+      "passageId": "",
+      "tag": "Diagram-Based",
+      "hint": "Multiply the number of millimetres by 0.1 to convert to centimetres.",
+      "asy": "size(300,90);\nreal u=0.05500000000000001;\ndraw((0,0)--(80*u,0), black+1.2pt);\nfor(int i=0; i<=80; ++i){\n  real h = (i%10==0) ? 0.35 : ((i%5==0) ? 0.22 : 0.13);\n  draw((i*u,0)--(i*u,h), black+0.6pt);\n}\nfor(int i=0; i<=80; i+=10){\n  label(format(\"%d\", i/10), (i*u,-0.28));\n}\ndraw((56*u,-0.55)--(56*u,0.05), red+1.3pt, Arrow(6));\n",
+      "options": [
+        {
+          "text": "5.6 cm",
+          "asy": "",
+          "explanation": "Correct: 56 mm = 5.6 cm."
+        },
+        {
+          "text": "0.56 cm",
+          "asy": "",
+          "explanation": "This is ten times too small."
+        },
+        {
+          "text": "560 cm",
+          "asy": "",
+          "explanation": "This is one hundred times too large."
+        },
+        {
+          "text": "5.06 cm",
+          "asy": "",
+          "explanation": "This misplaces a digit; 56 mm is 5.6 cm, not 5.06 cm."
+        }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "5.6 cm",
+      "explanation": "Since $1\\,\\text{mm} = 0.1\\,\\text{cm}$, we have $56\\,\\text{mm} = 56 \\times 0.1\\,\\text{cm} = 5.6\\,\\text{cm}$."
+    },
+    {
+      "id": "q21",
+      "type": "mcq",
+      "category": "Addition of Decimals",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Find the sum: $15.34 + 2.68$.",
+      "passageId": "",
+      "tag": "",
+      "hint": "Line up the decimal points and add column by column, starting from the hundredths.",
+      "asy": "",
+      "options": [
+        {
+          "text": "18.02",
+          "asy": "",
+          "explanation": "Correct: adding hundredths, tenths and units with carrying gives 18.02."
+        },
+        {
+          "text": "18.92",
+          "asy": "",
+          "explanation": "Recheck the addition of the tenths column after carrying from hundredths."
+        },
+        {
+          "text": "17.02",
+          "asy": "",
+          "explanation": "The units digit is incorrect; recheck the carrying from the tenths column."
+        },
+        {
+          "text": "17.92",
+          "asy": "",
+          "explanation": "Recheck the addition of the hundredths column: $4+8=12$, carry 1."
+        }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "18.02",
+      "explanation": "Align by place value: \\\\ $15.34$ \\\\ $+\\ 2.68$ \\\\ Hundredths: $4+8=12$, write 2, carry 1. Tenths: $3+6+1=10$, write 0, carry 1. Units: $5+2+1=8$. Tens: $1$. Result: $18.02$."
+    },
+    {
+      "id": "q22",
+      "type": "mcq",
+      "category": "Subtraction of Decimals",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Find the difference: $25.9 - 6.47$.",
+      "passageId": "",
+      "tag": "",
+      "hint": "Rewrite 25.9 as 25.90 first, then subtract column by column, borrowing where needed.",
+      "asy": "",
+      "options": [
+        {
+          "text": "19.43",
+          "asy": "",
+          "explanation": "Correct: $25.90 - 6.47 = 19.43$."
+        },
+        {
+          "text": "20.43",
+          "asy": "",
+          "explanation": "This is too large by 1; recheck the borrowing chain."
+        },
+        {
+          "text": "18.43",
+          "asy": "",
+          "explanation": "Recheck the units-column subtraction after borrowing."
+        },
+        {
+          "text": "19.53",
+          "asy": "",
+          "explanation": "Recheck borrowing in the hundredths column."
+        }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "19.43",
+      "explanation": "Write $25.9$ as $25.90$ so both numbers have two decimal places: $25.90 - 6.47$. Hundredths: $0-7$ needs borrowing, giving $10-7=3$; Tenths: after borrowing, $8-4=4$; Units: $5-6$ needs borrowing giving $15-6=9$; Tens: after borrowing, $1$. Result: $19.43$."
+    },
+    {
+      "id": "q23",
+      "type": "mcq",
+      "category": "Word Problem: Adding Lengths in Tenths",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "A honeybee's antenna is $0.8$ cm long and its body (thorax + abdomen) is $1.4$ cm long. What is the total length of the antenna and body together?",
+      "passageId": "",
+      "tag": "",
+      "hint": "Add the tenths first, then carry over to the units place if the sum of tenths exceeds 9.",
+      "asy": "",
+      "options": [
+        {
+          "text": "2.1 cm",
+          "asy": "",
+          "explanation": "Recheck the addition of the tenths: $8+4=12$ tenths $=1.2$, so the units digit increases by 1."
+        },
+        {
+          "text": "2.4 cm",
+          "asy": "",
+          "explanation": "This does not match the given values; recheck the addition."
+        },
+        {
+          "text": "1.2 cm",
+          "asy": "",
+          "explanation": "This ignores the carrying into the units place."
+        },
+        {
+          "text": "2.2 cm",
+          "asy": "",
+          "explanation": "Correct: $0.8 + 1.4 = 2.2$."
+        }
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "2.2 cm",
+      "explanation": "Adding the two lengths in tenths: $0.8 + 1.4 = 2.2$ cm (since $8$ tenths $+ 4$ tenths $=12$ tenths $= 1$ whole and $2$ tenths, added to the $1$ whole already there)."
+    },
+    {
+      "id": "q24",
+      "type": "mcq",
+      "category": "Hundredths as Decimals",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Write $\\dfrac{234}{100}$ in correct decimal notation.",
+      "passageId": "",
+      "tag": "",
+      "hint": "Divide 234 by 100 by moving the decimal point two places to the left.",
+      "asy": "",
+      "options": [
+        {
+          "text": "0.234",
+          "asy": "",
+          "explanation": "This treats 234 as thousandths, but the denominator here is 100, not 1000."
+        },
+        {
+          "text": "234.0",
+          "asy": "",
+          "explanation": "This ignores the denominator of 100 completely."
+        },
+        {
+          "text": "2.34",
+          "asy": "",
+          "explanation": "Correct: 234 hundredths = 2 wholes and 34 hundredths = 2.34."
+        },
+        {
+          "text": "23.4",
+          "asy": "",
+          "explanation": "This is ten times too large; recheck how many digits belong before the decimal point."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "2.34",
+      "explanation": "$\\dfrac{234}{100} = \\dfrac{200}{100} + \\dfrac{34}{100} = 2 + 0.34 = 2.34$."
+    },
+    {
+      "id": "q25",
+      "type": "mcq",
+      "category": "Ordering Decimals",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Arrange the following in increasing order: $0.5,\\ 0.45,\\ 0.54,\\ 0.05$.",
+      "passageId": "",
+      "tag": "",
+      "hint": "Write all numbers with the same number of decimal places, then compare digit by digit.",
+      "asy": "",
+      "options": [
+        {
+          "text": "$0.54 < 0.5 < 0.45 < 0.05$",
+          "asy": "",
+          "explanation": "This is the decreasing order, not increasing."
+        },
+        {
+          "text": "$0.05 < 0.45 < 0.5 < 0.54$",
+          "asy": "",
+          "explanation": "Correct: comparing hundredths ($05 < 45 < 50 < 54$) gives this order."
+        },
+        {
+          "text": "$0.05 < 0.5 < 0.45 < 0.54$",
+          "asy": "",
+          "explanation": "$0.5$ (i.e. $0.50$) is greater than $0.45$, so this order is wrong."
+        },
+        {
+          "text": "$0.45 < 0.05 < 0.5 < 0.54$",
+          "asy": "",
+          "explanation": "$0.05$ is the smallest of all four, so it must come first."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$0.05 < 0.45 < 0.5 < 0.54$",
+      "explanation": "Write each with two decimal places: $0.50, 0.45, 0.54, 0.05$. Comparing as hundredths ($50, 45, 54, 05$), the increasing order is $05 < 45 < 50 < 54$, i.e. $0.05 < 0.45 < 0.5 < 0.54$."
+    },
+    {
+      "id": "q26",
+      "type": "mcq",
+      "category": "Word Problem: Length Conversion",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "A rope is $2$ m $45$ cm long. Express the length of the rope in metres, as a decimal.",
+      "passageId": "",
+      "tag": "",
+      "hint": "Convert the centimetres part to metres first (divide by 100), then add to the metres part.",
+      "asy": "",
+      "options": [
+        {
+          "text": "2.045 m",
+          "asy": "",
+          "explanation": "This treats 45 cm as 0.045 m, but $1\\,\\text{cm} = 0.01\\,\\text{m}$, so 45 cm = 0.45 m, not 0.045 m."
+        },
+        {
+          "text": "2.54 m",
+          "asy": "",
+          "explanation": "The digits are reversed; recheck that 45 cm corresponds to the digits 4 and 5 after the decimal point, in that order."
+        },
+        {
+          "text": "2.45 m",
+          "asy": "",
+          "explanation": "Correct: 45 cm = 0.45 m, so the rope is $2 + 0.45 = 2.45$ m long."
+        },
+        {
+          "text": "24.5 m",
+          "asy": "",
+          "explanation": "This is ten times too large."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "2.45 m",
+      "explanation": "Since $1\\,\\text{cm} = 0.01\\,\\text{m}$, $45\\,\\text{cm} = 45 \\times 0.01\\,\\text{m} = 0.45\\,\\text{m}$. So the total length is $2\\,\\text{m} + 0.45\\,\\text{m} = 2.45\\,\\text{m}$."
+    },
+    {
+      "id": "q27",
+      "type": "mcq",
+      "category": "Reading a Number Line (Hundredths)",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "The number line below runs from 0 to 1, with minor marks at every hundredth. What decimal number does the red arrow point to?",
+      "passageId": "",
+      "tag": "Diagram-Based",
+      "hint": "Count the number of small divisions from 0 to where the arrow points; each division is 0.01.",
+      "asy": "size(320,90);\nreal u=0.06;\ndraw((0,0)--(100*u,0), black+1.2pt);\nfor(int i=0; i<=100; ++i){\n  real h = (i%10==0) ? 0.32 : ((i%5==0) ? 0.2 : 0.11);\n  draw((i*u,0)--(i*u,h), black+0.55pt);\n}\nfor(int i=0; i<=100; i+=10){\n  label(format(\"%.1f\", 0+i/100.0), (i*u,-0.3));\n}\ndraw((37*u,-0.55)--(37*u,0.05), red+1.3pt, Arrow(6));\n",
+      "options": [
+        {
+          "text": "0.73",
+          "asy": "",
+          "explanation": "The digits appear reversed; recheck which mark the arrow is at."
+        },
+        {
+          "text": "3.7",
+          "asy": "",
+          "explanation": "This is ten times too large for a mark on a 0-to-1 number line."
+        },
+        {
+          "text": "0.037",
+          "asy": "",
+          "explanation": "This would be the case if the number line ran from 0 to 0.1, not 0 to 1."
+        },
+        {
+          "text": "0.37",
+          "asy": "",
+          "explanation": "Correct: the arrow is 37 hundredths of the way from 0 to 1."
+        }
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "0.37",
+      "explanation": "Each small division on the number line represents $0.01$ (one hundredth). The arrow is at the $37^{\\text{th}}$ division from 0, so it points to $37 \\times 0.01 = 0.37$."
     },
     {
       "id": "q28",
       "type": "mcq",
-      "category": "Parallel Lines",
+      "category": "Reading Decimals Correctly",
       "marks": 3,
-      "difficulty": "easy",
-      "question": "If line $a$ is parallel to line $b$, and line $b$ is parallel to line $c$, which of the following geometric statements MUST be true about lines $a$ and $c$?",
+      "difficulty": "medium",
+      "question": "How should the decimal $0.274$ be correctly read aloud?",
       "passageId": "",
-      "tag": "Deduction",
-      "hint": "Transitive property of parallel lines.",
+      "tag": "",
+      "hint": "Read every digit after the decimal point one at a time — never combine them into a bigger number.",
       "asy": "",
       "options": [
         {
-          "text": "They intersect at exactly one point.",
+          "text": "zero point two hundred seventy four",
           "asy": "",
-          "explanation": "Incorrect."
+          "explanation": "This mistakenly reads the digits after the point as a 3-digit whole number, which is incorrect."
         },
         {
-          "text": "They are perpendicular to each other.",
+          "text": "zero point twenty-seven point four",
           "asy": "",
-          "explanation": "Incorrect."
+          "explanation": "Digits after the decimal point are never grouped or read with an extra decimal point."
         },
         {
-          "text": "They are parallel to each other.",
+          "text": "zero point two seven four",
           "asy": "",
-          "explanation": "Correct. Lines parallel to the same line are parallel to each other."
+          "explanation": "Correct: each digit after the decimal point is read separately, one at a time."
         },
         {
-          "text": "They form a $45^\\circ$ angle.",
+          "text": "two hundred seventy four",
           "asy": "",
-          "explanation": "Incorrect."
+          "explanation": "This ignores the decimal point and the leading zero entirely, changing the value read aloud."
         }
       ],
       "correctIndex": 2,
-      "correctAnswer": "They are parallel to each other.",
-      "explanation": "By definition, if two distinct lines are both parallel to a third line, they never intersect the third line. In Euclidean geometry, lines parallel to the same line are strictly parallel to each other."
+      "correctAnswer": "zero point two seven four",
+      "explanation": "When reading a decimal aloud, every digit after the decimal point is read individually, not as a combined number. So $0.274$ is read as \"zero point two seven four\", NOT as \"zero point two hundred seventy four\"."
     },
     {
       "id": "q29",
       "type": "mcq",
-      "category": "Ratio and Proportion",
+      "category": "Word Problem: Difference of Decimal Lengths",
       "marks": 3,
       "difficulty": "medium",
-      "question": "A linear pair consists of two angles in the ratio $4:5$. What is the absolute difference between their measures?",
+      "question": "One fish is $8.4$ cm long and another fish is $6.9$ cm long. How much longer is the first fish than the second?",
       "passageId": "",
-      "tag": "Calculation",
-      "hint": "Find both angles first using their sum ($180^\\circ$).",
+      "tag": "",
+      "hint": "Since 4 tenths is less than 9 tenths, borrow 1 from the units place before subtracting.",
       "asy": "",
       "options": [
         {
-          "text": "$10^\\circ$",
+          "text": "15.3 cm",
           "asy": "",
-          "explanation": "Incorrect."
+          "explanation": "This appears to add rather than subtract the two lengths."
         },
         {
-          "text": "$20^\\circ$",
+          "text": "1.6 cm",
           "asy": "",
-          "explanation": "Correct. Angles are $80^\\circ$ and $100^\\circ$. The difference is $20^\\circ$."
+          "explanation": "Recheck the subtraction of tenths: borrowing gives $14-9=5$ tenths, not 6."
         },
         {
-          "text": "$30^\\circ$",
+          "text": "1.5 cm",
           "asy": "",
-          "explanation": "Incorrect."
+          "explanation": "Correct: $8.4 - 6.9 = 1.5$."
         },
         {
-          "text": "$40^\\circ$",
+          "text": "2.5 cm",
           "asy": "",
-          "explanation": "Incorrect."
+          "explanation": "This does not match the given lengths; recheck the units-column subtraction."
         }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "$20^\\circ$",
-      "explanation": "The sum of a linear pair is $180^\\circ$. The ratio is $4:5$, so $4x + 5x = 180^\\circ \\implies 9x = 180^\\circ \\implies x = 20^\\circ$. The angles are $80^\\circ$ and $100^\\circ$. The difference is $100^\\circ - 80^\\circ = 20^\\circ$."
+      "correctIndex": 2,
+      "correctAnswer": "1.5 cm",
+      "explanation": "Difference $= 8.4 - 6.9$. Tenths: $4-9$ needs borrowing, giving $14-9=5$ tenths. Units: after borrowing, $7-6=1$. Result: $1.5$ cm."
     },
     {
       "id": "q30",
       "type": "mcq",
-      "category": "Perpendicular Lines",
+      "category": "Place Value: Expanded Form to Decimal",
       "marks": 3,
-      "difficulty": "easy",
-      "question": "If two straight lines intersect such that exactly one of the angles formed is verified to be $90^\\circ$, what can logically be concluded about the other three angles?",
+      "difficulty": "medium",
+      "question": "Write the number represented by $7 \\times 10 + 0 \\times 1 + 5 \\times \\dfrac{1}{10}$ in decimal form.",
       "passageId": "",
-      "tag": "Deduction",
-      "hint": "Use linear pair and vertically opposite angle properties.",
+      "tag": "",
+      "hint": "Match each term to its correct place-value column: tens, units, then tenths.",
       "asy": "",
       "options": [
         {
-          "text": "They are all acute angles.",
+          "text": "70.5",
           "asy": "",
-          "explanation": "Incorrect."
+          "explanation": "Correct: $7$ tens, $0$ units, and $5$ tenths gives $70.5$."
         },
         {
-          "text": "One is $90^\\circ$ and two are acute.",
+          "text": "7.05",
           "asy": "",
-          "explanation": "Incorrect."
+          "explanation": "This misplaces the tens digit; recheck which place value the '7' represents here."
         },
         {
-          "text": "They are all exactly $90^\\circ$.",
+          "text": "75.0",
           "asy": "",
-          "explanation": "Correct. Linear pairs to $90^\\circ$ are $90^\\circ$, and vertically opposite is $90^\\circ$."
+          "explanation": "This ignores the fact that the 5 belongs in the tenths place, not the units place."
         },
         {
-          "text": "They are all obtuse angles.",
+          "text": "0.705",
           "asy": "",
-          "explanation": "Incorrect."
+          "explanation": "This treats all digits as being after the decimal point, but the '7' represents 7 tens."
         }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "They are all exactly $90^\\circ$.",
-      "explanation": "If one angle is $90^\\circ$, its vertically opposite angle is also $90^\\circ$. The adjacent angles form linear pairs with the $90^\\circ$ angle, so they must be $180^\\circ - 90^\\circ = 90^\\circ$. Therefore, all four angles are $90^\\circ$."
+      "correctIndex": 0,
+      "correctAnswer": "70.5",
+      "explanation": "$7 \\times 10 = 70$ (tens place), $0 \\times 1 = 0$ (units place), $5 \\times \\dfrac{1}{10} = 0.5$ (tenths place). Adding these: $70 + 0 + 0.5 = 70.5$."
     }
   ]
 }
