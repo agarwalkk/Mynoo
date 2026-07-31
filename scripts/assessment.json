@@ -1,771 +1,1192 @@
 {
-  "title": "The Constitution of India Master Assessment",
-  "passages": [],
+  "title": "Parallel and Intersecting Lines Assessment",
   "questions": [
     {
       "id": "q1",
       "type": "mcq",
-      "category": "Preservation of the Constitution",
+      "category": "Intersecting Lines",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Which gas is filled inside the glass case in the Parliament to preserve the original manuscript of the Constitution of India?[cite: 1]",
+      "question": "At how many maximum points can two distinct straight lines intersect on a plane?",
       "passageId": "",
-      "tag": "Preservation",
-      "hint": "It is a gas that does not react with paper or ink.[cite: 1]",
+      "tag": "",
+      "hint": "Think about lines crossing each other.",
+      "diagramSpec": null,
       "options": [
-        { "text": "Oxygen", "explanation": "Oxygen is highly reactive and would support degradation, so it is incorrect." },
-        { "text": "Helium", "explanation": "Helium is an inert gas that does not react with paper or ink, helping to preserve the document safely over time.[cite: 1]" },
-        { "text": "Nitrogen", "explanation": "Nitrogen is not mentioned as the preserving gas in this chapter." },
-        { "text": "Hydrogen", "explanation": "Hydrogen is highly flammable and reactive, making it unsuitable for preservation." }
+        {
+          "text": "$0$",
+          "explanation": "Intersecting lines meet at least once."
+        },
+        {
+          "text": "$1$",
+          "explanation": "Two distinct straight lines can intersect at a maximum of exactly one point."
+        },
+        {
+          "text": "$2$",
+          "explanation": "Straight lines cannot curve to intersect twice."
+        },
+        {
+          "text": "Infinite",
+          "explanation": "Only identical (coincident) lines have infinite points of intersection."
+        }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Helium",
-      "explanation": "According to the chapter text and figures, the Constitution of India is preserved in a helium-filled glass case because helium does not react with paper or ink.[cite: 1]"
+      "correctAnswer": "$1$",
+      "explanation": "Two distinct straight lines on a plane can meet at a maximum of one single point. If they do not meet, they are parallel."
     },
     {
       "id": "q2",
       "type": "mcq",
-      "category": "Key Dates",
+      "category": "Linear Pair",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "On which exact date did the Constituent Assembly complete and adopt the Constitution of India?[cite: 1]",
+      "difficulty": "easy",
+      "question": "What is the sum of the measures of two angles that form a linear pair?",
       "passageId": "",
-      "tag": "Key Dates",
-      "hint": "This day is celebrated in schools and institutions but is different from Republic Day.",
+      "tag": "",
+      "hint": "A linear pair forms a straight line.",
+      "diagramSpec": null,
       "options": [
-        { "text": "26 January 1950", "explanation": "This is the date when the Constitution came into effect, celebrated as Republic Day.[cite: 1]" },
-        { "text": "9 December 1946", "explanation": "This is the date when the Constituent Assembly was first formed.[cite: 1]" },
-        { "text": "26 November 1949", "explanation": "This is the date when the drafting work was completed and the Constitution was adopted.[cite: 1]" },
-        { "text": "15 August 1947", "explanation": "This is India's Independence Day." }
+        {
+          "text": "$90^{\\circ}$",
+          "explanation": "This is the sum of complementary angles."
+        },
+        {
+          "text": "$180^{\\circ}$",
+          "explanation": "Adjacent angles forming a straight line sum to $180^{\\circ}$."
+        },
+        {
+          "text": "$270^{\\circ}$",
+          "explanation": "This is a reflex angle measure."
+        },
+        {
+          "text": "$360^{\\circ}$",
+          "explanation": "This is a complete angle."
+        }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "26 November 1949",
-      "explanation": "The textbook explicitly states that the drafting work was completed and adopted as the Constitution of India on 26 November 1949.[cite: 1]"
+      "correctIndex": 1,
+      "correctAnswer": "$180^{\\circ}$",
+      "explanation": "Adjacent angles formed by two lines intersecting each other on a straight line are called a linear pair. They always add up to $180^{\\circ}$."
     },
     {
       "id": "q3",
       "type": "mcq",
-      "category": "Constituent Assembly Composition",
+      "category": "Vertically Opposite Angles",
       "marks": 1,
-      "difficulty": "hard",
-      "question": "How many women members were initially part of the 389-member Constituent Assembly formed in 1946?[cite: 1]",
+      "difficulty": "easy",
+      "question": "If two lines intersect and one angle is $45^{\\circ}$, what is the measure of its vertically opposite angle?",
       "passageId": "",
-      "tag": "Assembly Composition",
-      "hint": "It is a double-digit prime number under 20.",
+      "tag": "",
+      "hint": "Vertically opposite angles have a specific relationship.",
+      "diagramSpec": {
+        "type": "intersecting_lines",
+        "knownAngle": 45,
+        "knownLabel": "45°",
+        "unknownLabel": "?",
+        "position": "vertically_opposite"
+      },
       "options": [
-        { "text": "9 members", "explanation": "Incorrect based on the chapter details." },
-        { "text": "15 members", "explanation": "The text states that out of the initial members, 15 were women.[cite: 1]" },
-        { "text": "22 members", "explanation": "Incorrect. 22 was the original number of Parts in the Constitution.[cite: 1]" },
-        { "text": "12 members", "explanation": "Incorrect. 12 is the current number of schedules, not the number of women.[cite: 1]" }
+        {
+          "text": "$45^{\\circ}$",
+          "explanation": "Vertically opposite angles are equal."
+        },
+        {
+          "text": "$90^{\\circ}$",
+          "explanation": "Incorrect relationship."
+        },
+        {
+          "text": "$135^{\\circ}$",
+          "explanation": "This would be the adjacent angle (linear pair), not the vertically opposite one."
+        },
+        {
+          "text": "$180^{\\circ}$",
+          "explanation": "This is the sum of a linear pair."
+        }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "15 members",
-      "explanation": "The text states: 'a Constituent Assembly was formed in 1946, initially with 389 members... of which 15 were women.'[cite: 1]"
+      "correctIndex": 0,
+      "correctAnswer": "$45^{\\circ}$",
+      "explanation": "When two lines intersect, vertically opposite angles are always equal to each other. Therefore, if one is $45^{\\circ}$, the other is also $45^{\\circ}$."
     },
     {
       "id": "q4",
       "type": "mcq",
-      "category": "Preamble Vocabulary",
+      "category": "Perpendicular Lines",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "According to the Preamble, what does the term **'REPUBLIC'** signify regarding the head of the state?[cite: 1]",
+      "difficulty": "easy",
+      "question": "What is the measure of each angle formed when two lines are perpendicular to each other?",
       "passageId": "",
-      "tag": "Preamble Principles",
-      "hint": "Think about how our President gets office versus a King.",
+      "tag": "",
+      "hint": "Perpendicular lines form a square corner.",
+      "diagramSpec": null,
       "options": [
-        { "text": "The head of the state is a hereditary king.", "explanation": "A hereditary position belongs to a monarchy, not a republic.[cite: 1]" },
-        { "text": "The head of the state is nominated by an outside foreign power.", "explanation": "This contradicts sovereignty and the definition of a republic.[cite: 1]" },
-        { "text": "The head of the state is an elected person and not a hereditary position.", "explanation": "The Preamble infobox defines Republic as having an elected head rather than a hereditary system.[cite: 1]" },
-        { "text": "The head of the state has absolute power to alter the rulebook at will.", "explanation": "Even the head of state must follow the constitutional provisions.[cite: 1]" }
+        {
+          "text": "$45^{\\circ}$",
+          "explanation": "Incorrect angle measure."
+        },
+        {
+          "text": "$90^{\\circ}$",
+          "explanation": "Perpendicular lines intersect at right angles."
+        },
+        {
+          "text": "$180^{\\circ}$",
+          "explanation": "This is a straight angle."
+        },
+        {
+          "text": "$360^{\\circ}$",
+          "explanation": "This is a full rotation."
+        }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "The head of the state is an elected person and not a hereditary position.",
-      "explanation": "The text under the Preamble chart clarifies: 'REPUBLIC: The head of the state is an elected person and not a hereditary position.'[cite: 1]"
+      "correctIndex": 1,
+      "correctAnswer": "$90^{\\circ}$",
+      "explanation": "Perpendicular lines are a pair of lines which intersect each other at right angles, which measure exactly $90^{\\circ}$."
     },
     {
       "id": "q5",
       "type": "mcq",
-      "category": "Constitutional Amendments",
+      "category": "Transversals",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "Which specific Constitutional Amendment Act integrated the **Panchayati Raj System** into the Constitution of India in 1992?[cite: 1]",
+      "difficulty": "easy",
+      "question": "When a single transversal line intersects two distinct lines, how many angles are formed in total?",
       "passageId": "",
-      "tag": "Amendments",
-      "hint": "It is a number in the seventies.",
+      "tag": "",
+      "hint": "Count the angles at each intersection point.",
+      "diagramSpec": null,
       "options": [
-        { "text": "42nd Constitutional Amendment Act", "explanation": "The 42nd Amendment occurred in 1976 and added words to the Preamble and Part IV-A.[cite: 1]" },
-        { "text": "73rd Constitutional Amendment Act", "explanation": "The text explicitly states that the Panchayati Raj System was integrated in 1992 with the 73rd Constitutional Amendment Act.[cite: 1]" },
-        { "text": "86th Constitutional Amendment Act", "explanation": "Incorrect based on the provided text." },
-        { "text": "50th Constitutional Amendment Act", "explanation": "Incorrect based on the provided text." }
+        {
+          "text": "$4$",
+          "explanation": "This is the number of angles at a single intersection point."
+        },
+        {
+          "text": "$6$",
+          "explanation": "Incorrect count."
+        },
+        {
+          "text": "$8$",
+          "explanation": "Four angles at each of the two intersection points."
+        },
+        {
+          "text": "$10$",
+          "explanation": "Incorrect count."
+        }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "73rd Constitutional Amendment Act",
-      "explanation": "The textbook states under 'Let's Explore': 'This was not a part of the original Constitution; it was integrated in it in 1992 with the 73rd Constitutional Amendment Act.'[cite: 1]"
+      "correctIndex": 2,
+      "correctAnswer": "$8$",
+      "explanation": "A transversal intersecting two lines creates two intersection points. Each intersection point forms $4$ angles, resulting in a total of $8$ angles."
     },
     {
       "id": "q6",
       "type": "mcq",
-      "category": "Constitutional Structure",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "How many **Parts** and **Schedules** did the Constitution of India contain when it originally came into effect in 1950?[cite: 1]",
+      "category": "Linear Pair",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Two angles form a linear pair. If their measures are $x$ and $x + 20^{\\circ}$, what is the value of $x$?",
       "passageId": "",
-      "tag": "Structure",
-      "hint": "Look under the 'Don't Miss Out' section regarding historical figures.[cite: 1]",
+      "tag": "",
+      "hint": "Set their sum to $180^{\\circ}$.",
+      "diagramSpec": null,
       "options": [
-        { "text": "25 parts and 12 schedules", "explanation": "This is the current structural composition of the Constitution, not the original one.[cite: 1]" },
-        { "text": "22 parts and 8 schedules", "explanation": "The textbook explicitly states: 'When it came into effect, it had 22 Parts and 8 schedules.'[cite: 1]" },
-        { "text": "15 parts and 10 schedules", "explanation": "Incorrect structural division." },
-        { "text": "389 parts and 299 schedules", "explanation": "These numbers represent the membership counts of the Constituent Assembly.[cite: 1]" }
+        {
+          "text": "$80^{\\circ}$",
+          "explanation": "$80^{\\circ} + (80^{\\circ} + 20^{\\circ}) = 180^{\\circ}$."
+        },
+        {
+          "text": "$100^{\\circ}$",
+          "explanation": "This is $x+20$, not $x$."
+        },
+        {
+          "text": "$90^{\\circ}$",
+          "explanation": "$90 + 110 \\neq 180$."
+        },
+        {
+          "text": "$160^{\\circ}$",
+          "explanation": "Incorrect."
+        }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "22 parts and 8 schedules",
-      "explanation": "The 'Don't Miss Out' box states: 'When it came into effect, it had 22 Parts and 8 schedules.'[cite: 1]"
+      "correctIndex": 0,
+      "correctAnswer": "$80^{\\circ}$",
+      "explanation": "Since the angles form a linear pair, $x + (x + 20^{\\circ}) = 180^{\\circ}$. Solving this gives $2x + 20^{\\circ} = 180^{\\circ} \\implies 2x = 160^{\\circ} \\implies x = 80^{\\circ}$."
     },
     {
       "id": "q7",
       "type": "mcq",
-      "category": "Art and Calligraphy",
-      "marks": 1,
+      "category": "Intersecting Lines",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "Who was the handwritten calligrapher of the initial text of the Indian Constitution?[cite: 1]",
+      "question": "Two lines intersect at a point. If one of the angles formed is $120^{\\circ}$, what is the measure of an angle adjacent to it?",
       "passageId": "",
-      "tag": "Art and Calligraphy",
-      "hint": "His full name is mentioned in the final sections as a key artist.[cite: 1]",
+      "tag": "",
+      "hint": "Adjacent angles on an intersecting line form a linear pair.",
+      "diagramSpec": null,
       "options": [
-        { "text": "Nandalal Bose", "explanation": "Nandalal Bose and his team illustrated the pages, but did not write the text.[cite: 1]" },
-        { "text": "Dr. B.R. Ambedkar", "explanation": "Dr. Ambedkar was the chairman of the Drafting Committee, not the calligrapher.[cite: 1]" },
-        { "text": "Prem Behari Narain Raizada", "explanation": "The text states: 'Calligrapher Prem Behari Narain Raizada wrote its text by hand'.[cite: 1]" },
-        { "text": "Dr. Rajendra Prasad", "explanation": "Dr. Rajendra Prasad was the Chairman of the Constituent Assembly.[cite: 1]" }
+        {
+          "text": "$60^{\\circ}$",
+          "explanation": "Adjacent angles sum to $180^{\\circ}$."
+        },
+        {
+          "text": "$90^{\\circ}$",
+          "explanation": "Incorrect sum."
+        },
+        {
+          "text": "$120^{\\circ}$",
+          "explanation": "This is the vertically opposite angle, not the adjacent one."
+        },
+        {
+          "text": "$180^{\\circ}$",
+          "explanation": "This is the sum, not the individual angle."
+        }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "Prem Behari Narain Raizada",
-      "explanation": "The text clarifies that the document is a work of art where Calligrapher Prem Behari Narain Raizada penned the text by hand.[cite: 1]"
+      "correctIndex": 0,
+      "correctAnswer": "$60^{\\circ}$",
+      "explanation": "Adjacent angles formed by intersecting lines make a linear pair. Therefore, their sum is $180^{\\circ}$. The adjacent angle is $180^{\\circ} - 120^{\\circ} = 60^{\\circ}$."
     },
     {
       "id": "q8",
       "type": "mcq",
-      "category": "Global Learnings",
-      "marks": 1,
-      "difficulty": "hard",
-      "question": "From which country's constitution did the makers of the Indian Constitution derive inspiration for the **Directive Principles of State Policy (DPSP)**?[cite: 1]",
+      "category": "Parallel Lines and Transversals",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "A transversal intersects two parallel lines. If one angle is $135^{\\circ}$, what is the measure of its alternate interior angle?",
       "passageId": "",
-      "tag": "Global Influences",
-      "hint": "It is an island nation in Europe.",
+      "tag": "",
+      "hint": "Alternate interior angles have a specific equality relationship.",
+      "diagramSpec": null,
       "options": [
-        { "text": "French Constitution", "explanation": "The French Constitution inspired the ideals of liberty, equality, and fraternity.[cite: 1]" },
-        { "text": "American Constitution", "explanation": "The American Constitution helped shape the concept of an independent judiciary.[cite: 1]" },
-        { "text": "Irish Constitution", "explanation": "The text explicitly states: 'the idea of the Directive Principles of State Policy... was inspired by the Irish Constitution'.[cite: 1]" },
-        { "text": "British Constitution", "explanation": "Incorrect based on the detailed influences section." }
+        {
+          "text": "$45^{\\circ}$",
+          "explanation": "This would be the consecutive interior angle."
+        },
+        {
+          "text": "$90^{\\circ}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$135^{\\circ}$",
+          "explanation": "Alternate interior angles are equal."
+        },
+        {
+          "text": "$180^{\\circ}$",
+          "explanation": "Incorrect."
+        }
       ],
       "correctIndex": 2,
-      "correctAnswer": "Irish Constitution",
-      "explanation": "The text states under 'Learnings from across the world' that the idea of the Directive Principles of State Policy was inspired by the Irish Constitution.[cite: 1]"
+      "correctAnswer": "$135^{\\circ}$",
+      "explanation": "When a transversal intersects two parallel lines, the alternate interior angles are always equal. Thus, the alternate interior angle is also $135^{\\circ}$."
     },
     {
       "id": "q9",
       "type": "mcq",
-      "category": "Preamble History",
-      "marks": 1,
-      "difficulty": "hard",
-      "question": "Which of the following sets of terms were added to the Preamble later through the **42nd Constitutional Amendment in 1976**?[cite: 1]",
+      "category": "Parallel Lines and Transversals",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "The interior angles on the same side of a transversal intersecting two parallel lines measure $60^{\\circ}$ and $z$. What is the value of $z$?",
       "passageId": "",
-      "tag": "Preamble",
-      "hint": "Check the footnote note near the bottom of the Preamble image.[cite: 1]",
+      "tag": "",
+      "hint": "Interior angles on the same side are supplementary.",
+      "diagramSpec": {
+        "type": "parallel_lines_transversal",
+        "lines": [
+          "l",
+          "m"
+        ],
+        "transversal": "t",
+        "relation": "consecutive_interior",
+        "knownLabel": "60°",
+        "unknownLabel": "z"
+      },
       "options": [
-        { "text": "Sovereign, Democratic, Republic", "explanation": "These were part of the original Preamble formulation.[cite: 1]" },
-        { "text": "Justice, Liberty, Equality", "explanation": "These core values were in the original draft text.[cite: 1]" },
-        { "text": "Socialist, Secular, Integrity", "explanation": "The note explicitly states: 'The terms \"Socialist\", \"Secular\" and \"Integrity\" were added in the Preamble through the 42nd Constitutional Amendment in 1976.'[cite: 1]" },
-        { "text": "Fraternity, Status, Opportunity", "explanation": "These terms were already present in the initial adoption.[cite: 1]" }
+        {
+          "text": "$30^{\\circ}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$60^{\\circ}$",
+          "explanation": "They are supplementary, not equal."
+        },
+        {
+          "text": "$120^{\\circ}$",
+          "explanation": "$180^{\\circ} - 60^{\\circ} = 120^{\\circ}$."
+        },
+        {
+          "text": "$180^{\\circ}$",
+          "explanation": "This is their sum."
+        }
       ],
       "correctIndex": 2,
-      "correctAnswer": "Socialist, Secular, Integrity",
-      "explanation": "The note below the Preamble box directly details: 'The terms \"Socialist\", \"Secular\" and \"Integrity\" were added in the Preamble through the 42nd Constitutional Amendment in 1976.'[cite: 1]"
+      "correctAnswer": "$120^{\\circ}$",
+      "explanation": "Interior angles on the same side of a transversal intersecting parallel lines add up to $180^{\\circ}$. Therefore, $z = 180^{\\circ} - 60^{\\circ} = 120^{\\circ}$."
     },
     {
       "id": "q10",
       "type": "mcq",
-      "category": "Fundamental Rights",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "Under which **Article** of the Constitution of India is the **'Right to Education'** protected?[cite: 1]",
+      "category": "Parallel Lines and Transversals",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Lines $l$ and $m$ are parallel, and transversal $t$ intersects them. If $\\angle 1 = 50^{\\circ}$, what is the measure of its corresponding angle?",
       "passageId": "",
-      "tag": "Rights",
-      "hint": "It is attached as a sub-clause letter to Article 21.[cite: 1]",
+      "tag": "",
+      "hint": "Corresponding angles are equal when lines are parallel.",
+      "diagramSpec": null,
       "options": [
-        { "text": "Article 14", "explanation": "Article 14 is the Right to Equality (Equality before law).[cite: 1]" },
-        { "text": "Article 21-A", "explanation": "The infographic layout links 'Article 21-A. (Right to education)' under Fundamental Rights.[cite: 1]" },
-        { "text": "Article 38", "explanation": "Article 38 is related to Directive Principles for social, political, and economic justice.[cite: 1]" },
-        { "text": "Article 44", "explanation": "Article 44 is the Uniform Civil Code under DPSP.[cite: 1]" }
+        {
+          "text": "$40^{\\circ}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$50^{\\circ}$",
+          "explanation": "Corresponding angles are equal."
+        },
+        {
+          "text": "$130^{\\circ}$",
+          "explanation": "This would be the adjacent linear pair."
+        },
+        {
+          "text": "$180^{\\circ}$",
+          "explanation": "Incorrect."
+        }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Article 21-A",
-      "explanation": "The infographic charting the organisation of the Constitution explicitly lists 'Article 21-A. (Right to education)' as a Fundamental Right.[cite: 1]"
+      "correctAnswer": "$50^{\\circ}$",
+      "explanation": "When a transversal intersects a pair of parallel lines, the corresponding angles are exactly equal to each other. So the angle is $50^{\\circ}$."
     },
     {
       "id": "q11",
-      "type": "fill_blank",
-      "category": "Preservation of the Constitution",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "Fill in the blank: To keep the original copy of the Constitution safe, it is preserved in a glass case located in the Parliament building filled with ___.[cite: 1]",
+      "type": "mcq",
+      "category": "Parallel Lines and Transversals",
+      "marks": 2,
+      "difficulty": "hard",
+      "question": "A transversal intersects two lines. The alternate interior angles measure $70^{\\circ}$ and $80^{\\circ}$ respectively. Which of the following is true?",
       "passageId": "",
-      "tag": "Preservation",
-      "hint": "An inert gas starting with the letter H.",
-      "blanks": ["helium"],
-      "correctAnswer": "helium",
-      "explanation": "The text states that the Constitution is carefully preserved in a helium-filled glass case in Parliament.[cite: 1]"
+      "tag": "Conceptual",
+      "hint": "If the alternate interior angles are not equal, what does it mean about the lines?",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "The lines are parallel.",
+          "explanation": "Parallel lines must have equal alternate interior angles."
+        },
+        {
+          "text": "The lines are perpendicular.",
+          "explanation": "There is no indication of $90^{\\circ}$."
+        },
+        {
+          "text": "The lines are intersecting and not parallel.",
+          "explanation": "Unequal alternate interior angles mean the lines are not parallel and will eventually intersect."
+        },
+        {
+          "text": "The transversal is perpendicular to the lines.",
+          "explanation": "If it were perpendicular, the angles would be $90^{\\circ}$."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "The lines are intersecting and not parallel.",
+      "explanation": "For two lines to be parallel, the alternate interior angles formed by a transversal must be equal. Since $70^{\\circ} \\neq 80^{\\circ}$, the lines are not parallel and will intersect."
     },
     {
       "id": "q12",
-      "type": "fill_blank",
-      "category": "Leadership",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "Fill in the blank: The Chairman of the Constituent Assembly who later became the first President of India was Dr. ___.[cite: 1]",
+      "type": "mcq",
+      "category": "Parallel Lines and Transversals",
+      "marks": 2,
+      "difficulty": "hard",
+      "question": "A transversal intersects two parallel lines. A pair of corresponding angles measure $2x$ and $x + 30^{\\circ}$. What is the value of $x$?",
       "passageId": "",
-      "tag": "Leadership",
-      "hint": "His quotes open the chapter introduction.[cite: 1]",
-      "blanks": ["Rajendra Prasad"],
-      "correctAnswer": "Rajendra Prasad",
-      "explanation": "The text names Dr. Rajendra Prasad as the Chairman of the Constituent Assembly and the first President of India.[cite: 1]"
+      "tag": "",
+      "hint": "Corresponding angles are equal.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "$10^{\\circ}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$20^{\\circ}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$30^{\\circ}$",
+          "explanation": "$2(30) = 30 + 30$."
+        },
+        {
+          "text": "$60^{\\circ}$",
+          "explanation": "This is the angle itself, not $x$."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "$30^{\\circ}$",
+      "explanation": "Since the lines are parallel, corresponding angles are equal. So, $2x = x + 30^{\\circ}$. Subtracting $x$ from both sides gives $x = 30^{\\circ}$."
     },
     {
       "id": "q13",
-      "type": "fill_blank",
-      "category": "Constitutional Structure",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Fill in the blank: The modern Constitution of India contains exactly ___ parts and 12 schedules.[cite: 1]",
+      "type": "mcq",
+      "category": "Parallel Lines and Transversals",
+      "marks": 2,
+      "difficulty": "hard",
+      "question": "Two interior angles on the same side of a transversal intersecting two parallel lines measure $3x$ and $2x$. What are the measures of these two angles?",
       "passageId": "",
-      "tag": "Structure",
-      "hint": "It is a number equal to a quarter of a century.",
-      "blanks": ["25"],
-      "correctAnswer": "25",
-      "explanation": "The text mentions that today the Constitution of India has 25 parts and 12 schedules.[cite: 1]"
+      "tag": "",
+      "hint": "The sum of interior angles on the same side is $180^{\\circ}$.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "$36^{\\circ}$ and $24^{\\circ}$",
+          "explanation": "Their sum is not $180^{\\circ}$."
+        },
+        {
+          "text": "$108^{\\circ}$ and $72^{\\circ}$",
+          "explanation": "$108 + 72 = 180^{\\circ}$."
+        },
+        {
+          "text": "$90^{\\circ}$ and $90^{\\circ}$",
+          "explanation": "This ratio is $1:1$, not $3:2$."
+        },
+        {
+          "text": "$120^{\\circ}$ and $60^{\\circ}$",
+          "explanation": "This ratio is $2:1$."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$108^{\\circ}$ and $72^{\\circ}$",
+      "explanation": "Interior angles on the same side are supplementary. So, $3x + 2x = 180^{\\circ} \\implies 5x = 180^{\\circ} \\implies x = 36^{\\circ}$. The angles are $3(36^{\\circ}) = 108^{\\circ}$ and $2(36^{\\circ}) = 72^{\\circ}$."
     },
     {
       "id": "q14",
-      "type": "fill_blank",
-      "category": "Drafting Committee",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "Fill in the blank: The initial text of the Constitution was prepared by a Drafting Committee chaired by Dr. ___.[cite: 1]",
+      "type": "mcq",
+      "category": "Intersecting Lines",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Two lines intersect such that all four angles formed are equal. What is the measure of each angle?",
       "passageId": "",
-      "tag": "Drafting Committee",
-      "hint": "He was the first Law and Justice minister of independent India.[cite: 1]",
-      "blanks": ["B.R. Ambedkar"],
-      "correctAnswer": "B.R. Ambedkar",
-      "explanation": "The text specifies that the initial text was prepared by a Drafting Committee chaired by Dr. B.R. Ambedkar.[cite: 1]"
+      "tag": "",
+      "hint": "The total sum around a point is $360^{\\circ}$.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "$45^{\\circ}$",
+          "explanation": "$4 \\times 45 = 180^{\\circ}$, which is incorrect."
+        },
+        {
+          "text": "$90^{\\circ}$",
+          "explanation": "$360^{\\circ} / 4 = 90^{\\circ}$."
+        },
+        {
+          "text": "$180^{\\circ}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$360^{\\circ}$",
+          "explanation": "This is the total sum, not each angle."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$90^{\\circ}$",
+      "explanation": "The sum of all four angles around a point of intersection is $360^{\\circ}$. If they are all equal, each is $360^{\\circ} / 4 = 90^{\\circ}$. Such lines are perpendicular."
     },
     {
       "id": "q15",
-      "type": "fill_blank",
-      "category": "Fundamental Duties",
-      "marks": 1,
+      "type": "mcq",
+      "category": "Linear Pair",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "Fill in the blank: 'Part IV-A: Fundamental Duties' was not present in the original text but was added to the Constitution in the year ___.[cite: 1]",
+      "question": "Angles $a$ and $b$ form a linear pair. If $a = 2b$, what is the measure of angle $a$?",
       "passageId": "",
-      "tag": "Amendments",
-      "hint": "It happened in the same year the 42nd amendment was initiated.[cite: 1]",
-      "blanks": ["1976"],
-      "correctAnswer": "1976",
-      "explanation": "The text states: 'For example, \"Part IV-A: Fundamental Duties\" was added in 1976.'[cite: 1]"
+      "tag": "",
+      "hint": "Substitute $a = 2b$ into the equation $a + b = 180^{\\circ}$.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "$60^{\\circ}$",
+          "explanation": "This is angle $b$."
+        },
+        {
+          "text": "$90^{\\circ}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$120^{\\circ}$",
+          "explanation": "$a = 120^{\\circ}$ and $b = 60^{\\circ}$. $120 + 60 = 180^{\\circ}$."
+        },
+        {
+          "text": "$180^{\\circ}$",
+          "explanation": "This is the total sum."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "$120^{\\circ}$",
+      "explanation": "A linear pair sums to $180^{\\circ}$, so $a + b = 180^{\\circ}$. Substituting $a = 2b$ yields $2b + b = 180^{\\circ} \\implies 3b = 180^{\\circ} \\implies b = 60^{\\circ}$. Since $a = 2b$, $a = 120^{\\circ}$."
     },
     {
       "id": "q16",
-      "type": "fill_blank",
-      "category": "Preamble Principles",
-      "marks": 1,
+      "type": "mcq",
+      "category": "Parallel Lines and Transversals",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "Fill in the blank: In the Preamble, the term ___ implies that citizens have complete freedom to follow any religion, and there is no official state religion.[cite: 1]",
+      "question": "A transversal intersects two parallel lines, making an angle of $90^{\\circ}$ with one of the lines. What can be said about the other $7$ angles formed?",
       "passageId": "",
-      "tag": "Preamble",
-      "hint": "Starts with 'SEC...'",
-      "blanks": ["Secular"],
-      "correctAnswer": "Secular",
-      "explanation": "The Preamble breakdown describes 'SECULAR' as: 'Citizens have complete freedom to follow any religion. But there is no official religion.'[cite: 1]"
+      "tag": "",
+      "hint": "Use the properties of corresponding, alternate, and linear pair angles.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "They are all $45^{\\circ}$.",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "They are all $90^{\\circ}$.",
+          "explanation": "All corresponding and supplementary angles to $90^{\\circ}$ are $90^{\\circ}$."
+        },
+        {
+          "text": "Four are $90^{\\circ}$ and four are $45^{\\circ}$.",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "Their measures cannot be determined.",
+          "explanation": "We have enough information to find all angles."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "They are all $90^{\\circ}$.",
+      "explanation": "If one angle is $90^{\\circ}$, its linear pair is $180^{\\circ} - 90^{\\circ} = 90^{\\circ}$. Its vertically opposite is $90^{\\circ}$. Due to parallel lines, all corresponding and alternate angles are also equal to $90^{\\circ}$."
     },
     {
       "id": "q17",
-      "type": "fill_blank",
-      "category": "Constituent Assembly Dates",
-      "marks": 1,
+      "type": "mcq",
+      "category": "Parallel Lines and Transversals",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "Fill in the blank: The Constituent Assembly officially formed and held its initial meeting on 9 December ___.[cite: 1]",
+      "question": "A transversal intersects two parallel lines. If one interior angle is $115^{\\circ}$, what is the measure of the consecutive interior angle on the same side?",
       "passageId": "",
-      "tag": "Assembly Timeline",
-      "hint": "One year before independence.",
-      "blanks": ["1946"],
-      "correctAnswer": "1946",
-      "explanation": "The text states: 'It was formed on 9 December 1946, with its members elected by the legislative assemblies.'[cite: 1]"
+      "tag": "",
+      "hint": "Consecutive interior angles are supplementary.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "$65^{\\circ}$",
+          "explanation": "$180^{\\circ} - 115^{\\circ} = 65^{\\circ}$."
+        },
+        {
+          "text": "$75^{\\circ}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$115^{\\circ}$",
+          "explanation": "This would be the alternate interior angle."
+        },
+        {
+          "text": "$180^{\\circ}$",
+          "explanation": "This is the sum."
+        }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "$65^{\\circ}$",
+      "explanation": "Interior angles on the same side of the transversal (consecutive interior angles) always add up to $180^{\\circ}$. So, the other angle is $180^{\\circ} - 115^{\\circ} = 65^{\\circ}$."
     },
     {
       "id": "q18",
-      "type": "fill_blank",
-      "category": "Constitutional Art",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Fill in the blank: The master artist ___ and his team decorated the pages of the original Constitution with scenes from Indian history.[cite: 1]",
+      "type": "mcq",
+      "category": "Vertically Opposite Angles",
+      "marks": 2,
+      "difficulty": "hard",
+      "question": "Two vertically opposite angles measure $(3x - 10)^{\\circ}$ and $(2x + 15)^{\\circ}$. What is the value of $x$?",
       "passageId": "",
-      "tag": "Illustrations",
-      "hint": "He worked out of Shantiniketan.",
-      "blanks": ["Nandalal Bose"],
-      "correctAnswer": "Nandalal Bose",
-      "explanation": "The text explicitly names 'Nandalal Bose and his team' as the illustrators who adorned the historical manuscript pages.[cite: 1]"
+      "tag": "",
+      "hint": "Equate the two expressions.",
+      "diagramSpec": {
+        "type": "intersecting_lines",
+        "knownAngle": null,
+        "knownLabel": "3x - 10",
+        "unknownLabel": "2x + 15",
+        "position": "vertically_opposite"
+      },
+      "options": [
+        {
+          "text": "$5$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$15$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$25$",
+          "explanation": "$3(25) - 10 = 2(25) + 15 = 65^{\\circ}$."
+        },
+        {
+          "text": "$35$",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "$25$",
+      "explanation": "Vertically opposite angles are equal. So, $3x - 10 = 2x + 15$. Subtracting $2x$ from both sides gives $x - 10 = 15$. Adding $10$ yields $x = 25$."
     },
     {
       "id": "q19",
-      "type": "fill_blank",
-      "category": "Preamble Principles",
-      "marks": 1,
+      "type": "mcq",
+      "category": "Parallel Lines and Transversals",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "Fill in the blank: The phrase '___' at the very beginning of the Preamble emphasizes that the power of the Constitution comes from the citizens themselves and not from any king or outside ruler.[cite: 1]",
+      "question": "A line crosses two parallel lines. If one alternate exterior angle is $100^{\\circ}$, what is the measure of the other alternate exterior angle?",
       "passageId": "",
-      "tag": "Preamble Opening",
-      "hint": "Copy the exact four words used as the header.[cite: 1]",
-      "blanks": ["WE, THE PEOPLE OF INDIA"],
-      "correctAnswer": "WE, THE PEOPLE OF INDIA",
-      "explanation": "The Preamble infographic defines the phrase 'WE, THE PEOPLE OF INDIA' to indicate that it has been drawn up and enacted by the people through representatives.[cite: 1]"
+      "tag": "",
+      "hint": "Alternate exterior angles are equal when lines are parallel.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "$80^{\\circ}$",
+          "explanation": "This would be the consecutive exterior angle."
+        },
+        {
+          "text": "$100^{\\circ}$",
+          "explanation": "Alternate exterior angles are equal."
+        },
+        {
+          "text": "$180^{\\circ}$",
+          "explanation": "This is their sum if they were supplementary."
+        },
+        {
+          "text": "$260^{\\circ}$",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$100^{\\circ}$",
+      "explanation": "When a transversal crosses two parallel lines, alternate exterior angles are equal in measure. So, the other alternate exterior angle is also $100^{\\circ}$."
     },
     {
       "id": "q20",
-      "type": "fill_blank",
-      "category": "Directive Principles",
-      "marks": 1,
+      "type": "mcq",
+      "category": "Linear Pair",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "Fill in the blank: Article 44 under the Directive Principles of State Policy outlines the implementation of a ___ Civil Code.[cite: 1]",
+      "question": "If two adjacent angles form a linear pair and one angle is acute, what type of angle must the other be?",
       "passageId": "",
-      "tag": "DPSP",
-      "hint": "Meaning matching or standardized across all citizens.",
-      "blanks": ["Uniform"],
-      "correctAnswer": "Uniform",
-      "explanation": "The infographic mapping outlines: 'Article 44: Uniform Civil Code'.[cite: 1]"
+      "tag": "Conceptual",
+      "hint": "The sum of the angles must be $180^{\\circ}$.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "Acute angle",
+          "explanation": "Two acute angles sum to less than $180^{\\circ}$."
+        },
+        {
+          "text": "Right angle",
+          "explanation": "A right angle requires another right angle to make $180^{\\circ}$."
+        },
+        {
+          "text": "Obtuse angle",
+          "explanation": "An angle less than $90^{\\circ}$ requires an angle greater than $90^{\\circ}$ to sum to $180^{\\circ}$."
+        },
+        {
+          "text": "Reflex angle",
+          "explanation": "A reflex angle is $> 180^{\\circ}$, which is impossible here."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "Obtuse angle",
+      "explanation": "A linear pair sums to $180^{\\circ}$. If one angle is acute (less than $90^{\\circ}$), the other must be greater than $90^{\\circ}$ (obtuse) to reach a sum of exactly $180^{\\circ}$."
     },
     {
       "id": "q21",
-      "type": "transformation",
-      "category": "Constitutional Definitions",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "Reframe the following statement to define what a basic Constitution is based on the introductory text.[cite: 1]",
+      "type": "mcq",
+      "category": "Parallel Lines and Transversals",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "In a figure, lines $l$ and $m$ are parallel, and intersected by a transversal. If a pair of corresponding angles measure $(3x + 20)^{\\circ}$ and $(4x - 10)^{\\circ}$, what is the measure of these corresponding angles?",
       "passageId": "",
-      "tag": "Definitions",
-      "hint": "Refer to the simple answer provided under 'What is a Constitution?'.[cite: 1]",
-      "inputSentence": "A constitution is just an old textbook containing chapters.",
-      "transformationType": "Correction based on text definition",
-      "correctAnswer": "A constitution is a document that spells out a nation's basic principles and laws.[cite: 1]",
-      "explanation": "The textbook directly provides the definition: 'A simple answer is that it is a document that spells out a nation's basic principles and laws.'[cite: 1]"
+      "tag": "",
+      "hint": "Equate the expressions to find $x$, then plug it back in.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "$30^{\\circ}$",
+          "explanation": "This is the value of $x$, not the angle itself."
+        },
+        {
+          "text": "$70^{\\circ}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$110^{\\circ}$",
+          "explanation": "$3(30) + 20 = 110^{\\circ}$."
+        },
+        {
+          "text": "$150^{\\circ}$",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "$110^{\\circ}$",
+      "explanation": "Corresponding angles are equal. So, $3x + 20 = 4x - 10$. Subtracting $3x$ from both sides gives $x = 30$. Substituting $x$ back: $3(30) + 20 = 90 + 20 = 110^{\\circ}$."
     },
     {
       "id": "q22",
-      "type": "transformation",
-      "category": "Rights vs Duties Modification",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Transform the given statement to accurately state the legal distinction between Fundamental Rights and Directive Principles if a rule is broken.[cite: 1]",
+      "type": "mcq",
+      "category": "Parallel Lines and Transversals",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Lines $p$ and $q$ are parallel. The interior angles on the same side of a transversal are $(x + 20)^{\\circ}$ and $(2x - 50)^{\\circ}$. What is the value of $x$?",
       "passageId": "",
-      "tag": "DPSP vs Rights",
-      "hint": "Can you go to a judge if a DPSP is violated?[cite: 1]",
-      "inputSentence": "If the government fails to follow Directive Principles, citizens can immediately sue the government in court just like they do for Fundamental Rights.",
-      "transformationType": "Factual Correction of Judicial enforceability",
-      "correctAnswer": "If the government does not follow Directive Principles, one cannot go to a judge to complain, whereas violating Fundamental Rights allows citizens to seek help from a court.[cite: 1]",
-      "explanation": "The text states that DPSPs are like guidelines rather than strict rules, meaning you cannot complain to a judge if the government fails to follow them immediately, unlike Fundamental Rights.[cite: 1]"
+      "tag": "",
+      "hint": "The angles are supplementary.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "$50$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$70$",
+          "explanation": "$70 + 20 = 90$ and $2(70) - 50 = 90$. $90+90=180$."
+        },
+        {
+          "text": "$90$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$110$",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$70$",
+      "explanation": "Interior angles on the same side are supplementary. So, $(x + 20) + (2x - 50) = 180$. Simplifying gives $3x - 30 = 180 \\implies 3x = 210 \\implies x = 70$."
     },
     {
       "id": "q23",
-      "type": "transformation",
-      "category": "Constituent Assembly Membership",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Reframe the sentence to show the membership change of the Constituent Assembly caused by the Partition of India.[cite: 1]",
+      "type": "mcq",
+      "category": "Intersecting Lines",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Two lines intersect to form four angles: $\\angle a, \\angle b, \\angle c,$ and $\\angle d$. If vertically opposite angles $\\angle a$ and $\\angle c$ sum to $200^{\\circ}$, what is the measure of $\\angle b$?",
       "passageId": "",
-      "tag": "Assembly History",
-      "hint": "State the initial count and what it was reduced to.[cite: 1]",
-      "inputSentence": "The Constituent Assembly had 389 members throughout its history regardless of partition.",
-      "transformationType": "Factual Correction",
-      "correctAnswer": "The Constituent Assembly was formed with 389 members, which was later reduced to 299 after the Partition of India.[cite: 1]",
-      "explanation": "The text states: 'initially with 389 members (later reduced to 299 after the Partition of India).'[cite: 1]"
+      "tag": "",
+      "hint": "Find $\\angle a$ first, then use the linear pair property to find $\\angle b$.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "$80^{\\circ}$",
+          "explanation": "$\\angle a = 100^{\\circ}$. Since $\\angle a$ and $\\angle b$ are a linear pair, $\\angle b = 180^{\\circ} - 100^{\\circ} = 80^{\\circ}$."
+        },
+        {
+          "text": "$100^{\\circ}$",
+          "explanation": "This is the measure of $\\angle a$ or $\\angle c$."
+        },
+        {
+          "text": "$160^{\\circ}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$200^{\\circ}$",
+          "explanation": "This is the sum of $\\angle a$ and $\\angle c$."
+        }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "$80^{\\circ}$",
+      "explanation": "Since $\\angle a$ and $\\angle c$ are vertically opposite, $\\angle a = \\angle c$. Their sum is $200^{\\circ}$, meaning each is $100^{\\circ}$. $\\angle a$ and $\\angle b$ form a linear pair, so $\\angle b = 180^{\\circ} - 100^{\\circ} = 80^{\\circ}$."
     },
     {
       "id": "q24",
-      "type": "transformation",
-      "category": "Artistic Components",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Transform the text statement to properly distinguish between the roles of Prem Behari Narain Raizada and Nandalal Bose.[cite: 1]",
+      "type": "mcq",
+      "category": "Parallel Lines and Transversals",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Line $AB$ is parallel to line $CD$, and transversal $EF$ intersects them. If an interior angle $\\angle AEF = 65^{\\circ}$, what is the measure of the alternate interior angle $\\angle DFE$?",
       "passageId": "",
-      "tag": "Artistic Production",
-      "hint": "Who did the writing and who did the illustration?[cite: 1]",
-      "inputSentence": "Nandalal Bose wrote the entire Constitution by hand and Prem Behari Narain Raizada drew historical scenes on it.",
-      "transformationType": "Correction of roles",
-      "correctAnswer": "Prem Behari Narain Raizada wrote the text of the Constitution by hand, while Nandalal Bose and his team illustrated its pages.[cite: 1]",
-      "explanation": "The text confirms: 'Calligrapher Prem Behari Narain Raizada wrote its text by hand, while Nandalal Bose and his team illustrated its pages...'[cite: 1]"
+      "tag": "",
+      "hint": "Recall the property of alternate interior angles for parallel lines.",
+      "diagramSpec": {
+        "type": "parallel_lines_transversal",
+        "lines": [
+          "AB",
+          "CD"
+        ],
+        "transversal": "EF",
+        "relation": "alternate_interior",
+        "knownLabel": "65°",
+        "unknownLabel": "?"
+      },
+      "options": [
+        {
+          "text": "$25^{\\circ}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$65^{\\circ}$",
+          "explanation": "Alternate interior angles are equal."
+        },
+        {
+          "text": "$115^{\\circ}$",
+          "explanation": "This is the consecutive interior angle."
+        },
+        {
+          "text": "$180^{\\circ}$",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$65^{\\circ}$",
+      "explanation": "For parallel lines, alternate interior angles are equal to each other. Thus, $\\angle DFE = \\angle AEF = 65^{\\circ}$."
     },
     {
       "id": "q25",
-      "type": "transformation",
-      "category": "Government Organs",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "Transform the incorrect description of the Executive organ into its correct function as specified by the text.[cite: 1]",
+      "type": "mcq",
+      "category": "Parallel Lines and Transversals",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "A transversal intersects two parallel lines. The ratio of two interior angles on the same side of the transversal is $2:3$. What is the measure of the larger angle?",
       "passageId": "",
-      "tag": "Organs of Government",
-      "hint": "Who makes the laws and who implements them?[cite: 1]",
-      "inputSentence": "The Executive organ of the government is responsible for making the laws of the nation.",
-      "transformationType": "Factual Correction",
-      "correctAnswer": "The legislature makes the laws, while the law is implemented by the executive.[cite: 1]",
-      "explanation": "The textbook rules outline: 'The legislature makes the laws. The law is implemented by the executive...'[cite: 1]"
+      "tag": "",
+      "hint": "The angles add up to $180^{\\circ}$.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "$72^{\\circ}$",
+          "explanation": "This is the smaller angle."
+        },
+        {
+          "text": "$108^{\\circ}$",
+          "explanation": "$3 \\times 36^{\\circ} = 108^{\\circ}$."
+        },
+        {
+          "text": "$120^{\\circ}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$144^{\\circ}$",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$108^{\\circ}$",
+      "explanation": "Let the angles be $2x$ and $3x$. Since they are supplementary, $2x + 3x = 180^{\\circ} \\implies 5x = 180^{\\circ} \\implies x = 36^{\\circ}$. The larger angle is $3x = 3(36^{\\circ}) = 108^{\\circ}$."
     },
     {
       "id": "q26",
-      "type": "error_correction",
-      "category": "Judiciary Organs",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "Find and correct the factual error regarding the function of the judiciary.[cite: 1]",
+      "type": "mcq",
+      "category": "Linear Pair",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "The ratio of the measures of two angles forming a linear pair is $4:5$. What is the positive difference between the two angles?",
       "passageId": "",
-      "tag": "Judiciary",
-      "hint": "Look at the definition of the judiciary's role under Grade 6 revision points.[cite: 1]",
-      "inputSentence": "The judiciary organ of government implements the laws under the leadership of the Prime Minister.",
-      "correctAnswer": "The judiciary ensures that all laws made are in accordance with the Constitution and decides punishments.[cite: 1]",
-      "explanation": "The text clarifies that the executive implements the law under the Prime Minister, whereas the judiciary checks its alignment with the Constitution and adjudicates violations.[cite: 1]"
+      "tag": "",
+      "hint": "First, find the measures of the two angles.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "$10^{\\circ}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$20^{\\circ}$",
+          "explanation": "The angles are $80^{\\circ}$ and $100^{\\circ}$. Difference is $20^{\\circ}$."
+        },
+        {
+          "text": "$40^{\\circ}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$80^{\\circ}$",
+          "explanation": "This is the measure of the smaller angle."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$20^{\\circ}$",
+      "explanation": "Let the angles be $4x$ and $5x$. Their sum is $180^{\\circ}$. So $9x = 180^{\\circ} \\implies x = 20^{\\circ}$. The angles are $80^{\\circ}$ and $100^{\\circ}$. The difference is $100^{\\circ} - 80^{\\circ} = 20^{\\circ}$."
     },
     {
       "id": "q27",
-      "type": "error_correction",
-      "category": "Sovereignty Definition",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Find and correct the mistake regarding the definition of 'Sovereign' in the Preamble.[cite: 1]",
+      "type": "mcq",
+      "category": "Parallel Lines and Transversals",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "A transversal intersects two parallel lines. A pair of alternate interior angles measure $(5y - 15)^{\\circ}$ and $(3y + 25)^{\\circ}$. What is the value of $y$?",
       "passageId": "",
-      "tag": "Preamble",
-      "hint": "Can an external power dictate terms to a sovereign government?[cite: 1]",
-      "inputSentence": "Being Sovereign means external global powers can dictate and control the internal decisions of the Indian government.",
-      "correctAnswer": "Being Sovereign means no external power can dictate the government of India, and the people have supreme rights.[cite: 1]",
-      "explanation": "The Preamble chart defines Sovereign as: 'The people have supreme right to make decisions... No external power can dictate the government of India.'[cite: 1]"
+      "tag": "",
+      "hint": "Set the expressions equal to each other.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "$10$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$20$",
+          "explanation": "$5(20) - 15 = 85$ and $3(20) + 25 = 85$."
+        },
+        {
+          "text": "$30$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$40$",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$20$",
+      "explanation": "Alternate interior angles are equal, so $5y - 15 = 3y + 25$. Subtracting $3y$ yields $2y - 15 = 25$. Adding $15$ gives $2y = 40 \\implies y = 20$."
     },
     {
       "id": "q28",
-      "type": "error_correction",
-      "category": "Flag Flying Rights",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Find and correct the error regarding the timeline and cause of changes to national flag rules.[cite: 1]",
+      "type": "mcq",
+      "category": "Parallel Lines and Transversals",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "In a quadrilateral $ABCD$, $AB \\parallel CD$ and $AD \\parallel BC$. If $\\angle ADC = 60^{\\circ}$, what is the measure of $\\angle BCD$?",
       "passageId": "",
-      "tag": "Amendments",
-      "hint": "Which year did the Supreme Court change this rule, and under which right?[cite: 1]",
-      "inputSentence": "Citizens were always allowed to fly the flag at home until the Supreme Court banned it in 2004.",
-      "correctAnswer": "People were not allowed to fly the national flag at home until a citizen successfully challenged the rule in court in 2004.[cite: 1]",
-      "explanation": "The text states: 'There was a time when people were not allowed to fly the national flag at their homes. This changed in 2004... flying the flag is part of the Fundamental Right to Freedom of Expression.'[cite: 1]"
+      "tag": "",
+      "hint": "Since $AD \\parallel BC$, $CD$ acts as a transversal. What is the relation between $\\angle ADC$ and $\\angle BCD$?",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "$60^{\\circ}$",
+          "explanation": "This would be true for opposite angles $\\angle ABC$."
+        },
+        {
+          "text": "$90^{\\circ}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$120^{\\circ}$",
+          "explanation": "$180^{\\circ} - 60^{\\circ} = 120^{\\circ}$."
+        },
+        {
+          "text": "$180^{\\circ}$",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "$120^{\\circ}$",
+      "explanation": "With $AD \\parallel BC$, line segment $CD$ is a transversal. $\\angle ADC$ and $\\angle BCD$ are interior angles on the same side, so they sum to $180^{\\circ}$. $\\angle BCD = 180^{\\circ} - 60^{\\circ} = 120^{\\circ}$."
     },
     {
       "id": "q29",
-      "type": "error_correction",
-      "category": "Preamble Terminology",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Identify and fix the historical error concerning the word 'Socialist' in the Preamble.[cite: 1]",
+      "type": "mcq",
+      "category": "Parallel Lines and Transversals",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Lines $l, m,$ and $n$ are parallel to each other. A transversal intersects all three. If the alternate interior angle between $l$ and $m$ is $48^{\\circ}$, what is the measure of the corresponding angle between $m$ and $n$?",
       "passageId": "",
-      "tag": "Preamble",
-      "hint": "Was it there from the beginning in 1949?[cite: 1]",
-      "inputSentence": "The term 'Socialist' was included from the very first day the Constituent Assembly adopted the text in 1949.",
-      "correctAnswer": "The term 'Socialist' was added to the Preamble later through the 42nd Constitutional Amendment in 1976.[cite: 1]",
-      "explanation": "The Preamble section directly notes that 'Socialist', 'Secular' and 'Integrity' were added later by the 42nd Amendment in 1976.[cite: 1]"
+      "tag": "",
+      "hint": "Follow the equality of angles down the transversal.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "$42^{\\circ}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$48^{\\circ}$",
+          "explanation": "Alternate interior angles equal the corresponding angles down the line."
+        },
+        {
+          "text": "$132^{\\circ}$",
+          "explanation": "This is the supplementary angle."
+        },
+        {
+          "text": "$138^{\\circ}$",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$48^{\\circ}$",
+      "explanation": "The alternate interior angle equals $48^{\\circ}$, which means the angle on $m$ is $48^{\\circ}$. Since $m \\parallel n$, the corresponding angle on line $n$ is also equal to $48^{\\circ}$."
     },
     {
       "id": "q30",
-      "type": "error_correction",
-      "category": "Directive Principles",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Find the error regarding environmental policy matching.[cite: 1]",
+      "type": "mcq",
+      "category": "Parallel Lines and Transversals",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Lines $l$ and $m$ are parallel, intersected by a transversal $t$. One of the angles formed is $42^{\\circ}$. What is the sum of its corresponding angle and its vertically opposite angle?",
       "passageId": "",
-      "tag": "DPSP",
-      "hint": "Check the Article number for Environment and Wildlife protection.[cite: 1]",
-      "inputSentence": "Article 49 mandates the protection of the environment, forests, lakes, rivers, and wildlife.",
-      "correctAnswer": "Article 48-A mandates environment and wildlife protection, while Article 49 protects monuments.[cite: 1]",
-      "explanation": "According to the DPSP infographic layout, Article 48-A corresponds to Environment and Wildlife Protection, whereas Article 49 is for Protection of monuments.[cite: 1]"
+      "tag": "",
+      "hint": "Find the measure of each of those two angles and add them together.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "$42^{\\circ}$",
+          "explanation": "This is the individual angle."
+        },
+        {
+          "text": "$84^{\\circ}$",
+          "explanation": "$42^{\\circ} + 42^{\\circ} = 84^{\\circ}$."
+        },
+        {
+          "text": "$138^{\\circ}$",
+          "explanation": "This is the supplementary angle."
+        },
+        {
+          "text": "$180^{\\circ}$",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$84^{\\circ}$",
+      "explanation": "The corresponding angle is $42^{\\circ}$ (since lines are parallel). The vertically opposite angle to the original angle is also $42^{\\circ}$. Their sum is $42^{\\circ} + 42^{\\circ} = 84^{\\circ}$."
     },
     {
       "id": "q31",
-      "type": "jumbled",
-      "category": "Key Quotes",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "Rearrange the words to reconstruct the ancient phrase meaning 'the world is one family' incorporated into India's heritage.[cite: 1]",
+      "type": "mcq",
+      "category": "Intersecting Lines",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Two straight lines intersect at a point. If the difference between two adjacent angles formed is $40^{\\circ}$, what is the measure of the smaller angle?",
       "passageId": "",
-      "tag": "Civilisational Values",
-      "hint": "It is a classical Sanskrit phrase mentioned on page 216.[cite: 1]",
-      "jumbledWords": ["kutumbakam", "vasudhaiva"],
-      "correctAnswer": "vasudhaiva kutumbakam",
-      "explanation": "The text lists 'vasudhaiva kutumbakam' alongside its translation meaning 'the world is one family'.[cite: 1]"
+      "tag": "",
+      "hint": "Set up a system of equations: $a + b = 180^{\\circ}$ and $a - b = 40^{\\circ}$.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "$50^{\\circ}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$70^{\\circ}$",
+          "explanation": "$110^{\\circ} + 70^{\\circ} = 180^{\\circ}$ and $110^{\\circ} - 70^{\\circ} = 40^{\\circ}$."
+        },
+        {
+          "text": "$110^{\\circ}$",
+          "explanation": "This is the larger angle."
+        },
+        {
+          "text": "$140^{\\circ}$",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$70^{\\circ}$",
+      "explanation": "Let the angles be $a$ and $b$. We know $a + b = 180^{\\circ}$ (linear pair). We are given $a - b = 40^{\\circ}$. Adding both equations: $2a = 220^{\\circ} \\implies a = 110^{\\circ}$. Then $b = 180^{\\circ} - 110^{\\circ} = 70^{\\circ}$."
     },
     {
       "id": "q32",
-      "type": "jumbled",
-      "category": "Heritage Phrasing",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Rearrange the following words to form the ancient Sanskrit invocation meaning well-being for all creatures mentioned in the text.[cite: 1]",
+      "type": "mcq",
+      "category": "Parallel Lines and Transversals",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "A transversal intersects lines $l$ and $m$. The interior angles on the same side of the transversal measure $120^{\\circ}$ and $60^{\\circ}$. Which of the following is correct?",
       "passageId": "",
-      "tag": "Civilisational Values",
-      "hint": "Look under page 216/217 concepts.[cite: 1]",
-      "jumbledWords": ["bhavantu", "sukhinah", "sarve"],
-      "correctAnswer": "sarve bhavantu sukhinah",
-      "explanation": "The chapter highlights 'sarve bhavantu sukhinah' as an invocation for the well-being of all creatures embedded in Indian culture.[cite: 1]"
+      "tag": "Conceptual",
+      "hint": "Add the interior angles on the same side.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "The lines $l$ and $m$ are intersecting.",
+          "explanation": "If the sum is exactly $180^{\\circ}$, they do not intersect."
+        },
+        {
+          "text": "The lines $l$ and $m$ are parallel because the sum of corresponding angles is $180^{\\circ}$.",
+          "explanation": "The given angles are not corresponding angles."
+        },
+        {
+          "text": "The lines $l$ and $m$ are parallel because the interior angles on the same side add up to $180^{\\circ}$.",
+          "explanation": "$120^{\\circ} + 60^{\\circ} = 180^{\\circ}$, which proves the lines are parallel."
+        },
+        {
+          "text": "The lines $l$ and $m$ are perpendicular.",
+          "explanation": "They don't intersect at $90^{\\circ}$."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "The lines $l$ and $m$ are parallel because the interior angles on the same side add up to $180^{\\circ}$.",
+      "explanation": "Since $120^{\\circ} + 60^{\\circ} = 180^{\\circ}$, the consecutive interior angles are supplementary. This is the necessary condition for lines $l$ and $m$ to be parallel."
     },
     {
       "id": "q33",
-      "type": "jumbled",
-      "category": "Global Learning Quotes",
-      "marks": 1,
+      "type": "mcq",
+      "category": "Parallel Lines and Transversals",
+      "marks": 3,
       "difficulty": "hard",
-      "question": "Rearrange these words to show the traditional motto used by the makers to welcome good practices from external democratic nations.[cite: 1]",
+      "question": "In a figure, lines $l \\parallel m$. An angle $a = 120^{\\circ}$. What is the measure of the vertically opposite angle of its alternate interior angle?",
       "passageId": "",
-      "tag": "Global Influence",
-      "hint": "Translates to: 'Let noble thoughts come to me from every side.'[cite: 1]",
-      "jumbledWords": ["bhadrah", "vishwatah", "yantu", "no", "kratavo", "a"],
-      "correctAnswer": "a no bhadrah kratavo yantu vishwatah",
-      "explanation": "The text references this quote: 'a no bhadrah kratavo yantu vishwatah - \"Let noble thoughts come to me from every side\"' to justify studying global constitutions.[cite: 1]"
+      "tag": "",
+      "hint": "Find the alternate interior angle first.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "$60^{\\circ}$",
+          "explanation": "This would be the linear pair angle."
+        },
+        {
+          "text": "$90^{\\circ}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$120^{\\circ}$",
+          "explanation": "Alternate interior is $120^{\\circ}$. Its vertically opposite is $120^{\\circ}$."
+        },
+        {
+          "text": "$180^{\\circ}$",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "$120^{\\circ}$",
+      "explanation": "The alternate interior angle to $a = 120^{\\circ}$ is also $120^{\\circ}$. The vertically opposite angle of this alternate interior angle is equal to itself, so it is also $120^{\\circ}$."
     },
     {
       "id": "q34",
-      "type": "jumbled",
-      "category": "Government Structure",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "Rearrange the items to declare the three tiers of the Indian governing system from highest to lowest level.[cite: 1]",
+      "type": "mcq",
+      "category": "Linear Pair",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Two angles form a linear pair: $\\angle PQR = (3x + 15)^{\\circ}$ and $\\angle RQS = (x + 5)^{\\circ}$. What is the measure of $\\angle PQR$?",
       "passageId": "",
-      "tag": "System of Government",
-      "hint": "Central is the largest tier.[cite: 1]",
-      "jumbledWords": ["local", "central", "state"],
-      "correctAnswer": "central state local",
-      "explanation": "The revision notes mention a 'three-tier system of government—central, state and local'.[cite: 1]"
+      "tag": "",
+      "hint": "Set their sum to $180^{\\circ}$ to find $x$, then calculate $\\angle PQR$.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "$40^{\\circ}$",
+          "explanation": "This is the value of $x$."
+        },
+        {
+          "text": "$45^{\\circ}$",
+          "explanation": "This is $\\angle RQS$."
+        },
+        {
+          "text": "$135^{\\circ}$",
+          "explanation": "$\\angle PQR = 3(40) + 15 = 135^{\\circ}$."
+        },
+        {
+          "text": "$140^{\\circ}$",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "$135^{\\circ}$",
+      "explanation": "$(3x + 15) + (x + 5) = 180^{\\circ} \\implies 4x + 20 = 180 \\implies 4x = 160 \\implies x = 40$. Substitute $x = 40$ back into $\\angle PQR = 3(40) + 15 = 135^{\\circ}$."
     },
     {
       "id": "q35",
-      "type": "jumbled",
-      "category": "Constitutional Traits",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Rearrange these jumbled descriptors to form the common characterization of our constitution as it changes over time.[cite: 1]",
-      "passageId": "",
-      "tag": "Living Document",
-      "hint": "Look at the main sub-heading of page 223.[cite: 1]",
-      "jumbledWords": ["document", "living", "a"],
-      "correctAnswer": "a living document",
-      "explanation": "The text headings label the Constitution explicitly as 'a Living Document'.[cite: 1]"
-    },
-    {
-      "id": "q36",
-      "type": "match_columns",
-      "category": "Global Constitutional Sources",
+      "type": "mcq",
+      "category": "Parallel Lines and Transversals",
       "marks": 3,
       "difficulty": "hard",
-      "question": "Match the core feature or ideal adopted into the Indian Constitution with the country's constitution it was derived from.[cite: 1]",
+      "question": "A transversal $t$ crosses parallel lines $l$ and $m$. If the sum of a pair of alternate interior angles is $150^{\\circ}$, what is the pair of interior angles on the same side of the transversal?",
       "passageId": "",
-      "tag": "Global Borrowing",
-      "hint": "Think about where the 1789 revolution happened and where independent judiciary comes from.[cite: 1]",
-      "columnA": ["If it is the Ideals of Liberty, Equality, and Fraternity,", "If it is the Directive Principles of State Policy,", "If it helps shape an Independent Judiciary,"],
-      "columnB": ["(a) it reflects the American Constitution.", "(b) it stems from France's constitution.", "(c) it was inspired by the Irish Constitution.", "(d) it relates to the British system."],
-      "correctMatches": ["b", "c", "a"],
-      "correctAnswer": "1-b, 2-c, 3-a",
-      "explanation": "The text lists that liberty, equality, and fraternity came from France; Directive Principles from Ireland; and the independent judiciary layout from America.[cite: 1]"
-    },
-    {
-      "id": "q37",
-      "type": "match_columns",
-      "category": "Preamble Principles Definition",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Match the core Preamble term on the left with its exact textual definition on the right.[cite: 1]",
-      "passageId": "",
-      "tag": "Preamble Core",
-      "hint": "Look closely at the word charts on the Preamble page.[cite: 1]",
-      "columnA": ["When looking at SOVEREIGN,", "When looking at SOCIALIST,", "When looking at FRATERNITY,"],
-      "columnB": ["(a) it implies wealth is generated socially and shared by society.", "(b) it requires behaving as if we are members of the same family.", "(c) it means no external power can dictate the government of India.", "(d) it indicates an official state religion exists."],
-      "correctMatches": ["c", "a", "b"],
-      "correctAnswer": "1-c, 2-a, 3-b",
-      "explanation": "Based on the text: Sovereign means no external power can dictate; Socialist relates to social generation/sharing of wealth; Fraternity means behaving like family members.[cite: 1]"
-    },
-    {
-      "id": "q38",
-      "type": "match_columns",
-      "category": "Artistic Document Visuals",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "Match the Part of the original Constitution document with the specific historical illustration scene painted on it by Nandalal Bose's team.[cite: 1]",
-      "passageId": "",
-      "tag": "Illustrations",
-      "hint": "Check figures 10.6 through 10.9 carefully.[cite: 1]",
-      "columnA": ["When opening Part II (Citizenship),", "When opening Part III (Fundamental Rights),", "When opening Part IV (Directive Principles of State Policy),"],
-      "columnB": ["(a) it opens with a scene from the Ramayana: Rama's conquest of Lanka.", "(b) it displays a scene from the Mahabharata: Krishna propounding the Gita.", "(c) it features a scene from an ancient gurukula.", "(d) it exhibits a scene depicting Nalanda University."],
-      "correctMatches": ["c", "a", "b"],
-      "correctAnswer": "1-c, 2-a, 3-b",
-      "explanation": "Figure 10.6 links Part II to a gurukula scene; Figure 10.7 links Part III to the Ramayana; Figure 10.8 links Part IV to the Mahabharata Gita propounding scene.[cite: 1]"
-    },
-    {
-      "id": "q39",
-      "type": "match_columns",
-      "category": "Crossword Historical Review",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Match the clue text with the exact term solving the crossword puzzle at the end of Chapter 10.[cite: 1]",
-      "passageId": "",
-      "tag": "Crossword",
-      "hint": "Review the Across and Down clues on page 228.[cite: 1]",
-      "columnA": ["If looking for the branch that makes laws,", "If searching for the statement outlining fundamental values,", "If identifying the gas used to preserve the manuscript safely,"],
-      "columnB": ["(a) the answer is the Preamble.", "(b) the solution is Helium.", "(c) the answer is the Legislature.", "(d) the answer is the Executive."],
-      "correctMatches": ["c", "a", "b"],
-      "correctAnswer": "1-c, 2-a, 3-b",
-      "explanation": "The crossword keys map Across 2 as 'Legislature', Down 3 as 'Preamble', and Down 5 as 'Helium'.[cite: 1]"
-    },
-    {
-      "id": "q40",
-      "type": "match_columns",
-      "category": "Constitutional Articles Mapping",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Match the Constitutional Article number with its corresponding domain according to the chapter infographic.[cite: 1]",
-      "passageId": "",
-      "tag": "Articles Layout",
-      "hint": "Check the specific numbers for environment and monuments.[cite: 1]",
-      "columnA": ["If evaluating Article 48-A,", "If examining Article 49,", "If validating Article 14,"],
-      "columnB": ["(a) it establishes equality before law.", "(b) it concerns Environment and Wildlife Protection.", "(c) it covers protection of monuments, places, and objects of national importance.", "(d) it relates to the Right to Education."],
-      "correctMatches": ["b", "c", "a"],
-      "correctAnswer": "1-b, 2-c, 3-a",
-      "explanation": "According to Figure 10.14: Article 48-A covers environment/wildlife, Article 49 covers national monuments, and Article 14 establishes equality before law.[cite: 1]"
-    },
-    {
-      "id": "q41",
-      "type": "short_answer",
-      "category": "Core Functions of a Constitution",
-      "marks": 2,
-      "difficulty": "easy",
-      "question": "List two primary structural frameworks that a national constitution lays out according to the section 'What is a Constitution?'.[cite: 1]",
-      "passageId": "",
-      "tag": "Functions",
-      "hint": "Think about the framework of organs and rights.[cite: 1]",
-      "correctAnswer": "1. The framework of the three organs of government (legislature, executive, and judiciary).[cite: 1]\n2. The rights and duties of the citizens.[cite: 1]",
-      "explanation": "The text lists four elements including the framework of the three organs, checks and balances, rights/duties of citizens, and long-term goals.[cite: 1]"
-    },
-    {
-      "id": "q42",
-      "type": "short_answer",
-      "category": "Constituent Assembly Background",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Who was the Chairman of the Constituent Assembly, and who was the Chairman of the Drafting Committee?[cite: 1]",
-      "passageId": "",
-      "tag": "Assembly Leaders",
-      "hint": "One became President; the other was the first Law Minister.[cite: 1]",
-      "correctAnswer": "Dr. Rajendra Prasad was the Chairman of the Constituent Assembly, and Dr. B.R. Ambedkar was the Chairman of the Drafting Committee.[cite: 1]",
-      "explanation": "The text explicitly distinguishes both positions on page 214.[cite: 1]"
-    },
-    {
-      "id": "q43",
-      "type": "short_answer",
-      "category": "Preamble Historical Footnotes",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Which three specific words were added to the Preamble by the 42nd Constitutional Amendment Act of 1976?[cite: 1]",
-      "passageId": "",
-      "tag": "Amendments",
-      "hint": "Check the footnote note below the Preamble image.[cite: 1]",
-      "correctAnswer": "Socialist, Secular, and Integrity.[cite: 1]",
-      "explanation": "The footnote and note at the bottom of the Preamble section verify these three terms were added in 1976.[cite: 1]"
-    },
-    {
-      "id": "q44",
-      "type": "short_answer",
-      "category": "Artistic Production Elements",
-      "marks": 2,
-      "difficulty": "hard",
-      "question": "Describe the unique artistic contribution of Prem Behari Narain Raizada towards the production of the original Indian Constitution document.[cite: 1]",
-      "passageId": "",
-      "tag": "Art and Calligraphy",
-      "hint": "How did he document the text?[cite: 1]",
-      "correctAnswer": "Prem Behari Narain Raizada served as the calligrapher who wrote the entire text of the Constitution of India completely by hand.[cite: 1]",
-      "explanation": "The text under the art subsection confirms: 'Calligrapher Prem Behari Narain Raizada wrote its text by hand'.[cite: 1]"
-    },
-    {
-      "id": "q45",
-      "type": "short_answer",
-      "category": "Preamble Values: Liberty",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Explain the concept of **'LIBERTY'** as defined in the infographic breakdown of the Preamble.[cite: 1]",
-      "passageId": "",
-      "tag": "Preamble Principles",
-      "hint": "What are the rules regarding unreasonable restrictions on thoughts?[cite: 1]",
-      "correctAnswer": "Liberty means there are no unreasonable restrictions on citizens in what they think, how they wish to express their thoughts, and the way they wish to follow up their thoughts in action.[cite: 1]",
-      "explanation": "The Preamble breakdown on page 225 details the exact parameters of Liberty guaranteed to Indian citizens.[cite: 1]"
-    },
-    {
-      "id": "q46",
-      "type": "short_answer",
-      "category": "Three Organs Matrix",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Name the three organs of the Indian government and state the primary role of each organ as defined in the chapter.[cite: 1]",
-      "passageId": "",
-      "tag": "Organs of Government",
-      "hint": "Review the three bullet points under Grade 6 revision notes.[cite: 1]",
-      "correctAnswer": "1. Legislature: Makes the laws.[cite: 1]\n2. Executive: Implements the laws (headed by the Prime Minister).[cite: 1]\n3. Judiciary: Ensures all laws follow the Constitution, decides if a law is broken, and determines punishment.[cite: 1]",
-      "explanation": "The textbook comprehensively defines the roles of the Legislature, Executive, and Judiciary in its core revision summary.[cite: 1]"
-    },
-    {
-      "id": "q47",
-      "type": "short_answer",
-      "category": "Civilisational Heritage Values",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "How did India's ancient civilisational heritage and culture influence the values embedded inside the Constitution? Mention at least two Sanskrit concepts cited in the text.[cite: 1]",
-      "passageId": "",
-      "tag": "Cultural Heritage",
-      "hint": "Look at the heritage section mentioning diversity, unity, and fundamental duties.[cite: 1]",
-      "correctAnswer": "India's heritage emphasizes community duties and the acceptance of different points of view. Key cultural concepts like 'vasudhaiva kutumbakam' (the world is one family) and 'sarve bhavantu sukhinah' (invocation for the well-being of all creatures) directly inspired the inclusion of values like fundamental duties and equality.[cite: 1]",
-      "explanation": "The textbook describes how traditional principles find a place in the Constitution under the sub-section 'India's civilisational heritage and history'.[cite: 1]"
-    },
-    {
-      "id": "q48",
-      "type": "short_answer",
-      "category": "Living Document Amendment Procedure",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "Why is the Constitution of India called a 'Living Document'? Detail the social checks required before any change is accepted.[cite: 1]",
-      "passageId": "",
-      "tag": "Living Document",
-      "hint": "Think about debates, legislative assembly inputs, and popular movements.[cite: 1]",
-      "correctAnswer": "It is called a 'Living Document' because it can be changed or improved over time as new needs emerge. Before changes ('amendments') are accepted, they must be rigorously debated in Parliament. Some require debate in state legislative assemblies, seeking opinions from the general public, or can be initiated by popular movements.[cite: 1]",
-      "explanation": "The section 'The Constitution is a Living Document' sets out the capacity for growth and the rigorous democratic debate processes required for amendments.[cite: 1]"
-    },
-    {
-      "id": "q49",
-      "type": "short_answer",
-      "category": "Preamble Values: Justice",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "According to the Preamble, what does **'JUSTICE'** mean for the citizens, and what is the government's role in achieving it?[cite: 1]",
-      "passageId": "",
-      "tag": "Preamble Principles",
-      "hint": "Look at the grounds of discrimination and less advantaged groups.[cite: 1]",
-      "correctAnswer": "Justice means citizens cannot be discriminated against on the grounds of caste, religion, and gender. It requires social inequalities to be reduced, and the government should actively work for the welfare of all, especially less advantaged groups.[cite: 1]",
-      "explanation": "The Preamble text definition block for 'JUSTICE' explicitly states these constraints and welfare imperatives.[cite: 1]"
-    },
-    {
-      "id": "q50",
-      "type": "short_answer",
-      "category": "Historical Quotes Analysis",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "In his opening statement to the Constituent Assembly, what did Dr. Sachidananda Sinha state was the ultimate vision or goal for writing the Constitution of India?[cite: 1]",
-      "passageId": "",
-      "tag": "Assembly Debates",
-      "hint": "Look at the block quote on page 213 highlighting pristine glory.[cite: 1]",
-      "correctAnswer": "Dr. Sachidananda Sinha invoked that the proceedings be marked by wisdom, toleration, justice, and fairness to all, with an ultimate vision to restore India to her pristine glory and give her a place of honour and equality among the great nations of the world.[cite: 1]",
-      "explanation": "Dr. Sachidananda Sinha's historic quote at the start of the writing process explicitly outlines this vision for independent India.[cite: 1]"
+      "tag": "",
+      "hint": "Find the measure of one alternate interior angle, then find its consecutive interior angle.",
+      "diagramSpec": null,
+      "options": [
+        {
+          "text": "$75^{\\circ}$ and $105^{\\circ}$",
+          "explanation": "The interior angle is $75^{\\circ}$ and the one on the same side is $180^{\\circ} - 75^{\\circ} = 105^{\\circ}$."
+        },
+        {
+          "text": "$75^{\\circ}$ and $75^{\\circ}$",
+          "explanation": "These are the alternate interior angles, not the same-side interior angles."
+        },
+        {
+          "text": "$105^{\\circ}$ and $105^{\\circ}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$150^{\\circ}$ and $30^{\\circ}$",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "$75^{\\circ}$ and $105^{\\circ}$",
+      "explanation": "Alternate interior angles are equal. Their sum is $150^{\\circ}$, so each alternate interior angle is $75^{\\circ}$. The interior angles on the same side of the transversal sum to $180^{\\circ}$. Therefore, the pair consists of $75^{\\circ}$ and $180^{\\circ} - 75^{\\circ} = 105^{\\circ}$."
     }
   ]
 }

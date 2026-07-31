@@ -1565,6 +1565,8 @@ Return ONLY the JSON array, no markdown, no explanation.
                         columnA       = colAList,
                         columnB       = colBList,
                         correctMatches = matchesList,
+                        asy           = obj.optString("asy", "").ifBlank { obj.optString("asymptote", "") },
+                        svg           = obj.optString("svg", ""),
                     )
                 )
             }

@@ -1,8 +1,12 @@
 package com.krishanagarwal.mynoo.ui.screens
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.util.Base64
 import android.util.Log
+import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Canvas
@@ -57,6 +61,7 @@ import java.io.ByteArrayOutputStream
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.foundation.gestures.detectDragGestures
+import androidx.compose.ui.viewinterop.AndroidView
 
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 
@@ -337,6 +342,39 @@ private fun QuestionView(
         }
     }
 
+    val cameraPermissionLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.RequestPermission()
+    ) { isGranted ->
+        if (isGranted) {
+            try {
+                cameraLauncher.launch(null)
+            } catch (e: Exception) {
+                Log.e("AssessmentScreen", "Failed to launch camera", e)
+                Toast.makeText(context, "Could not open camera app", Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            Toast.makeText(context, "Camera permission is required to take photos", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    val launchCameraSafely: () -> Unit = {
+        val hasPermission = ContextCompat.checkSelfPermission(
+            context,
+            Manifest.permission.CAMERA
+        ) == PackageManager.PERMISSION_GRANTED
+
+        if (hasPermission) {
+            try {
+                cameraLauncher.launch(null)
+            } catch (e: Exception) {
+                Log.e("AssessmentScreen", "Failed to launch camera", e)
+                Toast.makeText(context, "Could not open camera app", Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            cameraPermissionLauncher.launch(Manifest.permission.CAMERA)
+        }
+    }
+
     val galleryLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetContent()
     ) { uri ->
@@ -528,6 +566,43 @@ private fun QuestionView(
                             contentDescription = "Copy AI JSON debug logs",
                             tint = Color(0xFF95A5A6),
                             modifier = Modifier.size(16.dp)
+                        )
+                    }
+                }
+            }
+
+            // Pre-rendered SVG Vector Diagram (or Asymptote code)
+            if (question.svg.isNotBlank()) {
+                SvgDiagram(svgCode = question.svg)
+            } else {
+                val asyToRender = remember(question) {
+                    if (question.asy.isNotBlank()) {
+                        question.asy
+                    } else {
+                        val qtext = question.question
+                        if ("size(" in qtext || "draw(" in qtext) {
+                            val match = Regex("(size\\(.*?\\);)", RegexOption.DOT_MATCHES_ALL).find(qtext)
+                            match?.value ?: ""
+                        } else {
+                            ""
+                        }
+                    }
+                }
+
+                if (asyToRender.isNotBlank()) {
+                    AsymptoteDiagram(asyCode = asyToRender)
+                } else if (question.question.contains("figure", ignoreCase = true) || question.question.contains("diagram", ignoreCase = true)) {
+                    Surface(
+                        shape = RoundedCornerShape(8.dp),
+                        color = Color(0xFFFFFBEB),
+                        border = BorderStroke(1.dp, Color(0xFFFCD34D)),
+                        modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
+                    ) {
+                        Text(
+                            text = "⚠️ Notice: Question mentions a figure, but question.svg / question.asy is empty in Firestore for QID '${question.id}'.",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = Color(0xFF92400E),
+                            modifier = Modifier.padding(8.dp)
                         )
                     }
                 }
@@ -877,12 +952,24 @@ private fun QuestionView(
                                         )
                                     }
                                 }
-                                Text(
-                                    text = opt,
-                                    style = MaterialTheme.typography.bodyMedium,
-                                    color = Color(0xFF2C3E50),
-                                    modifier = Modifier.weight(1f)
-                                )
+                                if (opt.contains("<svg")) {
+                                    SvgDiagram(
+                                        svgCode = opt,
+                                        modifier = Modifier.weight(1f)
+                                    )
+                                } else if (opt.contains("size(") || opt.contains("draw(") || opt.contains("label(")) {
+                                    AsymptoteDiagram(
+                                        asyCode = opt,
+                                        modifier = Modifier.weight(1f)
+                                    )
+                                } else {
+                                    Text(
+                                        text = opt,
+                                        style = MaterialTheme.typography.bodyMedium,
+                                        color = Color(0xFF2C3E50),
+                                        modifier = Modifier.weight(1f)
+                                    )
+                                }
                                 if (isMcqDone && isCorrect) {
                                     Text("✓", color = Color(0xFF27AE60), fontWeight = FontWeight.Bold, fontSize = 18.sp)
                                 }
@@ -985,7 +1072,7 @@ private fun QuestionView(
                                 onClick = {
                                     answerMode = mode
                                     if (mode == "draw") showCanvasDialog = true
-                                    if (mode == "camera") cameraLauncher.launch(null)
+                                    if (mode == "camera") launchCameraSafely()
                                 },
                                 colors = ButtonDefaults.buttonColors(
                                     containerColor = if (active) Color(0xFF2C3E50) else Color(0xFFECF0F1),
@@ -1014,14 +1101,15 @@ private fun QuestionView(
 
                     if (answerMode == "camera" && !validating) {
                         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                            if (cameraPhotoBitmap != null) {
+                            val currentBitmap = cameraPhotoBitmap
+                            if (currentBitmap != null) {
                                 Card(
                                     modifier = Modifier.fillMaxWidth().border(2.dp, Color(0xFF1A6FA8), RoundedCornerShape(14.dp)),
                                     shape = RoundedCornerShape(14.dp)
                                 ) {
                                     Column {
                                         Image(
-                                            bitmap = cameraPhotoBitmap!!.asImageBitmap(),
+                                            bitmap = currentBitmap.asImageBitmap(),
                                             contentDescription = "Capture Preview",
                                             modifier = Modifier.fillMaxWidth().aspectRatio(4f/3f)
                                         )
@@ -1032,7 +1120,7 @@ private fun QuestionView(
                                             OutlinedButton(
                                                 onClick = {
                                                     cameraPhotoBitmap = null
-                                                    cameraLauncher.launch(null)
+                                                    launchCameraSafely()
                                                 },
                                                 modifier = Modifier.weight(1f)
                                             ) {
@@ -1053,7 +1141,7 @@ private fun QuestionView(
                             } else {
                                 Row(horizontalArrangement = Arrangement.spacedBy(12.dp), modifier = Modifier.fillMaxWidth()) {
                                     Button(
-                                        onClick = { cameraLauncher.launch(null) },
+                                        onClick = { launchCameraSafely() },
                                         colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFEBF5FB), contentColor = Color(0xFF1A6FA8)),
                                         border = BorderStroke(1.5.dp, Color(0xFF1A6FA8)),
                                         shape = RoundedCornerShape(12.dp),
@@ -1062,7 +1150,14 @@ private fun QuestionView(
                                         Text("📷 Camera Photo", style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold))
                                     }
                                     Button(
-                                        onClick = { galleryLauncher.launch("image/*") },
+                                        onClick = {
+                                            try {
+                                                galleryLauncher.launch("image/*")
+                                            } catch (e: Exception) {
+                                                Log.e("AssessmentScreen", "Failed to open gallery", e)
+                                                Toast.makeText(context, "Could not open gallery app", Toast.LENGTH_SHORT).show()
+                                            }
+                                        },
                                         colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFEEF9F8), contentColor = Color(0xFF16A085)),
                                         border = BorderStroke(1.5.dp, Color(0xFF16A085)),
                                         shape = RoundedCornerShape(12.dp),
@@ -1606,3 +1701,352 @@ private fun renderMarkdown(text: String): AnnotatedString = buildAnnotatedString
         i++
     }
 }
+
+@Composable
+fun SvgDiagram(
+    svgCode: String,
+    modifier: Modifier = Modifier
+) {
+    if (svgCode.isBlank()) return
+
+    val htmlContent = remember(svgCode) {
+        """
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+          <style>
+            html, body {
+              margin: 0;
+              padding: 0;
+              background-color: #ffffff;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              min-height: 160px;
+            }
+            svg {
+              max-width: 100% !important;
+              height: auto !important;
+              display: block;
+              margin: 0 auto;
+            }
+          </style>
+        </head>
+        <body>
+          $svgCode
+        </body>
+        </html>
+        """.trimIndent()
+    }
+
+    Surface(
+        shape = RoundedCornerShape(12.dp),
+        color = Color.White,
+        border = BorderStroke(1.dp, Color(0xFFE2E8F0)),
+        shadowElevation = 2.dp,
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp)
+    ) {
+        AndroidView(
+            factory = { context ->
+                android.webkit.WebView(context).apply {
+                    settings.javaScriptEnabled = false
+                    settings.useWideViewPort = true
+                    settings.loadWithOverviewMode = true
+                    setBackgroundColor(android.graphics.Color.WHITE)
+                    loadDataWithBaseURL(null, htmlContent, "text/html; charset=utf-8", "UTF-8", null)
+                }
+            },
+            update = { webView ->
+                webView.loadDataWithBaseURL(null, htmlContent, "text/html; charset=utf-8", "UTF-8", null)
+            },
+            modifier = Modifier
+                .fillMaxWidth()
+                .heightIn(min = 180.dp, max = 340.dp)
+        )
+    }
+}
+
+@Composable
+fun AsymptoteDiagram(
+    asyCode: String,
+    modifier: Modifier = Modifier
+) {
+    if (asyCode.isBlank()) return
+
+    var webErrorState by remember { mutableStateOf<String?>(null) }
+    var showRawCode by remember { mutableStateOf(false) }
+
+    val formattedAsy = remember(asyCode) { asyCode.trim() }
+
+    val htmlContent = remember(formattedAsy) {
+        """
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+          <style>
+            html, body {
+              margin: 0;
+              padding: 0;
+              background-color: #ffffff;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              min-height: 160px;
+              font-family: system-ui, -apple-system, sans-serif;
+            }
+            .asy-wrapper {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 8px;
+              box-sizing: border-box;
+              width: 100%;
+            }
+            svg {
+              max-width: 100% !important;
+              height: auto !important;
+              display: block;
+              margin: 0 auto;
+            }
+            .err-box {
+              color: #DC2626;
+              background: #FEF2F2;
+              border: 1px solid #FCA5A5;
+              padding: 8px;
+              font-size: 12px;
+              border-radius: 4px;
+              margin: 4px;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="asy-wrapper" id="container"></div>
+          <div id="err-display" class="err-box" style="display:none;"></div>
+          <div id="raw-asy" style="display:none;">$formattedAsy</div>
+          <script>
+            window.onerror = function(msg, url, line) {
+              var errDiv = document.getElementById('err-display');
+              if (errDiv) {
+                errDiv.style.display = 'block';
+                errDiv.innerText = "Vector Render Error: " + msg + " (L" + line + ")";
+              }
+              return false;
+            };
+
+            function renderVectorDiagram(code) {
+              try {
+                var container = document.getElementById('container');
+                var scale = 36;
+                var cx = 160, cy = 90;
+                function tx(x) { return cx + parseFloat(x) * scale; }
+                function ty(y) { return cy - parseFloat(y) * scale; }
+
+                var svgElements = [];
+                var clean = code.replace(/\\begin\{tikzpicture\}(\[.*?\])?/g, '').replace(/\\end\{tikzpicture\}/g, '');
+                var statements = clean.split(';');
+
+                statements.forEach(function(stmt) {
+                  stmt = stmt.trim();
+                  if (!stmt) return;
+
+                  if (stmt.indexOf('draw') !== -1 || stmt.indexOf('\\draw') !== -1 || stmt.indexOf('fill') !== -1 || stmt.indexOf('\\fill') !== -1) {
+                    var isFill = stmt.indexOf('fill') !== -1 || stmt.indexOf('\\fill') !== -1;
+                    var strokeColor = stmt.indexOf('blue') !== -1 ? '#2563EB' : (stmt.indexOf('red') !== -1 ? '#DC2626' : (stmt.indexOf('green') !== -1 ? '#16A34A' : '#1E293B'));
+
+                    var coordRegex = /\(([^)]+)\)/g;
+                    var coords = [];
+                    var match;
+                    while ((match = coordRegex.exec(stmt)) !== null) {
+                      var parts = match[1].split(',');
+                      if (parts.length === 2 && !isNaN(parseFloat(parts[0])) && !isNaN(parseFloat(parts[1]))) {
+                        coords.push({ x: parseFloat(parts[0]), y: parseFloat(parts[1]) });
+                      }
+                    }
+
+                    if (coords.length >= 2) {
+                      var pathData = "M " + tx(coords[0].x) + " " + ty(coords[0].y);
+                      for (var i = 1; i < coords.length; i++) {
+                        pathData += " L " + tx(coords[i].x) + " " + ty(coords[i].y);
+                      }
+                      if (stmt.indexOf('cycle') !== -1) pathData += " Z";
+                      svgElements.push('<path d="' + pathData + '" stroke="' + strokeColor + '" stroke-width="2.5" fill="' + (isFill ? strokeColor : 'none') + '" stroke-linecap="round" stroke-linejoin="round" />');
+                    }
+
+                    var nodeRegex = /node(?:\[(.*?)\])?\s*\{([^}]+)\}/g;
+                    while ((match = nodeRegex.exec(stmt)) !== null) {
+                      var labelText = match[2].replace(/\$/g, '').replace(/\\circ/g, '°').replace(/\\text\{([^}]+)\}/g, '$1');
+                      if (coords.length > 0) {
+                        var lastCoord = coords[coords.length - 1];
+                        svgElements.push('<text x="' + (tx(lastCoord.x) + 10) + '" y="' + (ty(lastCoord.y) + 4) + '" fill="#1E293B" font-weight="bold" font-size="14px">' + labelText + '</text>');
+                      }
+                    }
+                  }
+
+                  if (stmt.indexOf('label') !== -1 || stmt.indexOf('\\node') !== -1) {
+                    var labelMatch = /label\s*\(\s*(?:"([^"]+)"|\$([^$]+)\$)\s*,\s*\(([^,]+),([^)]+)\)\s*(?:,\s*([A-Za-z]+))?\)/.exec(stmt);
+                    if (!labelMatch) {
+                      labelMatch = /\\node\s*(?:\[(.*?)\])?\s*at\s*\(([^,]+),([^)]+)\)\s*\{([^}]+)\}/.exec(stmt);
+                      if (labelMatch) {
+                        var nx = parseFloat(labelMatch[2]);
+                        var ny = parseFloat(labelMatch[3]);
+                        var nlabel = labelMatch[4].replace(/\$/g, '').replace(/\\circ/g, '°').replace(/\\text\{([^}]+)\}/g, '$1');
+                        svgElements.push('<text x="' + tx(nx) + '" y="' + ty(ny) + '" fill="#2563EB" font-weight="bold" font-size="15px" text-anchor="middle" dominant-baseline="central">' + nlabel + '</text>');
+                      }
+                    } else {
+                      var textVal = labelMatch[1] || labelMatch[2] || '';
+                      textVal = textVal.replace(/\$/g, '').replace(/\\circ/g, '°').replace(/\\text\{([^}]+)\}/g, '$1');
+                      var lx = parseFloat(labelMatch[3]);
+                      var ly = parseFloat(labelMatch[4]);
+                      svgElements.push('<text x="' + tx(lx) + '" y="' + ty(ly) + '" fill="#2563EB" font-weight="bold" font-size="15px" text-anchor="middle" dominant-baseline="central">' + textVal + '</text>');
+                    }
+                  }
+                });
+
+                if (svgElements.length > 0) {
+                  container.innerHTML = '<svg width="100%" height="180" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="background:#ffffff;">' + svgElements.join('') + '</svg>';
+                }
+              } catch(e) {
+                var errDiv = document.getElementById('err-display');
+                if (errDiv) {
+                  errDiv.style.display = 'block';
+                  errDiv.innerText = "Vector Render Error: " + e.message;
+                }
+              }
+            }
+
+            renderVectorDiagram(document.getElementById('raw-asy').textContent);
+          </script>
+        </body>
+        </html>
+        """.trimIndent()
+    }
+
+    Surface(
+        shape = RoundedCornerShape(12.dp),
+        color = Color.White,
+        border = BorderStroke(1.dp, if (webErrorState != null) Color(0xFFEF4444) else Color(0xFFE2E8F0)),
+        shadowElevation = 2.dp,
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp)
+    ) {
+        Column(
+            modifier = Modifier.padding(8.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "📐 Asymptote Diagram (${asyCode.length} chars)",
+                    style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
+                    color = Color(0xFF64748B)
+                )
+                TextButton(
+                    onClick = { showRawCode = !showRawCode },
+                    contentPadding = PaddingValues(horizontal = 4.dp, vertical = 0.dp)
+                ) {
+                    Text(
+                        text = if (showRawCode) "Hide Code" else "View Asy Code",
+                        style = MaterialTheme.typography.labelSmall,
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                }
+            }
+
+            if (showRawCode) {
+                Text(
+                    text = asyCode,
+                    style = MaterialTheme.typography.bodySmall.copy(fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace, fontSize = 11.sp),
+                    color = Color(0xFF334155),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(Color(0xFFF1F5F9), RoundedCornerShape(6.dp))
+                        .padding(8.dp)
+                )
+            }
+
+            if (webErrorState != null) {
+                Surface(
+                    shape = RoundedCornerShape(6.dp),
+                    color = Color(0xFFFEF2F2),
+                    border = BorderStroke(1.dp, Color(0xFFFCA5A5)),
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
+                ) {
+                    Text(
+                        text = "🚨 Diagram Error: $webErrorState",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = Color(0xFF991B1B),
+                        modifier = Modifier.padding(8.dp)
+                    )
+                }
+            }
+
+            AndroidView(
+                factory = { context ->
+                    android.webkit.WebView(context).apply {
+                        settings.javaScriptEnabled = true
+                        settings.domStorageEnabled = true
+                        settings.useWideViewPort = true
+                        settings.loadWithOverviewMode = true
+                        settings.mixedContentMode = android.webkit.WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
+                        setBackgroundColor(android.graphics.Color.WHITE)
+
+                        webChromeClient = object : android.webkit.WebChromeClient() {
+                            override fun onConsoleMessage(consoleMessage: android.webkit.ConsoleMessage?): Boolean {
+                                consoleMessage?.let {
+                                    if (it.messageLevel() == android.webkit.ConsoleMessage.MessageLevel.ERROR) {
+                                        webErrorState = "Console Error: ${it.message()} (L${it.lineNumber()})"
+                                    }
+                                }
+                                return super.onConsoleMessage(consoleMessage)
+                            }
+                        }
+
+                        webViewClient = object : android.webkit.WebViewClient() {
+                            override fun onReceivedError(
+                                view: android.webkit.WebView?,
+                                errorCode: Int,
+                                description: String?,
+                                failingUrl: String?
+                            ) {
+                                webErrorState = "Net Error ($errorCode): $description"
+                            }
+                        }
+
+                        loadDataWithBaseURL(
+                            "https://localhost/",
+                            htmlContent,
+                            "text/html; charset=utf-8",
+                            "UTF-8",
+                            null
+                        )
+                    }
+                },
+                update = { webView ->
+                    webView.loadDataWithBaseURL(
+                        "https://localhost/",
+                        htmlContent,
+                        "text/html; charset=utf-8",
+                        "UTF-8",
+                        null
+                    )
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .heightIn(min = 180.dp, max = 340.dp)
+            )
+        }
+    }
+}
+
+
+

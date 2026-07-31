@@ -937,7 +937,7 @@ else:
         )
 
     collected_chunks = []
-    output_chars = 0
+    output_bytes = 0
     t_start = time.time()  
 
     for chunk in _client.models.generate_content_stream(
@@ -962,13 +962,13 @@ else:
     ):
         if chunk.text:
             collected_chunks.append(chunk.text)
-            output_chars += len(chunk.text)
-            print(f"\r      Received: {output_chars:,} chars", end="", flush=True)
+            output_bytes += len(chunk.text.encode("utf-8"))
+            print(f"\r      Received: {output_bytes:,} bytes", end="", flush=True)
 
     elapsed_total = time.time() - t_start
     print()  
     print("─" * 72)
-    print(f"      Streaming complete in {elapsed_total:.1f}s — {output_chars:,} chars received")
+    print(f"      Streaming complete in {elapsed_total:.1f}s — {output_bytes:,} bytes received")
     
     collected_stream = "".join(collected_chunks)
     ckpt["raw_json_stream"] = collected_stream

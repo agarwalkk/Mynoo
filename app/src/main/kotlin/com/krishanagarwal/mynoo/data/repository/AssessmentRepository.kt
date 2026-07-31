@@ -28,6 +28,8 @@ data class AssessmentQuestion(
     val columnA:       List<String>  = emptyList(),
     val columnB:       List<String>  = emptyList(),
     val correctMatches: List<String> = emptyList(),
+    val asy:           String        = "",
+    val svg:           String        = "",
 )
 
 data class Assessment(
@@ -152,6 +154,8 @@ class AssessmentRepository @Inject constructor(
                     columnA       = (q["columnA"] as? List<*>)?.mapNotNull { it as? String } ?: emptyList(),
                     columnB       = (q["columnB"] as? List<*>)?.mapNotNull { it as? String } ?: emptyList(),
                     correctMatches = (q["correctMatches"] as? List<*>)?.mapNotNull { it as? String } ?: emptyList(),
+                    asy           = q["asy"] as? String ?: q["asymptote"] as? String ?: "",
+                    svg           = q["svg"] as? String ?: "",
                 )
             }
             @Suppress("UNCHECKED_CAST")
@@ -220,6 +224,8 @@ class AssessmentRepository @Inject constructor(
                 "columnA"       to q.columnA,
                 "columnB"       to q.columnB,
                 "correctMatches" to q.correctMatches,
+                "asy"           to q.asy,
+                "svg"           to q.svg,
             )
         }
         val data = mutableMapOf<String, Any>(

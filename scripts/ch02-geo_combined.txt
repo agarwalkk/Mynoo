@@ -1,0 +1,472 @@
+================================================================================
+TITLE: Social Science Assessment: Weather and Empires
+TOTAL QUESTIONS: 12 | TOTAL MARKS: 20
+================================================================================
+
+--- QUESTIONS ---
+
+Q1. [MCQ] [1 mark(s)] [EASY] (Category: Understanding the Weather)
+What is the layer of the atmosphere closest to the Earth's surface, where almost all weather phenomena occur?
+Options:
+  (A) Stratosphere
+      Explanation: The stratosphere is the layer above the troposphere and contains the ozone layer.
+  (B) Troposphere
+      Explanation: Correct. The troposphere is the lowest layer of Earth's atmosphere, extending up to about 6 to 18 km, and is where all weather takes place.
+  (C) Ozone Layer
+      Explanation: The ozone layer is a region within the stratosphere, not a separate primary layer where weather occurs.
+  (D) Mesosphere
+      Explanation: The mesosphere is located above the stratosphere and is not where weather phenomena happen.
+Correct Answer: Troposphere
+Explanation: The troposphere is the lowest layer of the Earth's atmosphere. It is where all land-based plants and animals live, and it is also where almost all weather phenomena, such as clouds, rain, and wind, take place.
+------------------------------------------------------------
+
+Q2. [MCQ] [1 mark(s)] [EASY] (Category: Understanding the Weather)
+Which instrument is used to measure atmospheric pressure?
+Options:
+  (A) Thermometer
+      Explanation: A thermometer is used to measure temperature.
+  (B) Anemometer
+      Explanation: An anemometer is used to measure wind speed.
+  (C) Barometer
+      Explanation: Correct. A barometer is the scientific instrument used to measure atmospheric pressure.
+  (D) Hygrometer
+      Explanation: A hygrometer is used to measure humidity.
+Correct Answer: Barometer
+Explanation: A barometer is the instrument used to measure atmospheric pressure, which is the weight of the air above us. The unit of measurement is typically the millibar (mb).
+------------------------------------------------------------
+
+Q3. [FILL_BLANK] [1 mark(s)] [EASY] (Category: Understanding the Weather)
+The amount of water vapour present in the air is called ___.
+Correct Answer: humidity
+Explanation: Humidity is the term for the amount of water vapour, which is water in its gaseous state, present in the atmosphere. It is a key element of weather.
+------------------------------------------------------------
+
+Q4. [MATCH_COLUMNS] [5 mark(s)] [MEDIUM] (Category: Understanding the Weather)
+Match the instrument in Column A with the weather element it measures in Column B.
+Column A:
+  1. Hygrometer
+  2. Anemometer
+  3. Barometer
+  4. Thermometer
+  5. Rain gauge
+Column B:
+  (a) Precipitation
+  (b) Atmospheric pressure
+  (c) Wind direction and speed
+  (d) Humidity
+  (e) Temperature
+Correct Answer: 1-d, 2-c, 3-b, 4-e, 5-a
+Explanation: The correct matches are:
+- **Hygrometer** measures **Humidity**.
+- **Anemometer** measures **Wind direction and speed**.
+- **Barometer** measures **Atmospheric pressure**.
+- **Thermometer** measures **Temperature**.
+- **Rain gauge** measures **Precipitation**.
+------------------------------------------------------------
+
+Q5. [SHORT_ANSWER] [2 mark(s)] [MEDIUM] (Category: Understanding the Weather)
+Why do people sometimes feel breathless and dizzy at high altitudes, like in the mountains?
+Correct Answer: At high altitudes, the atmospheric pressure is lower. This means the air is thinner and there is less oxygen available in each breath. The body has to work harder to get the oxygen it needs, which can lead to feelings of breathlessness, dizziness, or tiredness.
+Explanation: Atmospheric pressure is higher near sea level and decreases as altitude increases. When you climb a mountain, the air gets thinner, meaning there are fewer oxygen molecules in the same volume of air. This reduction in available oxygen forces your lungs and heart to work harder, causing symptoms associated with high altitude.
+------------------------------------------------------------
+
+Q6. [MCQ] [1 mark(s)] [EASY] (Category: The Rise of Empires)
+Who was the author of the 'Arthashastra', a famous ancient Indian treatise on statecraft, economic policy, and military strategy?
+Options:
+  (A) Ashoka
+      Explanation: Ashoka was a great Mauryan emperor known for his edicts and spreading Dhamma, but he did not write the Arthashastra.
+  (B) Megasthenes
+      Explanation: Megasthenes was a Greek historian who wrote 'Indika', not the Arthashastra.
+  (C) Chandragupta Maurya
+      Explanation: Chandragupta Maurya was the founder of the Mauryan Empire, but the Arthashastra is attributed to his advisor.
+  (D) Kautilya
+      Explanation: Correct. Kautilya, also known as Chanakya or Vishnugupta, was the advisor to Chandragupta Maurya and is credited with authoring the Arthashastra.
+Correct Answer: Kautilya
+Explanation: Kautilya (also known as Chanakya) was the teacher and mentor of Chandragupta Maurya. He is renowned for his work, the 'Arthashastra', which provides a detailed guide on how a kingdom should be established, managed, and consolidated.
+------------------------------------------------------------
+
+Q7. [MCQ] [1 mark(s)] [EASY] (Category: The Rise of Empires)
+The Mauryan emperor Ashoka adopted Buddhism and the path of 'Dhamma' after which significant and brutal event?
+Options:
+  (A) The Battle with Alexander
+      Explanation: The conflict with Alexander the Great involved King Porus, long before Ashoka's reign.
+  (B) The Kalinga War
+      Explanation: Correct. The immense death and destruction during the Kalinga War deeply affected Ashoka, leading him to renounce violence and embrace Buddhism and the principles of Dhamma.
+  (C) The overthrow of the Nanda Dynasty
+      Explanation: The Nanda Dynasty was overthrown by Chandragupta Maurya, Ashoka's grandfather.
+  (D) The writing of the Arthashastra
+      Explanation: The Arthashastra was written by Kautilya and is a text on governance, not a battle.
+Correct Answer: The Kalinga War
+Explanation: According to his own edicts, Ashoka waged a ferocious war on Kalinga (modern-day Odisha). Seeing the enormous amount of death and destruction on the battlefield, he had a change of heart, gave up violence, and adopted the path of peace and non-violence taught by the Buddha.
+------------------------------------------------------------
+
+Q8. [FILL_BLANK] [1 mark(s)] [MEDIUM] (Category: The Rise of Empires)
+A smaller kingdom or state that has submitted to an emperor and pays money, goods, or services as a sign of submission is known as a ___ state.
+Correct Answer: tributary
+Explanation: A tributary state is a pre-modern state that is subordinate to a more powerful state. It pays a tribute, which could be in the form of money, goods, or soldiers, to the emperor as a sign of submission, loyalty, and respect, while often retaining its own rulers for local governance.
+------------------------------------------------------------
+
+Q9. [SHORT_ANSWER] [2 mark(s)] [MEDIUM] (Category: The Rise of Empires)
+Briefly explain the main difference between a kingdom and an empire.
+Correct Answer: A kingdom is a territory ruled by a king or queen. An empire is much larger and is a collection of many smaller kingdoms, states, or territories that are all controlled by a single powerful ruler, the emperor. Empires are often formed by conquering other kingdoms.
+Explanation: The key difference lies in scale and composition. A kingdom is typically a single political unit. An empire, derived from the Latin 'imperium' (supreme power), is a large territory comprising multiple kingdoms, cultures, and peoples, all brought under the control of a central authority, often through military conquest.
+------------------------------------------------------------
+
+Q10. [MCQ] [1 mark(s)] [MEDIUM] (Category: The Rise of Empires)
+Ashoka's edicts, which contained his messages for the people, were mostly inscribed in the Prakrit language using which script?
+Options:
+  (A) Sanskrit
+      Explanation: Sanskrit was a classical language, but Ashoka used a more popular language and script for his edicts to reach the common people.
+  (B) Devanagari
+      Explanation: Devanagari is a much later script used for Hindi, Marathi, and other modern languages.
+  (C) Brahmi
+      Explanation: Correct. Most of Ashoka's edicts were written in the Brahmi script, which was deciphered by James Prinsep in the 19th century.
+  (D) Tamil
+      Explanation: Tamil is a language with its own script, primarily used in Southern India, but Brahmi was used across a wider part of Ashoka's empire.
+Correct Answer: Brahmi
+Explanation: To ensure his messages were understood by the general public, Ashoka had his edicts inscribed in the popular language of the time, Prakrit. The script used for this was Brahmi, which is the ancestor of most modern Indian scripts.
+------------------------------------------------------------
+
+Q11. [SHORT_ANSWER] [3 mark(s)] [HARD] (Category: The Rise of Empires)
+List and briefly describe any three of the seven elements ('Saptanga') that constitute a kingdom, according to Kautilya's Arthashastra.
+Correct Answer: Three elements from Kautilya's Saptanga are:
+1. **Swami (The King):** The sovereign ruler, who is the central figure of the state.
+2. **Amatya (The Ministers):** The councillors and high officials who advise the king and run the administration.
+3. **Janapada (The Territory and People):** The land and the population that inhabits it, which is the source of all economic activity.
+(Other valid answers: Durga - Forts, Kosha - Treasury, Danda - Army/Justice, Mitra - Allies).
+Explanation: Kautilya's 'Saptanga' theory outlines the seven essential organs or elements of a state. These are: 1. **Swami** (The King), 2. **Amatya** (Ministers/Officials), 3. **Janapada** (Territory and People), 4. **Durga** (Fortified Capital/Forts), 5. **Kosha** (Treasury), 6. **Danda** (Army and Justice System), and 7. **Mitra** (Allies). Together, these elements form a complete and functional kingdom.
+------------------------------------------------------------
+
+Q12. [MCQ] [1 mark(s)] [MEDIUM] (Category: The Rise of Empires)
+Powerful associations of traders, craftsmen, moneylenders, or agriculturists in ancient India were known as:
+Options:
+  (A) Sabhas
+      Explanation: Sabhas were assemblies or councils, often of elders, but not specifically for trade.
+  (B) Satraps
+      Explanation: Satraps were provincial governors in the Persian and Greek empires.
+  (C) Guilds
+      Explanation: Correct. Guilds (or śhrenīs) were powerful associations of people in the same profession, like trade or craft, that regulated their work and protected their interests.
+  (D) Edicts
+      Explanation: Edicts are official orders or proclamations issued by a person in authority, like a king.
+Correct Answer: Guilds
+Explanation: In ancient India, traders, craftsmen, and other professionals formed powerful associations called guilds (śhrenīs). These guilds played a crucial role in the economy, had their own rules, and often acted as banks or trusts.
+------------------------------------------------------------
+
+================================================================================
+RAW JSON REPRESENTATION FOR UPLOAD:
+================================================================================
+{
+  "title": "Social Science Assessment: Weather and Empires",
+  "passages": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "category": "Understanding the Weather",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "What is the layer of the atmosphere closest to the Earth's surface, where almost all weather phenomena occur?",
+      "passageId": "",
+      "tag": "Atmosphere Layers",
+      "hint": "This layer is where we live and breathe.",
+      "tikz": "",
+      "options": [
+        {
+          "text": "Stratosphere",
+          "explanation": "The stratosphere is the layer above the troposphere and contains the ozone layer."
+        },
+        {
+          "text": "Troposphere",
+          "explanation": "Correct. The troposphere is the lowest layer of Earth's atmosphere, extending up to about 6 to 18 km, and is where all weather takes place."
+        },
+        {
+          "text": "Ozone Layer",
+          "explanation": "The ozone layer is a region within the stratosphere, not a separate primary layer where weather occurs."
+        },
+        {
+          "text": "Mesosphere",
+          "explanation": "The mesosphere is located above the stratosphere and is not where weather phenomena happen."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "Troposphere",
+      "explanation": "The troposphere is the lowest layer of the Earth's atmosphere. It is where all land-based plants and animals live, and it is also where almost all weather phenomena, such as clouds, rain, and wind, take place."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "category": "Understanding the Weather",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Which instrument is used to measure atmospheric pressure?",
+      "passageId": "",
+      "tag": "Weather Instruments",
+      "hint": "Think about the unit 'millibars' (mb).",
+      "tikz": "",
+      "options": [
+        {
+          "text": "Thermometer",
+          "explanation": "A thermometer is used to measure temperature."
+        },
+        {
+          "text": "Anemometer",
+          "explanation": "An anemometer is used to measure wind speed."
+        },
+        {
+          "text": "Barometer",
+          "explanation": "Correct. A barometer is the scientific instrument used to measure atmospheric pressure."
+        },
+        {
+          "text": "Hygrometer",
+          "explanation": "A hygrometer is used to measure humidity."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "Barometer",
+      "explanation": "A barometer is the instrument used to measure atmospheric pressure, which is the weight of the air above us. The unit of measurement is typically the millibar (mb)."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "category": "Understanding the Weather",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "The amount of water vapour present in the air is called ___.",
+      "passageId": "",
+      "tag": "Elements of Weather",
+      "hint": "This element is measured as a percentage (%) using a hygrometer.",
+      "tikz": "",
+      "correctAnswer": "humidity",
+      "explanation": "Humidity is the term for the amount of water vapour, which is water in its gaseous state, present in the atmosphere. It is a key element of weather.",
+      "blanks": [
+        "humidity"
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "match_columns",
+      "category": "Understanding the Weather",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "Match the instrument in Column A with the weather element it measures in Column B.",
+      "passageId": "",
+      "tag": "Weather Instruments",
+      "hint": "Recall the function of each scientific instrument mentioned in the chapter.",
+      "tikz": "",
+      "correctAnswer": "1-d, 2-c, 3-b, 4-e, 5-a",
+      "explanation": "The correct matches are:\n- **Hygrometer** measures **Humidity**.\n- **Anemometer** measures **Wind direction and speed**.\n- **Barometer** measures **Atmospheric pressure**.\n- **Thermometer** measures **Temperature**.\n- **Rain gauge** measures **Precipitation**.",
+      "columnA": [
+        "Hygrometer",
+        "Anemometer",
+        "Barometer",
+        "Thermometer",
+        "Rain gauge"
+      ],
+      "columnB": [
+        "(a) Precipitation",
+        "(b) Atmospheric pressure",
+        "(c) Wind direction and speed",
+        "(d) Humidity",
+        "(e) Temperature"
+      ],
+      "correctMatches": [
+        "d",
+        "c",
+        "b",
+        "e",
+        "a"
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "short_answer",
+      "category": "Understanding the Weather",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Why do people sometimes feel breathless and dizzy at high altitudes, like in the mountains?",
+      "passageId": "",
+      "tag": "Atmospheric Pressure",
+      "hint": "Consider how air pressure and the amount of air change as you go higher.",
+      "tikz": "",
+      "correctAnswer": "At high altitudes, the atmospheric pressure is lower. This means the air is thinner and there is less oxygen available in each breath. The body has to work harder to get the oxygen it needs, which can lead to feelings of breathlessness, dizziness, or tiredness.",
+      "explanation": "Atmospheric pressure is higher near sea level and decreases as altitude increases. When you climb a mountain, the air gets thinner, meaning there are fewer oxygen molecules in the same volume of air. This reduction in available oxygen forces your lungs and heart to work harder, causing symptoms associated with high altitude."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "category": "The Rise of Empires",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Who was the author of the 'Arthashastra', a famous ancient Indian treatise on statecraft, economic policy, and military strategy?",
+      "passageId": "",
+      "tag": "Mauryan Empire",
+      "hint": "This person was the mentor of Chandragupta Maurya and is also known as Chanakya.",
+      "tikz": "",
+      "options": [
+        {
+          "text": "Ashoka",
+          "explanation": "Ashoka was a great Mauryan emperor known for his edicts and spreading Dhamma, but he did not write the Arthashastra."
+        },
+        {
+          "text": "Megasthenes",
+          "explanation": "Megasthenes was a Greek historian who wrote 'Indika', not the Arthashastra."
+        },
+        {
+          "text": "Chandragupta Maurya",
+          "explanation": "Chandragupta Maurya was the founder of the Mauryan Empire, but the Arthashastra is attributed to his advisor."
+        },
+        {
+          "text": "Kautilya",
+          "explanation": "Correct. Kautilya, also known as Chanakya or Vishnugupta, was the advisor to Chandragupta Maurya and is credited with authoring the Arthashastra."
+        }
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "Kautilya",
+      "explanation": "Kautilya (also known as Chanakya) was the teacher and mentor of Chandragupta Maurya. He is renowned for his work, the 'Arthashastra', which provides a detailed guide on how a kingdom should be established, managed, and consolidated."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "category": "The Rise of Empires",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "The Mauryan emperor Ashoka adopted Buddhism and the path of 'Dhamma' after which significant and brutal event?",
+      "passageId": "",
+      "tag": "Ashoka the Great",
+      "hint": "This event involved a war against a kingdom in modern-day Odisha.",
+      "tikz": "",
+      "options": [
+        {
+          "text": "The Battle with Alexander",
+          "explanation": "The conflict with Alexander the Great involved King Porus, long before Ashoka's reign."
+        },
+        {
+          "text": "The Kalinga War",
+          "explanation": "Correct. The immense death and destruction during the Kalinga War deeply affected Ashoka, leading him to renounce violence and embrace Buddhism and the principles of Dhamma."
+        },
+        {
+          "text": "The overthrow of the Nanda Dynasty",
+          "explanation": "The Nanda Dynasty was overthrown by Chandragupta Maurya, Ashoka's grandfather."
+        },
+        {
+          "text": "The writing of the Arthashastra",
+          "explanation": "The Arthashastra was written by Kautilya and is a text on governance, not a battle."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "The Kalinga War",
+      "explanation": "According to his own edicts, Ashoka waged a ferocious war on Kalinga (modern-day Odisha). Seeing the enormous amount of death and destruction on the battlefield, he had a change of heart, gave up violence, and adopted the path of peace and non-violence taught by the Buddha."
+    },
+    {
+      "id": "q8",
+      "type": "fill_blank",
+      "category": "The Rise of Empires",
+      "marks": 1,
+      "difficulty": "medium",
+      "question": "A smaller kingdom or state that has submitted to an emperor and pays money, goods, or services as a sign of submission is known as a ___ state.",
+      "passageId": "",
+      "tag": "Features of an Empire",
+      "hint": "This term is similar to 'vassal'.",
+      "tikz": "",
+      "correctAnswer": "tributary",
+      "explanation": "A tributary state is a pre-modern state that is subordinate to a more powerful state. It pays a tribute, which could be in the form of money, goods, or soldiers, to the emperor as a sign of submission, loyalty, and respect, while often retaining its own rulers for local governance.",
+      "blanks": [
+        "tributary"
+      ]
+    },
+    {
+      "id": "q9",
+      "type": "short_answer",
+      "category": "The Rise of Empires",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Briefly explain the main difference between a kingdom and an empire.",
+      "passageId": "",
+      "tag": "Kingdoms and Empires",
+      "hint": "Think about scale and how an empire is formed.",
+      "tikz": "",
+      "correctAnswer": "A kingdom is a territory ruled by a king or queen. An empire is much larger and is a collection of many smaller kingdoms, states, or territories that are all controlled by a single powerful ruler, the emperor. Empires are often formed by conquering other kingdoms.",
+      "explanation": "The key difference lies in scale and composition. A kingdom is typically a single political unit. An empire, derived from the Latin 'imperium' (supreme power), is a large territory comprising multiple kingdoms, cultures, and peoples, all brought under the control of a central authority, often through military conquest."
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "category": "The Rise of Empires",
+      "marks": 1,
+      "difficulty": "medium",
+      "question": "Ashoka's edicts, which contained his messages for the people, were mostly inscribed in the Prakrit language using which script?",
+      "passageId": "",
+      "tag": "Ashokan Edicts",
+      "hint": "This script is considered the mother of all regional scripts of India.",
+      "tikz": "",
+      "options": [
+        {
+          "text": "Sanskrit",
+          "explanation": "Sanskrit was a classical language, but Ashoka used a more popular language and script for his edicts to reach the common people."
+        },
+        {
+          "text": "Devanagari",
+          "explanation": "Devanagari is a much later script used for Hindi, Marathi, and other modern languages."
+        },
+        {
+          "text": "Brahmi",
+          "explanation": "Correct. Most of Ashoka's edicts were written in the Brahmi script, which was deciphered by James Prinsep in the 19th century."
+        },
+        {
+          "text": "Tamil",
+          "explanation": "Tamil is a language with its own script, primarily used in Southern India, but Brahmi was used across a wider part of Ashoka's empire."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "Brahmi",
+      "explanation": "To ensure his messages were understood by the general public, Ashoka had his edicts inscribed in the popular language of the time, Prakrit. The script used for this was Brahmi, which is the ancestor of most modern Indian scripts."
+    },
+    {
+      "id": "q11",
+      "type": "short_answer",
+      "category": "The Rise of Empires",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "List and briefly describe any three of the seven elements ('Saptanga') that constitute a kingdom, according to Kautilya's Arthashastra.",
+      "passageId": "",
+      "tag": "Kautilya's Saptanga",
+      "hint": "The seven elements include the king, ministers, territory, forts, treasury, army, and allies.",
+      "tikz": "",
+      "correctAnswer": "Three elements from Kautilya's Saptanga are:\n1. **Swami (The King):** The sovereign ruler, who is the central figure of the state.\n2. **Amatya (The Ministers):** The councillors and high officials who advise the king and run the administration.\n3. **Janapada (The Territory and People):** The land and the population that inhabits it, which is the source of all economic activity.\n(Other valid answers: Durga - Forts, Kosha - Treasury, Danda - Army/Justice, Mitra - Allies).",
+      "explanation": "Kautilya's 'Saptanga' theory outlines the seven essential organs or elements of a state. These are: 1. **Swami** (The King), 2. **Amatya** (Ministers/Officials), 3. **Janapada** (Territory and People), 4. **Durga** (Fortified Capital/Forts), 5. **Kosha** (Treasury), 6. **Danda** (Army and Justice System), and 7. **Mitra** (Allies). Together, these elements form a complete and functional kingdom."
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "category": "The Rise of Empires",
+      "marks": 1,
+      "difficulty": "medium",
+      "question": "Powerful associations of traders, craftsmen, moneylenders, or agriculturists in ancient India were known as:",
+      "passageId": "",
+      "tag": "Ancient Indian Economy",
+      "hint": "The Sanskrit term for these associations was 'śhrenīs'.",
+      "tikz": "",
+      "options": [
+        {
+          "text": "Sabhas",
+          "explanation": "Sabhas were assemblies or councils, often of elders, but not specifically for trade."
+        },
+        {
+          "text": "Satraps",
+          "explanation": "Satraps were provincial governors in the Persian and Greek empires."
+        },
+        {
+          "text": "Guilds",
+          "explanation": "Correct. Guilds (or śhrenīs) were powerful associations of people in the same profession, like trade or craft, that regulated their work and protected their interests."
+        },
+        {
+          "text": "Edicts",
+          "explanation": "Edicts are official orders or proclamations issued by a person in authority, like a king."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "Guilds",
+      "explanation": "In ancient India, traders, craftsmen, and other professionals formed powerful associations called guilds (śhrenīs). These guilds played a crucial role in the economy, had their own rules, and often acted as banks or trusts."
+    }
+  ]
+}
