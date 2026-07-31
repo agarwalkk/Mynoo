@@ -1,0 +1,64 @@
+{
+  "title": "Class 7 Mathematics - Geometry & Triangles MCQ Special",
+  "passages": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "category": "Triangles & Pythagoras Theorem",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "In the right-angled triangle shown below, $AB = 6\\text{ cm}$ and $BC = 8\\text{ cm}$. What is the length of the hypotenuse $AC$?",
+      "passageId": "",
+      "tag": "Pythagoras Theorem",
+      "hint": "Use $AC^2 = AB^2 + BC^2$",
+      "asy": "size(200); draw((0,0)--(4,0)--(0,3)--cycle, black+1.2pt); label(\"B\", (0,0), SW); label(\"C\", (4,0), SE); label(\"A\", (0,3), NW); label(\"6 cm\", (0,1.5), W); label(\"8 cm\", (2,0), S); label(\"AC = ?\", (2,1.5), NE);",
+      "options": [
+        { "text": "10 cm", "explanation": "Correct. $AC = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10\\text{ cm}$." },
+        { "text": "14 cm", "explanation": "14 cm is $6+8$, which is incorrect." },
+        { "text": "12 cm", "explanation": "12 cm is incorrect." },
+        { "text": "48 cm", "explanation": "48 is $6 \\times 8$, which is incorrect." }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "10 cm",
+      "explanation": "By Pythagoras theorem, $AC = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = 10\\text{ cm}$."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "category": "Triangles Identification",
+      "marks": 2,
+      "difficulty": "hard",
+      "question": "Which of the following Asymptote vector diagrams correctly represents an equilateral triangle where all three interior angles are equal to $60^\\circ$?",
+      "passageId": "",
+      "tag": "Equilateral Triangle",
+      "hint": "An equilateral triangle has all 3 sides equal and all 3 interior angles equal to 60°.",
+      "asy": "",
+      "options": [
+        {
+          "asy": "size(180); draw((0,0)--(3,0)--(1.5,2.6)--cycle, blue+1.2pt); label(\"$a$\", (1.5,0), S); label(\"$a$\", (0.5,1.4), W); label(\"$a$\", (2.5,1.4), E); label(\"$60^\\circ$\", (1.5,0.4), N);",
+          "text": "Equilateral Triangle",
+          "explanation": "Correct! This diagram shows an equilateral triangle with equal sides $a$ and $60^\\circ$ angles."
+        },
+        {
+          "asy": "size(180); draw((0,0)--(4,0)--(0,3)--cycle, red+1.2pt);",
+          "text": "Right-Angled Triangle",
+          "explanation": "This diagram shows a right-angled triangle, not an equilateral triangle."
+        },
+        {
+          "asy": "size(180); draw((0,0)--(4,0)--(1,2)--cycle, green+1.2pt);",
+          "text": "Scalene Triangle",
+          "explanation": "This diagram shows a scalene triangle with unequal sides."
+        },
+        {
+          "asy": "size(180); draw((0,0)--(3,0)--(1.5,1)--cycle, orange+1.2pt);",
+          "text": "Isosceles Triangle",
+          "explanation": "This diagram shows an isosceles triangle with an obtuse angle."
+        }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Equilateral Triangle",
+      "explanation": "Option A shows an equilateral triangle with 3 equal side lengths $a$ and interior angles of $60^\\circ$."
+    }
+  ]
+}

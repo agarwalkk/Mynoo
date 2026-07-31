@@ -1,0 +1,60 @@
+{
+  "title": "Class 7 Mathematics - Geometry & Triangles MCQ Special",
+  "passages": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "category": "Triangles & Pythagoras Theorem",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "In the right-angled triangle shown below, $AB = 6\\text{ cm}$ and $BC = 8\\text{ cm}$. What is the length of the hypotenuse $AC$?",
+      "passageId": "",
+      "tag": "Pythagoras Theorem",
+      "hint": "Use $AC^2 = AB^2 + BC^2$",
+      "tikz": "\\begin{tikzpicture}[scale=0.8]\n  \\draw[thick] (0,0) node[below left]{B} -- (4,0) node[below right]{C} -- (0,3) node[above left]{A} -- cycle;\n  \\draw (0,0.3) -- (0.3,0.3) -- (0.3,0);\n  \\node[left] at (0,1.5) {$6\\text{ cm}$};\n  \\node[below] at (2,0) {$8\\text{ cm}$};\n  \\node[above right] at (2,1.5) {$AC = ?$};\n\\end{tikzpicture}",
+      "options": [
+        { "text": "10 cm", "explanation": "Correct. $AC = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10\\text{ cm}$." },
+        { "text": "14 cm", "explanation": "14 cm is $6+8$, which is incorrect." },
+        { "text": "12 cm", "explanation": "12 cm is incorrect." },
+        { "text": "48 cm", "explanation": "48 is $6 \\times 8$, which is incorrect." }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "10 cm",
+      "explanation": "By Pythagoras theorem, $AC = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = 10\\text{ cm}$."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "category": "Triangles Identification",
+      "marks": 2,
+      "difficulty": "hard",
+      "question": "Which of the following TikZ diagrams correctly represents an equilateral triangle where all three angles are equal to $60^\\circ$?",
+      "passageId": "",
+      "tag": "Equilateral Triangle",
+      "hint": "An equilateral triangle has all 3 sides equal and all 3 interior angles equal to 60°.",
+      "tikz": "",
+      "options": [
+        {
+          "text": "\\begin{tikzpicture}[scale=0.7]\n  \\draw[thick, blue] (0,0) -- (3,0) -- (1.5,2.6) -- cycle;\n  \\node at (1.5,-0.3) {$a$};\n  \\node at (0.5,1.4) {$a$};\n  \\node at (2.5,1.4) {$a$};\n  \\node at (1.5,0.4) {$60^\\circ$};\n\\end{tikzpicture}",
+          "explanation": "Correct! This diagram shows an equilateral triangle with equal sides $a$ and $60^\\circ$ angles."
+        },
+        {
+          "text": "\\begin{tikzpicture}[scale=0.7]\n  \\draw[thick, red] (0,0) -- (4,0) -- (0,3) -- cycle;\n  \\draw (0,0.3) -- (0.3,0.3) -- (0.3,0);\n\\end{tikzpicture}",
+          "explanation": "This diagram shows a right-angled triangle, not an equilateral triangle."
+        },
+        {
+          "text": "\\begin{tikzpicture}[scale=0.7]\n  \\draw[thick, green!60!black] (0,0) -- (4,0) -- (1,2) -- cycle;\n\\end{tikzpicture}",
+          "explanation": "This diagram shows a scalene triangle with unequal sides."
+        },
+        {
+          "text": "\\begin{tikzpicture}[scale=0.7]\n  \\draw[thick, orange] (0,0) -- (3,0) -- (1.5,1) -- cycle;\n\\end{tikzpicture}",
+          "explanation": "This diagram shows an isosceles triangle with an obtuse angle."
+        }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "\\begin{tikzpicture}[scale=0.7]\n  \\draw[thick, blue] (0,0) -- (3,0) -- (1.5,2.6) -- cycle;\n  \\node at (1.5,-0.3) {$a$};\n  \\node at (0.5,1.4) {$a$};\n  \\node at (2.5,1.4) {$a$};\n  \\node at (1.5,0.4) {$60^\\circ$};\n\\end{tikzpicture}",
+      "explanation": "Option A shows an equilateral triangle with 3 equal side lengths $a$ and interior angles of $60^\\circ$."
+    }
+  ]
+}

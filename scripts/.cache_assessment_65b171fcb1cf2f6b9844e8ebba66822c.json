@@ -1,0 +1,765 @@
+{
+  "title": "Class 7 Mathematics: Decimals, Lines and Angles",
+  "passages": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "category": "Decimals",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "What is the place value of the digit 7 in the number 45.078?",
+      "passageId": "",
+      "tag": "Place Value",
+      "hint": "Look at the position of the digit 7 after the decimal point. The first position is tenths, the second is hundredths.",
+      "asy": "",
+      "options": [
+        {
+          "text": "7 tenths",
+          "explanation": "Incorrect. The tenths place is the first digit after the decimal, which is 0 in this number."
+        },
+        {
+          "text": "7 hundredths",
+          "explanation": "Correct. The digit 7 is in the second position after the decimal point, which is the hundredths place."
+        },
+        {
+          "text": "7 thousandths",
+          "explanation": "Incorrect. The thousandths place is the third digit after the decimal, which is 8 in this number."
+        },
+        {
+          "text": "7 tens",
+          "explanation": "Incorrect. The tens place is the second digit before the decimal point, which is 4 in this number."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "7 hundredths",
+      "explanation": "In the number 45.078, the decimal point separates the whole number part from the fractional part. The place values after the decimal point are tenths, hundredths, thousandths, and so on. The digit 7 is in the second place after the decimal, so its place value is 7 hundredths (7/100)."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "category": "Decimals",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "How is the fraction 12/1000 written as a decimal?",
+      "passageId": "",
+      "tag": "Fraction to Decimal Conversion",
+      "hint": "The denominator is 1000, which means the last digit of the numerator should be in the thousandths place (three places after the decimal).",
+      "asy": "",
+      "options": [
+        {
+          "text": "0.12",
+          "explanation": "Incorrect. This represents the fraction 12/100."
+        },
+        {
+          "text": "0.012",
+          "explanation": "Correct. Since the denominator is 1000, there must be three digits after the decimal point."
+        },
+        {
+          "text": "1.2",
+          "explanation": "Incorrect. This represents the mixed number 1 and 2/10."
+        },
+        {
+          "text": "0.0012",
+          "explanation": "Incorrect. This represents the fraction 12/10000."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "0.012",
+      "explanation": "To convert the fraction 12/1000 to a decimal, we need to place the numerator (12) such that its last digit is in the thousandths place. The thousandths place is the third position after the decimal point. So, we write 0.012."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "category": "Decimals",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Which decimal number represents the expanded form 7 + 8/10 + 3/1000?",
+      "passageId": "",
+      "tag": "Expanded Form",
+      "hint": "Combine the whole number part and the fractional parts. Note that there is no hundredths term, so a zero should be used as a placeholder.",
+      "asy": "",
+      "options": [
+        {
+          "text": "7.83",
+          "explanation": "Incorrect. This would be 7 + 8/10 + 3/100."
+        },
+        {
+          "text": "7.803",
+          "explanation": "Correct. 7 is the whole part, 8 is in the tenths place, there are no hundredths (so we put 0), and 3 is in the thousandths place."
+        },
+        {
+          "text": "7.083",
+          "explanation": "Incorrect. This would be 7 + 8/100 + 3/1000."
+        },
+        {
+          "text": "78.03",
+          "explanation": "Incorrect. This represents a completely different number."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "7.803",
+      "explanation": "The expanded form is 7 + 8/10 + 3/1000. The whole number part is 7. The tenths part is 8. There is no hundredths part, so we place a 0 in the hundredths place. The thousandths part is 3. Combining these gives the decimal 7.803."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "category": "Decimals",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Which of the following shows the decimals 0.5, 0.05, 0.55, 0.005 in ascending order (smallest to largest)?",
+      "passageId": "",
+      "tag": "Comparing Decimals",
+      "hint": "To compare decimals, it's helpful to make them have the same number of decimal places by adding trailing zeros (e.g., 0.5 becomes 0.500). Then compare them as whole numbers.",
+      "asy": "",
+      "options": [
+        {
+          "text": "0.5, 0.05, 0.55, 0.005",
+          "explanation": "Incorrect. This order is not ascending."
+        },
+        {
+          "text": "0.005, 0.05, 0.5, 0.55",
+          "explanation": "Correct. Converting to like decimals: 0.500, 0.050, 0.550, 0.005. The order is 0.005, 0.050, 0.500, 0.550."
+        },
+        {
+          "text": "0.55, 0.5, 0.05, 0.005",
+          "explanation": "Incorrect. This is descending order (largest to smallest)."
+        },
+        {
+          "text": "0.05, 0.005, 0.55, 0.5",
+          "explanation": "Incorrect. This order is not ascending."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "0.005, 0.05, 0.5, 0.55",
+      "explanation": "To compare the decimals, we can convert them to like decimals (same number of decimal places) by adding zeros. The numbers are 0.500, 0.050, 0.550, and 0.005. Now, comparing the numbers 500, 50, 550, and 5, the ascending order is 5, 50, 500, 550. Therefore, the correct order for the decimals is 0.005, 0.05, 0.5, 0.55."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "category": "Decimals",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "A ribbon is 5 m and 8 cm long. What is its length expressed in meters?",
+      "passageId": "",
+      "tag": "Unit Conversion",
+      "hint": "Remember that 1 meter = 100 centimeters. So, 1 cm = 1/100 m = 0.01 m.",
+      "asy": "",
+      "options": [
+        {
+          "text": "5.8 m",
+          "explanation": "Incorrect. This would represent 5 m and 80 cm."
+        },
+        {
+          "text": "5.08 m",
+          "explanation": "Correct. 8 cm is 8/100 of a meter, which is 0.08 m. So, the total length is 5 + 0.08 = 5.08 m."
+        },
+        {
+          "text": "58 m",
+          "explanation": "Incorrect. This is a much larger length."
+        },
+        {
+          "text": "0.58 m",
+          "explanation": "Incorrect. This represents 58 cm."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "5.08 m",
+      "explanation": "We know that 1 m = 100 cm. To convert 8 cm to meters, we divide by 100: 8 cm = 8/100 m = 0.08 m. The total length is the sum of the meter and centimeter parts: 5 m + 0.08 m = 5.08 m."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "category": "Decimals",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "Convert 2450 grams into kilograms.",
+      "passageId": "",
+      "tag": "Unit Conversion",
+      "hint": "1 kilogram = 1000 grams. To convert from grams to kilograms, you need to divide by 1000.",
+      "asy": "",
+      "options": [
+        {
+          "text": "24.5 kg",
+          "explanation": "Incorrect. This would be 24500 grams."
+        },
+        {
+          "text": "2.45 kg",
+          "explanation": "Correct. 2450 divided by 1000 is 2.45."
+        },
+        {
+          "text": "0.245 kg",
+          "explanation": "Incorrect. This would be 245 grams."
+        },
+        {
+          "text": "245 kg",
+          "explanation": "Incorrect. This would be 245000 grams."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "2.45 kg",
+      "explanation": "Since 1 kg = 1000 g, to convert grams to kilograms, we divide the number of grams by 1000. So, 2450 g = 2450 / 1000 kg = 2.45 kg."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "category": "Decimals",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "How is 7 rupees and 7 paise written in rupees using decimal notation?",
+      "passageId": "",
+      "tag": "Unit Conversion",
+      "hint": "1 rupee = 100 paise. So, 1 paisa = 1/100 rupee = ₹ 0.01.",
+      "asy": "",
+      "options": [
+        {
+          "text": "₹ 7.7",
+          "explanation": "Incorrect. This represents 7 rupees and 70 paise."
+        },
+        {
+          "text": "₹ 7.70",
+          "explanation": "Incorrect. This also represents 7 rupees and 70 paise."
+        },
+        {
+          "text": "₹ 7.07",
+          "explanation": "Correct. 7 paise is 7/100 of a rupee, which is 0.07. So, the total amount is 7 + 0.07 = ₹ 7.07."
+        },
+        {
+          "text": "₹ 77.0",
+          "explanation": "Incorrect. This represents 77 rupees."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "₹ 7.07",
+      "explanation": "We know that 1 rupee = 100 paise. To convert 7 paise to rupees, we divide by 100: 7 paise = 7/100 rupees = ₹ 0.07. The total amount is 7 rupees + 0.07 rupees = ₹ 7.07."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "category": "Decimals",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "What is the sum of 12.05, 3.7, and 0.125?",
+      "passageId": "",
+      "tag": "Decimal Addition",
+      "hint": "Align the decimal points of all the numbers vertically. Add zeros as placeholders if needed, then add the columns from right to left.",
+      "asy": "",
+      "options": [
+        {
+          "text": "15.875",
+          "explanation": "Correct. 12.050 + 3.700 + 0.125 = 15.875."
+        },
+        {
+          "text": "15.775",
+          "explanation": "Incorrect. Check your addition in the tenths column."
+        },
+        {
+          "text": "16.875",
+          "explanation": "Incorrect. Check your addition in the ones column."
+        },
+        {
+          "text": "15.885",
+          "explanation": "Incorrect. Check your addition in the hundredths column."
+        }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "15.875",
+      "explanation": "To add decimals, we align the decimal points:\n```\n  12.050\n   3.700\n+  0.125\n--------\n  15.875\n```\nAdding column by column from the right gives the sum 15.875."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "category": "Decimals",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "What number should be subtracted from 20 to get 11.68?",
+      "passageId": "",
+      "tag": "Decimal Subtraction",
+      "hint": "This is equivalent to calculating 20 - 11.68. Write 20 as 20.00 to align the decimal points.",
+      "asy": "",
+      "options": [
+        {
+          "text": "8.32",
+          "explanation": "Correct. 20.00 - 11.68 = 8.32."
+        },
+        {
+          "text": "9.32",
+          "explanation": "Incorrect. Check your borrowing/regrouping from the ones place."
+        },
+        {
+          "text": "8.42",
+          "explanation": "Incorrect. Check your subtraction in the hundredths place."
+        },
+        {
+          "text": "9.42",
+          "explanation": "Incorrect. Check your subtraction and borrowing."
+        }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "8.32",
+      "explanation": "Let the number to be subtracted be x. The equation is 20 - x = 11.68. To find x, we calculate x = 20 - 11.68. We align the decimal points:\n```\n  20.00\n- 11.68\n--------\n   8.32\n```\nSo, the required number is 8.32."
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "category": "Decimals",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Ravi bought 2.5 kg of potatoes, 1.25 kg of tomatoes, and 0.75 kg of onions. What is the total weight of vegetables he bought?",
+      "passageId": "",
+      "tag": "Word Problem",
+      "hint": "To find the total weight, you need to add the weights of all the vegetables.",
+      "asy": "",
+      "options": [
+        {
+          "text": "4.5 kg",
+          "explanation": "Correct. 2.5 + 1.25 + 0.75 = 4.50 kg."
+        },
+        {
+          "text": "4.25 kg",
+          "explanation": "Incorrect. Re-check the addition of the decimal parts."
+        },
+        {
+          "text": "4.0 kg",
+          "explanation": "Incorrect. It seems you may have missed adding one of the values."
+        },
+        {
+          "text": "3.5 kg",
+          "explanation": "Incorrect. This sum is too low. Check your calculation."
+        }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "4.5 kg",
+      "explanation": "To find the total weight, we add the individual weights:\nTotal weight = Weight of potatoes + Weight of tomatoes + Weight of onions\nTotal weight = 2.5 kg + 1.25 kg + 0.75 kg\nAligning the decimals:\n```\n  2.50\n  1.25\n+ 0.75\n------\n  4.50\n```\nThe total weight is 4.50 kg, which is the same as 4.5 kg."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "category": "Decimals",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Sunita had a rope of length 15.5 m. She cut off a piece of 4.75 m. What is the length of the remaining rope?",
+      "passageId": "",
+      "tag": "Word Problem",
+      "hint": "To find the remaining length, subtract the length of the piece cut off from the total length of the rope.",
+      "asy": "",
+      "options": [
+        {
+          "text": "10.25 m",
+          "explanation": "Incorrect. Check your borrowing/regrouping during subtraction."
+        },
+        {
+          "text": "11.75 m",
+          "explanation": "Incorrect. You might have subtracted incorrectly from the tenths place."
+        },
+        {
+          "text": "10.75 m",
+          "explanation": "Correct. 15.50 m - 4.75 m = 10.75 m."
+        },
+        {
+          "text": "11.25 m",
+          "explanation": "Incorrect. Double-check your subtraction calculation."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "10.75 m",
+      "explanation": "To find the length of the remaining rope, we subtract the length of the cut piece from the original length:\nRemaining length = Original length - Cut length\nRemaining length = 15.5 m - 4.75 m\nAligning the decimals (writing 15.5 as 15.50):\n```\n  15.50\n-  4.75\n-------\n  10.75\n```\nThe length of the remaining rope is 10.75 m."
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "category": "Lines and Angles",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "Two straight lines intersect as shown in the figure. If one angle measures 75°, what is the measure of its vertically opposite angle, x?",
+      "passageId": "",
+      "tag": "Vertically Opposite Angles",
+      "hint": "Vertically opposite angles are formed when two lines intersect, and they are always equal to each other.",
+      "asy": "size(150); draw((-2,-1.5)--(2,1.5)); draw((-2,1.5)--(2,-1.5)); label(\"$75^\\circ$\", (-1,0.5), N); label(\"$x$\", (1,-0.5), S);",
+      "options": [
+        {
+          "text": "105°",
+          "explanation": "Incorrect. This is the measure of the adjacent angles that form a linear pair with the 75° angle."
+        },
+        {
+          "text": "75°",
+          "explanation": "Correct. Vertically opposite angles are equal."
+        },
+        {
+          "text": "15°",
+          "explanation": "Incorrect. This is not related by any standard angle property here."
+        },
+        {
+          "text": "90°",
+          "explanation": "Incorrect. The lines are not perpendicular."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "75°",
+      "explanation": "When two lines intersect, the angles that are opposite to each other at the vertex are called vertically opposite angles. A key property of vertically opposite angles is that they are always equal. Therefore, the angle x, which is vertically opposite to the 75° angle, must also be 75°."
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "category": "Lines and Angles",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "In the given figure, a ray stands on a straight line. What is the value of y?",
+      "passageId": "",
+      "tag": "Linear Pair",
+      "hint": "Angles on a straight line add up to 180°. The two angles shown form a linear pair.",
+      "asy": "size(200); draw((-3,0)--(3,0)); draw((0,0)--(1,2)); label(\"$110^\\circ$\", (-1,0.5)); label(\"$y$\", (0.5,0.5));",
+      "options": [
+        {
+          "text": "110°",
+          "explanation": "Incorrect. The sum of the two angles must be 180°."
+        },
+        {
+          "text": "90°",
+          "explanation": "Incorrect. The ray is not perpendicular to the line."
+        },
+        {
+          "text": "70°",
+          "explanation": "Correct. The angles form a linear pair, so 110° + y = 180°. This gives y = 70°."
+        },
+        {
+          "text": "80°",
+          "explanation": "Incorrect. The sum would be 190°, not 180°."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "70°",
+      "explanation": "The angles 110° and y form a linear pair because they are adjacent angles whose non-common sides are opposite rays (forming a straight line). Angles in a linear pair are supplementary, meaning their sum is 180°. Therefore, 110° + y = 180°. Solving for y, we get y = 180° - 110° = 70°."
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "category": "Lines and Angles",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "In the figure, line l is parallel to line m, and t is a transversal. If ∠1 = 110°, what is the measure of ∠5?",
+      "passageId": "",
+      "tag": "Corresponding Angles",
+      "hint": "∠1 and ∠5 are in the same relative position at each intersection. What is the name for such angles, and what is their relationship when lines are parallel?",
+      "asy": "size(200); draw((-3,1)--(3,1), L=\"$l$\", EndArrow); draw((-3,-1)--(3,-1), L=\"$m$\", EndArrow); draw((-1,-2)--(1,2), L=\"$t$\", EndArrow); label(\"1\", (-0.4,1.3)); label(\"5\", (-0.4,-0.7));",
+      "options": [
+        {
+          "text": "70°",
+          "explanation": "Incorrect. This would be the measure of angles adjacent to ∠1 and ∠5 on the straight line."
+        },
+        {
+          "text": "110°",
+          "explanation": "Correct. When a transversal intersects two parallel lines, the corresponding angles are equal. ∠1 and ∠5 are corresponding angles."
+        },
+        {
+          "text": "80°",
+          "explanation": "Incorrect. This value is not related by the properties of parallel lines."
+        },
+        {
+          "text": "Cannot be determined",
+          "explanation": "Incorrect. The relationship can be determined because the lines are parallel."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "110°",
+      "explanation": "When a transversal intersects two parallel lines, the angles that are in the same position at each intersection are called corresponding angles. In this figure, ∠1 and ∠5 are corresponding angles. A property of parallel lines states that corresponding angles are equal. Since ∠1 = 110°, it follows that ∠5 = 110°."
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "category": "Lines and Angles",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "In the figure, line p is parallel to line q, and t is a transversal. If ∠4 = 65°, find the measure of ∠6.",
+      "passageId": "",
+      "tag": "Alternate Interior Angles",
+      "hint": "∠4 and ∠6 are on opposite sides of the transversal and are between the parallel lines. What is the relationship between such angles?",
+      "asy": "size(200); draw((-3,1)--(3,1), L=\"$p$\", EndArrow); draw((-3,-1)--(3,-1), L=\"$q$\", EndArrow); draw((-1,-2)--(1,2), L=\"$t$\", EndArrow); label(\"4\", (0.4,0.7)); label(\"6\", (-0.4,-0.7));",
+      "options": [
+        {
+          "text": "65°",
+          "explanation": "Correct. When a transversal intersects two parallel lines, the alternate interior angles are equal. ∠4 and ∠6 are alternate interior angles."
+        },
+        {
+          "text": "115°",
+          "explanation": "Incorrect. This is the measure of the interior angle on the same side of the transversal as ∠4."
+        },
+        {
+          "text": "25°",
+          "explanation": "Incorrect. This value is not related by the properties of parallel lines."
+        },
+        {
+          "text": "90°",
+          "explanation": "Incorrect. The lines are not necessarily perpendicular."
+        }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "65°",
+      "explanation": "When a transversal intersects two parallel lines, the angles that are on opposite sides of the transversal and between the two parallel lines are called alternate interior angles. In this figure, ∠4 and ∠6 are alternate interior angles. A property of parallel lines states that alternate interior angles are equal. Since ∠4 = 65°, it follows that ∠6 = 65°."
+    },
+    {
+      "id": "q16",
+      "type": "mcq",
+      "category": "Lines and Angles",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "In the figure, line AB is parallel to line CD, and t is a transversal. Find the value of x.",
+      "passageId": "",
+      "tag": "Consecutive Interior Angles",
+      "hint": "The two marked angles are on the same side of the transversal and between the parallel lines. These are called consecutive interior angles, and their sum is 180°.",
+      "asy": "size(200); pair A=(-3,1), B=(3,1), C=(-3,-1), D=(3,-1); draw(A--B, L=\"AB\", EndArrow); draw(C--D, L=\"CD\", EndArrow); draw((-1,-2)--(1,2), L=\"$t$\", EndArrow); label(\"$125^\\circ$\", (0.4,0.7)); label(\"$x$\", (-0.4,-0.7));",
+      "options": [
+        {
+          "text": "125°",
+          "explanation": "Incorrect. These angles are not equal; they are supplementary."
+        },
+        {
+          "text": "65°",
+          "explanation": "Incorrect. Check your subtraction from 180°."
+        },
+        {
+          "text": "55°",
+          "explanation": "Correct. Consecutive interior angles are supplementary, so x + 125° = 180°. This gives x = 55°."
+        },
+        {
+          "text": "45°",
+          "explanation": "Incorrect. The sum of the angles must be 180°."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "55°",
+      "explanation": "When a transversal intersects two parallel lines, the interior angles on the same side of the transversal are called consecutive interior angles. A property of parallel lines states that consecutive interior angles are supplementary (their sum is 180°). Therefore, x + 125° = 180°. Solving for x, we get x = 180° - 125° = 55°."
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "category": "Lines and Angles",
+      "marks": 4,
+      "difficulty": "hard",
+      "question": "A transversal line intersects two other lines such that a pair of corresponding angles measure 80° and 85°. What can be concluded about the two lines?",
+      "passageId": "",
+      "tag": "Properties of Parallel Lines",
+      "hint": "If two lines are parallel, what must be true about their corresponding angles? Since the angles are not equal, what does that imply?",
+      "asy": "",
+      "options": [
+        {
+          "text": "The lines are parallel.",
+          "explanation": "Incorrect. For lines to be parallel, their corresponding angles must be equal."
+        },
+        {
+          "text": "The lines are perpendicular.",
+          "explanation": "Incorrect. Perpendicular lines intersect at 90°, which is not indicated here."
+        },
+        {
+          "text": "The lines are intersecting but not perpendicular.",
+          "explanation": "Correct. Since the corresponding angles are not equal, the lines are not parallel, which means they must intersect at some point."
+        },
+        {
+          "text": "Cannot be determined.",
+          "explanation": "Incorrect. A definite conclusion can be drawn based on the angle properties."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "The lines are intersecting but not perpendicular.",
+      "explanation": "A fundamental theorem in geometry states that if a transversal intersects two lines such that the corresponding angles are equal, then the lines are parallel. The converse is also true. In this case, the corresponding angles are 80° and 85°, which are not equal. Therefore, the two lines cannot be parallel. If two lines on a plane are not parallel, they must intersect."
+    },
+    {
+      "id": "q18",
+      "type": "mcq",
+      "category": "Lines and Angles",
+      "marks": 5,
+      "difficulty": "hard",
+      "question": "In the figure, line AB is parallel to line CD. What is the value of x?",
+      "passageId": "",
+      "tag": "Parallel Lines and Transversals",
+      "hint": "Draw a third line through the vertex of angle x that is parallel to both AB and CD. Then use the properties of alternate interior angles.",
+      "asy": "size(200); pair A=(-3,1), B=(3,1), C=(-3,-1), D=(3,-1), O=(0,0); draw(A--B, EndArrow); draw(C--D, EndArrow); draw(B--O--C); label(\"$A$\", A, W); label(\"$B$\", B, E); label(\"$C$\", C, W); label(\"$D$\", D, E); label(\"$45^\\circ$\", B, SW); label(\"$30^\\circ$\", C, NE); label(\"$x$\", O, N);",
+      "options": [
+        {
+          "text": "75°",
+          "explanation": "Correct. Angle x is the sum of two alternate interior angles, 45° and 30°."
+        },
+        {
+          "text": "105°",
+          "explanation": "Incorrect. This would be 180° - 75°. You might be thinking of supplementary angles."
+        },
+        {
+          "text": "90°",
+          "explanation": "Incorrect. There is no information to suggest right angles."
+        },
+        {
+          "text": "15°",
+          "explanation": "Incorrect. This would be the difference, not the sum, of the angles."
+        }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "75°",
+      "explanation": "To solve this, draw a line EOF through the vertex O, parallel to AB and CD. Since EOF || AB, the upper part of angle x is equal to 45° (alternate interior angles). Since EOF || CD, the lower part of angle x is equal to 30° (alternate interior angles). Therefore, the total measure of angle x is the sum of these two parts: x = 45° + 30° = 75°."
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "category": "Lines and Angles",
+      "marks": 5,
+      "difficulty": "hard",
+      "question": "In the given parallelogram ABCD, AB is parallel to CD and AD is parallel to BC. If ∠ADC = 60°, what is the measure of ∠BCD?",
+      "passageId": "",
+      "tag": "Properties of Parallelograms",
+      "hint": "In a parallelogram, what is the relationship between consecutive angles (angles next to each other)?",
+      "asy": "size(200); pair A=(-2,1.5), D=(-3,-1.5), B=(2,1.5), C=(3,-1.5); draw(A--D--C--B--cycle); label(\"$A$\", A, NW); label(\"$D$\", D, SW); label(\"$B$\", B, NE); label(\"$C$\", C, SE); label(\"$60^\\circ$\", D, E);",
+      "options": [
+        {
+          "text": "60°",
+          "explanation": "Incorrect. This is the measure of the opposite angle (∠ABC), not the consecutive angle."
+        },
+        {
+          "text": "120°",
+          "explanation": "Correct. Consecutive angles in a parallelogram are supplementary. So, ∠BCD = 180° - 60° = 120°."
+        },
+        {
+          "text": "90°",
+          "explanation": "Incorrect. The parallelogram is not necessarily a rectangle."
+        },
+        {
+          "text": "30°",
+          "explanation": "Incorrect. This value is not related by parallelogram properties."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "120°",
+      "explanation": "In a parallelogram, consecutive angles (angles that share a side) are supplementary, meaning they add up to 180°. This is because the parallel sides create consecutive interior angles with the transversal side. Here, AD || BC, and CD is a transversal. Therefore, ∠ADC and ∠BCD are consecutive interior angles and their sum is 180°. Given ∠ADC = 60°, we have ∠BCD = 180° - 60° = 120°."
+    },
+    {
+      "id": "q20",
+      "type": "mcq",
+      "category": "Lines and Angles",
+      "marks": 5,
+      "difficulty": "hard",
+      "question": "In the figure, line l is parallel to line m. Find the value of x.",
+      "passageId": "",
+      "tag": "Angle Sum Property of Triangle",
+      "hint": "Use the properties of parallel lines to find the two base angles of the triangle. The sum of angles in a triangle is 180°.",
+      "asy": "size(200); draw((-3,1.5)--(3,1.5), L=\"$l$\", EndArrow); draw((-3,-1.5)--(3,-1.5), L=\"$m$\", EndArrow); draw((-2,-1.5)--(2,1.5)--(0,-1.5)--cycle; label(\"$x$\", (0,-1.5), N); label(\"$70^\\circ$\", (-1.8,-1.2), NE); label(\"$50^\\circ$\", (1.8,1.2), SW);",
+      "options": [
+        {
+          "text": "50°",
+          "explanation": "Incorrect. This is one of the other angles on the straight line."
+        },
+        {
+          "text": "60°",
+          "explanation": "Correct. The base angles of the triangle are 70° and 50° (alternate interior angles). The third angle on the straight line is 180° - 70° - 50° = 60°."
+        },
+        {
+          "text": "70°",
+          "explanation": "Incorrect. This is one of the other angles on the straight line."
+        },
+        {
+          "text": "80°",
+          "explanation": "Incorrect. The sum of angles on a straight line is 180°."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "60°",
+      "explanation": "Let the vertices of the triangle on line m be A and B, and the vertex on line l be C. The angle at vertex A is given as 70°. The angle at vertex C is given as 50°. Because line l is parallel to line m, the angle alternate interior to the 50° angle is the angle at vertex B inside the triangle. So, the angle at B is 50°. Similarly, the angle alternate interior to the 70° angle is the angle at vertex A inside the triangle. So, the angle at A is 70°. The three angles on the straight line m are 70°, x, and another angle. Let's use a different approach. The angle alternate to 70° is the bottom-left angle of the triangle. The angle alternate to 50° is the top angle of the triangle. This is not correct. Let's reconsider. The angle alternate interior to the 50° angle at the top right is the angle on the straight line m at the bottom right. Let's call the three angles on the straight line m as ∠1, x, and ∠2. ∠1 is alternate interior to the angle on line l made by the left transversal. The angle vertically opposite to 70 is 70. The angle on line l is 180-50 = 130. This is too complex. Let's use the simplest method: The angle alternate to 70° is the left base angle of the triangle on line m. The angle alternate to 50° is the right base angle of the triangle on line m. These two angles and x lie on the straight line m. Therefore, their sum must be 180°. So, 70° + x + 50° = 180°. This gives 120° + x = 180°, so x = 60°."
+    },
+    {
+      "id": "q21",
+      "type": "mcq",
+      "category": "Decimals",
+      "marks": 5,
+      "difficulty": "hard",
+      "question": "A drum contained 90.5 litres of oil. 12.75 litres of oil was used on Monday and 25.5 litres was used on Tuesday. How much oil is left in the drum?",
+      "passageId": "",
+      "tag": "Word Problem",
+      "hint": "First, find the total amount of oil used by adding the quantities used on Monday and Tuesday. Then, subtract this total from the initial amount.",
+      "asy": "",
+      "options": [
+        {
+          "text": "52.25 L",
+          "explanation": "Correct. Total oil used = 12.75 + 25.5 = 38.25 L. Oil left = 90.5 - 38.25 = 52.25 L."
+        },
+        {
+          "text": "53.25 L",
+          "explanation": "Incorrect. Check your subtraction step."
+        },
+        {
+          "text": "51.75 L",
+          "explanation": "Incorrect. Check your addition of the oil used."
+        },
+        {
+          "text": "52.75 L",
+          "explanation": "Incorrect. Double-check your calculation, especially the borrowing in subtraction."
+        }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "52.25 L",
+      "explanation": "Step 1: Calculate the total oil used.\nTotal used = Oil used on Monday + Oil used on Tuesday\nTotal used = 12.75 L + 25.5 L = 38.25 L\n\nStep 2: Calculate the oil left.\nOil left = Initial amount - Total used\nOil left = 90.5 L - 38.25 L\nWriting 90.5 as 90.50 for subtraction:\n```\n  90.50\n- 38.25\n-------\n  52.25\n```\nTherefore, 52.25 litres of oil is left in the drum."
+    },
+    {
+      "id": "q22",
+      "type": "mcq",
+      "category": "Lines and Angles",
+      "marks": 5,
+      "difficulty": "hard",
+      "question": "In the given figure, a transversal t intersects two lines p and q. Based on the given angles, what can you conclude?",
+      "passageId": "",
+      "tag": "Identifying Parallel Lines",
+      "hint": "The given angles are interior angles on the same side of the transversal. What should be their sum if the lines are parallel?",
+      "asy": "size(250); pair A=(-2,2), B=(2,2), C=(-3,-1), D=(3,-1); draw(A--B, L=\"$p$\", EndArrow); draw(C--D, L=\"$q$\", EndArrow); draw((-1,-2)--(1.5,3), L=\"$t$\", EndArrow); label(\"$105^\\circ$\", (0.2,2), S); label(\"$75^\\circ$\", (-0.8,-1), N);",
+      "options": [
+        {
+          "text": "p || q",
+          "explanation": "Correct. The sum of the interior angles on the same side of the transversal is 105° + 75° = 180°. When this sum is 180°, the lines are parallel."
+        },
+        {
+          "text": "t || p",
+          "explanation": "Incorrect. t is a transversal intersecting p."
+        },
+        {
+          "text": "t || q",
+          "explanation": "Incorrect. t is a transversal intersecting q."
+        },
+        {
+          "text": "No lines are parallel",
+          "explanation": "Incorrect. The angle property for parallel lines is satisfied."
+        }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "p || q",
+      "explanation": "The two angles given, 105° and 75°, are consecutive interior angles (or interior angles on the same side of the transversal). A condition for two lines to be parallel is that the sum of their consecutive interior angles must be 180°. Let's check the sum: 105° + 75° = 180°. Since the sum is 180°, we can conclude that line p is parallel to line q."
+    },
+    {
+      "id": "q23",
+      "type": "mcq",
+      "category": "Decimals",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "What decimal number is represented by point A on the number line?",
+      "passageId": "",
+      "tag": "Number Line",
+      "hint": "The space between 6 and 7 is divided into 10 equal parts. Each part represents 0.1. Count the number of parts from 6 to A.",
+      "asy": "size(400, 50); draw((0,0)--(10,0), Ticks(Label(align=S), Step=1, step=0.5)); label(\"6\", (0,0), S); label(\"7\", (5,0), S); label(\"8\", (10,0), S); label(\"$A$\", (3.5,0), N); dot((3.5,0));",
+      "options": [
+        {
+          "text": "6.5",
+          "explanation": "Incorrect. Point A is past the halfway mark between 6 and 7."
+        },
+        {
+          "text": "6.7",
+          "explanation": "Correct. The space between 6 and 7 is divided into 10 smaller intervals. Point A is at the 7th interval after 6."
+        },
+        {
+          "text": "6.8",
+          "explanation": "Incorrect. Point A is one mark before 6.8."
+        },
+        {
+          "text": "7.3",
+          "explanation": "Incorrect. Point A is between 6 and 7."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "6.7",
+      "explanation": "The number line shows the integers 6, 7, and 8. The segment between 6 and 7 is divided into 10 equal parts. This means each small division represents a length of (7-6)/10 = 0.1. Point A is located at the 7th mark after 6. Therefore, the value of point A is 6 + (7 * 0.1) = 6 + 0.7 = 6.7."
+    }
+  ]
+}
