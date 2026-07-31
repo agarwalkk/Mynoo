@@ -489,7 +489,7 @@
       "category": "Angle Chasing with a Bent Path (Zig-Zag)",
       "marks": 3,
       "difficulty": "medium",
-      "question": "In the figure, ray $A$-$A_{up}$ and ray $B$-$B_{up}$ both point straight up, so they are parallel. A path bends once at $M$, joining $A$ to $B$. The angle between the ray at $A$ (extended downward, dashed) and $AM$ is $40^\\circ$, and the angle between the ray at $B$ (extended downward, dashed) and $BM$ is $35^\\circ$. Find $\\angle AMB$ (marked $x$).",
+      "question": "In the figure, ray A-A_up and ray B-B_up both point straight up, so they are parallel. A path bends once at M, joining A to B. The angle between the ray at A (extended downward, dashed) and AM is 40°, and the angle between the ray at B (extended downward, dashed) and BM is 35°. Find ∠ AMB (marked x).",
       "passageId": "",
       "tag": "Diagram-Based",
       "hint": "Draw a line through M parallel to both given rays, and use the alternate angle property twice.",
@@ -600,7 +600,7 @@
       "category": "Fractions to Decimals (Tenths)",
       "marks": 2,
       "difficulty": "medium",
-      "question": "Write $\\dfrac{7}{10}$ as a decimal.",
+      "question": "Write 7/10 as a decimal.",
       "passageId": "",
       "tag": "",
       "hint": "A fraction over 10 has exactly one digit after the decimal point.",
@@ -619,7 +619,7 @@
         {
           "text": "0.07",
           "asy": "",
-          "explanation": "This represents $\\dfrac{7}{100}$, not $\\dfrac{7}{10}$."
+          "explanation": "This represents 7/100, not 7/10."
         },
         {
           "text": "0.7",
@@ -629,7 +629,7 @@
       ],
       "correctIndex": 3,
       "correctAnswer": "0.7",
-      "explanation": "$\\dfrac{7}{10}$ means 7 parts out of 10, which is written in decimal form as $0.7$ (7 in the tenths place)."
+      "explanation": "7/10 means 7 parts out of 10, which is written in decimal form as 0.7 (7 in the tenths place)."
     },
     {
       "id": "q18",
@@ -656,7 +656,7 @@
         {
           "text": "0.7",
           "asy": "",
-          "explanation": "Correct: the digit 7 is in the tenths place, so its place value is $7 \\times \\dfrac{1}{10} = 0.7$."
+          "explanation": "Correct: the digit 7 is in the tenths place, so its place value is 7 × 1/10 = 0.7."
         },
         {
           "text": "0.07",
@@ -666,7 +666,7 @@
       ],
       "correctIndex": 2,
       "correctAnswer": "0.7",
-      "explanation": "In $45.278$, reading after the decimal point the digits are tenths (7), hundredths (2), thousandths-level (8, though this chapter focuses on tenths/hundredths). The digit 7 is in the tenths place, so its place value is $\\dfrac{7}{10} = 0.7$."
+      "explanation": "In 45.278, reading after the decimal point the digits are tenths (7), hundredths (2), thousandths-level (8, though this chapter focuses on tenths/hundredths). The digit 7 is in the tenths place, so its place value is 7/10 = 0.7."
     },
     {
       "id": "q19",
@@ -859,7 +859,7 @@
       "category": "Hundredths as Decimals",
       "marks": 3,
       "difficulty": "medium",
-      "question": "Write $\\dfrac{234}{100}$ in correct decimal notation.",
+      "question": "Write 234/100 in correct decimal notation.",
       "passageId": "",
       "tag": "",
       "hint": "Divide 234 by 100 by moving the decimal point two places to the left.",
@@ -888,7 +888,7 @@
       ],
       "correctIndex": 2,
       "correctAnswer": "2.34",
-      "explanation": "$\\dfrac{234}{100} = \\dfrac{200}{100} + \\dfrac{34}{100} = 2 + 0.34 = 2.34$."
+      "explanation": "234/100 = 200/100 + 34/100 = 2 + 0.34 = 2.34."
     },
     {
       "id": "q25",
@@ -1081,7 +1081,7 @@
       "category": "Place Value: Expanded Form to Decimal",
       "marks": 3,
       "difficulty": "medium",
-      "question": "Write the number represented by $7 \\times 10 + 0 \\times 1 + 5 \\times \\dfrac{1}{10}$ in decimal form.",
+      "question": "Write the number represented by 7 × 10 + 0 × 1 + 5 × 1/10 in decimal form.",
       "passageId": "",
       "tag": "",
       "hint": "Match each term to its correct place-value column: tens, units, then tenths.",
@@ -1110,7 +1110,7 @@
       ],
       "correctIndex": 0,
       "correctAnswer": "70.5",
-      "explanation": "$7 \\times 10 = 70$ (tens place), $0 \\times 1 = 0$ (units place), $5 \\times \\dfrac{1}{10} = 0.5$ (tenths place). Adding these: $70 + 0 + 0.5 = 70.5$."
+      "explanation": "7 × 10 = 70 (tens place), 0 × 1 = 0 (units place), 5 × 1/10 = 0.5 (tenths place). Adding these: 70 + 0 + 0.5 = 70.5."
     }
   ]
 }

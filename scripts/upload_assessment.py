@@ -72,13 +72,32 @@ def _lang_for_subject(subject: str) -> str:
 
 
 def clean_latex_to_unicode(text: str) -> str:
-    """Convert LaTeX math symbols into clean Unicode text (e.g. 65^{\\circ} -> 65°)."""
+    """Convert LaTeX math symbols into clean Unicode text (e.g. \\dfrac{7}{10} -> 7/10, 65^{\\circ} -> 65°)."""
     if not text or not isinstance(text, str):
         return text
 
     s = text
 
-    # Common TeX symbol replacements (handling optional braces e.g. ^{\circ}, ^{\degree}, ^{°}, {°})
+    # 1. Fractions: \dfrac{a}{b}, \frac{a}{b}, \tfrac{a}{b}, \cfrac{a}{b}
+    for _ in range(3):
+        s = re.sub(r'\\(?:d|t|c)?frac\s*\{([^}]+)\}\s*\{([^}]+)\}', r'\1/\2', s)
+
+    # 2. Text/font styling macros: \text{...}, \mathrm{...}, \mathbf{...}, \mathit{...}, \mathsf{...}, \mathtt{...}
+    s = re.sub(r'\\(?:text|mathrm|mathbf|mathit|mathsf|mathtt)\s*\{([^}]+)\}', r'\1', s)
+
+    # 3. Accents / lines: \overline{...}, \vec{...}, \hat{...}
+    s = re.sub(r'\\(?:overline|vec|hat)\s*\{([^}]+)\}', r'\1', s)
+
+    # 4. Kerning and micro-spacing: \!, \,, \;, \quad, \qquad
+    s = re.sub(r'\\(?:!|,|;|quad|qquad)', '', s)
+
+    # 5. Left/right delimiter pairs: \left(, \right), \left[, \right], \left\{, \right\}, \{, \}
+    s = re.sub(r'\\left\s*([(\[{|.])', r'\1', s)
+    s = re.sub(r'\\right\s*([)\]}|.])', r'\1', s)
+    s = re.sub(r'\\\{', '{', s)
+    s = re.sub(r'\\\}', '}', s)
+
+    # 6. Degrees, Angles, Operators, Symbols
     replacements = [
         (r'\^\s*\{\s*\\circ\s*\}', '°'),
         (r'\^\s*\{\s*\\degree\s*\}', '°'),
@@ -89,32 +108,61 @@ def clean_latex_to_unicode(text: str) -> str:
         (r'\\circ', '°'),
         (r'\^\degree', '°'),
         (r'\\degree', '°'),
-        (r'\\implies', '⇒'),
         (r'\\angle', '∠'),
+        (r'\\measuredangle', '∡'),
+        (r'\\implies', '⇒'),
+        (r'\\iff', '⇔'),
         (r'\\perp', '⊥'),
         (r'\\parallel', '∥'),
         (r'\\approx', '≈'),
         (r'\\neq', '≠'),
+        (r'\\ne\b', '≠'),
         (r'\\le(?:q)?\b', '≤'),
         (r'\\ge(?:q)?\b', '≥'),
         (r'\\times', '×'),
         (r'\\div', '÷'),
+        (r'\\pm', '±'),
+        (r'\\mp', '∓'),
+        (r'\\cdot', '·'),
+        (r'\\infty', '∞'),
         (r'\\pi', 'π'),
         (r'\\theta', 'θ'),
         (r'\\alpha', 'α'),
         (r'\\beta', 'β'),
         (r'\\gamma', 'γ'),
         (r'\\delta', 'δ'),
-        (r'\\frac\{([^}]+)\}\{([^}]+)\}', r'\1/\2'),
+        (r'\\mu', 'μ'),
+        (r'\\sigma', 'σ'),
     ]
 
     for pattern, repl in replacements:
         s = re.sub(pattern, repl, s)
 
-    # Remove inline math dollar signs e.g., $70°, 110°$ -> 70°, 110°
+    # 7. Subscripts & Superscripts
+    sub_map = {'0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄', '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉', '+': '₊', '-': '₋', '=': '₌', '(': '₍', ')': '₎', 'a': 'ₐ', 'e': 'ₑ', 'o': 'ₒ', 'x': 'ₓ', 'h': 'ₕ', 'k': 'ₖ', 'l': 'ₗ', 'm': 'ₘ', 'n': 'ₙ', 'p': 'ₚ', 's': 'ₛ', 't': 'ₜ'}
+    sup_map = {'0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹', '+': '⁺', '-': '⁻', '=': '⁼', '(': '⁽', ')': '⁾', 'n': 'ⁿ', 'i': 'ⁱ'}
+
+    def sub_replacer(match):
+        val = match.group(1)
+        if all(ch in sub_map for ch in val):
+            return "".join(sub_map[ch] for ch in val)
+        return f"_{val}"
+
+    def sup_replacer(match):
+        val = match.group(1)
+        if all(ch in sup_map for ch in val):
+            return "".join(sup_map[ch] for ch in val)
+        return f"^{val}"
+
+    s = re.sub(r'_\{\s*([^}]+)\s*\}', sub_replacer, s)
+    s = re.sub(r'\^\{\s*([^}]+)\s*\}', sup_replacer, s)
+    s = re.sub(r'_([0-9a-zA-Z])', sub_replacer, s)
+
+    # 8. Remove inline math dollar signs e.g., $70°, 110°$ -> 70°, 110°
     s = re.sub(r'\$([^$]+)\$', r'\1', s)
 
     return s
+
 
 
 def _sanitize_latex_in_json(raw_text: str) -> str:
@@ -783,6 +831,42 @@ def convert_asy_to_svg(asy_code: str) -> str:
     return ""
 
 
+def _clean_question_object(q: dict) -> dict:
+    """Clean all string fields in a question object using clean_latex_to_unicode."""
+    eq = dict(q)
+    for field in ('question', 'hint', 'explanation', 'inputSentence'):
+        if field in eq and isinstance(eq[field], str):
+            eq[field] = clean_latex_to_unicode(eq[field])
+
+    raw_ca = eq.get('correctAnswer') or eq.get('answer') or ''
+    if raw_ca and isinstance(raw_ca, str):
+        clean_ca = clean_latex_to_unicode(raw_ca)
+        eq['correctAnswer'] = clean_ca
+        eq['answer'] = clean_ca
+
+    for arr_field in ('blanks', 'columnA', 'columnB', 'correctMatches', 'jumbledWords'):
+        if arr_field in eq and isinstance(eq[arr_field], list):
+            eq[arr_field] = [clean_latex_to_unicode(str(x)) if isinstance(x, str) else x for x in eq[arr_field]]
+
+    if eq.get('type') == 'mcq' and isinstance(eq.get('options'), list):
+        clean_opts = []
+        for o in eq['options']:
+            if isinstance(o, dict):
+                co = dict(o)
+                if 'text' in co and isinstance(co['text'], str) and not co['text'].startswith('<svg'):
+                    co['text'] = clean_latex_to_unicode(co['text'])
+                if 'explanation' in co and isinstance(co['explanation'], str):
+                    co['explanation'] = clean_latex_to_unicode(co['explanation'])
+                clean_opts.append(co)
+            elif isinstance(o, str) and not o.startswith('<svg'):
+                clean_opts.append(clean_latex_to_unicode(o))
+            else:
+                clean_opts.append(o)
+        eq['options'] = clean_opts
+
+    return eq
+
+
 def build_payload(
     child_name: str,
     subject: str,
@@ -799,21 +883,7 @@ def build_payload(
 
     enriched: list[dict] = []
     for q in questions:
-        eq = dict(q)
-
-        # Clean text fields from LaTeX math syntax ($70^\circ$ -> 70°)
-        if 'question' in eq:
-            eq['question'] = clean_latex_to_unicode(str(eq['question']))
-        if 'hint' in eq:
-            eq['hint'] = clean_latex_to_unicode(str(eq['hint']))
-        if 'explanation' in eq:
-            eq['explanation'] = clean_latex_to_unicode(str(eq['explanation']))
-
-        raw_ca = eq.get('correctAnswer') or eq.get('answer') or ''
-        if raw_ca:
-            clean_ca = clean_latex_to_unicode(str(raw_ca))
-            eq['correctAnswer'] = clean_ca
-            eq['answer'] = clean_ca
+        eq = _clean_question_object(q)
 
         pid = str(eq.get('passageId', '')).strip()
         if pid and pid in passages:
@@ -924,6 +994,13 @@ def convert_assessment_json_asy_to_svg(json_path: Path) -> Path:
     else:
         return json_path
 
+    # Clean text in all questions & passages first
+    questions = [_clean_question_object(q) for q in questions]
+    if isinstance(passages, list):
+        for p in passages:
+            if isinstance(p, dict) and 'text' in p:
+                p['text'] = clean_latex_to_unicode(p['text'])
+
     # Collect all targets with non-blank asy code
     asy_targets = []
     for q in questions:
@@ -942,12 +1019,11 @@ def convert_assessment_json_asy_to_svg(json_path: Path) -> Path:
 
     total_targets = len(asy_targets)
     if total_targets == 0:
-        print(f"ℹ️  No non-blank Asymptote code found in {json_path.name}. Using original file.\n")
-        return json_path
-
-    print(f"🎨 Found {total_targets} non-blank Asymptote diagram(s) in {json_path.name}. Converting to SVG...")
+        print(f"ℹ️  No non-blank Asymptote code found in {json_path.name}. Cleaning text and saving...")
+    else:
+        print(f"🎨 Found {total_targets} non-blank Asymptote diagram(s) in {json_path.name}. Converting to SVG...")
+    
     converted_count = 0
-
     for i, (target_type, obj, label, code) in enumerate(asy_targets, 1):
         print(f"  [{i}/{total_targets}] Converting diagram for {label}...", end=" ", flush=True)
         svg_str = convert_asy_to_svg(code)
