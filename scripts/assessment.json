@@ -1,1116 +1,1013 @@
 {
-  "title": "Lines & Decimals",
+  "title": "Nutrition and Respiration",
   "passages": [],
   "questions": [
     {
       "id": "q1",
       "type": "mcq",
-      "category": "Linear Pair of Angles",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "In the figure, ray OR stands on the straight line POQ. If $a = 55^\\circ$, find the value of $x$.",
+      "category": "Nutrition in Humans",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Which component of gastric juice is responsible for activating the enzyme pepsin and preventing bacterial growth on food inside the human stomach?",
       "passageId": "",
-      "tag": "Diagram-Based",
-      "hint": "Angles on a straight line always add up to $180^\\circ$.",
-      "asy": "size(190);\npair O=(0,0);\npair Qp=(2.100,0.000);\npair Pp=(-2.100,0.000);\npair Rp=(0.975,1.393);\ndraw(Pp--Qp, black+1.2pt);\ndraw(O--Rp, black+1.2pt);\ndot(O);\nlabel(\"O\", O, S);\nlabel(\"P\", Pp, W);\nlabel(\"Q\", Qp, E);\nlabel(\"R\", Rp, N);\ndraw(arc(O,0.55,0,55), blue);\nlabel(\"$55^\\\\circ$\", O+0.85*dir(27.5), N);\ndraw(arc(O,0.4,55,180), heavygreen);\nlabel(\"$x^\\\\circ$\", O+0.85*dir(117.5), N);\n",
+      "tag": "",
+      "hint": "",
       "options": [
         {
-          "text": "$35^\\circ$",
-          "asy": "",
-          "explanation": "Incorrect subtraction; check $180-55$ again."
+          "text": "Mucous",
+          "explanation": "Mucous protects the inner lining of the stomach from the action of acids rather than activating pepsin."
         },
         {
-          "text": "$55^\\circ$",
-          "asy": "",
-          "explanation": "This is the value of $a$, not $x$."
+          "text": "Hydrochloric acid (HCl)",
+          "explanation": "Hydrochloric acid (HCl) activates the enzyme pepsin and prevents bacterial growth on food."
         },
         {
-          "text": "$90^\\circ$",
-          "asy": "",
-          "explanation": "Angles on a straight line add to $180^\\circ$, not $90^\\circ$."
+          "text": "Salivary amylase",
+          "explanation": "Salivary amylase is secreted by the salivary glands in the mouth, not by the gastric glands."
         },
         {
-          "text": "$125^\\circ$",
-          "asy": "",
-          "explanation": "Correct: a linear pair of angles always adds up to $180^\\circ$."
+          "text": "Bile juice",
+          "explanation": "Bile juice is secreted by the liver and released into the small intestine, not the stomach."
         }
       ],
-      "correctIndex": 3,
-      "correctAnswer": "$125^\\circ$",
-      "explanation": "Angles $a$ and $x$ form a linear pair (they lie on the straight line POQ), so $a + x = 180^\\circ$. Thus $x = 180^\\circ - 55^\\circ = 125^\\circ$."
+      "correctIndex": 1,
+      "correctAnswer": "Hydrochloric acid (HCl)",
+      "explanation": "According to the text, gastric juices include acids such as HCl (hydrochloric acid) which activates the enzyme pepsin and prevents bacterial growth on food."
     },
     {
       "id": "q2",
       "type": "mcq",
-      "category": "Vertically Opposite Angles",
-      "marks": 2,
+      "category": "Nutrition in Some Other Animals",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "Two straight lines AC and BD intersect at O. If $\\angle AOB = 70^\\circ$, find $\\angle COD$ (marked $x$).",
+      "question": "Which chamber of a ruminant's stomach looks like a honeycomb and is responsible for returning the cud back to the mouth for rumination?",
       "passageId": "",
-      "tag": "Diagram-Based",
-      "hint": "Vertically opposite angles are always equal to each other.",
-      "asy": "size(190);\npair O=(0,0);\npair A=(2.000,0.000);\npair B=(0.684,1.879);\npair C=(-2.000,0.000);\npair D=(-0.684,-1.879);\ndraw(A--C, black+1.2pt);\ndraw(B--D, black+1.2pt);\ndot(O);\nlabel(\"A\", A, E);\nlabel(\"B\", B, NE);\nlabel(\"C\", C, W);\nlabel(\"D\", D, SW);\ndraw(arc(O,0.5,0,70), blue);\nlabel(\"$70^\\\\circ$\", O+0.8*dir(35.0), N);\ndraw(arc(O,0.4,180,250), heavygreen);\nlabel(\"$x^\\\\circ$\", O+0.8*dir(215.0), dir(215.0));\n",
+      "tag": "",
+      "hint": "",
       "options": [
         {
-          "text": "$35^\\circ$",
-          "asy": "",
-          "explanation": "Halving the given angle is not the correct rule here."
+          "text": "Rumen",
+          "explanation": "The rumen is the largest chamber used for storing food, not returning it."
         },
         {
-          "text": "$180^\\circ$",
-          "asy": "",
-          "explanation": "That is the full straight angle, not a single wedge."
+          "text": "Omasum",
+          "explanation": "The omasum is the smallest chamber where excess water is absorbed."
         },
         {
-          "text": "$70^\\circ$",
-          "asy": "",
-          "explanation": "Correct: vertically opposite angles are always equal."
+          "text": "Reticulum",
+          "explanation": "The reticulum looks like a honeycomb and returns the cud back to the mouth."
         },
         {
-          "text": "$110^\\circ$",
-          "asy": "",
-          "explanation": "This would be the adjacent (linear pair) angle, not the vertically opposite one."
+          "text": "Abomasum",
+          "explanation": "The abomasum is the true stomach where gastric juices are secreted."
         }
       ],
       "correctIndex": 2,
-      "correctAnswer": "$70^\\circ$",
-      "explanation": "$\\angle AOB$ and $\\angle COD$ are vertically opposite angles formed by two intersecting lines, so they are always equal: $x = 70^\\circ$."
+      "correctAnswer": "Reticulum",
+      "explanation": "The chapter states that the reticulum chamber looks like a honeycomb and returns the cud back to the mouth for rumination."
     },
     {
       "id": "q3",
       "type": "mcq",
-      "category": "Perpendicular Lines",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Lines $l$ and $m$ intersect at O as shown, with a right-angle mark at O. What is the value of $x$?",
+      "category": "Respiration in Some Other Animals",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Which organ facilitates breathing in aquatic animals like fish, prawns, and mussels by utilizing oxygen dissolved in water?",
       "passageId": "",
-      "tag": "Diagram-Based",
-      "hint": "The small square symbol at the vertex always means a right angle.",
-      "asy": "size(170);\npair O=(0,0);\npair A=(2.000,0.000); pair B=(0.000,2.000); pair C=(-2.000,0.000); pair D=(-0.000,-2.000);\ndraw(A--C, black+1.2pt);\ndraw(B--D, black+1.2pt);\ndot(O);\nlabel(\"l\", A, E);\nlabel(\"m\", B, N);\ndraw((0.28,0)--(0.28,0.28)--(0,0.28));\nlabel(\"$x^\\\\circ$\", (0.55,0.55));\n",
+      "tag": "",
+      "hint": "",
       "options": [
         {
-          "text": "$180^\\circ$",
-          "asy": "",
-          "explanation": "That is a straight angle, not the marked right angle."
+          "text": "Skin",
+          "explanation": "Skin is used for respiration by animals like earthworms and leeches, not fish."
         },
         {
-          "text": "$100^\\circ$",
-          "asy": "",
-          "explanation": "The small square symbol always denotes exactly $90^\\circ$."
+          "text": "Gills",
+          "explanation": "Gills are special respiratory organs that help aquatic animals take in dissolved oxygen."
         },
         {
-          "text": "$45^\\circ$",
-          "asy": "",
-          "explanation": "A right angle is $90^\\circ$, not $45^\\circ$."
+          "text": "Spiracles",
+          "explanation": "Spiracles are fine air holes found on the bodies of insects like grasshoppers."
         },
         {
-          "text": "$90^\\circ$",
-          "asy": "",
-          "explanation": "Correct: the right-angle mark shows the lines are perpendicular."
+          "text": "Lungs",
+          "explanation": "Lungs are specialized respiratory organs in higher terrestrial animals like birds and mammals."
         }
       ],
-      "correctIndex": 3,
-      "correctAnswer": "$90^\\circ$",
-      "explanation": "The small square symbol at O is the standard notation for a right angle. Two lines that meet at a right angle are called perpendicular lines, so $x = 90^\\circ$."
+      "correctIndex": 1,
+      "correctAnswer": "Gills",
+      "explanation": "The text notes that gills are special respiratory organs which facilitate breathing in aquatic animals like fish, prawns, and mussels by helping them take in oxygen dissolved in water."
     },
     {
       "id": "q4",
       "type": "mcq",
-      "category": "Angles formed by a Transversal",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "A transversal $t$ cuts two lines $l$ and $m$, forming 8 angles in total (4 at each point of intersection, as shown). How many **pairs of vertically opposite angles** are formed in this figure altogether?",
+      "category": "Nutrition in Some Other Animals",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Which specialized organ in a bird's digestive system contains repeatedly contracting muscles and swallowed stones or grit to grind food?",
       "passageId": "",
-      "tag": "Diagram-Based",
-      "hint": "Work out how many vertically opposite pairs are formed at just ONE crossing point first.",
-      "asy": "size(230);\npair Pv=(0.000,1.300);\npair Qv=(-1.625,-1.300);\ndraw((-3.0,1.3)--(3.0,1.3), black+1.2pt);\ndraw((-3.0,-1.3)--(3.0,-1.3), black+1.2pt);\ndraw((0.742,2.487)--(-2.367,-2.487), black+1.2pt);\ndot(Pv); dot(Qv);\n",
+      "tag": "",
+      "hint": "",
       "options": [
         {
-          "text": "4",
-          "asy": "",
-          "explanation": "Correct: each intersection point gives 2 pairs of vertically opposite angles, and there are 2 intersection points, so $2\\times2=4$ pairs in total."
+          "text": "Crop",
+          "explanation": "The crop is the part of the oesophagus where food is stored, not ground up."
         },
         {
-          "text": "8",
-          "asy": "",
-          "explanation": "This is the total number of angles, not the number of vertically-opposite PAIRS."
+          "text": "Gizzard",
+          "explanation": "The gizzard acts like teeth where grinding of food takes place using muscles, stones, and grit."
         },
         {
-          "text": "2",
-          "asy": "",
-          "explanation": "This is only the number of pairs at ONE intersection point."
+          "text": "Caecum",
+          "explanation": "The caecum is a sac-like structure found in ruminants for cellulose digestion."
         },
         {
-          "text": "6",
-          "asy": "",
-          "explanation": "Recount carefully: each crossing point contributes exactly 2 pairs."
+          "text": "Abomasum",
+          "explanation": "The abomasum is the true stomach of a ruminant, not a bird."
         }
       ],
-      "correctIndex": 0,
-      "correctAnswer": "4",
-      "explanation": "At each of the two points where the transversal meets a line, 4 angles are formed, giving 2 pairs of vertically opposite angles at that point. Since there are 2 intersection points (one on line $l$, one on line $m$), the total number of vertically opposite pairs is $2 + 2 = 4$."
+      "correctIndex": 1,
+      "correctAnswer": "Gizzard",
+      "explanation": "The text explains that the gizzard is a part of the bird's stomach which acts like teeth where grinding of food takes place with the help of swallowed stones and grit."
     },
     {
       "id": "q5",
       "type": "mcq",
-      "category": "Parallel Lines - Notation",
-      "marks": 2,
+      "category": "Breathing and Respiration",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "In the figure, lines $p$ and $q$ are marked with a single arrow ($>$), while lines $r$ and $s$ are marked with a double arrow ($>\\!>$). Based on this notation, which statement is true?",
+      "question": "What percentage of carbon dioxide is present in normal exhaled air compared to the 0.04% present in inhaled air?",
       "passageId": "",
-      "tag": "Diagram-Based",
-      "hint": "Lines are parallel to each other only when they carry the SAME arrow symbol.",
-      "asy": "size(210);\npair p1=(-2.3,1); pair p2=(2.3,1);\npair q1=(-2.3,0.2); pair q2=(2.3,0.2);\npair r1=(-2.3,-1.2); pair r2=(0.3,-2.6);\npair s1=(-0.7,-1.2); pair s2=(1.9,-2.6);\ndraw(p1--p2, black+1.2pt); draw(q1--q2, black+1.2pt);\ndraw(r1--r2, black+1.2pt); draw(s1--s2, black+1.2pt);\nlabel(\"p\", p2, E); label(\"q\", q2, E);\nlabel(\"r\", r2, S); label(\"s\", s2, S);\npair pm=(p1+p2)/2; pair qm=(q1+q2)/2;\npair rm=(r1+r2)/2; pair sm=(s1+s2)/2;\ndraw((pm.x-0.15,pm.y)--(pm.x+0.15,pm.y+0.001), Arrow(6));\ndraw((qm.x-0.15,qm.y)--(qm.x+0.15,qm.y+0.001), Arrow(6));\ndraw((rm.x-0.08,rm.y-0.05)--(rm.x+0.08,rm.y+0.13), Arrow(6));\ndraw((rm.x-0.08+0.18,rm.y-0.05)--(rm.x+0.08+0.18,rm.y+0.13), Arrow(6));\ndraw((sm.x-0.08,sm.y-0.05)--(sm.x+0.08,sm.y+0.13), Arrow(6));\ndraw((sm.x-0.08+0.18,sm.y-0.05)--(sm.x+0.08+0.18,sm.y+0.13), Arrow(6));\n",
+      "tag": "",
+      "hint": "",
       "options": [
         {
-          "text": "$p \\parallel r$ and $q \\parallel s$",
-          "asy": "",
-          "explanation": "Arrows of a different type (single vs double) do not indicate a parallel pair."
+          "text": "21%",
+          "explanation": "21% is the percentage of oxygen in inhaled air."
         },
         {
-          "text": "All four lines are parallel to one another",
-          "asy": "",
-          "explanation": "Lines with different arrow types are not necessarily parallel to each other."
+          "text": "16.4%",
+          "explanation": "16.4% is the percentage of oxygen in exhaled air."
         },
         {
-          "text": "None of the lines are parallel",
-          "asy": "",
-          "explanation": "The matching arrow marks specifically indicate parallel pairs."
+          "text": "4.4%",
+          "explanation": "Exhaled air contains 4.4% of carbon dioxide."
         },
         {
-          "text": "$p \\parallel q$ and $r \\parallel s$",
-          "asy": "",
-          "explanation": "Correct: matching arrow marks (single or double) indicate which lines are parallel to each other."
+          "text": "0.4%",
+          "explanation": "0.4% is incorrect; the text specifies 4.4% for exhaled carbon dioxide."
         }
       ],
-      "correctIndex": 3,
-      "correctAnswer": "$p \\parallel q$ and $r \\parallel s$",
-      "explanation": "By convention, arrow marks on lines show which lines are parallel: lines carrying the same number of arrowheads are parallel to each other. Here $p$ and $q$ both carry a single arrow, so $p \\parallel q$; $r$ and $s$ both carry a double arrow, so $r \\parallel s$."
+      "correctIndex": 2,
+      "correctAnswer": "4.4%",
+      "explanation": "The Info-Bubble states that the air we breathe out contains 16.4% of oxygen and 4.4% of carbon dioxide."
     },
     {
       "id": "q6",
       "type": "mcq",
-      "category": "Corresponding Angles",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "In the figure, $l \\parallel m$ and $t$ is a transversal. If the marked angle at $l$ is $118^\\circ$, find the marked angle $x$ at $m$.",
+      "category": "Nutrition in Humans",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "What is the approximate length of the human small intestine?",
       "passageId": "",
-      "tag": "Diagram-Based",
-      "hint": "First find the corresponding angle on line $m$, then use the linear-pair property to get $x$.",
-      "asy": "size(230);\npair Pv=(0.000,1.300);\npair Qv=(1.382,-1.300);\ndraw((-3.0,1.3)--(3.0,1.3), black+1.2pt);\ndraw((-3.0,-1.3)--(3.0,-1.3), black+1.2pt);\ndraw((-0.657,2.536)--(2.040,-2.536), black+1.2pt);\ndot(Pv); dot(Qv);\nlabel(\"l\", (3.0,1.3), E);\nlabel(\"m\", (3.0,-1.3), E);\nlabel(\"t\", (-0.657,2.536), NE);\ndraw((-2.6,1.48)--(-2.3,1.48), Arrow(5));\ndraw((-2.6,-1.12)--(-2.3,-1.12), Arrow(5));\ndraw(arc(Pv,0.5,0,118), blue);\nlabel(\"$118^\\\\circ$\", Pv+0.78*dir(59.0));\ndraw(arc(Qv,0.34,118,180), heavygreen);\nlabel(\"$x^\\\\circ$\", Qv+0.78*dir(149.0));\n",
+      "tag": "",
+      "hint": "",
       "options": [
         {
-          "text": "$118^\\circ$",
-          "asy": "",
-          "explanation": "This confuses $x$ with its corresponding angle, which is $118^\\circ$ — but $x$ is the linear pair of that angle, not the angle itself."
+          "text": "1.5 meters",
+          "explanation": "1.5 meters is the approximate length of the large intestine."
         },
         {
-          "text": "$28^\\circ$",
-          "asy": "",
-          "explanation": "This does not follow from either the corresponding angle or linear pair property here."
+          "text": "6.7 to 7.6 meters",
+          "explanation": "The length of the small intestine is between approximately 6.7m to 7.6m."
         },
         {
-          "text": "$52^\\circ$",
-          "asy": "",
-          "explanation": "Check the subtraction: $180 - 118 = 62$, not $52$."
+          "text": "0.5 meters",
+          "explanation": "0.5 meters (500 ml) matches the human tidal volume, not intestine length."
         },
         {
-          "text": "$62^\\circ$",
-          "asy": "",
-          "explanation": "Correct — found using the corresponding angle property, then the linear pair property."
+          "text": "10 to 12 meters",
+          "explanation": "This value is completely out of the range specified in the chapter."
         }
       ],
-      "correctIndex": 3,
-      "correctAnswer": "$62^\\circ$",
-      "explanation": "Since $l \\parallel m$, the angle corresponding to the given $118^\\circ$ angle (at the same relative position on line $m$) is also $118^\\circ$. The angle $x$ is the linear pair of that corresponding angle (they lie on the straight line $m$ together), so $x = 180^\\circ - 118^\\circ = 62^\\circ$."
+      "correctIndex": 1,
+      "correctAnswer": "6.7 to 7.6 meters",
+      "explanation": "The Hungry Brains section explicitly states that the length of the small intestine is between approximately 6.7m to 7.6m."
     },
     {
       "id": "q7",
       "type": "mcq",
-      "category": "Testing Lines for Parallelism",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "In the figure, a transversal $t$ cuts lines $l$ and $m$. The angles marked (at the same relative position on each line) are $125^\\circ$ and $130^\\circ$. Are lines $l$ and $m$ parallel?",
+      "category": "Respiration in Humans",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "What name is given to the sound-producing voice box that protrudes as the Adam's apple in males?",
       "passageId": "",
-      "tag": "Diagram-Based",
-      "hint": "Recall the converse of the corresponding angles property: equal corresponding angles $\\Leftrightarrow$ parallel lines.",
-      "asy": "size(210);\npair Pt=(0.000,1.300);\npair Qt=(0.000,-1.300);\npair la=(1.802,0.038); pair lb=(-1.802,2.562);\npair ma=(-1.685,0.114); pair mb=(1.685,-2.714);\ndraw(la--lb, black+1.2pt);\ndraw(ma--mb, black+1.2pt);\ndraw((0,2.4)--(0,-2.4), black+1.2pt);\ndot(Pt); dot(Qt);\nlabel(\"l\", lb, W);\nlabel(\"m\", mb, W);\nlabel(\"t\", (0,2.4), N);\ndraw(arc(Pt,0.55,-35,90), blue);\nlabel(\"$125^\\\\circ$\", Pt+0.85*dir(27.5));\ndraw(arc(Qt,0.5,140,270), purple);\nlabel(\"$130^\\\\circ$\", Qt+0.85*dir(205.0));\n",
+      "tag": "",
+      "hint": "",
       "options": [
         {
-          "text": "Yes, because both angles are obtuse",
-          "asy": "",
-          "explanation": "Both angles being obtuse says nothing about parallelism."
+          "text": "Pharynx",
+          "explanation": "The pharynx is the common passage for food and air, not the voice box."
         },
         {
-          "text": "No, because the corresponding angles are not equal",
-          "asy": "",
-          "explanation": "Correct: for $l \\parallel m$, the corresponding angles must be equal, but $125^\\circ \\ne 130^\\circ$."
+          "text": "Glottis",
+          "explanation": "The glottis is the opening of the pharynx into the trachea."
         },
         {
-          "text": "Yes, because the two angles are supplementary",
-          "asy": "",
-          "explanation": "$125^\\circ + 130^\\circ = 255^\\circ \\ne 180^\\circ$, so they are not even supplementary."
+          "text": "Larynx",
+          "explanation": "The larynx is the voice box and protrudes as the Adam's apple in males."
         },
         {
-          "text": "Cannot be determined from the given information",
-          "asy": "",
-          "explanation": "The corresponding-angle test is exactly the information needed here."
+          "text": "Bronchus",
+          "explanation": "The bronchus is a division of the windpipe leading to a lung."
         }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "No, because the corresponding angles are not equal",
-      "explanation": "Two lines cut by a transversal are parallel **only if** the corresponding angles are equal. Here the corresponding angles are $125^\\circ$ and $130^\\circ$, which are not equal ($125^\\circ \\ne 130^\\circ$). Therefore, lines $l$ and $m$ are **not** parallel."
+      "correctIndex": 2,
+      "correctAnswer": "Larynx",
+      "explanation": "The text defines the larynx as a sound-producing organ also known as the voice box, which tends to protrude in males as the Adam's apple."
     },
     {
       "id": "q8",
       "type": "mcq",
-      "category": "Alternate Interior Angles",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "In the figure, $l \\parallel m$. If one marked (interior) angle is $128^\\circ$, find the alternate interior angle $x$ on line $m$.",
+      "category": "Nutrition in Humans",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Which term describes the pulpy mass of food formed in the mouth after it undergoes mastication and mixing with saliva?",
       "passageId": "",
-      "tag": "Diagram-Based",
-      "hint": "Alternate interior angles lie on opposite sides of the transversal, between the two parallel lines, and are equal.",
-      "asy": "size(230);\npair Pv=(0.000,1.300);\npair Qv=(2.031,-1.300);\ndraw((-3.0,1.3)--(3.0,1.3), black+1.2pt);\ndraw((-3.0,-1.3)--(3.0,-1.3), black+1.2pt);\ndraw((-0.862,2.403)--(2.893,-2.403), black+1.2pt);\ndot(Pv); dot(Qv);\nlabel(\"l\", (3.0,1.3), E);\nlabel(\"m\", (3.0,-1.3), E);\nlabel(\"t\", (-0.862,2.403), NE);\ndraw((-2.6,1.48)--(-2.3,1.48), Arrow(5));\ndraw((-2.6,-1.12)--(-2.3,-1.12), Arrow(5));\ndraw(arc(Pv,0.5,180,308), blue);\nlabel(\"$128^\\\\circ$\", Pv+0.78*dir(244.0));\ndraw(arc(Qv,0.34,0,128), heavygreen);\nlabel(\"$x^\\\\circ$\", Qv+0.78*dir(64.0));\n",
+      "tag": "",
+      "hint": "",
       "options": [
         {
-          "text": "$52^\\circ$",
-          "asy": "",
-          "explanation": "This is $180 - 128$, the co-interior (supplementary) angle, not the alternate interior angle."
+          "text": "Chyme",
+          "explanation": "Chyme is the semi-solid paste formed later inside the stomach."
         },
         {
-          "text": "$64^\\circ$",
-          "asy": "",
-          "explanation": "Halving the given angle is not the correct rule for alternate interior angles."
+          "text": "Bolus",
+          "explanation": "The masticated food mixed with saliva in the mouth forms a pulpy mass called bolus."
         },
         {
-          "text": "$128^\\circ$",
-          "asy": "",
-          "explanation": "Correct: alternate interior angles are equal when the lines are parallel."
+          "text": "Cud",
+          "explanation": "Cud is the semi-digested food regurgitated by ruminants."
         },
         {
-          "text": "$180^\\circ$",
-          "asy": "",
-          "explanation": "That would only be true if the two rays formed a straight line, which is not the case here."
+          "text": "Bile",
+          "explanation": "Bile is a basic digestive juice secreted by the liver, not a food mass."
         }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "$128^\\circ$",
-      "explanation": "Since $l \\parallel m$ and $t$ is a transversal, alternate interior angles (on opposite sides of the transversal, between the two lines) are equal. So $x = 128^\\circ$."
+      "correctIndex": 1,
+      "correctAnswer": "Bolus",
+      "explanation": "The text states that when food is chewed and broken down into small pieces, saliva is mixed into it, reducing it to a pulpy mass called bolus."
     },
     {
       "id": "q9",
       "type": "mcq",
-      "category": "Co-interior (Allied) Angles",
-      "marks": 3,
+      "category": "Nutrition in Humans",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "In the figure, $l \\parallel m$. One marked interior angle is $72^\\circ$. Find the co-interior (same-side interior) angle $x$ on line $m$.",
+      "question": "Who was the American physician that first observed the workings of a living person's stomach through an unhealed gunshot wound?",
       "passageId": "",
-      "tag": "Diagram-Based",
-      "hint": "Co-interior angles always add up to $180^\\circ$ when the lines are parallel.",
-      "asy": "size(230);\npair Pv=(0.000,1.300);\npair Qv=(-0.845,-1.300);\ndraw((-3.0,1.3)--(3.0,1.3), black+1.2pt);\ndraw((-3.0,-1.3)--(3.0,-1.3), black+1.2pt);\ndraw((0.433,2.631)--(-1.277,-2.631), black+1.2pt);\ndot(Pv); dot(Qv);\nlabel(\"l\", (3.0,1.3), E);\nlabel(\"m\", (3.0,-1.3), E);\nlabel(\"t\", (0.433,2.631), NE);\ndraw((-2.6,1.48)--(-2.3,1.48), Arrow(5));\ndraw((-2.6,-1.12)--(-2.3,-1.12), Arrow(5));\ndraw(arc(Pv,0.5,180,252), blue);\nlabel(\"$72^\\\\circ$\", Pv+0.78*dir(216.0));\ndraw(arc(Qv,0.34,72,180), heavygreen);\nlabel(\"$x^\\\\circ$\", Qv+0.78*dir(126.0));\n",
+      "tag": "",
+      "hint": "",
       "options": [
         {
-          "text": "$108^\\circ$",
-          "asy": "",
-          "explanation": "Correct: co-interior angles are supplementary, so $x = 180^\\circ - 72^\\circ$."
+          "text": "Dr. William Beaumont",
+          "explanation": "Dr. William Beaumont was the first to observe stomach workings through a gunshot wound window."
         },
         {
-          "text": "$18^\\circ$",
-          "asy": "",
-          "explanation": "This is not obtained by any valid angle relationship here."
+          "text": "Dr. Robert Hooke",
+          "explanation": "Dr. Robert Hooke discovered cells, he is not mentioned in this chapter."
         },
         {
-          "text": "$72^\\circ$",
-          "asy": "",
-          "explanation": "This would be true for alternate or corresponding angles, but co-interior angles are supplementary, not equal."
+          "text": "Dr. Louis Pasteur",
+          "explanation": "Dr. Louis Pasteur is famous for pasteurization and vaccines, not stomach observations here."
         },
         {
-          "text": "$252^\\circ$",
-          "asy": "",
-          "explanation": "An angle in this figure cannot exceed $180^\\circ$; recheck the co-interior rule."
+          "text": "Dr. Alexander Fleming",
+          "explanation": "Dr. Alexander Fleming discovered penicillin and is not part of this text."
         }
       ],
       "correctIndex": 0,
-      "correctAnswer": "$108^\\circ$",
-      "explanation": "Since $l \\parallel m$, co-interior (same-side interior) angles are supplementary: their sum is $180^\\circ$. So $x = 180^\\circ - 72^\\circ = 108^\\circ$."
+      "correctAnswer": "Dr. William Beaumont",
+      "explanation": "The Hungry Brains callout note states that American physician Dr. William Beaumont (1785-1853) was the first person to observe the workings of a living person's stomach."
     },
     {
       "id": "q10",
       "type": "mcq",
-      "category": "Angles in a Parallelogram",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "In parallelogram ABCD, $AB \\parallel DC$ and $AD \\parallel BC$. Diagonal AC is drawn. If $\\angle ADC = 55^\\circ$ and $\\angle DAC = 70^\\circ$, find $\\angle CAB$ (marked $x$).",
+      "category": "Respiration in Humans",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "What is the normal breathing rate per minute for an adult human being in a resting position?",
       "passageId": "",
-      "tag": "Diagram-Based",
-      "hint": "First find the full angle $\\angle DAB$ using the co-interior angle property with side AD as the transversal.",
-      "asy": "size(220);\npair A=(2.000,2.856);\npair B=(6.000,2.856);\npair C=(4.000,0.000);\npair D=(0.000,0.000);\ndraw(A--B--C--D--cycle, black+1.2pt);\ndraw(A--C, gray+0.8pt+dashed);\ndot(A); dot(B); dot(C); dot(D);\nlabel(\"A\", A, N);\nlabel(\"B\", B, N);\nlabel(\"C\", C, SE);\nlabel(\"D\", D, SW);\ndraw((D.x+0.35,D.y)--(D.x+0.30,D.y+0.18)--(D.x+0.12,D.y+0.10));\ndraw(arc(A,0.55,-55.00000000000001,-125.00000000000001), blue);\ndraw(arc(A,0.4,0.0,-55.00000000000001), heavygreen);\nlabel(\"$55^\\\\circ$\", D+0.55*dir(25.45675271974063));\nlabel(\"$70^\\\\circ$\", A+0.9*dir(-90.00000000000001));\nlabel(\"$x^\\\\circ$\", A+0.9*dir(-25.456752719740635));\n",
+      "tag": "",
+      "hint": "",
       "options": [
         {
-          "text": "$125^\\circ$",
-          "asy": "",
-          "explanation": "This is $\\angle DAB$ (the full angle at A), not just $\\angle CAB$."
+          "text": "72 to 80 times",
+          "explanation": "This represents a typical resting heart rate, not the breathing rate."
         },
         {
-          "text": "$60^\\circ$",
-          "asy": "",
-          "explanation": "Recheck the co-interior angle subtraction: $180 - 55 = 125$, then $125 - 70 = 55$."
+          "text": "15 to 18 times",
+          "explanation": "The resting breathing rate for an adult is 15 to 18 times per minute."
         },
         {
-          "text": "$55^\\circ$",
-          "asy": "",
-          "explanation": "Correct — found using co-interior angles, then subtraction."
+          "text": "5 to 10 times",
+          "explanation": "This rate is too low for a healthy resting adult human."
         },
         {
-          "text": "$70^\\circ$",
-          "asy": "",
-          "explanation": "This is $\\angle DAC$ itself, not $\\angle CAB$."
+          "text": "30 to 40 times",
+          "explanation": "This high rate occurs during heavy exercise, not at rest."
         }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "$55^\\circ$",
-      "explanation": "Since $AD \\parallel BC$ is not needed here; instead use $AB \\parallel DC$ with transversal $AD$: $\\angle DAB$ and $\\angle ADC$ are co-interior angles, so $\\angle DAB = 180^\\circ - 55^\\circ = 125^\\circ$. Since $\\angle DAB = \\angle DAC + \\angle CAB$, we get $\\angle CAB = 125^\\circ - 70^\\circ = 55^\\circ$."
+      "correctIndex": 1,
+      "correctAnswer": "15 to 18 times",
+      "explanation": "The text states in the Info-Bubble that the breathing rate for an adult in a resting position is 15 to 18 times per minute."
     },
     {
       "id": "q11",
-      "type": "mcq",
-      "category": "Angles at a Point",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Three lines AD, BE and CF pass through a common point O, as shown. If $\\angle AOB = 50^\\circ$ and $\\angle BOC = 70^\\circ$, find $\\angle AOF$ (marked $x$).",
+      "type": "fill_blank",
+      "category": "Nutrition in Humans",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Fill in the blank: The wave-like movement caused by the alternating contraction and relaxation of muscles that moves food down the food pipe is called ___.",
       "passageId": "",
-      "tag": "Diagram-Based",
-      "hint": "First find $\\angle COD$ using the fact that A, O, D lie on a straight line. Then use vertically opposite angles.",
-      "asy": "size(220);\npair O=(0,0);\npair A=(2.000,0.000);\npair B=(1.286,1.532);\npair C=(-1.000,1.732);\npair D=(-2.000,0.000);\npair E=(-1.286,-1.532);\npair F=(1.000,-1.732);\ndraw(A--D, black+1.2pt);\ndraw(B--E, black+1.2pt);\ndraw(C--F, black+1.2pt);\ndot(O);\nlabel(\"A\", A, dir(0));\nlabel(\"B\", B, dir(50));\nlabel(\"C\", C, dir(120));\nlabel(\"D\", D, dir(180));\nlabel(\"E\", E, dir(230));\nlabel(\"F\", F, dir(300));\ndraw(arc(O,0.5,0,50), blue);\nlabel(\"$50^\\\\circ$\", O+0.8*dir(25.0));\ndraw(arc(O,0.5,50,120), purple);\nlabel(\"$70^\\\\circ$\", O+0.8*dir(85.0));\ndraw(arc(O,0.35,300,360), heavygreen);\nlabel(\"$x^\\\\circ$\", O+0.8*dir(330.0));\n",
-      "options": [
-        {
-          "text": "$130^\\circ$",
-          "asy": "",
-          "explanation": "This does not match any valid angle relationship in the figure."
-        },
-        {
-          "text": "$120^\\circ$",
-          "asy": "",
-          "explanation": "This is $\\angle AOC$ ($50^\\circ+70^\\circ$), not $\\angle AOF$."
-        },
-        {
-          "text": "$50^\\circ$",
-          "asy": "",
-          "explanation": "This is just $\\angle AOB$; the marked angle $x$ also depends on $\\angle BOC$."
-        },
-        {
-          "text": "$60^\\circ$",
-          "asy": "",
-          "explanation": "Correct: $x = \\angle AOF$ is vertically opposite to $\\angle COD$."
-        }
+      "tag": "",
+      "hint": "",
+      "blanks": [
+        "peristalsis"
       ],
-      "correctIndex": 3,
-      "correctAnswer": "$60^\\circ$",
-      "explanation": "Since AD is a straight line, $\\angle AOB + \\angle BOC + \\angle COD = 180^\\circ$, so $\\angle COD = 180^\\circ - 50^\\circ - 70^\\circ = 60^\\circ$. Since ray OF is opposite to ray OC and ray OA is opposite to ray OD, $\\angle AOF$ is vertically opposite to $\\angle COD$. Vertically opposite angles are equal, so $x = \\angle AOF = \\angle COD = 60^\\circ$."
+      "correctAnswer": "peristalsis",
+      "explanation": "The text explicitly names this movement as peristalsis."
     },
     {
       "id": "q12",
-      "type": "mcq",
-      "category": "Three Parallel Lines cut by a Transversal",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Lines $l$, $m$ and $n$ are all parallel to one another, and a transversal $t$ cuts all three. If the marked interior angle between $l$ and $m$ is $47^\\circ$, find the co-interior angle $x$ (also between $l$ and $m$, on the same side of the transversal).",
+      "type": "fill_blank",
+      "category": "Nutrition in Humans",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Fill in the blank: The process of taking food into the body through the mouth is scientifically known as ___.",
       "passageId": "",
-      "tag": "Diagram-Based",
-      "hint": "Focus only on the pair of lines $l$ and $m$ — line $n$ is extra information here.",
-      "asy": "size(230);\npair Pv=(0.000,1.300);\npair Qv=(-2.425,-1.300);\ndraw((-3.0,1.3)--(3.0,1.3), black+1.2pt);\ndraw((-3.0,-1.3)--(3.0,-1.3), black+1.2pt);\ndraw((0.955,2.324)--(-3.379,-2.324), black+1.2pt);\ndot(Pv); dot(Qv);\nlabel(\"l\\ (top)\", (3.0,1.3), E);\nlabel(\"m\\ (middle)\", (3.0,-1.3), E);\nlabel(\"t\", (0.955,2.324), NE);\ndraw((-2.6,1.48)--(-2.3,1.48), Arrow(5));\ndraw((-2.6,-1.12)--(-2.3,-1.12), Arrow(5));\ndraw(arc(Pv,0.5,180,227), blue);\nlabel(\"$47^\\\\circ$\", Pv+0.78*dir(203.5));\ndraw(arc(Qv,0.34,47,180), heavygreen);\nlabel(\"$x^\\\\circ$\", Qv+0.78*dir(113.5));\ndraw((-3.0,-2.9)--(3.0,-2.9), black+1.2pt);\nlabel(\"n\\ (bottom)\", (3.0,-2.9), E);\n",
-      "options": [
-        {
-          "text": "$43^\\circ$",
-          "asy": "",
-          "explanation": "Recheck the subtraction: $180 - 47 = 133$, not $43$."
-        },
-        {
-          "text": "$90^\\circ$",
-          "asy": "",
-          "explanation": "There is no right-angle relationship indicated in this figure."
-        },
-        {
-          "text": "$47^\\circ$",
-          "asy": "",
-          "explanation": "Equal angles would be the alternate or corresponding angle, not the co-interior angle."
-        },
-        {
-          "text": "$133^\\circ$",
-          "asy": "",
-          "explanation": "Correct: co-interior angles between the same pair of parallel lines are supplementary."
-        }
+      "tag": "",
+      "hint": "",
+      "blanks": [
+        "ingestion"
       ],
-      "correctIndex": 3,
-      "correctAnswer": "$133^\\circ$",
-      "explanation": "Since $l \\parallel m$, the two marked angles are co-interior (same-side interior) angles for this pair of lines, so they are supplementary: $x = 180^\\circ - 47^\\circ = 133^\\circ$. (Line $n$ is also parallel to both but is not needed for this particular pair of angles.)"
+      "correctAnswer": "ingestion",
+      "explanation": "Taking food into the body through the mouth is defined as ingestion."
     },
     {
       "id": "q13",
-      "type": "mcq",
-      "category": "Real-Life Application: Parallel Lines",
-      "marks": 3,
+      "type": "fill_blank",
+      "category": "Nutrition in Some Other Animals",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "Two railway tracks run parallel to each other, and a straight road crosses both tracks like a transversal. If the road meets the first track at $62^\\circ$, what angle $x$ does it make with the second track at the corresponding position?",
+      "question": "Fill in the blank: Ruminants are able to digest cellulose because they have cellulose-digesting bacteria living symbiotically inside a sac-like structure called the ___.",
       "passageId": "",
-      "tag": "Diagram-Based",
-      "hint": "Corresponding angles formed by a transversal crossing two parallel lines are always equal.",
-      "asy": "size(230);\npair Pv=(0.000,1.300);\npair Qv=(-1.382,-1.300);\ndraw((-3.0,1.3)--(3.0,1.3), black+1.2pt);\ndraw((-3.0,-1.3)--(3.0,-1.3), black+1.2pt);\ndraw((0.657,2.536)--(-2.040,-2.536), black+1.2pt);\ndot(Pv); dot(Qv);\nlabel(\"Track\\ 1\", (3.0,1.3), E);\nlabel(\"Track\\ 2\", (3.0,-1.3), E);\nlabel(\"t\", (0.657,2.536), NE);\ndraw((-2.6,1.48)--(-2.3,1.48), Arrow(5));\ndraw((-2.6,-1.12)--(-2.3,-1.12), Arrow(5));\ndraw(arc(Pv,0.5,0,62), blue);\nlabel(\"$62^\\\\circ$\", Pv+0.78*dir(31.0));\ndraw(arc(Qv,0.34,0,62), heavygreen);\nlabel(\"$x^\\\\circ$\", Qv+0.78*dir(31.0));\n",
-      "options": [
-        {
-          "text": "$180^\\circ$",
-          "asy": "",
-          "explanation": "This would only be true for a full straight angle, not the marked angle."
-        },
-        {
-          "text": "$118^\\circ$",
-          "asy": "",
-          "explanation": "This is the co-interior/supplementary angle, not the corresponding angle."
-        },
-        {
-          "text": "$62^\\circ$",
-          "asy": "",
-          "explanation": "Correct: since the tracks are parallel, corresponding angles with the same transversal are equal."
-        },
-        {
-          "text": "$28^\\circ$",
-          "asy": "",
-          "explanation": "This does not follow from the corresponding angle property here."
-        }
+      "tag": "",
+      "hint": "",
+      "blanks": [
+        "caecum"
       ],
-      "correctIndex": 2,
-      "correctAnswer": "$62^\\circ$",
-      "explanation": "Since the two railway tracks are parallel and the road is a common transversal, the corresponding angles formed are equal. So $x = 62^\\circ$, the same as the given angle."
+      "correctAnswer": "caecum",
+      "explanation": "The text states that symbiotic microbes live inside a part of the digestive system called the caecum to digest cellulose."
     },
     {
       "id": "q14",
-      "type": "mcq",
-      "category": "Angle Chasing with a Bent Path (Zig-Zag)",
-      "marks": 3,
+      "type": "fill_blank",
+      "category": "Respiration in Humans",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "In the figure, ray A-A_up and ray B-B_up both point straight up, so they are parallel. A path bends once at M, joining A to B. The angle between the ray at A (extended downward, dashed) and AM is 40°, and the angle between the ray at B (extended downward, dashed) and BM is 35°. Find ∠ AMB (marked x).",
+      "question": "Fill in the blank: The amount of air breathed in or out in one breath during normal respiration is known as ___ volume.",
       "passageId": "",
-      "tag": "Diagram-Based",
-      "hint": "Draw a line through M parallel to both given rays, and use the alternate angle property twice.",
-      "asy": "size(230);\npair A=(-2.000,2.000);\npair Aup=(-2.000,3.500);\npair Adown=(-2.000,0.900);\npair B=(2.000,2.000);\npair Bup=(2.000,3.500);\npair Bdown=(2.000,0.900);\npair M=(0.180,-0.599);\ndraw(A--Aup, black+1.2pt, Arrow(6));\ndraw(A--Adown, gray+0.8pt+dashed);\ndraw(B--Bup, black+1.2pt, Arrow(6));\ndraw(B--Bdown, gray+0.8pt+dashed);\ndraw(A--M--B, black+1.2pt);\ndot(A); dot(B); dot(M);\nlabel(\"A\", A, W);\nlabel(\"B\", B, E);\nlabel(\"M\", M, S);\ndraw(arc(A,0.5,270.0,310.0), blue);\nlabel(\"$40^\\\\circ$\", A+0.85*dir(290.0));\ndraw(arc(B,0.5,234.99999999999994,270.0), purple);\nlabel(\"$35^\\\\circ$\", B+0.85*dir(252.49999999999997));\ndraw(arc(M,0.4,54.99999999999998,130.0), heavygreen);\nlabel(\"$x^\\\\circ$\", M+0.7*dir(92.49999999999999));\n",
-      "options": [
-        {
-          "text": "$140^\\circ$",
-          "asy": "",
-          "explanation": "This does not match the auxiliary-line construction; recheck the angle addition."
-        },
-        {
-          "text": "$180^\\circ$",
-          "asy": "",
-          "explanation": "A, M and B do not lie on a single straight line here, so this cannot be $180^\\circ$."
-        },
-        {
-          "text": "$5^\\circ$",
-          "asy": "",
-          "explanation": "This is the difference, not the sum, of the two given angles — the bend angle uses their sum."
-        },
-        {
-          "text": "$75^\\circ$",
-          "asy": "",
-          "explanation": "Correct: draw an auxiliary vertical line through M parallel to both rays, then add the two alternate angles."
-        }
+      "tag": "",
+      "hint": "",
+      "blanks": [
+        "tidal"
       ],
-      "correctIndex": 3,
-      "correctAnswer": "$75^\\circ$",
-      "explanation": "Draw an auxiliary line through $M$ parallel to both AAup and BBup (all three lines are then parallel). By the alternate angle property, the angle between this auxiliary line and $MA$ equals $40^\\circ$, and the angle between the auxiliary line and $MB$ equals $35^\\circ$. Since these two angles together make up $\\angle AMB$, we get $x = 40^\\circ + 35^\\circ = 75^\\circ$."
+      "correctAnswer": "tidal",
+      "explanation": "The text defines this specific amount of air as tidal volume, which is about 500 ml."
     },
     {
       "id": "q15",
-      "type": "mcq",
-      "category": "Vertically Opposite Angles (Algebraic)",
-      "marks": 3,
+      "type": "fill_blank",
+      "category": "Respiration in Some Other Animals",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "Two lines AC and BD intersect at O. $\\angle AOB = 3x^\\circ$ and $\\angle COD = (2x+50)^\\circ$ are vertically opposite angles. Find the value of $x$.",
+      "question": "Fill in the blank: Insects like grasshoppers and mosquitoes respire through very fine air holes on their bodies called ___.",
       "passageId": "",
-      "tag": "Assertion-Reasoning",
-      "hint": "Set the two vertically opposite angle expressions equal to each other and solve for $x$.",
-      "asy": "size(190);\npair O=(0,0);\npair A=(2.000,0.000);\npair B=(-1.732,1.000);\npair C=(-2.000,0.000);\npair D=(1.732,-1.000);\ndraw(A--C, black+1.2pt);\ndraw(B--D, black+1.2pt);\ndot(O);\nlabel(\"A\", A, E);\nlabel(\"B\", B, NE);\nlabel(\"C\", C, W);\nlabel(\"D\", D, SW);\ndraw(arc(O,0.5,0,150), blue);\nlabel(\"$3x^\\circ$\", O+0.8*dir(75.0), N);\ndraw(arc(O,0.4,180,330), heavygreen);\nlabel(\"$(2x+50)^\\circ$\", O+0.8*dir(255.0), dir(255.0));\n",
-      "options": [
-        {
-          "text": "$x = 50$",
-          "asy": "",
-          "explanation": "Correct: vertically opposite angles are equal, so $3x = 2x+50 \\Rightarrow x=50$."
-        },
-        {
-          "text": "$x = 25$",
-          "asy": "",
-          "explanation": "Solving $3x = 2x+50$ gives $x=50$, not $25$."
-        },
-        {
-          "text": "$x = 100$",
-          "asy": "",
-          "explanation": "Substituting $x=100$ gives $3x=300^\\circ$, which is not a valid angle here."
-        },
-        {
-          "text": "$x = 10$",
-          "asy": "",
-          "explanation": "This does not satisfy $3x = 2x + 50$."
-        }
+      "tag": "",
+      "hint": "",
+      "blanks": [
+        "spiracles"
       ],
-      "correctIndex": 0,
-      "correctAnswer": "$x = 50$",
-      "explanation": "Since $\\angle AOB$ and $\\angle COD$ are vertically opposite angles, they are equal: $3x = 2x + 50 \\Rightarrow x = 50$. (Check: $3(50)=150^\\circ$ and $2(50)+50=150^\\circ$ — equal, as expected.)"
+      "correctAnswer": "spiracles",
+      "explanation": "The fine air holes located on the bodies of insects are called spiracles."
     },
     {
       "id": "q16",
-      "type": "mcq",
-      "category": "Reading Decimal Lengths (Ruler)",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "The ruler below is marked in millimetres, from 0 cm to 6 cm. What length, in centimetres, is the red arrow pointing to?",
+      "type": "fill_blank",
+      "category": "Nutrition in Humans",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Fill in the blank: The inner wall of the small intestine features millions of tiny finger-like projections called ___ that expand the surface area for nutrient absorption.",
       "passageId": "",
-      "tag": "Diagram-Based",
-      "hint": "Remember: 1 mm = 0.1 cm, so divide the mm value by 10.",
-      "asy": "size(300,90);\nreal u=0.05500000000000001;\ndraw((0,0)--(60*u,0), black+1.2pt);\nfor(int i=0; i<=60; ++i){\n  real h = (i%10==0) ? 0.35 : ((i%5==0) ? 0.22 : 0.13);\n  draw((i*u,0)--(i*u,h), black+0.6pt);\n}\nfor(int i=0; i<=60; i+=10){\n  label(format(\"%d\", i/10), (i*u,-0.28));\n}\ndraw((27*u,-0.55)--(27*u,0.05), red+1.3pt, Arrow(6));\n",
-      "options": [
-        {
-          "text": "27 cm",
-          "asy": "",
-          "explanation": "This is ten times too large; the ruler only goes up to 6 cm."
-        },
-        {
-          "text": "2.7 cm",
-          "asy": "",
-          "explanation": "Correct: 27 mm = 2.7 cm."
-        },
-        {
-          "text": "0.27 cm",
-          "asy": "",
-          "explanation": "This is ten times too small; 27 mm is much longer than 0.27 cm."
-        },
-        {
-          "text": "2.07 cm",
-          "asy": "",
-          "explanation": "27 mm equals 2.7 cm, not 2.07 cm — check the place value."
-        }
+      "tag": "",
+      "hint": "",
+      "blanks": [
+        "villi"
       ],
-      "correctIndex": 1,
-      "correctAnswer": "2.7 cm",
-      "explanation": "Since $1\\,\\text{mm} = 0.1\\,\\text{cm}$, a mark at 27 mm corresponds to $27 \\times 0.1 = 2.7$ cm."
+      "correctAnswer": "villi",
+      "explanation": "Finger-like projections on the inner wall of the small intestine are called villi."
     },
     {
       "id": "q17",
-      "type": "mcq",
-      "category": "Fractions to Decimals (Tenths)",
-      "marks": 2,
+      "type": "fill_blank",
+      "category": "Nutrition in Humans",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "Write 7/10 as a decimal.",
+      "question": "Fill in the blank: The breakdown of large fat molecules into smaller fat molecules by bile juice is termed the ___ of fats.",
       "passageId": "",
       "tag": "",
-      "hint": "A fraction over 10 has exactly one digit after the decimal point.",
-      "asy": "",
-      "options": [
-        {
-          "text": "7.0",
-          "asy": "",
-          "explanation": "This represents the whole number 7, not seven-tenths."
-        },
-        {
-          "text": "70.0",
-          "asy": "",
-          "explanation": "This is far too large; recheck the place value of tenths."
-        },
-        {
-          "text": "0.07",
-          "asy": "",
-          "explanation": "This represents 7/100, not 7/10."
-        },
-        {
-          "text": "0.7",
-          "asy": "",
-          "explanation": "Correct: a fraction with denominator 10 is written with one digit after the decimal point."
-        }
+      "hint": "",
+      "blanks": [
+        "emulsification"
       ],
-      "correctIndex": 3,
-      "correctAnswer": "0.7",
-      "explanation": "7/10 means 7 parts out of 10, which is written in decimal form as 0.7 (7 in the tenths place)."
+      "correctAnswer": "emulsification",
+      "explanation": "The process where large fat molecules turn into smaller ones is called emulsification of fats."
     },
     {
       "id": "q18",
-      "type": "mcq",
-      "category": "Decimal Place Value",
-      "marks": 2,
+      "type": "fill_blank",
+      "category": "Respiration in Humans",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "What is the place value of the digit $7$ in the number $45.278$?",
+      "question": "Fill in the blank: The trachea is kept from collapsing when empty by a series of C-shaped ___ rings.",
       "passageId": "",
       "tag": "",
-      "hint": "Count the position of the digit after the decimal point: 1st position = tenths.",
-      "asy": "",
-      "options": [
-        {
-          "text": "7",
-          "asy": "",
-          "explanation": "This would be its place value only if it were in the units (ones) place, but here it is in the tenths place."
-        },
-        {
-          "text": "70",
-          "asy": "",
-          "explanation": "This is the place value of a digit in the tens place, which is far from the decimal point here."
-        },
-        {
-          "text": "0.7",
-          "asy": "",
-          "explanation": "Correct: the digit 7 is in the tenths place, so its place value is 7 × 1/10 = 0.7."
-        },
-        {
-          "text": "0.07",
-          "asy": "",
-          "explanation": "This is the place value of a digit in the hundredths place, not the tenths place."
-        }
+      "hint": "",
+      "blanks": [
+        "cartilaginous"
       ],
-      "correctIndex": 2,
-      "correctAnswer": "0.7",
-      "explanation": "In 45.278, reading after the decimal point the digits are tenths (7), hundredths (2), thousandths-level (8, though this chapter focuses on tenths/hundredths). The digit 7 is in the tenths place, so its place value is 7/10 = 0.7."
+      "correctAnswer": "cartilaginous",
+      "explanation": "C-shaped cartilaginous rings prevent the trachea from collapsing when there is no air inside."
     },
     {
       "id": "q19",
-      "type": "mcq",
-      "category": "Comparing Decimals",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Which of the following is greater: $3.45$ or $3.5$?",
+      "type": "fill_blank",
+      "category": "Nutrition in Humans",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Fill in the blank: The salivary glands secrete an enzyme called salivary ___ which breaks down starch into simple sugars.",
       "passageId": "",
       "tag": "",
-      "hint": "Write both decimals with the same number of digits after the decimal point before comparing.",
-      "asy": "",
-      "options": [
-        {
-          "text": "Cannot be compared",
-          "asy": "",
-          "explanation": "Decimals can always be compared by writing them with the same number of decimal places."
-        },
-        {
-          "text": "They are equal",
-          "asy": "",
-          "explanation": "$3.45$ and $3.50$ are different numbers — they are not equal."
-        },
-        {
-          "text": "3.45",
-          "asy": "",
-          "explanation": "Rewriting $3.5$ as $3.50$ makes it clear that $3.50 > 3.45$."
-        },
-        {
-          "text": "3.5",
-          "asy": "",
-          "explanation": "Correct: $3.5 = 3.50$, and $3.50 > 3.45$ since $50$ hundredths is more than $45$ hundredths."
-        }
+      "hint": "",
+      "blanks": [
+        "amylase"
       ],
-      "correctIndex": 3,
-      "correctAnswer": "3.5",
-      "explanation": "Write both numbers with two decimal places: $3.45$ and $3.50$. Comparing hundredths, $50 > 45$, so $3.5 > 3.45$."
+      "correctAnswer": "amylase",
+      "explanation": "The text states that saliva contains the enzyme amylase, which breaks down starch into sugars."
     },
     {
       "id": "q20",
-      "type": "mcq",
-      "category": "Converting Millimetres to Centimetres",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "The ruler below is marked in millimetres, from 0 cm to 8 cm. Convert the length shown by the red arrow (56 mm) into centimetres.",
+      "type": "fill_blank",
+      "category": "Nutrition in Some Other Animals",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Fill in the blank: The semi-digested food that ruminants return from the rumen back to the mouth for additional chewing is called ___.",
       "passageId": "",
-      "tag": "Diagram-Based",
-      "hint": "Multiply the number of millimetres by 0.1 to convert to centimetres.",
-      "asy": "size(300,90);\nreal u=0.05500000000000001;\ndraw((0,0)--(80*u,0), black+1.2pt);\nfor(int i=0; i<=80; ++i){\n  real h = (i%10==0) ? 0.35 : ((i%5==0) ? 0.22 : 0.13);\n  draw((i*u,0)--(i*u,h), black+0.6pt);\n}\nfor(int i=0; i<=80; i+=10){\n  label(format(\"%d\", i/10), (i*u,-0.28));\n}\ndraw((56*u,-0.55)--(56*u,0.05), red+1.3pt, Arrow(6));\n",
-      "options": [
-        {
-          "text": "5.6 cm",
-          "asy": "",
-          "explanation": "Correct: 56 mm = 5.6 cm."
-        },
-        {
-          "text": "0.56 cm",
-          "asy": "",
-          "explanation": "This is ten times too small."
-        },
-        {
-          "text": "560 cm",
-          "asy": "",
-          "explanation": "This is one hundred times too large."
-        },
-        {
-          "text": "5.06 cm",
-          "asy": "",
-          "explanation": "This misplaces a digit; 56 mm is 5.6 cm, not 5.06 cm."
-        }
+      "tag": "",
+      "hint": "",
+      "blanks": [
+        "cud"
       ],
-      "correctIndex": 0,
-      "correctAnswer": "5.6 cm",
-      "explanation": "Since $1\\,\\text{mm} = 0.1\\,\\text{cm}$, we have $56\\,\\text{mm} = 56 \\times 0.1\\,\\text{cm} = 5.6\\,\\text{cm}$."
+      "correctAnswer": "cud",
+      "explanation": "Ruminants swallow food and regurgitate a semi-digested form known as cud."
     },
     {
       "id": "q21",
-      "type": "mcq",
-      "category": "Addition of Decimals",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Find the sum: $15.34 + 2.68$.",
+      "type": "jumbled",
+      "category": "Sentence Formation",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Rearrange the given terms to construct a structurally accurate statement about human waste removal: [through, ejected, feces, body, the, are, anus, the, from]",
       "passageId": "",
       "tag": "",
-      "hint": "Line up the decimal points and add column by column, starting from the hundredths.",
-      "asy": "",
-      "options": [
-        {
-          "text": "18.02",
-          "asy": "",
-          "explanation": "Correct: adding hundredths, tenths and units with carrying gives 18.02."
-        },
-        {
-          "text": "18.92",
-          "asy": "",
-          "explanation": "Recheck the addition of the tenths column after carrying from hundredths."
-        },
-        {
-          "text": "17.02",
-          "asy": "",
-          "explanation": "The units digit is incorrect; recheck the carrying from the tenths column."
-        },
-        {
-          "text": "17.92",
-          "asy": "",
-          "explanation": "Recheck the addition of the hundredths column: $4+8=12$, carry 1."
-        }
+      "hint": "",
+      "jumbledWords": [
+        "through",
+        "ejected",
+        "feces",
+        "body",
+        "the",
+        "are",
+        "anus",
+        "the",
+        "from"
       ],
-      "correctIndex": 0,
-      "correctAnswer": "18.02",
-      "explanation": "Align by place value: \\\\ $15.34$ \\\\ $+\\ 2.68$ \\\\ Hundredths: $4+8=12$, write 2, carry 1. Tenths: $3+6+1=10$, write 0, carry 1. Units: $5+2+1=8$. Tens: $1$. Result: $18.02$."
+      "correctAnswer": "Feces are ejected from the body through the anus.",
+      "explanation": "Feces are the undigested waste materials thrown out of the body through the anus during egestion."
     },
     {
       "id": "q22",
-      "type": "mcq",
-      "category": "Subtraction of Decimals",
-      "marks": 3,
+      "type": "jumbled",
+      "category": "Sentence Formation",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "Find the difference: $25.9 - 6.47$.",
+      "question": "Rearrange the words to create a valid fact about the liver: [largest, body, gland, is, the, liver, human, our, in]",
       "passageId": "",
       "tag": "",
-      "hint": "Rewrite 25.9 as 25.90 first, then subtract column by column, borrowing where needed.",
-      "asy": "",
-      "options": [
-        {
-          "text": "19.43",
-          "asy": "",
-          "explanation": "Correct: $25.90 - 6.47 = 19.43$."
-        },
-        {
-          "text": "20.43",
-          "asy": "",
-          "explanation": "This is too large by 1; recheck the borrowing chain."
-        },
-        {
-          "text": "18.43",
-          "asy": "",
-          "explanation": "Recheck the units-column subtraction after borrowing."
-        },
-        {
-          "text": "19.53",
-          "asy": "",
-          "explanation": "Recheck borrowing in the hundredths column."
-        }
+      "hint": "",
+      "jumbledWords": [
+        "largest",
+        "body",
+        "gland",
+        "is",
+        "the",
+        "liver",
+        "human",
+        "our",
+        "in"
       ],
-      "correctIndex": 0,
-      "correctAnswer": "19.43",
-      "explanation": "Write $25.9$ as $25.90$ so both numbers have two decimal places: $25.90 - 6.47$. Hundredths: $0-7$ needs borrowing, giving $10-7=3$; Tenths: after borrowing, $8-4=4$; Units: $5-6$ needs borrowing giving $15-6=9$; Tens: after borrowing, $1$. Result: $19.43$."
+      "correctAnswer": "Liver is the largest gland in our body.",
+      "explanation": "The text explicitly establishes that the liver is the largest gland in our body."
     },
     {
       "id": "q23",
-      "type": "mcq",
-      "category": "Word Problem: Adding Lengths in Tenths",
-      "marks": 3,
+      "type": "jumbled",
+      "category": "Sentence Formation",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "A honeybee's antenna is $0.8$ cm long and its body (thorax + abdomen) is $1.4$ cm long. What is the total length of the antenna and body together?",
+      "question": "Rearrange the terms to form a correct statement regarding cellular respiration location: [reactions, cellular, inside, take, respiration, place, cells]",
       "passageId": "",
       "tag": "",
-      "hint": "Add the tenths first, then carry over to the units place if the sum of tenths exceeds 9.",
-      "asy": "",
-      "options": [
-        {
-          "text": "2.1 cm",
-          "asy": "",
-          "explanation": "Recheck the addition of the tenths: $8+4=12$ tenths $=1.2$, so the units digit increases by 1."
-        },
-        {
-          "text": "2.4 cm",
-          "asy": "",
-          "explanation": "This does not match the given values; recheck the addition."
-        },
-        {
-          "text": "1.2 cm",
-          "asy": "",
-          "explanation": "This ignores the carrying into the units place."
-        },
-        {
-          "text": "2.2 cm",
-          "asy": "",
-          "explanation": "Correct: $0.8 + 1.4 = 2.2$."
-        }
+      "hint": "",
+      "jumbledWords": [
+        "reactions",
+        "cellular",
+        "inside",
+        "take",
+        "respiration",
+        "place",
+        "cells"
       ],
-      "correctIndex": 3,
-      "correctAnswer": "2.2 cm",
-      "explanation": "Adding the two lengths in tenths: $0.8 + 1.4 = 2.2$ cm (since $8$ tenths $+ 4$ tenths $=12$ tenths $= 1$ whole and $2$ tenths, added to the $1$ whole already there)."
+      "correctAnswer": "Cellular respiration reactions take place inside cells.",
+      "explanation": "Unlike breathing, cellular respiration is a biochemical process that takes place inside the body cells."
     },
     {
       "id": "q24",
-      "type": "mcq",
-      "category": "Hundredths as Decimals",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Write 234/100 in correct decimal notation.",
+      "type": "jumbled",
+      "category": "Sentence Formation",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Rearrange these words to describe birds' feeding mechanism: [their, swallow, beaks, food, birds, with, their]",
       "passageId": "",
       "tag": "",
-      "hint": "Divide 234 by 100 by moving the decimal point two places to the left.",
-      "asy": "",
-      "options": [
-        {
-          "text": "0.234",
-          "asy": "",
-          "explanation": "This treats 234 as thousandths, but the denominator here is 100, not 1000."
-        },
-        {
-          "text": "234.0",
-          "asy": "",
-          "explanation": "This ignores the denominator of 100 completely."
-        },
-        {
-          "text": "2.34",
-          "asy": "",
-          "explanation": "Correct: 234 hundredths = 2 wholes and 34 hundredths = 2.34."
-        },
-        {
-          "text": "23.4",
-          "asy": "",
-          "explanation": "This is ten times too large; recheck how many digits belong before the decimal point."
-        }
+      "hint": "",
+      "jumbledWords": [
+        "their",
+        "swallow",
+        "beaks",
+        "food",
+        "birds",
+        "with",
+        "their"
       ],
-      "correctIndex": 2,
-      "correctAnswer": "2.34",
-      "explanation": "234/100 = 200/100 + 34/100 = 2 + 0.34 = 2.34."
+      "correctAnswer": "Birds swallow their food with their beaks.",
+      "explanation": "The section on birds states directly that birds swallow their food with their beaks."
     },
     {
       "id": "q25",
-      "type": "mcq",
-      "category": "Ordering Decimals",
-      "marks": 3,
+      "type": "jumbled",
+      "category": "Sentence Formation",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "Arrange the following in increasing order: $0.5,\\ 0.45,\\ 0.54,\\ 0.05$.",
+      "question": "Rearrange these jumbled words to highlight a function of the human tongue: [helps, organ, muscular, tongue, a, tasting, in, food, that, is]",
       "passageId": "",
       "tag": "",
-      "hint": "Write all numbers with the same number of decimal places, then compare digit by digit.",
-      "asy": "",
-      "options": [
-        {
-          "text": "$0.54 < 0.5 < 0.45 < 0.05$",
-          "asy": "",
-          "explanation": "This is the decreasing order, not increasing."
-        },
-        {
-          "text": "$0.05 < 0.45 < 0.5 < 0.54$",
-          "asy": "",
-          "explanation": "Correct: comparing hundredths ($05 < 45 < 50 < 54$) gives this order."
-        },
-        {
-          "text": "$0.05 < 0.5 < 0.45 < 0.54$",
-          "asy": "",
-          "explanation": "$0.5$ (i.e. $0.50$) is greater than $0.45$, so this order is wrong."
-        },
-        {
-          "text": "$0.45 < 0.05 < 0.5 < 0.54$",
-          "asy": "",
-          "explanation": "$0.05$ is the smallest of all four, so it must come first."
-        }
+      "hint": "",
+      "jumbledWords": [
+        "helps",
+        "organ",
+        "muscular",
+        "tongue",
+        "a",
+        "tasting",
+        "in",
+        "food",
+        "that",
+        "is"
       ],
-      "correctIndex": 1,
-      "correctAnswer": "$0.05 < 0.45 < 0.5 < 0.54$",
-      "explanation": "Write each with two decimal places: $0.50, 0.45, 0.54, 0.05$. Comparing as hundredths ($50, 45, 54, 05$), the increasing order is $05 < 45 < 50 < 54$, i.e. $0.05 < 0.45 < 0.5 < 0.54$."
+      "correctAnswer": "Tongue is a muscular organ that helps in tasting food.",
+      "explanation": "The chapter outlines that the tongue is a muscular organ covered with a mucous membrane that helps in tasting food."
     },
     {
       "id": "q26",
-      "type": "mcq",
-      "category": "Word Problem: Length Conversion",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "A rope is $2$ m $45$ cm long. Express the length of the rope in metres, as a decimal.",
+      "type": "error_correction",
+      "category": "Nutrition in Humans",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Identify and fix the scientific error in the sentence below regarding human digestion.",
       "passageId": "",
       "tag": "",
-      "hint": "Convert the centimetres part to metres first (divide by 100), then add to the metres part.",
-      "asy": "",
-      "options": [
-        {
-          "text": "2.045 m",
-          "asy": "",
-          "explanation": "This treats 45 cm as 0.045 m, but $1\\,\\text{cm} = 0.01\\,\\text{m}$, so 45 cm = 0.45 m, not 0.045 m."
-        },
-        {
-          "text": "2.54 m",
-          "asy": "",
-          "explanation": "The digits are reversed; recheck that 45 cm corresponds to the digits 4 and 5 after the decimal point, in that order."
-        },
-        {
-          "text": "2.45 m",
-          "asy": "",
-          "explanation": "Correct: 45 cm = 0.45 m, so the rope is $2 + 0.45 = 2.45$ m long."
-        },
-        {
-          "text": "24.5 m",
-          "asy": "",
-          "explanation": "This is ten times too large."
-        }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "2.45 m",
-      "explanation": "Since $1\\,\\text{cm} = 0.01\\,\\text{m}$, $45\\,\\text{cm} = 45 \\times 0.01\\,\\text{m} = 0.45\\,\\text{m}$. So the total length is $2\\,\\text{m} + 0.45\\,\\text{m} = 2.45\\,\\text{m}$."
+      "hint": "",
+      "inputSentence": "Complete digestion and absorption of food takes place in the large intestine.",
+      "correctAnswer": "Complete digestion and absorption of food takes place in the small intestine.",
+      "explanation": "The text clarifies that digestion and absorption of food is completed in the small intestine, whereas the large intestine mainly absorbs water."
     },
     {
       "id": "q27",
-      "type": "mcq",
-      "category": "Reading a Number Line (Hundredths)",
-      "marks": 3,
+      "type": "error_correction",
+      "category": "Nutrition in Some Other Animals",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "The number line below runs from 0 to 1, with minor marks at every hundredth. What decimal number does the red arrow point to?",
+      "question": "Identify and correct the scientific error in the statement below regarding ruminant anatomy.",
       "passageId": "",
-      "tag": "Diagram-Based",
-      "hint": "Count the number of small divisions from 0 to where the arrow points; each division is 0.01.",
-      "asy": "size(320,90);\nreal u=0.06;\ndraw((0,0)--(100*u,0), black+1.2pt);\nfor(int i=0; i<=100; ++i){\n  real h = (i%10==0) ? 0.32 : ((i%5==0) ? 0.2 : 0.11);\n  draw((i*u,0)--(i*u,h), black+0.55pt);\n}\nfor(int i=0; i<=100; i+=10){\n  label(format(\"%.1f\", 0+i/100.0), (i*u,-0.3));\n}\ndraw((37*u,-0.55)--(37*u,0.05), red+1.3pt, Arrow(6));\n",
-      "options": [
-        {
-          "text": "0.73",
-          "asy": "",
-          "explanation": "The digits appear reversed; recheck which mark the arrow is at."
-        },
-        {
-          "text": "3.7",
-          "asy": "",
-          "explanation": "This is ten times too large for a mark on a 0-to-1 number line."
-        },
-        {
-          "text": "0.037",
-          "asy": "",
-          "explanation": "This would be the case if the number line ran from 0 to 0.1, not 0 to 1."
-        },
-        {
-          "text": "0.37",
-          "asy": "",
-          "explanation": "Correct: the arrow is 37 hundredths of the way from 0 to 1."
-        }
-      ],
-      "correctIndex": 3,
-      "correctAnswer": "0.37",
-      "explanation": "Each small division on the number line represents $0.01$ (one hundredth). The arrow is at the $37^{\\text{th}}$ division from 0, so it points to $37 \\times 0.01 = 0.37$."
+      "tag": "",
+      "hint": "",
+      "inputSentence": "A ruminant stomach has five separate chambers.",
+      "correctAnswer": "A ruminant stomach has four separate chambers.",
+      "explanation": "The text clearly states that a ruminant's stomach has four chambers: rumen, reticulum, omasum, and abomasum."
     },
     {
       "id": "q28",
-      "type": "mcq",
-      "category": "Reading Decimals Correctly",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "How should the decimal $0.274$ be correctly read aloud?",
+      "type": "error_correction",
+      "category": "Breathing and Respiration",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Identify and fix the mistake in this statement outlining breathing properties.",
       "passageId": "",
       "tag": "",
-      "hint": "Read every digit after the decimal point one at a time — never combine them into a bigger number.",
-      "asy": "",
-      "options": [
-        {
-          "text": "zero point two hundred seventy four",
-          "asy": "",
-          "explanation": "This mistakenly reads the digits after the point as a 3-digit whole number, which is incorrect."
-        },
-        {
-          "text": "zero point twenty-seven point four",
-          "asy": "",
-          "explanation": "Digits after the decimal point are never grouped or read with an extra decimal point."
-        },
-        {
-          "text": "zero point two seven four",
-          "asy": "",
-          "explanation": "Correct: each digit after the decimal point is read separately, one at a time."
-        },
-        {
-          "text": "two hundred seventy four",
-          "asy": "",
-          "explanation": "This ignores the decimal point and the leading zero entirely, changing the value read aloud."
-        }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "zero point two seven four",
-      "explanation": "When reading a decimal aloud, every digit after the decimal point is read individually, not as a combined number. So $0.274$ is read as \"zero point two seven four\", NOT as \"zero point two hundred seventy four\"."
+      "hint": "",
+      "inputSentence": "Breathing is a biochemical process that releases a gradual energy stream.",
+      "correctAnswer": "Breathing is a physical process in which there is no release of energy.",
+      "explanation": "Table-2 emphasizes that breathing is a physical process with no release of energy, whereas respiration is the biochemical one."
     },
     {
       "id": "q29",
-      "type": "mcq",
-      "category": "Word Problem: Difference of Decimal Lengths",
-      "marks": 3,
+      "type": "error_correction",
+      "category": "Respiration in Some Other Animals",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "One fish is $8.4$ cm long and another fish is $6.9$ cm long. How much longer is the first fish than the second?",
+      "question": "Identify and fix the mistake in the description of earthworm respiration.",
       "passageId": "",
       "tag": "",
-      "hint": "Since 4 tenths is less than 9 tenths, borrow 1 from the units place before subtracting.",
-      "asy": "",
-      "options": [
-        {
-          "text": "15.3 cm",
-          "asy": "",
-          "explanation": "This appears to add rather than subtract the two lengths."
-        },
-        {
-          "text": "1.6 cm",
-          "asy": "",
-          "explanation": "Recheck the subtraction of tenths: borrowing gives $14-9=5$ tenths, not 6."
-        },
-        {
-          "text": "1.5 cm",
-          "asy": "",
-          "explanation": "Correct: $8.4 - 6.9 = 1.5$."
-        },
-        {
-          "text": "2.5 cm",
-          "asy": "",
-          "explanation": "This does not match the given lengths; recheck the units-column subtraction."
-        }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "1.5 cm",
-      "explanation": "Difference $= 8.4 - 6.9$. Tenths: $4-9$ needs borrowing, giving $14-9=5$ tenths. Units: after borrowing, $7-6=1$. Result: $1.5$ cm."
+      "hint": "",
+      "inputSentence": "Earthworms use specialized branched tracheal tubes to absorb atmospheric oxygen.",
+      "correctAnswer": "Earthworms breathe through their smooth and moist skin.",
+      "explanation": "The text specifies that animals like earthworms breathe through their skin, which is smooth, moist, and richly supplied with blood vessels."
     },
     {
       "id": "q30",
-      "type": "mcq",
-      "category": "Place Value: Expanded Form to Decimal",
-      "marks": 3,
+      "type": "error_correction",
+      "category": "Respiration in Humans",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "Write the number represented by 7 × 10 + 0 × 1 + 5 × 1/10 in decimal form.",
+      "question": "Identify and correct the anatomical error in the description of human inhalation.",
       "passageId": "",
       "tag": "",
-      "hint": "Match each term to its correct place-value column: tens, units, then tenths.",
-      "asy": "",
-      "options": [
-        {
-          "text": "70.5",
-          "asy": "",
-          "explanation": "Correct: $7$ tens, $0$ units, and $5$ tenths gives $70.5$."
-        },
-        {
-          "text": "7.05",
-          "asy": "",
-          "explanation": "This misplaces the tens digit; recheck which place value the '7' represents here."
-        },
-        {
-          "text": "75.0",
-          "asy": "",
-          "explanation": "This ignores the fact that the 5 belongs in the tenths place, not the units place."
-        },
-        {
-          "text": "0.705",
-          "asy": "",
-          "explanation": "This treats all digits as being after the decimal point, but the '7' represents 7 tens."
-        }
+      "hint": "",
+      "inputSentence": "During inhalation, the diaphragm relaxes and moves upwards to maximize chest space.",
+      "correctAnswer": "During inhalation, the diaphragm contracts and moves downwards to create more space.",
+      "explanation": "The section on inhalation notes that the diaphragm contracts and moves downwards, creating more space inside the chest cavity."
+    },
+    {
+      "id": "q31",
+      "type": "match_columns",
+      "category": "Glands and Secretions",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Match the digestive gland or system component listed in Column A with its exact corresponding secretion or feature in Column B.",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "columnA": [
+        "1. Salivary Glands",
+        "2. Liver",
+        "3. Pancreas"
       ],
-      "correctIndex": 0,
-      "correctAnswer": "70.5",
-      "explanation": "7 × 10 = 70 (tens place), 0 × 1 = 0 (units place), 5 × 1/10 = 0.5 (tenths place). Adding these: 70 + 0 + 0.5 = 70.5."
+      "columnB": [
+        "(a) Secretes basic bile juice to emulsify fats",
+        "(b) Releases juice containing amylase and trypsin",
+        "(c) Produces saliva containing amylase to break down starch",
+        "(d) Absorbs nitrogen gas"
+      ],
+      "correctMatches": [
+        "c",
+        "a",
+        "b"
+      ],
+      "correctAnswer": "1-c, 2-a, 3-b",
+      "explanation": "Salivary glands secrete saliva (amylase); the liver secretes bile juice for fat emulsification; the pancreas produces pancreatic juice containing amylase and trypsin."
+    },
+    {
+      "id": "q32",
+      "type": "match_columns",
+      "category": "Respiration in Some Other Animals",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Match each animal group in Column A with its specialized organ or structural path for respiration listed in Column B.",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "columnA": [
+        "1. Insects (Grasshoppers)",
+        "2. Fish and Prawns",
+        "3. Earthworms and Leeches"
+      ],
+      "columnB": [
+        "(a) Breathe via thin filaments called gills",
+        "(b) Exchange gases through smooth, moist skin",
+        "(c) Utilize fine air holes called spiracles and trachea",
+        "(d) Exclusively utilize standard elastic lungs"
+      ],
+      "correctMatches": [
+        "c",
+        "a",
+        "b"
+      ],
+      "correctAnswer": "1-c, 2-a, 3-b",
+      "explanation": "Insects use spiracles and trachea; aquatic organisms like fish use gills; earthworms/leeches respire directly through their moist skin."
+    },
+    {
+      "id": "q33",
+      "type": "match_columns",
+      "category": "Human Respiratory System",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Match the parts of the human respiratory system in Column A with their accurate anatomical descriptions in Column B.",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "columnA": [
+        "1. Epiglottis",
+        "2. Trachea",
+        "3. Alveoli"
+      ],
+      "columnB": [
+        "(a) Thin-walled air sacs resembling bunches of grapes",
+        "(b) Flap-like structure that guards the glottis",
+        "(c) Wind pipe supported by C-shaped cartilaginous rings",
+        "(d) DOM-shaped muscular floor of the chest cavity"
+      ],
+      "correctMatches": [
+        "b",
+        "c",
+        "a"
+      ],
+      "correctAnswer": "1-b, 2-c, 3-a",
+      "explanation": "The epiglottis guards the windpipe opening; the trachea is the wind pipe with cartilaginous rings; alveoli are thin-walled air sacs where gas exchange occurs."
+    },
+    {
+      "id": "q34",
+      "type": "match_columns",
+      "category": "Nutrition Terms",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Match the mechanical or chemical digestion terms in Column A with their correct literal definition from Column B.",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "columnA": [
+        "1. Mastication",
+        "2. Chyme",
+        "3. Rumination"
+      ],
+      "columnB": [
+        "(a) Regurgitating and chewing cud twice",
+        "(b) Semi-solid paste formed by churning inside the stomach",
+        "(c) The process of chewing food with the help of teeth",
+        "(d) Finger-like network of blood capillaries"
+      ],
+      "correctMatches": [
+        "c",
+        "b",
+        "a"
+      ],
+      "correctAnswer": "1-c, 2-b, 3-a",
+      "explanation": "Mastication is the process of chewing food; chyme is the semi-solid stomach paste; rumination is the regurgitation and chewing of cud by grass-eating animals."
+    },
+    {
+      "id": "q35",
+      "type": "match_columns",
+      "category": "Ruminant Stomach Chambers",
+      "marks": 2,
+      "difficulty": "hard",
+      "question": "Match the specific ruminant stomach chamber in Column A with its exact physiological function described in Column B.",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "columnA": [
+        "1. Rumen",
+        "2. Omasum",
+        "3. Abomasum"
+      ],
+      "columnB": [
+        "(a) Absorbs excess water from the ingested food",
+        "(b) The true stomach where gastric juices are secreted",
+        "(c) The largest chamber used for initial food storage",
+        "(d) Honeycomb chamber returning cud to the mouth"
+      ],
+      "correctMatches": [
+        "c",
+        "a",
+        "b"
+      ],
+      "correctAnswer": "1-c, 2-a, 3-b",
+      "explanation": "The rumen stores food initially; the omasum absorbs excess water; the abomasum acts as the true stomach secreting digestive juices."
+    },
+    {
+      "id": "q36",
+      "type": "short_answer",
+      "category": "Nutrition in Humans",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "What is peristalsis, and why is it critically important for the human digestive process?",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "Peristalsis is a wave-like movement that takes place due to the continuous contraction and relaxation of the muscles of the oesophagus. It is important because it pushes swallowed food downward through the food pipe until it terminates in the stomach.",
+      "explanation": "The text explains the mechanical function of peristalsis in the oesophagus section, highlighting how it ensures food moves down successfully without blockages."
+    },
+    {
+      "id": "q37",
+      "type": "short_answer",
+      "category": "Nutrition in Humans",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Describe the structure of villi and explain how they facilitate the optimal absorption of nutrients within the small intestine.",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "Villi are millions of finger-like projections found on the inner wall of the small intestine. They increase the total surface area available for the absorption of digested food and are directly connected to a network of fine blood capillaries that carry nutrients into the bloodstream.",
+      "explanation": "The small intestine text states that villi increase surface area and connect to capillaries to effectively transport absorbed nutrients across the body for assimilation."
+    },
+    {
+      "id": "q38",
+      "type": "short_answer",
+      "category": "Nutrition in Humans",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Explain how the action of bacteria on leftover food inside the mouth leads to tooth decay, and list two practices to prevent it.",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "The action of bacteria on leftover food, especially sugary food in the mouth, causes a build-up of acid that damages the teeth and leads to cavities. To prevent this, individuals should brush their teeth twice a day and rinse their mouth thoroughly after every single meal.",
+      "explanation": "The mouth section and its corresponding Info-Bubble lay out the specific mechanism of acid accumulation from sugary food along with clear preventive hygiene guidelines."
+    },
+    {
+      "id": "q39",
+      "type": "short_answer",
+      "category": "Nutrition in Some Other Animals",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Why are humans incapable of digesting the cellulose present in grass and plants, whereas ruminants can digest it easily?",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "Humans lack the specialized microorganisms required to break down cellulose. Ruminants can digest cellulose because they host cellulose-digesting symbiotic bacteria and protozoa inside a specialized sac-like structure called the caecum.",
+      "explanation": "The text states that cellulose is not digested by humans, but ruminants succeed because symbiotic microbes living in their caecum break down tough plant fibers in exchange for shelter."
+    },
+    {
+      "id": "q40",
+      "type": "short_answer",
+      "category": "Nutrition in Humans",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "What is meant by the emulsification of fats, and which specific gland and secretion are responsible for this process?",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "Emulsification of fats is the process where large fat molecules are broken down into smaller, simpler fat molecules like fatty acids and glycerol. The liver is the gland responsible for this process by secreting basic bile juice.",
+      "explanation": "The liver description notes that it secretes bile juice which neutralizes stomach acid and breaks down large fat molecules into smaller ones via emulsification."
+    },
+    {
+      "id": "q41",
+      "type": "short_answer",
+      "category": "Nutrition in Humans",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Detail the dual structural mechanism by which the human respiratory system traps and cleanses dust particles from inhaled air before it reaches the lungs.",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "First, hair follicles inside the nostrils trap large dust particles as air enters. Second, the inner lining of the trachea secretes mucus to trap finer dust particles, while fine hair-like cilia repeatedly push this trapped dust back up into the pharynx.",
+      "explanation": "The nasal cavity and trachea sections define how hair follicles, mucus, and cilia function cohesively to filter out suspended contaminants."
+    },
+    {
+      "id": "q42",
+      "type": "short_answer",
+      "category": "Respiration in Some Other Animals",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Describe how gas exchange occurs in insects like grasshoppers through their tubular air passage system.",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "Insects do not have lungs; instead, oxygen-rich air enters their bodies through fine external air holes called spiracles. This air is distributed directly to internal body parts via a network of branched respiratory tubes called trachea.",
+      "explanation": "The section on spiracles and trachea explains the specific network of tubules providing small animals with direct gaseous exchange without a complex blood circulation path."
+    },
+    {
+      "id": "q43",
+      "type": "short_answer",
+      "category": "Respiration in Humans",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Explain the structural changes that occur within the human chest cavity during the process of active exhalation.",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "During exhalation, the muscles cause the rib cage to move downward and inward, while the dome-shaped diaphragm relaxes and moves upward. This reduces the total volume of the chest cavity, pushing carbon-dioxide rich air out of the lungs.",
+      "explanation": "The exhalation subsection outlines the precise mechanical steps that decrease thoracic space to generate the pressure needed to expel spent air."
+    },
+    {
+      "id": "q44",
+      "type": "short_answer",
+      "category": "Nutrition in Some Other Animals",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "How do the stomach and gizzard work together sequentially to process food inside a bird's digestive tract?",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "Birds swallow food whole with their beaks and store it in the crop. It then passes to the first part of the stomach which produces chemical digestive juices, before moving to the gizzard where muscular contractions combined with swallowed stones mechanically grind the food.",
+      "explanation": "The bird subsection clarifies that the bird stomach is split into a juice-producing zone and a grinding zone (gizzard) to substitute for their lack of teeth."
+    },
+    {
+      "id": "q45",
+      "type": "short_answer",
+      "category": "Nutrition in Humans",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Explain the specific digestive contributions of gut bacteria located within the human large intestine.",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "The gut bacteria residing in the large intestine break down remaining undigested nutrients that escaped the small intestine. Through this process, they produce essential vitamins and actively help maintain the body's overall gut health.",
+      "explanation": "The Info-Bubble under Table-1 details the beneficial symbiosis provided by resident intestinal bacteria in securing secondary nutrient assimilation."
+    },
+    {
+      "id": "q46",
+      "type": "short_answer",
+      "category": "Breathing and Respiration",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Provide a detailed comparison between the processes of physical breathing and cellular respiration, highlighting three distinct differences found in human physiology.",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "First, breathing is a physical process involving gas exchange (intake of oxygen and release of carbon dioxide), whereas respiration is a chemical process involving the oxidation of glucose. Second, breathing takes place entirely outside the body cells, while respiration occurs inside the cells. Third, breathing involves absolutely no release of energy, whereas respiration features a gradual, step-wise release of usable energy.",
+      "explanation": "These facts are clearly laid out in Table-2, providing a clear comparison between external physical movements and internal cell biochemistry."
+    },
+    {
+      "id": "q47",
+      "type": "short_answer",
+      "category": "Respiration in Humans",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Write out the complete word equation for cellular respiration in humans, and explain the step-by-step journey of oxygen from the moment it enters the alveoli until energy is produced.",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "The reaction is: $\\text{Glucose} + \\text{Oxygen} \\rightarrow \\text{Carbon dioxide} + \\text{Water} + \\text{Energy}$. When oxygen-rich air reaches the alveoli, it diffuses through the thin walls into the surrounding blood capillaries. The circulatory system and heart then pump this oxygenated blood to all cells of the body, where it reacts with digested glucose to release energy, water, and waste carbon dioxide.",
+      "explanation": "The section 'Circulation of gases in the human body' combines the chemical equation with the tracking of transportation handled by the blood vessels."
+    },
+    {
+      "id": "q48",
+      "type": "short_answer",
+      "category": "Nutrition in Humans",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Trace the complete physical and chemical transformation of a piece of bread (starch) from the moment it is ingested into the mouth until it is converted into simple sugars ready for small intestine absorption.",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "First, the bread enters the mouth where teeth perform mastication to break it down, mixing it with saliva to create a pulpy bolus; here, salivary amylase breaks down starch into maltose sugars. The bolus travels down the oesophagus via peristalsis into the stomach, where it is churned into semi-solid chyme. Finally, the chyme enters the small intestine, receiving pancreatic juice containing pancreatic amylase, which completely breaks down the remaining carbohydrates into simple water-soluble sugars.",
+      "explanation": "This synthesizes the entire pathway described across sections 9.1 and 9.2, tracking carbohydrate breakdown from salivary glands to pancreatic ducts."
+    },
+    {
+      "id": "q49",
+      "type": "short_answer",
+      "category": "Nutrition in Some Other Animals",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Detail the complete mechanical path that grass follows through the four chambers of a ruminant's digestive system during the dual stages of ingestion and rumination.",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "Initially, the ruminant plucks grass and swallows it quickly into the first chamber, the rumen, where it is stored and partially digested into a semi-solid cud. Next, the honeycomb-like reticulum returns the cud back up into the mouth, allowing the animal to spend hours chewing it thoroughly. Once swallowed a second time, the food enters the third chamber, the omasum, which extracts excess water, before finally moving into the true stomach, the abomasum, where gastric juices break it down completely.",
+      "explanation": "The text systematically details these steps under the Ruminants subsection, explaining how the four chambers process tough grass fibers."
+    },
+    {
+      "id": "q50",
+      "type": "short_answer",
+      "category": "Respiration in Humans",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Explain the exact anatomical roles played by the rib cage, the intercostal chest muscles, and the diaphragm to create the physical pressure changes required for human inhalation.",
+      "passageId": "",
+      "tag": "",
+      "hint": "",
+      "correctAnswer": "The rib cage serves as a protective bony outer chamber enclosing the soft lungs. During inhalation, the specialized muscles of the rib cage contract to pull the entire bony frame upward and outward. Simultaneously, the strong dome-shaped muscle floor called the diaphragm contracts and flattens downward. Together, these coordinated movements create significantly more space inside the thoracic chest cavity, causing the elastic lungs to expand and pull in oxygen-rich air from the outside environment.",
+      "explanation": "The section 'Working of the respiratory system' under breathing breaks down how these structural components work together to modify chest cavity volume."
     }
   ]
 }
