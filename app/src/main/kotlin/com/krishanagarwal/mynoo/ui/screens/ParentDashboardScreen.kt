@@ -141,47 +141,59 @@ private fun formatDate(isoString: String): String {
 }
 
 @Composable
-fun AnnotatedAnswer(text: String, corrections: List<*>?, modifier: Modifier = Modifier) {
+fun AnnotatedAnswer(
+    text: String,
+    corrections: List<*>?,
+    modifier: Modifier = Modifier,
+    style: androidx.compose.ui.text.TextStyle = MaterialTheme.typography.bodyMedium
+) {
     if (corrections.isNullOrEmpty()) {
-        Text(text, modifier = modifier, style = MaterialTheme.typography.bodyMedium)
+        Text(text, modifier = modifier, style = style, color = Color(0xFF2C3E50))
         return
     }
 
     data class Match(val start: Int, val end: Int, val original: String, val corrected: String)
     val matches = mutableListOf<Match>()
     val lowerText = text.lowercase()
+    val occupied = BooleanArray(text.length) { false }
+    val matchedCorrections = mutableSetOf<Any>()
+
     for (item in corrections) {
         val c = item as? Map<*, *> ?: continue
         val orig = c["original"] as? String ?: ""
         val corr = c["corrected"] as? String ?: ""
-        if (orig.isNotEmpty()) {
-            val idx = lowerText.indexOf(orig.lowercase())
-            if (idx != -1) {
-                matches.add(Match(idx, idx + orig.length, text.substring(idx, idx + orig.length), corr))
+        if (orig.isBlank()) continue
+
+        val lowerOrig = orig.lowercase()
+        var searchFrom = 0
+        while (searchFrom < text.length) {
+            val idx = lowerText.indexOf(lowerOrig, searchFrom)
+            if (idx == -1) break
+            val endIdx = idx + orig.length
+
+            val overlaps = (idx until endIdx).any { occupied[it] }
+            if (!overlaps) {
+                for (i in idx until endIdx) occupied[i] = true
+                matches.add(Match(idx, endIdx, text.substring(idx, endIdx), corr))
+                matchedCorrections.add(item)
+                break
             }
+            searchFrom = idx + 1
         }
     }
 
     matches.sortBy { it.start }
-    val deduped = mutableListOf<Match>()
-    var cursor = 0
-    for (m in matches) {
-        if (m.start >= cursor) {
-            deduped.add(m)
-            cursor = m.end
-        }
-    }
 
     val annotatedString = buildAnnotatedString {
         var pos = 0
-        for (m in deduped) {
+        for (m in matches) {
             if (m.start > pos) {
                 append(text.substring(pos, m.start))
             }
-            withStyle(style = SpanStyle(textDecoration = TextDecoration.LineThrough, color = Color(0xFFC0392B))) {
+            withStyle(style = SpanStyle(textDecoration = TextDecoration.LineThrough, color = Color(0xFFE74C3C))) {
                 append(m.original)
             }
-            withStyle(style = SpanStyle(color = Color(0xFF27AE60), fontStyle = FontStyle.Italic)) {
+            withStyle(style = SpanStyle(color = Color(0xFF27AE60), fontWeight = FontWeight.Bold)) {
                 append(" → ${m.corrected}")
             }
             pos = m.end
@@ -191,7 +203,25 @@ fun AnnotatedAnswer(text: String, corrections: List<*>?, modifier: Modifier = Mo
         }
     }
 
-    Text(annotatedString, modifier = modifier, style = MaterialTheme.typography.bodyMedium)
+    val unmatched = corrections.filterNot { it in matchedCorrections }
+
+    Column(modifier = modifier, verticalArrangement = Arrangement.spacedBy(4.dp)) {
+        Text(annotatedString, style = style, color = Color(0xFF2C3E50))
+        if (unmatched.isNotEmpty()) {
+            unmatched.forEach { item ->
+                val c = item as? Map<*, *> ?: return@forEach
+                val orig = c["original"] as? String ?: ""
+                val corr = c["corrected"] as? String ?: ""
+                if (orig.isNotBlank() && corr.isNotBlank()) {
+                    Text(
+                        text = "• $orig → $corr",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = Color(0xFFC0392B)
+                    )
+                }
+            }
+        }
+    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)

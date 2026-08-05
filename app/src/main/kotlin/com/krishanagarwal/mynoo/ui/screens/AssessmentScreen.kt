@@ -1241,69 +1241,22 @@ private fun QuestionView(
                                 color = Color(0xFF7F8C8D)
                             )
                             
-                            @Suppress("UNCHECKED_CAST")
-                            val corrections = savedAnswerResult?.get("corrections") as? List<Map<String, String>> ?: emptyList()
+                            val corrections = savedAnswerResult?.get("corrections") as? List<*> ?: emptyList<Any>()
                             if (finalAnsText == "[handwritten]") {
                                 Text("✍️ Handwritten answer submitted (transcribed below)", fontStyle = FontStyle.Italic, color = Color(0xFF8E44AD))
                             } else if (finalAnsText == "[camera]") {
                                 Text("📷 Photo answer submitted (transcribed below)", fontStyle = FontStyle.Italic, color = Color(0xFF1A6FA8))
-                            } else if (corrections.isNotEmpty()) {
-                                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                                    Text(
-                                        text = "✏️ Spelling / grammar mistakes highlighted:",
-                                        style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
-                                        color = Color(0xFFC0392B)
-                                    )
-                                    // Highlight mistakes inline using simple bullet list
-                                    corrections.forEach { c ->
-                                        val orig = c["original"] ?: ""
-                                        val corr = c["corrected"] ?: ""
-                                        val type = c["type"] ?: "spelling"
-                                        Row(
-                                            verticalAlignment = Alignment.CenterVertically,
-                                            horizontalArrangement = Arrangement.spacedBy(8.dp)
-                                        ) {
-                                            Text(
-                                                text = orig,
-                                                style = MaterialTheme.typography.bodyMedium.copy(textDecoration = TextDecoration.LineThrough),
-                                                color = Color(0xFFE74C3C)
-                                            )
-                                            Icon(
-                                                imageVector = Icons.AutoMirrored.Filled.ArrowForward,
-                                                contentDescription = "corrected to",
-                                                tint = Color(0xFF7F8C8D),
-                                                modifier = Modifier.size(12.dp)
-                                            )
-                                            Text(
-                                                text = corr,
-                                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
-                                                color = Color(0xFF27AE60)
-                                            )
-                                            Surface(
-                                                shape = RoundedCornerShape(4.dp),
-                                                color = if (type == "spelling") Color(0xFFEBF5FB) else Color(0xFFF3E5F5),
-                                                contentColor = if (type == "spelling") Color(0xFF2980B9) else Color(0xFF8E44AD)
-                                            ) {
-                                                Text(
-                                                    text = type.uppercase(),
-                                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
-                                                    style = MaterialTheme.typography.labelSmall
-                                                )
-                                            }
-                                        }
-                                    }
-                                }
-                            } else {
-                                Text(
+                            } else if (finalAnsText.isNotBlank()) {
+                                AnnotatedAnswer(
                                     text = finalAnsText,
-                                    style = MaterialTheme.typography.bodyLarge,
-                                    color = Color(0xFF2C3E50)
+                                    corrections = corrections,
+                                    style = MaterialTheme.typography.bodyLarge
                                 )
                             }
                         }
                     }
 
-                    // AI Verdict Banner
+                    // AI Verdict Banner & Marks Justification
                     if (savedAnswerResult != null) {
                         val verdict = savedAnswerResult["verdict"] as? String 
                             ?: when (savedAnswerResult["selfGrade"] as? String) {
@@ -1315,6 +1268,11 @@ private fun QuestionView(
                         val feedback = savedAnswerResult["feedback"] as? String 
                             ?: savedAnswerResult["aiFeedback"] as? String 
                             ?: ""
+                        
+                        val earnedMarks = (savedAnswerResult["earnedMarks"] as? Number)?.toDouble() ?: 0.0
+                        val totalMarks = marks.toDouble()
+                        val marksStr = if (earnedMarks % 1.0 == 0.0) "${earnedMarks.toInt()}" else "$earnedMarks"
+                        val totalStr = if (totalMarks % 1.0 == 0.0) "${totalMarks.toInt()}" else "$totalMarks"
                         
                         val verdictLabel = when (verdict) {
                             "correct" -> "Correct!"
@@ -1348,11 +1306,34 @@ private fun QuestionView(
                             color = verdictBg,
                             border = BorderStroke(1.dp, verdictBorder)
                         ) {
-                            Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                            Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                                Row(
+                                    modifier = Modifier.fillMaxWidth(),
+                                    horizontalArrangement = Arrangement.SpaceBetween,
+                                    verticalAlignment = Alignment.CenterVertically
+                                ) {
+                                    Text(
+                                        text = "$emoji $verdictLabel",
+                                        style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
+                                        color = verdictColor
+                                    )
+                                    Surface(
+                                        shape = RoundedCornerShape(8.dp),
+                                        color = verdictColor.copy(alpha = 0.15f)
+                                    ) {
+                                        Text(
+                                            text = "Score: $marksStr / $totalStr Marks",
+                                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+                                            style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold),
+                                            color = verdictColor
+                                        )
+                                    }
+                                }
+                                
                                 Text(
-                                    text = "$emoji $verdictLabel",
-                                    style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
-                                    color = verdictColor
+                                    text = "💡 Justification for Marks Awarded:",
+                                    style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
+                                    color = verdictColor.copy(alpha = 0.85f)
                                 )
                                 Text(
                                     text = feedback,
@@ -1391,7 +1372,7 @@ private fun QuestionView(
                         )
                     }
 
-                    // Correct model answer (Always shown after checked)
+                    // Original model answer loaded during assessment load
                     Surface(
                         shape = RoundedCornerShape(10.dp),
                         color = Color(0xFFF0F4FF),
@@ -1400,7 +1381,7 @@ private fun QuestionView(
                     ) {
                         Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
                             Text(
-                                text = "✅ Correct Answer:",
+                                text = "⭐ Original Model Answer (loaded with assessment):",
                                 style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
                                 color = Color(0xFF2980B9)
                             )

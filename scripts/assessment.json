@@ -1,781 +1,901 @@
 {
-  "title": "Nutrition and Respiration",
-  "passages": [],
+  "title": "Rulers to the Ruled: Types of Governments",
   "questions": [
     {
       "id": "q1",
       "type": "mcq",
-      "category": "Nutrition in Humans",
+      "category": "Civics - Government",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Which component of gastric juice is responsible for activating the enzyme pepsin and preventing bacterial growth on food inside the human stomach?",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
+      "question": "Which of the following US Presidents described democracy as a 'government of the people, by the people, for the people'?",
+      "tag": "Democracy",
+      "hint": "He was a U.S. president in the late 19th century.",
       "options": [
         {
-          "text": "Mucous",
-          "explanation": "Mucous protects the inner lining of the stomach from the action of acids rather than activating pepsin."
+          "text": "George Washington",
+          "explanation": "Incorrect. He was not mentioned in the text for this quote[cite: 1]."
         },
         {
-          "text": "Hydrochloric acid (HCl)",
-          "explanation": "Hydrochloric acid (HCl) activates the enzyme pepsin and prevents bacterial growth on food."
+          "text": "Abraham Lincoln",
+          "explanation": "Correct. Abraham Lincoln described democracy with this famous phrase[cite: 1]."
         },
         {
-          "text": "Salivary amylase",
-          "explanation": "Salivary amylase is secreted by the salivary glands in the mouth, not by the gastric glands."
+          "text": "Thomas Jefferson",
+          "explanation": "Incorrect. He was not mentioned in the text for this quote[cite: 1]."
         },
         {
-          "text": "Bile juice",
-          "explanation": "Bile juice is secreted by the liver and released into the small intestine, not the stomach."
+          "text": "John F. Kennedy",
+          "explanation": "Incorrect. He was not mentioned in the text[cite: 1]."
         }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Hydrochloric acid (HCl)",
-      "explanation": "According to the text, gastric juices include acids such as HCl (hydrochloric acid) which activates the enzyme pepsin and prevents bacterial growth on food."
+      "correctAnswer": "Abraham Lincoln",
+      "explanation": "Abraham Lincoln described democracy as a 'government of the people, by the people, for the people'[cite: 1]."
     },
     {
       "id": "q2",
       "type": "mcq",
-      "category": "Nutrition in Some Other Animals",
+      "category": "Civics - Democracy",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "Which chamber of a ruminant's stomach looks like a honeycomb and is responsible for returning the cud back to the mouth for rumination?",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
+      "difficulty": "easy",
+      "question": "In which form of government do citizens directly participate in all decisions and rules?",
+      "tag": "Direct Democracy",
+      "hint": "This system is practiced in Switzerland.",
       "options": [
         {
-          "text": "Rumen",
-          "explanation": "The rumen is the largest chamber used for storing food, not returning it."
+          "text": "Representative Democracy",
+          "explanation": "Incorrect. People elect representatives in this form[cite: 1]."
         },
         {
-          "text": "Omasum",
-          "explanation": "The omasum is the smallest chamber where excess water is absorbed."
+          "text": "Absolute Monarchy",
+          "explanation": "Incorrect. In this form, a king or queen holds all power[cite: 1]."
         },
         {
-          "text": "Reticulum",
-          "explanation": "The reticulum looks like a honeycomb and returns the cud back to the mouth."
+          "text": "Direct Democracy",
+          "explanation": "Correct. All citizens participate directly in the rules and functions[cite: 1]."
         },
         {
-          "text": "Abomasum",
-          "explanation": "The abomasum is the true stomach where gastric juices are secreted."
+          "text": "Theocracy",
+          "explanation": "Incorrect. A theocracy is ruled by religious leaders[cite: 1]."
         }
       ],
       "correctIndex": 2,
-      "correctAnswer": "Reticulum",
-      "explanation": "The chapter states that the reticulum chamber looks like a honeycomb and returns the cud back to the mouth for rumination."
+      "correctAnswer": "Direct Democracy",
+      "explanation": "Direct democracy is a form where all citizens are directly responsible for rules and regulations[cite: 1]."
     },
     {
       "id": "q3",
       "type": "mcq",
-      "category": "Respiration in Some Other Animals",
+      "category": "Civics - Democracy",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "Which organ facilitates breathing in aquatic animals like fish, prawns, and mussels by utilizing oxygen dissolved in water?",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
+      "difficulty": "medium",
+      "question": "In what year did women in Switzerland get the right to vote?",
+      "tag": "Elections",
+      "hint": "It happened in the late 20th century.",
       "options": [
         {
-          "text": "Skin",
-          "explanation": "Skin is used for respiration by animals like earthworms and leeches, not fish."
+          "text": "1928",
+          "explanation": "Incorrect. This is when effective Universal Adult Suffrage happened in the UK[cite: 1]."
         },
         {
-          "text": "Gills",
-          "explanation": "Gills are special respiratory organs that help aquatic animals take in dissolved oxygen."
+          "text": "1950",
+          "explanation": "Incorrect. India provided universal adult franchise from the beginning of its republic in 1950[cite: 1]."
         },
         {
-          "text": "Spiracles",
-          "explanation": "Spiracles are fine air holes found on the bodies of insects like grasshoppers."
+          "text": "1971",
+          "explanation": "Correct. Women in Switzerland received the right to vote in 1971[cite: 1]."
         },
         {
-          "text": "Lungs",
-          "explanation": "Lungs are specialized respiratory organs in higher terrestrial animals like birds and mammals."
+          "text": "1965",
+          "explanation": "Incorrect. This is when effective Universal Adult Suffrage happened in the USA[cite: 1]."
         }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "Gills",
-      "explanation": "The text notes that gills are special respiratory organs which facilitate breathing in aquatic animals like fish, prawns, and mussels by helping them take in oxygen dissolved in water."
+      "correctIndex": 2,
+      "correctAnswer": "1971",
+      "explanation": "In Switzerland, women got the right to vote only in 1971[cite: 1]."
     },
     {
       "id": "q4",
       "type": "mcq",
-      "category": "Nutrition in Some Other Animals",
+      "category": "Civics - Governance",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "Which specialized organ in a bird's digestive system contains repeatedly contracting muscles and swallowed stones or grit to grind food?",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
+      "difficulty": "medium",
+      "question": "What is the primary feature of a republic?",
+      "tag": "Republic",
+      "hint": "Think about how the head of state is chosen.",
       "options": [
         {
-          "text": "Crop",
-          "explanation": "The crop is the part of the oesophagus where food is stored, not ground up."
+          "text": "The head of state is a hereditary monarch",
+          "explanation": "Incorrect. A republic does not have a hereditary monarch[cite: 1]."
         },
         {
-          "text": "Gizzard",
-          "explanation": "The gizzard acts like teeth where grinding of food takes place using muscles, stones, and grit."
+          "text": "The head of state is elected",
+          "explanation": "Correct. A republic is a government where the head of state is elected[cite: 1]."
         },
         {
-          "text": "Caecum",
-          "explanation": "The caecum is a sac-like structure found in ruminants for cellulose digestion."
+          "text": "The country is ruled by religious leaders",
+          "explanation": "Incorrect. This describes a theocracy[cite: 1]."
         },
         {
-          "text": "Abomasum",
-          "explanation": "The abomasum is the true stomach of a ruminant, not a bird."
+          "text": "A small group of wealthy people rule",
+          "explanation": "Incorrect. This describes an oligarchy[cite: 1]."
         }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Gizzard",
-      "explanation": "The text explains that the gizzard is a part of the bird's stomach which acts like teeth where grinding of food takes place with the help of swallowed stones and grit."
+      "correctAnswer": "The head of state is elected",
+      "explanation": "A republic is a form of government in which the head of state is elected and is not a hereditary monarch[cite: 1]."
     },
     {
       "id": "q5",
       "type": "mcq",
-      "category": "Breathing and Respiration",
+      "category": "Civics - History",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "What percentage of carbon dioxide is present in normal exhaled air compared to the 0.04% present in inhaled air?",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
+      "difficulty": "hard",
+      "question": "Which of the following texts outlines the moral responsibilities and rājadharma of a king through the teachings of Bhishma?",
+      "tag": "History",
+      "hint": "It is an epic where Bhishma speaks to Yudhisthira from a bed of arrows.",
       "options": [
         {
-          "text": "21%",
-          "explanation": "21% is the percentage of oxygen in inhaled air."
+          "text": "Arthaśhāstra",
+          "explanation": "Incorrect. Kautilya wrote the Arthaśhāstra[cite: 1]."
         },
         {
-          "text": "16.4%",
-          "explanation": "16.4% is the percentage of oxygen in exhaled air."
+          "text": "Rājataranginī",
+          "explanation": "Incorrect. This was written by Kalhaņa[cite: 1]."
         },
         {
-          "text": "4.4%",
-          "explanation": "Exhaled air contains 4.4% of carbon dioxide."
+          "text": "Shanti Parva of the Mahābhārata",
+          "explanation": "Correct. Bhishma teaches Yudhisthira about good governance and rājadharma in the Shanti Parva[cite: 1]."
         },
         {
-          "text": "0.4%",
-          "explanation": "0.4% is incorrect; the text specifies 4.4% for exhaled carbon dioxide."
+          "text": "Uttaramerur inscriptions",
+          "explanation": "Incorrect. These inscriptions provide details about village sabhā elections[cite: 1]."
         }
       ],
       "correctIndex": 2,
-      "correctAnswer": "4.4%",
-      "explanation": "The Info-Bubble states that the air we breathe out contains 16.4% of oxygen and 4.4% of carbon dioxide."
+      "correctAnswer": "Shanti Parva of the Mahābhārata",
+      "explanation": "In the Shanti Parva of the Mahābhārata, Bhishma teaches Yudhisthira at great length on good governance and the moral responsibilities of a raja[cite: 1]."
     },
     {
       "id": "q6",
       "type": "mcq",
-      "category": "Nutrition in Humans",
+      "category": "Civics - Dictatorship",
       "marks": 1,
       "difficulty": "easy",
-      "question": "What is the approximate length of the human small intestine?",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
+      "question": "Idi Amin was a military dictator of which country?",
+      "tag": "Dictatorship",
+      "hint": "Many Indians whose ancestors migrated to this country were forced to flee.",
       "options": [
         {
-          "text": "1.5 meters",
-          "explanation": "1.5 meters is the approximate length of the large intestine."
+          "text": "Germany",
+          "explanation": "Incorrect. Adolf Hitler was the dictator of Germany[cite: 1]."
         },
         {
-          "text": "6.7 to 7.6 meters",
-          "explanation": "The length of the small intestine is between approximately 6.7m to 7.6m."
+          "text": "Uganda",
+          "explanation": "Correct. Idi Amin was a military dictator in Uganda[cite: 1]."
         },
         {
-          "text": "0.5 meters",
-          "explanation": "0.5 meters (500 ml) matches the human tidal volume, not intestine length."
+          "text": "North Korea",
+          "explanation": "Incorrect. Shane lives in North Korea according to the text, but Idi Amin ruled Uganda[cite: 1]."
         },
         {
-          "text": "10 to 12 meters",
-          "explanation": "This value is completely out of the range specified in the chapter."
+          "text": "Iran",
+          "explanation": "Incorrect. Iran is an Islamic Republic[cite: 1]."
         }
       ],
       "correctIndex": 1,
-      "correctAnswer": "6.7 to 7.6 meters",
-      "explanation": "The Hungry Brains section explicitly states that the length of the small intestine is between approximately 6.7m to 7.6m."
+      "correctAnswer": "Uganda",
+      "explanation": "Idi Amin was a military dictator in Uganda, responsible for the killing of thousands of people[cite: 1]."
     },
     {
       "id": "q7",
       "type": "mcq",
-      "category": "Respiration in Humans",
+      "category": "Civics - Government",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "What name is given to the sound-producing voice box that protrudes as the Adam's apple in males?",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
+      "difficulty": "medium",
+      "question": "Which of the following describes a Constitutional Monarchy?",
+      "tag": "Monarchy",
+      "hint": "Think about the United Kingdom's system.",
       "options": [
         {
-          "text": "Pharynx",
-          "explanation": "The pharynx is the common passage for food and air, not the voice box."
+          "text": "The monarch has complete control in making laws.",
+          "explanation": "Incorrect. This is an absolute monarchy[cite: 1]."
         },
         {
-          "text": "Glottis",
-          "explanation": "The glottis is the opening of the pharynx into the trachea."
+          "text": "The monarch is the nominal head while real executive power is with the prime minister.",
+          "explanation": "Correct. In a constitutional monarchy, legislative and executive powers rest with elected officials[cite: 1]."
         },
         {
-          "text": "Larynx",
-          "explanation": "The larynx is the voice box and protrudes as the Adam's apple in males."
+          "text": "Religious rules govern the country.",
+          "explanation": "Incorrect. This is a theocracy[cite: 1]."
         },
         {
-          "text": "Bronchus",
-          "explanation": "The bronchus is a division of the windpipe leading to a lung."
+          "text": "A wealthy group of individuals holds all power.",
+          "explanation": "Incorrect. This is an oligarchy[cite: 1]."
         }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "Larynx",
-      "explanation": "The text defines the larynx as a sound-producing organ also known as the voice box, which tends to protrude in males as the Adam's apple."
+      "correctIndex": 1,
+      "correctAnswer": "The monarch is the nominal head while real executive power is with the prime minister.",
+      "explanation": "In a constitutional monarchy like the UK, the king or queen has nominal power, and real executive power is exercised by the prime minister[cite: 1]."
     },
     {
       "id": "q8",
       "type": "mcq",
-      "category": "Nutrition in Humans",
+      "category": "Civics - Democracy",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "Which term describes the pulpy mass of food formed in the mouth after it undergoes mastication and mixing with saliva?",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
+      "difficulty": "medium",
+      "question": "In the United States of America, how frequently do general elections occur?",
+      "tag": "Elections",
+      "hint": "It is slightly shorter than India's electoral cycle.",
       "options": [
         {
-          "text": "Chyme",
-          "explanation": "Chyme is the semi-solid paste formed later inside the stomach."
+          "text": "Every three years",
+          "explanation": "Incorrect. The text does not mention three years[cite: 1]."
         },
         {
-          "text": "Bolus",
-          "explanation": "The masticated food mixed with saliva in the mouth forms a pulpy mass called bolus."
+          "text": "Every four years",
+          "explanation": "Correct. In the USA, general elections occur every four years[cite: 1]."
         },
         {
-          "text": "Cud",
-          "explanation": "Cud is the semi-digested food regurgitated by ruminants."
+          "text": "Every five years",
+          "explanation": "Incorrect. India has general elections every five years[cite: 1]."
         },
         {
-          "text": "Bile",
-          "explanation": "Bile is a basic digestive juice secreted by the liver, not a food mass."
+          "text": "Every six years",
+          "explanation": "Incorrect. The text does not mention six years[cite: 1]."
         }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Bolus",
-      "explanation": "The text states that when food is chewed and broken down into small pieces, saliva is mixed into it, reducing it to a pulpy mass called bolus."
+      "correctAnswer": "Every four years",
+      "explanation": "In the United States of America, general elections occur every four years[cite: 1]."
     },
     {
       "id": "q9",
       "type": "mcq",
-      "category": "Nutrition in Humans",
+      "category": "Civics - Terminology",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "Who was the American physician that first observed the workings of a living person's stomach through an unhealed gunshot wound?",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
+      "difficulty": "easy",
+      "question": "What is the meaning of the Greek root word 'olígos' in oligarchy?",
+      "tag": "Oligarchy",
+      "hint": "It indicates a small number.",
       "options": [
         {
-          "text": "Dr. William Beaumont",
-          "explanation": "Dr. William Beaumont was the first to observe stomach workings through a gunshot wound window."
+          "text": "To rule",
+          "explanation": "Incorrect. 'árkhō' means to rule or command[cite: 1]."
         },
         {
-          "text": "Dr. Robert Hooke",
-          "explanation": "Dr. Robert Hooke discovered cells, he is not mentioned in this chapter."
+          "text": "A few",
+          "explanation": "Correct. 'olígos' means a few[cite: 1]."
         },
         {
-          "text": "Dr. Louis Pasteur",
-          "explanation": "Dr. Louis Pasteur is famous for pasteurization and vaccines, not stomach observations here."
+          "text": "Wealthy",
+          "explanation": "Incorrect. Although oligarchs are often wealthy, the word 'olígos' specifically means a few[cite: 1]."
         },
         {
-          "text": "Dr. Alexander Fleming",
-          "explanation": "Dr. Alexander Fleming discovered penicillin and is not part of this text."
+          "text": "Power",
+          "explanation": "Incorrect. This is not the meaning of the root word[cite: 1]."
         }
       ],
-      "correctIndex": 0,
-      "correctAnswer": "Dr. William Beaumont",
-      "explanation": "The Hungry Brains callout note states that American physician Dr. William Beaumont (1785-1853) was the first person to observe the workings of a living person's stomach."
+      "correctIndex": 1,
+      "correctAnswer": "A few",
+      "explanation": "The word 'oligarchy' is of Greek origin, where olígos means a few and árkhō means to rule[cite: 1]."
     },
     {
       "id": "q10",
       "type": "mcq",
-      "category": "Respiration in Humans",
+      "category": "Civics - Democracy",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "What is the normal breathing rate per minute for an adult human being in a resting position?",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
+      "difficulty": "hard",
+      "question": "Which of the following structures is true for a Parliamentary Democracy?",
+      "tag": "Democracy Types",
+      "hint": "Look at the relationship between the executive and the legislature.",
       "options": [
         {
-          "text": "72 to 80 times",
-          "explanation": "This represents a typical resting heart rate, not the breathing rate."
+          "text": "The executive works independently of the legislature.",
+          "explanation": "Incorrect. This describes a Presidential democracy[cite: 1]."
         },
         {
-          "text": "15 to 18 times",
-          "explanation": "The resting breathing rate for an adult is 15 to 18 times per minute."
+          "text": "The members of the executive are also part of the legislature.",
+          "explanation": "Correct. In a parliamentary democracy, the executive is part of the legislature[cite: 1]."
         },
         {
-          "text": "5 to 10 times",
-          "explanation": "This rate is too low for a healthy resting adult human."
+          "text": "The president is elected directly by the people.",
+          "explanation": "Incorrect. This describes a Presidential democracy[cite: 1]."
         },
         {
-          "text": "30 to 40 times",
-          "explanation": "This high rate occurs during heavy exercise, not at rest."
+          "text": "The prime minister serves for life.",
+          "explanation": "Incorrect. Ministers work as long as they have the confidence of the legislature[cite: 1]."
         }
       ],
       "correctIndex": 1,
-      "correctAnswer": "15 to 18 times",
-      "explanation": "The text states in the Info-Bubble that the breathing rate for an adult in a resting position is 15 to 18 times per minute."
+      "correctAnswer": "The members of the executive are also part of the legislature.",
+      "explanation": "In a parliamentary democracy, the members of the executive are also part of the legislature and are accountable to it[cite: 1]."
     },
     {
       "id": "q11",
-      "type": "fill_blank",
-      "category": "Nutrition in Humans",
+      "type": "mcq",
+      "category": "Civics - History",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "Fill in the blank: The wave-like movement caused by the alternating contraction and relaxation of muscles that moves food down the food pipe is called ___.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": [
-        "peristalsis"
+      "difficulty": "medium",
+      "question": "Who authored the 12th century CE text Rājataranginī?",
+      "tag": "History",
+      "hint": "He was a Kashmiri scholar.",
+      "options": [
+        {
+          "text": "Kautilya",
+          "explanation": "Incorrect. He authored Arthaśhāstra[cite: 1]."
+        },
+        {
+          "text": "Bhishma",
+          "explanation": "Incorrect. Bhishma's teachings are in the Mahābhārata[cite: 1]."
+        },
+        {
+          "text": "Kalhaņa",
+          "explanation": "Correct. Kalhaņa wrote the Rājataranginī[cite: 1]."
+        },
+        {
+          "text": "Chandrāpīda",
+          "explanation": "Incorrect. He was a king mentioned in the text, not the author[cite: 1]."
+        }
       ],
-      "correctAnswer": "peristalsis",
-      "explanation": "The text explicitly names this movement as peristalsis."
+      "correctIndex": 2,
+      "correctAnswer": "Kalhaņa",
+      "explanation": "The Rājataranginī was authored by the Kashmiri scholar Kalhaņa in the 12th century CE[cite: 1]."
     },
     {
       "id": "q12",
-      "type": "fill_blank",
-      "category": "Nutrition in Humans",
+      "type": "mcq",
+      "category": "Civics - Democracy",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Fill in the blank: The process of taking food into the body through the mouth is scientifically known as ___.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": [
-        "ingestion"
+      "question": "In India, what is the Lower House of the legislature called?",
+      "tag": "Legislature",
+      "hint": "It is typically more powerful than the Upper House.",
+      "options": [
+        {
+          "text": "Rajya Sabha",
+          "explanation": "Incorrect. This is the Upper House[cite: 1]."
+        },
+        {
+          "text": "Senate",
+          "explanation": "Incorrect. This is the Upper House in the USA[cite: 1]."
+        },
+        {
+          "text": "Lok Sabha",
+          "explanation": "Correct. The Lower House in India is the Lok Sabha[cite: 1]."
+        },
+        {
+          "text": "National Assembly",
+          "explanation": "Incorrect. This is the single house in South Korea[cite: 1]."
+        }
       ],
-      "correctAnswer": "ingestion",
-      "explanation": "Taking food into the body through the mouth is defined as ingestion."
+      "correctIndex": 2,
+      "correctAnswer": "Lok Sabha",
+      "explanation": "In India, the Lower House is called the Lok Sabha, and the Upper House is called the Rajya Sabha[cite: 1]."
     },
     {
       "id": "q13",
-      "type": "fill_blank",
-      "category": "Nutrition in Some Other Animals",
+      "type": "mcq",
+      "category": "Civics - Government",
       "marks": 1,
       "difficulty": "medium",
-      "question": "Fill in the blank: Ruminants are able to digest cellulose because they have cellulose-digesting bacteria living symbiotically inside a sac-like structure called the ___.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": [
-        "caecum"
+      "question": "Which principle ensures that the three organs of government work independently and do not interfere with each other?",
+      "tag": "Governance",
+      "hint": "It involves dividing authority.",
+      "options": [
+        {
+          "text": "Universal adult franchise",
+          "explanation": "Incorrect. This grants citizens the right to vote[cite: 1]."
+        },
+        {
+          "text": "Accountability",
+          "explanation": "Incorrect. This means the government is answerable to the people[cite: 1]."
+        },
+        {
+          "text": "Separation of Power",
+          "explanation": "Correct. This principle ensures independent functioning of the Legislature, Executive, and Judiciary[cite: 1]."
+        },
+        {
+          "text": "Sovereignty",
+          "explanation": "Incorrect. This indicates independent power from external influence[cite: 1]."
+        }
       ],
-      "correctAnswer": "caecum",
-      "explanation": "The text states that symbiotic microbes live inside a part of the digestive system called the caecum to digest cellulose."
+      "correctIndex": 2,
+      "correctAnswer": "Separation of Power",
+      "explanation": "Separation of Power means that the Legislature, Executive, and Judiciary work independently without interference[cite: 1]."
     },
     {
       "id": "q14",
-      "type": "fill_blank",
-      "category": "Respiration in Humans",
+      "type": "mcq",
+      "category": "Civics - Dictatorship",
       "marks": 1,
       "difficulty": "medium",
-      "question": "Fill in the blank: The amount of air breathed in or out in one breath during normal respiration is known as ___ volume.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": [
-        "tidal"
+      "question": "Which leader was responsible for the killing of at least six million Jews during his dictatorship?",
+      "tag": "Dictatorship",
+      "hint": "He was appointed Chancellor of Germany in 1933.",
+      "options": [
+        {
+          "text": "Idi Amin",
+          "explanation": "Incorrect. He was the dictator of Uganda[cite: 1]."
+        },
+        {
+          "text": "Adolf Hitler",
+          "explanation": "Correct. He orchestrated the Holocaust in Germany[cite: 1]."
+        },
+        {
+          "text": "King Chandrāpīda",
+          "explanation": "Incorrect. He was a king who ruled according to dharma[cite: 1]."
+        },
+        {
+          "text": "The Supreme Leader",
+          "explanation": "Incorrect. This is the title in Iran[cite: 1]."
+        }
       ],
-      "correctAnswer": "tidal",
-      "explanation": "The text defines this specific amount of air as tidal volume, which is about 500 ml."
+      "correctIndex": 1,
+      "correctAnswer": "Adolf Hitler",
+      "explanation": "Adolf Hitler was the dictator of Germany responsible for the Holocaust, which resulted in the killing of at least six million Jews[cite: 1]."
     },
     {
       "id": "q15",
-      "type": "fill_blank",
-      "category": "Respiration in Some Other Animals",
+      "type": "mcq",
+      "category": "Civics - Governance",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "Fill in the blank: Insects like grasshoppers and mosquitoes respire through very fine air holes on their bodies called ___.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": [
-        "spiracles"
+      "difficulty": "easy",
+      "question": "What is the primary function of the judiciary in a democratic government?",
+      "tag": "Functions",
+      "hint": "It ensures that the rules are adhered to.",
+      "options": [
+        {
+          "text": "Making laws",
+          "explanation": "Incorrect. This is the legislative function[cite: 1]."
+        },
+        {
+          "text": "Implementing laws",
+          "explanation": "Incorrect. This is the executive function[cite: 1]."
+        },
+        {
+          "text": "Ensuring laws are followed and protecting rights",
+          "explanation": "Correct. This is the judicial function[cite: 1]."
+        },
+        {
+          "text": "Managing economic activities",
+          "explanation": "Incorrect. This is an executive/administrative function[cite: 1]."
+        }
       ],
-      "correctAnswer": "spiracles",
-      "explanation": "The fine air holes located on the bodies of insects are called spiracles."
+      "correctIndex": 2,
+      "correctAnswer": "Ensuring laws are followed and protecting rights",
+      "explanation": "The judicial function ensures that the rules are followed, and an independent judiciary protects citizens' fundamental rights[cite: 1]."
     },
     {
       "id": "q16",
-      "type": "fill_blank",
-      "category": "Nutrition in Humans",
+      "type": "mcq",
+      "category": "Civics - Government",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "Fill in the blank: The inner wall of the small intestine features millions of tiny finger-like projections called ___ that expand the surface area for nutrient absorption.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": [
-        "villi"
+      "difficulty": "medium",
+      "question": "Which ancient Mahājanapada practiced collective decision-making and merit-based leadership?",
+      "tag": "History",
+      "hint": "The Lichchhavi clan was a part of this state.",
+      "options": [
+        {
+          "text": "Magadha",
+          "explanation": "Incorrect. The text does not mention Magadha for this practice[cite: 1]."
+        },
+        {
+          "text": "Vajji (or Vriji)",
+          "explanation": "Correct. Vajji, particularly the Lichchhavi clan, was an early republic[cite: 1]."
+        },
+        {
+          "text": "Rome",
+          "explanation": "Incorrect. Rome is in Italy, though it was an ancient republic[cite: 1]."
+        },
+        {
+          "text": "Chola",
+          "explanation": "Incorrect. The Cholas had village sabhās, but Vajji is the Mahājanapada mentioned[cite: 1]."
+        }
       ],
-      "correctAnswer": "villi",
-      "explanation": "Finger-like projections on the inner wall of the small intestine are called villi."
+      "correctIndex": 1,
+      "correctAnswer": "Vajji (or Vriji)",
+      "explanation": "In the Vajji (or Vriji) mahājanapada, the Lichchhavi clan practiced collective decision-making as an early republic[cite: 1]."
     },
     {
       "id": "q17",
-      "type": "fill_blank",
-      "category": "Nutrition in Humans",
+      "type": "mcq",
+      "category": "Civics - Terminology",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "Fill in the blank: The breakdown of large fat molecules into smaller fat molecules by bile juice is termed the ___ of fats.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": [
-        "emulsification"
+      "difficulty": "easy",
+      "question": "What is the definition of the term 'Subjugate' as provided in the text?",
+      "tag": "Definitions",
+      "hint": "It involves taking control using force.",
+      "options": [
+        {
+          "text": "To judge a case during a dispute",
+          "explanation": "Incorrect. This is 'adjudicate'[cite: 1]."
+        },
+        {
+          "text": "To take control of people or a place by force",
+          "explanation": "Correct. Subjugate means to take control by using force and making people obey[cite: 1]."
+        },
+        {
+          "text": "To inherit a royal position",
+          "explanation": "Incorrect. This refers to a monarch[cite: 1]."
+        },
+        {
+          "text": "To draw someone to look foolish",
+          "explanation": "Incorrect. This refers to a caricature[cite: 1]."
+        }
       ],
-      "correctAnswer": "emulsification",
-      "explanation": "The process where large fat molecules turn into smaller ones is called emulsification of fats."
+      "correctIndex": 1,
+      "correctAnswer": "To take control of people or a place by force",
+      "explanation": "Subjugate means to take control of people or a place by using force and make the people obey[cite: 1]."
     },
     {
       "id": "q18",
-      "type": "fill_blank",
-      "category": "Respiration in Humans",
+      "type": "mcq",
+      "category": "Civics - Government",
       "marks": 1,
       "difficulty": "medium",
-      "question": "Fill in the blank: The trachea is kept from collapsing when empty by a series of C-shaped ___ rings.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": [
-        "cartilaginous"
+      "question": "According to the story of Shane, which type of government controls the haircut styles and internet access of its citizens?",
+      "tag": "Dictatorship",
+      "hint": "Shane lives in North Korea.",
+      "options": [
+        {
+          "text": "Democracy",
+          "explanation": "Incorrect. Democracies allow freedom of expression[cite: 1]."
+        },
+        {
+          "text": "Theocracy",
+          "explanation": "Incorrect. Theocracies are based on religion[cite: 1]."
+        },
+        {
+          "text": "Dictatorship",
+          "explanation": "Correct. Dictatorships impose absolute control over citizens' lives, as seen in North Korea[cite: 1]."
+        },
+        {
+          "text": "Constitutional Monarchy",
+          "explanation": "Incorrect. This form has democratic elements[cite: 1]."
+        }
       ],
-      "correctAnswer": "cartilaginous",
-      "explanation": "C-shaped cartilaginous rings prevent the trachea from collapsing when there is no air inside."
+      "correctIndex": 2,
+      "correctAnswer": "Dictatorship",
+      "explanation": "Shane's life in North Korea, where rules govern even haircuts, illustrates the absolute control typical of a dictatorship[cite: 1]."
     },
     {
       "id": "q19",
-      "type": "fill_blank",
-      "category": "Nutrition in Humans",
+      "type": "mcq",
+      "category": "Civics - Theocracy",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Fill in the blank: The salivary glands secrete an enzyme called salivary ___ which breaks down starch into simple sugars.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": [
-        "amylase"
+      "question": "Which of the following is currently an example of a theocracy?",
+      "tag": "Theocracy",
+      "hint": "Its full name is 'Islamic Republic of...'",
+      "options": [
+        {
+          "text": "South Korea",
+          "explanation": "Incorrect. South Korea is a presidential democracy[cite: 1]."
+        },
+        {
+          "text": "Iran",
+          "explanation": "Correct. Iran is an Islamic Republic with a theocratic system[cite: 1]."
+        },
+        {
+          "text": "Saudi Arabia",
+          "explanation": "Incorrect. Saudi Arabia is an absolute monarchy[cite: 1]."
+        },
+        {
+          "text": "Uganda",
+          "explanation": "Incorrect. Uganda was referenced under Idi Amin's dictatorship[cite: 1]."
+        }
       ],
-      "correctAnswer": "amylase",
-      "explanation": "The text states that saliva contains the enzyme amylase, which breaks down starch into sugars."
+      "correctIndex": 1,
+      "correctAnswer": "Iran",
+      "explanation": "Iran is a theocracy where the constitution is based on the fundamental principles of Islam and ruled by religious leaders[cite: 1]."
     },
     {
       "id": "q20",
-      "type": "fill_blank",
-      "category": "Nutrition in Some Other Animals",
+      "type": "mcq",
+      "category": "Civics - Democracy",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "Fill in the blank: The semi-digested food that ruminants return from the rumen back to the mouth for additional chewing is called ___.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "blanks": [
-        "cud"
+      "difficulty": "medium",
+      "question": "In a democracy, the concept that the government is answerable to the people is known as:",
+      "tag": "Accountability",
+      "hint": "It ensures the government acts responsibly.",
+      "options": [
+        {
+          "text": "Universal adult franchise",
+          "explanation": "Incorrect. This is the right to vote[cite: 1]."
+        },
+        {
+          "text": "Accountability",
+          "explanation": "Correct. It means the government must answer to its citizens[cite: 1]."
+        },
+        {
+          "text": "Separation of power",
+          "explanation": "Incorrect. This refers to independent organs of government[cite: 1]."
+        },
+        {
+          "text": "Sovereignty",
+          "explanation": "Incorrect. This refers to independent power[cite: 1]."
+        }
       ],
-      "correctAnswer": "cud",
-      "explanation": "Ruminants swallow food and regurgitate a semi-digested form known as cud."
+      "correctIndex": 1,
+      "correctAnswer": "Accountability",
+      "explanation": "Accountability in democracy means that the government is answerable to the people who elected it[cite: 1]."
     },
     {
       "id": "q21",
-      "type": "jumbled",
-      "category": "Sentence Formation",
+      "type": "fill_blank",
+      "category": "Civics - Functions",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Rearrange the given terms to construct a structurally accurate statement about human waste removal: [through, ejected, feces, body, the, are, anus, the, from]",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "jumbledWords": [
-        "through",
-        "ejected",
-        "feces",
-        "body",
-        "the",
-        "are",
-        "anus",
-        "the",
-        "from"
+      "question": "The creation of rules that serve as the framework for running the country is called the ___ function.",
+      "tag": "Legislative",
+      "hint": "This function makes the laws.",
+      "blanks": [
+        "legislative"
       ],
-      "correctAnswer": "Feces are ejected from the body through the anus.",
-      "explanation": "Feces are the undigested waste materials thrown out of the body through the anus during egestion."
+      "correctAnswer": "legislative",
+      "explanation": "The creation of rules is called the legislative function; these rules serve as the framework for running the country[cite: 1]."
     },
     {
       "id": "q22",
-      "type": "jumbled",
-      "category": "Sentence Formation",
+      "type": "fill_blank",
+      "category": "Civics - Functions",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "Rearrange the words to create a valid fact about the liver: [largest, body, gland, is, the, liver, human, our, in]",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "jumbledWords": [
-        "largest",
-        "body",
-        "gland",
-        "is",
-        "the",
-        "liver",
-        "human",
-        "our",
-        "in"
+      "difficulty": "easy",
+      "question": "The implementation of rules and the administration of the country according to them is known as the ___ function.",
+      "tag": "Executive",
+      "hint": "This organ enforces the laws.",
+      "blanks": [
+        "executive"
       ],
-      "correctAnswer": "Liver is the largest gland in our body.",
-      "explanation": "The text explicitly establishes that the liver is the largest gland in our body."
+      "correctAnswer": "executive",
+      "explanation": "The implementation of these rules and the administration of the country is known as the executive function[cite: 1]."
     },
     {
       "id": "q23",
-      "type": "jumbled",
-      "category": "Sentence Formation",
+      "type": "fill_blank",
+      "category": "Civics - Democracy",
       "marks": 1,
       "difficulty": "medium",
-      "question": "Rearrange the terms to form a correct statement regarding cellular respiration location: [reactions, cellular, inside, take, respiration, place, cells]",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "jumbledWords": [
-        "reactions",
-        "cellular",
-        "inside",
-        "take",
-        "respiration",
-        "place",
-        "cells"
+      "question": "The system to decide how a democratic government will work can be written down in a book of fundamental rules called the ___.",
+      "tag": "Constitution",
+      "hint": "It limits dictatorial powers.",
+      "blanks": [
+        "constitution"
       ],
-      "correctAnswer": "Cellular respiration reactions take place inside cells.",
-      "explanation": "Unlike breathing, cellular respiration is a biochemical process that takes place inside the body cells."
+      "correctAnswer": "constitution",
+      "explanation": "The system to decide how the government will work can be written down in a book of fundamental rules called the 'constitution'[cite: 1]."
     },
     {
       "id": "q24",
-      "type": "jumbled",
-      "category": "Sentence Formation",
+      "type": "fill_blank",
+      "category": "Civics - Democracy",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Rearrange these words to describe birds' feeding mechanism: [their, swallow, beaks, food, birds, with, their]",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "jumbledWords": [
-        "their",
-        "swallow",
-        "beaks",
-        "food",
-        "birds",
-        "with",
-        "their"
+      "question": "In a democracy, the ___ grants every citizen above a certain age the right to vote.",
+      "tag": "Franchise",
+      "hint": "It is a three-word phrase starting with 'Universal'.",
+      "blanks": [
+        "universal adult franchise",
+        "Universal adult franchise"
       ],
-      "correctAnswer": "Birds swallow their food with their beaks.",
-      "explanation": "The section on birds states directly that birds swallow their food with their beaks."
+      "correctAnswer": "universal adult franchise",
+      "explanation": "Universal adult franchise grants every citizen (above a certain age) the right to vote to choose their representative[cite: 1]."
     },
     {
       "id": "q25",
-      "type": "jumbled",
-      "category": "Sentence Formation",
+      "type": "fill_blank",
+      "category": "Civics - History",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "Rearrange these jumbled words to highlight a function of the human tongue: [helps, organ, muscular, tongue, a, tasting, in, food, that, is]",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "jumbledWords": [
-        "helps",
-        "organ",
-        "muscular",
-        "tongue",
-        "a",
-        "tasting",
-        "in",
-        "food",
-        "that",
-        "is"
+      "difficulty": "hard",
+      "question": "The 10th-century CE Uttaramerur inscriptions from ___ provide details about the election of members to the village sabhā.",
+      "tag": "History",
+      "hint": "It is a southern state in India.",
+      "blanks": [
+        "Tamil Nadu"
       ],
-      "correctAnswer": "Tongue is a muscular organ that helps in tasting food.",
-      "explanation": "The chapter outlines that the tongue is a muscular organ covered with a mucous membrane that helps in tasting food."
+      "correctAnswer": "Tamil Nadu",
+      "explanation": "A remarkable example from the Chola period is seen in the Uttaramerur inscriptions from the 10th century CE in Tamil Nadu[cite: 1]."
     },
     {
       "id": "q26",
-      "type": "error_correction",
-      "category": "Nutrition in Humans",
+      "type": "fill_blank",
+      "category": "Civics - Monarchy",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "Identify and fix the scientific error in the sentence below regarding human digestion.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "inputSentence": "Complete digestion and absorption of food takes place in the large intestine.",
-      "correctAnswer": "Complete digestion and absorption of food takes place in the small intestine.",
-      "explanation": "The text clarifies that digestion and absorption of food is completed in the small intestine, whereas the large intestine mainly absorbs water."
+      "difficulty": "medium",
+      "question": "A ___ monarchy is a government where the head of state is a king or queen with only nominal power, while real power rests with the prime minister.",
+      "tag": "Monarchy",
+      "hint": "Britain has this type of monarchy.",
+      "blanks": [
+        "constitutional",
+        "Constitutional"
+      ],
+      "correctAnswer": "constitutional",
+      "explanation": "In a constitutional monarchy, the head of state is the king or queen with nominal power, and real power is exercised by the prime minister[cite: 1]."
     },
     {
       "id": "q27",
-      "type": "error_correction",
-      "category": "Nutrition in Some Other Animals",
+      "type": "fill_blank",
+      "category": "Civics - Monarchy",
       "marks": 1,
       "difficulty": "medium",
-      "question": "Identify and correct the scientific error in the statement below regarding ruminant anatomy.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "inputSentence": "A ruminant stomach has five separate chambers.",
-      "correctAnswer": "A ruminant stomach has four separate chambers.",
-      "explanation": "The text clearly states that a ruminant's stomach has four chambers: rumen, reticulum, omasum, and abomasum."
+      "question": "In an ___ monarchy, such as Saudi Arabia, the monarch has complete control over making and adjudicating laws.",
+      "tag": "Monarchy",
+      "hint": "It starts with 'A' and means total power.",
+      "blanks": [
+        "absolute",
+        "Absolute"
+      ],
+      "correctAnswer": "absolute",
+      "explanation": "In an absolute monarchy, the monarch has complete control in making laws, ensuring they are followed, and adjudicating[cite: 1]."
     },
     {
       "id": "q28",
-      "type": "error_correction",
-      "category": "Breathing and Respiration",
+      "type": "fill_blank",
+      "category": "Civics - Theocracy",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Identify and fix the mistake in this statement outlining breathing properties.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "inputSentence": "Breathing is a biochemical process that releases a gradual energy stream.",
-      "correctAnswer": "Breathing is a physical process in which there is no release of energy.",
-      "explanation": "Table-2 emphasizes that breathing is a physical process with no release of energy, whereas respiration is the biochemical one."
+      "question": "A ___ is a form of government where the country is ruled by the rules of religion and religious leaders.",
+      "tag": "Theocracy",
+      "hint": "Vatican City and Iran are examples.",
+      "blanks": [
+        "theocracy",
+        "Theocracy"
+      ],
+      "correctAnswer": "theocracy",
+      "explanation": "A theocracy is a form of government where the country is ruled by the rules of religion and religious leaders[cite: 1]."
     },
     {
       "id": "q29",
-      "type": "error_correction",
-      "category": "Respiration in Some Other Animals",
+      "type": "fill_blank",
+      "category": "Civics - Government",
       "marks": 1,
       "difficulty": "medium",
-      "question": "Identify and fix the mistake in the description of earthworm respiration.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "inputSentence": "Earthworms use specialized branched tracheal tubes to absorb atmospheric oxygen.",
-      "correctAnswer": "Earthworms breathe through their smooth and moist skin.",
-      "explanation": "The text specifies that animals like earthworms breathe through their skin, which is smooth, moist, and richly supplied with blood vessels."
+      "question": "A ___ is a form of government in which one person or a small group possesses absolute power without limits imposed by a constitution.",
+      "tag": "Dictatorship",
+      "hint": "Idi Amin established this in Uganda.",
+      "blanks": [
+        "dictatorship",
+        "Dictatorship"
+      ],
+      "correctAnswer": "dictatorship",
+      "explanation": "A dictatorship is a form of government in which one person or a small group possesses absolute power without constitutional limits[cite: 1]."
     },
     {
       "id": "q30",
-      "type": "error_correction",
-      "category": "Respiration in Humans",
+      "type": "fill_blank",
+      "category": "Civics - Terminology",
       "marks": 1,
       "difficulty": "medium",
-      "question": "Identify and correct the anatomical error in the description of human inhalation.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "inputSentence": "During inhalation, the diaphragm relaxes and moves upwards to maximize chest space.",
-      "correctAnswer": "During inhalation, the diaphragm contracts and moves downwards to create more space.",
-      "explanation": "The section on inhalation notes that the diaphragm contracts and moves downwards, creating more space inside the chest cavity."
+      "question": "The word 'oligarchy' is of ___ origin.",
+      "tag": "Oligarchy",
+      "hint": "It comes from the same civilization as the word 'democracy'.",
+      "blanks": [
+        "Greek"
+      ],
+      "correctAnswer": "Greek",
+      "explanation": "The word 'oligarchy' is of Greek origin, where olígos means a few and árkhō means to rule[cite: 1]."
     },
     {
       "id": "q31",
-      "type": "match_columns",
-      "category": "Glands and Secretions",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Match the digestive gland or system component listed in Column A with its exact corresponding secretion or feature in Column B.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "columnA": [
-        "1. Salivary Glands",
-        "2. Liver",
-        "3. Pancreas"
+      "type": "fill_blank",
+      "category": "Civics - Legislature",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "In most countries, the Lower House is elected by direct voting and is generally more ___ than the Upper House.",
+      "tag": "Legislature",
+      "hint": "It has greater authority.",
+      "blanks": [
+        "powerful"
       ],
-      "columnB": [
-        "(a) Secretes basic bile juice to emulsify fats",
-        "(b) Releases juice containing amylase and trypsin",
-        "(c) Produces saliva containing amylase to break down starch",
-        "(d) Absorbs nitrogen gas"
-      ],
-      "correctMatches": [
-        "c",
-        "a",
-        "b"
-      ],
-      "correctAnswer": "1-c, 2-a, 3-b",
-      "explanation": "Salivary glands secrete saliva (amylase); the liver secretes bile juice for fat emulsification; the pancreas produces pancreatic juice containing amylase and trypsin."
+      "correctAnswer": "powerful",
+      "explanation": "In most countries, the Lower House is elected by direct voting and is generally more powerful than the Upper House[cite: 1]."
     },
     {
       "id": "q32",
-      "type": "match_columns",
-      "category": "Respiration in Some Other Animals",
-      "marks": 2,
+      "type": "fill_blank",
+      "category": "Civics - Legislature",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "Match each animal group in Column A with its specialized organ or structural path for respiration listed in Column B.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "columnA": [
-        "1. Insects (Grasshoppers)",
-        "2. Fish and Prawns",
-        "3. Earthworms and Leeches"
+      "question": "In the USA, the legislature is known as ___, and its Upper House is the Senate.",
+      "tag": "Legislature",
+      "hint": "It has two houses: the Senate and the House of Representatives.",
+      "blanks": [
+        "Congress"
       ],
-      "columnB": [
-        "(a) Breathe via thin filaments called gills",
-        "(b) Exchange gases through smooth, moist skin",
-        "(c) Utilize fine air holes called spiracles and trachea",
-        "(d) Exclusively utilize standard elastic lungs"
-      ],
-      "correctMatches": [
-        "c",
-        "a",
-        "b"
-      ],
-      "correctAnswer": "1-c, 2-a, 3-b",
-      "explanation": "Insects use spiracles and trachea; aquatic organisms like fish use gills; earthworms/leeches respire directly through their moist skin."
+      "correctAnswer": "Congress",
+      "explanation": "In the USA, the legislature is called Congress[cite: 1]."
     },
     {
       "id": "q33",
-      "type": "match_columns",
-      "category": "Human Respiratory System",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Match the parts of the human respiratory system in Column A with their accurate anatomical descriptions in Column B.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "columnA": [
-        "1. Epiglottis",
-        "2. Trachea",
-        "3. Alveoli"
+      "type": "fill_blank",
+      "category": "Civics - Governance",
+      "marks": 1,
+      "difficulty": "hard",
+      "question": "A ruler's duties in the internal administration of a country, according to Kautilya, are raksha, pālana, and ___.",
+      "tag": "Arthaśhāstra",
+      "hint": "It means safeguarding the welfare of the people.",
+      "blanks": [
+        "yogakshema"
       ],
-      "columnB": [
-        "(a) Thin-walled air sacs resembling bunches of grapes",
-        "(b) Flap-like structure that guards the glottis",
-        "(c) Wind pipe supported by C-shaped cartilaginous rings",
-        "(d) DOM-shaped muscular floor of the chest cavity"
-      ],
-      "correctMatches": [
-        "b",
-        "c",
-        "a"
-      ],
-      "correctAnswer": "1-b, 2-c, 3-a",
-      "explanation": "The epiglottis guards the windpipe opening; the trachea is the wind pipe with cartilaginous rings; alveoli are thin-walled air sacs where gas exchange occurs."
+      "correctAnswer": "yogakshema",
+      "explanation": "Kautilya described duties as raksha, pālana, and yogakshema (safeguarding the welfare of the people)[cite: 1]."
     },
     {
       "id": "q34",
-      "type": "match_columns",
-      "category": "Nutrition Terms",
-      "marks": 2,
+      "type": "fill_blank",
+      "category": "Civics - History",
+      "marks": 1,
+      "difficulty": "hard",
+      "question": "According to the story from Rājataranginī, King Chandrāpīda respected the rights of a stubborn ___ whose hut stood in the way of a temple.",
+      "tag": "History",
+      "hint": "He worked with leather/shoes.",
+      "blanks": [
+        "cobbler"
+      ],
+      "correctAnswer": "cobbler",
+      "explanation": "King Chandrāpīda wanted to build a temple, but the hut of a stubborn cobbler stood in the way, and the king respected his dharma towards him[cite: 1]."
+    },
+    {
+      "id": "q35",
+      "type": "fill_blank",
+      "category": "Civics - Terminology",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "Match the mechanical or chemical digestion terms in Column A with their correct literal definition from Column B.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
+      "question": "Scholars have determined that the Roma (Romani people) originated in ___.",
+      "tag": "History",
+      "hint": "They were originally nomads from this South Asian country.",
+      "blanks": [
+        "India"
+      ],
+      "correctAnswer": "India",
+      "explanation": "Scholars have determined that the Roma originated in India based on their linguistic and cultural characteristics[cite: 1]."
+    },
+    {
+      "id": "q36",
+      "type": "match_columns",
+      "category": "Civics - Democracy",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Match the country in Column A with its type of democracy in Column B.",
+      "tag": "Democracy",
+      "hint": "Consider the relationship between the executive and legislature, or citizen involvement.",
       "columnA": [
-        "1. Mastication",
-        "2. Chyme",
-        "3. Rumination"
+        "USA",
+        "India",
+        "Switzerland"
       ],
       "columnB": [
-        "(a) Regurgitating and chewing cud twice",
-        "(b) Semi-solid paste formed by churning inside the stomach",
-        "(c) The process of chewing food with the help of teeth",
-        "(d) Finger-like network of blood capillaries"
+        "(a) Presidential Democracy",
+        "(b) Direct Democracy",
+        "(c) Parliamentary Democracy"
+      ],
+      "correctMatches": [
+        "a",
+        "c",
+        "b"
+      ],
+      "correctAnswer": "1-a, 2-c, 3-b",
+      "explanation": "The USA is a Presidential democracy, India is a Parliamentary democracy, and Switzerland has forms of Direct democracy[cite: 1]."
+    },
+    {
+      "id": "q37",
+      "type": "match_columns",
+      "category": "Civics - Forms of Government",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Match the government type in Column A with its associated country in Column B.",
+      "tag": "Governance",
+      "hint": "Saudi Arabia has a king with total power, Iran rules by religion, and Uganda had Idi Amin.",
+      "columnA": [
+        "Absolute Monarchy",
+        "Theocracy",
+        "Dictatorship"
+      ],
+      "columnB": [
+        "(a) Uganda (under Idi Amin)",
+        "(b) Iran",
+        "(c) Saudi Arabia"
       ],
       "correctMatches": [
         "c",
@@ -783,28 +903,53 @@
         "a"
       ],
       "correctAnswer": "1-c, 2-b, 3-a",
-      "explanation": "Mastication is the process of chewing food; chyme is the semi-solid stomach paste; rumination is the regurgitation and chewing of cud by grass-eating animals."
+      "explanation": "Saudi Arabia is an Absolute Monarchy, Iran is a Theocracy, and Uganda under Idi Amin was a Dictatorship[cite: 1]."
     },
     {
-      "id": "q35",
+      "id": "q38",
       "type": "match_columns",
-      "category": "Ruminant Stomach Chambers",
-      "marks": 2,
-      "difficulty": "hard",
-      "question": "Match the specific ruminant stomach chamber in Column A with its exact physiological function described in Column B.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
+      "category": "Civics - Government Organs",
+      "marks": 3,
+      "difficulty": "easy",
+      "question": "Match the organ of the government in Column A with its primary function in Column B.",
+      "tag": "Functions",
+      "hint": "Legislature creates, Executive implements, Judiciary ensures.",
       "columnA": [
-        "1. Rumen",
-        "2. Omasum",
-        "3. Abomasum"
+        "Legislature",
+        "Executive",
+        "Judiciary"
       ],
       "columnB": [
-        "(a) Absorbs excess water from the ingested food",
-        "(b) The true stomach where gastric juices are secreted",
-        "(c) The largest chamber used for initial food storage",
-        "(d) Honeycomb chamber returning cud to the mouth"
+        "(a) Ensuring laws are followed",
+        "(b) Making laws",
+        "(c) Implementing laws"
+      ],
+      "correctMatches": [
+        "b",
+        "c",
+        "a"
+      ],
+      "correctAnswer": "1-b, 2-c, 3-a",
+      "explanation": "The Legislature makes laws, the Executive implements them, and the Judiciary ensures they are followed[cite: 1]."
+    },
+    {
+      "id": "q39",
+      "type": "match_columns",
+      "category": "Civics - History",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Match the historical reference in Column A with its description in Column B.",
+      "tag": "History",
+      "hint": "Vajji was a Mahajanapada, Uttaramerur had inscriptions, and Bhishma spoke to Yudhisthira.",
+      "columnA": [
+        "Vajji",
+        "Uttaramerur",
+        "Shanti Parva"
+      ],
+      "columnB": [
+        "(a) 10th-century CE inscriptions detailing village sabhā elections",
+        "(b) Mahābhārata section teaching good governance",
+        "(c) Ancient Mahājanapada considered an early republic"
       ],
       "correctMatches": [
         "c",
@@ -812,202 +957,154 @@
         "b"
       ],
       "correctAnswer": "1-c, 2-a, 3-b",
-      "explanation": "The rumen stores food initially; the omasum absorbs excess water; the abomasum acts as the true stomach secreting digestive juices."
-    },
-    {
-      "id": "q36",
-      "type": "short_answer",
-      "category": "Nutrition in Humans",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "What is peristalsis, and why is it critically important for the human digestive process?",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "Peristalsis is a wave-like movement that takes place due to the continuous contraction and relaxation of the muscles of the oesophagus. It is important because it pushes swallowed food downward through the food pipe until it terminates in the stomach.",
-      "explanation": "The text explains the mechanical function of peristalsis in the oesophagus section, highlighting how it ensures food moves down successfully without blockages."
-    },
-    {
-      "id": "q37",
-      "type": "short_answer",
-      "category": "Nutrition in Humans",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Describe the structure of villi and explain how they facilitate the optimal absorption of nutrients within the small intestine.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "Villi are millions of finger-like projections found on the inner wall of the small intestine. They increase the total surface area available for the absorption of digested food and are directly connected to a network of fine blood capillaries that carry nutrients into the bloodstream.",
-      "explanation": "The small intestine text states that villi increase surface area and connect to capillaries to effectively transport absorbed nutrients across the body for assimilation."
-    },
-    {
-      "id": "q38",
-      "type": "short_answer",
-      "category": "Nutrition in Humans",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Explain how the action of bacteria on leftover food inside the mouth leads to tooth decay, and list two practices to prevent it.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "The action of bacteria on leftover food, especially sugary food in the mouth, causes a build-up of acid that damages the teeth and leads to cavities. To prevent this, individuals should brush their teeth twice a day and rinse their mouth thoroughly after every single meal.",
-      "explanation": "The mouth section and its corresponding Info-Bubble lay out the specific mechanism of acid accumulation from sugary food along with clear preventive hygiene guidelines."
-    },
-    {
-      "id": "q39",
-      "type": "short_answer",
-      "category": "Nutrition in Some Other Animals",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Why are humans incapable of digesting the cellulose present in grass and plants, whereas ruminants can digest it easily?",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "Humans lack the specialized microorganisms required to break down cellulose. Ruminants can digest cellulose because they host cellulose-digesting symbiotic bacteria and protozoa inside a specialized sac-like structure called the caecum.",
-      "explanation": "The text states that cellulose is not digested by humans, but ruminants succeed because symbiotic microbes living in their caecum break down tough plant fibers in exchange for shelter."
+      "explanation": "Vajji was an early republic, Uttaramerur provides details on Chola village sabhās, and Shanti Parva contains Bhishma's teachings[cite: 1]."
     },
     {
       "id": "q40",
-      "type": "short_answer",
-      "category": "Nutrition in Humans",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "What is meant by the emulsification of fats, and which specific gland and secretion are responsible for this process?",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "Emulsification of fats is the process where large fat molecules are broken down into smaller, simpler fat molecules like fatty acids and glycerol. The liver is the gland responsible for this process by secreting basic bile juice.",
-      "explanation": "The liver description notes that it secretes bile juice which neutralizes stomach acid and breaks down large fat molecules into smaller ones via emulsification."
+      "type": "match_columns",
+      "category": "Civics - Democratic Principles",
+      "marks": 3,
+      "difficulty": "easy",
+      "question": "Match the democratic principle in Column A with its meaning in Column B.",
+      "tag": "Principles",
+      "hint": "Adult franchise is about voting; separation of power protects institutions.",
+      "columnA": [
+        "Universal Adult Franchise",
+        "Separation of Power",
+        "Equality"
+      ],
+      "columnB": [
+        "(a) Every person has the right to be treated equally",
+        "(b) The three organs of government work independently",
+        "(c) Every adult citizen has the right to vote"
+      ],
+      "correctMatches": [
+        "c",
+        "b",
+        "a"
+      ],
+      "correctAnswer": "1-c, 2-b, 3-a",
+      "explanation": "Universal Adult Franchise is the right to vote, Separation of Power implies independent government organs, and Equality means equal treatment for all citizens[cite: 1]."
     },
     {
       "id": "q41",
       "type": "short_answer",
-      "category": "Nutrition in Humans",
-      "marks": 2,
+      "category": "Civics - Functions",
+      "marks": 3,
       "difficulty": "medium",
-      "question": "Detail the dual structural mechanism by which the human respiratory system traps and cleanses dust particles from inhaled air before it reaches the lungs.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "First, hair follicles inside the nostrils trap large dust particles as air enters. Second, the inner lining of the trachea secretes mucus to trap finer dust particles, while fine hair-like cilia repeatedly push this trapped dust back up into the pharynx.",
-      "explanation": "The nasal cavity and trachea sections define how hair follicles, mucus, and cilia function cohesively to filter out suspended contaminants."
+      "question": "Explain the three main functions of a government as described in the chapter.",
+      "tag": "Functions",
+      "hint": "Identify the legislative, executive, and judicial functions.",
+      "correctAnswer": "The three functions are: 1. Legislative function: the creation of rules that serve as the framework for the country[cite: 1]. 2. Executive function: implementing the rules and administering the country[cite: 1]. 3. Judicial function: ensuring that these rules are followed and adjudicating disputes[cite: 1].",
+      "explanation": "A government must create necessary rules (legislative), implement them (executive), and ensure everyone follows them (judicial)[cite: 1]."
     },
     {
       "id": "q42",
       "type": "short_answer",
-      "category": "Respiration in Some Other Animals",
-      "marks": 2,
+      "category": "Civics - Democracy",
+      "marks": 3,
       "difficulty": "medium",
-      "question": "Describe how gas exchange occurs in insects like grasshoppers through their tubular air passage system.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "Insects do not have lungs; instead, oxygen-rich air enters their bodies through fine external air holes called spiracles. This air is distributed directly to internal body parts via a network of branched respiratory tubes called trachea.",
-      "explanation": "The section on spiracles and trachea explains the specific network of tubules providing small animals with direct gaseous exchange without a complex blood circulation path."
+      "question": "What is the primary difference between a Parliamentary Democracy and a Presidential Democracy?",
+      "tag": "Democracy",
+      "hint": "Focus on the relationship between the executive and the legislature.",
+      "correctAnswer": "In a Parliamentary Democracy, the members of the executive are also part of the legislature and are accountable to it[cite: 1]. In a Presidential Democracy, the executive works independently of the legislature, and the president does not need its confidence for their position[cite: 1].",
+      "explanation": "The key distinction lies in the separation of powers between the executive and legislative branches[cite: 1]."
     },
     {
       "id": "q43",
       "type": "short_answer",
-      "category": "Respiration in Humans",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Explain the structural changes that occur within the human chest cavity during the process of active exhalation.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "During exhalation, the muscles cause the rib cage to move downward and inward, while the dome-shaped diaphragm relaxes and moves upward. This reduces the total volume of the chest cavity, pushing carbon-dioxide rich air out of the lungs.",
-      "explanation": "The exhalation subsection outlines the precise mechanical steps that decrease thoracic space to generate the pressure needed to expel spent air."
+      "category": "Civics - Monarchy",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Distinguish between an Absolute Monarchy and a Constitutional Monarchy.",
+      "tag": "Monarchy",
+      "hint": "Compare the distribution of law-making and executive powers in Saudi Arabia vs. the UK.",
+      "correctAnswer": "In an absolute monarchy, the monarch has complete control over making laws, implementing them, and adjudicating disputes, as seen in Saudi Arabia[cite: 1]. In a constitutional monarchy like the UK, the monarch has nominal power, while real legislative and executive powers are held by an elected parliament and a prime minister[cite: 1].",
+      "explanation": "Absolute monarchies grant total power to the ruler, whereas constitutional monarchies limit the ruler's power by entrusting governance to elected officials[cite: 1]."
     },
     {
       "id": "q44",
       "type": "short_answer",
-      "category": "Nutrition in Some Other Animals",
-      "marks": 2,
+      "category": "Civics - Government",
+      "marks": 3,
       "difficulty": "medium",
-      "question": "How do the stomach and gizzard work together sequentially to process food inside a bird's digestive tract?",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "Birds swallow food whole with their beaks and store it in the crop. It then passes to the first part of the stomach which produces chemical digestive juices, before moving to the gizzard where muscular contractions combined with swallowed stones mechanically grind the food.",
-      "explanation": "The bird subsection clarifies that the bird stomach is split into a juice-producing zone and a grinding zone (gizzard) to substitute for their lack of teeth."
+      "question": "Define 'Theocracy' and provide two modern examples mentioned in the text.",
+      "tag": "Theocracy",
+      "hint": "It involves religious leadership.",
+      "correctAnswer": "A theocracy is a form of government where the country is ruled by the rules of religion and religious leaders[cite: 1]. Modern examples include Iran (an Islamic Republic) and Vatican City (or Afghanistan)[cite: 1].",
+      "explanation": "In a theocracy, religious texts and leaders form the core of the government's authority[cite: 1]."
     },
     {
       "id": "q45",
       "type": "short_answer",
-      "category": "Nutrition in Humans",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Explain the specific digestive contributions of gut bacteria located within the human large intestine.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "The gut bacteria residing in the large intestine break down remaining undigested nutrients that escaped the small intestine. Through this process, they produce essential vitamins and actively help maintain the body's overall gut health.",
-      "explanation": "The Info-Bubble under Table-1 details the beneficial symbiosis provided by resident intestinal bacteria in securing secondary nutrient assimilation."
+      "category": "Civics - Dictatorship",
+      "marks": 3,
+      "difficulty": "easy",
+      "question": "What is a dictatorship? Briefly describe the consequences of Adolf Hitler's dictatorship as mentioned in the text.",
+      "tag": "Dictatorship",
+      "hint": "Think about absolute power and the events of World War II.",
+      "correctAnswer": "A dictatorship is a government where one person or a small group holds absolute power without constitutional limits[cite: 1]. Adolf Hitler's dictatorship resulted in the Holocaust (the killing of at least six million Jews) and caused World War II, leading to immense loss of life[cite: 1].",
+      "explanation": "Dictators operate without limits from a constitution or law, often leading to severe oppression and conflict[cite: 1]."
     },
     {
       "id": "q46",
       "type": "short_answer",
-      "category": "Breathing and Respiration",
+      "category": "Civics - Governance",
       "marks": 3,
       "difficulty": "hard",
-      "question": "Provide a detailed comparison between the processes of physical breathing and cellular respiration, highlighting three distinct differences found in human physiology.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "First, breathing is a physical process involving gas exchange (intake of oxygen and release of carbon dioxide), whereas respiration is a chemical process involving the oxidation of glucose. Second, breathing takes place entirely outside the body cells, while respiration occurs inside the cells. Third, breathing involves absolutely no release of energy, whereas respiration features a gradual, step-wise release of usable energy.",
-      "explanation": "These facts are clearly laid out in Table-2, providing a clear comparison between external physical movements and internal cell biochemistry."
+      "question": "What is an oligarchy, and how can modern democracies sometimes show signs of it?",
+      "tag": "Oligarchy",
+      "hint": "The term means 'to rule by a few'.",
+      "correctAnswer": "An oligarchy is a government where a small, powerful, often wealthy group makes all important decisions[cite: 1]. In modern times, political commentators suggest some democracies show signs of oligarchy when a small group of politicians and wealthy businesspeople hold too much influence in governance[cite: 1].",
+      "explanation": "Oligarchies concentrate power among a few elite individuals, which can sometimes threaten democratic equality if wealthy influencers gain excessive control[cite: 1]."
     },
     {
       "id": "q47",
       "type": "short_answer",
-      "category": "Respiration in Humans",
+      "category": "Civics - History",
       "marks": 3,
       "difficulty": "hard",
-      "question": "Write out the complete word equation for cellular respiration in humans, and explain the step-by-step journey of oxygen from the moment it enters the alveoli until energy is produced.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "The reaction is: $\\text{Glucose} + \\text{Oxygen} \\rightarrow \\text{Carbon dioxide} + \\text{Water} + \\text{Energy}$. When oxygen-rich air reaches the alveoli, it diffuses through the thin walls into the surrounding blood capillaries. The circulatory system and heart then pump this oxygenated blood to all cells of the body, where it reacts with digested glucose to release energy, water, and waste carbon dioxide.",
-      "explanation": "The section 'Circulation of gases in the human body' combines the chemical equation with the tracking of transportation handled by the blood vessels."
+      "question": "Explain the concept of 'rājadharma' as taught by Bhishma in the Mahābhārata.",
+      "tag": "History",
+      "hint": "It concerns the moral responsibilities of a ruler.",
+      "correctAnswer": "Rājadharma refers to ruling according to dharma and ensuring the welfare of all people[cite: 1]. Bhishma taught that a raja is not just a ruler but must prioritize people's welfare, apply laws fairly without bias, avoid attachment to power, and seek guidance from wise advisors[cite: 1].",
+      "explanation": "The text highlights that even under ancient monarchies in India, rulers were expected to follow moral codes and prioritize their subjects' well-being[cite: 1]."
     },
     {
       "id": "q48",
       "type": "short_answer",
-      "category": "Nutrition in Humans",
+      "category": "Civics - History",
       "marks": 3,
-      "difficulty": "hard",
-      "question": "Trace the complete physical and chemical transformation of a piece of bread (starch) from the moment it is ingested into the mouth until it is converted into simple sugars ready for small intestine absorption.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "First, the bread enters the mouth where teeth perform mastication to break it down, mixing it with saliva to create a pulpy bolus; here, salivary amylase breaks down starch into maltose sugars. The bolus travels down the oesophagus via peristalsis into the stomach, where it is churned into semi-solid chyme. Finally, the chyme enters the small intestine, receiving pancreatic juice containing pancreatic amylase, which completely breaks down the remaining carbohydrates into simple water-soluble sugars.",
-      "explanation": "This synthesizes the entire pathway described across sections 9.1 and 9.2, tracking carbohydrate breakdown from salivary glands to pancreatic ducts."
+      "difficulty": "medium",
+      "question": "What specific details regarding local administration elections can be found in the 10th century CE Uttaramerur inscriptions?",
+      "tag": "History",
+      "hint": "They provide evidence of democratic practices in the Chola period.",
+      "correctAnswer": "The Uttaramerur inscriptions provide details about the election of members to the village sabhā[cite: 1]. They detail the election process, such as using sealed ballot boxes, qualifications of members, their duties, and conditions for dismissal (like corruption)[cite: 1].",
+      "explanation": "These inscriptions are significant historical evidence of early representative systems in Indian local administration[cite: 1]."
     },
     {
       "id": "q49",
       "type": "short_answer",
-      "category": "Nutrition in Some Other Animals",
+      "category": "Civics - Democracy",
       "marks": 3,
-      "difficulty": "hard",
-      "question": "Detail the complete mechanical path that grass follows through the four chambers of a ruminant's digestive system during the dual stages of ingestion and rumination.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "Initially, the ruminant plucks grass and swallows it quickly into the first chamber, the rumen, where it is stored and partially digested into a semi-solid cud. Next, the honeycomb-like reticulum returns the cud back up into the mouth, allowing the animal to spend hours chewing it thoroughly. Once swallowed a second time, the food enters the third chamber, the omasum, which extracts excess water, before finally moving into the true stomach, the abomasum, where gastric juices break it down completely.",
-      "explanation": "The text systematically details these steps under the Ruminants subsection, explaining how the four chambers process tough grass fibers."
+      "difficulty": "easy",
+      "question": "Why is democracy generally considered a better form of government according to the text?",
+      "tag": "Democracy",
+      "hint": "Think about citizens' rights and accountability.",
+      "correctAnswer": "Democracy is considered better because people can lead their lives with freedom of expression, belief, and choice[cite: 1]. The government is accountable for protecting citizens' rights and basic needs, and if it fails, the people can change their representatives through elections[cite: 1].",
+      "explanation": "Democracy allows for constant checks on the government's actions and centers the well-being of all its people[cite: 1]."
     },
     {
       "id": "q50",
       "type": "short_answer",
-      "category": "Respiration in Humans",
+      "category": "Civics - Democracy",
       "marks": 3,
-      "difficulty": "hard",
-      "question": "Explain the exact anatomical roles played by the rib cage, the intercostal chest muscles, and the diaphragm to create the physical pressure changes required for human inhalation.",
-      "passageId": "",
-      "tag": "",
-      "hint": "",
-      "correctAnswer": "The rib cage serves as a protective bony outer chamber enclosing the soft lungs. During inhalation, the specialized muscles of the rib cage contract to pull the entire bony frame upward and outward. Simultaneously, the strong dome-shaped muscle floor called the diaphragm contracts and flattens downward. Together, these coordinated movements create significantly more space inside the thoracic chest cavity, causing the elastic lungs to expand and pull in oxygen-rich air from the outside environment.",
-      "explanation": "The section 'Working of the respiratory system' under breathing breaks down how these structural components work together to modify chest cavity volume."
+      "difficulty": "medium",
+      "question": "Despite its ideals, what are some of the hurdles or challenges that democracies face today?",
+      "tag": "Challenges",
+      "hint": "The text lists several issues at the end of the chapter.",
+      "correctAnswer": "Democracies face issues such as corruption, wealth disparity, and excessive control by a few over democratic institutions[cite: 1]. Other hurdles include the erosion of the judiciary's independence and the manipulation of information channels[cite: 1].",
+      "explanation": "While democracy is ideal, practical implementation often faces challenges that citizens must remain vigilant against[cite: 1]."
     }
   ]
 }

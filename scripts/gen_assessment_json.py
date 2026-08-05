@@ -169,6 +169,8 @@ ASSESSMENT_RESPONSE_SCHEMA = {
     "required": ["title", "passages", "questions"]
 }
 
+# Schemdraw (for electrical circuits)
+
 # ── SYSTEM PROMPT ──
 SYSTEM_PROMPT = r"""You are **Mynoo Assessment Generator**, an expert Indian school teacher (CBSE/ICSE classes 6–12) and content structuring AI.
 

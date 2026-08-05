@@ -853,8 +853,8 @@ class AssessmentViewModel @Inject constructor(
                 } catch (e: Exception) {
                     Log.w("AssessmentVM", "Gist load failed: ${e.message}")
                     Pair(
-                        "You are a school teacher grading a student answer.",
-                        "Award marks between 0 and total marks. Be fair and encouraging."
+                        "You are an expert school teacher grading a student written answer. Perform comprehensive inline editing (spelling, grammar, removing off-topic/unrelated text, and adding missing key concepts) directly against the student answer, provide a detailed justification for the marks awarded, and determine if retry is allowed.",
+                        "Award earnedMarks between 0 and total marks in steps of 0.5. Return feedback explaining marks justification. Return corrections array with types: spelling, grammar, deletion, addition."
                     )
                 }
                 
@@ -984,8 +984,8 @@ class AssessmentViewModel @Inject constructor(
                 } catch (e: Exception) {
                     Log.w("AssessmentVM", "Gist load failed: ${e.message}")
                     Pair(
-                        "You are a school teacher grading a student answer.",
-                        "Award marks between 0 and total marks. Be fair and encouraging."
+                        "You are an expert school teacher grading a student written answer. Perform comprehensive inline editing (spelling, grammar, removing off-topic/unrelated text, and adding missing key concepts) directly against the student answer, provide a detailed justification for the marks awarded, and determine if retry is allowed.",
+                        "Award earnedMarks between 0 and total marks in steps of 0.5. Return feedback explaining marks justification. Return corrections array with types: spelling, grammar, deletion, addition."
                     )
                 }
                 
@@ -1566,7 +1566,7 @@ Return ONLY the JSON array, no markdown, no explanation.
                         columnB       = colBList,
                         correctMatches = matchesList,
                         asy           = obj.optString("asy", "").ifBlank { obj.optString("asymptote", "") },
-                        svg           = obj.optString("svg", ""),
+                        svg           = obj.optString("svg", "").ifBlank { obj.optJSONObject("diagram")?.optString("svg", "") ?: "" },
                     )
                 )
             }

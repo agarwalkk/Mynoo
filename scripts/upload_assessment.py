@@ -486,6 +486,76 @@ def convert_asy_to_svg(asy_code: str, asy_bin: str | None = None) -> str:
     return ""
 
 
+def convert_matplotlib_to_svg(py_code: str) -> str:
+    """Convert Matplotlib Python diagram code into an SVG string.
+    Runs the Python code in a temporary directory using sys.executable and captures the generated SVG file.
+    Returns SVG content string or empty string if failed.
+    """
+    if not py_code or not py_code.strip():
+        return ""
+
+    code = py_code.strip()
+
+    # Prepend non-interactive backend configuration so plt.show() does not block
+    preamble = (
+        "import matplotlib\n"
+        "matplotlib.use('Agg')\n"
+    )
+
+    # Ensure plt.savefig is called if not present in code
+    save_fallback = ""
+    if "savefig" not in code:
+        save_fallback = "\nimport matplotlib.pyplot as plt\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')\n"
+
+    full_code = preamble + code + save_fallback
+
+    try:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_path = Path(tmpdir)
+            script_file = tmp_path / "generate_diagram.py"
+            script_file.write_text(full_code, encoding="utf-8")
+
+            res = subprocess.run(
+                [sys.executable, str(script_file)],
+                cwd=tmpdir,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                timeout=30,
+                text=True,
+                encoding="utf-8"
+            )
+
+            svg_files = list(tmp_path.glob("*.svg"))
+            if svg_files:
+                svg_content = svg_files[0].read_text(encoding="utf-8")
+                if "<svg" in svg_content:
+                    svg_start = svg_content.find("<svg")
+                    if svg_start != -1:
+                        svg_content = svg_content[svg_start:]
+                    return svg_content
+            else:
+                stderr_msg = (res.stderr or '').strip()[:300]
+                print(f"⚠️ Matplotlib SVG execution produced no SVG file (exit {res.returncode}): {stderr_msg}")
+    except subprocess.TimeoutExpired:
+        print("⚠️ Matplotlib SVG script execution timed out after 30s")
+    except Exception as err:
+        print(f"⚠️ Matplotlib conversion error: {err}")
+
+    return ""
+
+
+def convert_diagram_code_to_svg(code: str) -> str:
+    """Detect whether diagram code is Python/Matplotlib or Asymptote, and convert to SVG string."""
+    if not code or not code.strip():
+        return ""
+
+    s = code.strip()
+    if any(term in s for term in ("import matplotlib", "plt.", "fig, ax", "patches.", "import numpy")):
+        return convert_matplotlib_to_svg(s)
+    else:
+        return convert_asy_to_svg(s)
+
+
 def strip_asy_code(questions: list) -> list:
     """Strip asy/asymptote/tikz fields from questions and options."""
     for q in questions:
@@ -573,13 +643,21 @@ def build_payload(
         if pid and pid in passages:
             eq['passage'] = clean_latex_to_unicode(str(passages[pid]))
 
-        # Convert question-level Asymptote code into SVG string if svg not set and asy code present
-        if 'svg' not in eq:
-            asy_code = str(q.get('asy') or q.get('asymptote') or q.get('tikz') or '')
-            if asy_code.strip():
-                svg_str = convert_asy_to_svg(asy_code)
-                if svg_str:
-                    eq['svg'] = svg_str
+        # Convert question-level diagram/Asymptote code into SVG string if svg not set
+        if 'svg' not in eq or not eq['svg']:
+            diag_code = ''
+            if isinstance(q.get('diagram'), dict):
+                diag_code = str(q['diagram'].get('code') or '').strip()
+                if q['diagram'].get('svg'):
+                    eq['svg'] = q['diagram']['svg']
+            if not eq.get('svg'):
+                diagram_code = str(q.get('asy') or q.get('asymptote') or q.get('tikz') or diag_code or '')
+                if diagram_code.strip():
+                    svg_str = convert_diagram_code_to_svg(diagram_code)
+                    if svg_str:
+                        eq['svg'] = svg_str
+                        if isinstance(eq.get('diagram'), dict):
+                            eq['diagram']['svg'] = svg_str
 
         # Normalise MCQ options
         if eq.get('type') == 'mcq' and isinstance(eq.get('options'), list):
@@ -588,9 +666,10 @@ def build_payload(
             expl_opts: list[str] = []
             for o in raw_opts:
                 if isinstance(o, dict):
-                    opt_asy = str(o.get('asy') or o.get('asymptote') or o.get('tikz') or '')
-                    if opt_asy.strip():
-                        opt_svg = convert_asy_to_svg(opt_asy)
+                    opt_diag = str(o.get('diagram', {}).get('code') if isinstance(o.get('diagram'), dict) else '')
+                    opt_code = str(o.get('asy') or o.get('asymptote') or o.get('tikz') or opt_diag or '')
+                    if opt_code.strip():
+                        opt_svg = convert_diagram_code_to_svg(opt_code)
                         opt_val = opt_svg if opt_svg else str(o.get('text') or '')
                     else:
                         opt_val = str(o.get('text') or o.get('option') or o.get('value') or '')
@@ -629,15 +708,10 @@ def build_payload(
     return payload
 
 
-def convert_assessment_json_asy_to_svg(json_path: Path) -> Path:
-    """Pre-process an assessment JSON file to convert all non-blank 'asy' fields to 'svg' using the 'asy' binary.
-    If 'asy' binary is present and non-blank 'asy' code is found:
-      Saves the converted JSON to <filename>_svg.json alongside the original file, and returns its Path.
-    If no non-blank 'asy' code is found:
-      Does NOT create an SVG version of the JSON; returns the original file path.
-    If non-blank 'asy' code is found but 'asy' binary is missing:
-      Prints a warning message to the console, does NOT create an SVG version of the JSON,
-      strips off asy code from questions, and returns the original file path.
+def convert_assessment_json_diagrams_to_svg(json_path: Path) -> Path:
+    """Pre-process an assessment JSON file to convert all non-blank diagram code
+    (Matplotlib Python or Asymptote) in 'diagram' or 'asy' fields to 'svg' strings.
+    Saves the converted JSON to <filename>_svg.json alongside the original file, and returns its Path.
     """
     if not json_path.exists():
         sys.exit(f'❌  File not found: {json_path}')
@@ -663,48 +737,56 @@ def convert_assessment_json_asy_to_svg(json_path: Path) -> Path:
     else:
         return json_path
 
-    # Collect all targets with non-blank asy code
-    asy_targets = []
+    # Collect all targets with non-blank diagram code
+    diagram_targets = []
     for q in questions:
         qid = q.get('id', 'question')
-        q_asy = q.get('asy') or q.get('asymptote') or q.get('tikz')
-        if q_asy and str(q_asy).strip():
-            asy_targets.append(('question', q, qid, str(q_asy).strip()))
+        
+        diag = q.get('diagram')
+        code = ''
+        if isinstance(diag, dict):
+            code = str(diag.get('code') or '').strip()
+        
+        asy_code = str(q.get('asy') or q.get('asymptote') or q.get('tikz') or '').strip()
+        final_code = code or asy_code
+        
+        if final_code:
+            diagram_targets.append(('question', q, qid, final_code))
 
         opts = q.get('options')
         if isinstance(opts, list):
             for opt_idx, opt in enumerate(opts):
                 if isinstance(opt, dict):
-                    opt_asy = opt.get('asy') or opt.get('asymptote') or opt.get('tikz')
-                    if opt_asy and str(opt_asy).strip():
-                        asy_targets.append(('option', opt, f"{qid} option {opt_idx+1}", str(opt_asy).strip()))
+                    opt_diag = opt.get('diagram')
+                    opt_code = ''
+                    if isinstance(opt_diag, dict):
+                        opt_code = str(opt_diag.get('code') or '').strip()
+                    opt_asy = str(opt.get('asy') or opt.get('asymptote') or opt.get('tikz') or '').strip()
+                    opt_final = opt_code or opt_asy
+                    if opt_final:
+                        diagram_targets.append(('option', opt, f"{qid} option {opt_idx+1}", opt_final))
 
-    total_targets = len(asy_targets)
+    total_targets = len(diagram_targets)
     if total_targets == 0:
-        print(f"ℹ️  No non-blank Asymptote code found in {json_path.name}. Uploading file directly.")
+        print(f"ℹ️  No non-blank diagram code found in {json_path.name}. Uploading file directly.")
         return json_path
 
-    asy_bin = get_asy_binary()
-    if not asy_bin:
-        print(f"⚠️  Asymptote binary ('asy') not found on this machine.")
-        print(f"    Skipping SVG creation and stripping 'asy' code from {json_path.name} before upload.\n")
-        strip_asy_code(questions)
-        return json_path
-
-    # Clean text in all questions & passages first
+    # Clean text in all questions & passages
     questions = [_clean_question_object(q) for q in questions]
     if isinstance(passages, list):
         for p in passages:
             if isinstance(p, dict) and 'text' in p:
                 p['text'] = clean_latex_to_unicode(p['text'])
 
-    print(f"🎨 Found {total_targets} non-blank Asymptote diagram(s) in {json_path.name}. Converting to SVG using asy binary...")
+    print(f"🎨 Found {total_targets} diagram(s) in {json_path.name}. Converting to SVG...")
     converted_count = 0
-    for i, (target_type, obj, label, code) in enumerate(asy_targets, 1):
+    for i, (target_type, obj, label, code) in enumerate(diagram_targets, 1):
         print(f"  [{i}/{total_targets}] Converting diagram for {label}...", end=" ", flush=True)
-        svg_str = convert_asy_to_svg(code, asy_bin=asy_bin)
+        svg_str = convert_diagram_code_to_svg(code)
         if svg_str and "<svg" in svg_str:
             obj['svg'] = svg_str
+            if isinstance(obj.get('diagram'), dict):
+                obj['diagram']['svg'] = svg_str
             obj.pop('asy', None)
             obj.pop('asymptote', None)
             obj.pop('tikz', None)
@@ -714,9 +796,9 @@ def convert_assessment_json_asy_to_svg(json_path: Path) -> Path:
             obj.pop('asy', None)
             obj.pop('asymptote', None)
             obj.pop('tikz', None)
-            print("❌ Failed (Asymptote conversion error)")
+            print("❌ Failed (Diagram conversion error)")
 
-    # Determine output path: e.g. assessment.json -> assessment_svg.json
+    # Output filename: e.g. assessment.json -> assessment_svg.json
     if json_path.name.endswith("_svg.json"):
         out_path = json_path
     else:
@@ -733,8 +815,12 @@ def convert_assessment_json_asy_to_svg(json_path: Path) -> Path:
         out_data = questions
 
     out_path.write_text(json.dumps(out_data, indent=2, ensure_ascii=False), encoding='utf-8')
-    print(f"\n💾 Saved SVG-converted assessment file: {out_path.name} ({converted_count}/{total_targets} diagrams converted to SVG)\n")
+    print(f"💾 Saved SVG assessment file: {out_path.name}\n")
     return out_path
+
+
+convert_assessment_json_asy_to_svg = convert_assessment_json_diagrams_to_svg
+
 
 
 # ── Firebase upload ────────────────────────────────────────────────────────────

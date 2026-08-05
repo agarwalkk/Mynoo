@@ -155,7 +155,7 @@ class AssessmentRepository @Inject constructor(
                     columnB       = (q["columnB"] as? List<*>)?.mapNotNull { it as? String } ?: emptyList(),
                     correctMatches = (q["correctMatches"] as? List<*>)?.mapNotNull { it as? String } ?: emptyList(),
                     asy           = q["asy"] as? String ?: q["asymptote"] as? String ?: "",
-                    svg           = q["svg"] as? String ?: "",
+                    svg           = (q["svg"] as? String)?.ifBlank { null } ?: (q["diagram"] as? Map<*, *>)?.get("svg") as? String ?: "",
                 )
             }
             @Suppress("UNCHECKED_CAST")
