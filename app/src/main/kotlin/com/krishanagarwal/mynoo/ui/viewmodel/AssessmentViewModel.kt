@@ -95,16 +95,17 @@ val QuizState.score get(): Int {
     return Math.round((earnedMarks / total) * 100.0).toInt()
 }
 val QuizState.attemptedEarnedMarks get(): Double = earnedMarks
-val QuizState.attemptedTotalMarks get(): Double {
+val QuizState.submittedAssessedTotalMarks get(): Double {
     val qs = assessment?.questions ?: return 0.0
     return qs.indices.sumOf { i ->
         val a = answers.getOrNull(i)
-        if (a != null) qs[i].marks else 0.0
+        if (a.isAnswered()) qs[i].marks else 0.0
     }
 }
+val QuizState.attemptedTotalMarks get(): Double = submittedAssessedTotalMarks
 val QuizState.attemptedCount get(): Int {
     val qs = assessment?.questions ?: return 0
-    return qs.indices.count { i -> answers.getOrNull(i) != null }
+    return qs.indices.count { i -> answers.getOrNull(i).isAnswered() }
 }
 
 @HiltViewModel

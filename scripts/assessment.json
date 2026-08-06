@@ -1,5 +1,5 @@
 {
-  "title": "Forces, Work, and Energy",
+  "title": "Forces and Energy",
   "passages": [],
   "questions": [
     {
@@ -10,7 +10,7 @@
       "difficulty": "easy",
       "question": "What is the SI unit of force?",
       "passageId": "",
-      "tag": "Force Concept",
+      "tag": "Force Unit",
       "hint": "Section 6.1: The Concept of Force",
       "diagram": {
         "hasDiagram": false,
@@ -19,25 +19,25 @@
       },
       "options": [
         {
-          "text": "Joule (J)",
-          "explanation": "Incorrect. Joule is the SI unit of work and energy."
+          "text": "Joule",
+          "explanation": "Incorrect. Joule is the unit of energy."
         },
         {
-          "text": "Newton (N)",
-          "explanation": "Correct. The SI unit of force is the newton."
+          "text": "Newton",
+          "explanation": "Correct. The SI unit of force is the newton (N)."
         },
         {
-          "text": "Watt (W)",
-          "explanation": "Incorrect. Watt is the SI unit of power."
+          "text": "Watt",
+          "explanation": "Incorrect. Watt is the unit of power."
         },
         {
-          "text": "Kilogram (kg)",
-          "explanation": "Incorrect. Kilogram is the SI unit of mass."
+          "text": "Pascal",
+          "explanation": "Incorrect. Pascal is the unit of pressure."
         }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Newton (N)",
-      "explanation": "The SI unit of force is the newton (N), which is defined as the force that produces an acceleration of $1\\text{ m/s}^{2}$ on an object of mass $1\\text{ kg}$."
+      "correctAnswer": "Newton",
+      "explanation": "The SI unit of force is the newton (N), named after Isaac Newton."
     },
     {
       "id": "q2",
@@ -45,7 +45,7 @@
       "category": "How Forces Affect Motion",
       "marks": 1,
       "difficulty": "easy",
-      "question": "When two forces applied on an object are equal in magnitude but opposite in direction, what are they called?",
+      "question": "When two forces acting on an object are equal in magnitude but opposite in direction, they are called:",
       "passageId": "",
       "tag": "Balanced Forces",
       "hint": "Section 6.2: Balanced and Unbalanced Forces",
@@ -57,35 +57,35 @@
       "options": [
         {
           "text": "Unbalanced forces",
-          "explanation": "Incorrect. Unbalanced forces have a non-zero net force."
+          "explanation": "Incorrect. Unbalanced forces cause a change in motion."
         },
         {
-          "text": "Net forces",
-          "explanation": "Incorrect. Net force is the vector sum of all forces."
+          "text": "Gravitational forces",
+          "explanation": "Incorrect. This refers to the pull of gravity."
         },
         {
           "text": "Balanced forces",
-          "explanation": "Correct. Equal and opposite forces have a net force of zero and are called balanced forces."
+          "explanation": "Correct. Forces equal in magnitude and opposite in direction are balanced."
         },
         {
           "text": "Frictional forces",
-          "explanation": "Incorrect. Friction is a specific type of resistive force."
+          "explanation": "Incorrect. Friction opposes motion."
         }
       ],
       "correctIndex": 2,
       "correctAnswer": "Balanced forces",
-      "explanation": "Two forces that are equal in magnitude but opposite in direction are called balanced forces, resulting in zero net force."
+      "explanation": "Balanced forces result in a net force of zero, meaning the object's motion does not change."
     },
     {
       "id": "q3",
       "type": "mcq",
       "category": "How Forces Affect Motion",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "In which direction does the force of friction act when an object is pushed across a horizontal floor?",
+      "difficulty": "medium",
+      "question": "If an object is moving with a constant velocity, what is the net force acting upon it?",
       "passageId": "",
-      "tag": "Friction",
-      "hint": "Section 6.3: The Force of Friction...",
+      "tag": "Newton's First Law",
+      "hint": "Section 6.4: Newton's First Law of Motion",
       "diagram": {
         "hasDiagram": false,
         "description": "",
@@ -93,33 +93,33 @@
       },
       "options": [
         {
-          "text": "In the same direction as the push",
-          "explanation": "Incorrect. This would accelerate the object further."
+          "text": "Greater than zero",
+          "explanation": "Incorrect. A non-zero net force causes acceleration."
         },
         {
-          "text": "Opposite to the direction of motion",
-          "explanation": "Correct. Friction opposes the relative motion between surfaces."
+          "text": "Less than zero",
+          "explanation": "Incorrect. Net force is a magnitude; it must be zero for constant velocity."
         },
         {
-          "text": "Perpendicular to the motion",
-          "explanation": "Incorrect. The normal force acts perpendicular to the surface."
+          "text": "Zero",
+          "explanation": "Correct. According to Newton's first law, zero net force results in constant velocity."
         },
         {
-          "text": "Downward towards gravity",
-          "explanation": "Incorrect. This is the gravitational force."
+          "text": "Depends on mass",
+          "explanation": "Incorrect. Net force must be zero regardless of mass."
         }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "Opposite to the direction of motion",
-      "explanation": "The force of friction acts in a direction opposite to the direction of the object's motion."
+      "correctIndex": 2,
+      "correctAnswer": "Zero",
+      "explanation": "An object in motion continues to move with a constant velocity unless a net force acts upon it."
     },
     {
       "id": "q4",
       "type": "mcq",
       "category": "How Forces Affect Motion",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "Which of the following represents the mathematical expression for Newton's second law of motion?",
+      "difficulty": "medium",
+      "question": "What is the mathematical expression for Newton's second law of motion?",
       "passageId": "",
       "tag": "Newton's Second Law",
       "hint": "Section 6.5: Newton's Second Law of Motion",
@@ -130,234 +130,443 @@
       },
       "options": [
         {
-          "text": "$v = u + at$",
-          "explanation": "Incorrect. This is a kinematic equation for velocity."
+          "text": "$F = m / a$",
+          "explanation": "Incorrect. Force is mass times acceleration."
         },
         {
-          "text": "$W = F \\times s$",
-          "explanation": "Incorrect. This is the formula for work done."
-        },
-        {
-          "text": "$F = ma$",
+          "text": "$F = m \\times a$",
           "explanation": "Correct. Force equals mass times acceleration."
         },
         {
-          "text": "$P = \\frac{W}{t}$",
-          "explanation": "Incorrect. This is the formula for power."
+          "text": "$F = a / m$",
+          "explanation": "Incorrect. This does not represent the second law."
+        },
+        {
+          "text": "$F = m \\times v$",
+          "explanation": "Incorrect. This represents momentum, not force."
         }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "$F = ma$",
-      "explanation": "Newton's second law states that the net force on an object is equal to its mass multiplied by its acceleration, $F = ma$."
+      "correctIndex": 1,
+      "correctAnswer": "$F = m \\times a$",
+      "explanation": "Newton's second law states that the net force on an object is equal to its mass multiplied by its acceleration."
     },
     {
       "id": "q5",
-      "type": "short_answer",
+      "type": "mcq",
       "category": "How Forces Affect Motion",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "If an object is moving with a constant non-zero velocity in a straight line, what can be said about the net force acting on it according to Newton's first law?",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Which force opposes the relative motion between two surfaces in contact?",
       "passageId": "",
-      "tag": "Newton's First Law",
+      "tag": "Friction",
+      "hint": "Section 6.3: The Force of Friction",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        {
+          "text": "Gravitational force",
+          "explanation": "Incorrect. Gravity pulls objects towards each other."
+        },
+        {
+          "text": "Normal force",
+          "explanation": "Incorrect. Normal force acts perpendicular to the surface."
+        },
+        {
+          "text": "Frictional force",
+          "explanation": "Correct. Friction opposes relative motion."
+        },
+        {
+          "text": "Magnetic force",
+          "explanation": "Incorrect. This acts between magnetic poles."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "Frictional force",
+      "explanation": "The force of friction arises between two surfaces in contact and acts in a direction opposite to the motion."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "category": "How Forces Affect Motion",
+      "marks": 1,
+      "difficulty": "medium",
+      "question": "What happens to the acceleration of an object if the net force applied to it is doubled, assuming mass remains constant?",
+      "passageId": "",
+      "tag": "Acceleration",
+      "hint": "Section 6.5: Newton's Second Law of Motion",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        {
+          "text": "It is halved.",
+          "explanation": "Incorrect. Acceleration is directly proportional to force."
+        },
+        {
+          "text": "It remains the same.",
+          "explanation": "Incorrect. A change in force causes a change in acceleration."
+        },
+        {
+          "text": "It is doubled.",
+          "explanation": "Correct. Since $a = F/m$, doubling $F$ doubles $a$."
+        },
+        {
+          "text": "It is quadrupled.",
+          "explanation": "Incorrect. The relationship is linear."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "It is doubled.",
+      "explanation": "According to Newton's second law, acceleration is directly proportional to the net force applied."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "category": "How Forces Affect Motion",
+      "marks": 1,
+      "difficulty": "medium",
+      "question": "When you push a wall, the wall pushes back on you with an equal and opposite force. Which law does this illustrate?",
+      "passageId": "",
+      "tag": "Newton's Third Law",
+      "hint": "Section 6.6: Newton's Third Law of Motion",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        {
+          "text": "Newton's First Law",
+          "explanation": "Incorrect. This relates to inertia."
+        },
+        {
+          "text": "Newton's Second Law",
+          "explanation": "Incorrect. This relates to force and acceleration."
+        },
+        {
+          "text": "Newton's Third Law",
+          "explanation": "Correct. Every action has an equal and opposite reaction."
+        },
+        {
+          "text": "Law of Gravitation",
+          "explanation": "Incorrect. This relates to attractive forces between masses."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "Newton's Third Law",
+      "explanation": "Newton's third law states that whenever one object exerts a force on a second object, the second object exerts an equal and opposite force on the first."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "category": "How Forces Affect Motion",
+      "marks": 1,
+      "difficulty": "medium",
+      "question": "What is the magnitude of the gravitational force acting on an object of mass $m$ near the Earth's surface?",
+      "passageId": "",
+      "tag": "Gravitational Force",
+      "hint": "Section 6.5: Newton's Second Law of Motion",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        {
+          "text": "$m / g$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$mg$",
+          "explanation": "Correct. The gravitational force is weight, given by $W = mg$."
+        },
+        {
+          "text": "$g / m$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$m + g$",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$mg$",
+      "explanation": "Using Newton's second law ($F=ma$), the gravitational force acting on an object is $F = mg$, where $g$ is the acceleration due to gravity."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "category": "How Forces Affect Motion",
+      "marks": 1,
+      "difficulty": "hard",
+      "question": "A $10\\text{ kg}$ object is moving at a constant speed of $5\\text{ m/s}$. What is the net force acting on it?",
+      "passageId": "",
+      "tag": "Net Force",
       "hint": "Section 6.4: Newton's First Law of Motion",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "The net force acting on the object is zero.",
-      "explanation": "According to Newton's first law of motion, an object in motion continues to move with a constant velocity unless a net force acts upon it. Therefore, constant velocity implies zero net force."
-    },
-    {
-      "id": "q6",
-      "type": "short_answer",
-      "category": "How Forces Affect Motion",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Explain how airbags in vehicles reduce the risk of serious injuries during a collision based on Newton's second law of motion.",
-      "passageId": "",
-      "tag": "Applications of Force",
-      "hint": "Bridging Science and Society, Chapter 6",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "correctAnswer": "Airbags increase the time duration over which the passenger's velocity reduces to zero. This decreases the acceleration, which in turn reduces the force exerted on the person ($F = ma$).",
-      "explanation": "By inflating into a compressible cushion, airbags prolong the impact time. A longer time to come to a halt means a smaller deceleration, and according to $F=ma$, a smaller force is applied to the passenger, minimizing injury."
-    },
-    {
-      "id": "q7",
-      "type": "short_answer",
-      "category": "How Forces Affect Motion",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Two forces of $10\\text{ N}$ and $6\\text{ N}$ act on a block in opposite directions, with the $10\\text{ N}$ force directed to the right. Calculate the magnitude and direction of the net force.",
-      "passageId": "",
-      "tag": "Net Force",
-      "hint": "Example 6.1",
-      "diagram": {
-        "hasDiagram": true,
-        "description": "A block subjected to 6 N force to the left and 10 N force to the right.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nimport numpy as np\nfig, ax = plt.subplots(figsize=(6, 3))\nax.set_xlim(0, 10)\nax.set_ylim(0, 5)\nax.set_aspect('equal')\nax.axis('off')\nbox = patches.Rectangle((4, 1.5), 2, 2, facecolor='#3B82F6', edgecolor='#1E293B')\nax.add_patch(box)\nax.arrow(4, 2.5, -1.5, 0, head_width=0.3, head_length=0.3, fc='#DC2626', ec='#DC2626')\nax.text(2.5, 2.8, '$6\\\\text{ N}$', ha='center', va='bottom', fontsize=12)\nax.arrow(6, 2.5, 2.5, 0, head_width=0.3, head_length=0.3, fc='#DC2626', ec='#DC2626')\nax.text(7.5, 2.8, '$10\\\\text{ N}$', ha='center', va='bottom', fontsize=12)\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
-      },
-      "correctAnswer": "The net force is $4\\text{ N}$ acting towards the right.",
-      "explanation": "Since the forces are in opposite directions, their magnitudes are subtracted: $10\\text{ N} - 6\\text{ N} = 4\\text{ N}$. The direction of the net force is in the direction of the larger force, which is towards the right."
-    },
-    {
-      "id": "q8",
-      "type": "short_answer",
-      "category": "How Forces Affect Motion",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Describe how the launch of a rocket demonstrates Newton's third law of motion.",
-      "passageId": "",
-      "tag": "Newton's Third Law",
-      "hint": "Section 6.6: Newton's Third Law of Motion",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "correctAnswer": "The rocket engine expels gas downwards (action), which exerts an equal and opposite upward force on the rocket (reaction), causing it to lift off.",
-      "explanation": "Newton's third law states that every action has an equal and opposite reaction. The expulsion of exhaust gases downward is the action, and the upward force pushing the rocket into the air is the reaction. Since this upward force exceeds the rocket's weight, the net force accelerates it upwards."
-    },
-    {
-      "id": "q9",
-      "type": "short_answer",
-      "category": "How Forces Affect Motion",
-      "marks": 4,
-      "difficulty": "hard",
-      "question": "Two boxes of masses $m_{1}$ and $m_{2}$ are placed on a frictionless horizontal surface and connected by a string. A horizontal external force $F$ pulls Box 2 to the right. Derive the expression for the acceleration of the system.",
-      "passageId": "",
-      "tag": "System of Objects",
-      "hint": "Section 6.7: Forces Acting on a System of Objects",
-      "diagram": {
-        "hasDiagram": true,
-        "description": "Two boxes connected by a string pulled by force F.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(7, 3))\nax.set_xlim(0, 10)\nax.set_ylim(0, 4)\nax.set_aspect('equal')\nax.axis('off')\nax.plot([1, 9], [1, 1], color='black', linewidth=2)\nbox1 = patches.Rectangle((2, 1), 1.5, 1.5, facecolor='#3B82F6', edgecolor='black')\nbox2 = patches.Rectangle((5, 1), 1.5, 1.5, facecolor='#3B82F6', edgecolor='black')\nax.add_patch(box1)\nax.add_patch(box2)\nax.plot([3.5, 5], [1.75, 1.75], color='black', linestyle='--')\nax.arrow(6.5, 1.75, 1.5, 0, head_width=0.2, head_length=0.3, fc='#DC2626', ec='#DC2626')\nax.text(2.75, 1.75, '$m_1$', ha='center', va='center', color='white', fontsize=12)\nax.text(5.75, 1.75, '$m_2$', ha='center', va='center', color='white', fontsize=12)\nax.text(7.5, 2.1, '$F$', ha='center', va='center', fontsize=12)\nax.text(4.25, 2, 'String', ha='center', va='center', fontsize=10)\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
-      },
-      "correctAnswer": "By treating the two boxes as a single system of mass $(m_{1} + m_{2})$, the acceleration is $a = \\frac{F}{(m_{1} + m_{2})}$.",
-      "explanation": "When analyzing the connected boxes as a single system, internal tension forces cancel out. The total mass is $(m_{1} + m_{2})$. Applying Newton's second law, $F_{\\text{net}} = m_{\\text{total}} \\times a$, yielding $a = \\frac{F}{(m_{1} + m_{2})}$."
+      "options": [
+        {
+          "text": "$50\\text{ N}$",
+          "explanation": "Incorrect. This would be the force if acceleration was $5\\text{ m/s}^{2}$."
+        },
+        {
+          "text": "$10\\text{ N}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$2\\text{ N}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$0\\text{ N}$",
+          "explanation": "Correct. Constant speed means zero acceleration, hence zero net force."
+        }
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "$0\\text{ N}$",
+      "explanation": "Constant velocity implies acceleration is zero. By $F=ma$, the net force is $0\\text{ N}$."
     },
     {
       "id": "q10",
-      "type": "short_answer",
+      "type": "mcq",
       "category": "How Forces Affect Motion",
-      "marks": 4,
-      "difficulty": "hard",
-      "question": "A student pushes a stationary block of $25\\text{ kg}$ on a horizontal floor with a constant force of $55\\text{ N}$ in the forward direction. The maximum force of friction opposing this motion is $50\\text{ N}$. Determine the displacement of the block in $2\\text{ seconds}$.",
+      "marks": 1,
+      "difficulty": "medium",
+      "question": "Two forces, $10\\text{ N}$ and $15\\text{ N}$, act on a block in the same direction as shown in the diagram. What is the net force?",
       "passageId": "",
-      "tag": "Kinematics and Force",
-      "hint": "Example 6.5",
+      "tag": "Net Force",
+      "hint": "Section 6.2: Balanced and Unbalanced Forces",
       "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
+        "hasDiagram": true,
+        "description": "A block with two arrows pointing right, labeled 10 N and 15 N.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(4,2))\nax.set_xlim(0, 8)\nax.set_ylim(0, 4)\nax.axis('off')\nax.add_patch(patches.Rectangle((1, 1), 2, 2, facecolor='#3B82F6', edgecolor='#1E293B', linewidth=1.5))\nax.arrow(3.5, 1.5, 1.5, 0, head_width=0.3, head_length=0.3, fc='#DC2626', ec='#DC2626', linewidth=2)\nax.arrow(3.5, 2.5, 2.5, 0, head_width=0.3, head_length=0.3, fc='#DC2626', ec='#DC2626', linewidth=2)\nax.text(5.2, 1.5, '$10\\\\text{ N}$', ha='left', va='center', fontsize=12)\nax.text(6.2, 2.5, '$15\\\\text{ N}$', ha='left', va='center', fontsize=12)\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
       },
-      "correctAnswer": "The displacement of the block is $0.4\\text{ m}$ in the forward direction.",
-      "explanation": "Net force $F_{\\text{net}} = 55\\text{ N} - 50\\text{ N} = 5\\text{ N}$. Acceleration $a = \\frac{F}{m} = \\frac{5}{25} = 0.2\\text{ m/s}^{2}$. Using $s = ut + \\frac{1}{2}at^{2}$, where $u = 0$, $t = 2\\text{ s}$: $s = 0 + \\frac{1}{2}(0.2)(2)^{2} = 0.4\\text{ m}$."
+      "options": [
+        {
+          "text": "$5\\text{ N}$",
+          "explanation": "Incorrect. The forces are in the same direction."
+        },
+        {
+          "text": "$25\\text{ N}$",
+          "explanation": "Correct. $10\\text{ N} + 15\\text{ N} = 25\\text{ N}$."
+        },
+        {
+          "text": "$150\\text{ N}$",
+          "explanation": "Incorrect. Forces are added, not multiplied."
+        },
+        {
+          "text": "$0\\text{ N}$",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$25\\text{ N}$",
+      "explanation": "When two forces act in the same direction, the net force is the sum of their magnitudes."
     },
     {
       "id": "q11",
-      "type": "short_answer",
-      "category": "How Forces Affect Motion",
-      "marks": 4,
-      "difficulty": "hard",
-      "question": "A $0.1\\text{ kg}$ bullet is fired from a $5\\text{ kg}$ gun with a force of $2\\text{ N}$, causing the gun to recoil. Calculate the magnitudes of the initial accelerations of both the bullet and the gun.",
+      "type": "mcq",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "A constant force $F$ is applied to a block, displacing it by distance $s$ in the direction of the force. What is the work done?",
       "passageId": "",
-      "tag": "Newton's Third Law",
-      "hint": "Example 6.8",
+      "tag": "Work Done",
+      "hint": "Section 7.1: Work Done by a Constant Force",
       "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
+        "hasDiagram": true,
+        "description": "A block moving from left to right by distance s under force F.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(5,2))\nax.set_xlim(0, 10)\nax.set_ylim(0, 4)\nax.axis('off')\nax.plot([0, 10], [1, 1], color='#1E293B', linewidth=1)\nax.add_patch(patches.Rectangle((1, 1), 1.5, 1.5, facecolor='#3B82F6', alpha=0.5))\nax.add_patch(patches.Rectangle((7, 1), 1.5, 1.5, facecolor='#3B82F6'))\nax.arrow(2.5, 1.75, 1.5, 0, head_width=0.2, head_length=0.3, fc='#DC2626', ec='#DC2626')\nax.text(3.5, 2.1, '$F$', ha='center', va='bottom', fontsize=12)\nax.annotate('', xy=(7.75, 3), xytext=(1.75, 3), arrowprops=dict(arrowstyle='<->', color='#1E293B'))\nax.text(4.75, 3.2, '$s$', ha='center', va='bottom', fontsize=12)\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
       },
-      "correctAnswer": "Acceleration of the bullet is $20\\text{ m/s}^{2}$. Acceleration of the gun is $0.4\\text{ m/s}^{2}$.",
-      "explanation": "By Newton's third law, the recoil force on the gun is also $2\\text{ N}$. For the bullet: $a_{b} = \\frac{2\\text{ N}}{0.1\\text{ kg}} = 20\\text{ m/s}^{2}$. For the gun: $a_{g} = \\frac{2\\text{ N}}{5\\text{ kg}} = 0.4\\text{ m/s}^{2}$. Though forces are equal, accelerations differ due to different masses."
+      "options": [
+        {
+          "text": "$W = F / s$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$W = F \\times s$",
+          "explanation": "Correct. Work done is force multiplied by displacement."
+        },
+        {
+          "text": "$W = mgh$",
+          "explanation": "Incorrect. This is potential energy."
+        },
+        {
+          "text": "$W = \\frac{1}{2}mv^{2}$",
+          "explanation": "Incorrect. This is kinetic energy."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$W = F \\times s$",
+      "explanation": "Work done on an object by a constant force is defined as the force applied multiplied by the displacement in the direction of the force."
     },
     {
       "id": "q12",
-      "type": "short_answer",
-      "category": "How Forces Affect Motion",
-      "marks": 4,
+      "type": "mcq",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "A weightlifter holds a barbell steady. The bar itself is $10\\text{ kg}$, and there is a $10\\text{ kg}$ mass on each side. Taking $g = 9.8\\text{ m/s}^{2}$, calculate the total gravitational force acting on the barbell and the upward force the weightlifter must apply to keep it steady.",
+      "question": "If you push a heavy, rigid wall and it does not move, how much scientific work have you done on the wall?",
       "passageId": "",
-      "tag": "Gravitational Force",
-      "hint": "Example 6.4",
+      "tag": "Zero Work",
+      "hint": "Section 7.1.1: When is work done equal to zero?",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "The gravitational force is $294\\text{ N}$ downwards. The weightlifter applies $294\\text{ N}$ upwards.",
-      "explanation": "Total mass $m = 10\\text{ kg (bar)} + 10\\text{ kg} + 10\\text{ kg} = 30\\text{ kg}$. Weight $F = mg = 30 \\times 9.8 = 294\\text{ N}$ downwards. To hold it steady (balanced forces), the weightlifter must apply an equal force of $294\\text{ N}$ upwards."
+      "options": [
+        {
+          "text": "Positive work",
+          "explanation": "Incorrect. The wall must move in the direction of force."
+        },
+        {
+          "text": "Negative work",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "Zero work",
+          "explanation": "Correct. Since displacement $s = 0$, work done $W = 0$."
+        },
+        {
+          "text": "Maximum work",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "Zero work",
+      "explanation": "Work done is zero if there is no displacement of the object, regardless of the force applied ($W = F \\times 0 = 0$)."
     },
     {
       "id": "q13",
-      "type": "short_answer",
-      "category": "How Forces Affect Motion",
-      "marks": 4,
-      "difficulty": "hard",
-      "question": "A sports car of mass $1500\\text{ kg}$ accelerates uniformly from rest to $10\\text{ m/s}$ in $5\\text{ s}$. Calculate the net force acting on the car during this time.",
+      "type": "mcq",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "When a goalkeeper applies a force to stop a moving football, the work done by the goalkeeper on the ball is:",
       "passageId": "",
-      "tag": "Velocity-Time Graph",
-      "hint": "Example 6.6",
+      "tag": "Negative Work",
+      "hint": "Section 7.1.2: Positive and negative work done",
       "diagram": {
-        "hasDiagram": true,
-        "description": "Velocity-time graph accelerating from 0 to 10 m/s in 5s.",
-        "code": "import matplotlib.pyplot as plt\nimport numpy as np\nfig, ax = plt.subplots(figsize=(5, 4))\nax.set_xlim(0, 6)\nax.set_ylim(0, 12)\nax.plot([0, 5], [0, 10], color='#3B82F6', linewidth=2)\nax.set_xlabel('Time (s)', fontsize=12)\nax.set_ylabel('Velocity (m/s)', fontsize=12)\nax.grid(True, linestyle='--')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
       },
-      "correctAnswer": "The net force acting on the car is $3000\\text{ N}$.",
-      "explanation": "Acceleration $a = \\frac{v - u}{t} = \\frac{10 - 0}{5} = 2\\text{ m/s}^{2}$. Force $F = ma = 1500\\text{ kg} \\times 2\\text{ m/s}^{2} = 3000\\text{ N}$."
+      "options": [
+        {
+          "text": "Positive",
+          "explanation": "Incorrect. Force and displacement are in opposite directions."
+        },
+        {
+          "text": "Negative",
+          "explanation": "Correct. The force is applied opposite to the ball's displacement."
+        },
+        {
+          "text": "Zero",
+          "explanation": "Incorrect. The ball travels a small distance while being stopped."
+        },
+        {
+          "text": "Undefined",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "Negative",
+      "explanation": "When displacement is in the direction opposite to that of the force, the work done by the force is negative."
     },
     {
       "id": "q14",
-      "type": "short_answer",
-      "category": "How Forces Affect Motion",
-      "marks": 3,
+      "type": "mcq",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "When a stretched rubber band is released, it propels a stack of coins forward. Why does the stack of coins eventually come to a rest after losing contact with the rubber band?",
+      "question": "What is the kinetic energy of an object of mass $m$ moving with a velocity $v$?",
       "passageId": "",
-      "tag": "Friction",
-      "hint": "Section 6.3: The Force of Friction...",
+      "tag": "Kinetic Energy",
+      "hint": "Section 7.4.1: Kinetic energy",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "The force of friction continues to act on the stack of coins in the direction opposite to its motion, gradually bringing it to rest.",
-      "explanation": "Once contact with the rubber band is lost, the forward applied force becomes zero. However, the opposing force of friction between the coins and the surface remains, creating a net negative acceleration that stops the motion."
+      "options": [
+        {
+          "text": "$mgh$",
+          "explanation": "Incorrect. This is potential energy."
+        },
+        {
+          "text": "$mv$",
+          "explanation": "Incorrect. This is momentum."
+        },
+        {
+          "text": "$\\frac{1}{2}mv^{2}$",
+          "explanation": "Correct. Kinetic energy formula."
+        },
+        {
+          "text": "$F \\times s$",
+          "explanation": "Incorrect. This is work done."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "$\\frac{1}{2}mv^{2}$",
+      "explanation": "The kinetic energy possessed by an object due to its motion is given by $K = \\frac{1}{2}mv^{2}$."
     },
     {
       "id": "q15",
-      "type": "short_answer",
-      "category": "How Forces Affect Motion",
-      "marks": 3,
+      "type": "mcq",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "Using Newton's third law, explain how a canoeist makes a canoe move forward in water.",
+      "question": "An object of mass $m$ is lifted vertically to a height $h$. What is its gravitational potential energy?",
       "passageId": "",
-      "tag": "Newton's Third Law",
-      "hint": "Section 6.6: Newton's Third Law of Motion",
+      "tag": "Potential Energy",
+      "hint": "Section 7.4.2: Potential energy",
       "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
+        "hasDiagram": true,
+        "description": "A block on the ground, and an arrow pointing up to the same block at height h.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(3,4))\nax.set_xlim(0, 5)\nax.set_ylim(0, 8)\nax.axis('off')\nax.plot([0, 5], [1, 1], color='#1E293B', linewidth=2)\nax.add_patch(patches.Rectangle((2, 1), 1, 1, facecolor='#3B82F6', alpha=0.3))\nax.add_patch(patches.Rectangle((2, 6), 1, 1, facecolor='#3B82F6'))\nax.annotate('', xy=(1.5, 6), xytext=(1.5, 1), arrowprops=dict(arrowstyle='<->', color='#1E293B'))\nax.text(1.2, 3.5, '$h$', ha='right', va='center', fontsize=12)\nax.arrow(2.5, 2.5, 0, 2.5, head_width=0.3, head_length=0.3, fc='#DC2626', ec='#DC2626')\nax.text(2.8, 3.75, '$F = mg$', ha='left', va='center', fontsize=12)\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
       },
-      "correctAnswer": "The canoeist pushes the water backwards with the paddle, and the water exerts an equal and opposite force forward on the paddle, propelling the canoe.",
-      "explanation": "The action force is the paddle pushing the water backwards. The reaction force is the water pushing the paddle (and consequently the canoe) forward. These forces act on different objects and do not cancel each other out."
+      "options": [
+        {
+          "text": "$\\frac{1}{2}mv^{2}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$mgh$",
+          "explanation": "Correct. Potential energy is mass times gravity times height."
+        },
+        {
+          "text": "$F \\times s$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$\\frac{W}{t}$",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$mgh$",
+      "explanation": "The potential energy $U$ of an object at a height $h$ from the ground is given by $U = mgh$."
     },
     {
       "id": "q16",
       "type": "mcq",
       "category": "Work, Energy, and Simple Machines",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "What is the SI unit of work done?",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "According to the work-energy theorem, the work done on an object is equal to:",
       "passageId": "",
-      "tag": "Work",
-      "hint": "Section 7.1: Work Done by a Constant Force",
+      "tag": "Work-Energy Theorem",
+      "hint": "Section 7.2: The Work-Energy Theorem",
       "diagram": {
         "hasDiagram": false,
         "description": "",
@@ -365,70 +574,33 @@
       },
       "options": [
         {
-          "text": "Newton (N)",
-          "explanation": "Incorrect. Newton is the unit of force."
+          "text": "Its total momentum",
+          "explanation": "Incorrect."
         },
         {
-          "text": "Joule (J)",
-          "explanation": "Correct. 1 Joule = 1 Newton * 1 metre."
+          "text": "The change in its energy",
+          "explanation": "Correct. Work done appears as a change in energy."
         },
         {
-          "text": "Watt (W)",
-          "explanation": "Incorrect. Watt is the unit of power."
+          "text": "Its power multiplied by time",
+          "explanation": "Incorrect, though mathematically equivalent, it doesn't state the theorem."
         },
         {
-          "text": "Pascal (Pa)",
-          "explanation": "Incorrect. Pascal is the unit of pressure."
+          "text": "Its mass times velocity",
+          "explanation": "Incorrect."
         }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Joule (J)",
-      "explanation": "The SI unit of work done is the joule (J), which equals $1\\text{ N} \\times 1\\text{ m}$."
+      "correctAnswer": "The change in its energy",
+      "explanation": "The relation between the work done on an object and the change in its energy is called the work-energy theorem."
     },
     {
       "id": "q17",
       "type": "mcq",
       "category": "Work, Energy, and Simple Machines",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "The sum of kinetic energy and potential energy of an object is called:",
-      "passageId": "",
-      "tag": "Mechanical Energy",
-      "hint": "Section 7.4.3: Conservation of mechanical energy",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "options": [
-        {
-          "text": "Thermal energy",
-          "explanation": "Incorrect. Thermal energy is heat."
-        },
-        {
-          "text": "Mechanical energy",
-          "explanation": "Correct. Mechanical energy is the sum of KE and PE."
-        },
-        {
-          "text": "Chemical energy",
-          "explanation": "Incorrect. Chemical energy is stored in bonds."
-        },
-        {
-          "text": "Electrical energy",
-          "explanation": "Incorrect. Electrical energy is related to charges."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "Mechanical energy",
-      "explanation": "The sum of the kinetic energy and the potential energy of an object is defined as its mechanical energy."
-    },
-    {
-      "id": "q18",
-      "type": "mcq",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "Power is defined as the:",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Power is mathematically defined as:",
       "passageId": "",
       "tag": "Power",
       "hint": "Section 7.5: Power",
@@ -439,36 +611,36 @@
       },
       "options": [
         {
-          "text": "Total work done",
-          "explanation": "Incorrect. This is just energy transferred."
+          "text": "$P = W \\times t$",
+          "explanation": "Incorrect."
         },
         {
-          "text": "Rate at which work is done",
-          "explanation": "Correct. Power $P = \\frac{W}{t}$."
+          "text": "$P = W / t$",
+          "explanation": "Correct. Power is the rate at which work is done."
         },
         {
-          "text": "Force applied over a distance",
-          "explanation": "Incorrect. This defines work done."
+          "text": "$P = F \\times d$",
+          "explanation": "Incorrect. This is work."
         },
         {
-          "text": "Capacity to do work",
-          "explanation": "Incorrect. This defines energy."
+          "text": "$P = mgh / v$",
+          "explanation": "Incorrect."
         }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Rate at which work is done",
-      "explanation": "Power is defined as the rate at which work is done, mathematically represented as $P = \\frac{W}{t}$."
+      "correctAnswer": "$P = W / t$",
+      "explanation": "Power is defined as the rate at which work is done, calculated by dividing work ($W$) by time ($t$)."
     },
     {
-      "id": "q19",
+      "id": "q18",
       "type": "mcq",
       "category": "Work, Energy, and Simple Machines",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "What is the mechanical advantage of a simple fixed pulley used to lift a load?",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "The mechanical advantage of a simple machine is defined as the ratio of:",
       "passageId": "",
-      "tag": "Simple Machines",
-      "hint": "Section 7.6.1: Pulley",
+      "tag": "Mechanical Advantage",
+      "hint": "Section 7.6: Simple Machines",
       "diagram": {
         "hasDiagram": false,
         "description": "",
@@ -476,159 +648,143 @@
       },
       "options": [
         {
-          "text": "0",
-          "explanation": "Incorrect. A mechanical advantage of 0 would mean infinite effort is required."
+          "text": "Effort to Load",
+          "explanation": "Incorrect. It is the inverse."
         },
         {
-          "text": "Less than 1",
-          "explanation": "Incorrect. The effort is equal to the load."
+          "text": "Load to Effort",
+          "explanation": "Correct. Mechanical advantage = load / effort."
         },
         {
-          "text": "1",
-          "explanation": "Correct. A fixed pulley only changes the direction of force, so Effort = Load."
+          "text": "Work to Time",
+          "explanation": "Incorrect. This is power."
         },
         {
-          "text": "Greater than 1",
-          "explanation": "Incorrect. A movable pulley system might have MA > 1, but a fixed single pulley has MA = 1."
+          "text": "Force to Distance",
+          "explanation": "Incorrect."
         }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "1",
-      "explanation": "A fixed pulley only changes the direction of the applied force without changing its magnitude. Thus, load equals effort, making the mechanical advantage 1."
+      "correctIndex": 1,
+      "correctAnswer": "Load to Effort",
+      "explanation": "To describe how a machine changes the magnitude of the applied force, mechanical advantage is the ratio of the load to the effort."
     },
     {
-      "id": "q20",
-      "type": "short_answer",
+      "id": "q19",
+      "type": "mcq",
       "category": "Work, Energy, and Simple Machines",
       "marks": 2,
       "difficulty": "medium",
-      "question": "Why is the work done zero when a girl carries a box while walking horizontally?",
+      "question": "What is the mechanical advantage of a single fixed pulley?",
       "passageId": "",
-      "tag": "Work Done",
-      "hint": "Section 7.1.1: When is work done equal to zero?",
+      "tag": "Pulley",
+      "hint": "Section 7.6.1: Pulley",
       "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
+        "hasDiagram": true,
+        "description": "A fixed pulley with a load on one side and effort pulling down on the other.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(3,4))\nax.set_xlim(0, 6)\nax.set_ylim(0, 6)\nax.axis('off')\nax.plot([1, 5], [5, 5], color='#8B4513', linewidth=4)\ncircle = plt.Circle((3, 4), 0.5, color='#94A3B8')\nax.add_patch(circle)\nax.plot([3, 3], [5, 4.5], color='#1E293B', linewidth=2)\nax.plot([2.5, 2.5], [4, 1.5], color='#1E293B', linewidth=1.5)\nax.plot([3.5, 3.5], [4, 2.5], color='#1E293B', linewidth=1.5)\nax.add_patch(patches.Rectangle((2, 0.5), 1, 1, facecolor='#DC2626'))\nax.arrow(3.5, 2.5, 0, -1, head_width=0.2, fc='#3B82F6', ec='#3B82F6')\nax.text(2.5, 0.2, 'Load', ha='center', va='top', fontsize=10)\nax.text(3.8, 1.5, 'Effort', ha='left', va='center', fontsize=10)\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
       },
-      "correctAnswer": "The force applied to hold the box acts vertically upward, while the displacement is horizontal. Since they are perpendicular, the work done by the supporting force is zero.",
-      "explanation": "Work is done only when there is a component of displacement in the direction of the force. If force and displacement are perpendicular to each other, no work is done by that specific force."
+      "options": [
+        {
+          "text": "Greater than 1",
+          "explanation": "Incorrect. Movable pulleys can have MA > 1."
+        },
+        {
+          "text": "Less than 1",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "Exactly 1",
+          "explanation": "Correct. It only changes the direction of the force."
+        },
+        {
+          "text": "0",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "Exactly 1",
+      "explanation": "A fixed pulley does not reduce the magnitude of the force required; it only changes its direction. Thus, load = effort, giving a mechanical advantage of 1."
+    },
+    {
+      "id": "q20",
+      "type": "mcq",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "In a lever, if the effort arm is longer than the load arm, the mechanical advantage will be:",
+      "passageId": "",
+      "tag": "Lever",
+      "hint": "Section 7.6.3: Lever",
+      "diagram": {
+        "hasDiagram": true,
+        "description": "A lever with a fulcrum closer to the load, showing effort arm > load arm.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(5,3))\nax.set_xlim(0, 10)\nax.set_ylim(0, 5)\nax.axis('off')\nax.plot([0, 10], [1, 1], color='#1E293B', linewidth=2)\ntriangle = plt.Polygon([[3, 1], [3.5, 2], [2.5, 2]], color='#10B981')\nax.add_patch(triangle)\nax.plot([1, 9], [2, 3.5], color='#8B4513', linewidth=4)\nax.add_patch(patches.Rectangle((0.5, 2), 1.5, 1.5, facecolor='#64748B'))\nax.arrow(9, 4.5, 0, -1, head_width=0.3, fc='#DC2626', ec='#DC2626')\nax.text(1.25, 3.8, 'Load', ha='center', va='bottom', fontsize=10)\nax.text(9, 4.7, 'Effort', ha='center', va='bottom', fontsize=10)\nax.text(3, 0.5, 'Fulcrum', ha='center', va='top', fontsize=10)\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+      },
+      "options": [
+        {
+          "text": "Less than 1",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "Exactly 1",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "Greater than 1",
+          "explanation": "Correct. Mechanical Advantage = Effort Arm / Load Arm."
+        },
+        {
+          "text": "Zero",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "Greater than 1",
+      "explanation": "Mechanical advantage = effort arm / load arm. If effort arm > load arm, the mechanical advantage is greater than 1."
     },
     {
       "id": "q21",
       "type": "short_answer",
-      "category": "Work, Energy, and Simple Machines",
+      "category": "How Forces Affect Motion",
       "marks": 2,
-      "difficulty": "easy",
-      "question": "Name two different forms of energy other than mechanical energy.",
+      "difficulty": "medium",
+      "question": "If an object is moving in a frictionless environment, what force is required to keep it moving with a constant velocity?",
       "passageId": "",
-      "tag": "Forms of Energy",
-      "hint": "Section 7.3: Forms of Energy",
+      "tag": "Newton's First Law",
+      "hint": "Section 6.4: Newton's First Law of Motion",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "Thermal energy and Electrical energy (or Light, Sound, Chemical, Nuclear).",
-      "explanation": "Energy exists in various forms such as thermal (heat), electrical, light, sound, nuclear, and chemical energy, all of which can often be interconverted."
+      "correctAnswer": "Zero net force.",
+      "explanation": "According to Newton's First Law, an object in motion continues moving with a constant velocity unless acted upon by a net external force. In a frictionless environment, no force is needed to maintain its constant velocity."
     },
     {
       "id": "q22",
       "type": "short_answer",
       "category": "Work, Energy, and Simple Machines",
-      "marks": 3,
+      "marks": 2,
       "difficulty": "medium",
-      "question": "A jet aircraft of mass $15000\\text{ kg}$ is moving at a velocity of $70\\text{ m/s}$. Calculate its kinetic energy.",
+      "question": "Calculate the work done when a force of $20\\text{ N}$ displaces an object by $5\\text{ m}$ in the direction of the force.",
       "passageId": "",
-      "tag": "Kinetic Energy",
-      "hint": "Example 7.6",
+      "tag": "Work Calculation",
+      "hint": "Section 7.1: Work Done by a Constant Force",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "The kinetic energy is $36750000\\text{ J}$ or $3.675 \\times 10^{7}\\text{ J}$.",
-      "explanation": "Kinetic Energy $K = \\frac{1}{2}mv^{2} = \\frac{1}{2} \\times 15000 \\times (70)^{2} = 7500 \\times 4900 = 36750000\\text{ J}$."
+      "correctAnswer": "$100\\text{ J}$",
+      "explanation": "Work done ($W$) = Force ($F$) $\\times$ Displacement ($s$). $W = 20\\text{ N} \\times 5\\text{ m} = 100\\text{ J}$."
     },
     {
       "id": "q23",
       "type": "short_answer",
       "category": "Work, Energy, and Simple Machines",
-      "marks": 3,
+      "marks": 2,
       "difficulty": "medium",
-      "question": "A weightlifter lifts a $75\\text{ kg}$ mass by $2\\text{ m}$ in $5\\text{ seconds}$. Taking $g=10\\text{ m/s}^{2}$, how much power does she require?",
-      "passageId": "",
-      "tag": "Power",
-      "hint": "Example 7.10",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "correctAnswer": "The power required is $300\\text{ W}$.",
-      "explanation": "Work done $W = mgh = 75 \\times 10 \\times 2 = 1500\\text{ J}$. Power $P = \\frac{W}{t} = \\frac{1500}{5} = 300\\text{ W}$."
-    },
-    {
-      "id": "q24",
-      "type": "short_answer",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 4,
-      "difficulty": "hard",
-      "question": "On a seesaw, a child of mass $15\\text{ kg}$ sits $2\\text{ m}$ away from the fulcrum. At what distance from the fulcrum should another child of mass $30\\text{ kg}$ sit to balance the seesaw?",
-      "passageId": "",
-      "tag": "Lever",
-      "hint": "Example 7.13",
-      "diagram": {
-        "hasDiagram": true,
-        "description": "Seesaw with fulcrum at center. 15kg mass on one side at 2m.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(6, 3))\nax.set_xlim(0, 10)\nax.set_ylim(0, 5)\nax.set_aspect('equal')\nax.axis('off')\ntriangle = patches.Polygon([[4.5, 1], [5.5, 1], [5, 2]], facecolor='#DC2626')\nax.add_patch(triangle)\nax.plot([1, 9], [2, 2], color='black', linewidth=4)\nbox1 = patches.Rectangle((1.5, 2), 1, 1, facecolor='#3B82F6')\nax.add_patch(box1)\nax.text(2, 3.5, '$15\\\\text{ kg}$', ha='center', va='center')\nax.text(3.5, 1.5, '$2\\\\text{ m}$', ha='center', va='center')\nax.text(7, 1.5, '$L = ?$', ha='center', va='center')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
-      },
-      "correctAnswer": "The other child should sit $1\\text{ m}$ away from the fulcrum.",
-      "explanation": "For a balanced lever, Effort $\\times$ Effort Arm = Load $\\times$ Load Arm. $15\\text{ kg} \\times 2\\text{ m} = 30\\text{ kg} \\times L$. Solving for $L$: $L = \\frac{30}{30} = 1\\text{ m}$."
-    },
-    {
-      "id": "q25",
-      "type": "short_answer",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 4,
-      "difficulty": "hard",
-      "question": "A person uses an inclined ramp of length $50\\text{ cm}$ to raise an object over a step $30\\text{ cm}$ high. What is the mechanical advantage of the ramp?",
-      "passageId": "",
-      "tag": "Inclined Plane",
-      "hint": "Example 7.12",
-      "diagram": {
-        "hasDiagram": true,
-        "description": "Inclined ramp with length 50 cm and height 30 cm.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(5, 3))\nax.set_xlim(0, 7)\nax.set_ylim(0, 4)\nax.set_aspect('equal')\nax.axis('off')\nax.plot([1, 5], [1, 1], color='black')\nax.plot([5, 5], [1, 3], color='black')\nax.plot([1, 5], [1, 3], color='#3B82F6', linewidth=3)\nax.text(5.5, 2, '$30\\\\text{ cm}$', ha='left', va='center')\nax.text(2.5, 2.5, '$50\\\\text{ cm}$', ha='right', va='bottom')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
-      },
-      "correctAnswer": "The mechanical advantage is $1.67$.",
-      "explanation": "Mechanical advantage of an inclined plane is $\\frac{\\text{Length}}{\\text{Height}} = \\frac{L}{h}$. Here, $MA = \\frac{50\\text{ cm}}{30\\text{ cm}} \\approx 1.67$."
-    },
-    {
-      "id": "q26",
-      "type": "short_answer",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 4,
-      "difficulty": "hard",
-      "question": "A truck of mass $10000\\text{ kg}$ is moving at $72\\text{ km/h}$. It enters an escape ramp where sand exerts a constant stopping force of $100000\\text{ N}$ (combining sand resistance and gravity effect). What is the minimum length of the ramp needed to stop the truck? (Assume Total Stopping Force = $100000\\text{ N}$)",
-      "passageId": "",
-      "tag": "Work-Energy Theorem",
-      "hint": "Example 7.9",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "correctAnswer": "The minimum length of the ramp is $20\\text{ m}$.",
-      "explanation": "Velocity $v = 72\\text{ km/h} = 20\\text{ m/s}$. Initial KE $= \\frac{1}{2} \\times 10000 \\times (20)^{2} = 2000000\\text{ J}$. Work done by stopping force = Change in KE. $F \\times d = 2000000\\text{ J} \\implies 100000 \\times d = 2000000 \\implies d = 20\\text{ m}$."
-    },
-    {
-      "id": "q27",
-      "type": "short_answer",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 4,
-      "difficulty": "hard",
-      "question": "An object of mass $m$ is dropped from a height $h$. Using kinematic equations and energy formulas, show that its total mechanical energy remains $mgh$ after falling for time $t$ (before hitting the ground).",
+      "question": "State the principle of conservation of mechanical energy for a freely falling object.",
       "passageId": "",
       "tag": "Conservation of Energy",
       "hint": "Section 7.4.3: Conservation of mechanical energy",
@@ -637,62 +793,390 @@
         "description": "",
         "code": ""
       },
-      "correctAnswer": "At time $t$, velocity $v = gt$ and height lost is $\\frac{1}{2}gt^{2}$. Thus, KE = $\\frac{1}{2}mg^{2}t^{2}$ and PE = $mg(h - \\frac{1}{2}gt^{2})$. Total ME = KE + PE = $mgh$.",
-      "explanation": "Initially, $u=0$, $\\text{ME} = mgh + 0$. After time $t$, velocity $v = gt$. Kinetic energy $K = \\frac{1}{2}mv^{2} = \\frac{1}{2}m(gt)^{2}$. The distance fallen is $s = \\frac{1}{2}gt^{2}$, so the new height is $h' = h - \\frac{1}{2}gt^{2}$. Potential energy $U = mgh' = mg(h - \\frac{1}{2}gt^{2})$. Total Energy $E = K + U = \\frac{1}{2}mg^{2}t^{2} + mgh - \\frac{1}{2}mg^{2}t^{2} = mgh$. Thus, mechanical energy is conserved."
+      "correctAnswer": "The sum of kinetic and potential energy remains constant during free fall.",
+      "explanation": "As an object falls due to gravity, its potential energy decreases while its kinetic energy increases, but total mechanical energy remains constant (if no external forces act)."
+    },
+    {
+      "id": "q24",
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "How is the mechanical advantage of an inclined plane calculated?",
+      "passageId": "",
+      "tag": "Inclined Plane",
+      "hint": "Section 7.6.2: Inclined plane",
+      "diagram": {
+        "hasDiagram": true,
+        "description": "An inclined plane showing length L and height h.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(4,3))\nax.set_xlim(0, 6)\nax.set_ylim(0, 4)\nax.axis('off')\ntriangle = plt.Polygon([[1, 1], [5, 1], [5, 3]], closed=True, fill=False, edgecolor='#8B4513', linewidth=2)\nax.add_patch(triangle)\nax.text(3, 2.2, '$L$', ha='center', va='bottom', fontsize=12, rotation=26)\nax.text(5.2, 2, '$h$', ha='left', va='center', fontsize=12)\nax.add_patch(patches.Rectangle((2.5, 1.75), 0.6, 0.6, angle=26, facecolor='#DC2626'))\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+      },
+      "correctAnswer": "Mechanical advantage = $L / h$ (Length of inclined plane / vertical height).",
+      "explanation": "The mechanical advantage is the ratio of the load ($mg$) to the effort ($F'$). Using work-energy equivalence, this simplifies to the length of the plane divided by its vertical height."
+    },
+    {
+      "id": "q25",
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "What is the primary difference between balanced and unbalanced forces in terms of motion?",
+      "passageId": "",
+      "tag": "Balanced and Unbalanced Forces",
+      "hint": "Section 6.2: Balanced and Unbalanced Forces",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "Balanced forces do not change an object's motion, while unbalanced forces cause acceleration.",
+      "explanation": "Balanced forces yield a net force of zero (constant velocity or rest). Unbalanced forces yield a non-zero net force, causing the object to accelerate."
+    },
+    {
+      "id": "q26",
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "A force of $1500\\text{ N}$ acts on a car of mass $1000\\text{ kg}$. Calculate its acceleration.",
+      "passageId": "",
+      "tag": "Newton's Second Law",
+      "hint": "Section 6.5: Newton's Second Law of Motion",
+      "diagram": {
+        "hasDiagram": true,
+        "description": "A block representing a car, mass m, pulled by force F.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(4,2))\nax.set_xlim(0, 8)\nax.set_ylim(0, 4)\nax.axis('off')\nax.plot([0, 8], [1, 1], color='#1E293B', linewidth=2)\nax.add_patch(patches.Rectangle((2, 1), 2, 1.5, facecolor='#3B82F6'))\nax.arrow(4, 1.75, 2, 0, head_width=0.3, fc='#DC2626', ec='#DC2626')\nax.text(3, 1.75, '$m=1000\\\\text{ kg}$', ha='center', va='center', color='white', fontsize=10)\nax.text(6.5, 1.75, '$F=1500\\\\text{ N}$', ha='left', va='center', fontsize=10)\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+      },
+      "correctAnswer": "$1.5\\text{ m/s}^{2}$",
+      "explanation": "By Newton's Second Law, $a = F / m$. $a = 1500\\text{ N} / 1000\\text{ kg} = 1.5\\text{ m/s}^{2}$."
+    },
+    {
+      "id": "q27",
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "A student pushes a $20\\text{ kg}$ block with a force of $60\\text{ N}$. The frictional force is $20\\text{ N}$. Find the block's acceleration.",
+      "passageId": "",
+      "tag": "Net Force & Acceleration",
+      "hint": "Section 6.3: The Force of Friction",
+      "diagram": {
+        "hasDiagram": true,
+        "description": "A block with applied force forward and friction backward.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(5,2))\nax.set_xlim(0, 10)\nax.set_ylim(0, 4)\nax.axis('off')\nax.plot([0, 10], [1, 1], color='#1E293B', linewidth=2)\nax.add_patch(patches.Rectangle((4, 1), 2, 1.5, facecolor='#10B981'))\nax.arrow(6, 1.75, 2, 0, head_width=0.2, fc='#3B82F6', ec='#3B82F6')\nax.arrow(4, 1.25, -2, 0, head_width=0.2, fc='#DC2626', ec='#DC2626')\nax.text(8.5, 1.75, 'Applied Force', ha='left', va='center')\nax.text(1.5, 1.25, 'Friction', ha='right', va='center')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+      },
+      "correctAnswer": "$2\\text{ m/s}^{2}$",
+      "explanation": "Net force $F_{net} = 60\\text{ N} - 20\\text{ N} = 40\\text{ N}$. Acceleration $a = F_{net} / m = 40\\text{ N} / 20\\text{ kg} = 2\\text{ m/s}^{2}$."
     },
     {
       "id": "q28",
       "type": "short_answer",
       "category": "Work, Energy, and Simple Machines",
-      "marks": 4,
+      "marks": 3,
       "difficulty": "hard",
-      "question": "A car of mass $1000\\text{ kg}$ starts from rest and reaches a speed of $72\\text{ km/h}$ in $10\\text{ seconds}$. Calculate the power of the engine required to achieve this start.",
+      "question": "If the velocity of an object is doubled, by what factor does its kinetic energy increase?",
       "passageId": "",
-      "tag": "Power",
-      "hint": "Example 7.11",
+      "tag": "Kinetic Energy",
+      "hint": "Section 7.4.1: Kinetic energy",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "The power of the engine is $20000\\text{ W}$.",
-      "explanation": "Final velocity $v = 72\\text{ km/h} = 20\\text{ m/s}$. Initial velocity $u = 0$. Work done = Change in KE = $\\frac{1}{2}mv^{2} - 0 = \\frac{1}{2} \\times 1000 \\times (20)^{2} = 200000\\text{ J}$. Power $P = \\frac{W}{t} = \\frac{200000\\text{ J}}{10\\text{ s}} = 20000\\text{ W}$."
+      "correctAnswer": "It increases by a factor of 4.",
+      "explanation": "Kinetic energy is given by $K = \\frac{1}{2}mv^{2}$. If velocity is doubled ($2v$), $K' = \\frac{1}{2}m(2v)^{2} = 4 \\times (\\frac{1}{2}mv^{2})$. Thus, it becomes 4 times the original."
     },
     {
       "id": "q29",
       "type": "short_answer",
       "category": "Work, Energy, and Simple Machines",
-      "marks": 4,
+      "marks": 3,
       "difficulty": "hard",
-      "question": "A child slides down a frictionless slide of vertical height $h$. Derive the expression for the magnitude of their velocity upon reaching the bottom of the slide using the principle of conservation of energy.",
+      "question": "A $2\\text{ kg}$ object is raised to a height of $5\\text{ m}$. Calculate its potential energy (Take $g = 10\\text{ m/s}^{2}$).",
       "passageId": "",
-      "tag": "Conservation of Energy",
-      "hint": "Example 7.8",
+      "tag": "Potential Energy Calculation",
+      "hint": "Section 7.4.2: Potential energy",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "The velocity is $v = \\sqrt{2gh}$.",
-      "explanation": "At the top of the slide, the child's kinetic energy is zero and potential energy is $mgh$. At the bottom, potential energy is zero and kinetic energy is $\\frac{1}{2}mv^{2}$. By conservation of mechanical energy (ignoring friction): $mgh = \\frac{1}{2}mv^{2}$. Canceling mass $m$ and solving for $v$ yields $v = \\sqrt{2gh}$."
+      "correctAnswer": "$100\\text{ J}$",
+      "explanation": "Potential energy $U = mgh$. Plugging in the values: $U = 2\\text{ kg} \\times 10\\text{ m/s}^{2} \\times 5\\text{ m} = 100\\text{ J}$."
     },
     {
       "id": "q30",
       "type": "short_answer",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 2,
-      "difficulty": "easy",
-      "question": "In the context of physics, when is the work done by a force considered to be negative?",
+      "category": "How Forces Affect Motion",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Explain using Newton's First Law why a passenger falls forward when a moving bus suddenly stops.",
       "passageId": "",
-      "tag": "Work Done",
-      "hint": "Section 7.1.2: Positive and negative work done",
+      "tag": "Inertia",
+      "hint": "Section 6.4: Newton's First Law of Motion",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "Work done is negative when the displacement is in the direction opposite to that of the applied force.",
-      "explanation": "If a force is applied in one direction but the object undergoes displacement in the exact opposite direction (e.g., stopping a moving ball or lowering a heavy object), the work done by that force is negative."
+      "correctAnswer": "Due to inertia of motion.",
+      "explanation": "The passenger's body is in motion along with the bus. When the bus stops suddenly, the lower body stops due to contact with the bus, but the upper body tends to continue its state of motion due to inertia, falling forward."
+    },
+    {
+      "id": "q31",
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "A machine does $1500\\text{ J}$ of work in $5\\text{ s}$. Calculate its power.",
+      "passageId": "",
+      "tag": "Power Calculation",
+      "hint": "Section 7.5: Power",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "$300\\text{ W}$",
+      "explanation": "Power $P = W / t$. $P = 1500\\text{ J} / 5\\text{ s} = 300\\text{ Watts (W)}$."
+    },
+    {
+      "id": "q32",
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "In a wheelbarrow, the load is between the fulcrum and the effort. Which class of lever is this?",
+      "passageId": "",
+      "tag": "Classes of Levers",
+      "hint": "Section 7.6.3: Lever (Table 7.2)",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "Class II lever.",
+      "explanation": "Class II levers have the load situated in between the fulcrum and the effort (e.g., wheelbarrow, bottle opener)."
+    },
+    {
+      "id": "q33",
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "How do airbags in vehicles reduce the risk of injury during a collision according to Newton's Second Law?",
+      "passageId": "",
+      "tag": "Impulse and Force",
+      "hint": "Section 6.5: Newton's Second Law of Motion",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "They increase the time duration of the impact, reducing the acceleration and the net force.",
+      "explanation": "Airbags increase the time over which the passenger's velocity is reduced to zero. By Newton's second law ($F=ma$), a smaller acceleration results in a smaller force acting on the person."
+    },
+    {
+      "id": "q34",
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "How does walking demonstrate Newton's Third Law of Motion?",
+      "passageId": "",
+      "tag": "Action and Reaction",
+      "hint": "Section 6.6: Newton's Third Law of Motion",
+      "diagram": {
+        "hasDiagram": true,
+        "description": "Foot pushing ground backwards, friction pushing person forward.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(5,3))\nax.set_xlim(0, 10)\nax.set_ylim(0, 4)\nax.axis('off')\nax.plot([0, 10], [1, 1], color='#1E293B', linewidth=2)\nax.add_patch(patches.Ellipse((5, 1.5), 2, 1, angle=-20, facecolor='#F59E0B'))\nax.arrow(5, 1, -1.5, 0, head_width=0.2, fc='#DC2626', ec='#DC2626')\nax.arrow(5, 0.5, 1.5, 0, head_width=0.2, fc='#10B981', ec='#10B981')\nax.text(3, 1, 'Push by foot', ha='right', va='center')\nax.text(7, 0.5, 'Friction (Reaction)', ha='left', va='center')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+      },
+      "correctAnswer": "You push the ground backward; the ground pushes you forward.",
+      "explanation": "While walking, you push the ground backwards with your feet (action). The ground applies an equal and opposite force (friction) on your feet in the forward direction (reaction), making you move."
+    },
+    {
+      "id": "q35",
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Describe the energy transformations in a swinging simple pendulum from its highest point to its lowest point.",
+      "passageId": "",
+      "tag": "Energy Transformation",
+      "hint": "Section 7.4.3: Conservation of mechanical energy",
+      "diagram": {
+        "hasDiagram": true,
+        "description": "Pendulum swinging showing extreme and mean positions.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(5,4))\nax.set_xlim(0, 10)\nax.set_ylim(0, 8)\nax.axis('off')\nax.plot([2, 8], [7, 7], color='#1E293B', linewidth=2)\nax.plot([5, 5], [7, 2], color='#1E293B', linestyle='--')\nax.plot([5, 3], [7, 4], color='#1E293B')\nax.plot([5, 7], [7, 4], color='#1E293B')\nax.add_patch(plt.Circle((5, 2), 0.4, color='#EF4444'))\nax.add_patch(plt.Circle((3, 4), 0.4, color='#EF4444'))\nax.add_patch(plt.Circle((7, 4), 0.4, color='#EF4444'))\nax.text(3, 4.8, 'Potential Energy', ha='center', va='bottom', fontsize=9)\nax.text(5, 1.2, 'Kinetic Energy', ha='center', va='top', fontsize=9)\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+      },
+      "correctAnswer": "Potential energy converts to kinetic energy.",
+      "explanation": "At the highest point, the pendulum has maximum potential energy and zero kinetic energy. As it swings down to the lowest point, the potential energy converts entirely into kinetic energy."
+    },
+    {
+      "id": "q36",
+      "type": "mcq",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "Define 1 Joule of work.",
+      "passageId": "",
+      "tag": "Joule Definition",
+      "hint": "Section 7.1: Work Done by a Constant Force",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        {
+          "text": "$1\\text{ N}$ applied over $1\\text{ s}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$1\\text{ N}$ applied over $1\\text{ m}$",
+          "explanation": "Correct. $1\\text{ J} = 1\\text{ N} \\times 1\\text{ m}$."
+        },
+        {
+          "text": "$1\\text{ kg}$ moving at $1\\text{ m/s}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$1\\text{ kg}$ lifted by $1\\text{ m}$",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$1\\text{ N}$ applied over $1\\text{ m}$",
+      "explanation": "1 joule of work is done when a constant force of 1 newton is applied to an object and it is displaced by 1 metre in the direction of the force."
+    },
+    {
+      "id": "q37",
+      "type": "mcq",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "1 Watt of power is equal to:",
+      "passageId": "",
+      "tag": "Watt Definition",
+      "hint": "Section 7.5: Power",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        {
+          "text": "$1\\text{ Joule per minute}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$1\\text{ Newton per second}$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$1\\text{ Joule per second}$",
+          "explanation": "Correct. Power is rate of doing work."
+        },
+        {
+          "text": "$1\\text{ kg per second}$",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "$1\\text{ Joule per second}$",
+      "explanation": "The SI unit of power is the watt (W), where 1 watt is equal to 1 joule of work done per second ($1\\text{ W} = 1\\text{ J/s}$)."
+    },
+    {
+      "id": "q38",
+      "type": "mcq",
+      "category": "How Forces Affect Motion",
+      "marks": 2,
+      "difficulty": "hard",
+      "question": "For a system of two objects connected by a string and pulled by an external force $F$, how is acceleration calculated?",
+      "passageId": "",
+      "tag": "System of Objects",
+      "hint": "Section 6.7: Forces Acting on a System of Objects",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        {
+          "text": "$a = F / m_{1}$",
+          "explanation": "Incorrect. Must consider total mass."
+        },
+        {
+          "text": "$a = F / (m_{1} + m_{2})$",
+          "explanation": "Correct. Treat both objects as a single system."
+        },
+        {
+          "text": "$a = F \\times (m_{1} + m_{2})$",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "$a = (m_{1} + m_{2}) / F$",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$a = F / (m_{1} + m_{2})$",
+      "explanation": "When treating connected objects as a single system, the acceleration is the external force divided by the total mass of the system."
+    },
+    {
+      "id": "q39",
+      "type": "mcq",
+      "category": "How Forces Affect Motion",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "What does a spring balance primarily measure when pulling a block horizontally across a surface at a constant velocity?",
+      "passageId": "",
+      "tag": "Spring Balance & Friction",
+      "hint": "Section 6.3: Activity 6.2",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        {
+          "text": "The mass of the block",
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "The force of gravity",
+          "explanation": "Incorrect. Gravity acts vertically."
+        },
+        {
+          "text": "The force of friction",
+          "explanation": "Correct. It balances the frictional force."
+        },
+        {
+          "text": "The normal force",
+          "explanation": "Incorrect."
+        }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "The force of friction",
+      "explanation": "When pulling at a constant velocity, the applied force (measured by the spring balance) is equal in magnitude to the opposing force of friction."
+    },
+    {
+      "id": "q40",
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Why does a 10 kg block pushed with 50 N of force on a surface with 50 N of maximum friction not accelerate?",
+      "passageId": "",
+      "tag": "Balanced Forces",
+      "hint": "Section 6.2: Balanced and Unbalanced Forces",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The net force is zero.",
+      "explanation": "The applied force ($50\\text{ N}$) is completely balanced by the opposing force of friction ($50\\text{ N}$). Since the net force is zero, there is no acceleration."
     }
   ]
 }

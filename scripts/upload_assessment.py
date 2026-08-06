@@ -13,9 +13,9 @@ Dry-run (validates JSON, no writes):
   python scripts/upload_assessment.py --child Anish --subject Mathematics --class 7 --file scripts/assessment.json --dry-run
 
 Arguments:
-  --child     Child's name as stored in Firestore (case-sensitive, e.g. "Anish" or "Aarav")
+  --child     Child's name as stored in Firestore (case-sensitive, e.g. "Anish" or "Gauri")
   --subject   Subject name (e.g. "English", "Hindi", "Mathematics")
-  --class     Class number as string (e.g. "7")
+  --class     Class number as string (e.g. "7" or "9")
   --file      Path to the assessment JSON file (relative to repo root or absolute)
   --dry-run   Validate and preview without writing to Firestore
 """

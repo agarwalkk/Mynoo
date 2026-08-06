@@ -52,6 +52,7 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.krishanagarwal.mynoo.data.repository.AssessmentQuestion
+import com.krishanagarwal.mynoo.data.repository.isAnswered
 import com.krishanagarwal.mynoo.ui.viewmodel.AssessmentViewModel
 import com.krishanagarwal.mynoo.ui.viewmodel.currentQuestion
 import com.krishanagarwal.mynoo.ui.viewmodel.score
@@ -205,8 +206,9 @@ fun AssessmentScreen(
                         mcqSelectedIndex = quiz.mcqSelectedIndex,
                         mcqFirstWrongIndex = quiz.mcqFirstWrongIndex,
                         mcqPhase         = quiz.mcqPhase,
-                        attemptedEarnedMarks = quiz.attemptedEarnedMarks,
-                        attemptedTotalMarks  = quiz.attemptedTotalMarks,
+                        answersList      = quiz.answers,
+                        allQuestions     = quiz.assessment?.questions ?: emptyList(),
+                        totalMarks       = quiz.totalMarks,
                         onMCQSelect      = { vm.selectMCQOption(it) },
                         onCheckText      = { vm.validateCurrentAnswer(it) },
                         onCheckHandwritten = { b64, key -> vm.validateCurrentHandwrittenAnswer(b64, key) },
@@ -252,8 +254,9 @@ private fun QuestionView(
     mcqSelectedIndex:   Int?,
     mcqFirstWrongIndex: Int?,
     mcqPhase:           String,
-    attemptedEarnedMarks: Double = 0.0,
-    attemptedTotalMarks:  Double = 0.0,
+    answersList:        List<Map<String, Any>?>,
+    allQuestions:       List<AssessmentQuestion>,
+    totalMarks:         Double = 0.0,
     onMCQSelect:        (Int) -> Unit,
     onCheckText:        (String) -> Unit,
     onCheckHandwritten: (String, String) -> Unit,
@@ -434,6 +437,61 @@ private fun QuestionView(
                 trackColor = MaterialTheme.colorScheme.surfaceVariant
             )
             
+            // Running totals:
+            // Numerator = total earned marks for questions answered and assessed so far
+            // Denominator = total max marks of those questions for which answers have been submitted and assessed
+            val (runningEarnedNumerator, runningTotalDenominator) = remember(answersList, index, isAnswered, validationResult, mcqSelectedIndex, mcqPhase, allQuestions) {
+                var earnedSum = 0.0
+                var maxSum = 0.0
+
+                allQuestions.indices.forEach { i ->
+                    val q = allQuestions[i]
+                    val a = answersList.getOrNull(i)
+                    val isCurrent = (i == index)
+                    val isAns = (isCurrent && isAnswered) || a.isAnswered()
+
+                    if (isAns) {
+                        maxSum += q.marks
+                        var eMarks: Double? = null
+
+                        if (a != null) {
+                            val type = a["type"] as? String ?: ""
+                            if (type == "mcq") {
+                                val correct = a["correct"] as? Boolean ?: false
+                                val attempts = (a["attempts"] as? Number)?.toInt() ?: 1
+                                if (correct) {
+                                    eMarks = if (attempts == 2) q.marks / 2.0 else q.marks
+                                } else {
+                                    eMarks = 0.0
+                                }
+                            } else {
+                                eMarks = (a["earnedMarks"] as? Number)?.toDouble()
+                                    ?: (a["aiEarnedMarks"] as? Number)?.toDouble()
+                                    ?: run {
+                                        val selfGrade = a["selfGrade"] as? String ?: ""
+                                        if (selfGrade == "got_it") q.marks else if (selfGrade == "partial") q.marks / 2.0 else 0.0
+                                    }
+                            }
+                        } else if (isCurrent) {
+                            if (q.type == "mcq") {
+                                val correct = mcqSelectedIndex == q.correctIndex
+                                val attempts = if (mcqFirstWrongIndex != null) 2 else 1
+                                if (correct) {
+                                    eMarks = if (attempts == 2) q.marks / 2.0 else q.marks
+                                } else {
+                                    eMarks = 0.0
+                                }
+                            } else if (validationResult != null) {
+                                eMarks = (validationResult["earnedMarks"] as? Number)?.toDouble() ?: 0.0
+                            }
+                        }
+
+                        earnedSum += (eMarks ?: 0.0)
+                    }
+                }
+                Pair(earnedSum, maxSum)
+            }
+
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -475,7 +533,7 @@ private fun QuestionView(
                         )
                         Spacer(Modifier.width(4.dp))
                         Text(
-                            text = "${formatMarks(attemptedEarnedMarks)} / ${formatMarks(attemptedTotalMarks)} marks",
+                            text = "${formatMarks(runningEarnedNumerator)} / ${formatMarks(runningTotalDenominator)} marks",
                             style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold),
                             color = Color(0xFF92400E)
                         )
