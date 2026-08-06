@@ -28,6 +28,8 @@ import com.krishanagarwal.mynoo.data.repository.Assessment
 import com.krishanagarwal.mynoo.data.repository.AssessmentQuestion
 import com.krishanagarwal.mynoo.data.repository.answeredCount
 import com.krishanagarwal.mynoo.data.repository.isAnswered
+import com.krishanagarwal.mynoo.data.repository.isInProgress
+import com.krishanagarwal.mynoo.data.repository.isReady
 import com.krishanagarwal.mynoo.ui.viewmodel.AssessmentViewModel
 
 private val SUBJECTS = listOf(
@@ -181,7 +183,7 @@ private fun copySummary(context: Context, a: Assessment) {
 }
 
 private fun getProgressLine(assessment: Assessment): String? {
-    if (assessment.status != "in_progress" || assessment.questions.isEmpty()) return null
+    if (!assessment.isInProgress || assessment.questions.isEmpty()) return null
     val answers = assessment.answers
     val questions = assessment.questions
     val answered = assessment.answeredCount
@@ -327,10 +329,10 @@ fun AssessmentListScreen(
             }
 
             val inProgress = remember(filteredAssessments) {
-                filteredAssessments.filter { it.status == "in_progress" }
+                filteredAssessments.filter { it.isInProgress }
             }
             val ready = remember(filteredAssessments) {
-                filteredAssessments.filter { it.status == "ready" }
+                filteredAssessments.filter { it.isReady }
             }
             val completed = remember(filteredAssessments) {
                 filteredAssessments.filter { it.status == "completed" }
@@ -420,8 +422,8 @@ private fun AssessmentCard(
         colors = CardDefaults.cardColors(containerColor = Color.White),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
         border = BorderStroke(
-            width = if (a.status == "in_progress") 2.dp else 1.dp,
-            color = if (a.status == "in_progress") themeColor else Color(0xFFE2E8F0)
+            width = if (a.isInProgress) 2.dp else 1.dp,
+            color = if (a.isInProgress) themeColor else Color(0xFFE2E8F0)
         )
     ) {
         Row(
@@ -508,7 +510,7 @@ private fun AssessmentCard(
                             color = scoreColour
                         )
                         Text(
-                            text = if (a.status == "in_progress") "Resume" else "View →",
+                            text = if (a.status == "completed") "View →" else if (a.isInProgress) "Resume" else "View →",
                             style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
                             color = themeColor
                         )
@@ -520,11 +522,11 @@ private fun AssessmentCard(
                     verticalArrangement = Arrangement.Center
                 ) {
                     Text(
-                        text = if (a.status == "in_progress") "▶ Resume" else "Start →",
+                        text = if (a.isInProgress) "▶ Resume" else "Start →",
                         style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
                         color = themeColor
                     )
-                    if (a.status == "in_progress") {
+                    if (a.isInProgress) {
                         Text(
                             text = "👁 answers",
                             style = MaterialTheme.typography.labelSmall,
@@ -618,7 +620,7 @@ private fun AssessmentDetailDialog(
                         ) {
                             Column(modifier = Modifier.padding(16.dp)) {
                                 Text(
-                                    text = if (isCompleted) "Completed · $formattedDate" else "▶ In Progress · Created: $formattedDate",
+                                    text = if (isCompleted) "Completed · $formattedDate" else if (a.isInProgress) "▶ In Progress · Created: $formattedDate" else "⏳ Ready · Created: $formattedDate",
                                     style = MaterialTheme.typography.bodyMedium,
                                     color = Color(0xFF555555)
                                 )
@@ -650,7 +652,7 @@ private fun AssessmentDetailDialog(
                     }
 
                     // 2. Resume Assessment Button (if in progress)
-                    if (a.status == "in_progress") {
+                    if (a.isInProgress) {
                         item {
                             Button(
                                 onClick = {
@@ -698,7 +700,7 @@ private fun AssessmentDetailDialog(
 
                     // 4. Questions Header
                     item {
-                        val answeredCount = if (a.status == "in_progress") {
+                        val answeredCount = if (a.isInProgress) {
                             a.answeredCount
                         } else {
                             a.questions.size
@@ -716,7 +718,7 @@ private fun AssessmentDetailDialog(
                         val ans = a.answers.find { it != null && it["id"] == q.id } ?: a.answers.getOrNull(idx)
                         Triple(q, ans, idx)
                     }.filter { (_, ans, _) ->
-                        if (a.status == "in_progress") {
+                        if (a.isInProgress) {
                             ans != null && ans.isNotEmpty()
                         } else {
                             true

@@ -57,6 +57,9 @@ import com.krishanagarwal.mynoo.ui.viewmodel.currentQuestion
 import com.krishanagarwal.mynoo.ui.viewmodel.score
 import com.krishanagarwal.mynoo.ui.viewmodel.earnedMarks
 import com.krishanagarwal.mynoo.ui.viewmodel.totalMarks
+import com.krishanagarwal.mynoo.ui.viewmodel.attemptedEarnedMarks
+import com.krishanagarwal.mynoo.ui.viewmodel.attemptedTotalMarks
+import androidx.compose.material.icons.filled.Star
 import java.io.ByteArrayOutputStream
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.ui.input.pointer.pointerInput
@@ -64,6 +67,10 @@ import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.ui.viewinterop.AndroidView
 
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
+
+private fun formatMarks(marks: Double): String {
+    return if (marks % 1.0 == 0.0) marks.toInt().toString() else marks.toString()
+}
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
@@ -198,6 +205,8 @@ fun AssessmentScreen(
                         mcqSelectedIndex = quiz.mcqSelectedIndex,
                         mcqFirstWrongIndex = quiz.mcqFirstWrongIndex,
                         mcqPhase         = quiz.mcqPhase,
+                        attemptedEarnedMarks = quiz.attemptedEarnedMarks,
+                        attemptedTotalMarks  = quiz.attemptedTotalMarks,
                         onMCQSelect      = { vm.selectMCQOption(it) },
                         onCheckText      = { vm.validateCurrentAnswer(it) },
                         onCheckHandwritten = { b64, key -> vm.validateCurrentHandwrittenAnswer(b64, key) },
@@ -243,6 +252,8 @@ private fun QuestionView(
     mcqSelectedIndex:   Int?,
     mcqFirstWrongIndex: Int?,
     mcqPhase:           String,
+    attemptedEarnedMarks: Double = 0.0,
+    attemptedTotalMarks:  Double = 0.0,
     onMCQSelect:        (Int) -> Unit,
     onCheckText:        (String) -> Unit,
     onCheckHandwritten: (String, String) -> Unit,
@@ -283,7 +294,9 @@ private fun QuestionView(
                     earnedMarks = 0.0
                 }
             } else {
-                earnedMarks = (answered["aiEarnedMarks"] as? Number)?.toDouble() ?: 0.0
+                earnedMarks = (answered["earnedMarks"] as? Number)?.toDouble()
+                    ?: (answered["aiEarnedMarks"] as? Number)?.toDouble()
+                    ?: 0.0
             }
         } else {
             if (isMCQ) {
@@ -426,21 +439,47 @@ private fun QuestionView(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(
-                    text = "Question ${index + 1} of $total",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        text = "Question ${index + 1} of $total",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                    Spacer(Modifier.width(6.dp))
+                    Surface(
+                        shape = RoundedCornerShape(6.dp),
+                        color = marksBg
+                    ) {
+                        Text(
+                            text = if (earnedMarks != null) "${formatMarks(earnedMarks)} / ${formatMarks(marks)}m" else "${formatMarks(marks)}m",
+                            style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
+                            color = marksColor,
+                            modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                        )
+                    }
+                }
                 Surface(
                     shape = RoundedCornerShape(8.dp),
-                    color = marksBg
+                    color = Color(0xFFFEF3C7),
+                    border = BorderStroke(1.dp, Color(0xFFFDE68A))
                 ) {
-                    Text(
-                        text = if (earnedMarks != null) "${if (earnedMarks % 1.0 == 0.0) earnedMarks.toInt() else earnedMarks} / ${marks.toInt()}m" else "${marks.toInt()}m",
-                        style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold),
-                        color = marksColor,
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
                         modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
-                    )
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = null,
+                            tint = Color(0xFFD97706),
+                            modifier = Modifier.size(14.dp)
+                        )
+                        Spacer(Modifier.width(4.dp))
+                        Text(
+                            text = "${formatMarks(attemptedEarnedMarks)} / ${formatMarks(attemptedTotalMarks)} marks",
+                            style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold),
+                            color = Color(0xFF92400E)
+                        )
+                    }
                 }
             }
 
@@ -525,6 +564,52 @@ private fun QuestionView(
                         Text(
                             text = question.inputSentence,
                             style = MaterialTheme.typography.bodyLarge.copy(fontStyle = FontStyle.Italic),
+                            color = Color(0xFF2C3E50)
+                        )
+                    }
+                }
+            }
+
+            // Unbalanced Equation (if present, e.g. equation_balancing)
+            if (question.unbalancedEquation.isNotBlank()) {
+                Surface(
+                    shape = RoundedCornerShape(10.dp),
+                    color = Color(0xFFF4F0FF),
+                    border = BorderStroke(1.dp, Color(0xFFE9D8FD)),
+                    modifier = Modifier.fillMaxWidth(),
+                ) {
+                    Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                        Text(
+                            text = "🧪 Unbalanced Equation:",
+                            style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
+                            color = Color(0xFF6B46C1)
+                        )
+                        Text(
+                            text = renderMarkdown(question.unbalancedEquation),
+                            style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.SemiBold),
+                            color = Color(0xFF2C3E50)
+                        )
+                    }
+                }
+            }
+
+            // Input Reaction (if present, e.g. reaction_identification)
+            if (question.inputReaction.isNotBlank()) {
+                Surface(
+                    shape = RoundedCornerShape(10.dp),
+                    color = Color(0xFFF0FDF4),
+                    border = BorderStroke(1.dp, Color(0xFFBBF7D0)),
+                    modifier = Modifier.fillMaxWidth(),
+                ) {
+                    Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                        Text(
+                            text = "⚛️ Chemical Reaction:",
+                            style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
+                            color = Color(0xFF15803D)
+                        )
+                        Text(
+                            text = renderMarkdown(question.inputReaction),
+                            style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.SemiBold),
                             color = Color(0xFF2C3E50)
                         )
                     }
@@ -1269,9 +1354,12 @@ private fun QuestionView(
                             ?: savedAnswerResult["aiFeedback"] as? String 
                             ?: ""
                         
-                        val earnedMarks = (savedAnswerResult["earnedMarks"] as? Number)?.toDouble() ?: 0.0
+                        val bannerEarnedMarks = earnedMarks
+                            ?: (savedAnswerResult["earnedMarks"] as? Number)?.toDouble()
+                            ?: (savedAnswerResult["aiEarnedMarks"] as? Number)?.toDouble()
+                            ?: 0.0
                         val totalMarks = marks.toDouble()
-                        val marksStr = if (earnedMarks % 1.0 == 0.0) "${earnedMarks.toInt()}" else "$earnedMarks"
+                        val marksStr = if (bannerEarnedMarks % 1.0 == 0.0) "${bannerEarnedMarks.toInt()}" else "$bannerEarnedMarks"
                         val totalStr = if (totalMarks % 1.0 == 0.0) "${totalMarks.toInt()}" else "$totalMarks"
                         
                         val verdictLabel = when (verdict) {
@@ -1381,18 +1469,18 @@ private fun QuestionView(
                     ) {
                         Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
                             Text(
-                                text = "⭐ Original Model Answer (loaded with assessment):",
+                                text = "💡 Suggested Answer:",
                                 style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
                                 color = Color(0xFF2980B9)
                             )
                             Text(
-                                text = question.answer,
+                                text = question.answer.replace(Regex("""\[cite:\s*[\d,\s-]+\]"""), ""),
                                 style = MaterialTheme.typography.bodyLarge,
                                 color = Color(0xFF2C3E50)
                             )
                             if (question.explanation.isNotBlank()) {
                                 Text(
-                                    text = "Explanation: ${question.explanation}",
+                                    text = "Explanation: ${question.explanation.replace(Regex("""\[cite:\s*[\d,\s-]+\]"""), "")}",
                                     style = MaterialTheme.typography.bodySmall.copy(fontStyle = FontStyle.Italic),
                                     color = Color(0xFF7F8C8D)
                                 )

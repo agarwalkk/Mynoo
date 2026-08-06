@@ -1,51 +1,45 @@
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
-fig, ax = plt.subplots(figsize=(7, 3.5))
+fig, ax = plt.subplots(figsize=(6, 5))
 ax.set_aspect('equal')
 ax.axis('off')
 
-# Ground Line
-ax.plot([-0.5, 6.5], [0, 0], color='#64748B', lw=2, ls='--')
+# 1. Cell Membrane (Outer irregular shape or ellipse)
+cell_membrane = patches.Ellipse((0, 0), width=6, height=4.5, angle=10,
+                                facecolor='#FEF08A', edgecolor='#CA8A04', lw=3, alpha=0.6)
+ax.add_patch(cell_membrane)
+ax.text(-2.2, 1.8, 'Cell Membrane', fontsize=10, color='#854D0E', weight='bold')
 
-# Fulcrum Triangle
-fulcrum_x = 2.0
-fulcrum = patches.Polygon([[fulcrum_x - 0.3, 0], [fulcrum_x + 0.3, 0], [fulcrum_x, 0.6]], 
-                          closed=True, facecolor='#10B981', edgecolor='#047857', lw=2)
-ax.add_patch(fulcrum)
-ax.text(fulcrum_x, -0.25, 'Fulcrum', ha='center', fontsize=11, weight='bold', color='#047857')
+# 2. Cytoplasm Background Label
+ax.text(-1.5, -1.5, 'Cytoplasm', fontsize=10, color='#A16207', style='italic')
 
-# Lever Beam
-beam_y = 0.65
-beam = patches.Rectangle((0, beam_y), 6.0, 0.1, facecolor='#F59E0B', edgecolor='#B45309', lw=2)
-ax.add_patch(beam)
+# 3. Nucleus (Double Circle)
+nucleus_outer = patches.Circle((0.5, 0.2), 1.0, facecolor='#60A5FA', edgecolor='#1D4ED8', lw=2)
+nucleus_inner = patches.Circle((0.5, 0.2), 0.4, facecolor='#1E40AF', edgecolor='#1E3A8A')
+ax.add_patch(nucleus_outer)
+ax.add_patch(nucleus_inner)
 
-# Load (Left Side)
-load_box = patches.Rectangle((0.2, beam_y + 0.1), 0.6, 0.6, facecolor='#EF4444', edgecolor='#991B1B', lw=2)
-ax.add_patch(load_box)
-ax.text(0.5, beam_y + 0.4, 'Load\n($F_2$)', ha='center', va='center', color='white', weight='bold', fontsize=10)
+# Label A pointing to Nucleus
+ax.annotate('A: Nucleus', xy=(0.5, 0.2), xytext=(2.2, 1.5),
+            arrowprops=dict(arrowstyle='->', color='#DC2626', lw=2),
+            fontsize=11, color='#DC2626', weight='bold')
 
-# Effort Arrow (Right Side)
-effort_x = 5.5
-ax.annotate('', xy=(effort_x, beam_y + 0.1), xytext=(effort_x, beam_y + 1.1),
-            arrowprops=dict(arrowstyle='->', color='#2563EB', lw=3, mutation_scale=20))
-ax.text(effort_x, beam_y + 1.25, 'Effort ($F_1$)', ha='center', color='#2563EB', weight='bold', fontsize=11)
+# 4. Mitochondrion (Oval with inner cristae folds)
+mitochondria = patches.Ellipse((-1.8, 0.5), width=1.0, height=0.5, angle=-25,
+                               facecolor='#F87171', edgecolor='#B91C1C', lw=1.5)
+ax.add_patch(mitochondria)
 
-# Arm Dimension Labels
-# Load Arm
-ax.annotate('', xy=(0.5, beam_y - 0.2), xytext=(fulcrum_x, beam_y - 0.2),
-            arrowprops=dict(arrowstyle='<->', color='#334155', lw=1.5))
-ax.text(1.25, beam_y - 0.4, 'Load Arm ($d_2$)', ha='center', fontsize=10, color='#334155')
+# Label B pointing to Mitochondria
+ax.annotate('B: Mitochondrion', xy=(-1.8, 0.5), xytext=(-3.2, -0.8),
+            arrowprops=dict(arrowstyle='->', color='#DC2626', lw=2),
+            fontsize=11, color='#DC2626', weight='bold')
 
-# Effort Arm
-ax.annotate('', xy=(fulcrum_x, beam_y - 0.2), xytext=(effort_x, beam_y - 0.2),
-            arrowprops=dict(arrowstyle='<->', color='#334155', lw=1.5))
-ax.text(3.75, beam_y - 0.4, 'Effort Arm ($d_1$)', ha='center', fontsize=10, color='#334155')
+# Limits & Export
+ax.set_xlim(-3.8, 3.8)
+ax.set_ylim(-2.5, 2.5)
 
-ax.set_xlim(-0.8, 6.8)
-ax.set_ylim(-0.6, 2.2)
-plt.title("Lever Principle ($F_1 \\times d_1 = F_2 \\times d_2$)", fontsize=13, weight='bold')
-
+plt.title("Schematic of an Animal Cell Structure", fontsize=12, weight='bold', pad=10)
 plt.tight_layout()
-plt.savefig("lever_system_q.svg", format="svg", bbox_inches='tight')
+plt.savefig("animal_cell_diagram.svg", format="svg", bbox_inches='tight')
 plt.show()

@@ -1,1161 +1,733 @@
 {
-  "title": "Rulers to the Ruled: Types of Governments",
+  "title": "Forces, Work, and Energy",
   "passages": [],
   "questions": [
     {
       "id": "q1",
       "type": "mcq",
-      "category": "Civics - Government",
+      "category": "How Forces Affect Motion",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Which of the following US Presidents described democracy as a 'government of the people, by the people, for the people'?",
-      "tag": "Democracy",
-      "hint": "He was a U.S. president in the late 19th century.",
+      "question": "What is the SI unit of force?",
+      "passageId": "",
+      "tag": "Force Concept",
+      "hint": "Section 6.1: The Concept of Force",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
       "options": [
         {
-          "text": "George Washington",
-          "explanation": "Incorrect. He was not mentioned in the text for this quote[cite: 1]."
+          "text": "Joule (J)",
+          "explanation": "Incorrect. Joule is the SI unit of work and energy."
         },
         {
-          "text": "Abraham Lincoln",
-          "explanation": "Correct. Abraham Lincoln described democracy with this famous phrase[cite: 1]."
+          "text": "Newton (N)",
+          "explanation": "Correct. The SI unit of force is the newton."
         },
         {
-          "text": "Thomas Jefferson",
-          "explanation": "Incorrect. He was not mentioned in the text for this quote[cite: 1]."
+          "text": "Watt (W)",
+          "explanation": "Incorrect. Watt is the SI unit of power."
         },
         {
-          "text": "John F. Kennedy",
-          "explanation": "Incorrect. He was not mentioned in the text[cite: 1]."
+          "text": "Kilogram (kg)",
+          "explanation": "Incorrect. Kilogram is the SI unit of mass."
         }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Abraham Lincoln",
-      "explanation": "Abraham Lincoln described democracy as a 'government of the people, by the people, for the people'[cite: 1].",
-      "answer": "Abraham Lincoln"
+      "correctAnswer": "Newton (N)",
+      "explanation": "The SI unit of force is the newton (N), which is defined as the force that produces an acceleration of 1 m/s² on an object of mass 1 kg.",
+      "answer": "Newton (N)"
     },
     {
       "id": "q2",
       "type": "mcq",
-      "category": "Civics - Democracy",
+      "category": "How Forces Affect Motion",
       "marks": 1,
       "difficulty": "easy",
-      "question": "In which form of government do citizens directly participate in all decisions and rules?",
-      "tag": "Direct Democracy",
-      "hint": "This system is practiced in Switzerland.",
+      "question": "When two forces applied on an object are equal in magnitude but opposite in direction, what are they called?",
+      "passageId": "",
+      "tag": "Balanced Forces",
+      "hint": "Section 6.2: Balanced and Unbalanced Forces",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
       "options": [
         {
-          "text": "Representative Democracy",
-          "explanation": "Incorrect. People elect representatives in this form[cite: 1]."
+          "text": "Unbalanced forces",
+          "explanation": "Incorrect. Unbalanced forces have a non-zero net force."
         },
         {
-          "text": "Absolute Monarchy",
-          "explanation": "Incorrect. In this form, a king or queen holds all power[cite: 1]."
+          "text": "Net forces",
+          "explanation": "Incorrect. Net force is the vector sum of all forces."
         },
         {
-          "text": "Direct Democracy",
-          "explanation": "Correct. All citizens participate directly in the rules and functions[cite: 1]."
+          "text": "Balanced forces",
+          "explanation": "Correct. Equal and opposite forces have a net force of zero and are called balanced forces."
         },
         {
-          "text": "Theocracy",
-          "explanation": "Incorrect. A theocracy is ruled by religious leaders[cite: 1]."
+          "text": "Frictional forces",
+          "explanation": "Incorrect. Friction is a specific type of resistive force."
         }
       ],
       "correctIndex": 2,
-      "correctAnswer": "Direct Democracy",
-      "explanation": "Direct democracy is a form where all citizens are directly responsible for rules and regulations[cite: 1].",
-      "answer": "Direct Democracy"
+      "correctAnswer": "Balanced forces",
+      "explanation": "Two forces that are equal in magnitude but opposite in direction are called balanced forces, resulting in zero net force.",
+      "answer": "Balanced forces"
     },
     {
       "id": "q3",
       "type": "mcq",
-      "category": "Civics - Democracy",
+      "category": "How Forces Affect Motion",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "In what year did women in Switzerland get the right to vote?",
-      "tag": "Elections",
-      "hint": "It happened in the late 20th century.",
+      "difficulty": "easy",
+      "question": "In which direction does the force of friction act when an object is pushed across a horizontal floor?",
+      "passageId": "",
+      "tag": "Friction",
+      "hint": "Section 6.3: The Force of Friction...",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
       "options": [
         {
-          "text": "1928",
-          "explanation": "Incorrect. This is when effective Universal Adult Suffrage happened in the UK[cite: 1]."
+          "text": "In the same direction as the push",
+          "explanation": "Incorrect. This would accelerate the object further."
         },
         {
-          "text": "1950",
-          "explanation": "Incorrect. India provided universal adult franchise from the beginning of its republic in 1950[cite: 1]."
+          "text": "Opposite to the direction of motion",
+          "explanation": "Correct. Friction opposes the relative motion between surfaces."
         },
         {
-          "text": "1971",
-          "explanation": "Correct. Women in Switzerland received the right to vote in 1971[cite: 1]."
+          "text": "Perpendicular to the motion",
+          "explanation": "Incorrect. The normal force acts perpendicular to the surface."
         },
         {
-          "text": "1965",
-          "explanation": "Incorrect. This is when effective Universal Adult Suffrage happened in the USA[cite: 1]."
+          "text": "Downward towards gravity",
+          "explanation": "Incorrect. This is the gravitational force."
         }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "1971",
-      "explanation": "In Switzerland, women got the right to vote only in 1971[cite: 1].",
-      "answer": "1971"
+      "correctIndex": 1,
+      "correctAnswer": "Opposite to the direction of motion",
+      "explanation": "The force of friction acts in a direction opposite to the direction of the object's motion.",
+      "answer": "Opposite to the direction of motion"
     },
     {
       "id": "q4",
       "type": "mcq",
-      "category": "Civics - Governance",
+      "category": "How Forces Affect Motion",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "What is the primary feature of a republic?",
-      "tag": "Republic",
-      "hint": "Think about how the head of state is chosen.",
+      "difficulty": "easy",
+      "question": "Which of the following represents the mathematical expression for Newton's second law of motion?",
+      "passageId": "",
+      "tag": "Newton's Second Law",
+      "hint": "Section 6.5: Newton's Second Law of Motion",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
       "options": [
         {
-          "text": "The head of state is a hereditary monarch",
-          "explanation": "Incorrect. A republic does not have a hereditary monarch[cite: 1]."
+          "text": "v = u + at",
+          "explanation": "Incorrect. This is a kinematic equation for velocity."
         },
         {
-          "text": "The head of state is elected",
-          "explanation": "Correct. A republic is a government where the head of state is elected[cite: 1]."
+          "text": "W = F × s",
+          "explanation": "Incorrect. This is the formula for work done."
         },
         {
-          "text": "The country is ruled by religious leaders",
-          "explanation": "Incorrect. This describes a theocracy[cite: 1]."
+          "text": "F = ma",
+          "explanation": "Correct. Force equals mass times acceleration."
         },
         {
-          "text": "A small group of wealthy people rule",
-          "explanation": "Incorrect. This describes an oligarchy[cite: 1]."
+          "text": "P = W/t",
+          "explanation": "Incorrect. This is the formula for power."
         }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "The head of state is elected",
-      "explanation": "A republic is a form of government in which the head of state is elected and is not a hereditary monarch[cite: 1].",
-      "answer": "The head of state is elected"
+      "correctIndex": 2,
+      "correctAnswer": "F = ma",
+      "explanation": "Newton's second law states that the net force on an object is equal to its mass multiplied by its acceleration, F = ma.",
+      "answer": "F = ma"
     },
     {
       "id": "q5",
-      "type": "mcq",
-      "category": "Civics - History",
-      "marks": 1,
-      "difficulty": "hard",
-      "question": "Which of the following texts outlines the moral responsibilities and rājadharma of a king through the teachings of Bhishma?",
-      "tag": "History",
-      "hint": "It is an epic where Bhishma speaks to Yudhisthira from a bed of arrows.",
-      "options": [
-        {
-          "text": "Arthaśhāstra",
-          "explanation": "Incorrect. Kautilya wrote the Arthaśhāstra[cite: 1]."
-        },
-        {
-          "text": "Rājataranginī",
-          "explanation": "Incorrect. This was written by Kalhaņa[cite: 1]."
-        },
-        {
-          "text": "Shanti Parva of the Mahābhārata",
-          "explanation": "Correct. Bhishma teaches Yudhisthira about good governance and rājadharma in the Shanti Parva[cite: 1]."
-        },
-        {
-          "text": "Uttaramerur inscriptions",
-          "explanation": "Incorrect. These inscriptions provide details about village sabhā elections[cite: 1]."
-        }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "Shanti Parva of the Mahābhārata",
-      "explanation": "In the Shanti Parva of the Mahābhārata, Bhishma teaches Yudhisthira at great length on good governance and the moral responsibilities of a raja[cite: 1].",
-      "answer": "Shanti Parva of the Mahābhārata"
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "If an object is moving with a constant non-zero velocity in a straight line, what can be said about the net force acting on it according to Newton's first law?",
+      "passageId": "",
+      "tag": "Newton's First Law",
+      "hint": "Section 6.4: Newton's First Law of Motion",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The net force acting on the object is zero.",
+      "explanation": "According to Newton's first law of motion, an object in motion continues to move with a constant velocity unless a net force acts upon it. Therefore, constant velocity implies zero net force.",
+      "answer": "The net force acting on the object is zero."
     },
     {
       "id": "q6",
-      "type": "mcq",
-      "category": "Civics - Dictatorship",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "Idi Amin was a military dictator of which country?",
-      "tag": "Dictatorship",
-      "hint": "Many Indians whose ancestors migrated to this country were forced to flee.",
-      "options": [
-        {
-          "text": "Germany",
-          "explanation": "Incorrect. Adolf Hitler was the dictator of Germany[cite: 1]."
-        },
-        {
-          "text": "Uganda",
-          "explanation": "Correct. Idi Amin was a military dictator in Uganda[cite: 1]."
-        },
-        {
-          "text": "North Korea",
-          "explanation": "Incorrect. Shane lives in North Korea according to the text, but Idi Amin ruled Uganda[cite: 1]."
-        },
-        {
-          "text": "Iran",
-          "explanation": "Incorrect. Iran is an Islamic Republic[cite: 1]."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "Uganda",
-      "explanation": "Idi Amin was a military dictator in Uganda, responsible for the killing of thousands of people[cite: 1].",
-      "answer": "Uganda"
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Explain how airbags in vehicles reduce the risk of serious injuries during a collision based on Newton's second law of motion.",
+      "passageId": "",
+      "tag": "Applications of Force",
+      "hint": "Bridging Science and Society, Chapter 6",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "Airbags increase the time duration over which the passenger's velocity reduces to zero. This decreases the acceleration, which in turn reduces the force exerted on the person (F = ma).",
+      "explanation": "By inflating into a compressible cushion, airbags prolong the impact time. A longer time to come to a halt means a smaller deceleration, and according to F=ma, a smaller force is applied to the passenger, minimizing injury.",
+      "answer": "Airbags increase the time duration over which the passenger's velocity reduces to zero. This decreases the acceleration, which in turn reduces the force exerted on the person (F = ma)."
     },
     {
       "id": "q7",
-      "type": "mcq",
-      "category": "Civics - Government",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 3,
       "difficulty": "medium",
-      "question": "Which of the following describes a Constitutional Monarchy?",
-      "tag": "Monarchy",
-      "hint": "Think about the United Kingdom's system.",
-      "options": [
-        {
-          "text": "The monarch has complete control in making laws.",
-          "explanation": "Incorrect. This is an absolute monarchy[cite: 1]."
-        },
-        {
-          "text": "The monarch is the nominal head while real executive power is with the prime minister.",
-          "explanation": "Correct. In a constitutional monarchy, legislative and executive powers rest with elected officials[cite: 1]."
-        },
-        {
-          "text": "Religious rules govern the country.",
-          "explanation": "Incorrect. This is a theocracy[cite: 1]."
-        },
-        {
-          "text": "A wealthy group of individuals holds all power.",
-          "explanation": "Incorrect. This is an oligarchy[cite: 1]."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "The monarch is the nominal head while real executive power is with the prime minister.",
-      "explanation": "In a constitutional monarchy like the UK, the king or queen has nominal power, and real executive power is exercised by the prime minister[cite: 1].",
-      "answer": "The monarch is the nominal head while real executive power is with the prime minister."
+      "question": "Two forces of 10 N and 6 N act on a block in opposite directions, with the 10 N force directed to the right. Calculate the magnitude and direction of the net force.",
+      "passageId": "",
+      "tag": "Net Force",
+      "hint": "Example 6.1",
+      "diagram": {
+        "hasDiagram": true,
+        "description": "A block subjected to 6 N force to the left and 10 N force to the right.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nimport numpy as np\nfig, ax = plt.subplots(figsize=(6, 3))\nax.set_xlim(0, 10)\nax.set_ylim(0, 5)\nax.set_aspect('equal')\nax.axis('off')\nbox = patches.Rectangle((4, 1.5), 2, 2, facecolor='#3B82F6', edgecolor='#1E293B')\nax.add_patch(box)\nax.arrow(4, 2.5, -1.5, 0, head_width=0.3, head_length=0.3, fc='#DC2626', ec='#DC2626')\nax.text(2.5, 2.8, '$6\\\\text{ N}$', ha='center', va='bottom', fontsize=12)\nax.arrow(6, 2.5, 2.5, 0, head_width=0.3, head_length=0.3, fc='#DC2626', ec='#DC2626')\nax.text(7.5, 2.8, '$10\\\\text{ N}$', ha='center', va='bottom', fontsize=12)\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')",
+        "svg": "<svg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"403.2pt\" height=\"208.8pt\" viewBox=\"0 0 403.2 208.8\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n <metadata>\n  <rdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n   <cc:Work>\n    <dc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/>\n    <dc:date>2026-08-06T08:21:50.746513</dc:date>\n    <dc:format>image/svg+xml</dc:format>\n    <dc:creator>\n     <cc:Agent>\n      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>\n     </cc:Agent>\n    </dc:creator>\n   </cc:Work>\n  </rdf:RDF>\n </metadata>\n <defs>\n  <style type=\"text/css\">*{stroke-linejoin: round; stroke-linecap: butt}</style>\n </defs>\n <g id=\"figure_1\">\n  <g id=\"patch_1\">\n   <path d=\"M 0 208.8 \nL 403.2 208.8 \nL 403.2 0 \nL 0 0 \nz\n\" style=\"fill: #ffffff\"/>\n  </g>\n  <g id=\"axes_1\">\n   <g id=\"patch_2\">\n    <path d=\"M 162.72 143.28 \nL 240.48 143.28 \nL 240.48 65.52 \nL 162.72 65.52 \nz\n\" clip-path=\"url(#pa6b3a546f2)\" style=\"fill: #3b82f6; stroke: #1e293b; stroke-linejoin: miter\"/>\n   </g>\n   <g id=\"patch_3\">\n    <path d=\"M 92.736 104.4 \nL 104.4 98.568 \nL 104.4 104.38056 \nL 162.72 104.38056 \nL 162.72 104.41944 \nL 104.4 104.41944 \nL 104.4 110.232 \nz\n\" clip-path=\"url(#pa6b3a546f2)\" style=\"fill: #dc2626; stroke: #dc2626; stroke-linejoin: miter\"/>\n   </g>\n   <g id=\"patch_4\">\n    <path d=\"M 349.344 104.4 \nL 337.68 110.232 \nL 337.68 104.41944 \nL 240.48 104.41944 \nL 240.48 104.38056 \nL 337.68 104.38056 \nL 337.68 98.568 \nz\n\" clip-path=\"url(#pa6b3a546f2)\" style=\"fill: #dc2626; stroke: #dc2626; stroke-linejoin: miter\"/>\n   </g>\n   <g id=\"text_1\">\n    <!-- $6\\text{ N}$ -->\n    <g transform=\"translate(94.14 89.853187) scale(0.12 -0.12)\">\n     <defs>\n      <path id=\"DejaVuSans-19\" d=\"M 2113 2584 \nQ 1688 2584 1439 2293 \nQ 1191 2003 1191 1497 \nQ 1191 994 1439 701 \nQ 1688 409 2113 409 \nQ 2538 409 2786 701 \nQ 3034 994 3034 1497 \nQ 3034 2003 2786 2293 \nQ 2538 2584 2113 2584 \nz\nM 3366 4563 \nL 3366 3988 \nQ 3128 4100 2886 4159 \nQ 2644 4219 2406 4219 \nQ 1781 4219 1451 3797 \nQ 1122 3375 1075 2522 \nQ 1259 2794 1537 2939 \nQ 1816 3084 2150 3084 \nQ 2853 3084 3261 2657 \nQ 3669 2231 3669 1497 \nQ 3669 778 3244 343 \nQ 2819 -91 2113 -91 \nQ 1303 -91 875 529 \nQ 447 1150 447 2328 \nQ 447 3434 972 4092 \nQ 1497 4750 2381 4750 \nQ 2619 4750 2861 4703 \nQ 3103 4656 3366 4563 \nz\n\" transform=\"scale(0.015625)\"/>\n      <path id=\"DejaVuSans-3\" transform=\"scale(0.015625)\"/>\n      <path id=\"DejaVuSans-31\" d=\"M 628 4666 \nL 1478 4666 \nL 3547 763 \nL 3547 4666 \nL 4159 4666 \nL 4159 0 \nL 3309 0 \nL 1241 3903 \nL 1241 0 \nL 628 0 \nL 628 4666 \nz\n\" transform=\"scale(0.015625)\"/>\n     </defs>\n     <use xlink:href=\"#DejaVuSans-19\" transform=\"translate(0 0.78125)\"/>\n     <use xlink:href=\"#DejaVuSans-3\" transform=\"translate(63.623047 0.78125)\"/>\n     <use xlink:href=\"#DejaVuSans-31\" transform=\"translate(95.410156 0.78125)\"/>\n    </g>\n   </g>\n   <g id=\"text_2\">\n    <!-- $10\\text{ N}$ -->\n    <g transform=\"translate(284.76 89.853187) scale(0.12 -0.12)\">\n     <defs>\n      <path id=\"DejaVuSans-14\" d=\"M 794 531 \nL 1825 531 \nL 1825 4091 \nL 703 3866 \nL 703 4441 \nL 1819 4666 \nL 2450 4666 \nL 2450 531 \nL 3481 531 \nL 3481 0 \nL 794 0 \nL 794 531 \nz\n\" transform=\"scale(0.015625)\"/>\n      <path id=\"DejaVuSans-13\" d=\"M 2034 4250 \nQ 1547 4250 1301 3770 \nQ 1056 3291 1056 2328 \nQ 1056 1369 1301 889 \nQ 1547 409 2034 409 \nQ 2525 409 2770 889 \nQ 3016 1369 3016 2328 \nQ 3016 3291 2770 3770 \nQ 2525 4250 2034 4250 \nz\nM 2034 4750 \nQ 2819 4750 3233 4129 \nQ 3647 3509 3647 2328 \nQ 3647 1150 3233 529 \nQ 2819 -91 2034 -91 \nQ 1250 -91 836 529 \nQ 422 1150 422 2328 \nQ 422 3509 836 4129 \nQ 1250 4750 2034 4750 \nz\n\" transform=\"scale(0.015625)\"/>\n     </defs>\n     <use xlink:href=\"#DejaVuSans-14\" transform=\"translate(0 0.78125)\"/>\n     <use xlink:href=\"#DejaVuSans-13\" transform=\"translate(63.623047 0.78125)\"/>\n     <use xlink:href=\"#DejaVuSans-3\" transform=\"translate(127.246094 0.78125)\"/>\n     <use xlink:href=\"#DejaVuSans-31\" transform=\"translate(159.033203 0.78125)\"/>\n    </g>\n   </g>\n  </g>\n </g>\n <defs>\n  <clipPath id=\"pa6b3a546f2\">\n   <rect x=\"7.2\" y=\"7.2\" width=\"388.8\" height=\"194.4\"/>\n  </clipPath>\n </defs>\n</svg>\n"
+      },
+      "correctAnswer": "The net force is 4 N acting towards the right.",
+      "explanation": "Since the forces are in opposite directions, their magnitudes are subtracted: 10 N - 6 N = 4 N. The direction of the net force is in the direction of the larger force, which is towards the right.",
+      "answer": "The net force is 4 N acting towards the right."
     },
     {
       "id": "q8",
-      "type": "mcq",
-      "category": "Civics - Democracy",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 3,
       "difficulty": "medium",
-      "question": "In the United States of America, how frequently do general elections occur?",
-      "tag": "Elections",
-      "hint": "It is slightly shorter than India's electoral cycle.",
-      "options": [
-        {
-          "text": "Every three years",
-          "explanation": "Incorrect. The text does not mention three years[cite: 1]."
-        },
-        {
-          "text": "Every four years",
-          "explanation": "Correct. In the USA, general elections occur every four years[cite: 1]."
-        },
-        {
-          "text": "Every five years",
-          "explanation": "Incorrect. India has general elections every five years[cite: 1]."
-        },
-        {
-          "text": "Every six years",
-          "explanation": "Incorrect. The text does not mention six years[cite: 1]."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "Every four years",
-      "explanation": "In the United States of America, general elections occur every four years[cite: 1].",
-      "answer": "Every four years"
+      "question": "Describe how the launch of a rocket demonstrates Newton's third law of motion.",
+      "passageId": "",
+      "tag": "Newton's Third Law",
+      "hint": "Section 6.6: Newton's Third Law of Motion",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The rocket engine expels gas downwards (action), which exerts an equal and opposite upward force on the rocket (reaction), causing it to lift off.",
+      "explanation": "Newton's third law states that every action has an equal and opposite reaction. The expulsion of exhaust gases downward is the action, and the upward force pushing the rocket into the air is the reaction. Since this upward force exceeds the rocket's weight, the net force accelerates it upwards.",
+      "answer": "The rocket engine expels gas downwards (action), which exerts an equal and opposite upward force on the rocket (reaction), causing it to lift off."
     },
     {
       "id": "q9",
-      "type": "mcq",
-      "category": "Civics - Terminology",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "What is the meaning of the Greek root word 'olígos' in oligarchy?",
-      "tag": "Oligarchy",
-      "hint": "It indicates a small number.",
-      "options": [
-        {
-          "text": "To rule",
-          "explanation": "Incorrect. 'árkhō' means to rule or command[cite: 1]."
-        },
-        {
-          "text": "A few",
-          "explanation": "Correct. 'olígos' means a few[cite: 1]."
-        },
-        {
-          "text": "Wealthy",
-          "explanation": "Incorrect. Although oligarchs are often wealthy, the word 'olígos' specifically means a few[cite: 1]."
-        },
-        {
-          "text": "Power",
-          "explanation": "Incorrect. This is not the meaning of the root word[cite: 1]."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "A few",
-      "explanation": "The word 'oligarchy' is of Greek origin, where olígos means a few and árkhō means to rule[cite: 1].",
-      "answer": "A few"
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 4,
+      "difficulty": "hard",
+      "question": "Two boxes of masses m₁ and m₂ are placed on a frictionless horizontal surface and connected by a string. A horizontal external force F pulls Box 2 to the right. Derive the expression for the acceleration of the system.",
+      "passageId": "",
+      "tag": "System of Objects",
+      "hint": "Section 6.7: Forces Acting on a System of Objects",
+      "diagram": {
+        "hasDiagram": true,
+        "description": "Two boxes connected by a string pulled by force F.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(7, 3))\nax.set_xlim(0, 10)\nax.set_ylim(0, 4)\nax.set_aspect('equal')\nax.axis('off')\nax.plot([1, 9], [1, 1], color='black', linewidth=2)\nbox1 = patches.Rectangle((2, 1), 1.5, 1.5, facecolor='#3B82F6', edgecolor='black')\nbox2 = patches.Rectangle((5, 1), 1.5, 1.5, facecolor='#3B82F6', edgecolor='black')\nax.add_patch(box1)\nax.add_patch(box2)\nax.plot([3.5, 5], [1.75, 1.75], color='black', linestyle='--')\nax.arrow(6.5, 1.75, 1.5, 0, head_width=0.2, head_length=0.3, fc='#DC2626', ec='#DC2626')\nax.text(2.75, 1.75, '$m_1$', ha='center', va='center', color='white', fontsize=12)\nax.text(5.75, 1.75, '$m_2$', ha='center', va='center', color='white', fontsize=12)\nax.text(7.5, 2.1, '$F$', ha='center', va='center', fontsize=12)\nax.text(4.25, 2, 'String', ha='center', va='center', fontsize=10)\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')",
+        "svg": "<svg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"496.8pt\" height=\"207.36pt\" viewBox=\"0 0 496.8 207.36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n <metadata>\n  <rdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n   <cc:Work>\n    <dc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/>\n    <dc:date>2026-08-06T08:21:51.421762</dc:date>\n    <dc:format>image/svg+xml</dc:format>\n    <dc:creator>\n     <cc:Agent>\n      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>\n     </cc:Agent>\n    </dc:creator>\n   </cc:Work>\n  </rdf:RDF>\n </metadata>\n <defs>\n  <style type=\"text/css\">*{stroke-linejoin: round; stroke-linecap: butt}</style>\n </defs>\n <g id=\"figure_1\">\n  <g id=\"patch_1\">\n   <path d=\"M 0 207.36 \nL 496.8 207.36 \nL 496.8 0 \nL 0 0 \nz\n\" style=\"fill: #ffffff\"/>\n  </g>\n  <g id=\"axes_1\">\n   <g id=\"patch_2\">\n    <path d=\"M 103.68 151.92 \nL 176.04 151.92 \nL 176.04 79.56 \nL 103.68 79.56 \nz\n\" clip-path=\"url(#p3775a2eae4)\" style=\"fill: #3b82f6; stroke: #000000; stroke-linejoin: miter\"/>\n   </g>\n   <g id=\"patch_3\">\n    <path d=\"M 248.4 151.92 \nL 320.76 151.92 \nL 320.76 79.56 \nL 248.4 79.56 \nz\n\" clip-path=\"url(#p3775a2eae4)\" style=\"fill: #3b82f6; stroke: #000000; stroke-linejoin: miter\"/>\n   </g>\n   <g id=\"patch_4\">\n    <path d=\"M 407.592 115.74 \nL 393.12 120.564 \nL 393.12 115.76412 \nL 320.76 115.76412 \nL 320.76 115.71588 \nL 393.12 115.71588 \nL 393.12 110.916 \nz\n\" clip-path=\"url(#p3775a2eae4)\" style=\"fill: #dc2626; stroke: #dc2626; stroke-linejoin: miter\"/>\n   </g>\n   <g id=\"line2d_1\">\n    <path d=\"M 55.44 151.92 \nL 441.36 151.92 \n\" clip-path=\"url(#p3775a2eae4)\" style=\"fill: none; stroke: #000000; stroke-width: 2; stroke-linecap: square\"/>\n   </g>\n   <g id=\"line2d_2\">\n    <path d=\"M 176.04 115.74 \nL 248.4 115.74 \n\" clip-path=\"url(#p3775a2eae4)\" style=\"fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #000000; stroke-width: 1.5\"/>\n   </g>\n   <g id=\"text_1\">\n    <!-- $m_1$ -->\n    <g style=\"fill: #ffffff\" transform=\"translate(131.16 118.857187) scale(0.12 -0.12)\">\n     <defs>\n      <path id=\"DejaVuSans-Oblique-50\" d=\"M 5747 2113 \nL 5338 0 \nL 4763 0 \nL 5166 2094 \nQ 5191 2228 5203 2325 \nQ 5216 2422 5216 2491 \nQ 5216 2772 5059 2928 \nQ 4903 3084 4622 3084 \nQ 4203 3084 3875 2770 \nQ 3547 2456 3450 1953 \nL 3066 0 \nL 2491 0 \nL 2900 2094 \nQ 2925 2209 2937 2307 \nQ 2950 2406 2950 2484 \nQ 2950 2769 2794 2926 \nQ 2638 3084 2363 3084 \nQ 1938 3084 1609 2770 \nQ 1281 2456 1184 1953 \nL 800 0 \nL 225 0 \nL 909 3500 \nL 1484 3500 \nL 1375 2956 \nQ 1609 3263 1923 3423 \nQ 2238 3584 2597 3584 \nQ 2978 3584 3223 3384 \nQ 3469 3184 3519 2828 \nQ 3781 3197 4126 3390 \nQ 4472 3584 4856 3584 \nQ 5306 3584 5551 3325 \nQ 5797 3066 5797 2591 \nQ 5797 2488 5784 2364 \nQ 5772 2241 5747 2113 \nz\n\" transform=\"scale(0.015625)\"/>\n      <path id=\"DejaVuSans-14\" d=\"M 794 531 \nL 1825 531 \nL 1825 4091 \nL 703 3866 \nL 703 4441 \nL 1819 4666 \nL 2450 4666 \nL 2450 531 \nL 3481 531 \nL 3481 0 \nL 794 0 \nL 794 531 \nz\n\" transform=\"scale(0.015625)\"/>\n     </defs>\n     <use xlink:href=\"#DejaVuSans-Oblique-50\"/>\n     <use xlink:href=\"#DejaVuSans-14\" transform=\"translate(97.412109 -14.999951) scale(0.7)\"/>\n    </g>\n   </g>\n   <g id=\"text_2\">\n    <!-- $m_2$ -->\n    <g style=\"fill: #ffffff\" transform=\"translate(275.88 118.857187) scale(0.12 -0.12)\">\n     <defs>\n      <path id=\"DejaVuSans-15\" d=\"M 1228 531 \nL 3431 531 \nL 3431 0 \nL 469 0 \nL 469 531 \nQ 828 903 1448 1529 \nQ 2069 2156 2228 2338 \nQ 2531 2678 2651 2914 \nQ 2772 3150 2772 3378 \nQ 2772 3750 2511 3984 \nQ 2250 4219 1831 4219 \nQ 1534 4219 1204 4116 \nQ 875 4013 500 3803 \nL 500 4441 \nQ 881 4594 1212 4672 \nQ 1544 4750 1819 4750 \nQ 2544 4750 2975 4387 \nQ 3406 4025 3406 3419 \nQ 3406 3131 3298 2873 \nQ 3191 2616 2906 2266 \nQ 2828 2175 2409 1742 \nQ 1991 1309 1228 531 \nz\n\" transform=\"scale(0.015625)\"/>\n     </defs>\n     <use xlink:href=\"#DejaVuSans-Oblique-50\"/>\n     <use xlink:href=\"#DejaVuSans-15\" transform=\"translate(97.412109 -14.999951) scale(0.7)\"/>\n    </g>\n   </g>\n   <g id=\"text_3\">\n    <!-- $F$ -->\n    <g transform=\"translate(365.52 101.973187) scale(0.12 -0.12)\">\n     <defs>\n      <path id=\"DejaVuSans-Oblique-29\" d=\"M 1081 4666 \nL 3756 4666 \nL 3653 4134 \nL 1606 4134 \nL 1338 2759 \nL 3188 2759 \nL 3084 2228 \nL 1234 2228 \nL 800 0 \nL 172 0 \nL 1081 4666 \nz\n\" transform=\"scale(0.015625)\"/>\n     </defs>\n     <use xlink:href=\"#DejaVuSans-Oblique-29\" transform=\"translate(0 0.09375)\"/>\n    </g>\n   </g>\n   <g id=\"text_4\">\n    <!-- String -->\n    <g transform=\"translate(197.298125 106.278047) scale(0.1 -0.1)\">\n     <defs>\n      <path id=\"DejaVuSans-36\" d=\"M 3425 4513 \nL 3425 3897 \nQ 3066 4069 2747 4153 \nQ 2428 4238 2131 4238 \nQ 1616 4238 1336 4038 \nQ 1056 3838 1056 3469 \nQ 1056 3159 1242 3001 \nQ 1428 2844 1947 2747 \nL 2328 2669 \nQ 3034 2534 3370 2195 \nQ 3706 1856 3706 1288 \nQ 3706 609 3251 259 \nQ 2797 -91 1919 -91 \nQ 1588 -91 1214 -16 \nQ 841 59 441 206 \nL 441 856 \nQ 825 641 1194 531 \nQ 1563 422 1919 422 \nQ 2459 422 2753 634 \nQ 3047 847 3047 1241 \nQ 3047 1584 2836 1778 \nQ 2625 1972 2144 2069 \nL 1759 2144 \nQ 1053 2284 737 2584 \nQ 422 2884 422 3419 \nQ 422 4038 858 4394 \nQ 1294 4750 2059 4750 \nQ 2388 4750 2728 4690 \nQ 3069 4631 3425 4513 \nz\n\" transform=\"scale(0.015625)\"/>\n      <path id=\"DejaVuSans-57\" d=\"M 1172 4494 \nL 1172 3500 \nL 2356 3500 \nL 2356 3053 \nL 1172 3053 \nL 1172 1153 \nQ 1172 725 1289 603 \nQ 1406 481 1766 481 \nL 2356 481 \nL 2356 0 \nL 1766 0 \nQ 1100 0 847 248 \nQ 594 497 594 1153 \nL 594 3053 \nL 172 3053 \nL 172 3500 \nL 594 3500 \nL 594 4494 \nL 1172 4494 \nz\n\" transform=\"scale(0.015625)\"/>\n      <path id=\"DejaVuSans-55\" d=\"M 2631 2963 \nQ 2534 3019 2420 3045 \nQ 2306 3072 2169 3072 \nQ 1681 3072 1420 2755 \nQ 1159 2438 1159 1844 \nL 1159 0 \nL 581 0 \nL 581 3500 \nL 1159 3500 \nL 1159 2956 \nQ 1341 3275 1631 3429 \nQ 1922 3584 2338 3584 \nQ 2397 3584 2469 3576 \nQ 2541 3569 2628 3553 \nL 2631 2963 \nz\n\" transform=\"scale(0.015625)\"/>\n      <path id=\"DejaVuSans-4c\" d=\"M 603 3500 \nL 1178 3500 \nL 1178 0 \nL 603 0 \nL 603 3500 \nz\nM 603 4863 \nL 1178 4863 \nL 1178 4134 \nL 603 4134 \nL 603 4863 \nz\n\" transform=\"scale(0.015625)\"/>\n      <path id=\"DejaVuSans-51\" d=\"M 3513 2113 \nL 3513 0 \nL 2938 0 \nL 2938 2094 \nQ 2938 2591 2744 2837 \nQ 2550 3084 2163 3084 \nQ 1697 3084 1428 2787 \nQ 1159 2491 1159 1978 \nL 1159 0 \nL 581 0 \nL 581 3500 \nL 1159 3500 \nL 1159 2956 \nQ 1366 3272 1645 3428 \nQ 1925 3584 2291 3584 \nQ 2894 3584 3203 3211 \nQ 3513 2838 3513 2113 \nz\n\" transform=\"scale(0.015625)\"/>\n      <path id=\"DejaVuSans-4a\" d=\"M 2906 1791 \nQ 2906 2416 2648 2759 \nQ 2391 3103 1925 3103 \nQ 1463 3103 1205 2759 \nQ 947 2416 947 1791 \nQ 947 1169 1205 825 \nQ 1463 481 1925 481 \nQ 2391 481 2648 825 \nQ 2906 1169 2906 1791 \nz\nM 3481 434 \nQ 3481 -459 3084 -895 \nQ 2688 -1331 1869 -1331 \nQ 1566 -1331 1297 -1286 \nQ 1028 -1241 775 -1147 \nL 775 -588 \nQ 1028 -725 1275 -790 \nQ 1522 -856 1778 -856 \nQ 2344 -856 2625 -561 \nQ 2906 -266 2906 331 \nL 2906 616 \nQ 2728 306 2450 153 \nQ 2172 0 1784 0 \nQ 1141 0 747 490 \nQ 353 981 353 1791 \nQ 353 2603 747 3093 \nQ 1141 3584 1784 3584 \nQ 2172 3584 2450 3431 \nQ 2728 3278 2906 2969 \nL 2906 3500 \nL 3481 3500 \nL 3481 434 \nz\n\" transform=\"scale(0.015625)\"/>\n     </defs>\n     <use xlink:href=\"#DejaVuSans-36\"/>\n     <use xlink:href=\"#DejaVuSans-57\" transform=\"translate(63.484375 0)\"/>\n     <use xlink:href=\"#DejaVuSans-55\" transform=\"translate(102.6875 0)\"/>\n     <use xlink:href=\"#DejaVuSans-4c\" transform=\"translate(143.796875 0)\"/>\n     <use xlink:href=\"#DejaVuSans-51\" transform=\"translate(171.578125 0)\"/>\n     <use xlink:href=\"#DejaVuSans-4a\" transform=\"translate(234.953125 0)\"/>\n    </g>\n   </g>\n  </g>\n </g>\n <defs>\n  <clipPath id=\"p3775a2eae4\">\n   <rect x=\"7.2\" y=\"7.2\" width=\"482.4\" height=\"192.96\"/>\n  </clipPath>\n </defs>\n</svg>\n"
+      },
+      "correctAnswer": "By treating the two boxes as a single system of mass (m₁ + m₂), the acceleration is a = F/(m₁ + m_{2)}.",
+      "explanation": "When analyzing the connected boxes as a single system, internal tension forces cancel out. The total mass is (m₁ + m₂). Applying Newton's second law, Fₙₑₜ = mₜₒₜₐₗ × a, yielding a = F/(m₁ + m_{2)}.",
+      "answer": "By treating the two boxes as a single system of mass (m₁ + m₂), the acceleration is a = F/(m₁ + m_{2)}."
     },
     {
       "id": "q10",
-      "type": "mcq",
-      "category": "Civics - Democracy",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 4,
       "difficulty": "hard",
-      "question": "Which of the following structures is true for a Parliamentary Democracy?",
-      "tag": "Democracy Types",
-      "hint": "Look at the relationship between the executive and the legislature.",
-      "options": [
-        {
-          "text": "The executive works independently of the legislature.",
-          "explanation": "Incorrect. This describes a Presidential democracy[cite: 1]."
-        },
-        {
-          "text": "The members of the executive are also part of the legislature.",
-          "explanation": "Correct. In a parliamentary democracy, the executive is part of the legislature[cite: 1]."
-        },
-        {
-          "text": "The president is elected directly by the people.",
-          "explanation": "Incorrect. This describes a Presidential democracy[cite: 1]."
-        },
-        {
-          "text": "The prime minister serves for life.",
-          "explanation": "Incorrect. Ministers work as long as they have the confidence of the legislature[cite: 1]."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "The members of the executive are also part of the legislature.",
-      "explanation": "In a parliamentary democracy, the members of the executive are also part of the legislature and are accountable to it[cite: 1].",
-      "answer": "The members of the executive are also part of the legislature."
+      "question": "A student pushes a stationary block of 25 kg on a horizontal floor with a constant force of 55 N in the forward direction. The maximum force of friction opposing this motion is 50 N. Determine the displacement of the block in 2 seconds.",
+      "passageId": "",
+      "tag": "Kinematics and Force",
+      "hint": "Example 6.5",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The displacement of the block is 0.4 m in the forward direction.",
+      "explanation": "Net force Fₙₑₜ = 55 N - 50 N = 5 N. Acceleration a = F/m = 5/25 = 0.2 m/s². Using s = ut + 1/2at², where u = 0, t = 2 s: s = 0 + 1/2(0.2)(2)² = 0.4 m.",
+      "answer": "The displacement of the block is 0.4 m in the forward direction."
     },
     {
       "id": "q11",
-      "type": "mcq",
-      "category": "Civics - History",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Who authored the 12th century CE text Rājataranginī?",
-      "tag": "History",
-      "hint": "He was a Kashmiri scholar.",
-      "options": [
-        {
-          "text": "Kautilya",
-          "explanation": "Incorrect. He authored Arthaśhāstra[cite: 1]."
-        },
-        {
-          "text": "Bhishma",
-          "explanation": "Incorrect. Bhishma's teachings are in the Mahābhārata[cite: 1]."
-        },
-        {
-          "text": "Kalhaņa",
-          "explanation": "Correct. Kalhaņa wrote the Rājataranginī[cite: 1]."
-        },
-        {
-          "text": "Chandrāpīda",
-          "explanation": "Incorrect. He was a king mentioned in the text, not the author[cite: 1]."
-        }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "Kalhaņa",
-      "explanation": "The Rājataranginī was authored by the Kashmiri scholar Kalhaņa in the 12th century CE[cite: 1].",
-      "answer": "Kalhaņa"
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 4,
+      "difficulty": "hard",
+      "question": "A 0.1 kg bullet is fired from a 5 kg gun with a force of 2 N, causing the gun to recoil. Calculate the magnitudes of the initial accelerations of both the bullet and the gun.",
+      "passageId": "",
+      "tag": "Newton's Third Law",
+      "hint": "Example 6.8",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "Acceleration of the bullet is 20 m/s². Acceleration of the gun is 0.4 m/s².",
+      "explanation": "By Newton's third law, the recoil force on the gun is also 2 N. For the bullet: a_b = \\frac{2 N}{0.1 kg} = 20 m/s². For the gun: a_g = \\frac{2 N}{5 kg} = 0.4 m/s². Though forces are equal, accelerations differ due to different masses.",
+      "answer": "Acceleration of the bullet is 20 m/s². Acceleration of the gun is 0.4 m/s²."
     },
     {
       "id": "q12",
-      "type": "mcq",
-      "category": "Civics - Democracy",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "In India, what is the Lower House of the legislature called?",
-      "tag": "Legislature",
-      "hint": "It is typically more powerful than the Upper House.",
-      "options": [
-        {
-          "text": "Rajya Sabha",
-          "explanation": "Incorrect. This is the Upper House[cite: 1]."
-        },
-        {
-          "text": "Senate",
-          "explanation": "Incorrect. This is the Upper House in the USA[cite: 1]."
-        },
-        {
-          "text": "Lok Sabha",
-          "explanation": "Correct. The Lower House in India is the Lok Sabha[cite: 1]."
-        },
-        {
-          "text": "National Assembly",
-          "explanation": "Incorrect. This is the single house in South Korea[cite: 1]."
-        }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "Lok Sabha",
-      "explanation": "In India, the Lower House is called the Lok Sabha, and the Upper House is called the Rajya Sabha[cite: 1].",
-      "answer": "Lok Sabha"
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "A weightlifter holds a barbell steady. The bar itself is 10 kg, and there is a 10 kg mass on each side. Taking g = 9.8 m/s², calculate the total gravitational force acting on the barbell and the upward force the weightlifter must apply to keep it steady.",
+      "passageId": "",
+      "tag": "Gravitational Force",
+      "hint": "Example 6.4",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The gravitational force is 294 N downwards. The weightlifter applies 294 N upwards.",
+      "explanation": "Total mass m = 10 kg (bar) + 10 kg + 10 kg = 30 kg. Weight F = mg = 30 × 9.8 = 294 N downwards. To hold it steady (balanced forces), the weightlifter must apply an equal force of 294 N upwards.",
+      "answer": "The gravitational force is 294 N downwards. The weightlifter applies 294 N upwards."
     },
     {
       "id": "q13",
-      "type": "mcq",
-      "category": "Civics - Government",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Which principle ensures that the three organs of government work independently and do not interfere with each other?",
-      "tag": "Governance",
-      "hint": "It involves dividing authority.",
-      "options": [
-        {
-          "text": "Universal adult franchise",
-          "explanation": "Incorrect. This grants citizens the right to vote[cite: 1]."
-        },
-        {
-          "text": "Accountability",
-          "explanation": "Incorrect. This means the government is answerable to the people[cite: 1]."
-        },
-        {
-          "text": "Separation of Power",
-          "explanation": "Correct. This principle ensures independent functioning of the Legislature, Executive, and Judiciary[cite: 1]."
-        },
-        {
-          "text": "Sovereignty",
-          "explanation": "Incorrect. This indicates independent power from external influence[cite: 1]."
-        }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "Separation of Power",
-      "explanation": "Separation of Power means that the Legislature, Executive, and Judiciary work independently without interference[cite: 1].",
-      "answer": "Separation of Power"
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 4,
+      "difficulty": "hard",
+      "question": "A sports car of mass 1500 kg accelerates uniformly from rest to 10 m/s in 5 s. Calculate the net force acting on the car during this time.",
+      "passageId": "",
+      "tag": "Velocity-Time Graph",
+      "hint": "Example 6.6",
+      "diagram": {
+        "hasDiagram": true,
+        "description": "Velocity-time graph accelerating from 0 to 10 m/s in 5s.",
+        "code": "import matplotlib.pyplot as plt\nimport numpy as np\nfig, ax = plt.subplots(figsize=(5, 4))\nax.set_xlim(0, 6)\nax.set_ylim(0, 12)\nax.plot([0, 5], [0, 10], color='#3B82F6', linewidth=2)\nax.set_xlabel('Time (s)', fontsize=12)\nax.set_ylabel('Velocity (m/s)', fontsize=12)\nax.grid(True, linestyle='--')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')",
+        "svg": "<svg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"352.264375pt\" height=\"280.558125pt\" viewBox=\"0 0 352.264375 280.558125\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n <metadata>\n  <rdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n   <cc:Work>\n    <dc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/>\n    <dc:date>2026-08-06T08:21:52.092603</dc:date>\n    <dc:format>image/svg+xml</dc:format>\n    <dc:creator>\n     <cc:Agent>\n      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>\n     </cc:Agent>\n    </dc:creator>\n   </cc:Work>\n  </rdf:RDF>\n </metadata>\n <defs>\n  <style type=\"text/css\">*{stroke-linejoin: round; stroke-linecap: butt}</style>\n </defs>\n <g id=\"figure_1\">\n  <g id=\"patch_1\">\n   <path d=\"M 0 280.558125 \nL 352.264375 280.558125 \nL 352.264375 0 \nL 0 0 \nz\n\" style=\"fill: #ffffff\"/>\n  </g>\n  <g id=\"axes_1\">\n   <g id=\"patch_2\">\n    <path d=\"M 42.925938 240.357188 \nL 341.883125 240.357188 \nL 341.883125 10.998828 \nL 42.925938 10.998828 \nz\n\" style=\"fill: #ffffff\"/>\n   </g>\n   <g id=\"matplotlib.axis_1\">\n    <g id=\"xtick_1\">\n     <g id=\"line2d_1\">\n      <path d=\"M 42.925938 240.357188 \nL 42.925938 10.998828 \n\" clip-path=\"url(#pf15cb395ff)\" style=\"fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-width: 0.8\"/>\n     </g>\n     <g id=\"line2d_2\">\n      <defs>\n       <path id=\"m907870ae9e\" d=\"M 0 0 \nL 0 3.5 \n\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </defs>\n      <g>\n       <use xlink:href=\"#m907870ae9e\" x=\"42.925938\" y=\"240.357188\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_1\">\n      <!-- 0 -->\n      <g transform=\"translate(39.744688 254.954844) scale(0.1 -0.1)\">\n       <defs>\n        <path id=\"DejaVuSans-13\" d=\"M 2034 4250 \nQ 1547 4250 1301 3770 \nQ 1056 3291 1056 2328 \nQ 1056 1369 1301 889 \nQ 1547 409 2034 409 \nQ 2525 409 2770 889 \nQ 3016 1369 3016 2328 \nQ 3016 3291 2770 3770 \nQ 2525 4250 2034 4250 \nz\nM 2034 4750 \nQ 2819 4750 3233 4129 \nQ 3647 3509 3647 2328 \nQ 3647 1150 3233 529 \nQ 2819 -91 2034 -91 \nQ 1250 -91 836 529 \nQ 422 1150 422 2328 \nQ 422 3509 836 4129 \nQ 1250 4750 2034 4750 \nz\n\" transform=\"scale(0.015625)\"/>\n       </defs>\n       <use xlink:href=\"#DejaVuSans-13\"/>\n      </g>\n     </g>\n    </g>\n    <g id=\"xtick_2\">\n     <g id=\"line2d_3\">\n      <path d=\"M 92.752135 240.357188 \nL 92.752135 10.998828 \n\" clip-path=\"url(#pf15cb395ff)\" style=\"fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-width: 0.8\"/>\n     </g>\n     <g id=\"line2d_4\">\n      <g>\n       <use xlink:href=\"#m907870ae9e\" x=\"92.752135\" y=\"240.357188\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_2\">\n      <!-- 1 -->\n      <g transform=\"translate(89.570885 254.954844) scale(0.1 -0.1)\">\n       <defs>\n        <path id=\"DejaVuSans-14\" d=\"M 794 531 \nL 1825 531 \nL 1825 4091 \nL 703 3866 \nL 703 4441 \nL 1819 4666 \nL 2450 4666 \nL 2450 531 \nL 3481 531 \nL 3481 0 \nL 794 0 \nL 794 531 \nz\n\" transform=\"scale(0.015625)\"/>\n       </defs>\n       <use xlink:href=\"#DejaVuSans-14\"/>\n      </g>\n     </g>\n    </g>\n    <g id=\"xtick_3\">\n     <g id=\"line2d_5\">\n      <path d=\"M 142.578333 240.357188 \nL 142.578333 10.998828 \n\" clip-path=\"url(#pf15cb395ff)\" style=\"fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-width: 0.8\"/>\n     </g>\n     <g id=\"line2d_6\">\n      <g>\n       <use xlink:href=\"#m907870ae9e\" x=\"142.578333\" y=\"240.357188\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_3\">\n      <!-- 2 -->\n      <g transform=\"translate(139.397083 254.954844) scale(0.1 -0.1)\">\n       <defs>\n        <path id=\"DejaVuSans-15\" d=\"M 1228 531 \nL 3431 531 \nL 3431 0 \nL 469 0 \nL 469 531 \nQ 828 903 1448 1529 \nQ 2069 2156 2228 2338 \nQ 2531 2678 2651 2914 \nQ 2772 3150 2772 3378 \nQ 2772 3750 2511 3984 \nQ 2250 4219 1831 4219 \nQ 1534 4219 1204 4116 \nQ 875 4013 500 3803 \nL 500 4441 \nQ 881 4594 1212 4672 \nQ 1544 4750 1819 4750 \nQ 2544 4750 2975 4387 \nQ 3406 4025 3406 3419 \nQ 3406 3131 3298 2873 \nQ 3191 2616 2906 2266 \nQ 2828 2175 2409 1742 \nQ 1991 1309 1228 531 \nz\n\" transform=\"scale(0.015625)\"/>\n       </defs>\n       <use xlink:href=\"#DejaVuSans-15\"/>\n      </g>\n     </g>\n    </g>\n    <g id=\"xtick_4\">\n     <g id=\"line2d_7\">\n      <path d=\"M 192.404531 240.357188 \nL 192.404531 10.998828 \n\" clip-path=\"url(#pf15cb395ff)\" style=\"fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-width: 0.8\"/>\n     </g>\n     <g id=\"line2d_8\">\n      <g>\n       <use xlink:href=\"#m907870ae9e\" x=\"192.404531\" y=\"240.357188\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_4\">\n      <!-- 3 -->\n      <g transform=\"translate(189.223281 254.954844) scale(0.1 -0.1)\">\n       <defs>\n        <path id=\"DejaVuSans-16\" d=\"M 2597 2516 \nQ 3050 2419 3304 2112 \nQ 3559 1806 3559 1356 \nQ 3559 666 3084 287 \nQ 2609 -91 1734 -91 \nQ 1441 -91 1130 -33 \nQ 819 25 488 141 \nL 488 750 \nQ 750 597 1062 519 \nQ 1375 441 1716 441 \nQ 2309 441 2620 675 \nQ 2931 909 2931 1356 \nQ 2931 1769 2642 2001 \nQ 2353 2234 1838 2234 \nL 1294 2234 \nL 1294 2753 \nL 1863 2753 \nQ 2328 2753 2575 2939 \nQ 2822 3125 2822 3475 \nQ 2822 3834 2567 4026 \nQ 2313 4219 1838 4219 \nQ 1578 4219 1281 4162 \nQ 984 4106 628 3988 \nL 628 4550 \nQ 988 4650 1302 4700 \nQ 1616 4750 1894 4750 \nQ 2613 4750 3031 4423 \nQ 3450 4097 3450 3541 \nQ 3450 3153 3228 2886 \nQ 3006 2619 2597 2516 \nz\n\" transform=\"scale(0.015625)\"/>\n       </defs>\n       <use xlink:href=\"#DejaVuSans-16\"/>\n      </g>\n     </g>\n    </g>\n    <g id=\"xtick_5\">\n     <g id=\"line2d_9\">\n      <path d=\"M 242.230729 240.357188 \nL 242.230729 10.998828 \n\" clip-path=\"url(#pf15cb395ff)\" style=\"fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-width: 0.8\"/>\n     </g>\n     <g id=\"line2d_10\">\n      <g>\n       <use xlink:href=\"#m907870ae9e\" x=\"242.230729\" y=\"240.357188\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_5\">\n      <!-- 4 -->\n      <g transform=\"translate(239.049479 254.954844) scale(0.1 -0.1)\">\n       <defs>\n        <path id=\"DejaVuSans-17\" d=\"M 2419 4116 \nL 825 1625 \nL 2419 1625 \nL 2419 4116 \nz\nM 2253 4666 \nL 3047 4666 \nL 3047 1625 \nL 3713 1625 \nL 3713 1100 \nL 3047 1100 \nL 3047 0 \nL 2419 0 \nL 2419 1100 \nL 313 1100 \nL 313 1709 \nL 2253 4666 \nz\n\" transform=\"scale(0.015625)\"/>\n       </defs>\n       <use xlink:href=\"#DejaVuSans-17\"/>\n      </g>\n     </g>\n    </g>\n    <g id=\"xtick_6\">\n     <g id=\"line2d_11\">\n      <path d=\"M 292.056927 240.357188 \nL 292.056927 10.998828 \n\" clip-path=\"url(#pf15cb395ff)\" style=\"fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-width: 0.8\"/>\n     </g>\n     <g id=\"line2d_12\">\n      <g>\n       <use xlink:href=\"#m907870ae9e\" x=\"292.056927\" y=\"240.357188\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_6\">\n      <!-- 5 -->\n      <g transform=\"translate(288.875677 254.954844) scale(0.1 -0.1)\">\n       <defs>\n        <path id=\"DejaVuSans-18\" d=\"M 691 4666 \nL 3169 4666 \nL 3169 4134 \nL 1269 4134 \nL 1269 2991 \nQ 1406 3038 1543 3061 \nQ 1681 3084 1819 3084 \nQ 2600 3084 3056 2656 \nQ 3513 2228 3513 1497 \nQ 3513 744 3044 326 \nQ 2575 -91 1722 -91 \nQ 1428 -91 1123 -41 \nQ 819 9 494 109 \nL 494 744 \nQ 775 591 1075 516 \nQ 1375 441 1709 441 \nQ 2250 441 2565 725 \nQ 2881 1009 2881 1497 \nQ 2881 1984 2565 2268 \nQ 2250 2553 1709 2553 \nQ 1456 2553 1204 2497 \nQ 953 2441 691 2322 \nL 691 4666 \nz\n\" transform=\"scale(0.015625)\"/>\n       </defs>\n       <use xlink:href=\"#DejaVuSans-18\"/>\n      </g>\n     </g>\n    </g>\n    <g id=\"xtick_7\">\n     <g id=\"line2d_13\">\n      <path d=\"M 341.883125 240.357188 \nL 341.883125 10.998828 \n\" clip-path=\"url(#pf15cb395ff)\" style=\"fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-width: 0.8\"/>\n     </g>\n     <g id=\"line2d_14\">\n      <g>\n       <use xlink:href=\"#m907870ae9e\" x=\"341.883125\" y=\"240.357188\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_7\">\n      <!-- 6 -->\n      <g transform=\"translate(338.701875 254.954844) scale(0.1 -0.1)\">\n       <defs>\n        <path id=\"DejaVuSans-19\" d=\"M 2113 2584 \nQ 1688 2584 1439 2293 \nQ 1191 2003 1191 1497 \nQ 1191 994 1439 701 \nQ 1688 409 2113 409 \nQ 2538 409 2786 701 \nQ 3034 994 3034 1497 \nQ 3034 2003 2786 2293 \nQ 2538 2584 2113 2584 \nz\nM 3366 4563 \nL 3366 3988 \nQ 3128 4100 2886 4159 \nQ 2644 4219 2406 4219 \nQ 1781 4219 1451 3797 \nQ 1122 3375 1075 2522 \nQ 1259 2794 1537 2939 \nQ 1816 3084 2150 3084 \nQ 2853 3084 3261 2657 \nQ 3669 2231 3669 1497 \nQ 3669 778 3244 343 \nQ 2819 -91 2113 -91 \nQ 1303 -91 875 529 \nQ 447 1150 447 2328 \nQ 447 3434 972 4092 \nQ 1497 4750 2381 4750 \nQ 2619 4750 2861 4703 \nQ 3103 4656 3366 4563 \nz\n\" transform=\"scale(0.015625)\"/>\n       </defs>\n       <use xlink:href=\"#DejaVuSans-19\"/>\n      </g>\n     </g>\n    </g>\n    <g id=\"text_8\">\n     <!-- Time (s) -->\n     <g transform=\"translate(168.007031 270.475313) scale(0.12 -0.12)\">\n      <defs>\n       <path id=\"DejaVuSans-37\" d=\"M -19 4666 \nL 3928 4666 \nL 3928 4134 \nL 2272 4134 \nL 2272 0 \nL 1638 0 \nL 1638 4134 \nL -19 4134 \nL -19 4666 \nz\n\" transform=\"scale(0.015625)\"/>\n       <path id=\"DejaVuSans-4c\" d=\"M 603 3500 \nL 1178 3500 \nL 1178 0 \nL 603 0 \nL 603 3500 \nz\nM 603 4863 \nL 1178 4863 \nL 1178 4134 \nL 603 4134 \nL 603 4863 \nz\n\" transform=\"scale(0.015625)\"/>\n       <path id=\"DejaVuSans-50\" d=\"M 3328 2828 \nQ 3544 3216 3844 3400 \nQ 4144 3584 4550 3584 \nQ 5097 3584 5394 3201 \nQ 5691 2819 5691 2113 \nL 5691 0 \nL 5113 0 \nL 5113 2094 \nQ 5113 2597 4934 2840 \nQ 4756 3084 4391 3084 \nQ 3944 3084 3684 2787 \nQ 3425 2491 3425 1978 \nL 3425 0 \nL 2847 0 \nL 2847 2094 \nQ 2847 2600 2669 2842 \nQ 2491 3084 2119 3084 \nQ 1678 3084 1418 2786 \nQ 1159 2488 1159 1978 \nL 1159 0 \nL 581 0 \nL 581 3500 \nL 1159 3500 \nL 1159 2956 \nQ 1356 3278 1631 3431 \nQ 1906 3584 2284 3584 \nQ 2666 3584 2933 3390 \nQ 3200 3197 3328 2828 \nz\n\" transform=\"scale(0.015625)\"/>\n       <path id=\"DejaVuSans-48\" d=\"M 3597 1894 \nL 3597 1613 \nL 953 1613 \nQ 991 1019 1311 708 \nQ 1631 397 2203 397 \nQ 2534 397 2845 478 \nQ 3156 559 3463 722 \nL 3463 178 \nQ 3153 47 2828 -22 \nQ 2503 -91 2169 -91 \nQ 1331 -91 842 396 \nQ 353 884 353 1716 \nQ 353 2575 817 3079 \nQ 1281 3584 2069 3584 \nQ 2775 3584 3186 3129 \nQ 3597 2675 3597 1894 \nz\nM 3022 2063 \nQ 3016 2534 2758 2815 \nQ 2500 3097 2075 3097 \nQ 1594 3097 1305 2825 \nQ 1016 2553 972 2059 \nL 3022 2063 \nz\n\" transform=\"scale(0.015625)\"/>\n       <path id=\"DejaVuSans-3\" transform=\"scale(0.015625)\"/>\n       <path id=\"DejaVuSans-b\" d=\"M 1984 4856 \nQ 1566 4138 1362 3434 \nQ 1159 2731 1159 2009 \nQ 1159 1288 1364 580 \nQ 1569 -128 1984 -844 \nL 1484 -844 \nQ 1016 -109 783 600 \nQ 550 1309 550 2009 \nQ 550 2706 781 3412 \nQ 1013 4119 1484 4856 \nL 1984 4856 \nz\n\" transform=\"scale(0.015625)\"/>\n       <path id=\"DejaVuSans-56\" d=\"M 2834 3397 \nL 2834 2853 \nQ 2591 2978 2328 3040 \nQ 2066 3103 1784 3103 \nQ 1356 3103 1142 2972 \nQ 928 2841 928 2578 \nQ 928 2378 1081 2264 \nQ 1234 2150 1697 2047 \nL 1894 2003 \nQ 2506 1872 2764 1633 \nQ 3022 1394 3022 966 \nQ 3022 478 2636 193 \nQ 2250 -91 1575 -91 \nQ 1294 -91 989 -36 \nQ 684 19 347 128 \nL 347 722 \nQ 666 556 975 473 \nQ 1284 391 1588 391 \nQ 1994 391 2212 530 \nQ 2431 669 2431 922 \nQ 2431 1156 2273 1281 \nQ 2116 1406 1581 1522 \nL 1381 1569 \nQ 847 1681 609 1914 \nQ 372 2147 372 2553 \nQ 372 3047 722 3315 \nQ 1072 3584 1716 3584 \nQ 2034 3584 2315 3537 \nQ 2597 3491 2834 3397 \nz\n\" transform=\"scale(0.015625)\"/>\n       <path id=\"DejaVuSans-c\" d=\"M 513 4856 \nL 1013 4856 \nQ 1481 4119 1714 3412 \nQ 1947 2706 1947 2009 \nQ 1947 1309 1714 600 \nQ 1481 -109 1013 -844 \nL 513 -844 \nQ 928 -128 1133 580 \nQ 1338 1288 1338 2009 \nQ 1338 2731 1133 3434 \nQ 928 4138 513 4856 \nz\n\" transform=\"scale(0.015625)\"/>\n      </defs>\n      <use xlink:href=\"#DejaVuSans-37\"/>\n      <use xlink:href=\"#DejaVuSans-4c\" transform=\"translate(58 0)\"/>\n      <use xlink:href=\"#DejaVuSans-50\" transform=\"translate(85.78125 0)\"/>\n      <use xlink:href=\"#DejaVuSans-48\" transform=\"translate(183.1875 0)\"/>\n      <use xlink:href=\"#DejaVuSans-3\" transform=\"translate(244.71875 0)\"/>\n      <use xlink:href=\"#DejaVuSans-b\" transform=\"translate(276.5 0)\"/>\n      <use xlink:href=\"#DejaVuSans-56\" transform=\"translate(315.515625 0)\"/>\n      <use xlink:href=\"#DejaVuSans-c\" transform=\"translate(367.609375 0)\"/>\n     </g>\n    </g>\n   </g>\n   <g id=\"matplotlib.axis_2\">\n    <g id=\"ytick_1\">\n     <g id=\"line2d_15\">\n      <path d=\"M 42.925938 240.357188 \nL 341.883125 240.357188 \n\" clip-path=\"url(#pf15cb395ff)\" style=\"fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-width: 0.8\"/>\n     </g>\n     <g id=\"line2d_16\">\n      <defs>\n       <path id=\"m22eaf8d21f\" d=\"M 0 0 \nL -3.5 0 \n\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </defs>\n      <g>\n       <use xlink:href=\"#m22eaf8d21f\" x=\"42.925938\" y=\"240.357188\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_9\">\n      <!-- 0 -->\n      <g transform=\"translate(29.563438 244.156016) scale(0.1 -0.1)\">\n       <use xlink:href=\"#DejaVuSans-13\"/>\n      </g>\n     </g>\n    </g>\n    <g id=\"ytick_2\">\n     <g id=\"line2d_17\">\n      <path d=\"M 42.925938 202.130794 \nL 341.883125 202.130794 \n\" clip-path=\"url(#pf15cb395ff)\" style=\"fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-width: 0.8\"/>\n     </g>\n     <g id=\"line2d_18\">\n      <g>\n       <use xlink:href=\"#m22eaf8d21f\" x=\"42.925938\" y=\"202.130794\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_10\">\n      <!-- 2 -->\n      <g transform=\"translate(29.563438 205.929622) scale(0.1 -0.1)\">\n       <use xlink:href=\"#DejaVuSans-15\"/>\n      </g>\n     </g>\n    </g>\n    <g id=\"ytick_3\">\n     <g id=\"line2d_19\">\n      <path d=\"M 42.925938 163.904401 \nL 341.883125 163.904401 \n\" clip-path=\"url(#pf15cb395ff)\" style=\"fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-width: 0.8\"/>\n     </g>\n     <g id=\"line2d_20\">\n      <g>\n       <use xlink:href=\"#m22eaf8d21f\" x=\"42.925938\" y=\"163.904401\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_11\">\n      <!-- 4 -->\n      <g transform=\"translate(29.563438 167.703229) scale(0.1 -0.1)\">\n       <use xlink:href=\"#DejaVuSans-17\"/>\n      </g>\n     </g>\n    </g>\n    <g id=\"ytick_4\">\n     <g id=\"line2d_21\">\n      <path d=\"M 42.925938 125.678008 \nL 341.883125 125.678008 \n\" clip-path=\"url(#pf15cb395ff)\" style=\"fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-width: 0.8\"/>\n     </g>\n     <g id=\"line2d_22\">\n      <g>\n       <use xlink:href=\"#m22eaf8d21f\" x=\"42.925938\" y=\"125.678008\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_12\">\n      <!-- 6 -->\n      <g transform=\"translate(29.563438 129.476836) scale(0.1 -0.1)\">\n       <use xlink:href=\"#DejaVuSans-19\"/>\n      </g>\n     </g>\n    </g>\n    <g id=\"ytick_5\">\n     <g id=\"line2d_23\">\n      <path d=\"M 42.925938 87.451615 \nL 341.883125 87.451615 \n\" clip-path=\"url(#pf15cb395ff)\" style=\"fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-width: 0.8\"/>\n     </g>\n     <g id=\"line2d_24\">\n      <g>\n       <use xlink:href=\"#m22eaf8d21f\" x=\"42.925938\" y=\"87.451615\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_13\">\n      <!-- 8 -->\n      <g transform=\"translate(29.563438 91.250443) scale(0.1 -0.1)\">\n       <defs>\n        <path id=\"DejaVuSans-1b\" d=\"M 2034 2216 \nQ 1584 2216 1326 1975 \nQ 1069 1734 1069 1313 \nQ 1069 891 1326 650 \nQ 1584 409 2034 409 \nQ 2484 409 2743 651 \nQ 3003 894 3003 1313 \nQ 3003 1734 2745 1975 \nQ 2488 2216 2034 2216 \nz\nM 1403 2484 \nQ 997 2584 770 2862 \nQ 544 3141 544 3541 \nQ 544 4100 942 4425 \nQ 1341 4750 2034 4750 \nQ 2731 4750 3128 4425 \nQ 3525 4100 3525 3541 \nQ 3525 3141 3298 2862 \nQ 3072 2584 2669 2484 \nQ 3125 2378 3379 2068 \nQ 3634 1759 3634 1313 \nQ 3634 634 3220 271 \nQ 2806 -91 2034 -91 \nQ 1263 -91 848 271 \nQ 434 634 434 1313 \nQ 434 1759 690 2068 \nQ 947 2378 1403 2484 \nz\nM 1172 3481 \nQ 1172 3119 1398 2916 \nQ 1625 2713 2034 2713 \nQ 2441 2713 2670 2916 \nQ 2900 3119 2900 3481 \nQ 2900 3844 2670 4047 \nQ 2441 4250 2034 4250 \nQ 1625 4250 1398 4047 \nQ 1172 3844 1172 3481 \nz\n\" transform=\"scale(0.015625)\"/>\n       </defs>\n       <use xlink:href=\"#DejaVuSans-1b\"/>\n      </g>\n     </g>\n    </g>\n    <g id=\"ytick_6\">\n     <g id=\"line2d_25\">\n      <path d=\"M 42.925938 49.225221 \nL 341.883125 49.225221 \n\" clip-path=\"url(#pf15cb395ff)\" style=\"fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-width: 0.8\"/>\n     </g>\n     <g id=\"line2d_26\">\n      <g>\n       <use xlink:href=\"#m22eaf8d21f\" x=\"42.925938\" y=\"49.225221\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_14\">\n      <!-- 10 -->\n      <g transform=\"translate(23.200938 53.024049) scale(0.1 -0.1)\">\n       <use xlink:href=\"#DejaVuSans-14\"/>\n       <use xlink:href=\"#DejaVuSans-13\" transform=\"translate(63.625 0)\"/>\n      </g>\n     </g>\n    </g>\n    <g id=\"ytick_7\">\n     <g id=\"line2d_27\">\n      <path d=\"M 42.925938 10.998828 \nL 341.883125 10.998828 \n\" clip-path=\"url(#pf15cb395ff)\" style=\"fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-width: 0.8\"/>\n     </g>\n     <g id=\"line2d_28\">\n      <g>\n       <use xlink:href=\"#m22eaf8d21f\" x=\"42.925938\" y=\"10.998828\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_15\">\n      <!-- 12 -->\n      <g transform=\"translate(23.200938 14.797656) scale(0.1 -0.1)\">\n       <use xlink:href=\"#DejaVuSans-14\"/>\n       <use xlink:href=\"#DejaVuSans-15\" transform=\"translate(63.625 0)\"/>\n      </g>\n     </g>\n    </g>\n    <g id=\"text_16\">\n     <!-- Velocity (m/s) -->\n     <g transform=\"translate(16.318125 166.79582) rotate(-90) scale(0.12 -0.12)\">\n      <defs>\n       <path id=\"DejaVuSans-39\" d=\"M 1831 0 \nL 50 4666 \nL 709 4666 \nL 2188 738 \nL 3669 4666 \nL 4325 4666 \nL 2547 0 \nL 1831 0 \nz\n\" transform=\"scale(0.015625)\"/>\n       <path id=\"DejaVuSans-4f\" d=\"M 603 4863 \nL 1178 4863 \nL 1178 0 \nL 603 0 \nL 603 4863 \nz\n\" transform=\"scale(0.015625)\"/>\n       <path id=\"DejaVuSans-52\" d=\"M 1959 3097 \nQ 1497 3097 1228 2736 \nQ 959 2375 959 1747 \nQ 959 1119 1226 758 \nQ 1494 397 1959 397 \nQ 2419 397 2687 759 \nQ 2956 1122 2956 1747 \nQ 2956 2369 2687 2733 \nQ 2419 3097 1959 3097 \nz\nM 1959 3584 \nQ 2709 3584 3137 3096 \nQ 3566 2609 3566 1747 \nQ 3566 888 3137 398 \nQ 2709 -91 1959 -91 \nQ 1206 -91 779 398 \nQ 353 888 353 1747 \nQ 353 2609 779 3096 \nQ 1206 3584 1959 3584 \nz\n\" transform=\"scale(0.015625)\"/>\n       <path id=\"DejaVuSans-46\" d=\"M 3122 3366 \nL 3122 2828 \nQ 2878 2963 2633 3030 \nQ 2388 3097 2138 3097 \nQ 1578 3097 1268 2742 \nQ 959 2388 959 1747 \nQ 959 1106 1268 751 \nQ 1578 397 2138 397 \nQ 2388 397 2633 464 \nQ 2878 531 3122 666 \nL 3122 134 \nQ 2881 22 2623 -34 \nQ 2366 -91 2075 -91 \nQ 1284 -91 818 406 \nQ 353 903 353 1747 \nQ 353 2603 823 3093 \nQ 1294 3584 2113 3584 \nQ 2378 3584 2631 3529 \nQ 2884 3475 3122 3366 \nz\n\" transform=\"scale(0.015625)\"/>\n       <path id=\"DejaVuSans-57\" d=\"M 1172 4494 \nL 1172 3500 \nL 2356 3500 \nL 2356 3053 \nL 1172 3053 \nL 1172 1153 \nQ 1172 725 1289 603 \nQ 1406 481 1766 481 \nL 2356 481 \nL 2356 0 \nL 1766 0 \nQ 1100 0 847 248 \nQ 594 497 594 1153 \nL 594 3053 \nL 172 3053 \nL 172 3500 \nL 594 3500 \nL 594 4494 \nL 1172 4494 \nz\n\" transform=\"scale(0.015625)\"/>\n       <path id=\"DejaVuSans-5c\" d=\"M 2059 -325 \nQ 1816 -950 1584 -1140 \nQ 1353 -1331 966 -1331 \nL 506 -1331 \nL 506 -850 \nL 844 -850 \nQ 1081 -850 1212 -737 \nQ 1344 -625 1503 -206 \nL 1606 56 \nL 191 3500 \nL 800 3500 \nL 1894 763 \nL 2988 3500 \nL 3597 3500 \nL 2059 -325 \nz\n\" transform=\"scale(0.015625)\"/>\n       <path id=\"DejaVuSans-12\" d=\"M 1625 4666 \nL 2156 4666 \nL 531 -594 \nL 0 -594 \nL 1625 4666 \nz\n\" transform=\"scale(0.015625)\"/>\n      </defs>\n      <use xlink:href=\"#DejaVuSans-39\"/>\n      <use xlink:href=\"#DejaVuSans-48\" transform=\"translate(60.640625 0)\"/>\n      <use xlink:href=\"#DejaVuSans-4f\" transform=\"translate(122.171875 0)\"/>\n      <use xlink:href=\"#DejaVuSans-52\" transform=\"translate(149.953125 0)\"/>\n      <use xlink:href=\"#DejaVuSans-46\" transform=\"translate(211.140625 0)\"/>\n      <use xlink:href=\"#DejaVuSans-4c\" transform=\"translate(266.125 0)\"/>\n      <use xlink:href=\"#DejaVuSans-57\" transform=\"translate(293.90625 0)\"/>\n      <use xlink:href=\"#DejaVuSans-5c\" transform=\"translate(333.109375 0)\"/>\n      <use xlink:href=\"#DejaVuSans-3\" transform=\"translate(392.296875 0)\"/>\n      <use xlink:href=\"#DejaVuSans-b\" transform=\"translate(424.078125 0)\"/>\n      <use xlink:href=\"#DejaVuSans-50\" transform=\"translate(463.09375 0)\"/>\n      <use xlink:href=\"#DejaVuSans-12\" transform=\"translate(560.5 0)\"/>\n      <use xlink:href=\"#DejaVuSans-56\" transform=\"translate(594.1875 0)\"/>\n      <use xlink:href=\"#DejaVuSans-c\" transform=\"translate(646.28125 0)\"/>\n     </g>\n    </g>\n   </g>\n   <g id=\"line2d_29\">\n    <path d=\"M 42.925938 240.357188 \nL 292.056927 49.225221 \n\" clip-path=\"url(#pf15cb395ff)\" style=\"fill: none; stroke: #3b82f6; stroke-width: 2; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_3\">\n    <path d=\"M 42.925938 240.357188 \nL 42.925938 10.998828 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_4\">\n    <path d=\"M 341.883125 240.357188 \nL 341.883125 10.998828 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_5\">\n    <path d=\"M 42.925938 240.357188 \nL 341.883125 240.357188 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_6\">\n    <path d=\"M 42.925938 10.998828 \nL 341.883125 10.998828 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n  </g>\n </g>\n <defs>\n  <clipPath id=\"pf15cb395ff\">\n   <rect x=\"42.925938\" y=\"10.998828\" width=\"298.957187\" height=\"229.358359\"/>\n  </clipPath>\n </defs>\n</svg>\n"
+      },
+      "correctAnswer": "The net force acting on the car is 3000 N.",
+      "explanation": "Acceleration a = v - u/t = 10 - 0/5 = 2 m/s². Force F = ma = 1500 kg × 2 m/s² = 3000 N.",
+      "answer": "The net force acting on the car is 3000 N."
     },
     {
       "id": "q14",
-      "type": "mcq",
-      "category": "Civics - Dictatorship",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 3,
       "difficulty": "medium",
-      "question": "Which leader was responsible for the killing of at least six million Jews during his dictatorship?",
-      "tag": "Dictatorship",
-      "hint": "He was appointed Chancellor of Germany in 1933.",
-      "options": [
-        {
-          "text": "Idi Amin",
-          "explanation": "Incorrect. He was the dictator of Uganda[cite: 1]."
-        },
-        {
-          "text": "Adolf Hitler",
-          "explanation": "Correct. He orchestrated the Holocaust in Germany[cite: 1]."
-        },
-        {
-          "text": "King Chandrāpīda",
-          "explanation": "Incorrect. He was a king who ruled according to dharma[cite: 1]."
-        },
-        {
-          "text": "The Supreme Leader",
-          "explanation": "Incorrect. This is the title in Iran[cite: 1]."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "Adolf Hitler",
-      "explanation": "Adolf Hitler was the dictator of Germany responsible for the Holocaust, which resulted in the killing of at least six million Jews[cite: 1].",
-      "answer": "Adolf Hitler"
+      "question": "When a stretched rubber band is released, it propels a stack of coins forward. Why does the stack of coins eventually come to a rest after losing contact with the rubber band?",
+      "passageId": "",
+      "tag": "Friction",
+      "hint": "Section 6.3: The Force of Friction...",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The force of friction continues to act on the stack of coins in the direction opposite to its motion, gradually bringing it to rest.",
+      "explanation": "Once contact with the rubber band is lost, the forward applied force becomes zero. However, the opposing force of friction between the coins and the surface remains, creating a net negative acceleration that stops the motion.",
+      "answer": "The force of friction continues to act on the stack of coins in the direction opposite to its motion, gradually bringing it to rest."
     },
     {
       "id": "q15",
-      "type": "mcq",
-      "category": "Civics - Governance",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "What is the primary function of the judiciary in a democratic government?",
-      "tag": "Functions",
-      "hint": "It ensures that the rules are adhered to.",
-      "options": [
-        {
-          "text": "Making laws",
-          "explanation": "Incorrect. This is the legislative function[cite: 1]."
-        },
-        {
-          "text": "Implementing laws",
-          "explanation": "Incorrect. This is the executive function[cite: 1]."
-        },
-        {
-          "text": "Ensuring laws are followed and protecting rights",
-          "explanation": "Correct. This is the judicial function[cite: 1]."
-        },
-        {
-          "text": "Managing economic activities",
-          "explanation": "Incorrect. This is an executive/administrative function[cite: 1]."
-        }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "Ensuring laws are followed and protecting rights",
-      "explanation": "The judicial function ensures that the rules are followed, and an independent judiciary protects citizens' fundamental rights[cite: 1].",
-      "answer": "Ensuring laws are followed and protecting rights"
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Using Newton's third law, explain how a canoeist makes a canoe move forward in water.",
+      "passageId": "",
+      "tag": "Newton's Third Law",
+      "hint": "Section 6.6: Newton's Third Law of Motion",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The canoeist pushes the water backwards with the paddle, and the water exerts an equal and opposite force forward on the paddle, propelling the canoe.",
+      "explanation": "The action force is the paddle pushing the water backwards. The reaction force is the water pushing the paddle (and consequently the canoe) forward. These forces act on different objects and do not cancel each other out.",
+      "answer": "The canoeist pushes the water backwards with the paddle, and the water exerts an equal and opposite force forward on the paddle, propelling the canoe."
     },
     {
       "id": "q16",
       "type": "mcq",
-      "category": "Civics - Government",
+      "category": "Work, Energy, and Simple Machines",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "Which ancient Mahājanapada practiced collective decision-making and merit-based leadership?",
-      "tag": "History",
-      "hint": "The Lichchhavi clan was a part of this state.",
+      "difficulty": "easy",
+      "question": "What is the SI unit of work done?",
+      "passageId": "",
+      "tag": "Work",
+      "hint": "Section 7.1: Work Done by a Constant Force",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
       "options": [
         {
-          "text": "Magadha",
-          "explanation": "Incorrect. The text does not mention Magadha for this practice[cite: 1]."
+          "text": "Newton (N)",
+          "explanation": "Incorrect. Newton is the unit of force."
         },
         {
-          "text": "Vajji (or Vriji)",
-          "explanation": "Correct. Vajji, particularly the Lichchhavi clan, was an early republic[cite: 1]."
+          "text": "Joule (J)",
+          "explanation": "Correct. 1 Joule = 1 Newton * 1 metre."
         },
         {
-          "text": "Rome",
-          "explanation": "Incorrect. Rome is in Italy, though it was an ancient republic[cite: 1]."
+          "text": "Watt (W)",
+          "explanation": "Incorrect. Watt is the unit of power."
         },
         {
-          "text": "Chola",
-          "explanation": "Incorrect. The Cholas had village sabhās, but Vajji is the Mahājanapada mentioned[cite: 1]."
+          "text": "Pascal (Pa)",
+          "explanation": "Incorrect. Pascal is the unit of pressure."
         }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Vajji (or Vriji)",
-      "explanation": "In the Vajji (or Vriji) mahājanapada, the Lichchhavi clan practiced collective decision-making as an early republic[cite: 1].",
-      "answer": "Vajji (or Vriji)"
+      "correctAnswer": "Joule (J)",
+      "explanation": "The SI unit of work done is the joule (J), which equals 1 N × 1 m.",
+      "answer": "Joule (J)"
     },
     {
       "id": "q17",
       "type": "mcq",
-      "category": "Civics - Terminology",
+      "category": "Work, Energy, and Simple Machines",
       "marks": 1,
       "difficulty": "easy",
-      "question": "What is the definition of the term 'Subjugate' as provided in the text?",
-      "tag": "Definitions",
-      "hint": "It involves taking control using force.",
+      "question": "The sum of kinetic energy and potential energy of an object is called:",
+      "passageId": "",
+      "tag": "Mechanical Energy",
+      "hint": "Section 7.4.3: Conservation of mechanical energy",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
       "options": [
         {
-          "text": "To judge a case during a dispute",
-          "explanation": "Incorrect. This is 'adjudicate'[cite: 1]."
+          "text": "Thermal energy",
+          "explanation": "Incorrect. Thermal energy is heat."
         },
         {
-          "text": "To take control of people or a place by force",
-          "explanation": "Correct. Subjugate means to take control by using force and making people obey[cite: 1]."
+          "text": "Mechanical energy",
+          "explanation": "Correct. Mechanical energy is the sum of KE and PE."
         },
         {
-          "text": "To inherit a royal position",
-          "explanation": "Incorrect. This refers to a monarch[cite: 1]."
+          "text": "Chemical energy",
+          "explanation": "Incorrect. Chemical energy is stored in bonds."
         },
         {
-          "text": "To draw someone to look foolish",
-          "explanation": "Incorrect. This refers to a caricature[cite: 1]."
+          "text": "Electrical energy",
+          "explanation": "Incorrect. Electrical energy is related to charges."
         }
       ],
       "correctIndex": 1,
-      "correctAnswer": "To take control of people or a place by force",
-      "explanation": "Subjugate means to take control of people or a place by using force and make the people obey[cite: 1].",
-      "answer": "To take control of people or a place by force"
+      "correctAnswer": "Mechanical energy",
+      "explanation": "The sum of the kinetic energy and the potential energy of an object is defined as its mechanical energy.",
+      "answer": "Mechanical energy"
     },
     {
       "id": "q18",
       "type": "mcq",
-      "category": "Civics - Government",
+      "category": "Work, Energy, and Simple Machines",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "According to the story of Shane, which type of government controls the haircut styles and internet access of its citizens?",
-      "tag": "Dictatorship",
-      "hint": "Shane lives in North Korea.",
+      "difficulty": "easy",
+      "question": "Power is defined as the:",
+      "passageId": "",
+      "tag": "Power",
+      "hint": "Section 7.5: Power",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
       "options": [
         {
-          "text": "Democracy",
-          "explanation": "Incorrect. Democracies allow freedom of expression[cite: 1]."
+          "text": "Total work done",
+          "explanation": "Incorrect. This is just energy transferred."
         },
         {
-          "text": "Theocracy",
-          "explanation": "Incorrect. Theocracies are based on religion[cite: 1]."
+          "text": "Rate at which work is done",
+          "explanation": "Correct. Power P = W/t."
         },
         {
-          "text": "Dictatorship",
-          "explanation": "Correct. Dictatorships impose absolute control over citizens' lives, as seen in North Korea[cite: 1]."
+          "text": "Force applied over a distance",
+          "explanation": "Incorrect. This defines work done."
         },
         {
-          "text": "Constitutional Monarchy",
-          "explanation": "Incorrect. This form has democratic elements[cite: 1]."
+          "text": "Capacity to do work",
+          "explanation": "Incorrect. This defines energy."
         }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "Dictatorship",
-      "explanation": "Shane's life in North Korea, where rules govern even haircuts, illustrates the absolute control typical of a dictatorship[cite: 1].",
-      "answer": "Dictatorship"
+      "correctIndex": 1,
+      "correctAnswer": "Rate at which work is done",
+      "explanation": "Power is defined as the rate at which work is done, mathematically represented as P = W/t.",
+      "answer": "Rate at which work is done"
     },
     {
       "id": "q19",
       "type": "mcq",
-      "category": "Civics - Theocracy",
+      "category": "Work, Energy, and Simple Machines",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Which of the following is currently an example of a theocracy?",
-      "tag": "Theocracy",
-      "hint": "Its full name is 'Islamic Republic of...'",
+      "question": "What is the mechanical advantage of a simple fixed pulley used to lift a load?",
+      "passageId": "",
+      "tag": "Simple Machines",
+      "hint": "Section 7.6.1: Pulley",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
       "options": [
         {
-          "text": "South Korea",
-          "explanation": "Incorrect. South Korea is a presidential democracy[cite: 1]."
+          "text": "0",
+          "explanation": "Incorrect. A mechanical advantage of 0 would mean infinite effort is required."
         },
         {
-          "text": "Iran",
-          "explanation": "Correct. Iran is an Islamic Republic with a theocratic system[cite: 1]."
+          "text": "Less than 1",
+          "explanation": "Incorrect. The effort is equal to the load."
         },
         {
-          "text": "Saudi Arabia",
-          "explanation": "Incorrect. Saudi Arabia is an absolute monarchy[cite: 1]."
+          "text": "1",
+          "explanation": "Correct. A fixed pulley only changes the direction of force, so Effort = Load."
         },
         {
-          "text": "Uganda",
-          "explanation": "Incorrect. Uganda was referenced under Idi Amin's dictatorship[cite: 1]."
+          "text": "Greater than 1",
+          "explanation": "Incorrect. A movable pulley system might have MA > 1, but a fixed single pulley has MA = 1."
         }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "Iran",
-      "explanation": "Iran is a theocracy where the constitution is based on the fundamental principles of Islam and ruled by religious leaders[cite: 1].",
-      "answer": "Iran"
+      "correctIndex": 2,
+      "correctAnswer": "1",
+      "explanation": "A fixed pulley only changes the direction of the applied force without changing its magnitude. Thus, load equals effort, making the mechanical advantage 1.",
+      "answer": "1"
     },
     {
       "id": "q20",
-      "type": "mcq",
-      "category": "Civics - Democracy",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "In a democracy, the concept that the government is answerable to the people is known as:",
-      "tag": "Accountability",
-      "hint": "It ensures the government acts responsibly.",
-      "options": [
-        {
-          "text": "Universal adult franchise",
-          "explanation": "Incorrect. This is the right to vote[cite: 1]."
-        },
-        {
-          "text": "Accountability",
-          "explanation": "Correct. It means the government must answer to its citizens[cite: 1]."
-        },
-        {
-          "text": "Separation of power",
-          "explanation": "Incorrect. This refers to independent organs of government[cite: 1]."
-        },
-        {
-          "text": "Sovereignty",
-          "explanation": "Incorrect. This refers to independent power[cite: 1]."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "Accountability",
-      "explanation": "Accountability in democracy means that the government is answerable to the people who elected it[cite: 1].",
-      "answer": "Accountability"
+      "question": "Why is the work done zero when a girl carries a box while walking horizontally?",
+      "passageId": "",
+      "tag": "Work Done",
+      "hint": "Section 7.1.1: When is work done equal to zero?",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The force applied to hold the box acts vertically upward, while the displacement is horizontal. Since they are perpendicular, the work done by the supporting force is zero.",
+      "explanation": "Work is done only when there is a component of displacement in the direction of the force. If force and displacement are perpendicular to each other, no work is done by that specific force.",
+      "answer": "The force applied to hold the box acts vertically upward, while the displacement is horizontal. Since they are perpendicular, the work done by the supporting force is zero."
     },
     {
       "id": "q21",
-      "type": "fill_blank",
-      "category": "Civics - Functions",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 2,
       "difficulty": "easy",
-      "question": "The creation of rules that serve as the framework for running the country is called the ___ function.",
-      "tag": "Legislative",
-      "hint": "This function makes the laws.",
-      "blanks": [
-        "legislative"
-      ],
-      "correctAnswer": "legislative",
-      "explanation": "The creation of rules is called the legislative function; these rules serve as the framework for running the country[cite: 1].",
-      "answer": "legislative"
+      "question": "Name two different forms of energy other than mechanical energy.",
+      "passageId": "",
+      "tag": "Forms of Energy",
+      "hint": "Section 7.3: Forms of Energy",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "Thermal energy and Electrical energy (or Light, Sound, Chemical, Nuclear).",
+      "explanation": "Energy exists in various forms such as thermal (heat), electrical, light, sound, nuclear, and chemical energy, all of which can often be interconverted.",
+      "answer": "Thermal energy and Electrical energy (or Light, Sound, Chemical, Nuclear)."
     },
     {
       "id": "q22",
-      "type": "fill_blank",
-      "category": "Civics - Functions",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "The implementation of rules and the administration of the country according to them is known as the ___ function.",
-      "tag": "Executive",
-      "hint": "This organ enforces the laws.",
-      "blanks": [
-        "executive"
-      ],
-      "correctAnswer": "executive",
-      "explanation": "The implementation of these rules and the administration of the country is known as the executive function[cite: 1].",
-      "answer": "executive"
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "A jet aircraft of mass 15000 kg is moving at a velocity of 70 m/s. Calculate its kinetic energy.",
+      "passageId": "",
+      "tag": "Kinetic Energy",
+      "hint": "Example 7.6",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The kinetic energy is 36750000 J or 3.675 × 10⁷ J.",
+      "explanation": "Kinetic Energy K = 1/2mv² = 1/2 × 15000 × (70)² = 7500 × 4900 = 36750000 J.",
+      "answer": "The kinetic energy is 36750000 J or 3.675 × 10⁷ J."
     },
     {
       "id": "q23",
-      "type": "fill_blank",
-      "category": "Civics - Democracy",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 3,
       "difficulty": "medium",
-      "question": "The system to decide how a democratic government will work can be written down in a book of fundamental rules called the ___.",
-      "tag": "Constitution",
-      "hint": "It limits dictatorial powers.",
-      "blanks": [
-        "constitution"
-      ],
-      "correctAnswer": "constitution",
-      "explanation": "The system to decide how the government will work can be written down in a book of fundamental rules called the 'constitution'[cite: 1].",
-      "answer": "constitution"
+      "question": "A weightlifter lifts a 75 kg mass by 2 m in 5 seconds. Taking g=10 m/s², how much power does she require?",
+      "passageId": "",
+      "tag": "Power",
+      "hint": "Example 7.10",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The power required is 300 W.",
+      "explanation": "Work done W = mgh = 75 × 10 × 2 = 1500 J. Power P = W/t = 1500/5 = 300 W.",
+      "answer": "The power required is 300 W."
     },
     {
       "id": "q24",
-      "type": "fill_blank",
-      "category": "Civics - Democracy",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "In a democracy, the ___ grants every citizen above a certain age the right to vote.",
-      "tag": "Franchise",
-      "hint": "It is a three-word phrase starting with 'Universal'.",
-      "blanks": [
-        "universal adult franchise",
-        "Universal adult franchise"
-      ],
-      "correctAnswer": "universal adult franchise",
-      "explanation": "Universal adult franchise grants every citizen (above a certain age) the right to vote to choose their representative[cite: 1].",
-      "answer": "universal adult franchise"
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 4,
+      "difficulty": "hard",
+      "question": "On a seesaw, a child of mass 15 kg sits 2 m away from the fulcrum. At what distance from the fulcrum should another child of mass 30 kg sit to balance the seesaw?",
+      "passageId": "",
+      "tag": "Lever",
+      "hint": "Example 7.13",
+      "diagram": {
+        "hasDiagram": true,
+        "description": "Seesaw with fulcrum at center. 15kg mass on one side at 2m.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(6, 3))\nax.set_xlim(0, 10)\nax.set_ylim(0, 5)\nax.set_aspect('equal')\nax.axis('off')\ntriangle = patches.Polygon([[4.5, 1], [5.5, 1], [5, 2]], facecolor='#DC2626')\nax.add_patch(triangle)\nax.plot([1, 9], [2, 2], color='black', linewidth=4)\nbox1 = patches.Rectangle((1.5, 2), 1, 1, facecolor='#3B82F6')\nax.add_patch(box1)\nax.text(2, 3.5, '$15\\\\text{ kg}$', ha='center', va='center')\nax.text(3.5, 1.5, '$2\\\\text{ m}$', ha='center', va='center')\nax.text(7, 1.5, '$L = ?$', ha='center', va='center')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')",
+        "svg": "<svg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"403.2pt\" height=\"208.8pt\" viewBox=\"0 0 403.2 208.8\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n <metadata>\n  <rdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n   <cc:Work>\n    <dc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/>\n    <dc:date>2026-08-06T08:21:52.815847</dc:date>\n    <dc:format>image/svg+xml</dc:format>\n    <dc:creator>\n     <cc:Agent>\n      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>\n     </cc:Agent>\n    </dc:creator>\n   </cc:Work>\n  </rdf:RDF>\n </metadata>\n <defs>\n  <style type=\"text/css\">*{stroke-linejoin: round; stroke-linecap: butt}</style>\n </defs>\n <g id=\"figure_1\">\n  <g id=\"patch_1\">\n   <path d=\"M 0 208.8 \nL 403.2 208.8 \nL 403.2 0 \nL 0 0 \nz\n\" style=\"fill: #ffffff\"/>\n  </g>\n  <g id=\"axes_1\">\n   <g id=\"patch_2\">\n    <path d=\"M 182.16 162.72 \nL 221.04 162.72 \nL 201.6 123.84 \nz\n\" clip-path=\"url(#p0bcb6da703)\" style=\"fill: #dc2626\"/>\n   </g>\n   <g id=\"patch_3\">\n    <path d=\"M 65.52 123.84 \nL 104.4 123.84 \nL 104.4 84.96 \nL 65.52 84.96 \nz\n\" clip-path=\"url(#p0bcb6da703)\" style=\"fill: #3b82f6\"/>\n   </g>\n   <g id=\"line2d_1\">\n    <path d=\"M 46.08 123.84 \nL 357.12 123.84 \n\" clip-path=\"url(#p0bcb6da703)\" style=\"fill: none; stroke: #000000; stroke-width: 4; stroke-linecap: square\"/>\n   </g>\n   <g id=\"text_1\">\n    <!-- $15\\text{ kg}$ -->\n    <g transform=\"translate(70.91 68.118828) scale(0.1 -0.1)\">\n     <defs>\n      <path id=\"DejaVuSans-14\" d=\"M 794 531 \nL 1825 531 \nL 1825 4091 \nL 703 3866 \nL 703 4441 \nL 1819 4666 \nL 2450 4666 \nL 2450 531 \nL 3481 531 \nL 3481 0 \nL 794 0 \nL 794 531 \nz\n\" transform=\"scale(0.015625)\"/>\n      <path id=\"DejaVuSans-18\" d=\"M 691 4666 \nL 3169 4666 \nL 3169 4134 \nL 1269 4134 \nL 1269 2991 \nQ 1406 3038 1543 3061 \nQ 1681 3084 1819 3084 \nQ 2600 3084 3056 2656 \nQ 3513 2228 3513 1497 \nQ 3513 744 3044 326 \nQ 2575 -91 1722 -91 \nQ 1428 -91 1123 -41 \nQ 819 9 494 109 \nL 494 744 \nQ 775 591 1075 516 \nQ 1375 441 1709 441 \nQ 2250 441 2565 725 \nQ 2881 1009 2881 1497 \nQ 2881 1984 2565 2268 \nQ 2250 2553 1709 2553 \nQ 1456 2553 1204 2497 \nQ 953 2441 691 2322 \nL 691 4666 \nz\n\" transform=\"scale(0.015625)\"/>\n      <path id=\"DejaVuSans-3\" transform=\"scale(0.015625)\"/>\n      <path id=\"DejaVuSans-4e\" d=\"M 581 4863 \nL 1159 4863 \nL 1159 1991 \nL 2875 3500 \nL 3609 3500 \nL 1753 1863 \nL 3688 0 \nL 2938 0 \nL 1159 1709 \nL 1159 0 \nL 581 0 \nL 581 4863 \nz\n\" transform=\"scale(0.015625)\"/>\n      <path id=\"DejaVuSans-4a\" d=\"M 2906 1791 \nQ 2906 2416 2648 2759 \nQ 2391 3103 1925 3103 \nQ 1463 3103 1205 2759 \nQ 947 2416 947 1791 \nQ 947 1169 1205 825 \nQ 1463 481 1925 481 \nQ 2391 481 2648 825 \nQ 2906 1169 2906 1791 \nz\nM 3481 434 \nQ 3481 -459 3084 -895 \nQ 2688 -1331 1869 -1331 \nQ 1566 -1331 1297 -1286 \nQ 1028 -1241 775 -1147 \nL 775 -588 \nQ 1028 -725 1275 -790 \nQ 1522 -856 1778 -856 \nQ 2344 -856 2625 -561 \nQ 2906 -266 2906 331 \nL 2906 616 \nQ 2728 306 2450 153 \nQ 2172 0 1784 0 \nQ 1141 0 747 490 \nQ 353 981 353 1791 \nQ 353 2603 747 3093 \nQ 1141 3584 1784 3584 \nQ 2172 3584 2450 3431 \nQ 2728 3278 2906 2969 \nL 2906 3500 \nL 3481 3500 \nL 3481 434 \nz\n\" transform=\"scale(0.015625)\"/>\n     </defs>\n     <use xlink:href=\"#DejaVuSans-14\" transform=\"translate(0 0.015625)\"/>\n     <use xlink:href=\"#DejaVuSans-18\" transform=\"translate(63.623047 0.015625)\"/>\n     <use xlink:href=\"#DejaVuSans-3\" transform=\"translate(127.246094 0.015625)\"/>\n     <use xlink:href=\"#DejaVuSans-4e\" transform=\"translate(159.033203 0.015625)\"/>\n     <use xlink:href=\"#DejaVuSans-4a\" transform=\"translate(216.943359 0.015625)\"/>\n    </g>\n   </g>\n   <g id=\"text_2\">\n    <!-- $2\\text{ m}$ -->\n    <g transform=\"translate(133.63 145.877656) scale(0.1 -0.1)\">\n     <defs>\n      <path id=\"DejaVuSans-15\" d=\"M 1228 531 \nL 3431 531 \nL 3431 0 \nL 469 0 \nL 469 531 \nQ 828 903 1448 1529 \nQ 2069 2156 2228 2338 \nQ 2531 2678 2651 2914 \nQ 2772 3150 2772 3378 \nQ 2772 3750 2511 3984 \nQ 2250 4219 1831 4219 \nQ 1534 4219 1204 4116 \nQ 875 4013 500 3803 \nL 500 4441 \nQ 881 4594 1212 4672 \nQ 1544 4750 1819 4750 \nQ 2544 4750 2975 4387 \nQ 3406 4025 3406 3419 \nQ 3406 3131 3298 2873 \nQ 3191 2616 2906 2266 \nQ 2828 2175 2409 1742 \nQ 1991 1309 1228 531 \nz\n\" transform=\"scale(0.015625)\"/>\n      <path id=\"DejaVuSans-50\" d=\"M 3328 2828 \nQ 3544 3216 3844 3400 \nQ 4144 3584 4550 3584 \nQ 5097 3584 5394 3201 \nQ 5691 2819 5691 2113 \nL 5691 0 \nL 5113 0 \nL 5113 2094 \nQ 5113 2597 4934 2840 \nQ 4756 3084 4391 3084 \nQ 3944 3084 3684 2787 \nQ 3425 2491 3425 1978 \nL 3425 0 \nL 2847 0 \nL 2847 2094 \nQ 2847 2600 2669 2842 \nQ 2491 3084 2119 3084 \nQ 1678 3084 1418 2786 \nQ 1159 2488 1159 1978 \nL 1159 0 \nL 581 0 \nL 581 3500 \nL 1159 3500 \nL 1159 2956 \nQ 1356 3278 1631 3431 \nQ 1906 3584 2284 3584 \nQ 2666 3584 2933 3390 \nQ 3200 3197 3328 2828 \nz\n\" transform=\"scale(0.015625)\"/>\n     </defs>\n     <use xlink:href=\"#DejaVuSans-15\" transform=\"translate(0 0.78125)\"/>\n     <use xlink:href=\"#DejaVuSans-3\" transform=\"translate(63.623047 0.78125)\"/>\n     <use xlink:href=\"#DejaVuSans-50\" transform=\"translate(95.410156 0.78125)\"/>\n    </g>\n   </g>\n   <g id=\"text_3\">\n    <!-- $L = ?$ -->\n    <g transform=\"translate(267.76 145.877656) scale(0.1 -0.1)\">\n     <defs>\n      <path id=\"DejaVuSans-Oblique-2f\" d=\"M 1075 4666 \nL 1709 4666 \nL 909 525 \nL 3181 525 \nL 3078 0 \nL 172 0 \nL 1075 4666 \nz\n\" transform=\"scale(0.015625)\"/>\n      <path id=\"DejaVuSans-20\" d=\"M 678 2906 \nL 4684 2906 \nL 4684 2381 \nL 678 2381 \nL 678 2906 \nz\nM 678 1631 \nL 4684 1631 \nL 4684 1100 \nL 678 1100 \nL 678 1631 \nz\n\" transform=\"scale(0.015625)\"/>\n      <path id=\"DejaVuSans-22\" d=\"M 1222 794 \nL 1856 794 \nL 1856 0 \nL 1222 0 \nL 1222 794 \nz\nM 1838 1253 \nL 1241 1253 \nL 1241 1734 \nQ 1241 2050 1328 2253 \nQ 1416 2456 1697 2725 \nL 1978 3003 \nQ 2156 3169 2236 3316 \nQ 2316 3463 2316 3616 \nQ 2316 3894 2111 4066 \nQ 1906 4238 1569 4238 \nQ 1322 4238 1042 4128 \nQ 763 4019 459 3809 \nL 459 4397 \nQ 753 4575 1054 4662 \nQ 1356 4750 1678 4750 \nQ 2253 4750 2601 4447 \nQ 2950 4144 2950 3647 \nQ 2950 3409 2837 3195 \nQ 2725 2981 2444 2713 \nL 2169 2444 \nQ 2022 2297 1961 2214 \nQ 1900 2131 1875 2053 \nQ 1856 1988 1847 1894 \nQ 1838 1800 1838 1638 \nL 1838 1253 \nz\n\" transform=\"scale(0.015625)\"/>\n     </defs>\n     <use xlink:href=\"#DejaVuSans-Oblique-2f\" transform=\"translate(0 0.78125)\"/>\n     <use xlink:href=\"#DejaVuSans-20\" transform=\"translate(75.195312 0.78125)\"/>\n     <use xlink:href=\"#DejaVuSans-22\" transform=\"translate(178.466797 0.78125)\"/>\n    </g>\n   </g>\n  </g>\n </g>\n <defs>\n  <clipPath id=\"p0bcb6da703\">\n   <rect x=\"7.2\" y=\"7.2\" width=\"388.8\" height=\"194.4\"/>\n  </clipPath>\n </defs>\n</svg>\n"
+      },
+      "correctAnswer": "The other child should sit 1 m away from the fulcrum.",
+      "explanation": "For a balanced lever, Effort × Effort Arm = Load × Load Arm. 15 kg × 2 m = 30 kg × L. Solving for L: L = 30/30 = 1 m.",
+      "answer": "The other child should sit 1 m away from the fulcrum."
     },
     {
       "id": "q25",
-      "type": "fill_blank",
-      "category": "Civics - History",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 4,
       "difficulty": "hard",
-      "question": "The 10th-century CE Uttaramerur inscriptions from ___ provide details about the election of members to the village sabhā.",
-      "tag": "History",
-      "hint": "It is a southern state in India.",
-      "blanks": [
-        "Tamil Nadu"
-      ],
-      "correctAnswer": "Tamil Nadu",
-      "explanation": "A remarkable example from the Chola period is seen in the Uttaramerur inscriptions from the 10th century CE in Tamil Nadu[cite: 1].",
-      "answer": "Tamil Nadu"
+      "question": "A person uses an inclined ramp of length 50 cm to raise an object over a step 30 cm high. What is the mechanical advantage of the ramp?",
+      "passageId": "",
+      "tag": "Inclined Plane",
+      "hint": "Example 7.12",
+      "diagram": {
+        "hasDiagram": true,
+        "description": "Inclined ramp with length 50 cm and height 30 cm.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(5, 3))\nax.set_xlim(0, 7)\nax.set_ylim(0, 4)\nax.set_aspect('equal')\nax.axis('off')\nax.plot([1, 5], [1, 1], color='black')\nax.plot([5, 5], [1, 3], color='black')\nax.plot([1, 5], [1, 3], color='#3B82F6', linewidth=3)\nax.text(5.5, 2, '$30\\\\text{ cm}$', ha='left', va='center')\nax.text(2.5, 2.5, '$50\\\\text{ cm}$', ha='right', va='bottom')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')",
+        "svg": "<svg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"352.8pt\" height=\"207.771429pt\" viewBox=\"0 0 352.8 207.771429\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n <metadata>\n  <rdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n   <cc:Work>\n    <dc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/>\n    <dc:date>2026-08-06T08:21:53.495096</dc:date>\n    <dc:format>image/svg+xml</dc:format>\n    <dc:creator>\n     <cc:Agent>\n      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>\n     </cc:Agent>\n    </dc:creator>\n   </cc:Work>\n  </rdf:RDF>\n </metadata>\n <defs>\n  <style type=\"text/css\">*{stroke-linejoin: round; stroke-linecap: butt}</style>\n </defs>\n <g id=\"figure_1\">\n  <g id=\"patch_1\">\n   <path d=\"M 0 207.771429 \nL 352.8 207.771429 \nL 352.8 0 \nL 0 0 \nz\n\" style=\"fill: #ffffff\"/>\n  </g>\n  <g id=\"axes_1\">\n   <g id=\"line2d_1\">\n    <path d=\"M 55.542857 152.228571 \nL 248.914286 152.228571 \n\" clip-path=\"url(#pe64f27c1ff)\" style=\"fill: none; stroke: #000000; stroke-width: 1.5; stroke-linecap: square\"/>\n   </g>\n   <g id=\"line2d_2\">\n    <path d=\"M 248.914286 152.228571 \nL 248.914286 55.542857 \n\" clip-path=\"url(#pe64f27c1ff)\" style=\"fill: none; stroke: #000000; stroke-width: 1.5; stroke-linecap: square\"/>\n   </g>\n   <g id=\"line2d_3\">\n    <path d=\"M 55.542857 152.228571 \nL 248.914286 55.542857 \n\" clip-path=\"url(#pe64f27c1ff)\" style=\"fill: none; stroke: #3b82f6; stroke-width: 3; stroke-linecap: square\"/>\n   </g>\n   <g id=\"text_1\">\n    <!-- $30\\text{ cm}$ -->\n    <g transform=\"translate(273.085714 106.483371) scale(0.1 -0.1)\">\n     <defs>\n      <path id=\"DejaVuSans-16\" d=\"M 2597 2516 \nQ 3050 2419 3304 2112 \nQ 3559 1806 3559 1356 \nQ 3559 666 3084 287 \nQ 2609 -91 1734 -91 \nQ 1441 -91 1130 -33 \nQ 819 25 488 141 \nL 488 750 \nQ 750 597 1062 519 \nQ 1375 441 1716 441 \nQ 2309 441 2620 675 \nQ 2931 909 2931 1356 \nQ 2931 1769 2642 2001 \nQ 2353 2234 1838 2234 \nL 1294 2234 \nL 1294 2753 \nL 1863 2753 \nQ 2328 2753 2575 2939 \nQ 2822 3125 2822 3475 \nQ 2822 3834 2567 4026 \nQ 2313 4219 1838 4219 \nQ 1578 4219 1281 4162 \nQ 984 4106 628 3988 \nL 628 4550 \nQ 988 4650 1302 4700 \nQ 1616 4750 1894 4750 \nQ 2613 4750 3031 4423 \nQ 3450 4097 3450 3541 \nQ 3450 3153 3228 2886 \nQ 3006 2619 2597 2516 \nz\n\" transform=\"scale(0.015625)\"/>\n      <path id=\"DejaVuSans-13\" d=\"M 2034 4250 \nQ 1547 4250 1301 3770 \nQ 1056 3291 1056 2328 \nQ 1056 1369 1301 889 \nQ 1547 409 2034 409 \nQ 2525 409 2770 889 \nQ 3016 1369 3016 2328 \nQ 3016 3291 2770 3770 \nQ 2525 4250 2034 4250 \nz\nM 2034 4750 \nQ 2819 4750 3233 4129 \nQ 3647 3509 3647 2328 \nQ 3647 1150 3233 529 \nQ 2819 -91 2034 -91 \nQ 1250 -91 836 529 \nQ 422 1150 422 2328 \nQ 422 3509 836 4129 \nQ 1250 4750 2034 4750 \nz\n\" transform=\"scale(0.015625)\"/>\n      <path id=\"DejaVuSans-3\" transform=\"scale(0.015625)\"/>\n      <path id=\"DejaVuSans-46\" d=\"M 3122 3366 \nL 3122 2828 \nQ 2878 2963 2633 3030 \nQ 2388 3097 2138 3097 \nQ 1578 3097 1268 2742 \nQ 959 2388 959 1747 \nQ 959 1106 1268 751 \nQ 1578 397 2138 397 \nQ 2388 397 2633 464 \nQ 2878 531 3122 666 \nL 3122 134 \nQ 2881 22 2623 -34 \nQ 2366 -91 2075 -91 \nQ 1284 -91 818 406 \nQ 353 903 353 1747 \nQ 353 2603 823 3093 \nQ 1294 3584 2113 3584 \nQ 2378 3584 2631 3529 \nQ 2884 3475 3122 3366 \nz\n\" transform=\"scale(0.015625)\"/>\n      <path id=\"DejaVuSans-50\" d=\"M 3328 2828 \nQ 3544 3216 3844 3400 \nQ 4144 3584 4550 3584 \nQ 5097 3584 5394 3201 \nQ 5691 2819 5691 2113 \nL 5691 0 \nL 5113 0 \nL 5113 2094 \nQ 5113 2597 4934 2840 \nQ 4756 3084 4391 3084 \nQ 3944 3084 3684 2787 \nQ 3425 2491 3425 1978 \nL 3425 0 \nL 2847 0 \nL 2847 2094 \nQ 2847 2600 2669 2842 \nQ 2491 3084 2119 3084 \nQ 1678 3084 1418 2786 \nQ 1159 2488 1159 1978 \nL 1159 0 \nL 581 0 \nL 581 3500 \nL 1159 3500 \nL 1159 2956 \nQ 1356 3278 1631 3431 \nQ 1906 3584 2284 3584 \nQ 2666 3584 2933 3390 \nQ 3200 3197 3328 2828 \nz\n\" transform=\"scale(0.015625)\"/>\n     </defs>\n     <use xlink:href=\"#DejaVuSans-16\" transform=\"translate(0 0.78125)\"/>\n     <use xlink:href=\"#DejaVuSans-13\" transform=\"translate(63.623047 0.78125)\"/>\n     <use xlink:href=\"#DejaVuSans-3\" transform=\"translate(127.246094 0.78125)\"/>\n     <use xlink:href=\"#DejaVuSans-46\" transform=\"translate(159.033203 0.78125)\"/>\n     <use xlink:href=\"#DejaVuSans-50\" transform=\"translate(214.013672 0.78125)\"/>\n    </g>\n   </g>\n   <g id=\"text_2\">\n    <!-- $50\\text{ cm}$ -->\n    <g transform=\"translate(96.857143 77.311942) scale(0.1 -0.1)\">\n     <defs>\n      <path id=\"DejaVuSans-18\" d=\"M 691 4666 \nL 3169 4666 \nL 3169 4134 \nL 1269 4134 \nL 1269 2991 \nQ 1406 3038 1543 3061 \nQ 1681 3084 1819 3084 \nQ 2600 3084 3056 2656 \nQ 3513 2228 3513 1497 \nQ 3513 744 3044 326 \nQ 2575 -91 1722 -91 \nQ 1428 -91 1123 -41 \nQ 819 9 494 109 \nL 494 744 \nQ 775 591 1075 516 \nQ 1375 441 1709 441 \nQ 2250 441 2565 725 \nQ 2881 1009 2881 1497 \nQ 2881 1984 2565 2268 \nQ 2250 2553 1709 2553 \nQ 1456 2553 1204 2497 \nQ 953 2441 691 2322 \nL 691 4666 \nz\n\" transform=\"scale(0.015625)\"/>\n     </defs>\n     <use xlink:href=\"#DejaVuSans-18\" transform=\"translate(0 0.78125)\"/>\n     <use xlink:href=\"#DejaVuSans-13\" transform=\"translate(63.623047 0.78125)\"/>\n     <use xlink:href=\"#DejaVuSans-3\" transform=\"translate(127.246094 0.78125)\"/>\n     <use xlink:href=\"#DejaVuSans-46\" transform=\"translate(159.033203 0.78125)\"/>\n     <use xlink:href=\"#DejaVuSans-50\" transform=\"translate(214.013672 0.78125)\"/>\n    </g>\n   </g>\n  </g>\n </g>\n <defs>\n  <clipPath id=\"pe64f27c1ff\">\n   <rect x=\"7.2\" y=\"7.2\" width=\"338.4\" height=\"193.371429\"/>\n  </clipPath>\n </defs>\n</svg>\n"
+      },
+      "correctAnswer": "The mechanical advantage is 1.67.",
+      "explanation": "Mechanical advantage of an inclined plane is \\frac{Length}{Height} = L/h. Here, MA = \\frac{50 cm}{30 cm} ≈ 1.67.",
+      "answer": "The mechanical advantage is 1.67."
     },
     {
       "id": "q26",
-      "type": "fill_blank",
-      "category": "Civics - Monarchy",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "A ___ monarchy is a government where the head of state is a king or queen with only nominal power, while real power rests with the prime minister.",
-      "tag": "Monarchy",
-      "hint": "Britain has this type of monarchy.",
-      "blanks": [
-        "constitutional",
-        "Constitutional"
-      ],
-      "correctAnswer": "constitutional",
-      "explanation": "In a constitutional monarchy, the head of state is the king or queen with nominal power, and real power is exercised by the prime minister[cite: 1].",
-      "answer": "constitutional"
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 4,
+      "difficulty": "hard",
+      "question": "A truck of mass 10000 kg is moving at 72 km/h. It enters an escape ramp where sand exerts a constant stopping force of 100000 N (combining sand resistance and gravity effect). What is the minimum length of the ramp needed to stop the truck? (Assume Total Stopping Force = 100000 N)",
+      "passageId": "",
+      "tag": "Work-Energy Theorem",
+      "hint": "Example 7.9",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The minimum length of the ramp is 20 m.",
+      "explanation": "Velocity v = 72 km/h = 20 m/s. Initial KE = 1/2 × 10000 × (20)² = 2000000 J. Work done by stopping force = Change in KE. F × d = 2000000 J ⇒ 100000 × d = 2000000 ⇒ d = 20 m.",
+      "answer": "The minimum length of the ramp is 20 m."
     },
     {
       "id": "q27",
-      "type": "fill_blank",
-      "category": "Civics - Monarchy",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "In an ___ monarchy, such as Saudi Arabia, the monarch has complete control over making and adjudicating laws.",
-      "tag": "Monarchy",
-      "hint": "It starts with 'A' and means total power.",
-      "blanks": [
-        "absolute",
-        "Absolute"
-      ],
-      "correctAnswer": "absolute",
-      "explanation": "In an absolute monarchy, the monarch has complete control in making laws, ensuring they are followed, and adjudicating[cite: 1].",
-      "answer": "absolute"
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 4,
+      "difficulty": "hard",
+      "question": "An object of mass m is dropped from a height h. Using kinematic equations and energy formulas, show that its total mechanical energy remains mgh after falling for time t (before hitting the ground).",
+      "passageId": "",
+      "tag": "Conservation of Energy",
+      "hint": "Section 7.4.3: Conservation of mechanical energy",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "At time t, velocity v = gt and height lost is 1/2gt². Thus, KE = 1/2mg²t² and PE = mg(h - 1/2gt²). Total ME = KE + PE = mgh.",
+      "explanation": "Initially, u=0, ME = mgh + 0. After time t, velocity v = gt. Kinetic energy K = 1/2mv² = 1/2m(gt)². The distance fallen is s = 1/2gt², so the new height is h' = h - 1/2gt². Potential energy U = mgh' = mg(h - 1/2gt²). Total Energy E = K + U = 1/2mg²t² + mgh - 1/2mg²t² = mgh. Thus, mechanical energy is conserved.",
+      "answer": "At time t, velocity v = gt and height lost is 1/2gt². Thus, KE = 1/2mg²t² and PE = mg(h - 1/2gt²). Total ME = KE + PE = mgh."
     },
     {
       "id": "q28",
-      "type": "fill_blank",
-      "category": "Civics - Theocracy",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "A ___ is a form of government where the country is ruled by the rules of religion and religious leaders.",
-      "tag": "Theocracy",
-      "hint": "Vatican City and Iran are examples.",
-      "blanks": [
-        "theocracy",
-        "Theocracy"
-      ],
-      "correctAnswer": "theocracy",
-      "explanation": "A theocracy is a form of government where the country is ruled by the rules of religion and religious leaders[cite: 1].",
-      "answer": "theocracy"
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 4,
+      "difficulty": "hard",
+      "question": "A car of mass 1000 kg starts from rest and reaches a speed of 72 km/h in 10 seconds. Calculate the power of the engine required to achieve this start.",
+      "passageId": "",
+      "tag": "Power",
+      "hint": "Example 7.11",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The power of the engine is 20000 W.",
+      "explanation": "Final velocity v = 72 km/h = 20 m/s. Initial velocity u = 0. Work done = Change in KE = 1/2mv² - 0 = 1/2 × 1000 × (20)² = 200000 J. Power P = W/t = \\frac{200000 J}{10 s} = 20000 W.",
+      "answer": "The power of the engine is 20000 W."
     },
     {
       "id": "q29",
-      "type": "fill_blank",
-      "category": "Civics - Government",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "A ___ is a form of government in which one person or a small group possesses absolute power without limits imposed by a constitution.",
-      "tag": "Dictatorship",
-      "hint": "Idi Amin established this in Uganda.",
-      "blanks": [
-        "dictatorship",
-        "Dictatorship"
-      ],
-      "correctAnswer": "dictatorship",
-      "explanation": "A dictatorship is a form of government in which one person or a small group possesses absolute power without constitutional limits[cite: 1].",
-      "answer": "dictatorship"
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 4,
+      "difficulty": "hard",
+      "question": "A child slides down a frictionless slide of vertical height h. Derive the expression for the magnitude of their velocity upon reaching the bottom of the slide using the principle of conservation of energy.",
+      "passageId": "",
+      "tag": "Conservation of Energy",
+      "hint": "Example 7.8",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The velocity is v = \\sqrt{2gh}.",
+      "explanation": "At the top of the slide, the child's kinetic energy is zero and potential energy is mgh. At the bottom, potential energy is zero and kinetic energy is 1/2mv². By conservation of mechanical energy (ignoring friction): mgh = 1/2mv². Canceling mass m and solving for v yields v = \\sqrt{2gh}.",
+      "answer": "The velocity is v = \\sqrt{2gh}."
     },
     {
       "id": "q30",
-      "type": "fill_blank",
-      "category": "Civics - Terminology",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "The word 'oligarchy' is of ___ origin.",
-      "tag": "Oligarchy",
-      "hint": "It comes from the same civilization as the word 'democracy'.",
-      "blanks": [
-        "Greek"
-      ],
-      "correctAnswer": "Greek",
-      "explanation": "The word 'oligarchy' is of Greek origin, where olígos means a few and árkhō means to rule[cite: 1].",
-      "answer": "Greek"
-    },
-    {
-      "id": "q31",
-      "type": "fill_blank",
-      "category": "Civics - Legislature",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 2,
       "difficulty": "easy",
-      "question": "In most countries, the Lower House is elected by direct voting and is generally more ___ than the Upper House.",
-      "tag": "Legislature",
-      "hint": "It has greater authority.",
-      "blanks": [
-        "powerful"
-      ],
-      "correctAnswer": "powerful",
-      "explanation": "In most countries, the Lower House is elected by direct voting and is generally more powerful than the Upper House[cite: 1].",
-      "answer": "powerful"
-    },
-    {
-      "id": "q32",
-      "type": "fill_blank",
-      "category": "Civics - Legislature",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "In the USA, the legislature is known as ___, and its Upper House is the Senate.",
-      "tag": "Legislature",
-      "hint": "It has two houses: the Senate and the House of Representatives.",
-      "blanks": [
-        "Congress"
-      ],
-      "correctAnswer": "Congress",
-      "explanation": "In the USA, the legislature is called Congress[cite: 1].",
-      "answer": "Congress"
-    },
-    {
-      "id": "q33",
-      "type": "fill_blank",
-      "category": "Civics - Governance",
-      "marks": 1,
-      "difficulty": "hard",
-      "question": "A ruler's duties in the internal administration of a country, according to Kautilya, are raksha, pālana, and ___.",
-      "tag": "Arthaśhāstra",
-      "hint": "It means safeguarding the welfare of the people.",
-      "blanks": [
-        "yogakshema"
-      ],
-      "correctAnswer": "yogakshema",
-      "explanation": "Kautilya described duties as raksha, pālana, and yogakshema (safeguarding the welfare of the people)[cite: 1].",
-      "answer": "yogakshema"
-    },
-    {
-      "id": "q34",
-      "type": "fill_blank",
-      "category": "Civics - History",
-      "marks": 1,
-      "difficulty": "hard",
-      "question": "According to the story from Rājataranginī, King Chandrāpīda respected the rights of a stubborn ___ whose hut stood in the way of a temple.",
-      "tag": "History",
-      "hint": "He worked with leather/shoes.",
-      "blanks": [
-        "cobbler"
-      ],
-      "correctAnswer": "cobbler",
-      "explanation": "King Chandrāpīda wanted to build a temple, but the hut of a stubborn cobbler stood in the way, and the king respected his dharma towards him[cite: 1].",
-      "answer": "cobbler"
-    },
-    {
-      "id": "q35",
-      "type": "fill_blank",
-      "category": "Civics - Terminology",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Scholars have determined that the Roma (Romani people) originated in ___.",
-      "tag": "History",
-      "hint": "They were originally nomads from this South Asian country.",
-      "blanks": [
-        "India"
-      ],
-      "correctAnswer": "India",
-      "explanation": "Scholars have determined that the Roma originated in India based on their linguistic and cultural characteristics[cite: 1].",
-      "answer": "India"
-    },
-    {
-      "id": "q36",
-      "type": "match_columns",
-      "category": "Civics - Democracy",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Match the country in Column A with its type of democracy in Column B.",
-      "tag": "Democracy",
-      "hint": "Consider the relationship between the executive and legislature, or citizen involvement.",
-      "columnA": [
-        "USA",
-        "India",
-        "Switzerland"
-      ],
-      "columnB": [
-        "(a) Presidential Democracy",
-        "(b) Direct Democracy",
-        "(c) Parliamentary Democracy"
-      ],
-      "correctMatches": [
-        "a",
-        "c",
-        "b"
-      ],
-      "correctAnswer": "1-a, 2-c, 3-b",
-      "explanation": "The USA is a Presidential democracy, India is a Parliamentary democracy, and Switzerland has forms of Direct democracy[cite: 1].",
-      "answer": "1-a, 2-c, 3-b"
-    },
-    {
-      "id": "q37",
-      "type": "match_columns",
-      "category": "Civics - Forms of Government",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "Match the government type in Column A with its associated country in Column B.",
-      "tag": "Governance",
-      "hint": "Saudi Arabia has a king with total power, Iran rules by religion, and Uganda had Idi Amin.",
-      "columnA": [
-        "Absolute Monarchy",
-        "Theocracy",
-        "Dictatorship"
-      ],
-      "columnB": [
-        "(a) Uganda (under Idi Amin)",
-        "(b) Iran",
-        "(c) Saudi Arabia"
-      ],
-      "correctMatches": [
-        "c",
-        "b",
-        "a"
-      ],
-      "correctAnswer": "1-c, 2-b, 3-a",
-      "explanation": "Saudi Arabia is an Absolute Monarchy, Iran is a Theocracy, and Uganda under Idi Amin was a Dictatorship[cite: 1].",
-      "answer": "1-c, 2-b, 3-a"
-    },
-    {
-      "id": "q38",
-      "type": "match_columns",
-      "category": "Civics - Government Organs",
-      "marks": 3,
-      "difficulty": "easy",
-      "question": "Match the organ of the government in Column A with its primary function in Column B.",
-      "tag": "Functions",
-      "hint": "Legislature creates, Executive implements, Judiciary ensures.",
-      "columnA": [
-        "Legislature",
-        "Executive",
-        "Judiciary"
-      ],
-      "columnB": [
-        "(a) Ensuring laws are followed",
-        "(b) Making laws",
-        "(c) Implementing laws"
-      ],
-      "correctMatches": [
-        "b",
-        "c",
-        "a"
-      ],
-      "correctAnswer": "1-b, 2-c, 3-a",
-      "explanation": "The Legislature makes laws, the Executive implements them, and the Judiciary ensures they are followed[cite: 1].",
-      "answer": "1-b, 2-c, 3-a"
-    },
-    {
-      "id": "q39",
-      "type": "match_columns",
-      "category": "Civics - History",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Match the historical reference in Column A with its description in Column B.",
-      "tag": "History",
-      "hint": "Vajji was a Mahajanapada, Uttaramerur had inscriptions, and Bhishma spoke to Yudhisthira.",
-      "columnA": [
-        "Vajji",
-        "Uttaramerur",
-        "Shanti Parva"
-      ],
-      "columnB": [
-        "(a) 10th-century CE inscriptions detailing village sabhā elections",
-        "(b) Mahābhārata section teaching good governance",
-        "(c) Ancient Mahājanapada considered an early republic"
-      ],
-      "correctMatches": [
-        "c",
-        "a",
-        "b"
-      ],
-      "correctAnswer": "1-c, 2-a, 3-b",
-      "explanation": "Vajji was an early republic, Uttaramerur provides details on Chola village sabhās, and Shanti Parva contains Bhishma's teachings[cite: 1].",
-      "answer": "1-c, 2-a, 3-b"
-    },
-    {
-      "id": "q40",
-      "type": "match_columns",
-      "category": "Civics - Democratic Principles",
-      "marks": 3,
-      "difficulty": "easy",
-      "question": "Match the democratic principle in Column A with its meaning in Column B.",
-      "tag": "Principles",
-      "hint": "Adult franchise is about voting; separation of power protects institutions.",
-      "columnA": [
-        "Universal Adult Franchise",
-        "Separation of Power",
-        "Equality"
-      ],
-      "columnB": [
-        "(a) Every person has the right to be treated equally",
-        "(b) The three organs of government work independently",
-        "(c) Every adult citizen has the right to vote"
-      ],
-      "correctMatches": [
-        "c",
-        "b",
-        "a"
-      ],
-      "correctAnswer": "1-c, 2-b, 3-a",
-      "explanation": "Universal Adult Franchise is the right to vote, Separation of Power implies independent government organs, and Equality means equal treatment for all citizens[cite: 1].",
-      "answer": "1-c, 2-b, 3-a"
-    },
-    {
-      "id": "q41",
-      "type": "short_answer",
-      "category": "Civics - Functions",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Explain the three main functions of a government as described in the chapter.",
-      "tag": "Functions",
-      "hint": "Identify the legislative, executive, and judicial functions.",
-      "correctAnswer": "The three functions are: 1. Legislative function: the creation of rules that serve as the framework for the country[cite: 1]. 2. Executive function: implementing the rules and administering the country[cite: 1]. 3. Judicial function: ensuring that these rules are followed and adjudicating disputes[cite: 1].",
-      "explanation": "A government must create necessary rules (legislative), implement them (executive), and ensure everyone follows them (judicial)[cite: 1].",
-      "answer": "The three functions are: 1. Legislative function: the creation of rules that serve as the framework for the country[cite: 1]. 2. Executive function: implementing the rules and administering the country[cite: 1]. 3. Judicial function: ensuring that these rules are followed and adjudicating disputes[cite: 1]."
-    },
-    {
-      "id": "q42",
-      "type": "short_answer",
-      "category": "Civics - Democracy",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "What is the primary difference between a Parliamentary Democracy and a Presidential Democracy?",
-      "tag": "Democracy",
-      "hint": "Focus on the relationship between the executive and the legislature.",
-      "correctAnswer": "In a Parliamentary Democracy, the members of the executive are also part of the legislature and are accountable to it[cite: 1]. In a Presidential Democracy, the executive works independently of the legislature, and the president does not need its confidence for their position[cite: 1].",
-      "explanation": "The key distinction lies in the separation of powers between the executive and legislative branches[cite: 1].",
-      "answer": "In a Parliamentary Democracy, the members of the executive are also part of the legislature and are accountable to it[cite: 1]. In a Presidential Democracy, the executive works independently of the legislature, and the president does not need its confidence for their position[cite: 1]."
-    },
-    {
-      "id": "q43",
-      "type": "short_answer",
-      "category": "Civics - Monarchy",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "Distinguish between an Absolute Monarchy and a Constitutional Monarchy.",
-      "tag": "Monarchy",
-      "hint": "Compare the distribution of law-making and executive powers in Saudi Arabia vs. the UK.",
-      "correctAnswer": "In an absolute monarchy, the monarch has complete control over making laws, implementing them, and adjudicating disputes, as seen in Saudi Arabia[cite: 1]. In a constitutional monarchy like the UK, the monarch has nominal power, while real legislative and executive powers are held by an elected parliament and a prime minister[cite: 1].",
-      "explanation": "Absolute monarchies grant total power to the ruler, whereas constitutional monarchies limit the ruler's power by entrusting governance to elected officials[cite: 1].",
-      "answer": "In an absolute monarchy, the monarch has complete control over making laws, implementing them, and adjudicating disputes, as seen in Saudi Arabia[cite: 1]. In a constitutional monarchy like the UK, the monarch has nominal power, while real legislative and executive powers are held by an elected parliament and a prime minister[cite: 1]."
-    },
-    {
-      "id": "q44",
-      "type": "short_answer",
-      "category": "Civics - Government",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Define 'Theocracy' and provide two modern examples mentioned in the text.",
-      "tag": "Theocracy",
-      "hint": "It involves religious leadership.",
-      "correctAnswer": "A theocracy is a form of government where the country is ruled by the rules of religion and religious leaders[cite: 1]. Modern examples include Iran (an Islamic Republic) and Vatican City (or Afghanistan)[cite: 1].",
-      "explanation": "In a theocracy, religious texts and leaders form the core of the government's authority[cite: 1].",
-      "answer": "A theocracy is a form of government where the country is ruled by the rules of religion and religious leaders[cite: 1]. Modern examples include Iran (an Islamic Republic) and Vatican City (or Afghanistan)[cite: 1]."
-    },
-    {
-      "id": "q45",
-      "type": "short_answer",
-      "category": "Civics - Dictatorship",
-      "marks": 3,
-      "difficulty": "easy",
-      "question": "What is a dictatorship? Briefly describe the consequences of Adolf Hitler's dictatorship as mentioned in the text.",
-      "tag": "Dictatorship",
-      "hint": "Think about absolute power and the events of World War II.",
-      "correctAnswer": "A dictatorship is a government where one person or a small group holds absolute power without constitutional limits[cite: 1]. Adolf Hitler's dictatorship resulted in the Holocaust (the killing of at least six million Jews) and caused World War II, leading to immense loss of life[cite: 1].",
-      "explanation": "Dictators operate without limits from a constitution or law, often leading to severe oppression and conflict[cite: 1].",
-      "answer": "A dictatorship is a government where one person or a small group holds absolute power without constitutional limits[cite: 1]. Adolf Hitler's dictatorship resulted in the Holocaust (the killing of at least six million Jews) and caused World War II, leading to immense loss of life[cite: 1]."
-    },
-    {
-      "id": "q46",
-      "type": "short_answer",
-      "category": "Civics - Governance",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "What is an oligarchy, and how can modern democracies sometimes show signs of it?",
-      "tag": "Oligarchy",
-      "hint": "The term means 'to rule by a few'.",
-      "correctAnswer": "An oligarchy is a government where a small, powerful, often wealthy group makes all important decisions[cite: 1]. In modern times, political commentators suggest some democracies show signs of oligarchy when a small group of politicians and wealthy businesspeople hold too much influence in governance[cite: 1].",
-      "explanation": "Oligarchies concentrate power among a few elite individuals, which can sometimes threaten democratic equality if wealthy influencers gain excessive control[cite: 1].",
-      "answer": "An oligarchy is a government where a small, powerful, often wealthy group makes all important decisions[cite: 1]. In modern times, political commentators suggest some democracies show signs of oligarchy when a small group of politicians and wealthy businesspeople hold too much influence in governance[cite: 1]."
-    },
-    {
-      "id": "q47",
-      "type": "short_answer",
-      "category": "Civics - History",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "Explain the concept of 'rājadharma' as taught by Bhishma in the Mahābhārata.",
-      "tag": "History",
-      "hint": "It concerns the moral responsibilities of a ruler.",
-      "correctAnswer": "Rājadharma refers to ruling according to dharma and ensuring the welfare of all people[cite: 1]. Bhishma taught that a raja is not just a ruler but must prioritize people's welfare, apply laws fairly without bias, avoid attachment to power, and seek guidance from wise advisors[cite: 1].",
-      "explanation": "The text highlights that even under ancient monarchies in India, rulers were expected to follow moral codes and prioritize their subjects' well-being[cite: 1].",
-      "answer": "Rājadharma refers to ruling according to dharma and ensuring the welfare of all people[cite: 1]. Bhishma taught that a raja is not just a ruler but must prioritize people's welfare, apply laws fairly without bias, avoid attachment to power, and seek guidance from wise advisors[cite: 1]."
-    },
-    {
-      "id": "q48",
-      "type": "short_answer",
-      "category": "Civics - History",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "What specific details regarding local administration elections can be found in the 10th century CE Uttaramerur inscriptions?",
-      "tag": "History",
-      "hint": "They provide evidence of democratic practices in the Chola period.",
-      "correctAnswer": "The Uttaramerur inscriptions provide details about the election of members to the village sabhā[cite: 1]. They detail the election process, such as using sealed ballot boxes, qualifications of members, their duties, and conditions for dismissal (like corruption)[cite: 1].",
-      "explanation": "These inscriptions are significant historical evidence of early representative systems in Indian local administration[cite: 1].",
-      "answer": "The Uttaramerur inscriptions provide details about the election of members to the village sabhā[cite: 1]. They detail the election process, such as using sealed ballot boxes, qualifications of members, their duties, and conditions for dismissal (like corruption)[cite: 1]."
-    },
-    {
-      "id": "q49",
-      "type": "short_answer",
-      "category": "Civics - Democracy",
-      "marks": 3,
-      "difficulty": "easy",
-      "question": "Why is democracy generally considered a better form of government according to the text?",
-      "tag": "Democracy",
-      "hint": "Think about citizens' rights and accountability.",
-      "correctAnswer": "Democracy is considered better because people can lead their lives with freedom of expression, belief, and choice[cite: 1]. The government is accountable for protecting citizens' rights and basic needs, and if it fails, the people can change their representatives through elections[cite: 1].",
-      "explanation": "Democracy allows for constant checks on the government's actions and centers the well-being of all its people[cite: 1].",
-      "answer": "Democracy is considered better because people can lead their lives with freedom of expression, belief, and choice[cite: 1]. The government is accountable for protecting citizens' rights and basic needs, and if it fails, the people can change their representatives through elections[cite: 1]."
-    },
-    {
-      "id": "q50",
-      "type": "short_answer",
-      "category": "Civics - Democracy",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Despite its ideals, what are some of the hurdles or challenges that democracies face today?",
-      "tag": "Challenges",
-      "hint": "The text lists several issues at the end of the chapter.",
-      "correctAnswer": "Democracies face issues such as corruption, wealth disparity, and excessive control by a few over democratic institutions[cite: 1]. Other hurdles include the erosion of the judiciary's independence and the manipulation of information channels[cite: 1].",
-      "explanation": "While democracy is ideal, practical implementation often faces challenges that citizens must remain vigilant against[cite: 1].",
-      "answer": "Democracies face issues such as corruption, wealth disparity, and excessive control by a few over democratic institutions[cite: 1]. Other hurdles include the erosion of the judiciary's independence and the manipulation of information channels[cite: 1]."
+      "question": "In the context of physics, when is the work done by a force considered to be negative?",
+      "passageId": "",
+      "tag": "Work Done",
+      "hint": "Section 7.1.2: Positive and negative work done",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "Work done is negative when the displacement is in the direction opposite to that of the applied force.",
+      "explanation": "If a force is applied in one direction but the object undergoes displacement in the exact opposite direction (e.g., stopping a moving ball or lowering a heavy object), the work done by that force is negative.",
+      "answer": "Work done is negative when the displacement is in the direction opposite to that of the applied force."
     }
   ]
 }

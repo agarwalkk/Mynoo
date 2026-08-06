@@ -30,6 +30,8 @@ data class AssessmentQuestion(
     val correctMatches: List<String> = emptyList(),
     val asy:           String        = "",
     val svg:           String        = "",
+    val unbalancedEquation: String   = "",
+    val inputReaction: String        = "",
 )
 
 data class Assessment(
@@ -64,6 +66,12 @@ fun Map<String, Any>?.isAnswered(): Boolean {
 
 val Assessment.answeredCount: Int
     get() = answers.count { it.isAnswered() }
+
+val Assessment.isInProgress: Boolean
+    get() = status != "completed" && answeredCount > 0
+
+val Assessment.isReady: Boolean
+    get() = status != "completed" && answeredCount == 0
 
 
 @Singleton
@@ -228,12 +236,17 @@ class AssessmentRepository @Inject constructor(
                 "svg"           to q.svg,
             )
         }
+        val computedStatus = when {
+            assessment.status == "completed" -> "completed"
+            assessment.answers.any { it.isAnswered() } -> "in_progress"
+            else -> "ready"
+        }
         val data = mutableMapOf<String, Any>(
             "subject"        to assessment.subject,
             "classNum"       to assessment.classNum,
             "lang"           to assessment.lang,
             "date"           to assessment.date,
-            "status"         to assessment.status,
+            "status"         to computedStatus,
             "questions"      to qs,
             "summary"        to assessment.summary,
             "createdAt"      to assessment.createdAt.ifBlank { assessment.date },

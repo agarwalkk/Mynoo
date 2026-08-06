@@ -79,7 +79,7 @@ val QuizState.earnedMarks get(): Double {
                 if (attempts == 2) q.marks / 2.0 else q.marks
             } else 0.0
         } else {
-            val aiEarned = (a["aiEarnedMarks"] as? Number)?.toDouble()
+            val aiEarned = (a["earnedMarks"] as? Number)?.toDouble() ?: (a["aiEarnedMarks"] as? Number)?.toDouble()
             if (aiEarned != null) {
                 aiEarned
             } else {
@@ -93,6 +93,18 @@ val QuizState.score get(): Int {
     val total = totalMarks
     if (total == 0.0) return 0
     return Math.round((earnedMarks / total) * 100.0).toInt()
+}
+val QuizState.attemptedEarnedMarks get(): Double = earnedMarks
+val QuizState.attemptedTotalMarks get(): Double {
+    val qs = assessment?.questions ?: return 0.0
+    return qs.indices.sumOf { i ->
+        val a = answers.getOrNull(i)
+        if (a != null) qs[i].marks else 0.0
+    }
+}
+val QuizState.attemptedCount get(): Int {
+    val qs = assessment?.questions ?: return 0
+    return qs.indices.count { i -> answers.getOrNull(i) != null }
 }
 
 @HiltViewModel
@@ -228,7 +240,7 @@ class AssessmentViewModel @Inject constructor(
                             if (attempts == 2) q.marks / 2.0 else q.marks
                         } else 0.0
                     } else {
-                        val aiEarned = (a["aiEarnedMarks"] as? Number)?.toDouble()
+                        val aiEarned = (a["earnedMarks"] as? Number)?.toDouble() ?: (a["aiEarnedMarks"] as? Number)?.toDouble()
                         if (aiEarned != null) {
                             aiEarned
                         } else {
@@ -473,7 +485,7 @@ class AssessmentViewModel @Inject constructor(
         } else {
             val textAns = savedAns["textAnswer"] as? String ?: ""
             val selfGrade = savedAns["selfGrade"] as? String ?: ""
-            val aiEarned = (savedAns["aiEarnedMarks"] as? Number)?.toDouble() ?: 0.0
+            val aiEarned = (savedAns["earnedMarks"] as? Number)?.toDouble() ?: (savedAns["aiEarnedMarks"] as? Number)?.toDouble() ?: 0.0
             val feedback = savedAns["aiFeedback"] as? String ?: ""
             val corrections = savedAns["corrections"] as? List<*> ?: emptyList<Any>()
             val correctedAns = savedAns["correctedAnswer"] as? String ?: ""
@@ -595,7 +607,8 @@ class AssessmentViewModel @Inject constructor(
         
         viewModelScope.launch {
             try {
-                repo.saveAssessment(currentChild, assessment.copy(status = "in_progress", answers = updatedAnswers))
+                val newStatus = if (updatedAnswers.any { it.isAnswered() }) "in_progress" else "ready"
+                repo.saveAssessment(currentChild, assessment.copy(status = newStatus, answers = updatedAnswers))
             } catch (e: Exception) {
                 Log.e("AssessmentVM", "Error saving progress in MCQ select", e)
             }
@@ -623,7 +636,8 @@ class AssessmentViewModel @Inject constructor(
         
         viewModelScope.launch {
             try {
-                repo.saveAssessment(currentChild, assessment.copy(status = "in_progress", answers = currentAnswers))
+                val newStatus = if (currentAnswers.any { it.isAnswered() }) "in_progress" else "ready"
+                repo.saveAssessment(currentChild, assessment.copy(status = newStatus, answers = currentAnswers))
             } catch (e: Exception) {
                 Log.e("AssessmentVM", "Error saving progress in retry", e)
             }
@@ -670,7 +684,8 @@ class AssessmentViewModel @Inject constructor(
         
         viewModelScope.launch {
             try {
-                repo.saveAssessment(currentChild, assessment.copy(status = "in_progress", answers = updatedAnswers))
+                val newStatus = if (updatedAnswers.any { it.isAnswered() }) "in_progress" else "ready"
+                repo.saveAssessment(currentChild, assessment.copy(status = newStatus, answers = updatedAnswers))
             } catch (e: Exception) {
                 Log.e("AssessmentVM", "Error saving progress in next", e)
             }
@@ -716,6 +731,7 @@ class AssessmentViewModel @Inject constructor(
                 "type" to currentQ.type,
                 "textAnswer" to "",
                 "selfGrade" to "wrong",
+                "earnedMarks" to 0.0,
                 "aiEarnedMarks" to 0.0,
                 "corrections" to emptyList<Any>(),
                 "correctedAnswer" to "",
@@ -740,7 +756,8 @@ class AssessmentViewModel @Inject constructor(
         
         viewModelScope.launch {
             try {
-                repo.saveAssessment(currentChild, assessment.copy(status = "in_progress", answers = updatedAnswers))
+                val newStatus = if (updatedAnswers.any { it.isAnswered() }) "in_progress" else "ready"
+                repo.saveAssessment(currentChild, assessment.copy(status = newStatus, answers = updatedAnswers))
             } catch (e: Exception) {
                 Log.e("AssessmentVM", "Error saving progress in skip", e)
             }
@@ -801,6 +818,7 @@ class AssessmentViewModel @Inject constructor(
                 "type" to q.type,
                 "textAnswer" to currentTypedAnswer.trim(),
                 "selfGrade" to selfGrade,
+                "earnedMarks" to earned,
                 "aiEarnedMarks" to earned,
                 "corrections" to corrections,
                 "correctedAnswer" to correctedAns,
@@ -853,8 +871,8 @@ class AssessmentViewModel @Inject constructor(
                 } catch (e: Exception) {
                     Log.w("AssessmentVM", "Gist load failed: ${e.message}")
                     Pair(
-                        "You are an expert school teacher grading a student written answer. Perform comprehensive inline editing (spelling, grammar, removing off-topic/unrelated text, and adding missing key concepts) directly against the student answer, provide a detailed justification for the marks awarded, and determine if retry is allowed.",
-                        "Award earnedMarks between 0 and total marks in steps of 0.5. Return feedback explaining marks justification. Return corrections array with types: spelling, grammar, deletion, addition."
+                        "You are an expert school teacher grading a student written answer. Perform concise inline editing (spelling, grammar, removing off-topic/unrelated text, and adding missing key concepts) directly against the student answer. Keep original and corrected fields minimal—only include the specific word or short phrase that needs changing, not entire surrounding sentences.",
+                        "Award earnedMarks between 0 and total marks in steps of 0.5. Return feedback explaining marks justification. Return corrections array with types: spelling, grammar, deletion, addition. CRITICAL: In corrections array, keep original and corrected as short as possible (e.g. original: \"the Germany\", corrected: \"that Germany\"). Do NOT include unchanged surrounding words in original or corrected."
                     )
                 }
                 
@@ -866,7 +884,11 @@ class AssessmentViewModel @Inject constructor(
                 val contextLine = "Subject: ${assessment.subject}, Class: ${assessment.classNum}\n"
                 val marksLine = "Marks for this question: ${q.marks} — award earnedMarks between 0 and ${q.marks} in steps of 0.5.\n"
                 val passageLine = if (q.passage.isNotBlank()) "Reading passage:\n\"\"\"\n${q.passage}\n\"\"\"\n" else ""
-                val inputLine = if (q.inputSentence.isNotBlank()) "Input sentence: \"${q.inputSentence}\"\n" else ""
+                val inputLine = buildString {
+                    if (q.inputSentence.isNotBlank()) append("Input sentence: \"${q.inputSentence}\"\n")
+                    if (q.unbalancedEquation.isNotBlank()) append("Unbalanced equation: \"${q.unbalancedEquation}\"\n")
+                    if (q.inputReaction.isNotBlank()) append("Chemical reaction: \"${q.inputReaction}\"\n")
+                }
                 val typeLine = if (q.transformationType.isNotBlank()) "Transformation type: ${q.transformationType}\n" else if (q.tag.isNotBlank()) "Grammar focus: ${q.tag}\n" else ""
                 
                 val prompt = "$systemInstruction\n$contextLine$marksLine" +
@@ -984,8 +1006,8 @@ class AssessmentViewModel @Inject constructor(
                 } catch (e: Exception) {
                     Log.w("AssessmentVM", "Gist load failed: ${e.message}")
                     Pair(
-                        "You are an expert school teacher grading a student written answer. Perform comprehensive inline editing (spelling, grammar, removing off-topic/unrelated text, and adding missing key concepts) directly against the student answer, provide a detailed justification for the marks awarded, and determine if retry is allowed.",
-                        "Award earnedMarks between 0 and total marks in steps of 0.5. Return feedback explaining marks justification. Return corrections array with types: spelling, grammar, deletion, addition."
+                        "You are an expert school teacher grading a student written answer. Perform concise inline editing (spelling, grammar, removing off-topic/unrelated text, and adding missing key concepts) directly against the student answer. Keep original and corrected fields minimal—only include the specific word or short phrase that needs changing, not entire surrounding sentences.",
+                        "Award earnedMarks between 0 and total marks in steps of 0.5. Return feedback explaining marks justification. Return corrections array with types: spelling, grammar, deletion, addition. CRITICAL: In corrections array, keep original and corrected as short as possible (e.g. original: \"the Germany\", corrected: \"that Germany\"). Do NOT include unchanged surrounding words in original or corrected."
                     )
                 }
                 
@@ -1154,7 +1176,8 @@ class AssessmentViewModel @Inject constructor(
         _quiz.update { it.copy(answers = updatedAnswers) }
         
         try {
-            repo.saveAssessment(currentChild, assessment.copy(status = "in_progress", answers = updatedAnswers))
+            val newStatus = if (updatedAnswers.any { it.isAnswered() }) "in_progress" else "ready"
+            repo.saveAssessment(currentChild, assessment.copy(status = newStatus, answers = updatedAnswers))
         } catch (e: Exception) {
             Log.e("AssessmentVM", "Error saving progress in validation complete", e)
         }

@@ -34,6 +34,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.SpanStyle
 import com.krishanagarwal.mynoo.data.repository.isAnswered
+import com.krishanagarwal.mynoo.data.repository.isInProgress
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -173,8 +174,36 @@ fun AnnotatedAnswer(
 
             val overlaps = (idx until endIdx).any { occupied[it] }
             if (!overlaps) {
+                var p = 0
+                val maxP = minOf(orig.length, corr.length)
+                while (p < maxP && orig[p].equals(corr[p], ignoreCase = true)) {
+                    p++
+                }
+                if (p > 0 && p < orig.length && p < corr.length) {
+                    val lastSpace = orig.substring(0, p).lastIndexOfAny(charArrayOf(' ', '.', ',', ';', ':', '!', '?', '-', '"', '\''))
+                    p = if (lastSpace >= 0) lastSpace + 1 else 0
+                }
+
+                val subO = orig.substring(p)
+                val subC = corr.substring(p)
+
+                var s = 0
+                val maxS = minOf(subO.length, subC.length)
+                while (s < maxS && subO[subO.length - 1 - s].equals(subC[subC.length - 1 - s], ignoreCase = true)) {
+                    s++
+                }
+                if (s > 0 && s < subO.length && s < subC.length) {
+                    val firstSpace = subO.substring(subO.length - s).indexOfAny(charArrayOf(' ', '.', ',', ';', ':', '!', '?', '-', '"', '\''))
+                    s = if (firstSpace >= 0) s - firstSpace else 0
+                }
+
+                val refinedStart = idx + p
+                val refinedEnd = idx + orig.length - s
+                val refinedOrig = text.substring(refinedStart, refinedEnd)
+                val refinedCorr = subC.substring(0, subC.length - s).trim()
+
                 for (i in idx until endIdx) occupied[i] = true
-                matches.add(Match(idx, endIdx, text.substring(idx, endIdx), corr))
+                matches.add(Match(refinedStart, refinedEnd, refinedOrig, refinedCorr))
                 matchedCorrections.add(item)
                 break
             }
@@ -190,11 +219,21 @@ fun AnnotatedAnswer(
             if (m.start > pos) {
                 append(text.substring(pos, m.start))
             }
-            withStyle(style = SpanStyle(textDecoration = TextDecoration.LineThrough, color = Color(0xFFE74C3C))) {
-                append(m.original)
-            }
-            withStyle(style = SpanStyle(color = Color(0xFF27AE60), fontWeight = FontWeight.Bold)) {
-                append(" → ${m.corrected}")
+            if (m.original.isNotEmpty()) {
+                withStyle(style = SpanStyle(textDecoration = TextDecoration.LineThrough, color = Color(0xFFE74C3C))) {
+                    append(m.original)
+                }
+                if (m.corrected.isNotEmpty()) {
+                    withStyle(style = SpanStyle(color = Color(0xFF27AE60), fontWeight = FontWeight.Bold)) {
+                        append(" → ${m.corrected}")
+                    }
+                }
+            } else {
+                if (m.corrected.isNotEmpty()) {
+                    withStyle(style = SpanStyle(color = Color(0xFF27AE60), fontWeight = FontWeight.Bold)) {
+                        append(" ${m.corrected.trimStart('.', ',', ' ')}")
+                    }
+                }
             }
             pos = m.end
         }
@@ -689,9 +728,9 @@ fun ParentDashboardScreen(
                     } else {
                         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                             assessmentsList.forEach { a ->
-                                val statusColor = when (a.status) {
-                                    "completed" -> Color(0xFF27AE60)
-                                    "in_progress" -> Color(0xFFE67E22)
+                                val statusColor = when {
+                                    a.status == "completed" -> Color(0xFF27AE60)
+                                    a.isInProgress -> Color(0xFFE67E22)
                                     else -> Color(0xFF2980B9)
                                 }
                                 Card(
@@ -710,9 +749,9 @@ fun ParentDashboardScreen(
                                             }
                                             Column(horizontalAlignment = Alignment.End) {
                                                 Text(
-                                                    text = when (a.status) {
-                                                        "completed" -> "✓ Done"
-                                                        "in_progress" -> "▶ In Progress"
+                                                    text = when {
+                                                        a.status == "completed" -> "✓ Done"
+                                                        a.isInProgress -> "▶ In Progress"
                                                         else -> "⏳ Ready"
                                                     },
                                                     style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),

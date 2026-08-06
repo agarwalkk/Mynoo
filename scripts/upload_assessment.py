@@ -58,6 +58,7 @@ SUBJECT_LANG: dict[str, str] = {
 VALID_TYPES = {
     'mcq', 'short_answer', 'transformation', 'fill_blank',
     'error_correction', 'jumbled', 'match_columns', 'translation',
+    'equation_balancing', 'reaction_identification',
 }
 
 
@@ -152,6 +153,7 @@ def clean_latex_to_unicode(text: str) -> str:
 
     s = re.sub(r'_\{\s*([^}]+)\s*\}', sub_replacer, s)
     s = re.sub(r'\^\{\s*([^}]+)\s*\}', sup_replacer, s)
+    s = re.sub(r'\^([0-9a-zA-Z])', sup_replacer, s)
     s = re.sub(r'_([0-9a-zA-Z])', sub_replacer, s)
 
     # 8. Remove inline math dollar signs e.g., $70°, 110°$ -> 70°, 110°
@@ -581,7 +583,7 @@ def _clean_question_object(q: dict) -> dict:
     eq.pop('asymptote', None)
     eq.pop('tikz', None)
 
-    for field in ('question', 'hint', 'explanation', 'inputSentence'):
+    for field in ('question', 'hint', 'explanation', 'inputSentence', 'unbalancedEquation', 'inputReaction'):
         if field in eq and isinstance(eq[field], str):
             eq[field] = clean_latex_to_unicode(eq[field])
 

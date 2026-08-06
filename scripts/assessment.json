@@ -1,1110 +1,698 @@
 {
-  "title": "Rulers to the Ruled: Types of Governments",
+  "title": "Forces, Work, and Energy",
+  "passages": [],
   "questions": [
     {
       "id": "q1",
       "type": "mcq",
-      "category": "Civics - Government",
+      "category": "How Forces Affect Motion",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Which of the following US Presidents described democracy as a 'government of the people, by the people, for the people'?",
-      "tag": "Democracy",
-      "hint": "He was a U.S. president in the late 19th century.",
+      "question": "What is the SI unit of force?",
+      "passageId": "",
+      "tag": "Force Concept",
+      "hint": "Section 6.1: The Concept of Force",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
       "options": [
         {
-          "text": "George Washington",
-          "explanation": "Incorrect. He was not mentioned in the text for this quote[cite: 1]."
+          "text": "Joule (J)",
+          "explanation": "Incorrect. Joule is the SI unit of work and energy."
         },
         {
-          "text": "Abraham Lincoln",
-          "explanation": "Correct. Abraham Lincoln described democracy with this famous phrase[cite: 1]."
+          "text": "Newton (N)",
+          "explanation": "Correct. The SI unit of force is the newton."
         },
         {
-          "text": "Thomas Jefferson",
-          "explanation": "Incorrect. He was not mentioned in the text for this quote[cite: 1]."
+          "text": "Watt (W)",
+          "explanation": "Incorrect. Watt is the SI unit of power."
         },
         {
-          "text": "John F. Kennedy",
-          "explanation": "Incorrect. He was not mentioned in the text[cite: 1]."
+          "text": "Kilogram (kg)",
+          "explanation": "Incorrect. Kilogram is the SI unit of mass."
         }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Abraham Lincoln",
-      "explanation": "Abraham Lincoln described democracy as a 'government of the people, by the people, for the people'[cite: 1]."
+      "correctAnswer": "Newton (N)",
+      "explanation": "The SI unit of force is the newton (N), which is defined as the force that produces an acceleration of $1\\text{ m/s}^{2}$ on an object of mass $1\\text{ kg}$."
     },
     {
       "id": "q2",
       "type": "mcq",
-      "category": "Civics - Democracy",
+      "category": "How Forces Affect Motion",
       "marks": 1,
       "difficulty": "easy",
-      "question": "In which form of government do citizens directly participate in all decisions and rules?",
-      "tag": "Direct Democracy",
-      "hint": "This system is practiced in Switzerland.",
+      "question": "When two forces applied on an object are equal in magnitude but opposite in direction, what are they called?",
+      "passageId": "",
+      "tag": "Balanced Forces",
+      "hint": "Section 6.2: Balanced and Unbalanced Forces",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
       "options": [
         {
-          "text": "Representative Democracy",
-          "explanation": "Incorrect. People elect representatives in this form[cite: 1]."
+          "text": "Unbalanced forces",
+          "explanation": "Incorrect. Unbalanced forces have a non-zero net force."
         },
         {
-          "text": "Absolute Monarchy",
-          "explanation": "Incorrect. In this form, a king or queen holds all power[cite: 1]."
+          "text": "Net forces",
+          "explanation": "Incorrect. Net force is the vector sum of all forces."
         },
         {
-          "text": "Direct Democracy",
-          "explanation": "Correct. All citizens participate directly in the rules and functions[cite: 1]."
+          "text": "Balanced forces",
+          "explanation": "Correct. Equal and opposite forces have a net force of zero and are called balanced forces."
         },
         {
-          "text": "Theocracy",
-          "explanation": "Incorrect. A theocracy is ruled by religious leaders[cite: 1]."
+          "text": "Frictional forces",
+          "explanation": "Incorrect. Friction is a specific type of resistive force."
         }
       ],
       "correctIndex": 2,
-      "correctAnswer": "Direct Democracy",
-      "explanation": "Direct democracy is a form where all citizens are directly responsible for rules and regulations[cite: 1]."
+      "correctAnswer": "Balanced forces",
+      "explanation": "Two forces that are equal in magnitude but opposite in direction are called balanced forces, resulting in zero net force."
     },
     {
       "id": "q3",
       "type": "mcq",
-      "category": "Civics - Democracy",
+      "category": "How Forces Affect Motion",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "In what year did women in Switzerland get the right to vote?",
-      "tag": "Elections",
-      "hint": "It happened in the late 20th century.",
+      "difficulty": "easy",
+      "question": "In which direction does the force of friction act when an object is pushed across a horizontal floor?",
+      "passageId": "",
+      "tag": "Friction",
+      "hint": "Section 6.3: The Force of Friction...",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
       "options": [
         {
-          "text": "1928",
-          "explanation": "Incorrect. This is when effective Universal Adult Suffrage happened in the UK[cite: 1]."
+          "text": "In the same direction as the push",
+          "explanation": "Incorrect. This would accelerate the object further."
         },
         {
-          "text": "1950",
-          "explanation": "Incorrect. India provided universal adult franchise from the beginning of its republic in 1950[cite: 1]."
+          "text": "Opposite to the direction of motion",
+          "explanation": "Correct. Friction opposes the relative motion between surfaces."
         },
         {
-          "text": "1971",
-          "explanation": "Correct. Women in Switzerland received the right to vote in 1971[cite: 1]."
+          "text": "Perpendicular to the motion",
+          "explanation": "Incorrect. The normal force acts perpendicular to the surface."
         },
         {
-          "text": "1965",
-          "explanation": "Incorrect. This is when effective Universal Adult Suffrage happened in the USA[cite: 1]."
+          "text": "Downward towards gravity",
+          "explanation": "Incorrect. This is the gravitational force."
         }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "1971",
-      "explanation": "In Switzerland, women got the right to vote only in 1971[cite: 1]."
+      "correctIndex": 1,
+      "correctAnswer": "Opposite to the direction of motion",
+      "explanation": "The force of friction acts in a direction opposite to the direction of the object's motion."
     },
     {
       "id": "q4",
       "type": "mcq",
-      "category": "Civics - Governance",
+      "category": "How Forces Affect Motion",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "What is the primary feature of a republic?",
-      "tag": "Republic",
-      "hint": "Think about how the head of state is chosen.",
+      "difficulty": "easy",
+      "question": "Which of the following represents the mathematical expression for Newton's second law of motion?",
+      "passageId": "",
+      "tag": "Newton's Second Law",
+      "hint": "Section 6.5: Newton's Second Law of Motion",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
       "options": [
         {
-          "text": "The head of state is a hereditary monarch",
-          "explanation": "Incorrect. A republic does not have a hereditary monarch[cite: 1]."
+          "text": "$v = u + at$",
+          "explanation": "Incorrect. This is a kinematic equation for velocity."
         },
         {
-          "text": "The head of state is elected",
-          "explanation": "Correct. A republic is a government where the head of state is elected[cite: 1]."
+          "text": "$W = F \\times s$",
+          "explanation": "Incorrect. This is the formula for work done."
         },
         {
-          "text": "The country is ruled by religious leaders",
-          "explanation": "Incorrect. This describes a theocracy[cite: 1]."
+          "text": "$F = ma$",
+          "explanation": "Correct. Force equals mass times acceleration."
         },
         {
-          "text": "A small group of wealthy people rule",
-          "explanation": "Incorrect. This describes an oligarchy[cite: 1]."
+          "text": "$P = \\frac{W}{t}$",
+          "explanation": "Incorrect. This is the formula for power."
         }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "The head of state is elected",
-      "explanation": "A republic is a form of government in which the head of state is elected and is not a hereditary monarch[cite: 1]."
+      "correctIndex": 2,
+      "correctAnswer": "$F = ma$",
+      "explanation": "Newton's second law states that the net force on an object is equal to its mass multiplied by its acceleration, $F = ma$."
     },
     {
       "id": "q5",
-      "type": "mcq",
-      "category": "Civics - History",
-      "marks": 1,
-      "difficulty": "hard",
-      "question": "Which of the following texts outlines the moral responsibilities and rājadharma of a king through the teachings of Bhishma?",
-      "tag": "History",
-      "hint": "It is an epic where Bhishma speaks to Yudhisthira from a bed of arrows.",
-      "options": [
-        {
-          "text": "Arthaśhāstra",
-          "explanation": "Incorrect. Kautilya wrote the Arthaśhāstra[cite: 1]."
-        },
-        {
-          "text": "Rājataranginī",
-          "explanation": "Incorrect. This was written by Kalhaņa[cite: 1]."
-        },
-        {
-          "text": "Shanti Parva of the Mahābhārata",
-          "explanation": "Correct. Bhishma teaches Yudhisthira about good governance and rājadharma in the Shanti Parva[cite: 1]."
-        },
-        {
-          "text": "Uttaramerur inscriptions",
-          "explanation": "Incorrect. These inscriptions provide details about village sabhā elections[cite: 1]."
-        }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "Shanti Parva of the Mahābhārata",
-      "explanation": "In the Shanti Parva of the Mahābhārata, Bhishma teaches Yudhisthira at great length on good governance and the moral responsibilities of a raja[cite: 1]."
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "If an object is moving with a constant non-zero velocity in a straight line, what can be said about the net force acting on it according to Newton's first law?",
+      "passageId": "",
+      "tag": "Newton's First Law",
+      "hint": "Section 6.4: Newton's First Law of Motion",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The net force acting on the object is zero.",
+      "explanation": "According to Newton's first law of motion, an object in motion continues to move with a constant velocity unless a net force acts upon it. Therefore, constant velocity implies zero net force."
     },
     {
       "id": "q6",
-      "type": "mcq",
-      "category": "Civics - Dictatorship",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "Idi Amin was a military dictator of which country?",
-      "tag": "Dictatorship",
-      "hint": "Many Indians whose ancestors migrated to this country were forced to flee.",
-      "options": [
-        {
-          "text": "Germany",
-          "explanation": "Incorrect. Adolf Hitler was the dictator of Germany[cite: 1]."
-        },
-        {
-          "text": "Uganda",
-          "explanation": "Correct. Idi Amin was a military dictator in Uganda[cite: 1]."
-        },
-        {
-          "text": "North Korea",
-          "explanation": "Incorrect. Shane lives in North Korea according to the text, but Idi Amin ruled Uganda[cite: 1]."
-        },
-        {
-          "text": "Iran",
-          "explanation": "Incorrect. Iran is an Islamic Republic[cite: 1]."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "Uganda",
-      "explanation": "Idi Amin was a military dictator in Uganda, responsible for the killing of thousands of people[cite: 1]."
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Explain how airbags in vehicles reduce the risk of serious injuries during a collision based on Newton's second law of motion.",
+      "passageId": "",
+      "tag": "Applications of Force",
+      "hint": "Bridging Science and Society, Chapter 6",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "Airbags increase the time duration over which the passenger's velocity reduces to zero. This decreases the acceleration, which in turn reduces the force exerted on the person ($F = ma$).",
+      "explanation": "By inflating into a compressible cushion, airbags prolong the impact time. A longer time to come to a halt means a smaller deceleration, and according to $F=ma$, a smaller force is applied to the passenger, minimizing injury."
     },
     {
       "id": "q7",
-      "type": "mcq",
-      "category": "Civics - Government",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 3,
       "difficulty": "medium",
-      "question": "Which of the following describes a Constitutional Monarchy?",
-      "tag": "Monarchy",
-      "hint": "Think about the United Kingdom's system.",
-      "options": [
-        {
-          "text": "The monarch has complete control in making laws.",
-          "explanation": "Incorrect. This is an absolute monarchy[cite: 1]."
-        },
-        {
-          "text": "The monarch is the nominal head while real executive power is with the prime minister.",
-          "explanation": "Correct. In a constitutional monarchy, legislative and executive powers rest with elected officials[cite: 1]."
-        },
-        {
-          "text": "Religious rules govern the country.",
-          "explanation": "Incorrect. This is a theocracy[cite: 1]."
-        },
-        {
-          "text": "A wealthy group of individuals holds all power.",
-          "explanation": "Incorrect. This is an oligarchy[cite: 1]."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "The monarch is the nominal head while real executive power is with the prime minister.",
-      "explanation": "In a constitutional monarchy like the UK, the king or queen has nominal power, and real executive power is exercised by the prime minister[cite: 1]."
+      "question": "Two forces of $10\\text{ N}$ and $6\\text{ N}$ act on a block in opposite directions, with the $10\\text{ N}$ force directed to the right. Calculate the magnitude and direction of the net force.",
+      "passageId": "",
+      "tag": "Net Force",
+      "hint": "Example 6.1",
+      "diagram": {
+        "hasDiagram": true,
+        "description": "A block subjected to 6 N force to the left and 10 N force to the right.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nimport numpy as np\nfig, ax = plt.subplots(figsize=(6, 3))\nax.set_xlim(0, 10)\nax.set_ylim(0, 5)\nax.set_aspect('equal')\nax.axis('off')\nbox = patches.Rectangle((4, 1.5), 2, 2, facecolor='#3B82F6', edgecolor='#1E293B')\nax.add_patch(box)\nax.arrow(4, 2.5, -1.5, 0, head_width=0.3, head_length=0.3, fc='#DC2626', ec='#DC2626')\nax.text(2.5, 2.8, '$6\\\\text{ N}$', ha='center', va='bottom', fontsize=12)\nax.arrow(6, 2.5, 2.5, 0, head_width=0.3, head_length=0.3, fc='#DC2626', ec='#DC2626')\nax.text(7.5, 2.8, '$10\\\\text{ N}$', ha='center', va='bottom', fontsize=12)\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+      },
+      "correctAnswer": "The net force is $4\\text{ N}$ acting towards the right.",
+      "explanation": "Since the forces are in opposite directions, their magnitudes are subtracted: $10\\text{ N} - 6\\text{ N} = 4\\text{ N}$. The direction of the net force is in the direction of the larger force, which is towards the right."
     },
     {
       "id": "q8",
-      "type": "mcq",
-      "category": "Civics - Democracy",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 3,
       "difficulty": "medium",
-      "question": "In the United States of America, how frequently do general elections occur?",
-      "tag": "Elections",
-      "hint": "It is slightly shorter than India's electoral cycle.",
-      "options": [
-        {
-          "text": "Every three years",
-          "explanation": "Incorrect. The text does not mention three years[cite: 1]."
-        },
-        {
-          "text": "Every four years",
-          "explanation": "Correct. In the USA, general elections occur every four years[cite: 1]."
-        },
-        {
-          "text": "Every five years",
-          "explanation": "Incorrect. India has general elections every five years[cite: 1]."
-        },
-        {
-          "text": "Every six years",
-          "explanation": "Incorrect. The text does not mention six years[cite: 1]."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "Every four years",
-      "explanation": "In the United States of America, general elections occur every four years[cite: 1]."
+      "question": "Describe how the launch of a rocket demonstrates Newton's third law of motion.",
+      "passageId": "",
+      "tag": "Newton's Third Law",
+      "hint": "Section 6.6: Newton's Third Law of Motion",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The rocket engine expels gas downwards (action), which exerts an equal and opposite upward force on the rocket (reaction), causing it to lift off.",
+      "explanation": "Newton's third law states that every action has an equal and opposite reaction. The expulsion of exhaust gases downward is the action, and the upward force pushing the rocket into the air is the reaction. Since this upward force exceeds the rocket's weight, the net force accelerates it upwards."
     },
     {
       "id": "q9",
-      "type": "mcq",
-      "category": "Civics - Terminology",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "What is the meaning of the Greek root word 'olígos' in oligarchy?",
-      "tag": "Oligarchy",
-      "hint": "It indicates a small number.",
-      "options": [
-        {
-          "text": "To rule",
-          "explanation": "Incorrect. 'árkhō' means to rule or command[cite: 1]."
-        },
-        {
-          "text": "A few",
-          "explanation": "Correct. 'olígos' means a few[cite: 1]."
-        },
-        {
-          "text": "Wealthy",
-          "explanation": "Incorrect. Although oligarchs are often wealthy, the word 'olígos' specifically means a few[cite: 1]."
-        },
-        {
-          "text": "Power",
-          "explanation": "Incorrect. This is not the meaning of the root word[cite: 1]."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "A few",
-      "explanation": "The word 'oligarchy' is of Greek origin, where olígos means a few and árkhō means to rule[cite: 1]."
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 4,
+      "difficulty": "hard",
+      "question": "Two boxes of masses $m_{1}$ and $m_{2}$ are placed on a frictionless horizontal surface and connected by a string. A horizontal external force $F$ pulls Box 2 to the right. Derive the expression for the acceleration of the system.",
+      "passageId": "",
+      "tag": "System of Objects",
+      "hint": "Section 6.7: Forces Acting on a System of Objects",
+      "diagram": {
+        "hasDiagram": true,
+        "description": "Two boxes connected by a string pulled by force F.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(7, 3))\nax.set_xlim(0, 10)\nax.set_ylim(0, 4)\nax.set_aspect('equal')\nax.axis('off')\nax.plot([1, 9], [1, 1], color='black', linewidth=2)\nbox1 = patches.Rectangle((2, 1), 1.5, 1.5, facecolor='#3B82F6', edgecolor='black')\nbox2 = patches.Rectangle((5, 1), 1.5, 1.5, facecolor='#3B82F6', edgecolor='black')\nax.add_patch(box1)\nax.add_patch(box2)\nax.plot([3.5, 5], [1.75, 1.75], color='black', linestyle='--')\nax.arrow(6.5, 1.75, 1.5, 0, head_width=0.2, head_length=0.3, fc='#DC2626', ec='#DC2626')\nax.text(2.75, 1.75, '$m_1$', ha='center', va='center', color='white', fontsize=12)\nax.text(5.75, 1.75, '$m_2$', ha='center', va='center', color='white', fontsize=12)\nax.text(7.5, 2.1, '$F$', ha='center', va='center', fontsize=12)\nax.text(4.25, 2, 'String', ha='center', va='center', fontsize=10)\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+      },
+      "correctAnswer": "By treating the two boxes as a single system of mass $(m_{1} + m_{2})$, the acceleration is $a = \\frac{F}{(m_{1} + m_{2})}$.",
+      "explanation": "When analyzing the connected boxes as a single system, internal tension forces cancel out. The total mass is $(m_{1} + m_{2})$. Applying Newton's second law, $F_{\\text{net}} = m_{\\text{total}} \\times a$, yielding $a = \\frac{F}{(m_{1} + m_{2})}$."
     },
     {
       "id": "q10",
-      "type": "mcq",
-      "category": "Civics - Democracy",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 4,
       "difficulty": "hard",
-      "question": "Which of the following structures is true for a Parliamentary Democracy?",
-      "tag": "Democracy Types",
-      "hint": "Look at the relationship between the executive and the legislature.",
-      "options": [
-        {
-          "text": "The executive works independently of the legislature.",
-          "explanation": "Incorrect. This describes a Presidential democracy[cite: 1]."
-        },
-        {
-          "text": "The members of the executive are also part of the legislature.",
-          "explanation": "Correct. In a parliamentary democracy, the executive is part of the legislature[cite: 1]."
-        },
-        {
-          "text": "The president is elected directly by the people.",
-          "explanation": "Incorrect. This describes a Presidential democracy[cite: 1]."
-        },
-        {
-          "text": "The prime minister serves for life.",
-          "explanation": "Incorrect. Ministers work as long as they have the confidence of the legislature[cite: 1]."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "The members of the executive are also part of the legislature.",
-      "explanation": "In a parliamentary democracy, the members of the executive are also part of the legislature and are accountable to it[cite: 1]."
+      "question": "A student pushes a stationary block of $25\\text{ kg}$ on a horizontal floor with a constant force of $55\\text{ N}$ in the forward direction. The maximum force of friction opposing this motion is $50\\text{ N}$. Determine the displacement of the block in $2\\text{ seconds}$.",
+      "passageId": "",
+      "tag": "Kinematics and Force",
+      "hint": "Example 6.5",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The displacement of the block is $0.4\\text{ m}$ in the forward direction.",
+      "explanation": "Net force $F_{\\text{net}} = 55\\text{ N} - 50\\text{ N} = 5\\text{ N}$. Acceleration $a = \\frac{F}{m} = \\frac{5}{25} = 0.2\\text{ m/s}^{2}$. Using $s = ut + \\frac{1}{2}at^{2}$, where $u = 0$, $t = 2\\text{ s}$: $s = 0 + \\frac{1}{2}(0.2)(2)^{2} = 0.4\\text{ m}$."
     },
     {
       "id": "q11",
-      "type": "mcq",
-      "category": "Civics - History",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Who authored the 12th century CE text Rājataranginī?",
-      "tag": "History",
-      "hint": "He was a Kashmiri scholar.",
-      "options": [
-        {
-          "text": "Kautilya",
-          "explanation": "Incorrect. He authored Arthaśhāstra[cite: 1]."
-        },
-        {
-          "text": "Bhishma",
-          "explanation": "Incorrect. Bhishma's teachings are in the Mahābhārata[cite: 1]."
-        },
-        {
-          "text": "Kalhaņa",
-          "explanation": "Correct. Kalhaņa wrote the Rājataranginī[cite: 1]."
-        },
-        {
-          "text": "Chandrāpīda",
-          "explanation": "Incorrect. He was a king mentioned in the text, not the author[cite: 1]."
-        }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "Kalhaņa",
-      "explanation": "The Rājataranginī was authored by the Kashmiri scholar Kalhaņa in the 12th century CE[cite: 1]."
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 4,
+      "difficulty": "hard",
+      "question": "A $0.1\\text{ kg}$ bullet is fired from a $5\\text{ kg}$ gun with a force of $2\\text{ N}$, causing the gun to recoil. Calculate the magnitudes of the initial accelerations of both the bullet and the gun.",
+      "passageId": "",
+      "tag": "Newton's Third Law",
+      "hint": "Example 6.8",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "Acceleration of the bullet is $20\\text{ m/s}^{2}$. Acceleration of the gun is $0.4\\text{ m/s}^{2}$.",
+      "explanation": "By Newton's third law, the recoil force on the gun is also $2\\text{ N}$. For the bullet: $a_{b} = \\frac{2\\text{ N}}{0.1\\text{ kg}} = 20\\text{ m/s}^{2}$. For the gun: $a_{g} = \\frac{2\\text{ N}}{5\\text{ kg}} = 0.4\\text{ m/s}^{2}$. Though forces are equal, accelerations differ due to different masses."
     },
     {
       "id": "q12",
-      "type": "mcq",
-      "category": "Civics - Democracy",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "In India, what is the Lower House of the legislature called?",
-      "tag": "Legislature",
-      "hint": "It is typically more powerful than the Upper House.",
-      "options": [
-        {
-          "text": "Rajya Sabha",
-          "explanation": "Incorrect. This is the Upper House[cite: 1]."
-        },
-        {
-          "text": "Senate",
-          "explanation": "Incorrect. This is the Upper House in the USA[cite: 1]."
-        },
-        {
-          "text": "Lok Sabha",
-          "explanation": "Correct. The Lower House in India is the Lok Sabha[cite: 1]."
-        },
-        {
-          "text": "National Assembly",
-          "explanation": "Incorrect. This is the single house in South Korea[cite: 1]."
-        }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "Lok Sabha",
-      "explanation": "In India, the Lower House is called the Lok Sabha, and the Upper House is called the Rajya Sabha[cite: 1]."
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "A weightlifter holds a barbell steady. The bar itself is $10\\text{ kg}$, and there is a $10\\text{ kg}$ mass on each side. Taking $g = 9.8\\text{ m/s}^{2}$, calculate the total gravitational force acting on the barbell and the upward force the weightlifter must apply to keep it steady.",
+      "passageId": "",
+      "tag": "Gravitational Force",
+      "hint": "Example 6.4",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The gravitational force is $294\\text{ N}$ downwards. The weightlifter applies $294\\text{ N}$ upwards.",
+      "explanation": "Total mass $m = 10\\text{ kg (bar)} + 10\\text{ kg} + 10\\text{ kg} = 30\\text{ kg}$. Weight $F = mg = 30 \\times 9.8 = 294\\text{ N}$ downwards. To hold it steady (balanced forces), the weightlifter must apply an equal force of $294\\text{ N}$ upwards."
     },
     {
       "id": "q13",
-      "type": "mcq",
-      "category": "Civics - Government",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Which principle ensures that the three organs of government work independently and do not interfere with each other?",
-      "tag": "Governance",
-      "hint": "It involves dividing authority.",
-      "options": [
-        {
-          "text": "Universal adult franchise",
-          "explanation": "Incorrect. This grants citizens the right to vote[cite: 1]."
-        },
-        {
-          "text": "Accountability",
-          "explanation": "Incorrect. This means the government is answerable to the people[cite: 1]."
-        },
-        {
-          "text": "Separation of Power",
-          "explanation": "Correct. This principle ensures independent functioning of the Legislature, Executive, and Judiciary[cite: 1]."
-        },
-        {
-          "text": "Sovereignty",
-          "explanation": "Incorrect. This indicates independent power from external influence[cite: 1]."
-        }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "Separation of Power",
-      "explanation": "Separation of Power means that the Legislature, Executive, and Judiciary work independently without interference[cite: 1]."
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 4,
+      "difficulty": "hard",
+      "question": "A sports car of mass $1500\\text{ kg}$ accelerates uniformly from rest to $10\\text{ m/s}$ in $5\\text{ s}$. Calculate the net force acting on the car during this time.",
+      "passageId": "",
+      "tag": "Velocity-Time Graph",
+      "hint": "Example 6.6",
+      "diagram": {
+        "hasDiagram": true,
+        "description": "Velocity-time graph accelerating from 0 to 10 m/s in 5s.",
+        "code": "import matplotlib.pyplot as plt\nimport numpy as np\nfig, ax = plt.subplots(figsize=(5, 4))\nax.set_xlim(0, 6)\nax.set_ylim(0, 12)\nax.plot([0, 5], [0, 10], color='#3B82F6', linewidth=2)\nax.set_xlabel('Time (s)', fontsize=12)\nax.set_ylabel('Velocity (m/s)', fontsize=12)\nax.grid(True, linestyle='--')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+      },
+      "correctAnswer": "The net force acting on the car is $3000\\text{ N}$.",
+      "explanation": "Acceleration $a = \\frac{v - u}{t} = \\frac{10 - 0}{5} = 2\\text{ m/s}^{2}$. Force $F = ma = 1500\\text{ kg} \\times 2\\text{ m/s}^{2} = 3000\\text{ N}$."
     },
     {
       "id": "q14",
-      "type": "mcq",
-      "category": "Civics - Dictatorship",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 3,
       "difficulty": "medium",
-      "question": "Which leader was responsible for the killing of at least six million Jews during his dictatorship?",
-      "tag": "Dictatorship",
-      "hint": "He was appointed Chancellor of Germany in 1933.",
-      "options": [
-        {
-          "text": "Idi Amin",
-          "explanation": "Incorrect. He was the dictator of Uganda[cite: 1]."
-        },
-        {
-          "text": "Adolf Hitler",
-          "explanation": "Correct. He orchestrated the Holocaust in Germany[cite: 1]."
-        },
-        {
-          "text": "King Chandrāpīda",
-          "explanation": "Incorrect. He was a king who ruled according to dharma[cite: 1]."
-        },
-        {
-          "text": "The Supreme Leader",
-          "explanation": "Incorrect. This is the title in Iran[cite: 1]."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "Adolf Hitler",
-      "explanation": "Adolf Hitler was the dictator of Germany responsible for the Holocaust, which resulted in the killing of at least six million Jews[cite: 1]."
+      "question": "When a stretched rubber band is released, it propels a stack of coins forward. Why does the stack of coins eventually come to a rest after losing contact with the rubber band?",
+      "passageId": "",
+      "tag": "Friction",
+      "hint": "Section 6.3: The Force of Friction...",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The force of friction continues to act on the stack of coins in the direction opposite to its motion, gradually bringing it to rest.",
+      "explanation": "Once contact with the rubber band is lost, the forward applied force becomes zero. However, the opposing force of friction between the coins and the surface remains, creating a net negative acceleration that stops the motion."
     },
     {
       "id": "q15",
-      "type": "mcq",
-      "category": "Civics - Governance",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "What is the primary function of the judiciary in a democratic government?",
-      "tag": "Functions",
-      "hint": "It ensures that the rules are adhered to.",
-      "options": [
-        {
-          "text": "Making laws",
-          "explanation": "Incorrect. This is the legislative function[cite: 1]."
-        },
-        {
-          "text": "Implementing laws",
-          "explanation": "Incorrect. This is the executive function[cite: 1]."
-        },
-        {
-          "text": "Ensuring laws are followed and protecting rights",
-          "explanation": "Correct. This is the judicial function[cite: 1]."
-        },
-        {
-          "text": "Managing economic activities",
-          "explanation": "Incorrect. This is an executive/administrative function[cite: 1]."
-        }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "Ensuring laws are followed and protecting rights",
-      "explanation": "The judicial function ensures that the rules are followed, and an independent judiciary protects citizens' fundamental rights[cite: 1]."
+      "type": "short_answer",
+      "category": "How Forces Affect Motion",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Using Newton's third law, explain how a canoeist makes a canoe move forward in water.",
+      "passageId": "",
+      "tag": "Newton's Third Law",
+      "hint": "Section 6.6: Newton's Third Law of Motion",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The canoeist pushes the water backwards with the paddle, and the water exerts an equal and opposite force forward on the paddle, propelling the canoe.",
+      "explanation": "The action force is the paddle pushing the water backwards. The reaction force is the water pushing the paddle (and consequently the canoe) forward. These forces act on different objects and do not cancel each other out."
     },
     {
       "id": "q16",
       "type": "mcq",
-      "category": "Civics - Government",
+      "category": "Work, Energy, and Simple Machines",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "Which ancient Mahājanapada practiced collective decision-making and merit-based leadership?",
-      "tag": "History",
-      "hint": "The Lichchhavi clan was a part of this state.",
+      "difficulty": "easy",
+      "question": "What is the SI unit of work done?",
+      "passageId": "",
+      "tag": "Work",
+      "hint": "Section 7.1: Work Done by a Constant Force",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
       "options": [
         {
-          "text": "Magadha",
-          "explanation": "Incorrect. The text does not mention Magadha for this practice[cite: 1]."
+          "text": "Newton (N)",
+          "explanation": "Incorrect. Newton is the unit of force."
         },
         {
-          "text": "Vajji (or Vriji)",
-          "explanation": "Correct. Vajji, particularly the Lichchhavi clan, was an early republic[cite: 1]."
+          "text": "Joule (J)",
+          "explanation": "Correct. 1 Joule = 1 Newton * 1 metre."
         },
         {
-          "text": "Rome",
-          "explanation": "Incorrect. Rome is in Italy, though it was an ancient republic[cite: 1]."
+          "text": "Watt (W)",
+          "explanation": "Incorrect. Watt is the unit of power."
         },
         {
-          "text": "Chola",
-          "explanation": "Incorrect. The Cholas had village sabhās, but Vajji is the Mahājanapada mentioned[cite: 1]."
+          "text": "Pascal (Pa)",
+          "explanation": "Incorrect. Pascal is the unit of pressure."
         }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Vajji (or Vriji)",
-      "explanation": "In the Vajji (or Vriji) mahājanapada, the Lichchhavi clan practiced collective decision-making as an early republic[cite: 1]."
+      "correctAnswer": "Joule (J)",
+      "explanation": "The SI unit of work done is the joule (J), which equals $1\\text{ N} \\times 1\\text{ m}$."
     },
     {
       "id": "q17",
       "type": "mcq",
-      "category": "Civics - Terminology",
+      "category": "Work, Energy, and Simple Machines",
       "marks": 1,
       "difficulty": "easy",
-      "question": "What is the definition of the term 'Subjugate' as provided in the text?",
-      "tag": "Definitions",
-      "hint": "It involves taking control using force.",
+      "question": "The sum of kinetic energy and potential energy of an object is called:",
+      "passageId": "",
+      "tag": "Mechanical Energy",
+      "hint": "Section 7.4.3: Conservation of mechanical energy",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
       "options": [
         {
-          "text": "To judge a case during a dispute",
-          "explanation": "Incorrect. This is 'adjudicate'[cite: 1]."
+          "text": "Thermal energy",
+          "explanation": "Incorrect. Thermal energy is heat."
         },
         {
-          "text": "To take control of people or a place by force",
-          "explanation": "Correct. Subjugate means to take control by using force and making people obey[cite: 1]."
+          "text": "Mechanical energy",
+          "explanation": "Correct. Mechanical energy is the sum of KE and PE."
         },
         {
-          "text": "To inherit a royal position",
-          "explanation": "Incorrect. This refers to a monarch[cite: 1]."
+          "text": "Chemical energy",
+          "explanation": "Incorrect. Chemical energy is stored in bonds."
         },
         {
-          "text": "To draw someone to look foolish",
-          "explanation": "Incorrect. This refers to a caricature[cite: 1]."
+          "text": "Electrical energy",
+          "explanation": "Incorrect. Electrical energy is related to charges."
         }
       ],
       "correctIndex": 1,
-      "correctAnswer": "To take control of people or a place by force",
-      "explanation": "Subjugate means to take control of people or a place by using force and make the people obey[cite: 1]."
+      "correctAnswer": "Mechanical energy",
+      "explanation": "The sum of the kinetic energy and the potential energy of an object is defined as its mechanical energy."
     },
     {
       "id": "q18",
       "type": "mcq",
-      "category": "Civics - Government",
+      "category": "Work, Energy, and Simple Machines",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "According to the story of Shane, which type of government controls the haircut styles and internet access of its citizens?",
-      "tag": "Dictatorship",
-      "hint": "Shane lives in North Korea.",
+      "difficulty": "easy",
+      "question": "Power is defined as the:",
+      "passageId": "",
+      "tag": "Power",
+      "hint": "Section 7.5: Power",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
       "options": [
         {
-          "text": "Democracy",
-          "explanation": "Incorrect. Democracies allow freedom of expression[cite: 1]."
+          "text": "Total work done",
+          "explanation": "Incorrect. This is just energy transferred."
         },
         {
-          "text": "Theocracy",
-          "explanation": "Incorrect. Theocracies are based on religion[cite: 1]."
+          "text": "Rate at which work is done",
+          "explanation": "Correct. Power $P = \\frac{W}{t}$."
         },
         {
-          "text": "Dictatorship",
-          "explanation": "Correct. Dictatorships impose absolute control over citizens' lives, as seen in North Korea[cite: 1]."
+          "text": "Force applied over a distance",
+          "explanation": "Incorrect. This defines work done."
         },
         {
-          "text": "Constitutional Monarchy",
-          "explanation": "Incorrect. This form has democratic elements[cite: 1]."
+          "text": "Capacity to do work",
+          "explanation": "Incorrect. This defines energy."
         }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "Dictatorship",
-      "explanation": "Shane's life in North Korea, where rules govern even haircuts, illustrates the absolute control typical of a dictatorship[cite: 1]."
+      "correctIndex": 1,
+      "correctAnswer": "Rate at which work is done",
+      "explanation": "Power is defined as the rate at which work is done, mathematically represented as $P = \\frac{W}{t}$."
     },
     {
       "id": "q19",
       "type": "mcq",
-      "category": "Civics - Theocracy",
+      "category": "Work, Energy, and Simple Machines",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Which of the following is currently an example of a theocracy?",
-      "tag": "Theocracy",
-      "hint": "Its full name is 'Islamic Republic of...'",
+      "question": "What is the mechanical advantage of a simple fixed pulley used to lift a load?",
+      "passageId": "",
+      "tag": "Simple Machines",
+      "hint": "Section 7.6.1: Pulley",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
       "options": [
         {
-          "text": "South Korea",
-          "explanation": "Incorrect. South Korea is a presidential democracy[cite: 1]."
+          "text": "0",
+          "explanation": "Incorrect. A mechanical advantage of 0 would mean infinite effort is required."
         },
         {
-          "text": "Iran",
-          "explanation": "Correct. Iran is an Islamic Republic with a theocratic system[cite: 1]."
+          "text": "Less than 1",
+          "explanation": "Incorrect. The effort is equal to the load."
         },
         {
-          "text": "Saudi Arabia",
-          "explanation": "Incorrect. Saudi Arabia is an absolute monarchy[cite: 1]."
+          "text": "1",
+          "explanation": "Correct. A fixed pulley only changes the direction of force, so Effort = Load."
         },
         {
-          "text": "Uganda",
-          "explanation": "Incorrect. Uganda was referenced under Idi Amin's dictatorship[cite: 1]."
+          "text": "Greater than 1",
+          "explanation": "Incorrect. A movable pulley system might have MA > 1, but a fixed single pulley has MA = 1."
         }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "Iran",
-      "explanation": "Iran is a theocracy where the constitution is based on the fundamental principles of Islam and ruled by religious leaders[cite: 1]."
+      "correctIndex": 2,
+      "correctAnswer": "1",
+      "explanation": "A fixed pulley only changes the direction of the applied force without changing its magnitude. Thus, load equals effort, making the mechanical advantage 1."
     },
     {
       "id": "q20",
-      "type": "mcq",
-      "category": "Civics - Democracy",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "In a democracy, the concept that the government is answerable to the people is known as:",
-      "tag": "Accountability",
-      "hint": "It ensures the government acts responsibly.",
-      "options": [
-        {
-          "text": "Universal adult franchise",
-          "explanation": "Incorrect. This is the right to vote[cite: 1]."
-        },
-        {
-          "text": "Accountability",
-          "explanation": "Correct. It means the government must answer to its citizens[cite: 1]."
-        },
-        {
-          "text": "Separation of power",
-          "explanation": "Incorrect. This refers to independent organs of government[cite: 1]."
-        },
-        {
-          "text": "Sovereignty",
-          "explanation": "Incorrect. This refers to independent power[cite: 1]."
-        }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "Accountability",
-      "explanation": "Accountability in democracy means that the government is answerable to the people who elected it[cite: 1]."
+      "question": "Why is the work done zero when a girl carries a box while walking horizontally?",
+      "passageId": "",
+      "tag": "Work Done",
+      "hint": "Section 7.1.1: When is work done equal to zero?",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The force applied to hold the box acts vertically upward, while the displacement is horizontal. Since they are perpendicular, the work done by the supporting force is zero.",
+      "explanation": "Work is done only when there is a component of displacement in the direction of the force. If force and displacement are perpendicular to each other, no work is done by that specific force."
     },
     {
       "id": "q21",
-      "type": "fill_blank",
-      "category": "Civics - Functions",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 2,
       "difficulty": "easy",
-      "question": "The creation of rules that serve as the framework for running the country is called the ___ function.",
-      "tag": "Legislative",
-      "hint": "This function makes the laws.",
-      "blanks": [
-        "legislative"
-      ],
-      "correctAnswer": "legislative",
-      "explanation": "The creation of rules is called the legislative function; these rules serve as the framework for running the country[cite: 1]."
+      "question": "Name two different forms of energy other than mechanical energy.",
+      "passageId": "",
+      "tag": "Forms of Energy",
+      "hint": "Section 7.3: Forms of Energy",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "Thermal energy and Electrical energy (or Light, Sound, Chemical, Nuclear).",
+      "explanation": "Energy exists in various forms such as thermal (heat), electrical, light, sound, nuclear, and chemical energy, all of which can often be interconverted."
     },
     {
       "id": "q22",
-      "type": "fill_blank",
-      "category": "Civics - Functions",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "The implementation of rules and the administration of the country according to them is known as the ___ function.",
-      "tag": "Executive",
-      "hint": "This organ enforces the laws.",
-      "blanks": [
-        "executive"
-      ],
-      "correctAnswer": "executive",
-      "explanation": "The implementation of these rules and the administration of the country is known as the executive function[cite: 1]."
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "A jet aircraft of mass $15000\\text{ kg}$ is moving at a velocity of $70\\text{ m/s}$. Calculate its kinetic energy.",
+      "passageId": "",
+      "tag": "Kinetic Energy",
+      "hint": "Example 7.6",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The kinetic energy is $36750000\\text{ J}$ or $3.675 \\times 10^{7}\\text{ J}$.",
+      "explanation": "Kinetic Energy $K = \\frac{1}{2}mv^{2} = \\frac{1}{2} \\times 15000 \\times (70)^{2} = 7500 \\times 4900 = 36750000\\text{ J}$."
     },
     {
       "id": "q23",
-      "type": "fill_blank",
-      "category": "Civics - Democracy",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 3,
       "difficulty": "medium",
-      "question": "The system to decide how a democratic government will work can be written down in a book of fundamental rules called the ___.",
-      "tag": "Constitution",
-      "hint": "It limits dictatorial powers.",
-      "blanks": [
-        "constitution"
-      ],
-      "correctAnswer": "constitution",
-      "explanation": "The system to decide how the government will work can be written down in a book of fundamental rules called the 'constitution'[cite: 1]."
+      "question": "A weightlifter lifts a $75\\text{ kg}$ mass by $2\\text{ m}$ in $5\\text{ seconds}$. Taking $g=10\\text{ m/s}^{2}$, how much power does she require?",
+      "passageId": "",
+      "tag": "Power",
+      "hint": "Example 7.10",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The power required is $300\\text{ W}$.",
+      "explanation": "Work done $W = mgh = 75 \\times 10 \\times 2 = 1500\\text{ J}$. Power $P = \\frac{W}{t} = \\frac{1500}{5} = 300\\text{ W}$."
     },
     {
       "id": "q24",
-      "type": "fill_blank",
-      "category": "Civics - Democracy",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "In a democracy, the ___ grants every citizen above a certain age the right to vote.",
-      "tag": "Franchise",
-      "hint": "It is a three-word phrase starting with 'Universal'.",
-      "blanks": [
-        "universal adult franchise",
-        "Universal adult franchise"
-      ],
-      "correctAnswer": "universal adult franchise",
-      "explanation": "Universal adult franchise grants every citizen (above a certain age) the right to vote to choose their representative[cite: 1]."
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 4,
+      "difficulty": "hard",
+      "question": "On a seesaw, a child of mass $15\\text{ kg}$ sits $2\\text{ m}$ away from the fulcrum. At what distance from the fulcrum should another child of mass $30\\text{ kg}$ sit to balance the seesaw?",
+      "passageId": "",
+      "tag": "Lever",
+      "hint": "Example 7.13",
+      "diagram": {
+        "hasDiagram": true,
+        "description": "Seesaw with fulcrum at center. 15kg mass on one side at 2m.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(6, 3))\nax.set_xlim(0, 10)\nax.set_ylim(0, 5)\nax.set_aspect('equal')\nax.axis('off')\ntriangle = patches.Polygon([[4.5, 1], [5.5, 1], [5, 2]], facecolor='#DC2626')\nax.add_patch(triangle)\nax.plot([1, 9], [2, 2], color='black', linewidth=4)\nbox1 = patches.Rectangle((1.5, 2), 1, 1, facecolor='#3B82F6')\nax.add_patch(box1)\nax.text(2, 3.5, '$15\\\\text{ kg}$', ha='center', va='center')\nax.text(3.5, 1.5, '$2\\\\text{ m}$', ha='center', va='center')\nax.text(7, 1.5, '$L = ?$', ha='center', va='center')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+      },
+      "correctAnswer": "The other child should sit $1\\text{ m}$ away from the fulcrum.",
+      "explanation": "For a balanced lever, Effort $\\times$ Effort Arm = Load $\\times$ Load Arm. $15\\text{ kg} \\times 2\\text{ m} = 30\\text{ kg} \\times L$. Solving for $L$: $L = \\frac{30}{30} = 1\\text{ m}$."
     },
     {
       "id": "q25",
-      "type": "fill_blank",
-      "category": "Civics - History",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 4,
       "difficulty": "hard",
-      "question": "The 10th-century CE Uttaramerur inscriptions from ___ provide details about the election of members to the village sabhā.",
-      "tag": "History",
-      "hint": "It is a southern state in India.",
-      "blanks": [
-        "Tamil Nadu"
-      ],
-      "correctAnswer": "Tamil Nadu",
-      "explanation": "A remarkable example from the Chola period is seen in the Uttaramerur inscriptions from the 10th century CE in Tamil Nadu[cite: 1]."
+      "question": "A person uses an inclined ramp of length $50\\text{ cm}$ to raise an object over a step $30\\text{ cm}$ high. What is the mechanical advantage of the ramp?",
+      "passageId": "",
+      "tag": "Inclined Plane",
+      "hint": "Example 7.12",
+      "diagram": {
+        "hasDiagram": true,
+        "description": "Inclined ramp with length 50 cm and height 30 cm.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(5, 3))\nax.set_xlim(0, 7)\nax.set_ylim(0, 4)\nax.set_aspect('equal')\nax.axis('off')\nax.plot([1, 5], [1, 1], color='black')\nax.plot([5, 5], [1, 3], color='black')\nax.plot([1, 5], [1, 3], color='#3B82F6', linewidth=3)\nax.text(5.5, 2, '$30\\\\text{ cm}$', ha='left', va='center')\nax.text(2.5, 2.5, '$50\\\\text{ cm}$', ha='right', va='bottom')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+      },
+      "correctAnswer": "The mechanical advantage is $1.67$.",
+      "explanation": "Mechanical advantage of an inclined plane is $\\frac{\\text{Length}}{\\text{Height}} = \\frac{L}{h}$. Here, $MA = \\frac{50\\text{ cm}}{30\\text{ cm}} \\approx 1.67$."
     },
     {
       "id": "q26",
-      "type": "fill_blank",
-      "category": "Civics - Monarchy",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "A ___ monarchy is a government where the head of state is a king or queen with only nominal power, while real power rests with the prime minister.",
-      "tag": "Monarchy",
-      "hint": "Britain has this type of monarchy.",
-      "blanks": [
-        "constitutional",
-        "Constitutional"
-      ],
-      "correctAnswer": "constitutional",
-      "explanation": "In a constitutional monarchy, the head of state is the king or queen with nominal power, and real power is exercised by the prime minister[cite: 1]."
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 4,
+      "difficulty": "hard",
+      "question": "A truck of mass $10000\\text{ kg}$ is moving at $72\\text{ km/h}$. It enters an escape ramp where sand exerts a constant stopping force of $100000\\text{ N}$ (combining sand resistance and gravity effect). What is the minimum length of the ramp needed to stop the truck? (Assume Total Stopping Force = $100000\\text{ N}$)",
+      "passageId": "",
+      "tag": "Work-Energy Theorem",
+      "hint": "Example 7.9",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The minimum length of the ramp is $20\\text{ m}$.",
+      "explanation": "Velocity $v = 72\\text{ km/h} = 20\\text{ m/s}$. Initial KE $= \\frac{1}{2} \\times 10000 \\times (20)^{2} = 2000000\\text{ J}$. Work done by stopping force = Change in KE. $F \\times d = 2000000\\text{ J} \\implies 100000 \\times d = 2000000 \\implies d = 20\\text{ m}$."
     },
     {
       "id": "q27",
-      "type": "fill_blank",
-      "category": "Civics - Monarchy",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "In an ___ monarchy, such as Saudi Arabia, the monarch has complete control over making and adjudicating laws.",
-      "tag": "Monarchy",
-      "hint": "It starts with 'A' and means total power.",
-      "blanks": [
-        "absolute",
-        "Absolute"
-      ],
-      "correctAnswer": "absolute",
-      "explanation": "In an absolute monarchy, the monarch has complete control in making laws, ensuring they are followed, and adjudicating[cite: 1]."
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 4,
+      "difficulty": "hard",
+      "question": "An object of mass $m$ is dropped from a height $h$. Using kinematic equations and energy formulas, show that its total mechanical energy remains $mgh$ after falling for time $t$ (before hitting the ground).",
+      "passageId": "",
+      "tag": "Conservation of Energy",
+      "hint": "Section 7.4.3: Conservation of mechanical energy",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "At time $t$, velocity $v = gt$ and height lost is $\\frac{1}{2}gt^{2}$. Thus, KE = $\\frac{1}{2}mg^{2}t^{2}$ and PE = $mg(h - \\frac{1}{2}gt^{2})$. Total ME = KE + PE = $mgh$.",
+      "explanation": "Initially, $u=0$, $\\text{ME} = mgh + 0$. After time $t$, velocity $v = gt$. Kinetic energy $K = \\frac{1}{2}mv^{2} = \\frac{1}{2}m(gt)^{2}$. The distance fallen is $s = \\frac{1}{2}gt^{2}$, so the new height is $h' = h - \\frac{1}{2}gt^{2}$. Potential energy $U = mgh' = mg(h - \\frac{1}{2}gt^{2})$. Total Energy $E = K + U = \\frac{1}{2}mg^{2}t^{2} + mgh - \\frac{1}{2}mg^{2}t^{2} = mgh$. Thus, mechanical energy is conserved."
     },
     {
       "id": "q28",
-      "type": "fill_blank",
-      "category": "Civics - Theocracy",
-      "marks": 1,
-      "difficulty": "easy",
-      "question": "A ___ is a form of government where the country is ruled by the rules of religion and religious leaders.",
-      "tag": "Theocracy",
-      "hint": "Vatican City and Iran are examples.",
-      "blanks": [
-        "theocracy",
-        "Theocracy"
-      ],
-      "correctAnswer": "theocracy",
-      "explanation": "A theocracy is a form of government where the country is ruled by the rules of religion and religious leaders[cite: 1]."
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 4,
+      "difficulty": "hard",
+      "question": "A car of mass $1000\\text{ kg}$ starts from rest and reaches a speed of $72\\text{ km/h}$ in $10\\text{ seconds}$. Calculate the power of the engine required to achieve this start.",
+      "passageId": "",
+      "tag": "Power",
+      "hint": "Example 7.11",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The power of the engine is $20000\\text{ W}$.",
+      "explanation": "Final velocity $v = 72\\text{ km/h} = 20\\text{ m/s}$. Initial velocity $u = 0$. Work done = Change in KE = $\\frac{1}{2}mv^{2} - 0 = \\frac{1}{2} \\times 1000 \\times (20)^{2} = 200000\\text{ J}$. Power $P = \\frac{W}{t} = \\frac{200000\\text{ J}}{10\\text{ s}} = 20000\\text{ W}$."
     },
     {
       "id": "q29",
-      "type": "fill_blank",
-      "category": "Civics - Government",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "A ___ is a form of government in which one person or a small group possesses absolute power without limits imposed by a constitution.",
-      "tag": "Dictatorship",
-      "hint": "Idi Amin established this in Uganda.",
-      "blanks": [
-        "dictatorship",
-        "Dictatorship"
-      ],
-      "correctAnswer": "dictatorship",
-      "explanation": "A dictatorship is a form of government in which one person or a small group possesses absolute power without constitutional limits[cite: 1]."
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 4,
+      "difficulty": "hard",
+      "question": "A child slides down a frictionless slide of vertical height $h$. Derive the expression for the magnitude of their velocity upon reaching the bottom of the slide using the principle of conservation of energy.",
+      "passageId": "",
+      "tag": "Conservation of Energy",
+      "hint": "Example 7.8",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "The velocity is $v = \\sqrt{2gh}$.",
+      "explanation": "At the top of the slide, the child's kinetic energy is zero and potential energy is $mgh$. At the bottom, potential energy is zero and kinetic energy is $\\frac{1}{2}mv^{2}$. By conservation of mechanical energy (ignoring friction): $mgh = \\frac{1}{2}mv^{2}$. Canceling mass $m$ and solving for $v$ yields $v = \\sqrt{2gh}$."
     },
     {
       "id": "q30",
-      "type": "fill_blank",
-      "category": "Civics - Terminology",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "The word 'oligarchy' is of ___ origin.",
-      "tag": "Oligarchy",
-      "hint": "It comes from the same civilization as the word 'democracy'.",
-      "blanks": [
-        "Greek"
-      ],
-      "correctAnswer": "Greek",
-      "explanation": "The word 'oligarchy' is of Greek origin, where olígos means a few and árkhō means to rule[cite: 1]."
-    },
-    {
-      "id": "q31",
-      "type": "fill_blank",
-      "category": "Civics - Legislature",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Work, Energy, and Simple Machines",
+      "marks": 2,
       "difficulty": "easy",
-      "question": "In most countries, the Lower House is elected by direct voting and is generally more ___ than the Upper House.",
-      "tag": "Legislature",
-      "hint": "It has greater authority.",
-      "blanks": [
-        "powerful"
-      ],
-      "correctAnswer": "powerful",
-      "explanation": "In most countries, the Lower House is elected by direct voting and is generally more powerful than the Upper House[cite: 1]."
-    },
-    {
-      "id": "q32",
-      "type": "fill_blank",
-      "category": "Civics - Legislature",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "In the USA, the legislature is known as ___, and its Upper House is the Senate.",
-      "tag": "Legislature",
-      "hint": "It has two houses: the Senate and the House of Representatives.",
-      "blanks": [
-        "Congress"
-      ],
-      "correctAnswer": "Congress",
-      "explanation": "In the USA, the legislature is called Congress[cite: 1]."
-    },
-    {
-      "id": "q33",
-      "type": "fill_blank",
-      "category": "Civics - Governance",
-      "marks": 1,
-      "difficulty": "hard",
-      "question": "A ruler's duties in the internal administration of a country, according to Kautilya, are raksha, pālana, and ___.",
-      "tag": "Arthaśhāstra",
-      "hint": "It means safeguarding the welfare of the people.",
-      "blanks": [
-        "yogakshema"
-      ],
-      "correctAnswer": "yogakshema",
-      "explanation": "Kautilya described duties as raksha, pālana, and yogakshema (safeguarding the welfare of the people)[cite: 1]."
-    },
-    {
-      "id": "q34",
-      "type": "fill_blank",
-      "category": "Civics - History",
-      "marks": 1,
-      "difficulty": "hard",
-      "question": "According to the story from Rājataranginī, King Chandrāpīda respected the rights of a stubborn ___ whose hut stood in the way of a temple.",
-      "tag": "History",
-      "hint": "He worked with leather/shoes.",
-      "blanks": [
-        "cobbler"
-      ],
-      "correctAnswer": "cobbler",
-      "explanation": "King Chandrāpīda wanted to build a temple, but the hut of a stubborn cobbler stood in the way, and the king respected his dharma towards him[cite: 1]."
-    },
-    {
-      "id": "q35",
-      "type": "fill_blank",
-      "category": "Civics - Terminology",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Scholars have determined that the Roma (Romani people) originated in ___.",
-      "tag": "History",
-      "hint": "They were originally nomads from this South Asian country.",
-      "blanks": [
-        "India"
-      ],
-      "correctAnswer": "India",
-      "explanation": "Scholars have determined that the Roma originated in India based on their linguistic and cultural characteristics[cite: 1]."
-    },
-    {
-      "id": "q36",
-      "type": "match_columns",
-      "category": "Civics - Democracy",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Match the country in Column A with its type of democracy in Column B.",
-      "tag": "Democracy",
-      "hint": "Consider the relationship between the executive and legislature, or citizen involvement.",
-      "columnA": [
-        "USA",
-        "India",
-        "Switzerland"
-      ],
-      "columnB": [
-        "(a) Presidential Democracy",
-        "(b) Direct Democracy",
-        "(c) Parliamentary Democracy"
-      ],
-      "correctMatches": [
-        "a",
-        "c",
-        "b"
-      ],
-      "correctAnswer": "1-a, 2-c, 3-b",
-      "explanation": "The USA is a Presidential democracy, India is a Parliamentary democracy, and Switzerland has forms of Direct democracy[cite: 1]."
-    },
-    {
-      "id": "q37",
-      "type": "match_columns",
-      "category": "Civics - Forms of Government",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "Match the government type in Column A with its associated country in Column B.",
-      "tag": "Governance",
-      "hint": "Saudi Arabia has a king with total power, Iran rules by religion, and Uganda had Idi Amin.",
-      "columnA": [
-        "Absolute Monarchy",
-        "Theocracy",
-        "Dictatorship"
-      ],
-      "columnB": [
-        "(a) Uganda (under Idi Amin)",
-        "(b) Iran",
-        "(c) Saudi Arabia"
-      ],
-      "correctMatches": [
-        "c",
-        "b",
-        "a"
-      ],
-      "correctAnswer": "1-c, 2-b, 3-a",
-      "explanation": "Saudi Arabia is an Absolute Monarchy, Iran is a Theocracy, and Uganda under Idi Amin was a Dictatorship[cite: 1]."
-    },
-    {
-      "id": "q38",
-      "type": "match_columns",
-      "category": "Civics - Government Organs",
-      "marks": 3,
-      "difficulty": "easy",
-      "question": "Match the organ of the government in Column A with its primary function in Column B.",
-      "tag": "Functions",
-      "hint": "Legislature creates, Executive implements, Judiciary ensures.",
-      "columnA": [
-        "Legislature",
-        "Executive",
-        "Judiciary"
-      ],
-      "columnB": [
-        "(a) Ensuring laws are followed",
-        "(b) Making laws",
-        "(c) Implementing laws"
-      ],
-      "correctMatches": [
-        "b",
-        "c",
-        "a"
-      ],
-      "correctAnswer": "1-b, 2-c, 3-a",
-      "explanation": "The Legislature makes laws, the Executive implements them, and the Judiciary ensures they are followed[cite: 1]."
-    },
-    {
-      "id": "q39",
-      "type": "match_columns",
-      "category": "Civics - History",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Match the historical reference in Column A with its description in Column B.",
-      "tag": "History",
-      "hint": "Vajji was a Mahajanapada, Uttaramerur had inscriptions, and Bhishma spoke to Yudhisthira.",
-      "columnA": [
-        "Vajji",
-        "Uttaramerur",
-        "Shanti Parva"
-      ],
-      "columnB": [
-        "(a) 10th-century CE inscriptions detailing village sabhā elections",
-        "(b) Mahābhārata section teaching good governance",
-        "(c) Ancient Mahājanapada considered an early republic"
-      ],
-      "correctMatches": [
-        "c",
-        "a",
-        "b"
-      ],
-      "correctAnswer": "1-c, 2-a, 3-b",
-      "explanation": "Vajji was an early republic, Uttaramerur provides details on Chola village sabhās, and Shanti Parva contains Bhishma's teachings[cite: 1]."
-    },
-    {
-      "id": "q40",
-      "type": "match_columns",
-      "category": "Civics - Democratic Principles",
-      "marks": 3,
-      "difficulty": "easy",
-      "question": "Match the democratic principle in Column A with its meaning in Column B.",
-      "tag": "Principles",
-      "hint": "Adult franchise is about voting; separation of power protects institutions.",
-      "columnA": [
-        "Universal Adult Franchise",
-        "Separation of Power",
-        "Equality"
-      ],
-      "columnB": [
-        "(a) Every person has the right to be treated equally",
-        "(b) The three organs of government work independently",
-        "(c) Every adult citizen has the right to vote"
-      ],
-      "correctMatches": [
-        "c",
-        "b",
-        "a"
-      ],
-      "correctAnswer": "1-c, 2-b, 3-a",
-      "explanation": "Universal Adult Franchise is the right to vote, Separation of Power implies independent government organs, and Equality means equal treatment for all citizens[cite: 1]."
-    },
-    {
-      "id": "q41",
-      "type": "short_answer",
-      "category": "Civics - Functions",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Explain the three main functions of a government as described in the chapter.",
-      "tag": "Functions",
-      "hint": "Identify the legislative, executive, and judicial functions.",
-      "correctAnswer": "The three functions are: 1. Legislative function: the creation of rules that serve as the framework for the country[cite: 1]. 2. Executive function: implementing the rules and administering the country[cite: 1]. 3. Judicial function: ensuring that these rules are followed and adjudicating disputes[cite: 1].",
-      "explanation": "A government must create necessary rules (legislative), implement them (executive), and ensure everyone follows them (judicial)[cite: 1]."
-    },
-    {
-      "id": "q42",
-      "type": "short_answer",
-      "category": "Civics - Democracy",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "What is the primary difference between a Parliamentary Democracy and a Presidential Democracy?",
-      "tag": "Democracy",
-      "hint": "Focus on the relationship between the executive and the legislature.",
-      "correctAnswer": "In a Parliamentary Democracy, the members of the executive are also part of the legislature and are accountable to it[cite: 1]. In a Presidential Democracy, the executive works independently of the legislature, and the president does not need its confidence for their position[cite: 1].",
-      "explanation": "The key distinction lies in the separation of powers between the executive and legislative branches[cite: 1]."
-    },
-    {
-      "id": "q43",
-      "type": "short_answer",
-      "category": "Civics - Monarchy",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "Distinguish between an Absolute Monarchy and a Constitutional Monarchy.",
-      "tag": "Monarchy",
-      "hint": "Compare the distribution of law-making and executive powers in Saudi Arabia vs. the UK.",
-      "correctAnswer": "In an absolute monarchy, the monarch has complete control over making laws, implementing them, and adjudicating disputes, as seen in Saudi Arabia[cite: 1]. In a constitutional monarchy like the UK, the monarch has nominal power, while real legislative and executive powers are held by an elected parliament and a prime minister[cite: 1].",
-      "explanation": "Absolute monarchies grant total power to the ruler, whereas constitutional monarchies limit the ruler's power by entrusting governance to elected officials[cite: 1]."
-    },
-    {
-      "id": "q44",
-      "type": "short_answer",
-      "category": "Civics - Government",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Define 'Theocracy' and provide two modern examples mentioned in the text.",
-      "tag": "Theocracy",
-      "hint": "It involves religious leadership.",
-      "correctAnswer": "A theocracy is a form of government where the country is ruled by the rules of religion and religious leaders[cite: 1]. Modern examples include Iran (an Islamic Republic) and Vatican City (or Afghanistan)[cite: 1].",
-      "explanation": "In a theocracy, religious texts and leaders form the core of the government's authority[cite: 1]."
-    },
-    {
-      "id": "q45",
-      "type": "short_answer",
-      "category": "Civics - Dictatorship",
-      "marks": 3,
-      "difficulty": "easy",
-      "question": "What is a dictatorship? Briefly describe the consequences of Adolf Hitler's dictatorship as mentioned in the text.",
-      "tag": "Dictatorship",
-      "hint": "Think about absolute power and the events of World War II.",
-      "correctAnswer": "A dictatorship is a government where one person or a small group holds absolute power without constitutional limits[cite: 1]. Adolf Hitler's dictatorship resulted in the Holocaust (the killing of at least six million Jews) and caused World War II, leading to immense loss of life[cite: 1].",
-      "explanation": "Dictators operate without limits from a constitution or law, often leading to severe oppression and conflict[cite: 1]."
-    },
-    {
-      "id": "q46",
-      "type": "short_answer",
-      "category": "Civics - Governance",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "What is an oligarchy, and how can modern democracies sometimes show signs of it?",
-      "tag": "Oligarchy",
-      "hint": "The term means 'to rule by a few'.",
-      "correctAnswer": "An oligarchy is a government where a small, powerful, often wealthy group makes all important decisions[cite: 1]. In modern times, political commentators suggest some democracies show signs of oligarchy when a small group of politicians and wealthy businesspeople hold too much influence in governance[cite: 1].",
-      "explanation": "Oligarchies concentrate power among a few elite individuals, which can sometimes threaten democratic equality if wealthy influencers gain excessive control[cite: 1]."
-    },
-    {
-      "id": "q47",
-      "type": "short_answer",
-      "category": "Civics - History",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "Explain the concept of 'rājadharma' as taught by Bhishma in the Mahābhārata.",
-      "tag": "History",
-      "hint": "It concerns the moral responsibilities of a ruler.",
-      "correctAnswer": "Rājadharma refers to ruling according to dharma and ensuring the welfare of all people[cite: 1]. Bhishma taught that a raja is not just a ruler but must prioritize people's welfare, apply laws fairly without bias, avoid attachment to power, and seek guidance from wise advisors[cite: 1].",
-      "explanation": "The text highlights that even under ancient monarchies in India, rulers were expected to follow moral codes and prioritize their subjects' well-being[cite: 1]."
-    },
-    {
-      "id": "q48",
-      "type": "short_answer",
-      "category": "Civics - History",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "What specific details regarding local administration elections can be found in the 10th century CE Uttaramerur inscriptions?",
-      "tag": "History",
-      "hint": "They provide evidence of democratic practices in the Chola period.",
-      "correctAnswer": "The Uttaramerur inscriptions provide details about the election of members to the village sabhā[cite: 1]. They detail the election process, such as using sealed ballot boxes, qualifications of members, their duties, and conditions for dismissal (like corruption)[cite: 1].",
-      "explanation": "These inscriptions are significant historical evidence of early representative systems in Indian local administration[cite: 1]."
-    },
-    {
-      "id": "q49",
-      "type": "short_answer",
-      "category": "Civics - Democracy",
-      "marks": 3,
-      "difficulty": "easy",
-      "question": "Why is democracy generally considered a better form of government according to the text?",
-      "tag": "Democracy",
-      "hint": "Think about citizens' rights and accountability.",
-      "correctAnswer": "Democracy is considered better because people can lead their lives with freedom of expression, belief, and choice[cite: 1]. The government is accountable for protecting citizens' rights and basic needs, and if it fails, the people can change their representatives through elections[cite: 1].",
-      "explanation": "Democracy allows for constant checks on the government's actions and centers the well-being of all its people[cite: 1]."
-    },
-    {
-      "id": "q50",
-      "type": "short_answer",
-      "category": "Civics - Democracy",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Despite its ideals, what are some of the hurdles or challenges that democracies face today?",
-      "tag": "Challenges",
-      "hint": "The text lists several issues at the end of the chapter.",
-      "correctAnswer": "Democracies face issues such as corruption, wealth disparity, and excessive control by a few over democratic institutions[cite: 1]. Other hurdles include the erosion of the judiciary's independence and the manipulation of information channels[cite: 1].",
-      "explanation": "While democracy is ideal, practical implementation often faces challenges that citizens must remain vigilant against[cite: 1]."
+      "question": "In the context of physics, when is the work done by a force considered to be negative?",
+      "passageId": "",
+      "tag": "Work Done",
+      "hint": "Section 7.1.2: Positive and negative work done",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "correctAnswer": "Work done is negative when the displacement is in the direction opposite to that of the applied force.",
+      "explanation": "If a force is applied in one direction but the object undergoes displacement in the exact opposite direction (e.g., stopping a moving ball or lowering a heavy object), the work done by that force is negative."
     }
   ]
 }
