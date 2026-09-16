@@ -310,8 +310,8 @@ fun MynooNavGraph(
                     onStartAssessment = { assessmentId, childName ->
                         navController.navigate(Screen.Assessment.route(assessmentId, childName))
                     },
-                    onNavigateToAssessment = { assessmentId, childName ->
-                        navController.navigate(Screen.Assessment.route(assessmentId, childName))
+                    onNavigateToAssessment = { assessmentId, childName, startIndex ->
+                        navController.navigate(Screen.Assessment.route(assessmentId, childName, startIndex))
                     },
                     onBackClick = {
                         navController.popBackStack()
@@ -325,11 +325,13 @@ fun MynooNavGraph(
                 arguments = listOf(
                     navArgument("assessmentId") { type = NavType.StringType },
                     navArgument("childName")    { type = NavType.StringType },
+                    navArgument("startIndex")   { type = NavType.IntType; defaultValue = 0 },
                 ),
             ) { entry ->
                 AssessmentScreen(
                     assessmentId = entry.arguments?.getString("assessmentId") ?: "",
                     childName    = entry.arguments?.getString("childName")    ?: "",
+                    startIndex   = entry.arguments?.getInt("startIndex") ?: 0,
                     onFinish     = { navController.popBackStack() },
                 )
             }

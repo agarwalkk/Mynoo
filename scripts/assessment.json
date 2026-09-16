@@ -1,1182 +1,1519 @@
 {
-  "title": "Forces and Energy",
-  "passages": [],
+  "title": "Mathematics Comprehensive Annual Assessment",
+  "passages": [
+    {
+      "id": "p1",
+      "text": "### Case Study 1: The Geometry of Parallel Tracks & Crossings\nIn railway design, two parallel tracks $l$ and $m$ are laid out across flat ground and intersected by a straight crossover line $t$, acting as a transversal. Civil engineers monitor the track intersection angles to ensure safety and precision. The acute angle formed between track $l$ and transversal line $t$ is measured to be $65^{\\circ}$."
+    },
+    {
+      "id": "p2",
+      "text": "### Case Study 2: Historical Indian Mathematics & Rhythmic Poetry\nIn ancient Indian prosody, Pingala, Virahāṅka (c. 700 CE), and later Hemachandra analyzed poetic meters composed of short syllables (*laghu*, 1 beat) and long syllables (*guru*, 2 beats). The number of rhythmic patterns for $n$ beats forms the Virahāṅka sequence: $1, 2, 3, 5, 8, 13, 21, 34, \\dots$ where each term after the second is the sum of the two preceding terms."
+    },
+    {
+      "id": "p3",
+      "text": "### Case Study 3: The Ancient Cistern and Fountain Problem\nIn his commentary on Brahmagupta's *Brāhmasphuṭasiddhānta*, the 9th-century mathematician Caturveda Pṛthūdakasvāmī posed a problem of filling a public reservoir: Four distinct fountains fill a cistern. The first fountain takes $1$ full day, the second takes $\\frac{1}{2}$ day, the third takes $\\frac{1}{4}$ day, and the fourth takes $\\frac{1}{5}$ day."
+    }
+  ],
   "questions": [
     {
       "id": "q1",
       "type": "mcq",
-      "category": "How Forces Affect Motion",
+      "category": "Parallel and Intersecting Lines",
       "marks": 1,
       "difficulty": "easy",
-      "question": "What is the SI unit of force?",
+      "question": "Two straight lines intersect at a single point on a flat plane. If one of the angles formed is $72^{\\circ}$, what is the measure of its vertically opposite angle?[cite: 4]",
       "passageId": "",
-      "tag": "Force Unit",
-      "hint": "Section 6.1: The Concept of Force",
+      "tag": "Vertically Opposite Angles",
+      "hint": "Recall the property relating vertically opposite angles formed by intersecting lines.[cite: 4]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        {
-          "text": "Joule",
-          "explanation": "Incorrect. Joule is the unit of energy."
-        },
-        {
-          "text": "Newton",
-          "explanation": "Correct. The SI unit of force is the newton (N)."
-        },
-        {
-          "text": "Watt",
-          "explanation": "Incorrect. Watt is the unit of power."
-        },
-        {
-          "text": "Pascal",
-          "explanation": "Incorrect. Pascal is the unit of pressure."
-        }
+        { "text": "$108^{\\circ}$", "explanation": "Incorrect. $108^{\\circ}$ is the supplementary angle forming a linear pair, not the vertically opposite angle.[cite: 4]" },
+        { "text": "$72^{\\circ}$", "explanation": "Correct. Vertically opposite angles formed by two intersecting lines are always equal.[cite: 4]" },
+        { "text": "$18^{\\circ}$", "explanation": "Incorrect. This is the complementary angle ($90^{\\circ} - 72^{\\circ}$).[cite: 4]" },
+        { "text": "$90^{\\circ}$", "explanation": "Incorrect. Vertically opposite angles are equal to the given angle ($72^{\\circ}$).[cite: 4]" }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Newton",
-      "explanation": "The SI unit of force is the newton (N), named after Isaac Newton."
+      "correctAnswer": "$72^{\\circ}$",
+      "explanation": "When two straight lines intersect, the vertically opposite angles are always equal to each other[cite: 4]. Hence, the opposite angle is $72^{\\circ}$[cite: 4]."
     },
     {
       "id": "q2",
       "type": "mcq",
-      "category": "How Forces Affect Motion",
+      "category": "Parallel and Intersecting Lines",
       "marks": 1,
       "difficulty": "easy",
-      "question": "When two forces acting on an object are equal in magnitude but opposite in direction, they are called:",
+      "question": "If two adjacent angles form a linear pair and one angle measures $115^{\\circ}$, what is the measure of the other angle?[cite: 4]",
       "passageId": "",
-      "tag": "Balanced Forces",
-      "hint": "Section 6.2: Balanced and Unbalanced Forces",
+      "tag": "Linear Pair",
+      "hint": "Linear pair angles lie on a straight line and sum to a straight angle.[cite: 4]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        {
-          "text": "Unbalanced forces",
-          "explanation": "Incorrect. Unbalanced forces cause a change in motion."
-        },
-        {
-          "text": "Gravitational forces",
-          "explanation": "Incorrect. This refers to the pull of gravity."
-        },
-        {
-          "text": "Balanced forces",
-          "explanation": "Correct. Forces equal in magnitude and opposite in direction are balanced."
-        },
-        {
-          "text": "Frictional forces",
-          "explanation": "Incorrect. Friction opposes motion."
-        }
+        { "text": "$65^{\\circ}$", "explanation": "Correct. Angles in a linear pair add up to $180^{\\circ}$, so $180^{\\circ} - 115^{\\circ} = 65^{\\circ}$.[cite: 4]" },
+        { "text": "$75^{\\circ}$", "explanation": "Incorrect. $180^{\\circ} - 115^{\\circ} = 65^{\\circ}$, not $75^{\\circ}$.[cite: 4]" },
+        { "text": "$115^{\\circ}$", "explanation": "Incorrect. This is the vertically opposite angle, not the adjacent supplementary angle.[cite: 4]" },
+        { "text": "$245^{\\circ}$", "explanation": "Incorrect. Linear pairs are bounded by $180^{\\circ}$.[cite: 4]" }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "Balanced forces",
-      "explanation": "Balanced forces result in a net force of zero, meaning the object's motion does not change."
+      "correctIndex": 0,
+      "correctAnswer": "$65^{\\circ}$",
+      "explanation": "By definition, the sum of two angles forming a linear pair is $180^{\\circ}$[cite: 4]. Therefore, the other angle is $180^{\\circ} - 115^{\\circ} = 65^{\\circ}$[cite: 4]."
     },
     {
       "id": "q3",
       "type": "mcq",
-      "category": "How Forces Affect Motion",
+      "category": "Parallel and Intersecting Lines",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "If an object is moving with a constant velocity, what is the net force acting upon it?",
+      "difficulty": "easy",
+      "question": "What is the maximum number of distinct angle measures formed when a transversal intersects two parallel lines?[cite: 4]",
       "passageId": "",
-      "tag": "Newton's First Law",
-      "hint": "Section 6.4: Newton's First Law of Motion",
+      "tag": "Transversal Angles",
+      "hint": "Consider the relationship between corresponding, alternate, and linear pair angles.[cite: 4]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        {
-          "text": "Greater than zero",
-          "explanation": "Incorrect. A non-zero net force causes acceleration."
-        },
-        {
-          "text": "Less than zero",
-          "explanation": "Incorrect. Net force is a magnitude; it must be zero for constant velocity."
-        },
-        {
-          "text": "Zero",
-          "explanation": "Correct. According to Newton's first law, zero net force results in constant velocity."
-        },
-        {
-          "text": "Depends on mass",
-          "explanation": "Incorrect. Net force must be zero regardless of mass."
-        }
+        { "text": "$1$", "explanation": "Incorrect. This only occurs if all angles are perpendicular ($90^{\\circ}$).[cite: 4]" },
+        { "text": "$2$", "explanation": "Correct. All 8 angles consist of just two distinct values: an acute angle $\\theta$ and its supplementary obtuse angle $180^{\\circ} - \\theta$ (or just one value if perpendicular).[cite: 4]" },
+        { "text": "$4$", "explanation": "Incorrect. Four distinct angle measures can occur only when the two lines are non-parallel.[cite: 4]" },
+        { "text": "$8$", "explanation": "Incorrect. Due to vertical and linear pair relationships, 8 distinct angles can never occur.[cite: 4]" }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "Zero",
-      "explanation": "An object in motion continues to move with a constant velocity unless a net force acts upon it."
+      "correctIndex": 1,
+      "correctAnswer": "$2$",
+      "explanation": "When two lines are parallel, corresponding and alternate angles are equal[cite: 4]. Thus, the 8 angles reduce to at most 2 distinct measures (an angle and its supplement)[cite: 4]."
     },
     {
       "id": "q4",
       "type": "mcq",
-      "category": "How Forces Affect Motion",
+      "category": "Parallel and Intersecting Lines",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "What is the mathematical expression for Newton's second law of motion?",
+      "difficulty": "easy",
+      "question": "In the context of parallel lines intersected by a transversal, what is the sum of interior angles on the same side of the transversal?[cite: 4]",
       "passageId": "",
-      "tag": "Newton's Second Law",
-      "hint": "Section 6.5: Newton's Second Law of Motion",
+      "tag": "Consecutive Interior Angles",
+      "hint": "Check the relationship between co-interior angles.[cite: 4]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        {
-          "text": "$F = m / a$",
-          "explanation": "Incorrect. Force is mass times acceleration."
-        },
-        {
-          "text": "$F = m \\times a$",
-          "explanation": "Correct. Force equals mass times acceleration."
-        },
-        {
-          "text": "$F = a / m$",
-          "explanation": "Incorrect. This does not represent the second law."
-        },
-        {
-          "text": "$F = m \\times v$",
-          "explanation": "Incorrect. This represents momentum, not force."
-        }
+        { "text": "$90^{\\circ}$", "explanation": "Incorrect. Co-interior angles are supplementary, not complementary.[cite: 4]" },
+        { "text": "$180^{\\circ}$", "explanation": "Correct. Interior angles on the same side of the transversal add up to $180^{\\circ}$.[cite: 4]" },
+        { "text": "$360^{\\circ}$", "explanation": "Incorrect. $360^{\\circ}$ is the sum of four right angles.[cite: 4]" },
+        { "text": "They are always equal", "explanation": "Incorrect. They are only equal if both are right angles ($90^{\\circ}$).[cite: 4]" }
       ],
       "correctIndex": 1,
-      "correctAnswer": "$F = m \\times a$",
-      "explanation": "Newton's second law states that the net force on an object is equal to its mass multiplied by its acceleration."
+      "correctAnswer": "$180^{\\circ}$",
+      "explanation": "Interior angles on the same side of the transversal are supplementary and always sum to $180^{\\circ}$ when lines are parallel[cite: 4]."
     },
     {
       "id": "q5",
       "type": "mcq",
-      "category": "How Forces Affect Motion",
+      "category": "Parallel and Intersecting Lines",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "Which force opposes the relative motion between two surfaces in contact?",
+      "difficulty": "medium",
+      "question": "A square sheet of paper is folded in half horizontally, then in half horizontally again, and once more horizontally. How many parallel horizontal crease lines are created across the unfolded sheet?[cite: 4]",
       "passageId": "",
-      "tag": "Friction",
-      "hint": "Section 6.3: The Force of Friction",
+      "tag": "Paper Folding Patterns",
+      "hint": "Recall the formula $2^{n}-1$ or count the internal crease lines for $n$ folds.[cite: 4]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        {
-          "text": "Gravitational force",
-          "explanation": "Incorrect. Gravity pulls objects towards each other."
-        },
-        {
-          "text": "Normal force",
-          "explanation": "Incorrect. Normal force acts perpendicular to the surface."
-        },
-        {
-          "text": "Frictional force",
-          "explanation": "Correct. Friction opposes relative motion."
-        },
-        {
-          "text": "Magnetic force",
-          "explanation": "Incorrect. This acts between magnetic poles."
-        }
+        { "text": "$3$", "explanation": "Incorrect. 3 creases result from 2 folds.[cite: 4]" },
+        { "text": "$5$", "explanation": "Incorrect. 5 is the total number of parallel lines including the 2 sheet borders after 2 folds.[cite: 4]" },
+        { "text": "$7$", "explanation": "Correct. 3 successive folds divide the paper into $2^{3} = 8$ strips, creating $8 - 1 = 7$ internal parallel crease lines.[cite: 4]" },
+        { "text": "$8$", "explanation": "Incorrect. 8 is the number of sections, not crease lines.[cite: 4]" }
       ],
       "correctIndex": 2,
-      "correctAnswer": "Frictional force",
-      "explanation": "The force of friction arises between two surfaces in contact and acts in a direction opposite to the motion."
+      "correctAnswer": "$7$",
+      "explanation": "Each horizontal fold doubles the sections: after 3 folds, there are $2^{3} = 8$ equal sections, which means there are $8 - 1 = 7$ internal parallel creases[cite: 4]."
     },
     {
       "id": "q6",
       "type": "mcq",
-      "category": "How Forces Affect Motion",
+      "category": "Parallel and Intersecting Lines",
       "marks": 1,
       "difficulty": "medium",
-      "question": "What happens to the acceleration of an object if the net force applied to it is doubled, assuming mass remains constant?",
+      "question": "A transversal crosses two lines $l$ and $m$. A pair of alternate interior angles measure $(3x + 10)^{\\circ}$ and $(2x + 35)^{\\circ}$. For what value of $x$ are the lines $l$ and $m$ parallel?[cite: 4]",
       "passageId": "",
-      "tag": "Acceleration",
-      "hint": "Section 6.5: Newton's Second Law of Motion",
+      "tag": "Alternate Interior Angles",
+      "hint": "Alternate interior angles must be equal for lines to be parallel.[cite: 4]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        {
-          "text": "It is halved.",
-          "explanation": "Incorrect. Acceleration is directly proportional to force."
-        },
-        {
-          "text": "It remains the same.",
-          "explanation": "Incorrect. A change in force causes a change in acceleration."
-        },
-        {
-          "text": "It is doubled.",
-          "explanation": "Correct. Since $a = F/m$, doubling $F$ doubles $a$."
-        },
-        {
-          "text": "It is quadrupled.",
-          "explanation": "Incorrect. The relationship is linear."
-        }
+        { "text": "$25$", "explanation": "Correct. Equating $3x + 10 = 2x + 35$ gives $x = 25$.[cite: 4]" },
+        { "text": "$15$", "explanation": "Incorrect. Substituting $15$ gives $55^{\\circ} \\neq 65^{\\circ}$.[cite: 4]" },
+        { "text": "$27$", "explanation": "Incorrect. Check the linear equation solving steps.[cite: 4]" },
+        { "text": "$35$", "explanation": "Incorrect. Substituting $35$ gives $115^{\\circ} \\neq 105^{\\circ}$.[cite: 4]" }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "It is doubled.",
-      "explanation": "According to Newton's second law, acceleration is directly proportional to the net force applied."
+      "correctIndex": 0,
+      "correctAnswer": "$25$",
+      "explanation": "For lines $l$ and $m$ to be parallel, alternate interior angles must be equal: $3x + 10 = 2x + 35 \\implies 3x - 2x = 35 - 10 \\implies x = 25$[cite: 4]."
     },
     {
       "id": "q7",
       "type": "mcq",
-      "category": "How Forces Affect Motion",
+      "category": "Parallel and Intersecting Lines",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "When you push a wall, the wall pushes back on you with an equal and opposite force. Which law does this illustrate?",
-      "passageId": "",
-      "tag": "Newton's Third Law",
-      "hint": "Section 6.6: Newton's Third Law of Motion",
+      "difficulty": "easy",
+      "question": "Based on Case Study 1, what is the measure of the obtuse angle forming a linear pair with the $65^{\\circ}$ track angle?[cite: 4]",
+      "passageId": "p1",
+      "tag": "Linear Pair Application",
+      "hint": "Sum of angles on a straight line is $180^{\\circ}$.[cite: 4]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        {
-          "text": "Newton's First Law",
-          "explanation": "Incorrect. This relates to inertia."
-        },
-        {
-          "text": "Newton's Second Law",
-          "explanation": "Incorrect. This relates to force and acceleration."
-        },
-        {
-          "text": "Newton's Third Law",
-          "explanation": "Correct. Every action has an equal and opposite reaction."
-        },
-        {
-          "text": "Law of Gravitation",
-          "explanation": "Incorrect. This relates to attractive forces between masses."
-        }
+        { "text": "$115^{\\circ}$", "explanation": "Correct. $180^{\\circ} - 65^{\\circ} = 115^{\\circ}$.[cite: 4]" },
+        { "text": "$125^{\\circ}$", "explanation": "Incorrect. $180 - 65 = 115$, not $125$.[cite: 4]" },
+        { "text": "$65^{\\circ}$", "explanation": "Incorrect. $65^{\\circ}$ is the acute vertically opposite angle.[cite: 4]" },
+        { "text": "$135^{\\circ}$", "explanation": "Incorrect. Check arithmetic subtraction from $180^{\\circ}$.[cite: 4]" }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "Newton's Third Law",
-      "explanation": "Newton's third law states that whenever one object exerts a force on a second object, the second object exerts an equal and opposite force on the first."
+      "correctIndex": 0,
+      "correctAnswer": "$115^{\\circ}$",
+      "explanation": "The obtuse angle and the $65^{\\circ}$ acute angle form a linear pair: $180^{\\circ} - 65^{\\circ} = 115^{\\circ}$[cite: 4]."
     },
     {
       "id": "q8",
       "type": "mcq",
-      "category": "How Forces Affect Motion",
+      "category": "Parallel and Intersecting Lines",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "What is the magnitude of the gravitational force acting on an object of mass $m$ near the Earth's surface?",
-      "passageId": "",
-      "tag": "Gravitational Force",
-      "hint": "Section 6.5: Newton's Second Law of Motion",
+      "difficulty": "easy",
+      "question": "Based on Case Study 1, what is the measure of the alternate interior angle on the parallel track $m$?[cite: 4]",
+      "passageId": "p1",
+      "tag": "Alternate Interior Angles",
+      "hint": "Alternate interior angles between parallel lines are equal.[cite: 4]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        {
-          "text": "$m / g$",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$mg$",
-          "explanation": "Correct. The gravitational force is weight, given by $W = mg$."
-        },
-        {
-          "text": "$g / m$",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$m + g$",
-          "explanation": "Incorrect."
-        }
+        { "text": "$25^{\\circ}$", "explanation": "Incorrect. Alternate interior angles are equal, not complementary.[cite: 4]" },
+        { "text": "$65^{\\circ}$", "explanation": "Correct. Since tracks $l$ and $m$ are parallel, alternate interior angles are equal to $65^{\\circ}$.[cite: 4]" },
+        { "text": "$115^{\\circ}$", "explanation": "Incorrect. $115^{\\circ}$ is the consecutive interior angle.[cite: 4]" },
+        { "text": "$90^{\\circ}$", "explanation": "Incorrect. The lines are not perpendicular.[cite: 4]" }
       ],
       "correctIndex": 1,
-      "correctAnswer": "$mg$",
-      "explanation": "Using Newton's second law ($F=ma$), the gravitational force acting on an object is $F = mg$, where $g$ is the acceleration due to gravity."
+      "correctAnswer": "$65^{\\circ}$",
+      "explanation": "Since the tracks are parallel, the alternate interior angle to the acute $65^{\\circ}$ angle is also exactly $65^{\\circ}$[cite: 4]."
     },
     {
       "id": "q9",
       "type": "mcq",
-      "category": "How Forces Affect Motion",
+      "category": "Parallel and Intersecting Lines",
       "marks": 1,
-      "difficulty": "hard",
-      "question": "A $10\\text{ kg}$ object is moving at a constant speed of $5\\text{ m/s}$. What is the net force acting on it?",
+      "difficulty": "medium",
+      "question": "In the figure below, lines $l$ and $m$ are parallel and cut by transversal $t$. What is the value of $\\angle x$?[cite: 4]",
       "passageId": "",
-      "tag": "Net Force",
-      "hint": "Section 6.4: Newton's First Law of Motion",
+      "tag": "Transversal Diagram Calculation",
+      "hint": "Identify whether $\\angle x$ and the $50^{\\circ}$ angle are alternate interior or consecutive interior angles.[cite: 4]",
       "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
+        "hasDiagram": true,
+        "description": "Two parallel horizontal lines cut by a transversal showing an interior angle of 50 degrees.",
+        "code": "import matplotlib.pyplot as plt\nimport numpy as np\nfig, ax = plt.subplots(figsize=(5, 3))\nax.plot([-3, 3], [1, 1], color='#0F172A', lw=2)\nax.plot([-3, 3], [-1, -1], color='#0F172A', lw=2)\nax.plot([-2, 2], [2, -2], color='#2563EB', lw=2)\nax.text(2.5, 1.2, '$l$', fontsize=12, color='#0F172A', ha='center', va='bottom')\nax.text(2.5, -0.8, '$m$', fontsize=12, color='#0F172A', ha='center', va='bottom')\nax.text(1.8, -1.8, '$t$', fontsize=12, color='#2563EB', ha='center', va='bottom')\nax.text(0.3, 0.7, '$50^{\\circ}$', fontsize=11, color='#DC2626', ha='left', va='center')\nax.text(-0.5, -0.7, '$x^{\\circ}$', fontsize=11, color='#DC2626', ha='right', va='center')\nax.set_xlim(-3.5, 3.5)\nax.set_ylim(-2.5, 2.5)\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
       },
       "options": [
-        {
-          "text": "$50\\text{ N}$",
-          "explanation": "Incorrect. This would be the force if acceleration was $5\\text{ m/s}^{2}$."
-        },
-        {
-          "text": "$10\\text{ N}$",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$2\\text{ N}$",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$0\\text{ N}$",
-          "explanation": "Correct. Constant speed means zero acceleration, hence zero net force."
-        }
+        { "text": "$50^{\\circ}$", "explanation": "Correct. The two angles are alternate interior angles between parallel lines, hence $x = 50^{\\circ}$.[cite: 4]" },
+        { "text": "$130^{\\circ}$", "explanation": "Incorrect. $130^{\\circ}$ is the consecutive interior angle on the same side.[cite: 4]" },
+        { "text": "$40^{\\circ}$", "explanation": "Incorrect. Check alternate interior angle equality.[cite: 4]" },
+        { "text": "$140^{\\circ}$", "explanation": "Incorrect. The angles are in alternate positions across the transversal.[cite: 4]" }
       ],
-      "correctIndex": 3,
-      "correctAnswer": "$0\\text{ N}$",
-      "explanation": "Constant velocity implies acceleration is zero. By $F=ma$, the net force is $0\\text{ N}$."
+      "correctIndex": 0,
+      "correctAnswer": "$50^{\\circ}$",
+      "explanation": "The marked angle $x$ and the $50^{\\circ}$ angle lie on alternate sides of the transversal between the two parallel lines, making them equal alternate interior angles: $x = 50^{\\circ}$[cite: 4]."
     },
     {
       "id": "q10",
       "type": "mcq",
-      "category": "How Forces Affect Motion",
+      "category": "Parallel and Intersecting Lines",
       "marks": 1,
       "difficulty": "medium",
-      "question": "Two forces, $10\\text{ N}$ and $15\\text{ N}$, act on a block in the same direction as shown in the diagram. What is the net force?",
+      "question": "Two lines $AB$ and $CD$ are cut by transversal $EF$. If a pair of interior angles on the same side of the transversal measure $110^{\\circ}$ and $75^{\\circ}$, which statement is true?[cite: 4]",
       "passageId": "",
-      "tag": "Net Force",
-      "hint": "Section 6.2: Balanced and Unbalanced Forces",
+      "tag": "Parallel Line Testing",
+      "hint": "Sum the two interior angles and compare with $180^{\\circ}$.[cite: 4]",
       "diagram": {
-        "hasDiagram": true,
-        "description": "A block with two arrows pointing right, labeled 10 N and 15 N.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(4,2))\nax.set_xlim(0, 8)\nax.set_ylim(0, 4)\nax.axis('off')\nax.add_patch(patches.Rectangle((1, 1), 2, 2, facecolor='#3B82F6', edgecolor='#1E293B', linewidth=1.5))\nax.arrow(3.5, 1.5, 1.5, 0, head_width=0.3, head_length=0.3, fc='#DC2626', ec='#DC2626', linewidth=2)\nax.arrow(3.5, 2.5, 2.5, 0, head_width=0.3, head_length=0.3, fc='#DC2626', ec='#DC2626', linewidth=2)\nax.text(5.2, 1.5, '$10\\\\text{ N}$', ha='left', va='center', fontsize=12)\nax.text(6.2, 2.5, '$15\\\\text{ N}$', ha='left', va='center', fontsize=12)\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
       },
       "options": [
-        {
-          "text": "$5\\text{ N}$",
-          "explanation": "Incorrect. The forces are in the same direction."
-        },
-        {
-          "text": "$25\\text{ N}$",
-          "explanation": "Correct. $10\\text{ N} + 15\\text{ N} = 25\\text{ N}$."
-        },
-        {
-          "text": "$150\\text{ N}$",
-          "explanation": "Incorrect. Forces are added, not multiplied."
-        },
-        {
-          "text": "$0\\text{ N}$",
-          "explanation": "Incorrect."
-        }
+        { "text": "The lines are strictly parallel", "explanation": "Incorrect. Parallel lines require co-interior angles to sum to exactly $180^{\\circ}$.[cite: 4]" },
+        { "text": "The lines will intersect on the side of these angles", "explanation": "Incorrect. The sum is $110^{\\circ} + 75^{\\circ} = 185^{\\circ} > 180^{\\circ}$.[cite: 4]" },
+        { "text": "The lines will intersect on the opposite side of these angles", "explanation": "Correct. Since $110^{\\circ} + 75^{\\circ} = 185^{\\circ} > 180^{\\circ}$, the interior angles on the other side sum to $360^{\\circ} - 185^{\\circ} = 175^{\\circ} < 180^{\\circ}$, where they must meet (Euclid's fifth postulate).[cite: 4]" },
+        { "text": "The lines are perpendicular", "explanation": "Incorrect. The angles are neither $90^{\\circ}$ nor do the lines form right angles.[cite: 4]" }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "$25\\text{ N}$",
-      "explanation": "When two forces act in the same direction, the net force is the sum of their magnitudes."
+      "correctIndex": 2,
+      "correctAnswer": "The lines will intersect on the opposite side of these angles",
+      "explanation": "The sum of the interior angles on this side is $185^{\\circ} > 180^{\\circ}$[cite: 4]. Therefore, the sum on the opposite side is $175^{\\circ} < 180^{\\circ}$, which means the lines will converge and meet on that opposite side[cite: 4]."
     },
     {
       "id": "q11",
       "type": "mcq",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "A constant force $F$ is applied to a block, displacing it by distance $s$ in the direction of the force. What is the work done?",
+      "category": "Parallel and Intersecting Lines",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "If line $p$ is parallel to line $q$, and line $q$ is parallel to line $r$ in the same plane, what is the geometric relation between line $p$ and line $r$?[cite: 4]",
       "passageId": "",
-      "tag": "Work Done",
-      "hint": "Section 7.1: Work Done by a Constant Force",
+      "tag": "Transitivity of Parallel Lines",
+      "hint": "Consider lines parallel to the same line.[cite: 4]",
       "diagram": {
-        "hasDiagram": true,
-        "description": "A block moving from left to right by distance s under force F.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(5,2))\nax.set_xlim(0, 10)\nax.set_ylim(0, 4)\nax.axis('off')\nax.plot([0, 10], [1, 1], color='#1E293B', linewidth=1)\nax.add_patch(patches.Rectangle((1, 1), 1.5, 1.5, facecolor='#3B82F6', alpha=0.5))\nax.add_patch(patches.Rectangle((7, 1), 1.5, 1.5, facecolor='#3B82F6'))\nax.arrow(2.5, 1.75, 1.5, 0, head_width=0.2, head_length=0.3, fc='#DC2626', ec='#DC2626')\nax.text(3.5, 2.1, '$F$', ha='center', va='bottom', fontsize=12)\nax.annotate('', xy=(7.75, 3), xytext=(1.75, 3), arrowprops=dict(arrowstyle='<->', color='#1E293B'))\nax.text(4.75, 3.2, '$s$', ha='center', va='bottom', fontsize=12)\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
       },
       "options": [
-        {
-          "text": "$W = F / s$",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$W = F \\times s$",
-          "explanation": "Correct. Work done is force multiplied by displacement."
-        },
-        {
-          "text": "$W = mgh$",
-          "explanation": "Incorrect. This is potential energy."
-        },
-        {
-          "text": "$W = \\frac{1}{2}mv^{2}$",
-          "explanation": "Incorrect. This is kinetic energy."
-        }
+        { "text": "They must be perpendicular", "explanation": "Incorrect. Parallelism preserves orientation.[cite: 4]" },
+        { "text": "They are parallel to each other", "explanation": "Correct. Lines that are parallel to the same line in a plane are parallel to each other.[cite: 4]" },
+        { "text": "They intersect at a $45^{\\circ}$ angle", "explanation": "Incorrect. They never intersect.[cite: 4]" },
+        { "text": "No relation can be determined", "explanation": "Incorrect. Parallelism is transitive in Euclidean plane geometry.[cite: 4]" }
       ],
       "correctIndex": 1,
-      "correctAnswer": "$W = F \\times s$",
-      "explanation": "Work done on an object by a constant force is defined as the force applied multiplied by the displacement in the direction of the force."
+      "correctAnswer": "They are parallel to each other",
+      "explanation": "In a plane, two lines that are parallel to a third line are always parallel to each other[cite: 4]."
     },
     {
       "id": "q12",
       "type": "mcq",
-      "category": "Work, Energy, and Simple Machines",
+      "category": "Parallel and Intersecting Lines",
       "marks": 2,
       "difficulty": "medium",
-      "question": "If you push a heavy, rigid wall and it does not move, how much scientific work have you done on the wall?",
+      "question": "In a zigzag figure where ray $LM \\parallel PQ$, $\\angle LMN = 40^{\\circ}$, $\\angle MNO = 96^{\\circ}$, and $\\angle OPQ = 52^{\\circ}$, what is the measure of the reflex/interior angle $\\angle NOP$?[cite: 4]",
       "passageId": "",
-      "tag": "Zero Work",
-      "hint": "Section 7.1.1: When is work done equal to zero?",
+      "tag": "Auxiliary Parallel Lines",
+      "hint": "Draw auxiliary parallel lines through vertices $N$ and $O$ parallel to $LM$.[cite: 4]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        {
-          "text": "Positive work",
-          "explanation": "Incorrect. The wall must move in the direction of force."
-        },
-        {
-          "text": "Negative work",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "Zero work",
-          "explanation": "Correct. Since displacement $s = 0$, work done $W = 0$."
-        },
-        {
-          "text": "Maximum work",
-          "explanation": "Incorrect."
-        }
+        { "text": "$96^{\\circ}$", "explanation": "Incorrect. This is the measure of $\\angle MNO$.[cite: 4]" },
+        { "text": "$108^{\\circ}$", "explanation": "Correct. Through $N$, drawing a line parallel to $LM$ splits $96^{\\circ}$ into $40^{\\circ}$ (alternate) and $56^{\\circ}$. A parallel line through $O$ gives alternate angles $56^{\\circ}$ and $52^{\\circ}$, summing to $56^{\\circ} + 52^{\\circ} = 108^{\\circ}$.[cite: 4]" },
+        { "text": "$112^{\\circ}$", "explanation": "Incorrect. Check the subtraction $96^{\\circ} - 40^{\\circ} = 56^{\\circ}$.[cite: 4]" },
+        { "text": "$124^{\\circ}$", "explanation": "Incorrect. The components are $56^{\\circ}$ and $52^{\\circ}$.[cite: 4]" }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "Zero work",
-      "explanation": "Work done is zero if there is no displacement of the object, regardless of the force applied ($W = F \\times 0 = 0$)."
+      "correctIndex": 1,
+      "correctAnswer": "$108^{\\circ}$",
+      "explanation": "Drawing parallel lines through $N$ and $O$: the angle of $96^{\\circ}$ at $N$ is composed of $40^{\\circ}$ (alternate to $\\angle LMN$) and $96^{\\circ} - 40^{\\circ} = 56^{\\circ}$[cite: 4]. At vertex $O$, $\\angle NOP$ splits into alternate angles $56^{\\circ}$ and $52^{\\circ}$ (alternate to $\\angle OPQ$)[cite: 4]. Thus, $\\angle NOP = 56^{\\circ} + 52^{\\circ} = 108^{\\circ}$[cite: 4]."
     },
     {
       "id": "q13",
       "type": "mcq",
-      "category": "Work, Energy, and Simple Machines",
+      "category": "Parallel and Intersecting Lines",
       "marks": 2,
       "difficulty": "medium",
-      "question": "When a goalkeeper applies a force to stop a moving football, the work done by the goalkeeper on the ball is:",
+      "question": "In parallelogram $ABCD$, side $AB \\parallel CD$ and $AD \\parallel BC$. If $\\angle ADC = 60^{\\circ}$ and diagonal $AC$ splits $\\angle DAB$ such that $\\angle DAC = 65^{\\circ}$, find the measure of $\\angle CAB$.[cite: 4]",
       "passageId": "",
-      "tag": "Negative Work",
-      "hint": "Section 7.1.2: Positive and negative work done",
+      "tag": "Parallelogram Interior Angles",
+      "hint": "Consecutive interior angles $\\angle ADC$ and $\\angle DAB$ sum to $180^{\\circ}$.[cite: 4]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        {
-          "text": "Positive",
-          "explanation": "Incorrect. Force and displacement are in opposite directions."
-        },
-        {
-          "text": "Negative",
-          "explanation": "Correct. The force is applied opposite to the ball's displacement."
-        },
-        {
-          "text": "Zero",
-          "explanation": "Incorrect. The ball travels a small distance while being stopped."
-        },
-        {
-          "text": "Undefined",
-          "explanation": "Incorrect."
-        }
+        { "text": "$55^{\\circ}$", "explanation": "Correct. Since $\\angle ADC + \\angle DAB = 180^{\\circ}$, $\\angle DAB = 120^{\\circ}$. Therefore, $\\angle CAB = 120^{\\circ} - 65^{\\circ} = 55^{\\circ}$.[cite: 4]" },
+        { "text": "$65^{\\circ}$", "explanation": "Incorrect. $\\angle DAC = 65^{\\circ}$, but the total is $120^{\\circ}$.[cite: 4]" },
+        { "text": "$60^{\\circ}$", "explanation": "Incorrect. $60^{\\circ}$ is $\\angle ADC$.[cite: 4]" },
+        { "text": "$50^{\\circ}$", "explanation": "Incorrect. $120^{\\circ} - 65^{\\circ} = 55^{\\circ}$.[cite: 4]" }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "Negative",
-      "explanation": "When displacement is in the direction opposite to that of the force, the work done by the force is negative."
+      "correctIndex": 0,
+      "correctAnswer": "$55^{\\circ}$",
+      "explanation": "Since $AB \\parallel CD$ with transversal $AD$, consecutive interior angles add to $180^{\\circ}$: $\\angle DAB = 180^{\\circ} - 60^{\\circ} = 120^{\\circ}$[cite: 4]. Since $\\angle DAB = \\angle DAC + \\angle CAB$, we have $\\angle CAB = 120^{\\circ} - 65^{\\circ} = 55^{\\circ}$[cite: 4]."
     },
     {
       "id": "q14",
       "type": "mcq",
-      "category": "Work, Energy, and Simple Machines",
+      "category": "Parallel and Intersecting Lines",
       "marks": 2,
-      "difficulty": "medium",
-      "question": "What is the kinetic energy of an object of mass $m$ moving with a velocity $v$?",
+      "difficulty": "hard",
+      "question": "In the given configuration, $AB \\parallel CD \\parallel EF$. Transversal line segment $BE$ makes an angle $\\angle BEF = 55^{\\circ}$. If line segment $EA \\perp AB$, find the interior angle $x = \\angle ABE$.[cite: 4]",
       "passageId": "",
-      "tag": "Kinetic Energy",
-      "hint": "Section 7.4.1: Kinetic energy",
+      "tag": "Multiple Parallel Lines & Perpendiculars",
+      "hint": "Find $\\angle BAE = 90^{\\circ}$ and use alternate angles between $AB$ and $EF$.[cite: 4]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        {
-          "text": "$mgh$",
-          "explanation": "Incorrect. This is potential energy."
-        },
-        {
-          "text": "$mv$",
-          "explanation": "Incorrect. This is momentum."
-        },
-        {
-          "text": "$\\frac{1}{2}mv^{2}$",
-          "explanation": "Correct. Kinetic energy formula."
-        },
-        {
-          "text": "$F \\times s$",
-          "explanation": "Incorrect. This is work done."
-        }
+        { "text": "$125^{\\circ}$", "explanation": "Correct. Since $AB \\parallel EF$, consecutive interior angles $\\angle BAE + \\angle AEF = 180^{\\circ} \\implies 90^{\\circ} + \\angle AEF = 180^{\\circ} \\implies \\angle AEF = 90^{\\circ}$. Thus $\\angle AEB = 90^{\\circ} - 55^{\\circ} = 35^{\\circ}$. In right $\\triangle ABE$, $\\angle ABE = 180^{\\circ} - (90^{\\circ} + 35^{\\circ}) = 55^{\\circ}$, so its obtuse angle/supplementary transversal angle is $180^{\\circ} - 55^{\\circ} = 125^{\\circ}$.[cite: 4]" },
+        { "text": "$145^{\\circ}$", "explanation": "Incorrect. Check arithmetic steps.[cite: 4]" },
+        { "text": "$115^{\\circ}$", "explanation": "Incorrect. $180^{\\circ} - 55^{\\circ} = 125^{\\circ}$.[cite: 4]" },
+        { "text": "$135^{\\circ}$", "explanation": "Incorrect. Consecutive interior angle gives $180^{\\circ} - 55^{\\circ} = 125^{\\circ}$.[cite: 4]" }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "$\\frac{1}{2}mv^{2}$",
-      "explanation": "The kinetic energy possessed by an object due to its motion is given by $K = \\frac{1}{2}mv^{2}$."
+      "correctIndex": 0,
+      "correctAnswer": "$125^{\\circ}$",
+      "explanation": "Line segment $BE$ acts as a transversal across parallel lines $AB$ and $EF$[cite: 4]. The consecutive interior angle on the same side is $180^{\\circ} - 55^{\\circ} = 125^{\\circ}$[cite: 4]."
     },
     {
       "id": "q15",
       "type": "mcq",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "An object of mass $m$ is lifted vertically to a height $h$. What is its gravitational potential energy?",
+      "category": "Parallel and Intersecting Lines",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Two parallel lines $l$ and $m$ are intersected by transversal $t$. Bisectors are drawn for two interior angles on the same side of the transversal. What angle do these two angle bisectors make with each other?[cite: 4]",
       "passageId": "",
-      "tag": "Potential Energy",
-      "hint": "Section 7.4.2: Potential energy",
+      "tag": "Angle Bisector Theorem",
+      "hint": "Let the consecutive interior angles be $2x$ and $2y$, where $2x + 2y = 180^{\\circ}$.[cite: 4]",
       "diagram": {
         "hasDiagram": true,
-        "description": "A block on the ground, and an arrow pointing up to the same block at height h.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(3,4))\nax.set_xlim(0, 5)\nax.set_ylim(0, 8)\nax.axis('off')\nax.plot([0, 5], [1, 1], color='#1E293B', linewidth=2)\nax.add_patch(patches.Rectangle((2, 1), 1, 1, facecolor='#3B82F6', alpha=0.3))\nax.add_patch(patches.Rectangle((2, 6), 1, 1, facecolor='#3B82F6'))\nax.annotate('', xy=(1.5, 6), xytext=(1.5, 1), arrowprops=dict(arrowstyle='<->', color='#1E293B'))\nax.text(1.2, 3.5, '$h$', ha='right', va='center', fontsize=12)\nax.arrow(2.5, 2.5, 0, 2.5, head_width=0.3, head_length=0.3, fc='#DC2626', ec='#DC2626')\nax.text(2.8, 3.75, '$F = mg$', ha='left', va='center', fontsize=12)\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+        "description": "Two parallel lines with transversal and bisectors of consecutive interior angles meeting at a point.",
+        "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots(figsize=(5, 3.5))\nax.plot([-3, 3], [1.5, 1.5], color='#0F172A', lw=2)\nax.plot([-3, 3], [-1.5, -1.5], color='#0F172A', lw=2)\nax.plot([-1, 1], [2.2, -2.2], color='#2563EB', lw=2)\nax.plot([-0.65, 1.2], [1.5, 0], color='#DC2626', lw=1.8, ls='--')\nax.plot([0.65, 1.2], [-1.5, 0], color='#DC2626', lw=1.8, ls='--')\nax.text(1.2, 0, '  $90^{\\circ}$', fontsize=11, color='#DC2626', va='center')\nax.set_xlim(-3.5, 3.5)\nax.set_ylim(-2.5, 2.5)\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
       },
       "options": [
-        {
-          "text": "$\\frac{1}{2}mv^{2}$",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$mgh$",
-          "explanation": "Correct. Potential energy is mass times gravity times height."
-        },
-        {
-          "text": "$F \\times s$",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$\\frac{W}{t}$",
-          "explanation": "Incorrect."
-        }
+        { "text": "$45^{\\circ}$", "explanation": "Incorrect. Half of $90^{\\circ}$ is $45^{\\circ}$, but the triangle angle is $180^{\\circ} - 90^{\\circ} = 90^{\\circ}$.[cite: 4]" },
+        { "text": "$60^{\\circ}$", "explanation": "Incorrect. The bisectors form a right angle.[cite: 4]" },
+        { "text": "$90^{\\circ}$", "explanation": "Correct. Let the interior angles be $2x$ and $2y$. Since lines are parallel, $2x + 2y = 180^{\\circ} \\implies x + y = 90^{\\circ}$. In the triangle formed by the transversal and the bisectors, the third angle is $180^{\\circ} - (x + y) = 180^{\\circ} - 90^{\\circ} = 90^{\\circ}$.[cite: 4]" },
+        { "text": "$180^{\\circ}$", "explanation": "Incorrect. The bisectors intersect, so they cannot form a straight line.[cite: 4]" }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "$mgh$",
-      "explanation": "The potential energy $U$ of an object at a height $h$ from the ground is given by $U = mgh$."
+      "correctIndex": 2,
+      "correctAnswer": "$90^{\\circ}$",
+      "explanation": "The sum of interior angles on the same side is $180^{\\circ}$[cite: 4]. The sum of their halves (the angles in the triangle formed by the bisectors) is $\\frac{180^{\\circ}}{2} = 90^{\\circ}$[cite: 4]. Therefore, the third angle between the two bisectors is $180^{\\circ} - 90^{\\circ} = 90^{\\circ}$[cite: 4]."
     },
     {
       "id": "q16",
       "type": "mcq",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "According to the work-energy theorem, the work done on an object is equal to:",
+      "category": "Number Play",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "What is the parity of the sum of any two consecutive natural numbers?[cite: 3]",
       "passageId": "",
-      "tag": "Work-Energy Theorem",
-      "hint": "Section 7.2: The Work-Energy Theorem",
+      "tag": "Parity of Sums",
+      "hint": "In any two consecutive numbers, one is even and one is odd.[cite: 3]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        {
-          "text": "Its total momentum",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "The change in its energy",
-          "explanation": "Correct. Work done appears as a change in energy."
-        },
-        {
-          "text": "Its power multiplied by time",
-          "explanation": "Incorrect, though mathematically equivalent, it doesn't state the theorem."
-        },
-        {
-          "text": "Its mass times velocity",
-          "explanation": "Incorrect."
-        }
+        { "text": "Always Even", "explanation": "Incorrect. Even + Odd is always odd.[cite: 3]" },
+        { "text": "Always Odd", "explanation": "Correct. Between two consecutive natural numbers, one is always even and one is always odd; their sum is always odd.[cite: 3]" },
+        { "text": "Sometimes Even, Sometimes Odd", "explanation": "Incorrect. The alternation of even and odd guarantees an odd sum.[cite: 3]" },
+        { "text": "Always Zero", "explanation": "Incorrect. Natural numbers are strictly positive.[cite: 3]" }
       ],
       "correctIndex": 1,
-      "correctAnswer": "The change in its energy",
-      "explanation": "The relation between the work done on an object and the change in its energy is called the work-energy theorem."
+      "correctAnswer": "Always Odd",
+      "explanation": "Any two consecutive integers can be written as $n$ and $n + 1$[cite: 3]. Their sum is $2n + 1$, which is always an odd number[cite: 3]."
     },
     {
       "id": "q17",
       "type": "mcq",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Power is mathematically defined as:",
+      "category": "Number Play",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "What is the general algebraic expression that generates the $n^{\\text{th}}$ odd natural number?[cite: 3]",
       "passageId": "",
-      "tag": "Power",
-      "hint": "Section 7.5: Power",
+      "tag": "Algebraic Formula for Odd Numbers",
+      "hint": "Multiply position $n$ by 2 and subtract 1.[cite: 3]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        {
-          "text": "$P = W \\times t$",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$P = W / t$",
-          "explanation": "Correct. Power is the rate at which work is done."
-        },
-        {
-          "text": "$P = F \\times d$",
-          "explanation": "Incorrect. This is work."
-        },
-        {
-          "text": "$P = mgh / v$",
-          "explanation": "Incorrect."
-        }
+        { "text": "$2n$", "explanation": "Incorrect. $2n$ generates even numbers.[cite: 3]" },
+        { "text": "$2n - 1$", "explanation": "Correct. For $n = 1, 2, 3\\dots$, $2n - 1$ gives $1, 3, 5\\dots$, representing every odd number.[cite: 3]" },
+        { "text": "$n + 2$", "explanation": "Incorrect. For $n = 2$, this gives $4$, which is even.[cite: 3]" },
+        { "text": "$3n - 1$", "explanation": "Incorrect. For $n = 3$, this gives $8$, which is even.[cite: 3]" }
       ],
       "correctIndex": 1,
-      "correctAnswer": "$P = W / t$",
-      "explanation": "Power is defined as the rate at which work is done, calculated by dividing work ($W$) by time ($t$)."
+      "correctAnswer": "$2n - 1$",
+      "explanation": "Since the $n^{\\text{th}}$ even number is $2n$, the $n^{\\text{th}}$ odd number is one less than the corresponding even number, yielding $2n - 1$[cite: 3]."
     },
     {
       "id": "q18",
       "type": "mcq",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "The mechanical advantage of a simple machine is defined as the ratio of:",
+      "category": "Number Play",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "What is the magic sum of a standard $3 \\times 3$ magic square filled with the digits $1$ through $9$ without repetition?[cite: 3]",
       "passageId": "",
-      "tag": "Mechanical Advantage",
-      "hint": "Section 7.6: Simple Machines",
+      "tag": "Magic Square Properties",
+      "hint": "Divide the total sum of numbers from 1 to 9 by the number of rows (3).[cite: 3]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        {
-          "text": "Effort to Load",
-          "explanation": "Incorrect. It is the inverse."
-        },
-        {
-          "text": "Load to Effort",
-          "explanation": "Correct. Mechanical advantage = load / effort."
-        },
-        {
-          "text": "Work to Time",
-          "explanation": "Incorrect. This is power."
-        },
-        {
-          "text": "Force to Distance",
-          "explanation": "Incorrect."
-        }
+        { "text": "$12$", "explanation": "Incorrect. $12 \\times 3 = 36 \\neq 45$.[cite: 3]" },
+        { "text": "$15$", "explanation": "Correct. The total sum of numbers $1$ to $9$ is $45$. Dividing equally across 3 rows gives a magic sum of $45 \\div 3 = 15$.[cite: 3]" },
+        { "text": "$18$", "explanation": "Incorrect. $18 \\times 3 = 54 \\neq 45$.[cite: 3]" },
+        { "text": "$34$", "explanation": "Incorrect. $34$ is the magic sum of the $4 \\times 4$ Chautīsa Yantra.[cite: 3]" }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Load to Effort",
-      "explanation": "To describe how a machine changes the magnitude of the applied force, mechanical advantage is the ratio of the load to the effort."
+      "correctAnswer": "$15$",
+      "explanation": "The sum of all numbers from $1$ to $9$ is $\\frac{9 \\times 10}{2} = 45$[cite: 3]. In a $3 \\times 3$ magic square, all 3 rows have equal sums, so each row sums to $\\frac{45}{3} = 15$[cite: 3]."
     },
     {
       "id": "q19",
       "type": "mcq",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 2,
+      "category": "Number Play",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "What is the mechanical advantage of a single fixed pulley?",
+      "question": "Which digit MUST occupy the central cell of any $3 \\times 3$ magic square filled with numbers $1$ to $9$?[cite: 3]",
       "passageId": "",
-      "tag": "Pulley",
-      "hint": "Section 7.6.1: Pulley",
+      "tag": "Magic Square Center Value",
+      "hint": "The central number belongs to 4 lines (1 row, 1 column, 2 diagonals).[cite: 3]",
       "diagram": {
-        "hasDiagram": true,
-        "description": "A fixed pulley with a load on one side and effort pulling down on the other.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(3,4))\nax.set_xlim(0, 6)\nax.set_ylim(0, 6)\nax.axis('off')\nax.plot([1, 5], [5, 5], color='#8B4513', linewidth=4)\ncircle = plt.Circle((3, 4), 0.5, color='#94A3B8')\nax.add_patch(circle)\nax.plot([3, 3], [5, 4.5], color='#1E293B', linewidth=2)\nax.plot([2.5, 2.5], [4, 1.5], color='#1E293B', linewidth=1.5)\nax.plot([3.5, 3.5], [4, 2.5], color='#1E293B', linewidth=1.5)\nax.add_patch(patches.Rectangle((2, 0.5), 1, 1, facecolor='#DC2626'))\nax.arrow(3.5, 2.5, 0, -1, head_width=0.2, fc='#3B82F6', ec='#3B82F6')\nax.text(2.5, 0.2, 'Load', ha='center', va='top', fontsize=10)\nax.text(3.8, 1.5, 'Effort', ha='left', va='center', fontsize=10)\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
       },
       "options": [
-        {
-          "text": "Greater than 1",
-          "explanation": "Incorrect. Movable pulleys can have MA > 1."
-        },
-        {
-          "text": "Less than 1",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "Exactly 1",
-          "explanation": "Correct. It only changes the direction of the force."
-        },
-        {
-          "text": "0",
-          "explanation": "Incorrect."
-        }
+        { "text": "$1$", "explanation": "Incorrect. $1$ cannot form enough triples adding to $15$.[cite: 3]" },
+        { "text": "$3$", "explanation": "Incorrect. Only the median value can balance 4 distinct lines.[cite: 3]" },
+        { "text": "$5$", "explanation": "Correct. The center cell must be $5$ because the magic sum is $3 \\times \\text{center}$, meaning $3 \\times 5 = 15$.[cite: 3]" },
+        { "text": "$9$", "explanation": "Incorrect. $9$ is too large to sit at the center.[cite: 3]" }
       ],
       "correctIndex": 2,
-      "correctAnswer": "Exactly 1",
-      "explanation": "A fixed pulley does not reduce the magnitude of the force required; it only changes its direction. Thus, load = effort, giving a mechanical advantage of 1."
+      "correctAnswer": "$5$",
+      "explanation": "Adding the 4 lines passing through the center gives $4 \\times 15 = 60$. The 9 cells sum to $45$, with the center counted 3 extra times: $45 + 3c = 60 \\implies 3c = 15 \\implies c = 5$[cite: 3]."
     },
     {
       "id": "q20",
       "type": "mcq",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "In a lever, if the effort arm is longer than the load arm, the mechanical advantage will be:",
+      "category": "Number Play",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "A light bulb is initially ON. If Dorjee toggles the switch exactly $77$ times, what will the final state of the bulb be?[cite: 3]",
       "passageId": "",
-      "tag": "Lever",
-      "hint": "Section 7.6.3: Lever",
+      "tag": "Parity in State Toggles",
+      "hint": "Consider the effect of an odd number of toggles on an initial ON state.[cite: 3]",
       "diagram": {
-        "hasDiagram": true,
-        "description": "A lever with a fulcrum closer to the load, showing effort arm > load arm.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(5,3))\nax.set_xlim(0, 10)\nax.set_ylim(0, 5)\nax.axis('off')\nax.plot([0, 10], [1, 1], color='#1E293B', linewidth=2)\ntriangle = plt.Polygon([[3, 1], [3.5, 2], [2.5, 2]], color='#10B981')\nax.add_patch(triangle)\nax.plot([1, 9], [2, 3.5], color='#8B4513', linewidth=4)\nax.add_patch(patches.Rectangle((0.5, 2), 1.5, 1.5, facecolor='#64748B'))\nax.arrow(9, 4.5, 0, -1, head_width=0.3, fc='#DC2626', ec='#DC2626')\nax.text(1.25, 3.8, 'Load', ha='center', va='bottom', fontsize=10)\nax.text(9, 4.7, 'Effort', ha='center', va='bottom', fontsize=10)\nax.text(3, 0.5, 'Fulcrum', ha='center', va='top', fontsize=10)\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
       },
       "options": [
-        {
-          "text": "Less than 1",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "Exactly 1",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "Greater than 1",
-          "explanation": "Correct. Mechanical Advantage = Effort Arm / Load Arm."
-        },
-        {
-          "text": "Zero",
-          "explanation": "Incorrect."
-        }
+        { "text": "ON", "explanation": "Incorrect. An even number of toggles returns to ON, an odd number switches to OFF.[cite: 3]" },
+        { "text": "OFF", "explanation": "Correct. 77 is an odd number. An odd number of state changes from ON results in OFF.[cite: 3]" },
+        { "text": "Flickering", "explanation": "Incorrect. This is a binary switch operation.[cite: 3]" },
+        { "text": "Cannot be determined", "explanation": "Incorrect. Parity determines the exact state.[cite: 3]" }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "Greater than 1",
-      "explanation": "Mechanical advantage = effort arm / load arm. If effort arm > load arm, the mechanical advantage is greater than 1."
+      "correctIndex": 1,
+      "correctAnswer": "OFF",
+      "explanation": "Each pair of 2 toggles leaves the bulb in its original state (ON)[cite: 3]. Since $77 = 2 \\times 38 + 1$, there is $1$ net toggle remaining, turning the bulb OFF[cite: 3]."
     },
     {
       "id": "q21",
-      "type": "short_answer",
-      "category": "How Forces Affect Motion",
-      "marks": 2,
+      "type": "mcq",
+      "category": "Number Play",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "If an object is moving in a frictionless environment, what force is required to keep it moving with a constant velocity?",
+      "question": "What is the parity of the sum of the first $100$ positive integers ($1 + 2 + 3 + \\dots + 100$)?[cite: 3]",
       "passageId": "",
-      "tag": "Newton's First Law",
-      "hint": "Section 6.4: Newton's First Law of Motion",
+      "tag": "Parity of Series",
+      "hint": "Count how many odd numbers exist between 1 and 100.[cite: 3]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "Zero net force.",
-      "explanation": "According to Newton's First Law, an object in motion continues moving with a constant velocity unless acted upon by a net external force. In a frictionless environment, no force is needed to maintain its constant velocity."
+      "options": [
+        { "text": "Odd", "explanation": "Incorrect. The sum is $5050$, which is even.[cite: 3]" },
+        { "text": "Even", "explanation": "Correct. The series contains 50 odd numbers. The sum of an even number of odd numbers is always even.[cite: 3]" },
+        { "text": "Prime", "explanation": "Incorrect. 5050 is a composite number.[cite: 3]" },
+        { "text": "Zero", "explanation": "Incorrect. The sum is strictly positive.[cite: 3]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "Even",
+      "explanation": "There are $50$ odd integers and $50$ even integers in the first $100$ numbers[cite: 3]. The sum of fifty odd numbers is even, and adding fifty even numbers maintains an even sum[cite: 3] ($S = \\frac{100 \\times 101}{2} = 5050$, an even number)[cite: 3]."
     },
     {
       "id": "q22",
-      "type": "short_answer",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Calculate the work done when a force of $20\\text{ N}$ displaces an object by $5\\text{ m}$ in the direction of the force.",
-      "passageId": "",
-      "tag": "Work Calculation",
-      "hint": "Section 7.1: Work Done by a Constant Force",
+      "type": "mcq",
+      "category": "Number Play",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Based on Case Study 2, what is the $9^{\\text{th}}$ term of the Virahāṅka sequence $1, 2, 3, 5, 8, 13, 21, 34, \\dots$?[cite: 3]",
+      "passageId": "p2",
+      "tag": "Virahāṅka Sequence Terms",
+      "hint": "Add the 7th and 8th terms ($21 + 34$).[cite: 3]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "$100\\text{ J}$",
-      "explanation": "Work done ($W$) = Force ($F$) $\\times$ Displacement ($s$). $W = 20\\text{ N} \\times 5\\text{ m} = 100\\text{ J}$."
+      "options": [
+        { "text": "$45$", "explanation": "Incorrect. The terms are formed by addition of previous two terms, not adding 11.[cite: 3]" },
+        { "text": "$55$", "explanation": "Correct. The $9^{\\text{th}}$ term is $21 + 34 = 55$.[cite: 3]" },
+        { "text": "$54$", "explanation": "Incorrect. $21 + 34 = 55$.[cite: 3]" },
+        { "text": "$89$", "explanation": "Incorrect. $89$ is the $10^{\\text{th}}$ term ($34 + 55$).[cite: 3]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$55$",
+      "explanation": "Each term is the sum of the two preceding terms[cite: 3]. The $8^{\\text{th}}$ term is $34$ and the $7^{\\text{th}}$ term is $21$, so the $9^{\\text{th}}$ term is $21 + 34 = 55$[cite: 3]."
     },
     {
       "id": "q23",
-      "type": "short_answer",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 2,
+      "type": "mcq",
+      "category": "Number Play",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "State the principle of conservation of mechanical energy for a freely falling object.",
-      "passageId": "",
-      "tag": "Conservation of Energy",
-      "hint": "Section 7.4.3: Conservation of mechanical energy",
+      "question": "Based on Case Study 2, which repeating parity pattern governs the Virahāṅka sequence?[cite: 3]",
+      "passageId": "p2",
+      "tag": "Parity Pattern in Sequences",
+      "hint": "Write the parity of the first few terms: 1 (O), 2 (E), 3 (O), 5 (O), 8 (E)...[cite: 3]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "The sum of kinetic and potential energy remains constant during free fall.",
-      "explanation": "As an object falls due to gravity, its potential energy decreases while its kinetic energy increases, but total mechanical energy remains constant (if no external forces act)."
+      "options": [
+        { "text": "Odd, Even, Odd, Even...", "explanation": "Incorrect. Two odd numbers in a row occur ($3, 5$).[cite: 3]" },
+        { "text": "Odd, Odd, Even, Odd, Odd, Even...", "explanation": "Incorrect. Check the starting terms: $1$ is odd, $2$ is even.[cite: 3]" },
+        { "text": "Odd, Even, Odd, Odd, Even, Odd...", "explanation": "Correct. The parities repeat in cycles of 3: (Odd, Even, Odd), (Odd, Even, Odd)... because O + E = O, E + O = O, and O + O = E.[cite: 3]" },
+        { "text": "All terms are odd", "explanation": "Incorrect. Even terms like $2, 8, 34$ clearly exist.[cite: 3]" }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "Odd, Even, Odd, Odd, Even, Odd...",
+      "explanation": "The terms have parities: $1$ (O), $2$ (E), $3$ (O), $5$ (O), $8$ (E), $13$ (O), $21$ (O), $34$ (E)... showing the recurring 3-block pattern: Odd, Even, Odd[cite: 3]."
     },
     {
       "id": "q24",
-      "type": "short_answer",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "How is the mechanical advantage of an inclined plane calculated?",
+      "type": "mcq",
+      "category": "Number Play",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "What is the famous $4 \\times 4$ magic square inscribed at the Parshvanath Jain temple in Khajuraho called?[cite: 3]",
       "passageId": "",
-      "tag": "Inclined Plane",
-      "hint": "Section 7.6.2: Inclined plane",
+      "tag": "Mathematical Heritage",
+      "hint": "The name is derived from its magic sum, 34.[cite: 3]",
       "diagram": {
-        "hasDiagram": true,
-        "description": "An inclined plane showing length L and height h.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(4,3))\nax.set_xlim(0, 6)\nax.set_ylim(0, 4)\nax.axis('off')\ntriangle = plt.Polygon([[1, 1], [5, 1], [5, 3]], closed=True, fill=False, edgecolor='#8B4513', linewidth=2)\nax.add_patch(triangle)\nax.text(3, 2.2, '$L$', ha='center', va='bottom', fontsize=12, rotation=26)\nax.text(5.2, 2, '$h$', ha='left', va='center', fontsize=12)\nax.add_patch(patches.Rectangle((2.5, 1.75), 0.6, 0.6, angle=26, facecolor='#DC2626'))\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
       },
-      "correctAnswer": "Mechanical advantage = $L / h$ (Length of inclined plane / vertical height).",
-      "explanation": "The mechanical advantage is the ratio of the load ($mg$) to the effort ($F'$). Using work-energy equivalence, this simplifies to the length of the plane divided by its vertical height."
+      "options": [
+        { "text": "Lo Shu Grid", "explanation": "Incorrect. Lo Shu is the ancient Chinese $3 \\times 3$ grid.[cite: 3]" },
+        { "text": "Chautīsa Yantra", "explanation": "Correct. It is known as the Chautīsa Yantra because 'Chautīs' means 34, which is the magic sum of every row, column, and diagonal.[cite: 3]" },
+        { "text": "Kubera Yantra", "explanation": "Incorrect. Kubera Yantra is a $3 \\times 3$ yantra with magic sum 72.[cite: 3]" },
+        { "text": "Navagraha Yantra", "explanation": "Incorrect. Navagraha Yantras represent the nine planetary deities.[cite: 3]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "Chautīsa Yantra",
+      "explanation": "The 10th-century $4 \\times 4$ magic square at Khajuraho is named Chautīsa Yantra because each row, column, and diagonal adds up to 34 ('chautīs')[cite: 3]."
     },
     {
       "id": "q25",
-      "type": "short_answer",
-      "category": "How Forces Affect Motion",
-      "marks": 2,
+      "type": "mcq",
+      "category": "Number Play",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "What is the primary difference between balanced and unbalanced forces in terms of motion?",
+      "question": "In the cryptarithm $T + T + T = UT$, where $T$ and $U$ are distinct single digits ($0-9$), what digit does $T$ represent?[cite: 3]",
       "passageId": "",
-      "tag": "Balanced and Unbalanced Forces",
-      "hint": "Section 6.2: Balanced and Unbalanced Forces",
+      "tag": "Cryptarithms / Alphametics",
+      "hint": "We have $3 \\times T$ resulting in a two-digit number ending in $T$.[cite: 3]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "Balanced forces do not change an object's motion, while unbalanced forces cause acceleration.",
-      "explanation": "Balanced forces yield a net force of zero (constant velocity or rest). Unbalanced forces yield a non-zero net force, causing the object to accelerate."
+      "options": [
+        { "text": "$0$", "explanation": "Incorrect. If $T = 0$, $UT$ is not a two-digit number.[cite: 3]" },
+        { "text": "$3$", "explanation": "Incorrect. $3 \\times 3 = 9$, which is single-digit.[cite: 3]" },
+        { "text": "$5$", "explanation": "Correct. $5 + 5 + 5 = 15$, where $U = 1$ and $T = 5$.[cite: 3]" },
+        { "text": "$6$", "explanation": "Incorrect. $6 + 6 + 6 = 18$, units digit is $8 \\neq 6$.[cite: 3]" }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "$5$",
+      "explanation": "$3 \\times T$ must yield a units digit of $T$[cite: 3]. Testing single digits: $3 \\times 5 = 15$, giving $U = 1$ and $T = 5$[cite: 3]."
     },
     {
       "id": "q26",
-      "type": "short_answer",
-      "category": "How Forces Affect Motion",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "A force of $1500\\text{ N}$ acts on a car of mass $1000\\text{ kg}$. Calculate its acceleration.",
+      "type": "mcq",
+      "category": "Number Play",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "What is the parity of the product of two odd numbers, such as $27 \\times 13$?[cite: 3]",
       "passageId": "",
-      "tag": "Newton's Second Law",
-      "hint": "Section 6.5: Newton's Second Law of Motion",
+      "tag": "Parity of Products",
+      "hint": "Odd $\\times$ Odd = ?[cite: 3]",
       "diagram": {
-        "hasDiagram": true,
-        "description": "A block representing a car, mass m, pulled by force F.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(4,2))\nax.set_xlim(0, 8)\nax.set_ylim(0, 4)\nax.axis('off')\nax.plot([0, 8], [1, 1], color='#1E293B', linewidth=2)\nax.add_patch(patches.Rectangle((2, 1), 2, 1.5, facecolor='#3B82F6'))\nax.arrow(4, 1.75, 2, 0, head_width=0.3, fc='#DC2626', ec='#DC2626')\nax.text(3, 1.75, '$m=1000\\\\text{ kg}$', ha='center', va='center', color='white', fontsize=10)\nax.text(6.5, 1.75, '$F=1500\\\\text{ N}$', ha='left', va='center', fontsize=10)\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
       },
-      "correctAnswer": "$1.5\\text{ m/s}^{2}$",
-      "explanation": "By Newton's Second Law, $a = F / m$. $a = 1500\\text{ N} / 1000\\text{ kg} = 1.5\\text{ m/s}^{2}$."
+      "options": [
+        { "text": "Even", "explanation": "Incorrect. An even product requires at least one even factor.[cite: 3]" },
+        { "text": "Odd", "explanation": "Correct. The product of two odd integers is always odd.[cite: 3]" },
+        { "text": "Zero", "explanation": "Incorrect. Neither factor is zero.[cite: 3]" },
+        { "text": "Cannot be determined", "explanation": "Incorrect. Multiplication parity is strictly deterministic.[cite: 3]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "Odd",
+      "explanation": "Since neither number contains a factor of 2, their product does not contain a factor of 2 and is therefore always odd[cite: 3]."
     },
     {
       "id": "q27",
-      "type": "short_answer",
-      "category": "How Forces Affect Motion",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "A student pushes a $20\\text{ kg}$ block with a force of $60\\text{ N}$. The frictional force is $20\\text{ N}$. Find the block's acceleration.",
+      "type": "mcq",
+      "category": "Number Play",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "A staircase has $8$ steps. A student can climb either $1$ step or $2$ steps at a time. In how many different ways can the student reach the top?[cite: 3]",
       "passageId": "",
-      "tag": "Net Force & Acceleration",
-      "hint": "Section 6.3: The Force of Friction",
+      "tag": "Staircase Problem & Virahāṅka",
+      "hint": "The number of ways to climb $n$ steps corresponds to the $n^{\\text{th}}$ Virahāṅka-Fibonacci number.[cite: 3]",
       "diagram": {
-        "hasDiagram": true,
-        "description": "A block with applied force forward and friction backward.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(5,2))\nax.set_xlim(0, 10)\nax.set_ylim(0, 4)\nax.axis('off')\nax.plot([0, 10], [1, 1], color='#1E293B', linewidth=2)\nax.add_patch(patches.Rectangle((4, 1), 2, 1.5, facecolor='#10B981'))\nax.arrow(6, 1.75, 2, 0, head_width=0.2, fc='#3B82F6', ec='#3B82F6')\nax.arrow(4, 1.25, -2, 0, head_width=0.2, fc='#DC2626', ec='#DC2626')\nax.text(8.5, 1.75, 'Applied Force', ha='left', va='center')\nax.text(1.5, 1.25, 'Friction', ha='right', va='center')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
       },
-      "correctAnswer": "$2\\text{ m/s}^{2}$",
-      "explanation": "Net force $F_{net} = 60\\text{ N} - 20\\text{ N} = 40\\text{ N}$. Acceleration $a = F_{net} / m = 40\\text{ N} / 20\\text{ kg} = 2\\text{ m/s}^{2}$."
+      "options": [
+        { "text": "$21$", "explanation": "Incorrect. 21 is the number of ways for 7 steps.[cite: 3]" },
+        { "text": "$34$", "explanation": "Correct. For $n$ steps, the number of ways is given by $V_n$: $V_1=1, V_2=2, V_3=3, V_4=5, V_5=8, V_6=13, V_7=21, V_8=34$.[cite: 3]" },
+        { "text": "$55$", "explanation": "Incorrect. 55 is the number of ways for 9 steps.[cite: 3]" },
+        { "text": "$16$", "explanation": "Incorrect. Check the additive recurrence rule.[cite: 3]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$34$",
+      "explanation": "To reach step 8, one must take a single step from step 7 (21 ways) or a double step from step 6 (13 ways)[cite: 3]. Total ways = $21 + 13 = 34$[cite: 3]."
     },
     {
       "id": "q28",
-      "type": "short_answer",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "If the velocity of an object is doubled, by what factor does its kinetic energy increase?",
+      "type": "mcq",
+      "category": "Number Play",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "If a $3 \\times 3$ magic square has a center number $m = 25$, what is the magic sum of each row, column, and diagonal?[cite: 3]",
       "passageId": "",
-      "tag": "Kinetic Energy",
-      "hint": "Section 7.4.1: Kinetic energy",
+      "tag": "Algebraic Magic Squares",
+      "hint": "In an algebraically generalized $3 \\times 3$ magic square, the magic sum is $3m$.[cite: 3]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "It increases by a factor of 4.",
-      "explanation": "Kinetic energy is given by $K = \\frac{1}{2}mv^{2}$. If velocity is doubled ($2v$), $K' = \\frac{1}{2}m(2v)^{2} = 4 \\times (\\frac{1}{2}mv^{2})$. Thus, it becomes 4 times the original."
+      "options": [
+        { "text": "$50$", "explanation": "Incorrect. $50 = 2m$.[cite: 3]" },
+        { "text": "$75$", "explanation": "Correct. The magic sum is always $3 \\times m = 3 \\times 25 = 75$.[cite: 3]" },
+        { "text": "$100$", "explanation": "Incorrect. $100 = 4m$.[cite: 3]" },
+        { "text": "$125$", "explanation": "Incorrect. $125 = 5m$.[cite: 3]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$75$",
+      "explanation": "In any $3 \\times 3$ magic square formed by consecutive terms centered at $m$, the magic sum is identically equal to $3m$[cite: 3]. For $m = 25$, the magic sum is $3 \\times 25 = 75$[cite: 3]."
     },
     {
       "id": "q29",
-      "type": "short_answer",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 3,
+      "type": "mcq",
+      "category": "Number Play",
+      "marks": 2,
       "difficulty": "hard",
-      "question": "A $2\\text{ kg}$ object is raised to a height of $5\\text{ m}$. Calculate its potential energy (Take $g = 10\\text{ m/s}^{2}$).",
+      "question": "In the cryptarithm $UT + TA = TAT$, where $U, T, A$ are distinct digits, what are the values of $U, T,$ and $A$?[cite: 3]",
       "passageId": "",
-      "tag": "Potential Energy Calculation",
-      "hint": "Section 7.4.2: Potential energy",
+      "tag": "Cryptarithm Solving",
+      "hint": "Analyze the hundreds place of the 3-digit sum.[cite: 3]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "$100\\text{ J}$",
-      "explanation": "Potential energy $U = mgh$. Plugging in the values: $U = 2\\text{ kg} \\times 10\\text{ m/s}^{2} \\times 5\\text{ m} = 100\\text{ J}$."
+      "options": [
+        { "text": "$U = 9, T = 1, A = 0$", "explanation": "Correct. $91 + 10 = 101$, which fits $UT + TA = TAT$ perfectly with $U=9, T=1, A=0$.[cite: 3]" },
+        { "text": "$U = 8, T = 1, A = 2$", "explanation": "Incorrect. $81 + 12 = 93$, not a 3-digit number.[cite: 3]" },
+        { "text": "$U = 9, T = 2, A = 1$", "explanation": "Incorrect. $92 + 21 = 113 \\neq 212$.[cite: 3]" },
+        { "text": "$U = 7, T = 3, A = 0$", "explanation": "Incorrect. $73 + 30 = 103 \\neq 303$.[cite: 3]" }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "$U = 9, T = 1, A = 0$",
+      "explanation": "The sum of two 2-digit numbers cannot exceed $99 + 99 = 198$, so the hundreds digit $T$ must be $1$[cite: 3]. With $T=1$, $U1 + 1A = 1A1$[cite: 3]. Units column: $1 + A$ ends in $1 \\implies A = 0$[cite: 3]. Tens column: $U + 1 = 10 \\implies U = 9$[cite: 3]. Checking: $91 + 10 = 101$[cite: 3]."
     },
     {
       "id": "q30",
-      "type": "short_answer",
-      "category": "How Forces Affect Motion",
+      "type": "mcq",
+      "category": "Number Play",
       "marks": 3,
-      "difficulty": "medium",
-      "question": "Explain using Newton's First Law why a passenger falls forward when a moving bus suddenly stops.",
+      "difficulty": "hard",
+      "question": "Two consecutive terms in the Virahāṅka sequence are $987$ and $1597$. What is the term immediately preceding $987$, and what is the term immediately following $1597$?[cite: 3]",
       "passageId": "",
-      "tag": "Inertia",
-      "hint": "Section 6.4: Newton's First Law of Motion",
+      "tag": "Virahāṅka Sequence Reversal & Extension",
+      "hint": "Use $V_{n-1} = V_{n+1} - V_n$ to go backward and $V_{n+2} = V_n + V_{n+1}$ to go forward.[cite: 3]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "Due to inertia of motion.",
-      "explanation": "The passenger's body is in motion along with the bus. When the bus stops suddenly, the lower body stops due to contact with the bus, but the upper body tends to continue its state of motion due to inertia, falling forward."
+      "options": [
+        { "text": "Preceding: $610$; Following: $2584$", "explanation": "Correct. Preceding: $1597 - 987 = 610$. Following: $987 + 1597 = 2584$.[cite: 3]" },
+        { "text": "Preceding: $377$; Following: $2584$", "explanation": "Incorrect. 377 is two steps before 987.[cite: 3]" },
+        { "text": "Preceding: $610$; Following: $3194$", "explanation": "Incorrect. $987 + 1597 = 2584$, not $3194$.[cite: 3]" },
+        { "text": "Preceding: $510$; Following: $2584$", "explanation": "Incorrect. $1597 - 987 = 610$.[cite: 3]" }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Preceding: $610$; Following: $2584$",
+      "explanation": "By the recurrence relation: the preceding term is $1597 - 987 = 610$, and the following term is $987 + 1597 = 2584$[cite: 3]."
     },
     {
       "id": "q31",
-      "type": "short_answer",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "A machine does $1500\\text{ J}$ of work in $5\\text{ s}$. Calculate its power.",
+      "type": "mcq",
+      "category": "A Tale of Three Intersecting Lines",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "According to the Triangle Inequality property, which condition must hold true for any three side lengths $a, b,$ and $c$ to form a valid triangle?[cite: 2]",
       "passageId": "",
-      "tag": "Power Calculation",
-      "hint": "Section 7.5: Power",
+      "tag": "Triangle Inequality",
+      "hint": "The straight direct path must always be shorter than the roundabout path.[cite: 2]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "$300\\text{ W}$",
-      "explanation": "Power $P = W / t$. $P = 1500\\text{ J} / 5\\text{ s} = 300\\text{ Watts (W)}$."
+      "options": [
+        { "text": "The sum of any two sides must be less than the third side", "explanation": "Incorrect. If the sum is less, the arcs do not meet.[cite: 2]" },
+        { "text": "The sum of any two sides must be strictly greater than the third side", "explanation": "Correct. For a triangle to exist, the sum of any two side lengths must be strictly greater than the third side ($a + b > c$).[cite: 2]" },
+        { "text": "The sum of any two sides must equal the third side", "explanation": "Incorrect. If equal, the points are collinear (circles touch at a single point on the line).[cite: 2]" },
+        { "text": "The square of two sides equals the third side", "explanation": "Incorrect. That relates to the Pythagorean theorem for right triangles, not general existence.[cite: 2]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "The sum of any two sides must be strictly greater than the third side",
+      "explanation": "A triangle can only exist if the direct path between any two vertices is shorter than the roundabout path through the third vertex, meaning $a + b > c$ for all sides[cite: 2]."
     },
     {
       "id": "q32",
-      "type": "short_answer",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "In a wheelbarrow, the load is between the fulcrum and the effort. Which class of lever is this?",
+      "type": "mcq",
+      "category": "A Tale of Three Intersecting Lines",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Which of the following sets of side lengths CANNOT form a triangle?[cite: 2]",
       "passageId": "",
-      "tag": "Classes of Levers",
-      "hint": "Section 7.6.3: Lever (Table 7.2)",
+      "tag": "Testing Triangle Existence",
+      "hint": "Check if the sum of the two smallest sides is greater than the longest side.[cite: 2]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "Class II lever.",
-      "explanation": "Class II levers have the load situated in between the fulcrum and the effort (e.g., wheelbarrow, bottle opener)."
+      "options": [
+        { "text": "$3\\text{ cm}, 4\\text{ cm}, 5\\text{ cm}$", "explanation": "Incorrect. $3 + 4 = 7 > 5$, forms a triangle.[cite: 2]" },
+        { "text": "$5\\text{ cm}, 5\\text{ cm}, 8\\text{ cm}$", "explanation": "Incorrect. $5 + 5 = 10 > 8$, forms an isosceles triangle.[cite: 2]" },
+        { "text": "$2\\text{ cm}, 3\\text{ cm}, 6\\text{ cm}$", "explanation": "Correct. $2 + 3 = 5 < 6$. The sum of the two shorter sides is less than the third side, making a triangle impossible.[cite: 2]" },
+        { "text": "$10\\text{ cm}, 20\\text{ cm}, 25\\text{ cm}$", "explanation": "Incorrect. $10 + 20 = 30 > 25$, forms a triangle.[cite: 2]" }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "$2\\text{ cm}, 3\\text{ cm}, 6\\text{ cm}$",
+      "explanation": "Since $2 + 3 = 5$ which is strictly less than the longest side $6$, circles drawn from the endpoints with radii $2\\text{ cm}$ and $3\\text{ cm}$ will never intersect[cite: 2]."
     },
     {
       "id": "q33",
-      "type": "short_answer",
-      "category": "How Forces Affect Motion",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "How do airbags in vehicles reduce the risk of injury during a collision according to Newton's Second Law?",
+      "type": "mcq",
+      "category": "A Tale of Three Intersecting Lines",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "What is the sum of the three interior angles of any triangle on a plane?[cite: 2]",
       "passageId": "",
-      "tag": "Impulse and Force",
-      "hint": "Section 6.5: Newton's Second Law of Motion",
+      "tag": "Angle Sum Property",
+      "hint": "Recall Euclid's proof using a line drawn parallel to the base through the opposite vertex.[cite: 2]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "They increase the time duration of the impact, reducing the acceleration and the net force.",
-      "explanation": "Airbags increase the time over which the passenger's velocity is reduced to zero. By Newton's second law ($F=ma$), a smaller acceleration results in a smaller force acting on the person."
+      "options": [
+        { "text": "$90^{\\circ}$", "explanation": "Incorrect. $90^{\\circ}$ is a right angle.[cite: 2]" },
+        { "text": "$180^{\\circ}$", "explanation": "Correct. The interior angles of any triangle always add up to $180^{\\circ}$.[cite: 2]" },
+        { "text": "$270^{\\circ}$", "explanation": "Incorrect. Three angles forming a triangle sum to $180^{\\circ}$.[cite: 2]" },
+        { "text": "$360^{\\circ}$", "explanation": "Incorrect. $360^{\\circ}$ is the angle sum of a quadrilateral.[cite: 2]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$180^{\\circ}$",
+      "explanation": "Drawing a parallel line through one vertex creates alternate interior angles equal to the base angles; together with the vertex angle, they form a straight line ($180^{\\circ}$)[cite: 2]."
     },
     {
       "id": "q34",
-      "type": "short_answer",
-      "category": "How Forces Affect Motion",
-      "marks": 3,
+      "type": "mcq",
+      "category": "A Tale of Three Intersecting Lines",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "How does walking demonstrate Newton's Third Law of Motion?",
+      "question": "In $\\triangle ABC$, the exterior angle at vertex $C$ is $\\angle ACD = 110^{\\circ}$. If one of the interior opposite angles is $\\angle B = 60^{\\circ}$, what is the measure of $\\angle A$?[cite: 2]",
       "passageId": "",
-      "tag": "Action and Reaction",
-      "hint": "Section 6.6: Newton's Third Law of Motion",
+      "tag": "Exterior Angle Theorem",
+      "hint": "An exterior angle equals the sum of its two interior opposite angles.[cite: 2]",
       "diagram": {
-        "hasDiagram": true,
-        "description": "Foot pushing ground backwards, friction pushing person forward.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(5,3))\nax.set_xlim(0, 10)\nax.set_ylim(0, 4)\nax.axis('off')\nax.plot([0, 10], [1, 1], color='#1E293B', linewidth=2)\nax.add_patch(patches.Ellipse((5, 1.5), 2, 1, angle=-20, facecolor='#F59E0B'))\nax.arrow(5, 1, -1.5, 0, head_width=0.2, fc='#DC2626', ec='#DC2626')\nax.arrow(5, 0.5, 1.5, 0, head_width=0.2, fc='#10B981', ec='#10B981')\nax.text(3, 1, 'Push by foot', ha='right', va='center')\nax.text(7, 0.5, 'Friction (Reaction)', ha='left', va='center')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
       },
-      "correctAnswer": "You push the ground backward; the ground pushes you forward.",
-      "explanation": "While walking, you push the ground backwards with your feet (action). The ground applies an equal and opposite force (friction) on your feet in the forward direction (reaction), making you move."
+      "options": [
+        { "text": "$50^{\\circ}$", "explanation": "Correct. $\\angle ACD = \\angle A + \\angle B \\implies 110^{\\circ} = \\angle A + 60^{\\circ} \\implies \\angle A = 50^{\\circ}$.[cite: 2]" },
+        { "text": "$60^{\\circ}$", "explanation": "Incorrect. That would make the exterior angle $120^{\\circ}$.[cite: 2]" },
+        { "text": "$70^{\\circ}$", "explanation": "Incorrect. $70^{\\circ}$ is the adjacent interior angle $\\angle ACB$.[cite: 2]" },
+        { "text": "$170^{\\circ}$", "explanation": "Incorrect. Check the exterior angle relationship.[cite: 2]" }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "$50^{\\circ}$",
+      "explanation": "The exterior angle equals the sum of the two interior opposite angles: $\\angle A + 60^{\\circ} = 110^{\\circ} \\implies \\angle A = 50^{\\circ}$[cite: 2]."
     },
     {
       "id": "q35",
-      "type": "short_answer",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "Describe the energy transformations in a swinging simple pendulum from its highest point to its lowest point.",
+      "type": "mcq",
+      "category": "A Tale of Three Intersecting Lines",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "What is an altitude of a triangle?[cite: 2]",
       "passageId": "",
-      "tag": "Energy Transformation",
-      "hint": "Section 7.4.3: Conservation of mechanical energy",
+      "tag": "Altitude Definition",
+      "hint": "Consider the line segment showing the true perpendicular height from a vertex.[cite: 2]",
       "diagram": {
-        "hasDiagram": true,
-        "description": "Pendulum swinging showing extreme and mean positions.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfig, ax = plt.subplots(figsize=(5,4))\nax.set_xlim(0, 10)\nax.set_ylim(0, 8)\nax.axis('off')\nax.plot([2, 8], [7, 7], color='#1E293B', linewidth=2)\nax.plot([5, 5], [7, 2], color='#1E293B', linestyle='--')\nax.plot([5, 3], [7, 4], color='#1E293B')\nax.plot([5, 7], [7, 4], color='#1E293B')\nax.add_patch(plt.Circle((5, 2), 0.4, color='#EF4444'))\nax.add_patch(plt.Circle((3, 4), 0.4, color='#EF4444'))\nax.add_patch(plt.Circle((7, 4), 0.4, color='#EF4444'))\nax.text(3, 4.8, 'Potential Energy', ha='center', va='bottom', fontsize=9)\nax.text(5, 1.2, 'Kinetic Energy', ha='center', va='top', fontsize=9)\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
       },
-      "correctAnswer": "Potential energy converts to kinetic energy.",
-      "explanation": "At the highest point, the pendulum has maximum potential energy and zero kinetic energy. As it swings down to the lowest point, the potential energy converts entirely into kinetic energy."
+      "options": [
+        { "text": "A line segment joining a vertex to the midpoint of the opposite side", "explanation": "Incorrect. That is the median of the triangle.[cite: 2]" },
+        { "text": "A perpendicular line segment drawn from a vertex to the opposite side (or its extension)", "explanation": "Correct. An altitude is the perpendicular dropped from a vertex to the opposite line/side.[cite: 2]" },
+        { "text": "A ray that divides an angle into two equal parts", "explanation": "Incorrect. That is an angle bisector.[cite: 2]" },
+        { "text": "The line segment connecting midpoints of two sides", "explanation": "Incorrect. That is a mid-segment.[cite: 2]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "A perpendicular line segment drawn from a vertex to the opposite side (or its extension)",
+      "explanation": "An altitude is defined as the perpendicular line segment dropped from a vertex of the triangle to the opposite side (or line containing the opposite side)[cite: 2]."
     },
     {
       "id": "q36",
       "type": "mcq",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 2,
-      "difficulty": "easy",
-      "question": "Define 1 Joule of work.",
+      "category": "A Tale of Three Intersecting Lines",
+      "marks": 1,
+      "difficulty": "medium",
+      "question": "In which type of triangle do two of the altitudes coincide exactly with two of its sides?[cite: 2]",
       "passageId": "",
-      "tag": "Joule Definition",
-      "hint": "Section 7.1: Work Done by a Constant Force",
+      "tag": "Altitudes of Triangles",
+      "hint": "Think about where two sides already meet at a $90^{\\circ}$ angle.[cite: 2]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        {
-          "text": "$1\\text{ N}$ applied over $1\\text{ s}$",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$1\\text{ N}$ applied over $1\\text{ m}$",
-          "explanation": "Correct. $1\\text{ J} = 1\\text{ N} \\times 1\\text{ m}$."
-        },
-        {
-          "text": "$1\\text{ kg}$ moving at $1\\text{ m/s}$",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$1\\text{ kg}$ lifted by $1\\text{ m}$",
-          "explanation": "Incorrect."
-        }
+        { "text": "Equilateral triangle", "explanation": "Incorrect. Altitudes in equilateral triangles lie in the interior.[cite: 2]" },
+        { "text": "Right-angled triangle", "explanation": "Correct. In a right-angled triangle, the two perpendicular legs serve directly as the altitudes for each other.[cite: 2]" },
+        { "text": "Obtuse-angled triangle", "explanation": "Incorrect. Altitudes in obtuse triangles fall outside the triangle.[cite: 2]" },
+        { "text": "Acute-angled triangle", "explanation": "Incorrect. All three altitudes lie entirely inside an acute-angled triangle.[cite: 2]" }
       ],
       "correctIndex": 1,
-      "correctAnswer": "$1\\text{ N}$ applied over $1\\text{ m}$",
-      "explanation": "1 joule of work is done when a constant force of 1 newton is applied to an object and it is displaced by 1 metre in the direction of the force."
+      "correctAnswer": "Right-angled triangle",
+      "explanation": "In a right-angled triangle, the two sides containing the right angle are perpendicular to each other, so each serves as the altitude to the other[cite: 2]."
     },
     {
       "id": "q37",
       "type": "mcq",
-      "category": "Work, Energy, and Simple Machines",
-      "marks": 2,
+      "category": "A Tale of Three Intersecting Lines",
+      "marks": 1,
       "difficulty": "easy",
-      "question": "1 Watt of power is equal to:",
+      "question": "Can a triangle have more than one obtuse angle?[cite: 2]",
       "passageId": "",
-      "tag": "Watt Definition",
-      "hint": "Section 7.5: Power",
+      "tag": "Angle Properties",
+      "hint": "An obtuse angle is strictly greater than $90^{\\circ}$.[cite: 2]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        {
-          "text": "$1\\text{ Joule per minute}$",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$1\\text{ Newton per second}$",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$1\\text{ Joule per second}$",
-          "explanation": "Correct. Power is rate of doing work."
-        },
-        {
-          "text": "$1\\text{ kg per second}$",
-          "explanation": "Incorrect."
-        }
+        { "text": "Yes, always", "explanation": "Incorrect. Two obtuse angles exceed $180^{\\circ}$.[cite: 2]" },
+        { "text": "Yes, in scalene triangles", "explanation": "Incorrect. The type of sides does not change the angle sum of $180^{\\circ}$.[cite: 2]" },
+        { "text": "No, never", "explanation": "Correct. If a triangle had two obtuse angles, their sum would exceed $90^{\\circ} + 90^{\\circ} = 180^{\\circ}$, violating the angle sum property.[cite: 2]" },
+        { "text": "Only if side lengths are large", "explanation": "Incorrect. Angles are independent of scale.[cite: 2]" }
       ],
       "correctIndex": 2,
-      "correctAnswer": "$1\\text{ Joule per second}$",
-      "explanation": "The SI unit of power is the watt (W), where 1 watt is equal to 1 joule of work done per second ($1\\text{ W} = 1\\text{ J/s}$)."
+      "correctAnswer": "No, never",
+      "explanation": "Since each obtuse angle is $> 90^{\\circ}$, two obtuse angles would sum to $> 180^{\\circ}$, leaving no positive degree measure for the third angle[cite: 2]."
     },
     {
       "id": "q38",
       "type": "mcq",
-      "category": "How Forces Affect Motion",
-      "marks": 2,
-      "difficulty": "hard",
-      "question": "For a system of two objects connected by a string and pulled by an external force $F$, how is acceleration calculated?",
+      "category": "A Tale of Three Intersecting Lines",
+      "marks": 1,
+      "difficulty": "medium",
+      "question": "Two known sides of a triangle measure $3\\text{ cm}$ and $7\\text{ cm}$. Which of the following CANNOT be the length of the third side?[cite: 2]",
       "passageId": "",
-      "tag": "System of Objects",
-      "hint": "Section 6.7: Forces Acting on a System of Objects",
+      "tag": "Range of Third Side",
+      "hint": "The third side $x$ must satisfy $|7 - 3| < x < 7 + 3$.[cite: 2]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        {
-          "text": "$a = F / m_{1}$",
-          "explanation": "Incorrect. Must consider total mass."
-        },
-        {
-          "text": "$a = F / (m_{1} + m_{2})$",
-          "explanation": "Correct. Treat both objects as a single system."
-        },
-        {
-          "text": "$a = F \\times (m_{1} + m_{2})$",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "$a = (m_{1} + m_{2}) / F$",
-          "explanation": "Incorrect."
-        }
+        { "text": "$5\\text{ cm}$", "explanation": "Incorrect. $4 < 5 < 10$, which is valid.[cite: 2]" },
+        { "text": "$8\\text{ cm}$", "explanation": "Incorrect. $4 < 8 < 10$, which is valid.[cite: 2]" },
+        { "text": "$4\\text{ cm}$", "explanation": "Correct. If the side is $4\\text{ cm}$, $3 + 4 = 7$, which is not strictly greater than $7$.[cite: 2]" },
+        { "text": "$6.4\\text{ cm}$", "explanation": "Incorrect. $4 < 6.4 < 10$, which is valid.[cite: 2]" }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "$a = F / (m_{1} + m_{2})$",
-      "explanation": "When treating connected objects as a single system, the acceleration is the external force divided by the total mass of the system."
+      "correctIndex": 2,
+      "correctAnswer": "$4\\text{ cm}$",
+      "explanation": "The third side must strictly lie between $7 - 3 = 4\\text{ cm}$ and $7 + 3 = 10\\text{ cm}$[cite: 2]. A length of $4\\text{ cm}$ gives $3 + 4 = 7$, collapsing into a straight line segment rather than a triangle[cite: 2]."
     },
     {
       "id": "q39",
       "type": "mcq",
-      "category": "How Forces Affect Motion",
-      "marks": 2,
+      "category": "A Tale of Three Intersecting Lines",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "What does a spring balance primarily measure when pulling a block horizontally across a surface at a constant velocity?",
+      "question": "In an isosceles triangle $ABC$, $\\angle B = \\angle C$ and the vertex angle $\\angle A = 50^{\\circ}$. What is the measure of $\\angle B$?[cite: 2]",
       "passageId": "",
-      "tag": "Spring Balance & Friction",
-      "hint": "Section 6.3: Activity 6.2",
+      "tag": "Isosceles Triangle Angles",
+      "hint": "Subtract $50^{\\circ}$ from $180^{\\circ}$ and divide equally by 2.[cite: 2]",
+      "diagram": {
+        "hasDiagram": true,
+        "description": "Isosceles triangle ABC with vertex angle A = 50 degrees and equal base angles B and C.",
+        "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots(figsize=(4, 3.5))\nax.plot([0, -1.2, 1.2, 0], [2, 0, 0, 2], color='#2563EB', lw=2)\nax.text(0, 2.1, '$A (50^{\\circ})$', fontsize=11, color='#0F172A', ha='center', va='bottom')\nax.text(-1.3, -0.1, '$B$', fontsize=11, color='#0F172A', ha='right', va='top')\nax.text(1.3, -0.1, '$C$', fontsize=11, color='#0F172A', ha='left', va='top')\nax.set_xlim(-2, 2)\nax.set_ylim(-0.5, 2.7)\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+      },
+      "options": [
+        { "text": "$50^{\\circ}$", "explanation": "Incorrect. That would make the triangle equilateral, but angle sum would be $150^{\\circ}$.[cite: 2]" },
+        { "text": "$65^{\\circ}$", "explanation": "Correct. $180^{\\circ} - 50^{\\circ} = 130^{\\circ}$. Since base angles are equal, $\\angle B = 130^{\\circ} \\div 2 = 65^{\\circ}$.[cite: 2]" },
+        { "text": "$75^{\\circ}$", "explanation": "Incorrect. $75 + 75 + 50 = 200^{\\circ} \\neq 180^{\\circ}$.[cite: 2]" },
+        { "text": "$130^{\\circ}$", "explanation": "Incorrect. $130^{\\circ}$ is the combined sum of both base angles.[cite: 2]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$65^{\\circ}$",
+      "explanation": "Since $\\angle A + \\angle B + \\angle C = 180^{\\circ}$ and $\\angle B = \\angle C$, we have $50^{\\circ} + 2\\angle B = 180^{\\circ} \\implies 2\\angle B = 130^{\\circ} \\implies \\angle B = 65^{\\circ}$[cite: 2]."
+    },
+    {
+      "id": "q40",
+      "type": "mcq",
+      "category": "A Tale of Three Intersecting Lines",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Why is it impossible to construct a triangle with angles $70^{\\circ}, 70^{\\circ},$ and $70^{\\circ}$?[cite: 2]",
+      "passageId": "",
+      "tag": "Angle Sum Violation",
+      "hint": "Sum the three angles together.[cite: 2]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        {
-          "text": "The mass of the block",
-          "explanation": "Incorrect."
-        },
-        {
-          "text": "The force of gravity",
-          "explanation": "Incorrect. Gravity acts vertically."
-        },
-        {
-          "text": "The force of friction",
-          "explanation": "Correct. It balances the frictional force."
-        },
-        {
-          "text": "The normal force",
-          "explanation": "Incorrect."
-        }
+        { "text": "Because triangles cannot have acute angles", "explanation": "Incorrect. Many triangles have acute angles.[cite: 2]" },
+        { "text": "Because the sum of angles is $210^{\\circ}$, which exceeds $180^{\\circ}$", "explanation": "Correct. $70^{\\circ} + 70^{\\circ} + 70^{\\circ} = 210^{\\circ} \\neq 180^{\\circ}$, violating the angle sum property.[cite: 2]" },
+        { "text": "Because equilateral triangles must have side lengths of $7\\text{ cm}$", "explanation": "Incorrect. Angle measures are independent of side lengths.[cite: 2]" },
+        { "text": "Because 70 is not divisible by 3", "explanation": "Incorrect. Divisibility is irrelevant.[cite: 2]" }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "The force of friction",
-      "explanation": "When pulling at a constant velocity, the applied force (measured by the spring balance) is equal in magnitude to the opposing force of friction."
+      "correctIndex": 1,
+      "correctAnswer": "Because the sum of angles is $210^{\\circ}$, which exceeds $180^{\\circ}$",
+      "explanation": "The sum of the three interior angles of any triangle must equal exactly $180^{\\circ}$[cite: 2]. Here $70^{\\circ} \\times 3 = 210^{\\circ} > 180^{\\circ}$, making such a triangle geometrically impossible[cite: 2]."
     },
     {
-      "id": "q40",
-      "type": "short_answer",
-      "category": "How Forces Affect Motion",
-      "marks": 2,
+      "id": "q41",
+      "type": "mcq",
+      "category": "A Tale of Three Intersecting Lines",
+      "marks": 1,
       "difficulty": "medium",
-      "question": "Why does a 10 kg block pushed with 50 N of force on a surface with 50 N of maximum friction not accelerate?",
+      "question": "When constructing a triangle given two side lengths and the included angle, under what condition is the construction impossible?[cite: 2]",
       "passageId": "",
-      "tag": "Balanced Forces",
-      "hint": "Section 6.2: Balanced and Unbalanced Forces",
+      "tag": "Construction Feasibility",
+      "hint": "What happens if the included angle is a straight angle or reflex angle?[cite: 2]",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "The net force is zero.",
-      "explanation": "The applied force ($50\\text{ N}$) is completely balanced by the opposing force of friction ($50\\text{ N}$). Since the net force is zero, there is no acceleration."
+      "options": [
+        { "text": "If the included angle is acute", "explanation": "Incorrect. Acute included angles always form valid triangles.[cite: 2]" },
+        { "text": "If the included angle is $\\ge 180^{\\circ}$", "explanation": "Correct. If the included angle is $180^{\\circ}$ or greater, the arms cannot close to form a three-cornered polygon.[cite: 2]" },
+        { "text": "If the two sides are equal", "explanation": "Incorrect. That simply constructs an isosceles triangle.[cite: 2]" },
+        { "text": "If one side is longer than the other", "explanation": "Incorrect. Triangles can have unequal sides.[cite: 2]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "If the included angle is $\\ge 180^{\\circ}$",
+      "explanation": "Any angle in a triangle must be strictly less than $180^{\\circ}$[cite: 2]. If the included angle is $\\ge 180^{\\circ}$, the two arms do not form an interior angle capable of closing into a triangle[cite: 2]."
+    },
+    {
+      "id": "q42",
+      "type": "mcq",
+      "category": "A Tale of Three Intersecting Lines",
+      "marks": 2,
+      "difficulty": "hard",
+      "question": "Where does the altitude drawn from vertex $T$ to the line containing base $RY$ lie in triangle $TRY$ with $\\angle R = 140^{\\circ}$?[cite: 2]",
+      "passageId": "",
+      "tag": "Altitude of Obtuse Triangle",
+      "hint": "Consider where the perpendicular from the opposite vertex falls relative to an obtuse angle.[cite: 2]",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        { "text": "Completely inside the triangle", "explanation": "Incorrect. Altitudes to sides adjacent to an obtuse angle fall outside the triangle.[cite: 2]" },
+        { "text": "Outside the triangle, on the extension of side $YR$", "explanation": "Correct. Because $\\angle R$ is obtuse ($140^{\\circ}$), the altitude from $T$ must drop onto the line segment extending $YR$ past $R$.[cite: 2]" },
+        { "text": "Along the side $TR$", "explanation": "Incorrect. That only happens if $\\angle R = 90^{\\circ}$.[cite: 2]" },
+        { "text": "It cannot be constructed", "explanation": "Incorrect. Altitudes can always be constructed using a set square and extended base.[cite: 2]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "Outside the triangle, on the extension of side $YR$",
+      "explanation": "In an obtuse-angled triangle, the perpendicular dropped from an acute vertex to the opposite side falls outside the triangle on the extended base line[cite: 2]."
+    },
+    {
+      "id": "q43",
+      "type": "mcq",
+      "category": "A Tale of Three Intersecting Lines",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "In a right-angled triangle $ABC$ with $\\angle B = 90^{\\circ}$, the hypotenuse $AC = 5\\text{ cm}$. How many non-congruent right-angled triangles can be constructed with this hypotenuse?[cite: 2]",
+      "passageId": "",
+      "tag": "Right Triangle Hypotenuse Properties",
+      "hint": "Can the acute angles $\\angle A$ and $\\angle C$ vary continuously as long as $\\angle A + \\angle C = 90^{\\circ}$?[cite: 2]",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        { "text": "Exactly $1$", "explanation": "Incorrect. Distinct side pairs like $(3, 4)$ or $(1, \\sqrt{24})$ exist.[cite: 2]" },
+        { "text": "Exactly $2$", "explanation": "Incorrect. There are infinitely many points on Thales' semicircle.[cite: 2]" },
+        { "text": "Infinitely many", "explanation": "Correct. Angle $\\angle A$ can take any value strictly between $0^{\\circ}$ and $90^{\\circ}$, yielding infinitely many non-congruent triangles.[cite: 2]" },
+        { "text": "None", "explanation": "Incorrect. Real right triangles with hypotenuse 5 exist.[cite: 2]" }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "Infinitely many",
+      "explanation": "Any point on the semicircle with diameter $AC$ forms a right angle at $B$[cite: 2]. Since there are infinitely many points on the semicircle, infinitely many distinct right triangles exist[cite: 2]."
+    },
+    {
+      "id": "q44",
+      "type": "mcq",
+      "category": "A Tale of Three Intersecting Lines",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Can an equilateral triangle ever be an obtuse-angled triangle or a right-angled triangle?[cite: 2]",
+      "passageId": "",
+      "tag": "Equilateral Triangle Angle Constraints",
+      "hint": "All three angles in an equilateral triangle are equal.[cite: 2]",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        { "text": "Yes, if the sides are very large", "explanation": "Incorrect. Angle measures are independent of side length.[cite: 2]" },
+        { "text": "No, because every equilateral triangle must have all three angles equal to $60^{\\circ}$, which is strictly acute", "explanation": "Correct. Since all 3 angles are equal, each must be $180^{\\circ} \\div 3 = 60^{\\circ}$; it can never be $90^{\\circ}$ or obtuse.[cite: 2]" },
+        { "text": "Yes, it can be right-angled", "explanation": "Incorrect. Three $90^{\\circ}$ angles sum to $270^{\\circ}$.[cite: 2]" },
+        { "text": "Only in spherical geometry", "explanation": "Incorrect. In Euclidean plane geometry, it is strictly acute.[cite: 2]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "No, because every equilateral triangle must have all three angles equal to $60^{\\circ}$, which is strictly acute",
+      "explanation": "Equality of all three sides forces all three angles to be equal[cite: 2]. Therefore, each angle is $\\frac{180^{\\circ}}{3} = 60^{\\circ}$, making every equilateral triangle strictly acute-angled[cite: 2]."
+    },
+    {
+      "id": "q45",
+      "type": "mcq",
+      "category": "A Tale of Three Intersecting Lines",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Two circles centered at $A$ and $B$ have radii $r_1$ and $r_2$. The distance between their centers is $AB$. Under which algebraic condition will the two circles intersect each other internally at two points, guaranteeing the existence of $\\triangle ABC$?[cite: 2]",
+      "passageId": "",
+      "tag": "Circle Intersections & Triangle Existence",
+      "hint": "Compare the sum and difference of radii with the base length $AB$.[cite: 2]",
+      "diagram": {
+        "hasDiagram": true,
+        "description": "Two intersecting circles centered at A and B showing radii r1 and r2 meeting at point C.",
+        "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots(figsize=(5, 3.5))\nc1 = plt.Circle((-0.8, 0), 1.6, fill=False, color='#2563EB', lw=2)\nc2 = plt.Circle((1.0, 0), 1.8, fill=False, color='#0F172A', lw=2)\nax.add_patch(c1)\nax.add_patch(c2)\nax.plot([-0.8, 1.0], [0, 0], color='#DC2626', lw=2, marker='o')\nax.plot([-0.8, 0.28], [0, 1.34], color='#2563EB', ls='--')\nax.plot([1.0, 0.28], [0, 1.34], color='#0F172A', ls='--')\nax.text(-0.8, -0.25, '$A$', fontsize=11, color='#0F172A', ha='center')\nax.text(1.0, -0.25, '$B$', fontsize=11, color='#0F172A', ha='center')\nax.text(0.28, 1.45, '$C$', fontsize=11, color='#DC2626', ha='center')\nax.set_xlim(-3, 3.5)\nax.set_ylim(-2.2, 2.2)\nax.set_aspect('equal')\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+      },
+      "options": [
+        { "text": "$r_1 + r_2 = AB$", "explanation": "Incorrect. In this case, the circles touch externally at a single point on line segment $AB$ (collinear, no triangle).[cite: 2]" },
+        { "text": "$r_1 + r_2 < AB$", "explanation": "Incorrect. The circles do not meet at all.[cite: 2]" },
+        { "text": "$r_1 + r_2 > AB$ and $|r_1 - r_2| < AB$", "explanation": "Correct. For circles to intersect at two distinct non-collinear points, the distance between centers must be strictly less than the sum of radii and strictly greater than their difference.[cite: 2]" },
+        { "text": "$r_1 \\times r_2 = AB^2$", "explanation": "Incorrect. Products of radii are not part of the intersection criterion.[cite: 2]" }
+      ],
+      "correctIndex": 2,
+      "correctAnswer": "$r_1 + r_2 > AB$ and $|r_1 - r_2| < AB$",
+      "explanation": "For two circles to intersect at two distinct points, the centers must be close enough for the arcs to overlap ($AB < r_1 + r_2$) but far enough apart so one circle is not entirely inside the other ($AB > |r_1 - r_2|$)[cite: 2]. This is the geometric equivalent of the Triangle Inequality[cite: 2]."
+    },
+    {
+      "id": "q46",
+      "type": "mcq",
+      "category": "Working with Fractions",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "What is the product of $\\frac{3}{5} \\times 4$, expressed as a mixed fraction?[cite: 1]",
+      "passageId": "",
+      "tag": "Fraction Multiplication",
+      "hint": "Multiply the whole number with the numerator, keeping the denominator unchanged.[cite: 1]",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        { "text": "$2\\frac{2}{5}$", "explanation": "Correct. $\\frac{3 \\times 4}{5} = \\frac{12}{5} = 2\\frac{2}{5}$.[cite: 1]" },
+        { "text": "$1\\frac{2}{5}$", "explanation": "Incorrect. $1\\frac{2}{5} = \\frac{7}{5} \\neq \\frac{12}{5}$.[cite: 1]" },
+        { "text": "$3\\frac{1}{5}$", "explanation": "Incorrect. $3\\frac{1}{5} = \\frac{16}{5} \\neq \\frac{12}{5}$.[cite: 1]" },
+        { "text": "$\\frac{7}{5}$", "explanation": "Incorrect. Do not add the numerator and whole number.[cite: 1]" }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "$2\\frac{2}{5}$",
+      "explanation": "Multiplying a fraction by a whole number: $\\frac{3}{5} \\times 4 = \\frac{3 \\times 4}{5} = \\frac{12}{5}$[cite: 1]. Converting $\\frac{12}{5}$ into a mixed fraction gives $2\\frac{2}{5}$[cite: 1]."
+    },
+    {
+      "id": "q47",
+      "type": "mcq",
+      "category": "Working with Fractions",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Which Indian mathematician first explicitly stated the general rule for fraction multiplication, $\\frac{a}{b} \\times \\frac{c}{d} = \\frac{a \\times c}{b \\times d}$, in his 628 CE work *Brāhmasphuṭasiddhānta*?[cite: 1]",
+      "passageId": "",
+      "tag": "Mathematical History",
+      "hint": "He also codified rules for zero and negative numbers.[cite: 1]" ,
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        { "text": "Āryabhaṭa", "explanation": "Incorrect. Āryabhaṭa wrote the Āryabhaṭīya in 499 CE.[cite: 1]" },
+        { "text": "Brahmagupta", "explanation": "Correct. Brahmagupta codified the multiplication formula in Verse 12.1.3 of Brāhmasphuṭasiddhānta (628 CE).[cite: 1]" },
+        { "text": "Bhāskara II", "explanation": "Incorrect. Bhāskara II authored Līlāvatī in 1150 CE.[cite: 1]" },
+        { "text": "Varāhamihira", "explanation": "Incorrect. Varāhamihira was an astronomer who wrote the Pañcasiddhāntikā.[cite: 1]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "Brahmagupta",
+      "explanation": "Brahmagupta in 628 CE explicitly stated: 'Multiplication of two or more fractions is obtained by taking the product of the numerators divided by the product of the denominators.'[cite: 1]"
+    },
+    {
+      "id": "q48",
+      "type": "mcq",
+      "category": "Working with Fractions",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "What is the reciprocal of the fraction $\\frac{5}{9}$?[cite: 1]",
+      "passageId": "",
+      "tag": "Reciprocal",
+      "hint": "Interchange the numerator and denominator.[cite: 1]",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        { "text": "$-\\frac{5}{9}$", "explanation": "Incorrect. That is the additive inverse, not the reciprocal.[cite: 1]" },
+        { "text": "$\\frac{9}{5}$", "explanation": "Correct. The reciprocal of $\\frac{a}{b}$ is $\\frac{b}{a}$, so the reciprocal of $\\frac{5}{9}$ is $\\frac{9}{5}$.[cite: 1]" },
+        { "text": "$\\frac{1}{5}$", "explanation": "Incorrect. Invert both digits.[cite: 1]" },
+        { "text": "$\\frac{4}{9}$", "explanation": "Incorrect. That is the complement to 1.[cite: 1]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$\\frac{9}{5}$",
+      "explanation": "The reciprocal is obtained by interchanging the numerator and the denominator, so the reciprocal of $\\frac{5}{9}$ is $\\frac{9}{5}$[cite: 1] (since $\\frac{5}{9} \\times \\frac{9}{5} = 1$)[cite: 1]."
+    },
+    {
+      "id": "q49",
+      "type": "mcq",
+      "category": "Working with Fractions",
+      "marks": 1,
+      "difficulty": "medium",
+      "question": "When two proper fractions strictly between $0$ and $1$ (e.g., $\\frac{3}{4}$ and $\\frac{2}{5}$) are multiplied together, what is true about their product?[cite: 1]",
+      "passageId": "",
+      "tag": "Comparison of Product",
+      "hint": "Calculate $\\frac{3}{4} \\times \\frac{2}{5} = \\frac{6}{20} = \\frac{3}{10}$ and compare with both fractions.[cite: 1]",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        { "text": "The product is greater than both numbers", "explanation": "Incorrect. That occurs when both numbers are greater than 1.[cite: 1]" },
+        { "text": "The product is less than both numbers", "explanation": "Correct. When both factors lie strictly between 0 and 1, their product is strictly smaller than either factor.[cite: 1]" },
+        { "text": "The product is between the two numbers", "explanation": "Incorrect. That happens when one factor is $< 1$ and the other is $> 1$.[cite: 1]" },
+        { "text": "The product is always an integer", "explanation": "Incorrect. Proper fractions do not multiply to whole numbers unless one is zero.[cite: 1]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "The product is less than both numbers",
+      "explanation": "Multiplying by a fraction between $0$ and $1$ scales a quantity down: $\\frac{3}{4} \\times \\frac{2}{5} = \\frac{6}{20} = \\frac{3}{10}$, which is strictly less than both $\\frac{3}{4}$ ($\\frac{15}{20}$) and $\\frac{2}{5}$ ($\\frac{8}{20}$)[cite: 1]."
+    },
+    {
+      "id": "q50",
+      "type": "mcq",
+      "category": "Working with Fractions",
+      "marks": 1,
+      "difficulty": "medium",
+      "question": "What is the quotient of $\\frac{14}{6} \\div \\frac{7}{3}$?[cite: 1]",
+      "passageId": "",
+      "tag": "Fraction Division",
+      "hint": "Multiply the dividend by the reciprocal of the divisor.[cite: 1]",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        { "text": "$\\frac{1}{2}$", "explanation": "Incorrect. Check cross-multiplication.[cite: 1]" },
+        { "text": "$1$", "explanation": "Correct. $\\frac{14}{6} \\div \\frac{7}{3} = \\frac{14}{6} \\times \\frac{3}{7} = \\frac{42}{42} = 1$.[cite: 1]" },
+        { "text": "$2$", "explanation": "Incorrect. $\\frac{14}{6} = \\frac{7}{3}$, and dividing identical fractions yields 1.[cite: 1]" },
+        { "text": "$\\frac{49}{9}$", "explanation": "Incorrect. Do not multiply without taking the reciprocal.[cite: 1]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$1$",
+      "explanation": "Dividing by a fraction is equivalent to multiplying by its reciprocal: $\\frac{14}{6} \\times \\frac{3}{7} = \\frac{14 \\times 3}{6 \\times 7} = \\frac{42}{42} = 1$[cite: 1]."
+    },
+    {
+      "id": "q51",
+      "type": "mcq",
+      "category": "Working with Fractions",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "A car travels $16\\text{ km}$ using $1\\text{ litre}$ of petrol. How far will it travel using $2\\frac{3}{4}\\text{ litres}$ of petrol?[cite: 1]",
+      "passageId": "",
+      "tag": "Word Problem - Fraction Multiplication",
+      "hint": "Convert $2\\frac{3}{4}$ to improper fraction $\\frac{11}{4}$ and multiply by 16.[cite: 1]",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        { "text": "$32\\text{ km}$", "explanation": "Incorrect. That accounts for only 2 litres.[cite: 1]" },
+        { "text": "$44\\text{ km}$", "explanation": "Correct. $16 \\times 2\\frac{3}{4} = 16 \\times \\frac{11}{4} = 4 \\times 11 = 44\\text{ km}$.[cite: 1]" },
+        { "text": "$48\\text{ km}$", "explanation": "Incorrect. $16 \\times 3 = 48$, but the fuel is less than 3 litres.[cite: 1]" },
+        { "text": "$40\\text{ km}$", "explanation": "Incorrect. $16 \\times 2.75 = 44$.[cite: 1]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$44\\text{ km}$",
+      "explanation": "Distance = Fuel $\\times$ Mileage $= 2\\frac{3}{4} \\times 16 = \\frac{11}{4} \\times 16 = 11 \\times 4 = 44\\text{ km}$[cite: 1]."
+    },
+    {
+      "id": "q52",
+      "type": "mcq",
+      "category": "Working with Fractions",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "A baker has $5\\text{ kg}$ of flour. If each loaf of bread requires $\\frac{1}{6}\\text{ kg}$ of flour, which expression correctly models the number of loaves that can be made?[cite: 1]",
+      "passageId": "",
+      "tag": "Modeling Division of Fractions",
+      "hint": "Determine how many $\\frac{1}{6}\\text{ kg}$ portions are in $5\\text{ kg}$.[cite: 1]",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        { "text": "$5 \\times \\frac{1}{6}$", "explanation": "Incorrect. That computes $\\frac{5}{6}\\text{ kg}$ of flour.[cite: 1]" },
+        { "text": "$5 \\div \\frac{1}{6}$", "explanation": "Correct. Total flour divided by flour per loaf gives $5 \\div \\frac{1}{6} = 30$ loaves.[cite: 1]" },
+        { "text": "$\\frac{1}{6} \\div 5$", "explanation": "Incorrect. That divides a single loaf's flour into 5 parts.[cite: 1]" },
+        { "text": "$5 + \\frac{1}{6}$", "explanation": "Incorrect. Adding quantities does not find the count of loaves.[cite: 1]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$5 \\div \\frac{1}{6}$",
+      "explanation": "To find how many parts of size $\\frac{1}{6}$ fit into 5 wholes, we perform division: $5 \\div \\frac{1}{6} = 5 \\times 6 = 30$ loaves[cite: 1]."
+    },
+    {
+      "id": "q53",
+      "type": "mcq",
+      "category": "Working with Fractions",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Based on Case Study 3, how many times will the second fountain fill the cistern in one full day?[cite: 1]",
+      "passageId": "p3",
+      "tag": "Unit Rate Division",
+      "hint": "Divide 1 day by $\\frac{1}{2}$ day.[cite: 1]",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        { "text": "$\\frac{1}{2}$ time", "explanation": "Incorrect. If it fills in half a day, it fills more than once in a full day.[cite: 1]" },
+        { "text": "$2$ times", "explanation": "Correct. $1 \\div \\frac{1}{2} = 1 \\times 2 = 2$ times.[cite: 1]" },
+        { "text": "$4$ times", "explanation": "Incorrect. 4 times is the rate for the third fountain.[cite: 1]" },
+        { "text": "$3$ times", "explanation": "Incorrect. $1 \\div 0.5 = 2$.[cite: 1]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$2$ times",
+      "explanation": "The second fountain fills the cistern in $\\frac{1}{2}$ day, so in 1 full day it fills the cistern $1 \\div \\frac{1}{2} = 2$ times[cite: 1]."
+    },
+    {
+      "id": "q54",
+      "type": "mcq",
+      "category": "Working with Fractions",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Based on Case Study 3, how many times will all four fountains running together fill the cistern in a single day?[cite: 1]",
+      "passageId": "p3",
+      "tag": "Summing Fractional Rates",
+      "hint": "Add the individual rates: $1 + 2 + 4 + 5$.[cite: 1]",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        { "text": "$10$", "explanation": "Incorrect. $1 + 2 + 4 + 5 = 12$.[cite: 1]" },
+        { "text": "$12$", "explanation": "Correct. First fountain: 1 time; Second: 2 times; Third: 4 times; Fourth: 5 times. Sum $= 1 + 2 + 4 + 5 = 12$ times.[cite: 1]" },
+        { "text": "$14$", "explanation": "Incorrect. Check arithmetic sum.[cite: 1]" },
+        { "text": "$16$", "explanation": "Incorrect. The total rate is 12 cisterns per day.[cite: 1]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$12$",
+      "explanation": "In one day, the four fountains fill the cistern $1 + (1 \\div \\frac{1}{2}) + (1 \\div \\frac{1}{4}) + (1 \\div \\frac{1}{5}) = 1 + 2 + 4 + 5 = 12$ times[cite: 1]."
+    },
+    {
+      "id": "q55",
+      "type": "mcq",
+      "category": "Working with Fractions",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Based on Case Study 3, how long will it take for the four fountains flowing together to fill the cistern once?[cite: 1]",
+      "passageId": "p3",
+      "tag": "Time Rate Calculation",
+      "hint": "Take the reciprocal of the combined daily filling rate.[cite: 1]",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        { "text": "$\\frac{1}{12}\\text{ day}$", "explanation": "Correct. Since they fill 12 cisterns in 1 day, 1 cistern takes $1 \\div 12 = \\frac{1}{12}$ of a day (2 hours).[cite: 1]" },
+        { "text": "$\\frac{1}{10}\\text{ day}$", "explanation": "Incorrect. The combined rate is 12, not 10.[cite: 1]" },
+        { "text": "$12\\text{ days}$", "explanation": "Incorrect. Flowing together they are faster, not slower.[cite: 1]" },
+        { "text": "$\\frac{1}{6}\\text{ day}$", "explanation": "Incorrect. $1 \\div 12 = \\frac{1}{12}$.[cite: 1]" }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "$\\frac{1}{12}\\text{ day}$",
+      "explanation": "Since the four fountains together fill 12 cisterns per day, the time required to fill one cistern is $\\frac{1}{12}$ of a day[cite: 1]."
+    },
+    {
+      "id": "q56",
+      "type": "mcq",
+      "category": "Working with Fractions",
+      "marks": 1,
+      "difficulty": "medium",
+      "question": "Simplify the product to its lowest terms: $\\frac{14}{15} \\times \\frac{25}{42}$.[cite: 1]",
+      "passageId": "",
+      "tag": "Simplifying Fraction Products",
+      "hint": "Cancel common factors between numerators and denominators before multiplying.[cite: 1]",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        { "text": "$\\frac{5}{9}$", "explanation": "Correct. Divide 14 and 42 by 14 (giving 1 and 3), and divide 25 and 15 by 5 (giving 5 and 3). Then $\\frac{1 \\times 5}{3 \\times 3} = \\frac{5}{9}$.[cite: 1]" },
+        { "text": "$\\frac{7}{18}$", "explanation": "Incorrect. Canceling factors leaves 5 in numerator and 9 in denominator.[cite: 1]" },
+        { "text": "$\\frac{2}{3}$", "explanation": "Incorrect. Check prime factor cancellations.[cite: 1]" },
+        { "text": "$\\frac{350}{630}$", "explanation": "Incorrect. This is not simplified to lowest terms.[cite: 1]" }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "$\\frac{5}{9}$",
+      "explanation": "Dividing 14 and 42 by 14 gives 1 and 3[cite: 1]. Dividing 25 and 15 by 5 gives 5 and 3[cite: 1]. The product becomes $\\frac{1 \\times 5}{3 \\times 3} = \\frac{5}{9}$[cite: 1]."
+    },
+    {
+      "id": "q57",
+      "type": "mcq",
+      "category": "Working with Fractions",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Find the area of a rectangular field whose length is $9\\frac{3}{5}\\text{ ft}$ and breadth is $3\\frac{3}{4}\\text{ ft}$.[cite: 1]",
+      "passageId": "",
+      "tag": "Area of Fractional Rectangle",
+      "hint": "Convert mixed fractions to improper fractions: $\\frac{48}{5} \\times \\frac{15}{4}$.[cite: 1]",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        { "text": "$36\\text{ sq. ft.}$", "explanation": "Correct. $\\frac{48}{5} \\times \\frac{15}{4} = \\frac{48}{4} \\times \\frac{15}{5} = 12 \\times 3 = 36\\text{ sq. ft.}$[cite: 1]" },
+        { "text": "$27\\text{ sq. ft.}$", "explanation": "Incorrect. That is only $9 \\times 3$.[cite: 1]" },
+        { "text": "$32\\frac{2}{5}\\text{ sq. ft.}$", "explanation": "Incorrect. Check cross-cancellation.[cite: 1]" },
+        { "text": "$40\\text{ sq. ft.}$", "explanation": "Incorrect. The exact product is 36.[cite: 1]" }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "$36\\text{ sq. ft.}$",
+      "explanation": "$\\text{Area} = \\text{length} \\times \\text{breadth} = \\frac{48}{5} \\times \\frac{15}{4} = \\frac{48 \\times 15}{5 \\times 4} = 12 \\times 3 = 36\\text{ sq. ft.}$[cite: 1]"
+    },
+    {
+      "id": "q58",
+      "type": "mcq",
+      "category": "Working with Fractions",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "The government acquired $\\frac{1}{6}$ of Somu's ancestral farmland to construct a highway. Of the remaining land, she gave $\\frac{1}{2}$ to her daughter Krishna and $\\frac{1}{3}$ to her son Bora, retaining the rest. What fraction of the original land remains with Somu?[cite: 1]",
+      "passageId": "",
+      "tag": "Multi-Step Fraction Distribution",
+      "hint": "First calculate remaining land $\\frac{5}{6}$, then find the fraction Somu kept: $1 - (\\frac{1}{2} + \\frac{1}{3}) = \\frac{1}{6}$ of the remainder.[cite: 1]",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        { "text": "$\\frac{5}{36}$", "explanation": "Correct. Remaining after road $= 1 - \\frac{1}{6} = \\frac{5}{6}$. Somu retains $1 - (\\frac{1}{2} + \\frac{1}{3}) = 1 - \\frac{5}{6} = \\frac{1}{6}$ of this remainder. Total kept $= \\frac{1}{6} \\times \\frac{5}{6} = \\frac{5}{36}$.[cite: 1]" },
+        { "text": "$\\frac{5}{18}$", "explanation": "Incorrect. $\\frac{5}{18}$ is the share given to Bora.[cite: 1]" },
+        { "text": "$\\frac{5}{12}$", "explanation": "Incorrect. $\\frac{5}{12}$ is the share given to Krishna.[cite: 1]" },
+        { "text": "$\\frac{1}{12}$", "explanation": "Incorrect. Check arithmetic steps.[cite: 1]" }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "$\\frac{5}{36}$",
+      "explanation": "Remaining land after highway acquisition is $1 - \\frac{1}{6} = \\frac{5}{6}$[cite: 1]. Children's combined share of remainder is $\\frac{1}{2} + \\frac{1}{3} = \\frac{5}{6}$[cite: 1]. Somu keeps the remaining $1 - \\frac{5}{6} = \\frac{1}{6}$ of the $\\frac{5}{6}$, which equals $\\frac{1}{6} \\times \\frac{5}{6} = \\frac{5}{36}$ of the original land[cite: 1]."
+    },
+    {
+      "id": "q59",
+      "type": "mcq",
+      "category": "Working with Fractions",
+      "marks": 2,
+      "difficulty": "hard",
+      "question": "Evaluate the telescoping product: $\\left(1 - \\frac{1}{2}\\right) \\times \\left(1 - \\frac{1}{3}\\right) \\times \\left(1 - \\frac{1}{4}\\right) \\times \\dots \\times \\left(1 - \\frac{1}{10}\\right)$.[cite: 1]",
+      "passageId": "",
+      "tag": "Telescoping Products",
+      "hint": "Rewrite each factor as $\\frac{n-1}{n}$ and observe numerator-denominator cancellations.[cite: 1]",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        { "text": "$\\frac{1}{2}$", "explanation": "Incorrect. That is only the first factor.[cite: 1]" },
+        { "text": "$\\frac{1}{10}$", "explanation": "Correct. $\\frac{1}{2} \\times \\frac{2}{3} \\times \\frac{3}{4} \\times \\dots \\times \\frac{9}{10} = \\frac{1}{10}$.[cite: 1]" },
+        { "text": "$\\frac{1}{20}$", "explanation": "Incorrect. Check cancellations carefully.[cite: 1]" },
+        { "text": "$\\frac{9}{10}$", "explanation": "Incorrect. All numerators cancel with preceding denominators except the first numerator 1 and last denominator 10.[cite: 1]" }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$\\frac{1}{10}$",
+      "explanation": "Writing the factors out: $\\frac{1}{2} \\times \\frac{2}{3} \\times \\frac{3}{4} \\times \\frac{4}{5} \\dots \\times \\frac{9}{10}$[cite: 1]. Every intermediate numerator cancels with the previous denominator, leaving solely $\\frac{1}{10}$[cite: 1]."
+    },
+    {
+      "id": "q60",
+      "type": "mcq",
+      "category": "Working with Fractions",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "In Bhāskarāchārya's *Līlāvatī* (1150 CE), a problem states: A miser gave a beggar $\\frac{1}{5} \\text{ of } \\frac{1}{16} \\text{ of } \\frac{1}{4} \\text{ of } \\frac{1}{2} \\text{ of } \\frac{2}{3} \\text{ of } \\frac{3}{4}$ of a silver dramma. If $1\\text{ dramma} = 1280\\text{ cowrie shells}$, how many cowrie shells did the beggar receive?[cite: 1]",
+      "passageId": "",
+      "tag": "Historical Fraction Application",
+      "hint": "Multiply all fractions together, cancel common factors, and multiply by 1280.[cite: 1]",
+      "diagram": {
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
+      },
+      "options": [
+        { "text": "$1\\text{ cowrie shell}$", "explanation": "Correct. Product $= \\frac{1 \\times 2 \\times 3 \\times 1 \\times 1 \\times 1}{2 \\times 3 \\times 4 \\times 5 \\times 16 \\times 4} = \\frac{6}{7680} = \\frac{1}{1280}$ of a dramma. Since $1\\text{ dramma} = 1280\\text{ shells}$, $\\frac{1}{1280} \\times 1280 = 1\\text{ shell}$.[cite: 1]" },
+        { "text": "$2\\text{ cowrie shells}$", "explanation": "Incorrect. $\\frac{1}{1280} \\times 1280 = 1$.[cite: 1]" },
+        { "text": "$4\\text{ cowrie shells}$", "explanation": "Incorrect. Check denominator simplification.[cite: 1]" },
+        { "text": "$10\\text{ cowrie shells}$", "explanation": "Incorrect. The humor in Bhāskara's problem is that the miser gave exactly the smallest single coin.[cite: 1]" }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "$1\\text{ cowrie shell}$",
+      "explanation": "Evaluating the product of fractions: $\\frac{1}{2} \\times \\frac{2}{3} \\times \\frac{3}{4} \\times \\frac{1}{5} \\times \\frac{1}{16} \\times \\frac{1}{4} = \\frac{1}{4} \\times \\frac{1}{5} \\times \\frac{1}{16} \\times \\frac{1}{4} = \\frac{1}{1280}$ of a dramma[cite: 1]. Multiplying by the conversion factor of $1280\\text{ shells/dramma}$ yields exactly $1\\text{ cowrie shell}$[cite: 1]."
     }
   ]
 }

@@ -78,10 +78,12 @@ private fun formatMarks(marks: Double): String {
 fun AssessmentScreen(
     assessmentId: String,
     childName:    String,
+    startIndex:   Int = 0,
     onFinish:     () -> Unit,
     vm: AssessmentViewModel = hiltViewModel(),
 ) {
     val quiz by vm.quiz.collectAsState()
+    val isReadOnly = quiz.assessment?.status == "completed"
 
     val allFillBlankAnswers = remember(quiz.assessment) {
         quiz.assessment?.questions
@@ -93,7 +95,7 @@ fun AssessmentScreen(
     }
 
     LaunchedEffect(assessmentId, childName) {
-        if (quiz.assessment == null) vm.loadAssessment(childName, assessmentId)
+        if (quiz.assessment == null) vm.loadAssessment(childName, assessmentId, startIndex)
     }
 
     // Handle toast/dialog error display for unanswered questions
@@ -218,7 +220,8 @@ fun AssessmentScreen(
                         onSkip           = { vm.skipCurrentQuestion() },
                         themeColor       = themeColor,
                         debugJsonPair    = quiz.debugJsons[idx],
-                        allFillBlankAnswers = allFillBlankAnswers
+                        allFillBlankAnswers = allFillBlankAnswers,
+                        isReadOnly       = isReadOnly
                     )
 
                     EvaluationOverlay(
@@ -266,20 +269,25 @@ private fun QuestionView(
     onSkip:             () -> Unit,
     themeColor:         Color,
     debugJsonPair:      Pair<String, String>? = null,
-    allFillBlankAnswers: List<String> = emptyList()
+    allFillBlankAnswers: List<String> = emptyList(),
+    isReadOnly:         Boolean = false
 ) {
     val isMCQ = question.type == "mcq"
-    val isAnswered = remember(answered, mcqPhase, validationResult, question) {
-        val hasValidAnswer = if (answered == null) {
-            false
-        } else if (question.type == "mcq") {
-            val selected = (answered["selectedIndex"] as? Number)?.toInt() ?: -1
-            selected >= 0
+    val isAnswered = remember(answered, mcqPhase, validationResult, question, isReadOnly) {
+        if (isReadOnly) {
+            true
         } else {
-            val text = answered["textAnswer"] as? String ?: ""
-            text.trim().isNotEmpty()
+            val hasValidAnswer = if (answered == null) {
+                false
+            } else if (question.type == "mcq") {
+                val selected = (answered["selectedIndex"] as? Number)?.toInt() ?: -1
+                selected >= 0
+            } else {
+                val text = answered["textAnswer"] as? String ?: ""
+                text.trim().isNotEmpty()
+            }
+            hasValidAnswer || mcqPhase == "done" || mcqPhase == "first_wrong" || validationResult != null
         }
-        hasValidAnswer || mcqPhase == "done" || mcqPhase == "first_wrong" || validationResult != null
     }
 
     // Determine marks earned
@@ -1044,8 +1052,8 @@ private fun QuestionView(
                 val firstWrong = (answered?.get("firstWrongIndex") as? Number)?.toInt() ?: mcqFirstWrongIndex
                 val savedAttempts = (answered?.get("attempts") as? Number)?.toInt() ?: 0
                 val savedCorrect = answered?.get("correct") as? Boolean ?: false
-                val isMcqDone = mcqPhase == "done" || savedCorrect || savedAttempts >= 2
-                val isRetryState = mcqPhase == "first_wrong"
+                val isMcqDone = isReadOnly || mcqPhase == "done" || savedCorrect || savedAttempts >= 2
+                val isRetryState = !isReadOnly && mcqPhase == "first_wrong"
 
                 question.options.forEachIndexed { i, opt ->
                     val isSelected = activeSelected == i
@@ -1072,7 +1080,7 @@ private fun QuestionView(
 
                     Card(
                         modifier = Modifier.fillMaxWidth(),
-                        onClick  = { if (!isMcqDone && (!isRetryState || !isFirstWrong)) onMCQSelect(i) },
+                        onClick  = { if (!isReadOnly && !isMcqDone && (!isRetryState || !isFirstWrong)) onMCQSelect(i) },
                         colors   = CardDefaults.cardColors(containerColor = containerColor),
                         border   = BorderStroke(borderThickness, borderColor),
                         shape    = RoundedCornerShape(12.dp)
@@ -1395,6 +1403,8 @@ private fun QuestionView(
                                     corrections = corrections,
                                     style = MaterialTheme.typography.bodyLarge
                                 )
+                            } else {
+                                Text("(No answer submitted / Skipped)", fontStyle = FontStyle.Italic, color = Color(0xFF7F8C8D))
                             }
                         }
                     }
@@ -1498,7 +1508,7 @@ private fun QuestionView(
                             "wrong" -> "wrong"
                             else -> "wrong"
                         }
-                    if (!retryUsed && marks > 2 && verdict != "correct") {
+                    if (!isReadOnly && !retryUsed && marks > 2 && verdict != "correct") {
                         Button(
                             onClick = { onRetryText() },
                             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFF3CD), contentColor = Color(0xFF856404)),
@@ -1581,7 +1591,7 @@ private fun QuestionView(
                 )
 
                 // Next / Finish / Skip Button
-                if (isAnswered) {
+                if (isAnswered || isReadOnly) {
                     val nextLabel = if (index == total - 1) "Finish 🎊" else "Next →"
                     Button(
                         onClick = {

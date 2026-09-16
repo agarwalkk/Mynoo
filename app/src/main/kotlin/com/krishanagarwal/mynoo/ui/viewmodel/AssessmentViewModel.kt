@@ -391,7 +391,7 @@ class AssessmentViewModel @Inject constructor(
         }
     }
 
-    fun loadAssessment(childName: String, assessmentId: String) {
+    fun loadAssessment(childName: String, assessmentId: String, startIndex: Int = 0) {
         currentChild = childName
         _quiz.update { QuizState(generating = true) }
         viewModelScope.launch {
@@ -409,11 +409,16 @@ class AssessmentViewModel @Inject constructor(
                 val a   = all.firstOrNull { it.id == assessmentId }
                 if (a != null) {
                     val savedAnswers = a.answers
-                    val resumeIdx = calculateResumeIndex(savedAnswers, a.questions)
+                    val isCompleted = a.status == "completed"
+                    val resumeIdx = if (isCompleted) {
+                        startIndex.coerceIn(0, (a.questions.size - 1).coerceAtLeast(0))
+                    } else {
+                        calculateResumeIndex(savedAnswers, a.questions)
+                    }
                     _quiz.update {
                         QuizState(
                             assessment = a,
-                            finished = a.status == "completed",
+                            finished = false,
                             summary = a.summary,
                             answers = savedAnswers,
                             currentIndex = resumeIdx
@@ -522,6 +527,8 @@ class AssessmentViewModel @Inject constructor(
 
     fun selectMCQOption(selectedOptionIndex: Int) {
         val qState = _quiz.value
+        val assessment = qState.assessment ?: return
+        if (assessment.status == "completed") return
         val q = qState.currentQuestion ?: return
         val currentIdx = qState.currentIndex
         val isCorrect = selectedOptionIndex == q.correctIndex
@@ -618,8 +625,9 @@ class AssessmentViewModel @Inject constructor(
 
     fun retryCurrentQuestion() {
         val q = _quiz.value
-        val idx = q.currentIndex
         val assessment = q.assessment ?: return
+        if (assessment.status == "completed") return
+        val idx = q.currentIndex
         
         val currentAnswers = q.answers.toMutableList()
         if (idx < currentAnswers.size) {
@@ -663,6 +671,16 @@ class AssessmentViewModel @Inject constructor(
         val currentQ = q.currentQuestion ?: return
         val idx = q.currentIndex
         val total = assessment.questions.size
+
+        if (assessment.status == "completed") {
+            if (idx + 1 < total) {
+                _quiz.update { it.copy(currentIndex = idx + 1) }
+                restoreQuestionState(idx + 1)
+            } else {
+                _quiz.update { it.copy(finished = true) }
+            }
+            return
+        }
         
         val isTextQ = currentQ.type != "mcq"
         val isSavedAnswered = isQuestionAnswered(currentQ, q.answers.getOrNull(idx))
@@ -713,6 +731,10 @@ class AssessmentViewModel @Inject constructor(
     fun skipCurrentQuestion() {
         val qState = _quiz.value
         val assessment = qState.assessment ?: return
+        if (assessment.status == "completed") {
+            next("")
+            return
+        }
         val currentQ = qState.currentQuestion ?: return
         val idx = qState.currentIndex
         val total = assessment.questions.size
@@ -831,9 +853,10 @@ class AssessmentViewModel @Inject constructor(
 
     fun validateCurrentAnswer(childAnswer: String) {
         val qState = _quiz.value
+        val assessment = qState.assessment ?: return
+        if (assessment.status == "completed") return
         val q = qState.currentQuestion ?: return
         val idx = qState.currentIndex
-        val assessment = qState.assessment ?: return
         
         _quiz.update { it.copy(validating = true, error = null) }
         
@@ -990,9 +1013,10 @@ class AssessmentViewModel @Inject constructor(
 
     fun validateCurrentHandwrittenAnswer(imageBase64: String, displayKey: String) {
         val qState = _quiz.value
+        val assessment = qState.assessment ?: return
+        if (assessment.status == "completed") return
         val q = qState.currentQuestion ?: return
         val idx = qState.currentIndex
-        val assessment = qState.assessment ?: return
         
         _quiz.update { it.copy(validating = true, error = null) }
         

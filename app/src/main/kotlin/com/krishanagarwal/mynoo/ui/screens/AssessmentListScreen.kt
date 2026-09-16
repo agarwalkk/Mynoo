@@ -231,7 +231,7 @@ fun AssessmentListScreen(
     childName:              String,
     subject:                String,
     onStartAssessment:      (assessmentId: String, childName: String) -> Unit,
-    onNavigateToAssessment: (assessmentId: String, childName: String) -> Unit,
+    onNavigateToAssessment: (assessmentId: String, childName: String, startIndex: Int) -> Unit,
     onBackClick:            () -> Unit,
     vm:                     AssessmentViewModel = hiltViewModel(),
 ) {
@@ -358,14 +358,20 @@ fun AssessmentListScreen(
                     if (ready.isNotEmpty()) {
                         item { SectionHeader(title = "🆕 New Tests", color = themeColor) }
                         items(ready, key = { it.id }) { a ->
-                            AssessmentCard(a, themeColor, onNavigate = { id, name -> onNavigateToAssessment(id, name) }, childName)
+                            AssessmentCard(a, themeColor, onNavigate = { id, name -> onNavigateToAssessment(id, name, 0) }, childName)
                         }
                     }
 
                     if (completed.isNotEmpty()) {
                         item { SectionHeader(title = "✓ Completed", color = Color(0xFF7F8C8D)) }
                         items(completed, key = { it.id }) { a ->
-                            AssessmentCard(a, themeColor, onNavigate = { _, _ -> detailAssessment = a }, childName)
+                            AssessmentCard(
+                                a = a,
+                                themeColor = themeColor,
+                                onNavigate = { _, _ -> detailAssessment = a },
+                                childName = childName,
+                                onViewOneByOne = { id, name -> onNavigateToAssessment(id, name, 0) }
+                            )
                         }
                     }
                 }
@@ -378,7 +384,10 @@ fun AssessmentListScreen(
                     themeColor = themeColor,
                     onDismiss = { detailAssessment = null },
                     onResume = {
-                        onNavigateToAssessment(currentDetail.id, childName)
+                        onNavigateToAssessment(currentDetail.id, childName, 0)
+                    },
+                    onNavigateToQuestion = { questionIdx ->
+                        onNavigateToAssessment(currentDetail.id, childName, questionIdx)
                     }
                 )
             }
@@ -401,7 +410,8 @@ private fun AssessmentCard(
     a: Assessment,
     themeColor: Color,
     onNavigate: (assessmentId: String, childName: String) -> Unit,
-    childName: String
+    childName: String,
+    onViewOneByOne: ((assessmentId: String, childName: String) -> Unit)? = null
 ) {
     val context = LocalContext.current
     val pct = a.score?.toInt()
@@ -502,7 +512,10 @@ private fun AssessmentCard(
                     }
                     Column(
                         horizontalAlignment = Alignment.End,
-                        verticalArrangement = Arrangement.Center
+                        verticalArrangement = Arrangement.Center,
+                        modifier = if (a.status == "completed" && onViewOneByOne != null) {
+                            Modifier.clickable { onViewOneByOne(a.id, childName) }
+                        } else Modifier
                     ) {
                         Text(
                             text = "$pct%",
@@ -547,6 +560,7 @@ private fun AssessmentDetailDialog(
     themeColor: Color,
     onDismiss: () -> Unit,
     onResume: () -> Unit,
+    onNavigateToQuestion: ((Int) -> Unit)? = null
 ) {
     Dialog(
         onDismissRequest = onDismiss,
@@ -651,7 +665,7 @@ private fun AssessmentDetailDialog(
                         }
                     }
 
-                    // 2. Resume Assessment Button (if in progress)
+                    // 2. Resume Assessment Button (if in progress) / Review Questions Button (if completed)
                     if (a.isInProgress) {
                         item {
                             Button(
@@ -665,6 +679,28 @@ private fun AssessmentDetailDialog(
                             ) {
                                 Text(
                                     text = "▶ Resume Assessment",
+                                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+                                    color = Color.White
+                                )
+                            }
+                        }
+                    } else if (a.status == "completed") {
+                        item {
+                            Button(
+                                onClick = {
+                                    onDismiss()
+                                    if (onNavigateToQuestion != null) {
+                                        onNavigateToQuestion(0)
+                                    } else {
+                                        onResume()
+                                    }
+                                },
+                                colors = ButtonDefaults.buttonColors(containerColor = themeColor),
+                                shape = RoundedCornerShape(10.dp),
+                                modifier = Modifier.fillMaxWidth().height(48.dp)
+                            ) {
+                                Text(
+                                    text = "▶ Review Questions (1 by 1)",
                                     style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
                                     color = Color.White
                                 )
@@ -726,7 +762,17 @@ private fun AssessmentDetailDialog(
                     }
 
                     items(answeredList) { (q, ans, idx) ->
-                        QuestionDetailCard(q, ans, idx)
+                        QuestionDetailCard(
+                            q = q,
+                            ans = ans,
+                            index = idx,
+                            onClick = if (a.status == "completed" && onNavigateToQuestion != null) {
+                                {
+                                    onDismiss()
+                                    onNavigateToQuestion(idx)
+                                }
+                            } else null
+                        )
                     }
                 }
             }
@@ -738,7 +784,8 @@ private fun AssessmentDetailDialog(
 private fun QuestionDetailCard(
     q: AssessmentQuestion,
     ans: Map<String, Any>?,
-    index: Int
+    index: Int,
+    onClick: (() -> Unit)? = null
 ) {
     val answered = ans.isAnswered()
     val isMCQ = q.type == "mcq"
@@ -810,7 +857,9 @@ private fun QuestionDetailCard(
     val marksBadgeText = if (result != "unanswered") "$earnedStr/$maxStr marks" else ""
 
     Card(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .then(if (onClick != null) Modifier.clickable { onClick() } else Modifier),
         shape = RoundedCornerShape(10.dp),
         colors = CardDefaults.cardColors(containerColor = cardBg),
         border = BorderStroke(1.dp, Color(0xFFE2E8F0))
@@ -867,6 +916,13 @@ private fun QuestionDetailCard(
                                 text = marksBadgeText,
                                 style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold),
                                 color = badgeColor
+                            )
+                        }
+                        if (onClick != null) {
+                            Text(
+                                text = "View ➔",
+                                style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
+                                color = Color(0xFF2980B9)
                             )
                         }
                     }

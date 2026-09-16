@@ -62,10 +62,10 @@ sealed class Screen(val route: String) {
     }
 
     object Assessment : Screen(
-        "assessment/{assessmentId}/{childName}"
+        "assessment/{assessmentId}/{childName}?startIndex={startIndex}"
     ) {
-        fun route(assessmentId: String, childName: String) =
-            "assessment/$assessmentId/$childName"
+        fun route(assessmentId: String, childName: String, startIndex: Int = 0) =
+            "assessment/$assessmentId/$childName?startIndex=$startIndex"
     }
 
     object PlacementQuiz : Screen(
