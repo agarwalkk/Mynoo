@@ -21,7 +21,8 @@ Arguments:
 """
 
 import argparse
-import json, re, math
+import json, re, math, random
+from collections import Counter
 import sys, subprocess, shutil, tempfile
 from datetime import datetime, timezone
 from pathlib import Path
@@ -596,6 +597,36 @@ def _clean_question_object(q: dict) -> dict:
     for arr_field in ('blanks', 'columnA', 'columnB', 'correctMatches', 'jumbledWords'):
         if arr_field in eq and isinstance(eq[arr_field], list):
             eq[arr_field] = [clean_latex_to_unicode(str(x)) if isinstance(x, str) else x for x in eq[arr_field]]
+
+    if eq.get('type') == 'jumbled':
+        ca = eq.get('correctAnswer') or eq.get('answer') or ''
+        jw = eq.get('jumbledWords')
+        if not isinstance(jw, list):
+            jw = []
+        if ca:
+            ca_words = [re.sub(r'^[^\w]+|[^\w]+$', '', w).lower() for w in ca.split()]
+            ca_words = [w for w in ca_words if w]
+            ca_counts = Counter(ca_words)
+
+            jw_words = []
+            for item in jw:
+                for subw in str(item).split():
+                    nw = re.sub(r'^[^\w]+|[^\w]+$', '', subw).lower()
+                    if nw:
+                        jw_words.append(nw)
+            jw_counts = Counter(jw_words)
+
+            missing = []
+            for w, count in ca_counts.items():
+                needed = count - jw_counts.get(w, 0)
+                if needed > 0:
+                    missing.extend([w] * needed)
+
+            if missing:
+                print(f"  [jumbled auto-fix] Q '{eq.get('id', '?')}': missing tokens {missing} in jumbledWords, auto-supplementing.")
+                jw = list(jw) + missing
+                random.shuffle(jw)
+                eq['jumbledWords'] = jw
 
     if eq.get('type') == 'mcq' and isinstance(eq.get('options'), list):
         clean_opts = []

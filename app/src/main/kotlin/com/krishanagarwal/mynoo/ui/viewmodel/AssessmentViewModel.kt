@@ -914,12 +914,16 @@ class AssessmentViewModel @Inject constructor(
                     if (q.inputReaction.isNotBlank()) append("Chemical reaction: \"${q.inputReaction}\"\n")
                 }
                 val typeLine = if (q.transformationType.isNotBlank()) "Transformation type: ${q.transformationType}\n" else if (q.tag.isNotBlank()) "Grammar focus: ${q.tag}\n" else ""
+                val jumbledNote = if (q.type == "jumbled") {
+                    "Note on jumbled sentence: The student reconstructed the sentence using word cards. Do NOT deduct marks or penalize for lowercase initial letter or missing trailing punctuation (period) if words are in the correct sequence.\n"
+                } else ""
                 
                 val prompt = "$systemInstruction\n$contextLine$marksLine" +
                     "Question type: ${q.type}\n$passageLine" +
                     "Question: ${q.question}\n$inputLine$typeLine" +
                     "Model answer: \"${q.answer}\"\n" +
-                    "Student's answer: \"$childAnswer\"\n\n$gradingRules"
+                    "Student's answer: \"$childAnswer\"\n" +
+                    "$jumbledNote\n$gradingRules"
                 
                 var reqObj: Any? = null
                 var resObj: Any? = null
@@ -1046,6 +1050,9 @@ class AssessmentViewModel @Inject constructor(
                 val passageLine = if (q.passage.isNotBlank()) "Reading passage:\n\"\"\"\n${q.passage}\n\"\"\"\n" else ""
                 val inputLine = if (q.inputSentence.isNotBlank()) "Input sentence: \"${q.inputSentence}\"\n" else ""
                 val typeLine = if (q.transformationType.isNotBlank()) "Transformation type: ${q.transformationType}\n" else if (q.tag.isNotBlank()) "Grammar focus: ${q.tag}\n" else ""
+                val jumbledNote = if (q.type == "jumbled") {
+                    "Note on jumbled sentence: The student reconstructed the sentence using word cards. Do NOT deduct marks or penalize for lowercase initial letter or missing trailing punctuation (period) if words are in the correct sequence.\n"
+                } else ""
                 
                 val prompt = "$systemInstruction\n$contextLine$marksLine" +
                     "Question type: ${q.type}\n$passageLine" +
@@ -1053,7 +1060,8 @@ class AssessmentViewModel @Inject constructor(
                     "Model answer: \"${q.answer}\"\n" +
                     "The student has handwritten their answer in the attached image. " +
                     "First transcribe exactly what you can read from the handwriting, then grade it.\n" +
-                    "In your feedback, start with \"Transcribed: ...\" so the student knows what you read.\n\n$gradingRules"
+                    "In your feedback, start with \"Transcribed: ...\" so the student knows what you read.\n" +
+                    "$jumbledNote\n$gradingRules"
                 
                 val req = GeminiRequest(
                     contents = listOf(

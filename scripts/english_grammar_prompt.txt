@@ -91,7 +91,7 @@ Every question object MUST contain ALL of these keys:
    - "correctAnswer": String (the corrected sentence)
 
 5. Jumbled Words ("type": "jumbled"):
-   - Must include "jumbledWords": Array of strings e.g. ["forest", "the", "deep", "into", "walked", "they"]
+   - Must include "jumbledWords": Array of strings e.g. ["forest", "the", "deep", "into", "walked", "they"]. CRITICAL: Every single word in "correctAnswer" must appear in "jumbledWords" with exact count matching (e.g. if 'the' appears 3 times in the answer, 'the' MUST appear 3 times in jumbledWords).
    - "correctAnswer": String (the correctly ordered sentence)
 
 6. Match Columns ("type": "match_columns"):

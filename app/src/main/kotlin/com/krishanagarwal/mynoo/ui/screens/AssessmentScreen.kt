@@ -16,6 +16,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -787,7 +788,39 @@ private fun QuestionView(
             }
 
             // Jumbled Word Bank
-            if (question.type == "jumbled" && question.jumbledWords.isNotEmpty()) {
+            val effectiveJumbledWords = remember(question) {
+                if (question.type != "jumbled") return@remember emptyList<String>()
+                val jw = question.jumbledWords.toMutableList()
+                val ans = question.answer
+                if (ans.isNotBlank()) {
+                    val wordRegex = Regex("^[\\p{Punct}]+|[\\p{Punct}]+$")
+                    val caWords = ans.split(Regex("\\s+"))
+                        .map { it.trim().replace(wordRegex, "").lowercase() }
+                        .filter { it.isNotEmpty() }
+                    val existingWords = jw.flatMap { item ->
+                        item.split(Regex("\\s+"))
+                            .map { it.trim().replace(wordRegex, "").lowercase() }
+                            .filter { it.isNotEmpty() }
+                    }
+                    val existingCounts = existingWords.groupingBy { it }.eachCount().toMutableMap()
+                    val missing = mutableListOf<String>()
+                    for (w in caWords) {
+                        val count = existingCounts.getOrDefault(w, 0)
+                        if (count > 0) {
+                            existingCounts[w] = count - 1
+                        } else {
+                            missing.add(w)
+                        }
+                    }
+                    if (missing.isNotEmpty()) {
+                        jw.addAll(missing)
+                        jw.shuffle()
+                    }
+                }
+                jw
+            }
+
+            if (question.type == "jumbled" && effectiveJumbledWords.isNotEmpty()) {
                 Column(
                     verticalArrangement = Arrangement.spacedBy(8.dp),
                     modifier = Modifier.fillMaxWidth()
@@ -798,12 +831,39 @@ private fun QuestionView(
                         color = Color(0xFF7F8C8D)
                     )
                     
-                    var selectedIndices by remember(index) { mutableStateOf(emptyList<Int>()) }
+                    var tapCounts by remember(index) { mutableStateOf(mapOf<Int, Int>()) }
                     
                     LaunchedEffect(textValue.text) {
                         if (textValue.text.isBlank()) {
-                            selectedIndices = emptyList()
+                            tapCounts = emptyMap()
                         }
+                    }
+
+                    fun insertWordAtCursor(current: TextFieldValue, word: String): TextFieldValue {
+                        val text = current.text
+                        val selStart = current.selection.min.coerceIn(0, text.length)
+                        val selEnd = current.selection.max.coerceIn(0, text.length)
+                        
+                        val prefix = text.substring(0, selStart)
+                        val suffix = text.substring(selEnd)
+                        
+                        val needsLeadingSpace = prefix.isNotEmpty() && !prefix.endsWith(" ") && !prefix.endsWith("\n")
+                        val needsTrailingSpace = suffix.isEmpty() || (!suffix.startsWith(" ") && !suffix.startsWith("\n"))
+                        
+                        val leading = if (needsLeadingSpace) " " else ""
+                        val trailing = if (needsTrailingSpace) " " else ""
+                        
+                        val newText = prefix + leading + word + trailing + suffix
+                        val newCursorPos = (prefix + leading + word + trailing).length
+                        return TextFieldValue(newText, selection = androidx.compose.ui.text.TextRange(newCursorPos))
+                    }
+
+                    fun removeLastWord(current: TextFieldValue): TextFieldValue {
+                        val trimmed = current.text.trimEnd()
+                        if (trimmed.isEmpty()) return TextFieldValue("")
+                        val lastSpaceIdx = trimmed.lastIndexOf(' ')
+                        val newText = if (lastSpaceIdx == -1) "" else trimmed.substring(0, lastSpaceIdx) + " "
+                        return TextFieldValue(newText, selection = androidx.compose.ui.text.TextRange(newText.length))
                     }
                     
                     FlowRow(
@@ -811,44 +871,74 @@ private fun QuestionView(
                         horizontalArrangement = Arrangement.spacedBy(8.dp),
                         verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
-                        question.jumbledWords.forEachIndexed { i, word ->
-                            val isSelected = selectedIndices.contains(i)
-                            val chipColor = if (isSelected) Color(0xFFF1F5F9) else themeColor.copy(alpha = 0.08f)
-                            val textColor = if (isSelected) Color(0xFF94A3B8) else themeColor
-                            val borderColor = if (isSelected) Color(0xFFE2E8F0) else themeColor.copy(alpha = 0.3f)
+                        effectiveJumbledWords.forEachIndexed { i, word ->
+                            val count = tapCounts.getOrDefault(i, 0)
+                            val chipColor = if (count > 0) themeColor.copy(alpha = 0.05f) else themeColor.copy(alpha = 0.09f)
+                            val textColor = if (count > 0) themeColor.copy(alpha = 0.75f) else themeColor
+                            val borderColor = if (count > 0) themeColor.copy(alpha = 0.2f) else themeColor.copy(alpha = 0.35f)
                             
                             Surface(
                                 shape = RoundedCornerShape(8.dp),
                                 color = chipColor,
                                 border = BorderStroke(1.dp, borderColor),
                                 modifier = Modifier
-                                    .clickable(enabled = !isSelected && !isAnswered && !validating) {
-                                        val currentText = textValue.text.trim()
-                                        val newText = if (currentText.isEmpty()) word else "$currentText $word"
-                                        textValue = TextFieldValue(newText, selection = androidx.compose.ui.text.TextRange(newText.length))
-                                        selectedIndices = selectedIndices + i
+                                    .clickable(enabled = !isAnswered && !validating) {
+                                        textValue = insertWordAtCursor(textValue, word)
+                                        tapCounts = tapCounts + (i to count + 1)
                                     }
                             ) {
-                                Text(
-                                    text = word,
+                                Row(
                                     modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
-                                    style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Medium),
-                                    color = textColor
-                                )
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.spacedBy(4.dp)
+                                ) {
+                                    Text(
+                                        text = word,
+                                        style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Medium),
+                                        color = textColor
+                                    )
+                                    if (count > 1) {
+                                        Surface(
+                                            shape = CircleShape,
+                                            color = themeColor.copy(alpha = 0.15f)
+                                        ) {
+                                            Text(
+                                                text = "×$count",
+                                                style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp, fontWeight = FontWeight.Bold),
+                                                color = themeColor,
+                                                modifier = Modifier.padding(horizontal = 4.dp, vertical = 1.dp)
+                                            )
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
                     
-                    if (selectedIndices.isNotEmpty() && !isAnswered && !validating) {
-                        TextButton(
-                            onClick = {
-                                textValue = TextFieldValue("")
-                                selectedIndices = emptyList()
-                            },
-                            colors = ButtonDefaults.textButtonColors(contentColor = Color(0xFFE74C3C)),
-                            modifier = Modifier.align(Alignment.End)
+                    if (textValue.text.isNotBlank() && !isAnswered && !validating) {
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.End,
+                            verticalAlignment = Alignment.CenterVertically
                         ) {
-                            Text("Clear ⌫", style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.Bold))
+                            TextButton(
+                                onClick = {
+                                    textValue = removeLastWord(textValue)
+                                },
+                                colors = ButtonDefaults.textButtonColors(contentColor = Color(0xFFE67E22))
+                            ) {
+                                Text("Undo ⌫", style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.Bold))
+                            }
+                            Spacer(Modifier.width(8.dp))
+                            TextButton(
+                                onClick = {
+                                    textValue = TextFieldValue("")
+                                    tapCounts = emptyMap()
+                                },
+                                colors = ButtonDefaults.textButtonColors(contentColor = Color(0xFFE74C3C))
+                            ) {
+                                Text("Clear All ⌫", style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.Bold))
+                            }
                         }
                     }
                 }

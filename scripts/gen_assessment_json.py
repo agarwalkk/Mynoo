@@ -242,7 +242,7 @@ Return a SINGLE JSON object with the following top-level keys:
       - "correctAnswer": corrected sentence e.g. "He doesn't like mangoes."
 
    e. **jumbled**:
-      - "jumbledWords": array of words/phrases e.g. ["went", "she", "market", "to", "the"]
+      - "jumbledWords": array of words/phrases e.g. ["went", "she", "market", "to", "the"]. CRITICAL: Every single word in "correctAnswer" must appear in "jumbledWords" with exact count matching (e.g. if 'the' appears 3 times in the answer, 'the' MUST appear 3 times in jumbledWords).
       - "correctAnswer": correctly ordered sentence e.g. "She went to the market."
 
    f. **match_columns**:
