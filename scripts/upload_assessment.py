@@ -274,7 +274,7 @@ def _validate_questions(questions: list, passages: dict) -> list[str]:
                 errors.append(f'{label}: fill_blank missing "blanks" array')
 
         # Passage reference validation
-        passage_id = q.get('passageId', '').strip()
+        passage_id = (q.get('passageId') or '').strip()
         if passage_id and passage_id not in passages:
             errors.append(f'{label}: references passageId "{passage_id}" which is not in "passages"')
 
