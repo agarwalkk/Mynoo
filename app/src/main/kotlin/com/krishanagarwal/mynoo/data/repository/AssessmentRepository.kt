@@ -140,7 +140,7 @@ class AssessmentRepository @Inject constructor(
             @Suppress("UNCHECKED_CAST")
             val rawQs = doc.get("questions") as? List<Map<String, Any>> ?: emptyList()
             val questions = rawQs.map { q ->
-                AssessmentQuestion(
+                val parsed = AssessmentQuestion(
                     id            = q["id"] as? String ?: "",
                     type          = q["type"] as? String ?: "mcq",
                     question      = q["question"] as? String ?: "",
@@ -164,7 +164,10 @@ class AssessmentRepository @Inject constructor(
                     correctMatches = (q["correctMatches"] as? List<*>)?.mapNotNull { it as? String } ?: emptyList(),
                     asy           = q["asy"] as? String ?: q["asymptote"] as? String ?: "",
                     svg           = (q["svg"] as? String)?.ifBlank { null } ?: (q["diagram"] as? Map<*, *>)?.get("svg") as? String ?: "",
+                    unbalancedEquation = q["unbalancedEquation"] as? String ?: "",
+                    inputReaction = q["inputReaction"] as? String ?: "",
                 )
+                normalizeQuestion(parsed)
             }
             @Suppress("UNCHECKED_CAST")
             val rawAnswers = doc.get("answers") as? List<Map<String, Any>?> ?: emptyList()
@@ -234,6 +237,8 @@ class AssessmentRepository @Inject constructor(
                 "correctMatches" to q.correctMatches,
                 "asy"           to q.asy,
                 "svg"           to q.svg,
+                "unbalancedEquation" to q.unbalancedEquation,
+                "inputReaction" to q.inputReaction,
             )
         }
         val computedStatus = when {
@@ -292,5 +297,84 @@ class AssessmentRepository @Inject constructor(
                 "summary", com.google.firebase.firestore.FieldValue.delete(),
                 "completedAt", com.google.firebase.firestore.FieldValue.delete()
             ).await()
+    }
+
+    companion object {
+        fun normalizeQuestion(q: AssessmentQuestion): AssessmentQuestion {
+            if (q.type != "match_columns") return q
+
+            var colA = q.columnA
+            var colB = q.columnB
+            var correctMatches = q.correctMatches
+            var questionText = q.question
+            val answerText = q.answer
+
+            // If columnA or columnB is empty, but question contains a markdown table
+            if ((colA.isEmpty() || colB.isEmpty()) && questionText.contains("|")) {
+                val lines = questionText.lines()
+                val tableLines = lines.filter { it.trim().startsWith("|") && it.trim().endsWith("|") }
+
+                val nonTableLines = lines.takeWhile { !it.trim().startsWith("|") }
+                val newQuestion = nonTableLines.joinToString("\n").trim()
+
+                val extractedA = mutableListOf<String>()
+                val extractedB = mutableListOf<String>()
+
+                for (line in tableLines) {
+                    val cells = line.split("|").map { it.trim() }.filter { it.isNotEmpty() }
+                    if (cells.size >= 2) {
+                        val left = cells[0]
+                        val right = cells[1]
+                        // Skip header or divider rows
+                        if (left.contains("---") || right.contains("---")) continue
+                        if (left.contains("स्तंभ") || left.contains("Column") || left.contains("शब्द") || left.contains("प्रतीक")) continue
+
+                        // Clean left: strip leading numbers like "(1)", "1.", "1)"
+                        val cleanLeft = left.replace(Regex("^\\s*(?:\\(\\d+\\)|\\d+[\\.\\)]|\\d+\\s*[-–])\\s*"), "").trim()
+                        if (cleanLeft.isNotBlank()) {
+                            extractedA.add(cleanLeft)
+                            extractedB.add(right)
+                        }
+                    }
+                }
+
+                if (extractedA.isNotEmpty() && extractedB.isNotEmpty()) {
+                    colA = extractedA
+                    colB = extractedB
+                    if (newQuestion.isNotBlank()) {
+                        questionText = newQuestion
+                    }
+                }
+            }
+
+            // Also clean leading numbers from existing columnA items if any (e.g. "(1) फूल" -> "फूल")
+            colA = colA.map { it.replace(Regex("^\\s*(?:\\(\\d+\\)|\\d+[\\.\\)]|\\d+\\s*[-–])\\s*"), "").trim() }
+
+            // If correctMatches is empty, extract from answer / correctAnswer
+            if (correctMatches.isEmpty() && answerText.isNotBlank()) {
+                val pairRegex = Regex("(?:[(]?(\\d+)[)]?)\\s*[-–—:=]\\s*[(]?([a-zA-Z\\u0900-\\u097F\\u0A00-\\u0A7F])[)]?")
+                val matches = pairRegex.findAll(answerText).toList()
+                if (matches.isNotEmpty()) {
+                    val map = mutableMapOf<Int, String>()
+                    for (m in matches) {
+                        val idx = m.groupValues[1].toIntOrNull()
+                        val code = m.groupValues[2]
+                        if (idx != null) {
+                            map[idx] = code
+                        }
+                    }
+                    if (map.isNotEmpty()) {
+                        correctMatches = (1..colA.size).map { map[it] ?: "" }
+                    }
+                }
+            }
+
+            return q.copy(
+                question = questionText,
+                columnA = colA,
+                columnB = colB,
+                correctMatches = correctMatches
+            )
+        }
     }
 }

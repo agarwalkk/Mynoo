@@ -637,6 +637,46 @@ private fun QuestionView(
                 }
             }
 
+            // Question Text
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.Top
+            ) {
+                Text(
+                    text = renderMarkdown(question.question),
+                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Normal, lineHeight = 24.sp),
+                    color = Color(0xFF2C3E50),
+                    modifier = Modifier.weight(1f)
+                )
+                if (debugJsonPair != null) {
+                    val clipboardManager = LocalClipboardManager.current
+                    val context = LocalContext.current
+                    IconButton(
+                        onClick = {
+                            val combinedJson = """
+                            {
+                              "request": ${debugJsonPair.first},
+                              "response": ${debugJsonPair.second}
+                            }
+                            """.trimIndent()
+                            clipboardManager.setText(AnnotatedString(combinedJson))
+                            android.widget.Toast.makeText(context, "Copied AI Request & Response JSON!", android.widget.Toast.LENGTH_SHORT).show()
+                        },
+                        modifier = Modifier
+                            .size(24.dp)
+                            .padding(start = 4.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Info,
+                            contentDescription = "Copy AI JSON debug logs",
+                            tint = Color(0xFF95A5A6),
+                            modifier = Modifier.size(16.dp)
+                        )
+                    }
+                }
+            }
+
             // Unbalanced Equation (if present, e.g. equation_balancing)
             if (question.unbalancedEquation.isNotBlank()) {
                 Surface(
@@ -678,46 +718,6 @@ private fun QuestionView(
                             text = renderMarkdown(question.inputReaction),
                             style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.SemiBold),
                             color = Color(0xFF2C3E50)
-                        )
-                    }
-                }
-            }
-
-            // Question Text
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.Top
-            ) {
-                Text(
-                    text = renderMarkdown(question.question),
-                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Normal, lineHeight = 24.sp),
-                    color = Color(0xFF2C3E50),
-                    modifier = Modifier.weight(1f)
-                )
-                if (debugJsonPair != null) {
-                    val clipboardManager = LocalClipboardManager.current
-                    val context = LocalContext.current
-                    IconButton(
-                        onClick = {
-                            val combinedJson = """
-                            {
-                              "request": ${debugJsonPair.first},
-                              "response": ${debugJsonPair.second}
-                            }
-                            """.trimIndent()
-                            clipboardManager.setText(AnnotatedString(combinedJson))
-                            android.widget.Toast.makeText(context, "Copied AI Request & Response JSON!", android.widget.Toast.LENGTH_SHORT).show()
-                        },
-                        modifier = Modifier
-                            .size(24.dp)
-                            .padding(start = 4.dp)
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Info,
-                            contentDescription = "Copy AI JSON debug logs",
-                            tint = Color(0xFF95A5A6),
-                            modifier = Modifier.size(16.dp)
                         )
                     }
                 }
@@ -954,8 +954,11 @@ private fun QuestionView(
                     var activeMatches by remember(index) { mutableStateOf(emptyMap<Int, Int>()) } // leftIdx -> rightIdx
                     
                     fun getColumnBLetter(item: String): String {
-                        val match = Regex("\\(([^)]+)\\)").find(item)
-                        return match?.groupValues?.get(1)?.lowercase() ?: ""
+                        val parenMatch = Regex("\\(([^)]+)\\)").find(item)
+                        if (parenMatch != null) return parenMatch.groupValues[1].trim().lowercase()
+                        val dotMatch = Regex("^\\s*([a-zA-Z\\u0900-\\u097F\\u0A00-\\u0A7F])[\\.\\)]").find(item)
+                        if (dotMatch != null) return dotMatch.groupValues[1].trim().lowercase()
+                        return ""
                     }
                     
                     LaunchedEffect(activeMatches) {
@@ -965,10 +968,39 @@ private fun QuestionView(
                                 if (rightIdx != null) {
                                     val itemB = question.columnB.getOrNull(rightIdx) ?: ""
                                     val letter = getColumnBLetter(itemB)
-                                    "$itemA–$letter"
+                                    val cleanA = itemA.replace(Regex("^\\s*(?:\\(\\d+\\)|\\d+[\\.\\)]|\\d+\\s*[-–])\\s*"), "")
+                                    "$cleanA–$letter"
                                 } else null
                             }.joinToString(", ")
                             textValue = TextFieldValue(text, selection = androidx.compose.ui.text.TextRange(text.length))
+                        }
+                    }
+                    
+                    LaunchedEffect(isAnswered, restoredText, answered) {
+                        if (activeMatches.isEmpty()) {
+                            val ans = restoredText.ifBlank { (answered?.get("textAnswer") as? String) ?: "" }
+                            if (ans.isNotBlank()) {
+                                val restored = mutableMapOf<Int, Int>()
+                                val norm = ans.lowercase().replace(" ", "")
+                                question.columnA.forEachIndexed { leftIdx, itemA ->
+                                    val cleanA = itemA.lowercase().replace(" ", "")
+                                        .replace(Regex("^\\s*(?:\\(\\d+\\)|\\d+[\\.\\)]|\\d+\\s*[-–])\\s*"), "")
+                                    question.columnB.forEachIndexed { rightIdx, itemB ->
+                                        val letter = getColumnBLetter(itemB)
+                                        if (letter.isNotBlank()) {
+                                            if (norm.contains("$cleanA–$letter") || 
+                                                norm.contains("$cleanA-$letter") || 
+                                                norm.contains("${leftIdx + 1}-$letter") || 
+                                                norm.contains("(${leftIdx + 1})-($letter)")) {
+                                                restored[leftIdx] = rightIdx
+                                            }
+                                        }
+                                    }
+                                }
+                                if (restored.isNotEmpty()) {
+                                    activeMatches = restored
+                                }
+                            }
                         }
                     }
                     
@@ -1029,8 +1061,9 @@ private fun QuestionView(
                                         horizontalArrangement = Arrangement.SpaceBetween,
                                         verticalAlignment = Alignment.CenterVertically
                                     ) {
+                                        val cleanA = itemA.replace(Regex("^\\s*(?:\\(\\d+\\)|\\d+[\\.\\)]|\\d+\\s*[-–])\\s*"), "")
                                         Text(
-                                            text = "${i + 1}. $itemA",
+                                            text = "${i + 1}. $cleanA",
                                             style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Medium),
                                             color = Color(0xFF2C3E50),
                                             modifier = Modifier.weight(1f)
@@ -1117,17 +1150,39 @@ private fun QuestionView(
                         }
                     }
                     
-                    if (activeMatches.isNotEmpty() && !isAnswered && !validating) {
-                        TextButton(
-                            onClick = {
-                                textValue = TextFieldValue("")
-                                activeMatches = emptyMap()
-                                selectedLeftIndex = null
-                            },
-                            colors = ButtonDefaults.textButtonColors(contentColor = Color(0xFFE74C3C)),
-                            modifier = Modifier.align(Alignment.End)
-                        ) {
-                            Text("Reset Matches ⌫", style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.Bold))
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        if (activeMatches.isNotEmpty() && !isAnswered && !validating) {
+                            TextButton(
+                                onClick = {
+                                    textValue = TextFieldValue("")
+                                    activeMatches = emptyMap()
+                                    selectedLeftIndex = null
+                                },
+                                colors = ButtonDefaults.textButtonColors(contentColor = Color(0xFFE74C3C))
+                            ) {
+                                Text("Reset Matches ⌫", style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.Bold))
+                            }
+                        } else {
+                            Spacer(Modifier.width(1.dp))
+                        }
+
+                        if (!isAnswered) {
+                            Button(
+                                onClick = { onCheckText(textValue.text) },
+                                enabled = activeMatches.isNotEmpty() && !validating,
+                                colors = ButtonDefaults.buttonColors(containerColor = themeColor),
+                                shape = RoundedCornerShape(10.dp)
+                            ) {
+                                if (validating) {
+                                    CircularProgressIndicator(color = Color.White, modifier = Modifier.size(18.dp))
+                                } else {
+                                    Text("Check Matches ✓", fontWeight = FontWeight.Bold)
+                                }
+                            }
                         }
                     }
                 }
@@ -1205,7 +1260,7 @@ private fun QuestionView(
                                     )
                                 } else {
                                     Text(
-                                        text = opt,
+                                        text = renderMarkdown(opt),
                                         style = MaterialTheme.typography.bodyMedium,
                                         color = Color(0xFF2C3E50),
                                         modifier = Modifier.weight(1f)
@@ -1301,7 +1356,7 @@ private fun QuestionView(
                 // Descriptive descriptive options
                 val savedAnswerResult = answered ?: validationResult
 
-                if (!isAnswered) {
+                if (!isAnswered && question.type != "match_columns") {
                     // Mode Switcher Tab
                     Row(
                         modifier = Modifier.fillMaxWidth(),
@@ -1432,7 +1487,7 @@ private fun QuestionView(
                 }
 
                 // Render Input Text Field if keyboard mode
-                if (!isAnswered && answerMode == "type") {
+                if (!isAnswered && answerMode == "type" && question.type != "match_columns") {
                     Button(
                         onClick = { onCheckText(textValue.text) },
                         enabled = textValue.text.isNotBlank() && !validating,
@@ -1902,7 +1957,17 @@ fun DrawingCanvasDialog(
     }
 }
 
-private fun renderMarkdown(text: String): AnnotatedString = buildAnnotatedString {
+private fun renderMarkdown(rawText: String): AnnotatedString = buildAnnotatedString {
+    val text = rawText
+        .replace("\\rightleftharpoons", "⇌")
+        .replace("\\rightarrow", "→")
+        .replace("\\leftarrow", "←")
+        .replace("\\Rightarrow", "⇒")
+        .replace("\\Leftarrow", "⇐")
+        .replace("\\leftrightarrow", "↔")
+        .replace("\\Leftrightarrow", "⇔")
+        .replace("\\to", "→")
+        .replace("\\gets", "←")
     var i = 0
     while (i < text.length) {
         if (text.startsWith("**", i)) {

@@ -882,8 +882,10 @@ class AssessmentViewModel @Inject constructor(
                 
                 if (q.type == "match_columns") {
                     val result = gradeMatchColumnsLocally(q, childAnswer)
-                    onValidationComplete(idx, childAnswer, result)
-                    return@launch
+                    if (result != null) {
+                        onValidationComplete(idx, childAnswer, result)
+                        return@launch
+                    }
                 }
                 
                 val validationData = try {
@@ -1260,31 +1262,31 @@ class AssessmentViewModel @Inject constructor(
         return normalise(childAnswer) == normalise(correctAnswer)
     }
 
-    private fun gradeMatchColumnsLocally(q: AssessmentQuestion, childAnswer: String): Map<String, Any> {
+    private fun gradeMatchColumnsLocally(q: AssessmentQuestion, childAnswer: String): Map<String, Any>? {
         val totalItems = q.columnA.size
-        if (totalItems == 0) {
-            return mapOf(
-                "verdict" to "wrong",
-                "earnedMarks" to 0.0,
-                "feedback" to "Not quite.",
-                "corrections" to emptyList<Any>(),
-                "correctedAnswer" to "",
-                "allowRetry" to false
-            )
+        if (totalItems == 0 || q.correctMatches.isEmpty()) {
+            return null
         }
         
         var correctCount = 0
         
-        // Normalize child answer for searching: replace all spaces and make lowercase.
+        // Normalize child answer for searching: replace all spaces, normalize dashes, strip parens & separators.
         val normalizedAns = childAnswer.lowercase()
             .replace(" ", "")
             .replace("–", "-") // convert en-dash to hyphen
             .replace("—", "-") // convert em-dash to hyphen
+            .replace("(", "")
+            .replace(")", "")
+            .replace(":", "-")
+            .replace("->", "-")
+            .replace(">", "-")
             
         q.columnA.forEachIndexed { idx, itemA ->
-            val correctLetter = q.correctMatches.getOrNull(idx)?.lowercase() ?: ""
+            val correctLetter = q.correctMatches.getOrNull(idx)?.lowercase()?.trim() ?: ""
             if (correctLetter.isNotBlank()) {
                 val cleanItemA = itemA.lowercase().replace(" ", "")
+                    .replace(Regex("^\\s*(?:\\(\\d+\\)|\\d+[\\.\\)]|\\d+\\s*[-–])\\s*"), "")
+                    .replace("(", "").replace(")", "")
                 val expectedPattern1 = "$cleanItemA-$correctLetter"
                 val expectedPattern2 = "${idx + 1}-$correctLetter"
                 if (normalizedAns.contains(expectedPattern1) || normalizedAns.contains(expectedPattern2)) {

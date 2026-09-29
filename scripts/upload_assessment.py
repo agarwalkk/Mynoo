@@ -108,6 +108,14 @@ def clean_latex_to_unicode(text: str) -> str:
         (r'\\degree', '°'),
         (r'\\angle', '∠'),
         (r'\\measuredangle', '∡'),
+        (r'\\rightleftharpoons', '⇌'),
+        (r'\\rightarrow', '→'),
+        (r'\\leftarrow', '←'),
+        (r'\\Rightarrow', '⇒'),
+        (r'\\Leftarrow', '⇐'),
+        (r'\\leftrightarrow', '↔'),
+        (r'\\to\b', '→'),
+        (r'\\gets\b', '←'),
         (r'\\implies', '⇒'),
         (r'\\iff', '⇔'),
         (r'\\perp', '⊥'),
@@ -272,6 +280,14 @@ def _validate_questions(questions: list, passages: dict) -> list[str]:
             blanks = q.get('blanks', [])
             if not isinstance(blanks, list) or len(blanks) == 0:
                 errors.append(f'{label}: fill_blank missing "blanks" array')
+
+        if qtype == 'match_columns':
+            col_a = q.get('columnA', [])
+            col_b = q.get('columnB', [])
+            if not isinstance(col_a, list) or len(col_a) == 0:
+                errors.append(f'{label}: match_columns missing or empty "columnA" array')
+            if not isinstance(col_b, list) or len(col_b) == 0:
+                errors.append(f'{label}: match_columns missing or empty "columnB" array')
 
         # Passage reference validation
         passage_id = (q.get('passageId') or '').strip()
@@ -597,6 +613,57 @@ def _clean_question_object(q: dict) -> dict:
     for arr_field in ('blanks', 'columnA', 'columnB', 'correctMatches', 'jumbledWords'):
         if arr_field in eq and isinstance(eq[arr_field], list):
             eq[arr_field] = [clean_latex_to_unicode(str(x)) if isinstance(x, str) else x for x in eq[arr_field]]
+
+    if eq.get('type') == 'match_columns':
+        col_a = eq.get('columnA') or []
+        col_b = eq.get('columnB') or []
+        q_text = eq.get('question', '')
+
+        if (not col_a or not col_b) and '|' in q_text:
+            lines = q_text.split('\n')
+            table_lines = [l for l in lines if l.strip().startswith('|') and l.strip().endswith('|')]
+            non_table = []
+            for l in lines:
+                if l.strip().startswith('|'):
+                    break
+                non_table.append(l)
+            new_q = '\n'.join(non_table).strip()
+
+            ext_a = []
+            ext_b = []
+            for l in table_lines:
+                cells = [c.strip() for c in l.split('|') if c.strip()]
+                if len(cells) >= 2:
+                    left, right = cells[0], cells[1]
+                    if '---' in left or '---' in right:
+                        continue
+                    if any(hdr in left for hdr in ('स्तंभ', 'Column', 'शब्द', 'प्रतीक')):
+                        continue
+                    clean_left = re.sub(r'^\s*(?:\(\d+\)|\d+[\.\)]|\d+\s*[-–])\s*', '', left).strip()
+                    if clean_left:
+                        ext_a.append(clean_left)
+                        ext_b.append(right)
+            if ext_a and ext_b:
+                print(f"  [match_columns auto-fix] Q '{eq.get('id', '?')}': auto-parsed {len(ext_a)} pairs from markdown table.")
+                col_a = ext_a
+                col_b = ext_b
+                if new_q:
+                    eq['question'] = new_q
+                eq['columnA'] = col_a
+                eq['columnB'] = col_b
+
+        # Clean leading numbers from columnA
+        if col_a:
+            eq['columnA'] = [re.sub(r'^\s*(?:\(\d+\)|\d+[\.\)]|\d+\s*[-–])\s*', '', str(x)).strip() for x in col_a]
+
+        # Auto-extract correctMatches if missing
+        if not eq.get('correctMatches'):
+            ca = eq.get('correctAnswer') or eq.get('answer') or ''
+            pair_regex = re.compile(r'(?:[(]?(\d+)[)]?)\s*[-–—:=]\s*[(]?([a-zA-Z\u0900-\u097F\u0A00-\u0A7F])[)]?')
+            matches = pair_regex.findall(ca)
+            if matches:
+                mapping = {int(idx): code for idx, code in matches}
+                eq['correctMatches'] = [mapping.get(i + 1, '') for i in range(len(eq.get('columnA', [])))]
 
     if eq.get('type') == 'jumbled':
         ca = eq.get('correctAnswer') or eq.get('answer') or ''
