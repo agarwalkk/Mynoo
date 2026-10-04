@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+{% block title %}{{ kid }}'s Assessments — Mynoo{% endblock %}
+
+{% block breadcrumb %}
+<span class="topbar-sep">/</span>
+<span class="topbar-breadcrumb">
+  <a href="/">Home</a> / <strong>{{ kid }}</strong>
+</span>
+{% endblock %}
+
+{% block extra_style %}
+.section-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.assessment-list { display: flex; flex-direction: column; gap: 12px; }
+.assessment-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.assessment-card:hover {
+  border-color: var(--accent);
+  transform: translateX(4px);
+  box-shadow: var(--shadow);
+}
+.assessment-card.completed {
+  opacity: .75;
+}
+.assessment-card.completed:hover {
+  border-color: var(--green);
+}
+.subj-dot {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.assessment-info { flex: 1; min-width: 0; }
+.assessment-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.assessment-meta {
+  font-size: .82rem;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+.assessment-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.score-ring {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--green);
+}
+.progress-bar-wrap {
+  width: 90px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #6c63ff, #a78bfa);
+}
+.group-section { margin-bottom: 36px; }
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="page-header">
+    <h1>👋 Hey, {{ kid }}!</h1>
+    <p>Here are your assessments. Pick one to start or continue.</p>
+  </div>
+
+  {% set pending = assessments | selectattr('status', 'ne', 'completed') | list %}
+  {% set done    = assessments | selectattr('status', 'eq', 'completed')  | list %}
+
+  {% if not assessments %}
+  <div class="empty-state">
+    <div class="icon">📭</div>
+    <h3>No assessments yet</h3>
+    <p>No assessments have been assigned to {{ kid }} yet.</p>
+  </div>
+  {% endif %}
+
+  {% if pending %}
+  <div class="group-section">
+    <div class="section-title">📝 Pending ({{ pending | length }})</div>
+    <div class="assessment-list">
+      {% for a in pending %}
+      {% set color = a.subject | subject_color %}
+      {% set emoji = {'Mathematics': '🔢', 'Science': '🔬', 'English': '📖', 'Hindi': '🕉️', 'Punjabi': '🙏', 'History': '🏛️', 'Geography': '🌍'}.get(a.subject, '📚') %}
+      {% set answered = answered_count(a) %}
+      {% set total_q = a.questions | length %}
+      <a href="/kid/{{ kid }}/assessment/{{ a.id }}"
+         class="assessment-card"
+         id="assessment-{{ loop.index }}">
+        <div class="subj-dot" style="background: {{ color }}22; border: 1px solid {{ color }}44;">
+          {{ emoji }}
+        </div>
+        <div class="assessment-info">
+          <div class="assessment-title">
+            {% if a.title %}{{ a.title }}{% else %}{{ a.subject }} — Class {{ a.classNum }}{% endif %}
+          </div>
+          <div class="assessment-meta">
+            {{ total_q }} questions ·
+            {% if a.status == 'in_progress' %}
+              {{ answered }}/{{ total_q }} answered
+            {% else %}
+              Not started yet
+            {% endif %}
+          </div>
+        </div>
+        <div class="assessment-right">
+          {% if a.status == 'in_progress' %}
+            <span class="badge badge-progress">In Progress</span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-fill" style="width: {{ (answered / total_q * 100) | round }}%"></div>
+            </div>
+          {% else %}
+            <span class="badge badge-ready">Ready</span>
+          {% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if done %}
+  <div class="group-section">
+    <div class="section-title">✅ Completed ({{ done | length }})</div>
+    <div class="assessment-list">
+      {% for a in done %}
+      {% set color = a.subject | subject_color %}
+      {% set emoji = {'Mathematics': '🔢', 'Science': '🔬', 'English': '📖', 'Hindi': '🕉️', 'Punjabi': '🙏', 'History': '🏛️', 'Geography': '🌍'}.get(a.subject, '📚') %}
+      <a href="/kid/{{ kid }}/assessment/{{ a.id }}"
+         class="assessment-card completed"
+         id="assessment-done-{{ loop.index }}">
+        <div class="subj-dot" style="background: {{ color }}22; border: 1px solid {{ color }}44;">
+          {{ emoji }}
+        </div>
+        <div class="assessment-info">
+          <div class="assessment-title">
+            {% if a.title %}{{ a.title }}{% else %}{{ a.subject }} — Class {{ a.classNum }}{% endif %}
+          </div>
+          <div class="assessment-meta">
+            {{ a.questions | length }} questions · Completed
+          </div>
+        </div>
+        <div class="assessment-right">
+          {% if a.score is not none %}
+            <div class="score-ring">{{ a.score | round | int }}%</div>
+          {% endif %}
+          <span class="badge badge-done">Done ✓</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

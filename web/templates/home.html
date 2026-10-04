@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block title %}Mynoo — Select Profile{% endblock %}
+
+{% block extra_style %}
+.hero {
+  text-align: center;
+  padding: 64px 24px 40px;
+}
+.hero h1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  background: linear-gradient(135deg, #a78bfa, #6c63ff, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-top: 12px;
+}
+.kid-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 8px;
+}
+.kid-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.kid-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(108,99,255,.04), transparent);
+  opacity: 0;
+  transition: var(--transition);
+}
+.kid-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 1px var(--accent-glow), var(--shadow-lg);
+}
+.kid-card:hover::before { opacity: 1; }
+.kid-avatar {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 16px;
+  background: linear-gradient(135deg, #6c63ff22, #a78bfa22);
+  border: 2px solid var(--border);
+}
+.kid-name {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.kid-meta { color: var(--text-muted); font-size: .85rem; }
+.kid-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 16px;
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--accent);
+  opacity: 0;
+  transition: var(--transition);
+}
+.kid-card:hover .kid-arrow { opacity: 1; }
+{% endblock %}
+
+{% block content %}
+<div class="hero">
+  <h1>Who's studying today?</h1>
+  <p>Select a profile to view and take assessments.</p>
+</div>
+
+<div class="container" style="padding-top: 0;">
+  {% if kids %}
+  <div class="kid-grid">
+    {% for kid in kids %}
+    <a href="/kid/{{ kid.id }}" class="kid-card" id="kid-{{ loop.index }}">
+      <div class="kid-avatar">
+        {{ '👧' if loop.index % 2 == 0 else '👦' }}
+      </div>
+      <div class="kid-name">{{ kid.name }}</div>
+      <div class="kid-meta">
+        {% if kid.classNum %}Class {{ kid.classNum }}{% endif %}
+        {% if kid.age %} · Age {{ kid.age }}{% endif %}
+      </div>
+      <div class="kid-arrow">View assessments →</div>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="empty-state">
+    <div class="icon">🔍</div>
+    <h3>No profiles found</h3>
+    <p>No child profiles were found in the Mynoo database.</p>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

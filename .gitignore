@@ -47,3 +47,8 @@ scripts/*.pdf
 scripts/*/*
 imagemagick
 asy_build
+
+# ── Python ──────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
