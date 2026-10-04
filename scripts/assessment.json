@@ -1,872 +1,894 @@
 {
-  "title": "Metals and Non-Metals",
-  "passages": [
-    {
-      "id": "p1",
-      "text": "### Experimental Study: Reactivity of Metals and Formation of Oxides\n\nA student conducted a series of laboratory experiments to investigate the chemical reactivity of elements and the chemical nature of their oxides:\n1. **Experiment 1**: A ribbon of magnesium was cleaned with sandpaper and ignited in air using tongs. It burned with an intense, dazzling white flame, depositing a fine white ash ($Y$). The ash was mixed with distilled water, forming solution $Z$. When tested, solution $Z$ turned moist red litmus paper blue, while blue litmus paper remained unchanged.\n2. **Experiment 2**: A small sample of powdered sulphur was heated in a deflagrating spoon and lowered into a gas jar full of oxygen. Sulphur burned with a pale blue flame, producing a pungent gas ($G$). The gas jar was covered, water was added, and the bottle was shaken thoroughly. The resulting solution turned moist blue litmus paper red.\n3. **Experiment 3**: Small equal-sized pieces of sodium, calcium, and iron were placed in separate beakers containing cold water. Sodium reacted violently on the surface with hissing and caught fire. Calcium reacted moderately, producing effervescence of gas $H_2$ and leaving behind a cloudy suspension of $\\text{Ca(OH)}_2$. Iron nails placed in cold water showed no visible reaction even after several hours."
-    },
-    {
-      "id": "p2",
-      "text": "### Investigation on Displacement Reactions and Acid Action\n\nStudents in a chemistry laboratory assembled two racks of test tubes to study single displacement and acid-metal reactions:\n- **Rack 1 (Acids)**: Test tube A contained zinc granules treated with dilute sulphuric acid; test tube B contained magnesium ribbon treated with dilute hydrochloric acid; test tube C contained copper turnings treated with dilute hydrochloric acid.\n- **Rack 2 (Displacement)**: Test tube D contained an iron nail immersed in blue copper(II) sulphate solution ($\\text{CuSO}_4$); test tube E contained zinc granules immersed in pale green ferrous sulphate solution ($\\text{FeSO}_4$)."
-    }
-  ],
+  "title": "Light, Shadow and Reflection",
+  "passages": [],
   "questions": [
     {
       "id": "q1",
       "type": "mcq",
-      "category": "Physical Properties of Metals",
+      "category": "Sources of Light",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Which of the following metals is a liquid at standard room temperature ($25^\\circ\\text{C}$)?",
+      "question": "Which of the following is a **natural living source of light**?",
       "passageId": "",
-      "tag": "Physical State of Metals",
-      "hint": "Refer to Table-1: Exceptions in physical properties of metals.",
+      "tag": "Natural Sources of Light",
+      "hint": "Section 11.2: Sources of Light - Natural sources of light",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        { "text": "$\\text{Hg}$ (Mercury)", "explanation": "Correct. Mercury is the only metal that is in a liquid state at room temperature." },
-        { "text": "$\\text{Na}$ (Sodium)", "explanation": "Incorrect. Sodium is a solid metal, though it is very soft." },
-        { "text": "$\\text{Pb}$ (Lead)", "explanation": "Incorrect. Lead is a solid metal at room temperature." },
-        { "text": "$\\text{Zn}$ (Zinc)", "explanation": "Incorrect. Zinc is a solid transition metal at room temperature." }
+        { "text": "Electric bulb", "explanation": "Incorrect. An electric bulb is an artificial, man-made source of light." },
+        { "text": "Firefly", "explanation": "Correct. A firefly is an organism that produces and emits light naturally." },
+        { "text": "Candle", "explanation": "Incorrect. A candle is an artificial source made by humans." },
+        { "text": "Moon", "explanation": "Incorrect. The Moon does not produce its own light; it reflects sunlight." }
       ],
-      "correctIndex": 0,
-      "correctAnswer": "$\\text{Hg}$ (Mercury)",
-      "explanation": "Mercury ($\\text{Hg}$) is an exception among metals because it has a melting point of $-38.83^\\circ\\text{C}$, making it liquid at room temperature."
+      "correctIndex": 1,
+      "correctAnswer": "Firefly",
+      "explanation": "Fireflies are natural living sources of light that emit a faint glow in darkness."
     },
     {
       "id": "q2",
       "type": "mcq",
-      "category": "Physical Properties of Non-metals",
+      "category": "Sources of Light",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Identify the only non-metal that exists in the liquid state at room temperature.",
+      "question": "Which of the following statements correctly explains why the **Moon** is considered a **non-luminous object**?",
       "passageId": "",
-      "tag": "States of Non-metals",
-      "hint": "Check Table-6: Physical properties and exceptions of non-metals.",
+      "tag": "Luminous and Non-luminous Objects",
+      "hint": "Section 11.2: Non-luminous objects",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        { "text": "Chlorine ($\\text{Cl}_{2}$)", "explanation": "Incorrect. Chlorine is a greenish-yellow gas at room temperature." },
-        { "text": "Bromine ($\\text{Br}_{2}$)", "explanation": "Correct. Bromine is a reddish-brown liquid non-metal at room temperature." },
-        { "text": "Iodine ($\\text{I}_{2}$)", "explanation": "Incorrect. Iodine is a lustrous dark purple/black solid." },
-        { "text": "Phosphorus ($\\text{P}_{4}$)", "explanation": "Incorrect. Phosphorus exists as a solid at room temperature." }
+        { "text": "It emits a very dim light of its own", "explanation": "Incorrect. The Moon produces zero light of its own." },
+        { "text": "It absorbs light from fireflies", "explanation": "Incorrect. Light from fireflies is far too faint to illuminate celestial bodies." },
+        { "text": "It shines by reflecting light from the Sun", "explanation": "Correct. Non-luminous objects become visible when they reflect light falling on them from a luminous source." },
+        { "text": "It reflects light from distant stars", "explanation": "Incorrect. The Moon primarily reflects sunlight." }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "Bromine ($\\text{Br}_{2}$)",
-      "explanation": "Bromine is the only non-metallic element in the periodic table that is liquid under standard ambient temperature and pressure."
+      "correctIndex": 2,
+      "correctAnswer": "It shines by reflecting light from the Sun",
+      "explanation": "The Moon does not emit light of its own; it becomes visible only because it reflects sunlight falling on its surface."
     },
     {
       "id": "q3",
       "type": "mcq",
-      "category": "Physical Properties of Metals",
+      "category": "Propagation of Light",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Which of the following pairs contains metals that are so soft they can easily be cut with a laboratory knife?",
+      "question": "What is the phenomenon of light traveling strictly in **straight lines** termed?",
       "passageId": "",
-      "tag": "Hardness of Metals",
-      "hint": "Recall the low-density alkali metals in Group 1.",
+      "tag": "Rectilinear Propagation",
+      "hint": "Section 11.3: Propagation of Light",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        { "text": "Iron and Copper", "explanation": "Incorrect. Iron and copper possess high tensile strength and hardness." },
-        { "text": "Sodium and Potassium", "explanation": "Correct. Sodium and potassium have weak metallic bonding, making them soft solids with low densities." },
-        { "text": "Aluminium and Zinc", "explanation": "Incorrect. Aluminium and zinc are rigid and cannot be cut cleanly with an ordinary knife." },
-        { "text": "Gold and Silver", "explanation": "Incorrect. Although malleable and ductile, gold and silver cannot be sliced with a knife like soft wax." }
+        { "text": "Curvilinear motion", "explanation": "Incorrect. Light does not travel in curved lines in uniform media." },
+        { "text": "Rectilinear propagation", "explanation": "Correct. The property of light traveling in straight lines is known as rectilinear propagation." },
+        { "text": "Lateral inversion", "explanation": "Incorrect. Lateral inversion refers to left-right reversal in plane mirrors." },
+        { "text": "Diffuse reflection", "explanation": "Incorrect. Diffuse reflection refers to scattering from rough surfaces." }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Sodium and Potassium",
-      "explanation": "Sodium ($\\text{Na}$) and potassium ($\\text{K}$) have very low densities and weak cohesive metallic bonds, allowing them to be sliced easily using a knife."
+      "correctAnswer": "Rectilinear propagation",
+      "explanation": "The property of light traveling along straight-line paths is called rectilinear propagation of light."
     },
     {
       "id": "q4",
       "type": "mcq",
-      "category": "Physical Properties of Non-metals",
+      "category": "Propagation of Light",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "Which allotrope of carbon is an exceptional non-metal capable of conducting electric current efficiently?",
+      "difficulty": "easy",
+      "question": "Which of the following optical representations depicts a **converging beam of light**?",
       "passageId": "",
-      "tag": "Electrical Conductivity",
-      "hint": "Think of the allotrope used for battery electrodes and pencil leads.",
+      "tag": "Ray and Beam",
+      "hint": "Section 11.3: Ray and beam",
       "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
+        "hasDiagram": true,
+        "description": "Ray diagram illustrating parallel, diverging, and converging rays meeting at a point.",
+        "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\nfig, ax = plt.subplots(figsize=(6, 3))\nax.set_xlim(-1, 9)\nax.set_ylim(-1, 5)\n\n# Beam A: Parallel\nfor y in [3.2, 3.7, 4.2]:\n    ax.annotate('', xy=(3, y), xytext=(0.5, y), arrowprops=dict(arrowstyle=\"->\", color=\"#DC2626\", lw=2))\nax.text(1.75, 4.5, 'Beam A', ha='center', va='bottom', fontsize=11, fontweight='bold', color='#1E293B')\n\n# Beam B: Converging\nax.annotate('', xy=(7.5, 2.5), xytext=(5.0, 4.0), arrowprops=dict(arrowstyle=\"->\", color=\"#2563EB\", lw=2))\nax.annotate('', xy=(7.5, 2.5), xytext=(4.8, 2.5), arrowprops=dict(arrowstyle=\"->\", color=\"#2563EB\", lw=2))\nax.annotate('', xy=(7.5, 2.5), xytext=(5.0, 1.0), arrowprops=dict(arrowstyle=\"->\", color=\"#2563EB\", lw=2))\nax.plot(7.5, 2.5, 'ko', markersize=5)\nax.text(6.0, 4.3, 'Beam B', ha='center', va='bottom', fontsize=11, fontweight='bold', color='#1E293B')\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
       },
       "options": [
-        { "text": "Diamond", "explanation": "Incorrect. Diamond has an sp3 network with no free delocalized electrons, behaving as an electrical insulator." },
-        { "text": "Graphite", "explanation": "Correct. In graphite, each carbon atom forms three planar covalent bonds, leaving delocalized pi electrons free to conduct electricity." },
-        { "text": "Coal", "explanation": "Incorrect. Amorphous coal is a poor conductor of electricity." },
-        { "text": "Fullerene", "explanation": "Incorrect. Pure pristine fullerene does not conduct electric current like graphite sheets." }
+        { "text": "Beam A only", "explanation": "Incorrect. Beam A represents parallel rays." },
+        { "text": "Beam B only", "explanation": "Correct. In Beam B, rays travel towards and meet at a single focal point." },
+        { "text": "Both Beam A and Beam B", "explanation": "Incorrect. Only Beam B converges to a point." },
+        { "text": "Neither Beam A nor Beam B", "explanation": "Incorrect. Beam B is clearly converging." }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Graphite",
-      "explanation": "Graphite has a layered hexagonal lattice with delocalized pi electrons mobile between hexagonal layers, making it a good electrical conductor."
+      "correctAnswer": "Beam B only",
+      "explanation": "Light rays that travel to meet together at a common single point form a converging beam."
     },
     {
       "id": "q5",
       "type": "mcq",
-      "category": "Physical Properties of Metals",
+      "category": "Nature of Objects",
       "marks": 1,
       "difficulty": "easy",
-      "question": "The property that enables metals to be hammered into thin sheets without shattering is known as:",
+      "question": "Materials that allow light to pass through them **partially**, causing objects behind them to appear blurred, are classified as:",
       "passageId": "",
-      "tag": "Mechanical Properties",
-      "hint": "Differentiate between drawing into wires and flattening into sheets.",
+      "tag": "Translucent Objects",
+      "hint": "Section 11.4: Nature of Objects",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        { "text": "Ductility", "explanation": "Incorrect. Ductility is the ability to be drawn into thin wires." },
-        { "text": "Malleability", "explanation": "Correct. Malleability refers to the property of being beaten into thin foils or sheets." },
-        { "text": "Sonority", "explanation": "Incorrect. Sonority is the property of producing a resonant ringing sound upon impact." },
-        { "text": "Lustre", "explanation": "Incorrect. Lustre refers to surface reflectivity and brilliance." }
+        { "text": "Transparent objects", "explanation": "Incorrect. Transparent objects allow light to pass through completely and clearly." },
+        { "text": "Opaque objects", "explanation": "Incorrect. Opaque objects block light completely." },
+        { "text": "Translucent objects", "explanation": "Correct. Translucent objects transmit light partially and scatter the rest." },
+        { "text": "Luminous objects", "explanation": "Incorrect. Luminous objects emit their own light." }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "Malleability",
-      "explanation": "Malleability is the characteristic property of metals that allows them to deform under compressive stress into sheets (e.g., gold and aluminium foils)."
+      "correctIndex": 2,
+      "correctAnswer": "Translucent objects",
+      "explanation": "Objects like butter paper and frosted glass that allow only some light to pass through are called translucent."
     },
     {
       "id": "q6",
       "type": "mcq",
-      "category": "Occurrence of Metals",
+      "category": "Formation of Shadow",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Which of the following is the most abundant metal in the Earth's crust?",
+      "question": "What is the colour of the shadow formed when red, green, and blue opaque balls are illuminated by white sunlight?",
       "passageId": "",
-      "tag": "Abundance of Elements",
-      "hint": "Section 4.2 Occurrence of Metals: Identify the primary crustal metallic element.",
+      "tag": "Shadow Characteristics",
+      "hint": "Section 11.5: Formation of Shadow - Characteristics of shadows",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        { "text": "Iron ($\\text{Fe}$)", "explanation": "Incorrect. Iron is the second most abundant crustal metal." },
-        { "text": "Aluminium ($\\text{Al}$)", "explanation": "Correct. Aluminium accounts for roughly 8% of the Earth's crust by mass, making it the most abundant crustal metal." },
-        { "text": "Calcium ($\\text{Ca}$)", "explanation": "Incorrect. Calcium is abundant but ranks below aluminium and iron." },
-        { "text": "Copper ($\\text{Cu}$)", "explanation": "Incorrect. Copper occurs in much smaller crustal fractions." }
+        { "text": "Red, green, and blue respectively", "explanation": "Incorrect. Shadows do not inherit the colour of the object." },
+        { "text": "White", "explanation": "Incorrect. A shadow is an absence/blocking of light." },
+        { "text": "Always black or dark", "explanation": "Correct. Shadows are dark patches formed by the obstruction of light, regardless of the object's colour." },
+        { "text": "Grey during noon and yellow in morning", "explanation": "Incorrect. Color does not change with time of day." }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "Aluminium ($\\text{Al}$)",
-      "explanation": "Aluminium is the most abundant metal present in the Earth's crust, followed immediately by iron."
+      "correctIndex": 2,
+      "correctAnswer": "Always black or dark",
+      "explanation": "The shadow of an opaque object is always a dark/black patch because it represents a region where light rays are blocked."
     },
     {
       "id": "q7",
       "type": "mcq",
-      "category": "Occurrence of Metals",
+      "category": "Reflection of Light",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "Calamine is an important carbonate ore of which metal?",
+      "difficulty": "easy",
+      "question": "The phenomenon of **bouncing back of light** into the same medium when it strikes a smooth, polished surface is called:",
       "passageId": "",
-      "tag": "Metal Ores",
-      "hint": "Check Table-2: Some common ores in Section 4.2.",
+      "tag": "Reflection",
+      "hint": "Section 11.6: Reflection of Light",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        { "text": "Calcium ($\\text{Ca}$)", "explanation": "Incorrect. The main carbonate ore of calcium is limestone ($\\text{CaCO}_{3}$)." },
-        { "text": "Copper ($\\text{Cu}$)", "explanation": "Incorrect. Cuprite is an oxide ore and copper glance is a sulphide ore." },
-        { "text": "Zinc ($\\text{Zn}$)", "explanation": "Correct. Calamine is zinc carbonate ($\\text{ZnCO}_{3}$)." },
-        { "text": "Aluminium ($\\text{Al}$)", "explanation": "Incorrect. The primary ore of aluminium is bauxite ($\\text{Al}_{2}\\text{O}_{3} \\cdot 2\\text{H}_{2}\\text{O}$)." }
+        { "text": "Refraction", "explanation": "Incorrect. Refraction is the bending of light entering a different medium." },
+        { "text": "Reflection", "explanation": "Correct. Bouncing back of light from a surface is called reflection." },
+        { "text": "Dispersion", "explanation": "Incorrect. Dispersion is the splitting of white light into constituent colours." },
+        { "text": "Rectilinear propagation", "explanation": "Incorrect. That refers to straight-line travel." }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "Zinc ($\\text{Zn}$)",
-      "explanation": "Calamine ore consists primarily of zinc carbonate, denoted chemically as $\\text{ZnCO}_{3}$."
+      "correctIndex": 1,
+      "correctAnswer": "Reflection",
+      "explanation": "Bouncing back of light from the boundary of an opaque shiny surface is defined as reflection of light."
     },
     {
       "id": "q8",
       "type": "mcq",
-      "category": "Chemical Properties of Metals",
+      "category": "Reflection of Light",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "Why are metallic sodium and potassium kept submerged under kerosene oil?",
+      "difficulty": "easy",
+      "question": "An image that **cannot** be captured or formed on a screen is described as a:",
       "passageId": "",
-      "tag": "Reactivity of Alkali Metals",
-      "hint": "Consider their rapid exothermic oxidation in air and vigorous reaction with ambient moisture.",
+      "tag": "Image Characteristics",
+      "hint": "Section 11.6: Activity-7 - Characteristics of image formed by a plane mirror",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        { "text": "To prevent them from dissolving in room temperature water vapour and reacting with atmospheric oxygen", "explanation": "Correct. Sodium and potassium react spontaneously with oxygen and moisture at room temperature and can catch fire." },
-        { "text": "Because they decompose violently into toxic gases inside closed containers", "explanation": "Incorrect. They do not spontaneously decompose into gases without reagents." },
-        { "text": "To stop them from turning into brittle non-metallic powders", "explanation": "Incorrect. They remain soft metals unless oxidized." },
-        { "text": "To protect them from exposure to sunlight", "explanation": "Incorrect. Light does not initiate their spontaneous oxidation." }
+        { "text": "Real image", "explanation": "Incorrect. Real images can be obtained on a screen." },
+        { "text": "Inverted image", "explanation": "Incorrect. Inverted refers to orientation, not whether it can be cast on a screen." },
+        { "text": "Virtual image", "explanation": "Correct. An image that cannot be caught on a screen is termed virtual." },
+        { "text": "Shadow", "explanation": "Incorrect. A shadow is a region of blocked light, not an optical image." }
       ],
-      "correctIndex": 0,
-      "correctAnswer": "To prevent them from dissolving in room temperature water vapour and reacting with atmospheric oxygen",
-      "explanation": "Sodium and potassium react vigorously with oxygen and atmospheric moisture even at ambient temperatures, catching fire. They are preserved beneath non-aqueous hydrocarbons like kerosene."
+      "correctIndex": 2,
+      "correctAnswer": "Virtual image",
+      "explanation": "Images formed by plane mirrors cannot be projected on a screen and are known as virtual images."
     },
     {
       "id": "q9",
       "type": "mcq",
-      "category": "Corrosion of Metals",
+      "category": "Pinhole Camera",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "Silver articles turn black over time upon exposure to urban air primarily due to the formation of:",
+      "difficulty": "easy",
+      "question": "Which of the following is an essential characteristic of the image formed by a standard **pinhole camera**?",
       "passageId": "",
-      "tag": "Corrosion of Silver",
-      "hint": "Identify the sulphur-containing atmospheric gas that reacts with silver.",
+      "tag": "Pinhole Camera Characteristics",
+      "hint": "Section 11.7: Pinhole Camera - Characteristics of the image in a pinhole camera",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        { "text": "Silver oxide ($\\text{Ag}_{2}\\text{O}$)", "explanation": "Incorrect. Silver is relatively inert to direct dry oxygen oxidation." },
-        { "text": "Silver sulphide ($\\text{Ag}_{2}\\text{S}$)", "explanation": "Correct. Silver reacts with hydrogen sulphide gas present in the air to deposit black $\\text{Ag}_{2}\\text{S}$." },
-        { "text": "Silver carbonate ($\\text{Ag}_{2}\\text{CO}_{3}$)", "explanation": "Incorrect. Atmospheric $\\text{CO}_{2}$ alone does not form the black tarnishing film." },
-        { "text": "Silver sulphate ($\\text{Ag}_{2}\\text{SO}_{4}$)", "explanation": "Incorrect. The black patina is silver sulphide, not silver sulphate." }
+        { "text": "Virtual and erect", "explanation": "Incorrect. Pinhole cameras produce real, inverted images." },
+        { "text": "Real and inverted", "explanation": "Correct. Rays from the top and bottom of an object intersect at the pinhole, resulting in an upside-down (inverted) image on the screen." },
+        { "text": "Always magnified and upright", "explanation": "Incorrect. The image is inverted and typically diminished." },
+        { "text": "Completely black without details", "explanation": "Incorrect. Pinhole images display color and details." }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Silver sulphide ($\\text{Ag}_{2}\\text{S}$)",
-      "explanation": "Trace amounts of hydrogen sulphide ($\\text{H}_{2}\\text{S}$) in the air react with silver surfaces to form a thin black coating of silver sulphide: $2\\text{Ag} + \\text{H}_{2}\\text{S} \\rightarrow \\text{Ag}_{2}\\text{S} + \\text{H}_{2}$."
+      "correctAnswer": "Real and inverted",
+      "explanation": "Because light travels strictly in straight lines through the aperture, the image formed on the wax paper screen of a pinhole camera is always inverted."
     },
     {
       "id": "q10",
       "type": "mcq",
-      "category": "Corrosion of Metals",
+      "category": "Periscope and Kaleidoscope",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "The green coating formed on the surface of copper utensils when exposed to moist air is chemically:",
+      "difficulty": "easy",
+      "question": "How many plane mirrors are used inside an ordinary **periscope** to view objects over obstacles?",
       "passageId": "",
-      "tag": "Corrosion of Copper",
-      "hint": "Section 4.6 Corrosion of Metals: It is a mixture of copper hydroxide and copper carbonate.",
+      "tag": "Periscope",
+      "hint": "Section 11.8: Periscope and Kaleidoscope - Periscope",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        { "text": "Pure copper(II) oxide ($\\text{CuO}$)", "explanation": "Incorrect. $\\text{CuO}$ is black in color." },
-        { "text": "Basic copper carbonate [$\\text{Cu(OH)}_{2} + \\text{CuCO}_{3}$]", "explanation": "Correct. Moist air containing $\\text{CO}_{2}$, $\\text{O}_{2}$, and $\\text{H}_{2}\\text{O}$ produces a greenish patina of basic copper carbonate." },
-        { "text": "Hydrated copper sulphate ($\\text{CuSO}_{4} \\cdot 5\\text{H}_{2}\\text{O}$)", "explanation": "Incorrect. This blue salt is not formed during natural atmospheric corrosion." },
-        { "text": "Copper nitrate [$\\text{Cu(NO}_{3})_{2}$]", "explanation": "Incorrect. Nitric species are not the standard atmospheric components causing the common green film." }
+        { "text": "1", "explanation": "Incorrect. A single mirror cannot redirect light twice to exit parallel." },
+        { "text": "2", "explanation": "Correct. A periscope employs two parallel plane mirrors inclined at $45^{\\circ}$." },
+        { "text": "3", "explanation": "Incorrect. Three mirrors are arranged in an equilateral prism inside a kaleidoscope." },
+        { "text": "4", "explanation": "Incorrect. Only two mirrors are required in a Z-shaped periscope tube." }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Basic copper carbonate [$\\text{Cu(OH)}_{2} + \\text{CuCO}_{3}$]",
-      "explanation": "Copper reacts slowly with moist carbon dioxide and oxygen in air: $2\\text{Cu} + \\text{H}_{2}\\text{O} + \\text{CO}_{2} + \\text{O}_{2} \\rightarrow \\text{Cu(OH)}_{2} + \\text{CuCO}_{3}$."
+      "correctAnswer": "2",
+      "explanation": "A periscope contains two plane mirrors positioned at an angle within a Z-shaped tube to successively reflect light rays towards the observer's eyes."
     },
     {
       "id": "q11",
       "type": "mcq",
-      "category": "Alloys",
+      "category": "Periscope and Kaleidoscope",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Solder, an alloy widely used for joining electrical circuit wires, consists of:",
+      "question": "A **kaleidoscope** produces beautiful symmetrical patterns based on which optical principle?",
       "passageId": "",
-      "tag": "Composition of Alloys",
-      "hint": "Identify the low-melting alloy of lead and tin.",
+      "tag": "Kaleidoscope",
+      "hint": "Section 11.8: Periscope and Kaleidoscope - Kaleidoscope",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        { "text": "Copper and Zinc", "explanation": "Incorrect. Copper and zinc form brass." },
-        { "text": "Copper and Tin", "explanation": "Incorrect. Copper and tin form bronze." },
-        { "text": "Lead and Tin", "explanation": "Correct. Solder is an alloy of lead and tin chosen for its low melting point." },
-        { "text": "Iron and Carbon", "explanation": "Incorrect. Iron and carbon form steel." }
+        { "text": "Total absorption of light", "explanation": "Incorrect. Multiple reflections from mirrors form the pattern." },
+        { "text": "Multiple reflections by inclined mirrors", "explanation": "Correct. The phenomenon of multiple reflections creates symmetrical patterns from glass fragments." },
+        { "text": "Dispersion through droplets", "explanation": "Incorrect. Dispersion forms rainbows, not kaleidoscopic patterns." },
+        { "text": "Rectilinear shadow projection", "explanation": "Incorrect. Shadows do not form colorful patterns." }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "Lead and Tin",
-      "explanation": "Solder is composed of lead ($\\text{Pb}$) and tin ($\\text{Sn}$). The alloy has a substantially lower melting point than either individual metal, facilitating soldering."
+      "correctIndex": 1,
+      "correctAnswer": "Multiple reflections by inclined mirrors",
+      "explanation": "A kaleidoscope uses three plane mirror strips inclined to each other to produce multiple reflections of coloured glass pieces."
     },
     {
       "id": "q12",
       "type": "mcq",
-      "category": "Uses of Non-metals",
+      "category": "Nature of Objects",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Which non-metal is industrially added during the vulcanisation of natural rubber to make automobile tyres tough and elastic?",
+      "question": "Which of the following items is an example of an **opaque material**?",
       "passageId": "",
-      "tag": "Industrial Chemistry",
-      "hint": "Look up Table-8 under Section 4.10 Uses of Non-metals.",
+      "tag": "Classification of Materials",
+      "hint": "Section 11.4: Nature of Objects - 3. Opaque objects",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
       "options": [
-        { "text": "Phosphorus", "explanation": "Incorrect. Phosphorus is used in matches and fireworks." },
-        { "text": "Sulphur", "explanation": "Correct. Sulphur forms cross-linking disulfide bridges during vulcanisation." },
-        { "text": "Nitrogen", "explanation": "Incorrect. Nitrogen is an inert carrier gas and ammonia feed." },
-        { "text": "Silicon", "explanation": "Incorrect. Silicon is used in semiconductors and silicone polymers." }
+        { "text": "Clean drinking water", "explanation": "Incorrect. Clean water is transparent." },
+        { "text": "Clear glass pane", "explanation": "Incorrect. Clear glass is transparent." },
+        { "text": "Aluminium foil", "explanation": "Correct. Metal foils do not permit any light to pass through." },
+        { "text": "Cellophane sheet", "explanation": "Incorrect. Clear cellophane is transparent." }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "Sulphur",
-      "explanation": "Vulcanisation involves heating natural rubber with sulphur to create sulfur cross-links that dramatically increase durability and heat resistance."
+      "correctIndex": 2,
+      "correctAnswer": "Aluminium foil",
+      "explanation": "Aluminium foil is completely impermeable to light rays and thus is an opaque material."
     },
     {
       "id": "q13",
-      "type": "fill_blank",
-      "category": "Alloys",
+      "type": "mcq",
+      "category": "Formation of Shadow",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Mild steel is produced by adding approximately ___% carbon to molten pure iron to enhance its mechanical strength.",
+      "question": "At what time of day is the **shadow** of a vertical pole cast by sunlight the **shortest**?",
       "passageId": "",
-      "tag": "Steel Composition",
-      "hint": "Check Section 4.11 under Alloys for the percentage of carbon.",
+      "tag": "Length of Shadow",
+      "hint": "Section 11.5: Characteristics of shadows",
       "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
+        "hasDiagram": true,
+        "description": "Sun positions across the sky and the corresponding shadow length variations.",
+        "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\nfig, ax = plt.subplots(figsize=(6, 3))\nax.set_xlim(-1, 9)\nax.set_ylim(-0.5, 4.5)\nax.set_aspect('equal')\n\n# Ground\nax.plot([-0.5, 8.5], [0, 0], color='#334155', lw=2)\n\n# Vertical pole at x = 4\nax.plot([4, 4], [0, 2], color='#0F172A', lw=4)\nax.text(4, 2.2, 'Pole', ha='center', va='bottom', fontsize=9, fontweight='bold')\n\n# Noon sun at x = 4, y = 3.8\nax.plot(4, 3.8, 'o', color='#F59E0B', markersize=14)\nax.text(4, 4.1, 'Noon (Sun Overhead)', ha='center', va='bottom', fontsize=9, color='#B45309', fontweight='bold')\n\n# Morning sun at x = 0.5, y = 1.5\nax.plot(0.5, 1.5, 'o', color='#F59E0B', markersize=12)\nax.text(0.5, 1.8, 'Morning', ha='center', va='bottom', fontsize=8)\n\n# Afternoon sun at x = 7.5, y = 1.5\nax.plot(7.5, 1.5, 'o', color='#F59E0B', markersize=12)\nax.text(7.5, 1.8, 'Evening', ha='center', va='bottom', fontsize=8)\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
       },
-      "blanks": ["0.5"],
-      "correctAnswer": "$0.5\\%$",
-      "explanation": "Pure iron is too soft for structural use; alloying it with approximately $0.5\\%$ carbon yields hard, malleable mild steel."
+      "options": [
+        { "text": "Early morning ($7\\text{ AM}$)", "explanation": "Incorrect. Shadows are elongated in the morning when the sun is near the horizon." },
+        { "text": "Exactly noon ($12\\text{ PM}$)", "explanation": "Correct. At solar noon, the sun is highest in the sky, producing the shortest shadow." },
+        { "text": "Late afternoon ($5\\text{ PM}$)", "explanation": "Incorrect. Shadows become long again as the sun approaches the horizon." },
+        { "text": "Shadow length remains constant throughout daylight hours", "explanation": "Incorrect. Shadow length varies continuously with the sun's elevation angle." }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "Exactly noon ($12\\text{ PM}$)",
+      "explanation": "At noon, the sun reaches its highest position directly overhead, resulting in the minimum shadow length."
     },
     {
       "id": "q14",
-      "type": "fill_blank",
-      "category": "Occurrence of Non-metals",
+      "type": "mcq",
+      "category": "Reflection of Light",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Fill in the blank: The most abundant non-metal in the entire universe is ___.",
+      "question": "If an object is placed at a perpendicular distance of $25\\text{ cm}$ in front of a flat plane mirror, what is the distance of its **image behind the mirror**?",
       "passageId": "",
-      "tag": "Cosmic Abundance",
-      "hint": "It constitutes the majority of stars and gas giants.",
+      "tag": "Plane Mirror Distance",
+      "hint": "Section 11.6: Summary & Characteristics of plane mirror",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "blanks": ["Hydrogen"],
-      "correctAnswer": "Hydrogen ($\\text{H}$)",
-      "explanation": "Hydrogen is the simplest and most widespread element, constituting over $70\\%$ of the baryonic mass of the universe."
+      "options": [
+        { "text": "$12.5\\text{ cm}$", "explanation": "Incorrect. The image distance does not halve." },
+        { "text": "$25\\text{ cm}$", "explanation": "Correct. In a plane mirror, the image distance behind the mirror equals the object distance in front of it." },
+        { "text": "$50\\text{ cm}$", "explanation": "Incorrect. $50\\text{ cm}$ is the total separation between object and image." },
+        { "text": "$0\\text{ cm}$", "explanation": "Incorrect. The image is not formed on the surface." }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$25\\text{ cm}$",
+      "explanation": "A plane mirror forms an image as far behind the mirror as the object is placed in front of it ($d_{i} = d_{o} = 25\\text{ cm}$)."
     },
     {
       "id": "q15",
-      "type": "fill_blank",
-      "category": "Prevention of Corrosion",
+      "type": "mcq",
+      "category": "Reflection of Light",
       "marks": 1,
       "difficulty": "easy",
-      "question": "The metallurgical process of coating an iron or steel article with a sacrificial protective layer of molten zinc is called ___.",
+      "question": "Why is the word **AMBULANCE** written in reverse lettering (`\\existsONALUBMA`) on emergency medical vehicles?",
       "passageId": "",
-      "tag": "Corrosion Prevention",
-      "hint": "Refer to the definition in 'New Terms' in Section 4.6.",
+      "tag": "Lateral Inversion",
+      "hint": "Section 11.6: INFO-BUBBLE on Ambulance",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "blanks": ["Galvanisation"],
-      "correctAnswer": "Galvanisation",
-      "explanation": "Galvanisation involves dipping iron or steel into molten zinc to create a protective, corrosion-resistant metallurgical barrier."
+      "options": [
+        { "text": "It is an international artistic decorative standard", "explanation": "Incorrect. It serves a functional optical purpose." },
+        { "text": "So drivers ahead can read it correctly in their rear-view mirrors due to lateral inversion", "explanation": "Correct. Rear-view plane/convex mirrors laterally invert the lettering back into readable text." },
+        { "text": "To prevent glare from high-beam headlights", "explanation": "Incorrect. Letter reversal does not prevent glare." },
+        { "text": "To allow pedestrians standing on the side of the road to read it backwards", "explanation": "Incorrect. Pedestrians view it directly and see it reversed." }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "So drivers ahead can read it correctly in their rear-view mirrors due to lateral inversion",
+      "explanation": "Due to lateral inversion in rear-view mirrors, the pre-reversed lettering appears correctly oriented to the driver looking into the mirror."
     },
     {
       "id": "q16",
-      "type": "fill_blank",
-      "category": "Physical Properties of Non-metals",
+      "type": "mcq",
+      "category": "Formation of Shadow",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "Although non-metals are typically dull in appearance, crystals of the halogen ___ and the allotrope graphite exhibit metallic-like surface lustre.",
+      "difficulty": "easy",
+      "question": "Which of the following is **NOT** a required condition for a shadow to be formed and observed?",
       "passageId": "",
-      "tag": "Non-metal Lustre",
-      "hint": "Identify the solid halogen listed under exceptions in Table-6.",
+      "tag": "Conditions for Shadow Formation",
+      "hint": "Section 11.5: Activity-4 & Characteristics of shadows",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "blanks": ["Iodine"],
-      "correctAnswer": "Iodine ($\\text{I}_{2}$)",
-      "explanation": "Iodine crystals have a lustrous, shiny greyish-black crystalline surface, serving as a notable exception among non-metals."
+      "options": [
+        { "text": "A source of light", "explanation": "Incorrect. A light source is strictly necessary." },
+        { "text": "An opaque or translucent obstacle", "explanation": "Incorrect. An object blocking the path of light is strictly required." },
+        { "text": "A screen or surface behind the object", "explanation": "Incorrect. Without a screen, the cast shadow cannot be captured or seen." },
+        { "text": "A polished plane mirror", "explanation": "Correct. Mirrors produce reflections and images, not shadows; a mirror is not required." }
+      ],
+      "correctIndex": 3,
+      "correctAnswer": "A polished plane mirror",
+      "explanation": "Only three components are necessary for shadow observation: a light source, an obstructing object, and a screen."
     },
     {
       "id": "q17",
-      "type": "fill_blank",
-      "category": "Chemical Properties of Non-metals",
+      "type": "mcq",
+      "category": "Reflection of Light",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "Non-metal oxides dissolve in water to produce solutions that turn moist blue litmus paper ___.",
+      "difficulty": "easy",
+      "question": "What type of reflection occurs when parallel rays of light strike a rough wooden tabletop?",
       "passageId": "",
-      "tag": "Nature of Oxides",
-      "hint": "Recall the acid-base indicator behavior of carbonic and sulphurous acids.",
+      "tag": "Regular and Diffused Reflection",
+      "hint": "Section 11.6: Reflection of Light",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "blanks": ["red"],
-      "correctAnswer": "red",
-      "explanation": "Non-metal oxides (such as $\\text{CO}_{2}$ and $\\text{SO}_{2}$) are acidic anhydrides that react with water to form acidic solutions, turning blue litmus red."
+      "options": [
+        { "text": "Regular specular reflection", "explanation": "Incorrect. Specular reflection occurs exclusively on ultra-smooth surfaces." },
+        { "text": "Diffused or irregular scattering", "explanation": "Correct. Rough surfaces scatter incident parallel rays in all directions." },
+        { "text": "Total internal reflection", "explanation": "Incorrect. This occurs inside optical media at critical angles." },
+        { "text": "Dispersion", "explanation": "Incorrect. Splitting into spectral components is dispersion." }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "Diffused or irregular scattering",
+      "explanation": "Light striking an uneven or rough surface gets scattered in various directions, which is known as diffused reflection."
     },
     {
       "id": "q18",
-      "type": "fill_blank",
-      "category": "Chemical Properties of Metals",
+      "type": "mcq",
+      "category": "Propagation of Light",
       "marks": 1,
       "difficulty": "easy",
-      "question": "The only non-metal placed inside the metal reactivity series due to its electropositive tendency to form positive ions ($\\text{H}^{+}$) is ___.",
+      "question": "In the cardboard and candle experiment demonstrating rectilinear propagation, what happens when the middle cardboard is displaced slightly sideways?",
       "passageId": "",
-      "tag": "Reactivity Series",
-      "hint": "Check the entry positioned below lead and above copper in Table-3.",
+      "tag": "Rectilinear Propagation Experiment",
+      "hint": "Section 11.3: Activity-1 - To show rectilinear propagation of light",
       "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
+        "hasDiagram": true,
+        "description": "Three cardboard screens with holes; middle card displaced obstructing light ray.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\n\nfig, ax = plt.subplots(figsize=(6, 3))\nax.set_xlim(-1, 9)\nax.set_ylim(-1, 5)\nax.set_aspect('equal')\n\n# Three cardboard screens\nax.add_patch(patches.Rectangle((1.5, 0.5), 0.3, 3.5, color='#94A3B8'))\nax.add_patch(patches.Rectangle((4.0, 1.2), 0.3, 3.5, color='#CBD5E1')) # Displaced card\nax.add_patch(patches.Rectangle((6.5, 0.5), 0.3, 3.5, color='#94A3B8'))\n\n# Candle at x = 0\nax.plot([0, 0], [1.0, 2.0], color='#D97706', lw=4)\nax.plot(0, 2.3, '*', color='#EF4444', markersize=10)\nax.text(0, 0.5, 'Candle', ha='center', va='top', fontsize=9)\n\n# Blocked ray\nax.annotate('', xy=(4.0, 2.3), xytext=(0, 2.3), arrowprops=dict(arrowstyle=\"->\", color=\"#DC2626\", lw=2))\nax.plot(4.0, 2.3, 'x', color='#DC2626', markersize=8, mew=2)\nax.text(5.5, 4.2, 'Middle Card Displaced', ha='center', va='center', fontsize=9, fontweight='bold', color='#B91C1C')\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
       },
-      "blanks": ["Hydrogen"],
-      "correctAnswer": "Hydrogen ($\\text{H}$)",
-      "explanation": "Hydrogen readily loses an electron to form $\\text{H}^{+}$, allowing it to act as an electrochemical benchmark in the metal activity series."
+      "options": [
+        { "text": "The candle flame remains clearly visible without change", "explanation": "Incorrect. The blocked line of sight prevents light from passing through." },
+        { "text": "The candle flame is no longer visible", "explanation": "Correct. Because light travels only in straight lines, shifting the pinhole blocks the path of light." },
+        { "text": "The flame appears inverted and coloured", "explanation": "Incorrect. No light reaches the observer." },
+        { "text": "The brightness of the flame increases", "explanation": "Incorrect. Intensity does not increase." }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "The candle flame is no longer visible",
+      "explanation": "Displacing the middle screen breaks the collinear alignment of the holes. Since light travels in straight lines and cannot bend around the obstacle, the flame is obscured."
     },
     {
       "id": "q19",
-      "type": "equation_balancing",
-      "category": "Chemical Properties of Metals",
+      "type": "mcq",
+      "category": "Pinhole Camera",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Balance the reaction equation for the oxidation of sodium metal at room temperature: $x\\text{Na} + y\\text{O}_{2} \\rightarrow z\\text{Na}_{2}\\text{O}$. Determine the integer stoichiometric coefficients $(x, y, z)$.",
+      "question": "What acts as **natural pinhole cameras** when round patches of sunlight are observed on the ground under a large leafy tree?",
       "passageId": "",
-      "tag": "Balancing Equations",
-      "hint": "Begin by balancing the oxygen atoms on both sides.",
+      "tag": "Natural Pinhole Camera",
+      "hint": "Section 11.7: Pinhole camera in nature",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "unbalancedEquation": "$\\text{Na} + \\text{O}_{2} \\rightarrow \\text{Na}_{2}\\text{O}$",
-      "correctAnswer": "(4, 1, 2)",
-      "explanation": "Four atoms of sodium react with one diatomic oxygen molecule to yield two units of basic sodium oxide: $4\\text{Na(s)} + \\text{O}_{2}\\text{(g)} \\rightarrow 2\\text{Na}_{2}\\text{O(s)}$."
+      "options": [
+        { "text": "The tree branches acting as mirrors", "explanation": "Incorrect. Tree branches do not act as reflective mirrors." },
+        { "text": "The tiny irregular gaps between overlapping leaves", "explanation": "Correct. Small gaps between leaves act as pinholes, casting circular inverted images of the Sun." },
+        { "text": "Dew drops acting as diverging lenses", "explanation": "Incorrect. The patches are pinhole projections, not lens refractions." },
+        { "text": "The circular shape of individual leaves", "explanation": "Incorrect. The image shape reflects the circular Sun, not the leaf contour." }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "The tiny irregular gaps between overlapping leaves",
+      "explanation": "Tiny irregular spaces between dense leaves act as natural pinholes that project circular images of the Sun onto the ground."
     },
     {
       "id": "q20",
-      "type": "equation_balancing",
-      "category": "Corrosion of Metals",
+      "type": "mcq",
+      "category": "Formation of Shadow",
       "marks": 1,
       "difficulty": "medium",
-      "question": "Determine the coefficients $(w, x, y)$ for the surface oxidation of aluminium: $w\\text{Al} + x\\text{O}_{2} \\rightarrow y\\text{Al}_{2}\\text{O}_{3}$.",
+      "question": "When an opaque object is moved **closer to a stationary light source**, how do the size and sharpness of its shadow on a distant fixed screen change?",
       "passageId": "",
-      "tag": "Aluminium Oxidation",
-      "hint": "Find the lowest common multiple of oxygen atoms (6).",
+      "tag": "Shadow Size Variation",
+      "hint": "Section 11.5: Activity-5 - Shadow formation",
       "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
+        "hasDiagram": true,
+        "description": "Ray tracing diagram showing light source, object moved near light source, and enlarged shadow on screen.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\n\nfig, ax = plt.subplots(figsize=(6, 3))\nax.set_xlim(-0.5, 9.5)\nax.set_ylim(-0.5, 5.5)\n\n# Light source at (0.5, 2.5)\nax.plot(0.5, 2.5, 'o', color='#F59E0B', markersize=12)\nax.text(0.5, 2.8, 'Source', ha='center', va='bottom', fontsize=9, fontweight='bold')\n\n# Opaque object at x = 2.5\nax.plot([2.5, 2.5], [1.8, 3.2], color='#1E293B', lw=5)\nax.text(2.5, 3.4, 'Object', ha='center', va='bottom', fontsize=9)\n\n# Screen at x = 8.5\nax.plot([8.5, 8.5], [0.2, 4.8], color='#64748B', lw=3)\nax.text(8.5, 5.0, 'Screen', ha='center', va='bottom', fontsize=9)\n\n# Rays\nax.plot([0.5, 8.5], [2.5, 4.6], '--', color='#DC2626', lw=1.5)\nax.plot([0.5, 8.5], [2.5, 0.4], '--', color='#DC2626', lw=1.5)\n\n# Shadow region\nax.plot([8.5, 8.5], [0.4, 4.6], color='#0F172A', lw=6)\nax.text(8.8, 2.5, 'Large Shadow', ha='left', va='center', fontsize=9, fontweight='bold', color='#0F172A')\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
       },
-      "unbalancedEquation": "$\\text{Al} + \\text{O}_{2} \\rightarrow \\text{Al}_{2}\\text{O}_{3}$",
-      "correctAnswer": "(4, 3, 2)",
-      "explanation": "Balancing gives $4\\text{Al} + 3\\text{O}_{2} \\rightarrow 2\\text{Al}_{2}\\text{O}_{3}$, providing equal counts of 4 aluminium and 6 oxygen atoms."
+      "options": [
+        { "text": "The shadow becomes smaller and sharper", "explanation": "Incorrect. Moving closer to the light intercepts a wider angle of rays, enlarging the shadow." },
+        { "text": "The shadow becomes larger and less sharp", "explanation": "Correct. Bringing the object closer to the source intercepts rays earlier, projecting a larger and softer-edged shadow." },
+        { "text": "The shadow stays exactly identical in size", "explanation": "Incorrect. Shadow size depends directly on the relative distances." },
+        { "text": "The shadow disappears entirely", "explanation": "Incorrect. Obstruction remains and shadow is cast onto the screen." }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "The shadow becomes larger and less sharp",
+      "explanation": "As the object moves closer to the light source, it blocks a wider solid angle of emitted rays, causing the shadow cast on the screen to become larger and less sharp."
     },
     {
       "id": "q21",
-      "type": "equation_balancing",
-      "category": "Chemical Properties of Metals",
+      "type": "mcq",
+      "category": "Reflection of Light",
       "marks": 1,
-      "difficulty": "hard",
-      "question": "Balance the high-temperature reaction between red-hot iron and steam: $a\\text{Fe} + b\\text{H}_{2}\\text{O(g)} \\rightarrow c\\text{Fe}_{3}\\text{O}_{4} + d\\text{H}_{2}\\text{(g)}$. What is the set of coefficients $(a, b, c, d)$?",
+      "difficulty": "medium",
+      "question": "A person stands $4\\text{ m}$ in front of a flat plane mirror. What is the total straight-line distance between the **person and their virtual image**?",
       "passageId": "",
-      "tag": "Reaction with Steam",
-      "hint": "Balance Fe atoms first, then balance oxygen atoms using steam.",
+      "tag": "Object-to-Image Separation",
+      "hint": "Section 11.6: Characteristics of image formed by a plane mirror",
       "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
+        "hasDiagram": true,
+        "description": "Geometric schematic showing object at distance d and virtual image at distance d behind mirror.",
+        "code": "import matplotlib.pyplot as plt\n\nfig, ax = plt.subplots(figsize=(6, 2.5))\nax.set_xlim(-1, 9)\nax.set_ylim(-1, 3)\nax.set_aspect('equal')\n\n# Plane mirror at x = 4\nax.plot([4, 4], [0, 2.5], color='#2563EB', lw=4)\nax.text(4, 2.7, 'Mirror', ha='center', va='bottom', fontsize=9, fontweight='bold', color='#1D4ED8')\n\n# Object at x = 0\nax.plot(0, 1.2, 'o', color='#059669', markersize=10)\nax.text(0, 1.5, 'Person', ha='center', va='bottom', fontsize=9, fontweight='bold')\n\n# Image at x = 8\nax.plot(8, 1.2, 'o', color='#9CA3AF', markersize=10)\nax.text(8, 1.5, 'Image', ha='center', va='bottom', fontsize=9, fontweight='bold')\n\n# Distance arrows\nax.annotate('', xy=(4, 0.4), xytext=(0, 0.4), arrowprops=dict(arrowstyle=\"<->\", color=\"#111827\"))\nax.text(2, 0.6, '$4\\text{ m}$', ha='center', va='bottom', fontsize=9)\n\nax.annotate('', xy=(8, 0.4), xytext=(4, 0.4), arrowprops=dict(arrowstyle=\"<->\", color=\"#111827\"))\nax.text(6, 0.6, '$4\\text{ m}$', ha='center', va='bottom', fontsize=9)\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
       },
-      "unbalancedEquation": "$\\text{Fe} + \\text{H}_{2}\\text{O} \\rightarrow \\text{Fe}_{3}\\text{O}_{4} + \\text{H}_{2}$",
-      "correctAnswer": "(3, 4, 1, 4)",
-      "explanation": "Balancing: $3\\text{Fe} + 4\\text{H}_{2}\\text{O(g)} \\rightarrow \\text{Fe}_{3}\\text{O}_{4} + 4\\text{H}_{2}\\text{(g)}$. Coefficients are $(3, 4, 1, 4)$."
+      "options": [
+        { "text": "$4\\text{ m}$", "explanation": "Incorrect. This is only the distance between the person and the mirror." },
+        { "text": "$8\\text{ m}$", "explanation": "Correct. Total separation is $d + d = 4\\text{ m} + 4\\text{ m} = 8\\text{ m}$." },
+        { "text": "$16\\text{ m}$", "explanation": "Incorrect. Separation is $2d$, not $d^{2}$." },
+        { "text": "$2\\text{ m}$", "explanation": "Incorrect. Half the distance would be closer than the mirror itself." }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$8\\text{ m}$",
+      "explanation": "Since the image lies $4\\text{ m}$ behind the plane mirror, the total distance from person to image is $4\\text{ m} + 4\\text{ m} = 8\\text{ m}$."
     },
     {
       "id": "q22",
-      "type": "equation_balancing",
-      "category": "Chemical Properties of Metals",
+      "type": "mcq",
+      "category": "Reflection of Light",
       "marks": 1,
       "difficulty": "medium",
-      "question": "Balance the aqueous displacement reaction between magnesium ribbon and hydrochloric acid: $p\\text{Mg} + q\\text{HCl} \\rightarrow r\\text{MgCl}_{2} + s\\text{H}_{2}$. State $(p, q, r, s)$.",
+      "question": "A student standing before a plane mirror touches her **left ear with her right hand**. What does her reflection appear to be doing?",
       "passageId": "",
-      "tag": "Acid Metal Reactions",
-      "hint": "Two chloride ions are required for each magnesium ion.",
+      "tag": "Lateral Inversion Application",
+      "hint": "Section 11.6: Activity-7 - Characteristics of image formed by a plane mirror",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "unbalancedEquation": "$\\text{Mg} + \\text{HCl} \\rightarrow \\text{MgCl}_{2} + \\text{H}_{2}$",
-      "correctAnswer": "(1, 2, 1, 1)",
-      "explanation": "One mole of magnesium replaces hydrogen in two moles of hydrochloric acid: $\\text{Mg} + 2\\text{HCl} \\rightarrow \\text{MgCl}_{2} + \\text{H}_{2}$."
+      "options": [
+        { "text": "Touching her left ear with her right hand", "explanation": "Incorrect. Lateral inversion swaps left and right orientations." },
+        { "text": "Touching her right ear with her left hand", "explanation": "Correct. Lateral inversion reverses the lateral perspective: left becomes right and right becomes left." },
+        { "text": "Touching her chin with both hands", "explanation": "Incorrect. Image coordinates are not translated vertically or altered." },
+        { "text": "Appearing upside-down with feet at the top", "explanation": "Incorrect. The image remains upright/erect." }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "Touching her right ear with her left hand",
+      "explanation": "Due to lateral inversion in plane mirrors, the object's left side appears as the image's right side and vice-versa; hence she appears to touch her right ear with her left hand."
     },
     {
       "id": "q23",
-      "type": "reaction_identification",
-      "category": "Chemical Properties of Metals",
+      "type": "mcq",
+      "category": "Periscope and Kaleidoscope",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "Identify the type of chemical reaction represented by the equation below:",
+      "difficulty": "medium",
+      "question": "In a submarine periscope, the two plane mirrors are mounted **parallel** to each other and inclined at what specific angle relative to the tube's axis?",
       "passageId": "",
-      "tag": "Displacement Reaction",
-      "hint": "Observe how iron takes the place of copper in the aqueous salt.",
+      "tag": "Periscope Mirror Angles",
+      "hint": "Section 11.8: Periscope and Kaleidoscope - Periscope",
       "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
+        "hasDiagram": true,
+        "description": "Ray path inside a periscope showing two mirrors inclined at 45 degrees.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\n\nfig, ax = plt.subplots(figsize=(4, 5))\nax.set_xlim(-1, 5)\nax.set_ylim(-1, 7)\nax.set_aspect('equal')\n\n# Periscope body\nax.plot([0, 3, 3, 2, 2, 0, 0], [5, 5, 1, 1, 0, 0, 5], color='#334155', lw=2)\nax.plot([1, 4, 4, 3, 3, 1, 1], [6, 6, 2, 2, 1, 1, 6], color='#334155', lw=2)\n\n# Mirrors (45 degrees)\nax.plot([0, 1], [5, 6], color='#2563EB', lw=4) # Top mirror\nax.plot([2, 3], [0, 1], color='#2563EB', lw=4) # Bottom mirror\n\n# Ray tracing\nax.annotate('', xy=(0.5, 5.5), xytext=(-0.8, 5.5), arrowprops=dict(arrowstyle=\"->\", color=\"#DC2626\", lw=2))\nax.plot([0.5, 2.5], [5.5, 0.5], color='#DC2626', lw=2)\nax.annotate('', xy=(4.2, 0.5), xytext=(2.5, 0.5), arrowprops=dict(arrowstyle=\"->\", color=\"#DC2626\", lw=2))\n\nax.text(0.7, 6.2, '$45^{\\circ}$ Mirror', fontsize=8, color='#1E40AF', fontweight='bold')\nax.text(2.7, -0.3, '$45^{\\circ}$ Mirror', fontsize=8, color='#1E40AF', fontweight='bold')\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
       },
-      "inputReaction": "$\\text{Fe(s)} + \\text{CuSO}_{4}\\text{(aq)} \\rightarrow \\text{FeSO}_{4}\\text{(aq)} + \\text{Cu(s)}$",
-      "correctAnswer": "Single Displacement Reaction",
-      "explanation": "A more reactive metal (iron) displaces a less reactive metal (copper) from its aqueous salt solution, defining a single displacement reaction."
+      "options": [
+        { "text": "$90^{\\circ}$", "explanation": "Incorrect. At $90^{\\circ}$, light reflects back out instead of traveling down the tube." },
+        { "text": "$45^{\\circ}$", "explanation": "Correct. Inclining both mirrors at $45^{\\circ}$ deflects incident rays by $90^{\\circ}$ downward and then $90^{\\circ}$ horizontally into the viewer's eyes." },
+        { "text": "$60^{\\circ}$", "explanation": "Incorrect. A $60^{\\circ}$ inclination would not produce parallel emergent rays." },
+        { "text": "$30^{\\circ}$", "explanation": "Incorrect. $30^{\\circ}$ reflection would misalign the optical axis with the viewing tube." }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "$45^{\\circ}$",
+      "explanation": "The mirrors in a periscope are fixed parallel to each other at an angle of $45^{\\circ}$ to produce two consecutive $90^{\\circ}$ deflections."
     },
     {
       "id": "q24",
-      "type": "reaction_identification",
-      "category": "Chemical Properties of Non-metals",
+      "type": "mcq",
+      "category": "Propagation of Light",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "Identify the reaction class when gaseous carbon dioxide dissolves in water to produce carbonic acid:",
+      "difficulty": "medium",
+      "question": "Which of the following optical observations provides direct experimental proof that light propagates in **straight lines**?",
       "passageId": "",
-      "tag": "Combination Reaction",
-      "hint": "Two distinct compounds unite to form a single final product.",
+      "tag": "Evidence of Rectilinear Propagation",
+      "hint": "Section 11.3: Propagation of Light & Section 11.5",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "inputReaction": "$\\text{CO}_{2}\\text{(g)} + \\text{H}_{2}\\text{O(l)} \\rightarrow \\text{H}_{2}\\text{CO}_{3}\\text{(aq)}$",
-      "correctAnswer": "Combination Reaction (Synthesis / Acidic Oxide Hydration)",
-      "explanation": "Two reactant molecules combine to synthesize a single compound, carbonic acid ($\\text{H}_{2}\\text{CO}_{3}$)."
+      "options": [
+        { "text": "Formation of sharp dark shadows behind opaque objects", "explanation": "Correct. If light could bend around corners, shadow regions would be filled with light." },
+        { "text": "Bending of light rays around sharp corners", "explanation": "Incorrect. Noticeable macroscopic bending does not occur in basic geometric optics." },
+        { "text": "A light beam speeding up in water", "explanation": "Incorrect. Light actually slows down in denser media." },
+        { "text": "Production of sound echoes in large chambers", "explanation": "Incorrect. Sound echoes demonstrate acoustic reflection, not light propagation." }
+      ],
+      "correctIndex": 0,
+      "correctAnswer": "Formation of sharp dark shadows behind opaque objects",
+      "explanation": "Sharp shadows form precisely because light travels in straight lines and cannot curve around opaque obstacles."
     },
     {
       "id": "q25",
-      "type": "reaction_identification",
-      "category": "Corrosion of Metals",
-      "marks": 1,
-      "difficulty": "medium",
-      "question": "Classify the chemical process described by the following equation:",
+      "type": "short_answer",
+      "category": "Sources of Light",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "Distinguish clearly between **luminous** and **non-luminous** objects, providing two examples of each.",
       "passageId": "",
-      "tag": "Corrosion Chemistry",
-      "hint": "Consider the atmospheric degradation of metallic copper into basic copper carbonate.",
+      "tag": "Luminous vs Non-Luminous",
+      "hint": "Section 11.2: Sources of Light - Luminous and Non-luminous objects",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "inputReaction": "$2\\text{Cu} + \\text{H}_{2}\\text{O} + \\text{CO}_{2} + \\text{O}_{2} \\rightarrow \\text{Cu(OH)}_{2} + \\text{CuCO}_{3}$",
-      "correctAnswer": "Corrosion (Tarnishing of Copper)",
-      "explanation": "This reaction demonstrates atmospheric corrosion where metallic copper is slowly transformed into a greenish mixture of copper(II) hydroxide and copper(II) carbonate."
+      "correctAnswer": "**Luminous objects** are objects that emit light of their own (e.g., the Sun, stars, burning candle, glowing electric bulb). **Non-luminous objects** are objects that do not emit light of their own and become visible only when they reflect light falling on them from an external luminous source (e.g., the Moon, books, chairs, earth).",
+      "explanation": "Luminous objects generate their own radiant photons, whereas non-luminous objects rely strictly on reflection of incident light to be seen."
     },
     {
       "id": "q26",
-      "type": "reaction_identification",
-      "category": "Chemical Properties of Metals",
-      "marks": 1,
+      "type": "short_answer",
+      "category": "Propagation of Light",
+      "marks": 2,
       "difficulty": "easy",
-      "question": "Identify the category of chemical reaction occurring when magnesium burns brightly in air:",
+      "question": "Explain using a simple rubber pipe experiment why a candle flame cannot be seen through a **bent tube**.",
       "passageId": "",
-      "tag": "Combustion / Combination",
-      "hint": "Elemental metal directly bonds with diatomic oxygen accompanied by heat and light.",
+      "tag": "Bent Tube Experiment",
+      "hint": "Section 11.3: Activity-2 - Rectilinear propagation of light",
       "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
+        "hasDiagram": true,
+        "description": "Candle flame viewed through a straight pipe versus a bent pipe.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\n\nfig, ax = plt.subplots(figsize=(6, 3))\nax.set_xlim(-1, 9)\nax.set_ylim(-1, 5)\nax.set_aspect('equal')\n\n# Candle\nax.plot([0.5, 0.5], [1, 2], color='#D97706', lw=4)\nax.plot(0.5, 2.3, '*', color='#EF4444', markersize=10)\nax.text(0.5, 0.6, 'Candle', ha='center', va='top', fontsize=9)\n\n# Bent tube\nax.plot([2.0, 4.0, 6.0], [2.3, 2.3, 3.8], color='#334155', lw=6)\nax.text(4.0, 1.8, 'Bent Pipe', ha='center', va='top', fontsize=9, fontweight='bold')\n\n# Eye at (7.0, 3.8)\nax.plot(6.8, 3.8, 'o', color='#2563EB', markersize=8)\nax.text(7.2, 3.8, 'Observer', ha='left', va='center', fontsize=9)\n\n# Light blocked indicator\nax.plot(4.0, 2.3, 'x', color='#DC2626', markersize=10, mew=2.5)\nax.text(4.0, 3.0, 'Light Blocked', ha='center', va='bottom', fontsize=8, color='#DC2626', fontweight='bold')\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
       },
-      "inputReaction": "$2\\text{Mg(s)} + \\text{O}_{2}\\text{(g)} \\rightarrow 2\\text{MgO(s)}$",
-      "correctAnswer": "Combination / Oxidation (Combustion) Reaction",
-      "explanation": "Magnesium combines directly with oxygen gas in an exothermic oxidation reaction to form magnesium oxide."
+      "correctAnswer": "Light travels exclusively along straight paths (**rectilinear propagation**). When looking through a straight tube, light reaches the eye directly; however, when the tube is bent, the straight-traveling light rays strike the opaque inner walls of the tube and cannot curve around the bend, rendering the candle flame invisible.",
+      "explanation": "Because light cannot curve around bends, light rays emitted by the flame are obstructed by the inner walls of a bent pipe."
     },
     {
       "id": "q27",
-      "type": "match_columns",
-      "category": "Occurrence of Metals",
+      "type": "short_answer",
+      "category": "Nature of Objects",
       "marks": 2,
-      "difficulty": "medium",
-      "question": "Match the mineral ores in Column A with their correct chemical formulas in Column B.",
+      "difficulty": "easy",
+      "question": "Classify the following four materials into **transparent**, **translucent**, and **opaque**: *(i) Clear window glass, (ii) Cardboard sheet, (iii) Oiled paper, (iv) Brick wall*.",
       "passageId": "",
-      "tag": "Ores and Minerals",
-      "hint": "Review Table-2: Some common ores.",
+      "tag": "Material Classification",
+      "hint": "Section 11.4: Nature of Objects",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "columnA": [
-        "1. Bauxite",
-        "2. Cuprite",
-        "3. Zinc blende",
-        "4. Limestone"
-      ],
-      "columnB": [
-        "(a) $\\text{ZnS}$",
-        "(b) $\\text{CaCO}_{3}$",
-        "(c) $\\text{Al}_{2}\\text{O}_{3} \\cdot 2\\text{H}_{2}\\text{O}$",
-        "(d) $\\text{Cu}_{2}\\text{O}$"
-      ],
-      "correctMatches": ["c", "d", "a", "b"],
-      "correctAnswer": "1-(c), 2-(d), 3-(a), 4-(b)",
-      "explanation": "Bauxite is hydrated aluminium oxide ($\\text{Al}_{2}\\text{O}_{3} \\cdot 2\\text{H}_{2}\\text{O}$), cuprite is copper(I) oxide ($\\text{Cu}_{2}\\text{O}$), zinc blende is zinc sulphide ($\\text{ZnS}$), and limestone is calcium carbonate ($\\text{CaCO}_{3}$)."
+      "correctAnswer": "*(i) Clear window glass*: **Transparent**\n*(ii) Cardboard sheet*: **Opaque**\n*(iii) Oiled paper*: **Translucent**\n*(iv) Brick wall*: **Opaque**",
+      "explanation": "Transparent materials permit full transmission of light, translucent materials allow partial transmission, and opaque materials completely block light transmission."
     },
     {
       "id": "q28",
-      "type": "match_columns",
-      "category": "Uses of Non-metals",
+      "type": "short_answer",
+      "category": "Formation of Shadow",
       "marks": 2,
       "difficulty": "medium",
-      "question": "Match each non-metallic element in Column A with its principal industrial application in Column B.",
+      "question": "State the **three essential requirements** necessary for the formation and observation of a shadow.",
       "passageId": "",
-      "tag": "Applications of Non-metals",
-      "hint": "Check Table-8: Uses of some non-metals.",
+      "tag": "Requirements for Shadow",
+      "hint": "Section 11.5: Formation of Shadow & Characteristics of shadows",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "columnA": [
-        "1. Chlorine",
-        "2. Phosphorus",
-        "3. Liquid Hydrogen",
-        "4. Nitrogen gas"
-      ],
-      "columnB": [
-        "(a) Cryogenic rocket propellant fuel",
-        "(b) Packaging inert gas for wafers/snacks",
-        "(c) Water purification and sterilization",
-        "(d) Manufacturing safety matches and fireworks"
-      ],
-      "correctMatches": ["c", "d", "a", "b"],
-      "correctAnswer": "1-(c), 2-(d), 3-(a), 4-(b)",
-      "explanation": "Chlorine is used in municipal water purification; phosphorus is used in match heads and fireworks; liquid hydrogen acts as rocket propellant; nitrogen gas fills snack packaging to prevent oxidation."
+      "correctAnswer": "The three essential requirements are:\n1. A **source of light** (e.g., torch, sun, lamp).\n2. An **opaque or translucent object** placed in the path of the light to block the rays.\n3. A **screen or surface** (e.g., wall, ground, paper) behind the object upon which the shadow can be cast and seen.",
+      "explanation": "Without a light source, no rays exist; without an opaque obstacle, light is not obstructed; and without a screen, the cast shadow cannot be captured."
     },
     {
       "id": "q29",
-      "type": "match_columns",
-      "category": "Uses of Metals",
+      "type": "short_answer",
+      "category": "Reflection of Light",
       "marks": 2,
-      "difficulty": "medium",
-      "question": "Match each metal in Column A with its primary everyday or industrial application in Column B.",
+      "difficulty": "easy",
+      "question": "What is **lateral inversion**? Give one everyday example demonstrating this phenomenon.",
       "passageId": "",
-      "tag": "Applications of Metals",
-      "hint": "Refer to Table-4: Uses of some common metals.",
+      "tag": "Lateral Inversion Definition",
+      "hint": "Section 11.6: Activity-7 & Info-Bubble",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "columnA": [
-        "1. Mercury ($\\text{Hg}$)",
-        "2. Lead ($\\text{Pb}$)",
-        "3. Aluminium ($\\text{Al}$)",
-        "4. Copper ($\\text{Cu}$)"
-      ],
-      "columnB": [
-        "(a) Storage automobile batteries and radiation shields",
-        "(b) Liquid expansion medium in clinical thermometers",
-        "(c) Electrical transmission cables and heat-diffusing utensil bottoms",
-        "(d) Lightweight aircraft construction alloys and food wrapping foils"
-      ],
-      "correctMatches": ["b", "a", "d", "c"],
-      "correctAnswer": "1-(b), 2-(a), 3-(d), 4-(c)",
-      "explanation": "Mercury is used in thermometers because of uniform thermal expansion; lead is used in automobile batteries; aluminium is used in lightweight aircraft alloys and foils; copper is used in domestic wiring and utensil bases."
+      "correctAnswer": "**Lateral inversion** is the optical phenomenon where the left side of an object appears as the right side in its image, and the right side appears as the left side when reflected by a plane mirror.\n*Example*: Raising your right hand while looking into a bathroom plane mirror makes your reflected image appear to raise its left hand (or the reversed spelling of 'AMBULANCE' on vehicles).",
+      "explanation": "Lateral inversion is the left-to-right reversal of an object's image formed by a plane mirror."
     },
     {
       "id": "q30",
       "type": "short_answer",
-      "category": "Physical Properties of Metals",
+      "category": "Pinhole Camera",
       "marks": 2,
-      "difficulty": "easy",
-      "question": "Why are cooking utensils predominantly made of aluminium or copper, while their handles are covered with plastic or wood?",
+      "difficulty": "medium",
+      "question": "State the **underlying principle** of a pinhole camera and describe the orientation of the image it produces.",
       "passageId": "",
-      "tag": "Thermal Conductivity",
-      "hint": "Compare thermal conduction in metals versus non-metallic insulators.",
+      "tag": "Pinhole Camera Working",
+      "hint": "Section 11.7: Pinhole Camera - Characteristics of the image",
       "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
+        "hasDiagram": true,
+        "description": "Ray diagram of a pinhole camera showing inversion of image through a small aperture.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\n\nfig, ax = plt.subplots(figsize=(6, 3))\nax.set_xlim(-1, 9)\nax.set_ylim(-1, 5)\nax.set_aspect('equal')\n\n# Object arrow (upright) at x = 0.5\nax.annotate('', xy=(0.5, 4.0), xytext=(0.5, 0.5), arrowprops=dict(arrowstyle=\"->\", color=\"#16A34A\", lw=3))\nax.text(0.5, 4.2, 'Object (Tree/Arrow)', ha='center', va='bottom', fontsize=8, fontweight='bold')\n\n# Pinhole box screen at x = 4.5\nax.plot([4.5, 4.5], [0, 2.0], color='#1E293B', lw=4)\nax.plot([4.5, 4.5], [2.5, 4.5], color='#1E293B', lw=4)\nax.text(4.5, 2.25, 'Pinhole', ha='left', va='center', fontsize=8, fontweight='bold', color='#DC2626')\n\n# Screen at x = 7.5\nax.plot([7.5, 7.5], [0.5, 4.0], color='#94A3B8', lw=3)\nax.text(7.5, 4.2, 'Wax paper screen', ha='center', va='bottom', fontsize=8)\n\n# Rays through pinhole\nax.plot([0.5, 7.5], [4.0, 1.0], color='#DC2626', linestyle='--', lw=1.5)\nax.plot([0.5, 7.5], [0.5, 3.5], color='#2563EB', linestyle='--', lw=1.5)\n\n# Inverted image arrow\nax.annotate('', xy=(7.5, 1.0), xytext=(7.5, 3.5), arrowprops=dict(arrowstyle=\"->\", color=\"#DC2626\", lw=3))\nax.text(7.7, 2.2, 'Inverted Image', ha='left', va='center', fontsize=8, fontweight='bold')\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
       },
-      "correctAnswer": "Aluminium and copper are good conductors of heat, whereas wood and plastic are thermal insulators.",
-      "explanation": "Metals like copper and aluminium possess high thermal conductivities, allowing rapid and uniform distribution of heat to cook food. Handles are fabricated from wood or plastic because these materials are poor conductors of heat (thermal insulators), protecting hands from burns."
+      "correctAnswer": "A pinhole camera operates on the principle of **rectilinear propagation of light** (light traveling in straight lines). It produces a **real, inverted (upside-down)** image on its translucent wax paper screen because light rays from the top and bottom of the object cross each other as they pass through the tiny aperture.",
+      "explanation": "Straight-line propagation causes rays from the object's upper extremities to hit the screen at the bottom, and rays from the lower extremities to hit the top, forming an inverted image."
     },
     {
       "id": "q31",
       "type": "short_answer",
-      "category": "Corrosion of Metals",
+      "category": "Periscope and Kaleidoscope",
       "marks": 2,
       "difficulty": "medium",
-      "question": "Explain why the atmospheric corrosion of aluminium is considered beneficial, whereas the corrosion of iron is highly damaging.",
+      "question": "What is a **periscope**? State two practical real-life scenarios where a periscope is employed.",
       "passageId": "",
-      "tag": "Aluminium Passivation vs Rusting",
-      "hint": "Contrast the adherent protective oxide film on aluminium with porous, flaky rust on iron.",
+      "tag": "Periscope Applications",
+      "hint": "Section 11.8: Periscope and Kaleidoscope - Periscope",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "Aluminium forms an impermeable, adhering oxide film that protects the underlying metal, while iron forms porous, flaky rust that continually exposes fresh metal.",
-      "explanation": "When aluminium corrodes, it forms a tight, tenacious, and non-porous layer of $\\text{Al}_{2}\\text{O}_{3}$ that seals the bulk metal from further atmospheric contact. In contrast, iron rust ($\\text{Fe}_{2}\\text{O}_{3} \\cdot x\\text{H}_{2}\\text{O}$) is porous and flaky; it flakes off, exposing fresh metal underneath to continuous degradation."
+      "correctAnswer": "A **periscope** is an optical instrument consisting of a Z-shaped tube containing two parallel plane mirrors fixed at $45^{\\circ}$ angles that allows an observer to view objects outside their direct line of sight.\n*Two applications*:\n1. Used by crews inside **submarines** to observe ships and obstacles on the water's surface while submerged.\n2. Used by soldiers inside **trenches or bunkers** to observe enemy movements safely without exposing themselves to fire.",
+      "explanation": "A periscope bends light through two successive reflections, allowing concealed observers to see over or around barriers."
     },
     {
       "id": "q32",
       "type": "short_answer",
-      "category": "Alloys",
+      "category": "Formation of Shadow",
       "marks": 2,
       "difficulty": "medium",
-      "question": "Define an alloy and state two main objectives of alloying pure metals.",
+      "question": "Why is **no shadow visible** when an aeroplane or a bird flies at an extremely high altitude in the bright daytime sky?",
       "passageId": "",
-      "tag": "Alloy Characteristics",
-      "hint": "Recall the definition from Section 4.11 and how properties change.",
+      "tag": "High Altitude Shadows",
+      "hint": "Section 11.5: Activity-4 & Characteristics of shadows",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "An alloy is a homogeneous mixture of two or more metals, or a metal and a non-metal. Objectives: (1) Increase hardness and tensile strength, (2) Prevent corrosion.",
-      "explanation": "An alloy is a homogeneous solid solution of two or more metals, or a metal with a non-metal. Pure metals are often too soft or reactive; alloying improves properties such as mechanical strength (e.g., steel from iron) and corrosion resistance (e.g., stainless steel)."
+      "correctAnswer": "Although an aeroplane or bird blocks sunlight high in the air, the ground (which acts as the screen) is located **too far away** from the object. At such large distances, surrounding diffused sunlight converges and fills the shadow region before it reaches the ground; hence, no visible shadow is cast on the earth's surface.",
+      "explanation": "For an extended light source like the Sun, the umbra tapers down and does not reach the ground when an object is positioned at very high altitudes, leaving no perceptible shadow on the distant screen."
     },
     {
       "id": "q33",
       "type": "short_answer",
-      "category": "Chemical Properties of Metals",
+      "category": "Propagation of Light",
       "marks": 2,
       "difficulty": "medium",
-      "question": "Samar found a hard, shiny object on a sidewalk. He dropped it on the ground and observed that it made a dull thud instead of a ringing sound. Why did he suspect it might not be a metal, and should he carry out further tests?",
+      "question": "Define the terms **ray of light** and **beam of light**, stating the geometric convention used to represent them.",
       "passageId": "",
-      "tag": "Sonority and Hardness",
-      "hint": "Analyze the property of sonority and consider exceptions.",
+      "tag": "Ray and Beam Definition",
+      "hint": "Section 11.3: Propagation of Light - Ray and beam",
       "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
+        "hasDiagram": true,
+        "description": "Geometric representations of a single ray with an arrowhead versus a parallel beam of multiple rays.",
+        "code": "import matplotlib.pyplot as plt\n\nfig, ax = plt.subplots(figsize=(6, 2.5))\nax.set_xlim(-1, 9)\nax.set_ylim(-1, 4)\n\n# Single ray\nax.annotate('', xy=(3.5, 2.8), xytext=(0.5, 2.8), arrowprops=dict(arrowstyle=\"->\", color=\"#DC2626\", lw=2))\nax.text(2.0, 3.2, 'Ray of light (Single line with arrow)', ha='center', va='bottom', fontsize=9, fontweight='bold')\n\n# Parallel beam\nfor y in [0.4, 0.9, 1.4]:\n    ax.annotate('', xy=(7.5, y), xytext=(4.5, y), arrowprops=dict(arrowstyle=\"->\", color=\"#2563EB\", lw=1.5))\nax.text(6.0, 1.8, 'Beam of light (Bundle of rays)', ha='center', va='bottom', fontsize=9, fontweight='bold')\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
       },
-      "correctAnswer": "Metals are sonorous (producing a ringing chime). The dull sound suggested a non-metal, but full verification requires testing electrical and thermal conductivity.",
-      "explanation": "Metals are typically sonorous, vibrating to produce a ringing tone upon impact. Non-metals or certain coated objects emit a dull sound. Samar suspected the object was a non-metal due to the absence of a ringing sound, but a definitive conclusion requires testing electrical conductivity and malleability."
+      "correctAnswer": "1. **Ray of light**: The narrow path along which light energy travels in a given direction, represented geometrically by a thin straight line with an arrowhead indicating the direction of propagation.\n2. **Beam of light**: A broad collection or bundle of numerous light rays propagating together (which can be parallel, converging, or diverging).",
+      "explanation": "A ray represents an idealized single line of light propagation, whereas a beam represents a wider stream containing multiple rays."
     },
     {
       "id": "q34",
       "type": "short_answer",
-      "category": "Noble Metals",
+      "category": "Formation of Shadow",
       "marks": 2,
-      "difficulty": "medium",
-      "question": "What are noble metals? Provide two examples and explain why they remain unblemished in ambient air.",
+      "difficulty": "hard",
+      "question": "A student claims: *'A green leaf casts a green shadow and a red ball casts a red shadow.'* State whether this claim is correct or incorrect, and provide scientific justification.",
       "passageId": "",
-      "tag": "Inert Metals",
-      "hint": "Section 4.5: Look at elements located at the bottom of the reactivity series.",
+      "tag": "Shadow Color Concept",
+      "hint": "Section 11.5: Intext Questions Q.1 & Characteristics of shadows",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "Noble metals (e.g., gold and platinum) are chemical elements with very low chemical reactivity that do not readily combine with oxygen or moisture.",
-      "explanation": "Noble metals like gold ($\\text{Au}$) and platinum ($\\text{Pt}$) sit at the bottom of the reactivity series. Because of their high ionization energies and positive reduction potentials, they do not react with atmospheric oxygen or water vapor, keeping their metallic luster indefinitely."
+      "correctAnswer": "The claim is **incorrect**.\n*Justification*: A shadow is formed when an opaque object blocks the path of light, creating an area of darkness on a screen where light cannot reach. Because a shadow represents the absence of light rather than reflected light, the shadow of any opaque object is always **dark/black**, regardless of whether the object is red, green, or any other colour.",
+      "explanation": "Shadows do not convey colour information because they correspond to regions where incident illumination is blocked."
     },
     {
       "id": "q35",
       "type": "short_answer",
-      "category": "Corrosion of Metals",
+      "category": "Reflection of Light",
       "marks": 3,
       "difficulty": "medium",
-      "question": "Based on Activity-8 shown below, compare test tubes A, B, and C to identify the essential environmental conditions required for iron nails to rust.",
+      "question": "Enumerate **three distinct characteristics** of an image formed by a flat **plane mirror**.",
       "passageId": "",
-      "tag": "Rusting of Iron",
-      "hint": "Notice which tube contains anhydrous silica gel, which has boiled deaerated water with oil, and which has both air and water.",
+      "tag": "Plane Mirror Properties",
+      "hint": "Section 11.6: Summary & Characteristics of image formed by a plane mirror",
       "diagram": {
-        "hasDiagram": true,
-        "description": "Apparatus showing three test tubes: A with nail and silica gel (dry air), B with boiled water and oil layer (no air), and C with nail partially submerged in water exposed to air.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\n\nfig, ax = plt.subplots(figsize=(8, 5))\nax.set_xlim(0, 10)\nax.set_ylim(0, 10)\nax.set_aspect('equal')\nax.axis('off')\n\n# Test tube outlines\nfor x, lbl in [(2, 'Tube A\\n(Dry Air)'), (5, 'Tube B\\n(Air-free Water)'), (8, 'Tube C\\n(Air + Water)')]:\n    tube = patches.FancyBboxPatch((x-0.8, 1.5), 1.6, 7.0, boxstyle=\"round,pad=0.1,rounding_size=0.8\", ec=\"#333333\", fc=\"#F0F8FF\", lw=2)\n    ax.add_patch(tube)\n    ax.text(x, 0.7, lbl, ha='center', va='top', fontsize=10, fontweight='bold')\n    # Corks\n    cork = patches.Polygon([[x-0.7, 8.2], [x+0.7, 8.2], [x+0.55, 7.5], [x-0.55, 7.5]], closed=True, color=\"#8B5A2B\")\n    ax.add_patch(cork)\n\n# Tube A: Silica gel\nsilica = patches.Rectangle((1.3, 1.6), 1.4, 0.8, color=\"#D3D3D3\", alpha=0.8)\nax.add_patch(silica)\nax.text(2, 2.0, \"Silica Gel\", ha=\"center\", va=\"center\", fontsize=8, color=\"#333333\")\nnail_a = patches.Rectangle((1.95, 2.5), 0.1, 4.0, color=\"#708090\")\nax.add_patch(nail_a)\nax.text(2, 7.0, \"Dry Air\", ha=\"center\", va=\"center\", fontsize=9, color=\"#555555\")\n\n# Tube B: Boiled water + Oil\nwater_b = patches.Rectangle((4.3, 1.6), 1.4, 4.0, color=\"#ADD8E6\", alpha=0.6)\noil_b = patches.Rectangle((4.3, 5.6), 1.4, 0.6, color=\"#FFD700\", alpha=0.8)\nax.add_patch(water_b)\nax.add_patch(oil_b)\nnail_b = patches.Rectangle((4.95, 2.0), 0.1, 3.4, color=\"#708090\")\nax.add_patch(nail_b)\nax.text(5, 5.9, \"Oil Layer\", ha=\"center\", va=\"center\", fontsize=8, color=\"#444444\")\nax.text(5, 3.5, \"Boiled Water\", ha=\"center\", va=\"center\", fontsize=8, color=\"#1E3F66\")\n\n# Tube C: Air + Water (Rust)\nwater_c = patches.Rectangle((7.3, 1.6), 1.4, 2.5, color=\"#ADD8E6\", alpha=0.6)\nax.add_patch(water_c)\nnail_c = patches.Rectangle((7.95, 2.0), 0.1, 4.0, color=\"#8B4513\", lw=1)\nax.add_patch(nail_c)\nax.text(8, 2.2, \"Rusting!\", ha=\"center\", va=\"center\", fontsize=8, color=\"#8B0000\", fontweight='bold')\nax.text(8, 6.0, \"Moist Air\", ha=\"center\", va=\"center\", fontsize=9, color=\"#555555\")\n\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+        "hasDiagram": false,
+        "description": "",
+        "code": ""
       },
-      "correctAnswer": "Both oxygen (air) and moisture (water) are simultaneously required for the rusting of iron.",
-      "explanation": "In Tube A, moisture is removed by silica gel (dry air only), so no rust forms. In Tube B, boiled deaerated water is sealed with oil (water only, no dissolved air), so no rust forms. In Tube C, the nail is exposed to both liquid water and atmospheric oxygen, resulting in red-brown rust. Hence, both oxygen and moisture are necessary for rusting."
+      "correctAnswer": "Three key characteristics of an image formed by a plane mirror are:\n1. **Virtual and Erect**: The image is upright and cannot be captured on a screen.\n2. **Same Size**: The size of the image is exactly equal to the size of the object ($h_{i} = h_{o}$).\n3. **Equal Distance**: The image is formed as far behind the mirror as the object is placed in front of it ($d_{i} = d_{o}$).\n*(Also: It is laterally inverted).*",
+      "explanation": "Plane mirror reflections maintain 1:1 proportionality in object-to-image dimensions and distance, are virtual, and exhibit lateral inversion."
     },
     {
       "id": "q36",
       "type": "short_answer",
-      "category": "Chemical Properties of Metals",
+      "category": "Reflection of Light",
       "marks": 3,
-      "difficulty": "hard",
-      "question": "Illustrate how metal reactivity determines the conditions required to react with water, referencing sodium, magnesium, and iron with balanced chemical equations.",
+      "difficulty": "medium",
+      "question": "Construct a clear comparison presenting **three fundamental differences** between a **shadow** and an **image**.",
       "passageId": "",
-      "tag": "Reactivity Series Trends",
-      "hint": "Compare reactions in cold water, warm/boiling water, and steam from Activity-7.",
+      "tag": "Shadow vs Image",
+      "hint": "Section 11.6: Differences between images and shadows (Table)",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "Highly reactive sodium reacts vigorously with cold water; moderately reactive magnesium reacts with hot water; less reactive iron reacts only with steam.",
-      "explanation": "The position of a metal in the reactivity series dictates the severity of conditions needed for it to react with water:\n1. Highly reactive $\\text{Na}$ reacts violently with cold water: $2\\text{Na} + 2\\text{H}_{2}\\text{O} \\rightarrow 2\\text{NaOH} + \\text{H}_{2}\\uparrow$.\n2. Moderately reactive $\\text{Mg}$ reacts only with hot or boiling water: $\\text{Mg} + 2\\text{H}_{2}\\text{O} \\xrightarrow{\\Delta} \\text{Mg(OH)}_{2} + \\text{H}_{2}\\uparrow$.\n3. Less reactive $\\text{Fe}$ does not react with liquid water; it requires steam at elevated temperatures: $3\\text{Fe} + 4\\text{H}_{2}\\text{O(g)} \\rightarrow \\text{Fe}_{3}\\text{O}_{4} + 4\\text{H}_{2}\\uparrow$."
+      "correctAnswer": "| Feature | **Image** | **Shadow** |\n| :--- | :--- | :--- |\n| **Formation Cause** | Formed due to the **reflection** (or refraction) of light by a shiny/smooth surface. | Formed when light rays are **obstructed** by an opaque object. |\n| **Colour & Details** | Shows the **actual colour, textures, and details** of the object. | Always a **dark/black patch** without internal details regardless of object colour. |\n| **Screen Requirement**| Can be observed directly in mirrors without needing a separate physical backdrop screen. | Absolutely **requires a screen** (wall, ground) to be visible. |",
+      "explanation": "An image reveals structural features and true colour through reflected rays, while a shadow is simply a dark silhouette formed by light obstruction."
     },
     {
       "id": "q37",
       "type": "short_answer",
-      "category": "Chemical Properties of Metals",
-      "marks": 2,
-      "difficulty": "medium",
-      "question": "Refer to the experimental diagram below showing single displacement investigations. Predict what happens in Test Tube D (iron in $\\text{CuSO}_{4}$) and Test Tube E (zinc in $\\text{FeSO}_{4}$).",
-      "passageId": "p2",
-      "tag": "Displacement Reaction Demonstration",
-      "hint": "Examine the relative positions of Zn, Fe, and Cu in the reactivity series.",
+      "category": "Periscope and Kaleidoscope",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Describe the construction and working mechanism of a **kaleidoscope**. Why are broken coloured glass bangles placed inside it?",
+      "passageId": "",
+      "tag": "Kaleidoscope Construction",
+      "hint": "Section 11.8: Activity-10 - To make a kaleidoscope",
       "diagram": {
         "hasDiagram": true,
-        "description": "Test tube D showing iron nail in copper sulphate solution, and test tube E showing zinc granules in ferrous sulphate solution.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\n\nfig, ax = plt.subplots(figsize=(7, 4.5))\nax.set_xlim(0, 10)\nax.set_ylim(0, 9)\nax.set_aspect('equal')\nax.axis('off')\n\n# Wooden Rack\nrack = patches.Rectangle((1.5, 1.5), 7.0, 0.4, color=\"#8B4513\")\nax.add_patch(rack)\n\n# Tube D\ntube_d = patches.FancyBboxPatch((2.7, 1.8), 1.6, 6.0, boxstyle=\"round,pad=0.08,rounding_size=0.6\", ec=\"#2F4F4F\", fc=\"#F0FFFF\", lw=2)\nax.add_patch(tube_d)\nsol_d = patches.Rectangle((2.8, 2.0), 1.4, 3.2, color=\"#1E90FF\", alpha=0.65)\nax.add_patch(sol_d)\nnail = patches.Rectangle((3.4, 2.2), 0.2, 3.8, color=\"#708090\")\nax.add_patch(nail)\nax.text(3.5, 8.2, \"Test Tube D\", ha='center', va='center', fontsize=10, fontweight='bold')\nax.text(3.5, 3.6, \"$\\text{CuSO}_4$ (Blue)\", ha='center', va='center', fontsize=9, color=\"#00008B\")\nax.text(3.5, 1.0, \"Iron nail in $\\text{CuSO}_4$\", ha='center', va='center', fontsize=9)\n\n# Tube E\ntube_e = patches.FancyBboxPatch((5.7, 1.8), 1.6, 6.0, boxstyle=\"round,pad=0.08,rounding_size=0.6\", ec=\"#2F4F4F\", fc=\"#F0FFFF\", lw=2)\nax.add_patch(tube_e)\nsol_e = patches.Rectangle((5.8, 2.0), 1.4, 3.2, color=\"#98FB98\", alpha=0.55)\nax.add_patch(sol_e)\nzn1 = patches.Circle((6.3, 2.3), 0.15, color=\"#A9A9A9\")\nzn2 = patches.Circle((6.7, 2.4), 0.18, color=\"#A9A9A9\")\nzn3 = patches.Circle((6.5, 2.6), 0.14, color=\"#A9A9A9\")\nax.add_patch(zn1); ax.add_patch(zn2); ax.add_patch(zn3)\nax.text(6.5, 8.2, \"Test Tube E\", ha='center', va='center', fontsize=10, fontweight='bold')\nax.text(6.5, 3.6, \"$\\text{FeSO}_4$ (Pale Green)\", ha='center', va='center', fontsize=9, color=\"#006400\")\nax.text(6.5, 1.0, \"Zinc in $\\text{FeSO}_4$\", ha='center', va='center', fontsize=9)\n\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
+        "description": "Cross-sectional triangular prism configuration of three rectangular mirrors inside a kaleidoscope.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nimport numpy as np\n\nfig, ax = plt.subplots(figsize=(4, 4))\nax.set_xlim(-2, 2)\nax.set_ylim(-2, 2)\nax.set_aspect('equal')\n\n# Outer circular tube\ncircle = patches.Circle((0, 0), 1.6, fill=False, edgecolor='#64748B', lw=3, linestyle='--')\nax.add_patch(circle)\n\n# Equilateral triangle of three mirror strips\np1 = np.array([0, 1.3])\np2 = np.array([-1.126, -0.65])\np3 = np.array([1.126, -0.65])\n\nax.plot([p1[0], p2[0]], [p1[1], p2[1]], color='#2563EB', lw=4, label='Mirrors')\nax.plot([p2[0], p3[0]], [p2[1], p3[1]], color='#2563EB', lw=4)\nax.plot([p3[0], p1[0]], [p3[1], p1[1]], color='#2563EB', lw=4)\n\n# Glass fragments in center\nax.plot([-0.2, 0.1, -0.1], [0.1, -0.1, -0.2], '*', color='#EC4899', markersize=9)\nax.plot([0.2, -0.05], [0.2, 0.25], 'o', color='#F59E0B', markersize=7)\n\nax.text(0, -1.2, '3 Plane Mirrors at $60^{\\circ}$', ha='center', va='top', fontsize=9, fontweight='bold', color='#1E40AF')\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
       },
-      "correctAnswer": "In Tube D, iron displaces copper, turning the blue solution green and depositing reddish copper. In Tube E, zinc displaces iron, discharging the pale green color and depositing grey iron.",
-      "explanation": "Because $\\text{Fe}$ is more reactive than $\\text{Cu}$, it displaces copper from $\\text{CuSO}_{4}$, forming pale green $\\text{FeSO}_{4}$ and depositing reddish-brown copper on the nail. Similarly, because $\\text{Zn}$ is more reactive than $\\text{Fe}$, it displaces iron from $\\text{FeSO}_{4}$, yielding colourless $\\text{ZnSO}_{4}$ and depositing grey iron particles."
+      "correctAnswer": "1. **Construction**: A kaleidoscope is made by joining three identical rectangular plane mirror strips inclined to each other at an angle of $60^{\\circ}$ to form a hollow triangular prism, enclosed within a cylindrical cardboard tube.\n2. **Working Mechanism**: Broken coloured glass pieces or bangles are placed at one closed transparent end. When viewed through the peephole from the opposite end, the mirrors reflect the glass fragments back and forth repeatedly.\n3. **Purpose of Glass Pieces**: The principle of **multiple reflection** produces an array of symmetrical, colorful, and non-repeating geometric patterns as the tube is rotated.",
+      "explanation": "Multiple reflections between the three mirrors inclined at $60^{\\circ}$ multiply the images of loose colored glass fragments, creating intricate symmetrical designs."
     },
     {
       "id": "q38",
       "type": "short_answer",
-      "category": "Chemical Properties of Metals",
+      "category": "Pinhole Camera",
       "marks": 3,
-      "difficulty": "medium",
-      "question": "Using Passage 1 (Experiment 1), identify substance $Y$ and solution $Z$. Write the balanced chemical reactions for the combustion of magnesium and the hydration of $Y$.",
-      "passageId": "p1",
-      "tag": "Magnesium Combustion",
-      "hint": "Magnesium burns to form an oxide ash that hydrates into an alkaline hydroxide.",
+      "difficulty": "hard",
+      "question": "A student builds a pinhole camera to view a distant tall tree. Explain how the image is affected if: *(i) The pinhole diameter is made substantially larger, (ii) The translucent wax paper screen is moved farther away from the pinhole, (iii) The pinhole camera is covered completely with black paper except for the aperture.*",
+      "passageId": "",
+      "tag": "Pinhole Camera Adjustments",
+      "hint": "Section 11.7: Activity-8 & Characteristics of the image in pinhole camera",
       "diagram": {
         "hasDiagram": false,
         "description": "",
         "code": ""
       },
-      "correctAnswer": "$Y$ is magnesium oxide ($\\text{MgO}$); $Z$ is magnesium hydroxide solution [$\\text{Mg(OH)}_{2}$]. Equations: $2\\text{Mg} + \\text{O}_{2} \\rightarrow 2\\text{MgO}$ and $\\text{MgO} + \\text{H}_{2}\\text{O} \\rightarrow \\text{Mg(OH)}_{2}$.",
-      "explanation": "When magnesium burns in oxygen, it forms white magnesium oxide ash ($Y$): $2\\text{Mg(s)} + \\text{O}_{2}\\text{(g)} \\rightarrow 2\\text{MgO(s)}$. When dissolved in water, it forms basic magnesium hydroxide ($Z$): $\\text{MgO(s)} + \\text{H}_{2}\\text{O(l)} \\rightarrow \\text{Mg(OH)}_{2}\\text{(aq)}$, which turns red litmus paper blue."
+      "correctAnswer": "*(i) Pinhole made substantially larger*: The image becomes **blurred and indistinct** because a larger opening acts as a cluster of many separate pinholes, producing multiple overlapping images that wash out sharpness.\n*(ii) Screen moved farther away from the pinhole*: The inverted image **increases in size (becomes larger)**, but its illumination/brightness decreases.\n*(iii) Camera covered in black paper*: It prevents extraneous light from penetrating through the cardboard walls, thereby **increasing the contrast and visibility** of the image on the screen.",
+      "explanation": "A sharp pinhole image requires a tiny aperture to maintain a one-to-one mapping of rays; increasing screen distance geometrically increases the image size by similar triangles."
     },
     {
       "id": "q39",
       "type": "short_answer",
-      "category": "Chemical Properties of Non-metals",
-      "marks": 3,
+      "category": "Propagation of Light",
+      "marks": 4,
       "difficulty": "hard",
-      "question": "Using Passage 1 (Experiment 2), identify gas $G$ and write the chemical equation for its formation. Explain why its aqueous solution turns blue litmus paper red.",
-      "passageId": "p1",
-      "tag": "Sulphur Dioxide and Acidic Oxide",
-      "hint": "Sulphur oxidizes to a choking dioxide gas that dissolves to form sulphurous acid.",
+      "question": "Describe an experiment using three pierced cardboard cards and a candle to verify the **rectilinear propagation of light**. State the required setup, procedure, observation, and scientific conclusion.",
+      "passageId": "",
+      "tag": "Three Cardboard Experiment",
+      "hint": "Section 11.3: Activity-1 - To show rectilinear propagation of light",
       "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
+        "hasDiagram": true,
+        "description": "Three collinear pierced cardboards on stands showing rectilinear ray transmission from a candle flame.",
+        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\n\nfig, ax = plt.subplots(figsize=(7, 3))\nax.set_xlim(-1, 10)\nax.set_ylim(-1, 5)\nax.set_aspect('equal')\n\n# Stands & cards\nfor x in [2.5, 5.0, 7.5]:\n    ax.add_patch(patches.Rectangle((x-0.1, 0.5), 0.2, 3.5, color='#94A3B8'))\n    ax.plot([x-0.4, x+0.4], [0.5, 0.5], color='#475569', lw=3)\n    ax.plot(x, 2.25, 'o', color='#FFFFFF', markersize=5)\n\n# Candle\nax.plot([0.5, 0.5], [1.2, 2.0], color='#D97706', lw=4)\nax.plot(0.5, 2.25, '*', color='#EF4444', markersize=10)\nax.text(0.5, 0.8, 'Candle', ha='center', va='top', fontsize=8)\n\n# Direct ray of light\nax.annotate('', xy=(8.5, 2.25), xytext=(0.5, 2.25), arrowprops=dict(arrowstyle=\"->\", color=\"#DC2626\", lw=2))\nax.text(9.0, 2.25, 'Eye', ha='left', va='center', fontsize=9, fontweight='bold', color='#1E293B')\n\nax.text(5.0, 4.3, 'Collinear pinholes A, B, and C', ha='center', va='bottom', fontsize=8, fontweight='bold')\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
       },
-      "correctAnswer": "Gas $G$ is sulphur dioxide ($\\text{SO}_{2}$). It forms sulphurous acid ($\\text{H}_{2}\\text{SO}_{3}$) in water, which dissociates to release hydrogen ions and turn blue litmus red.",
-      "explanation": "Sulphur burns in air to form sulphur dioxide gas: $\\text{S(s)} + \\text{O}_{2}\\text{(g)} \\rightarrow \\text{SO}_{2}\\text{(g)}$. When $\\text{SO}_{2}$ dissolves in water, it forms sulphurous acid: $\\text{SO}_{2}\\text{(g)} + \\text{H}_{2}\\text{O(l)} \\rightarrow \\text{H}_{2}\\text{SO}_{3}\\text{(aq)}$. Sulphurous acid releases $\\text{H}^{+}$ ions in aqueous solution, which turns moist blue litmus paper red."
+      "correctAnswer": "1. **Apparatus**: Three identical square cardboard sheets ($A, B, C$), mounting stands, a knitting pin, and a candle.\n2. **Procedure**: Punch a small pinhole at the exact center of each cardboard sheet at identical heights. Mount the cardboards vertically on stands such that the three holes lie along a single straight line. Position a lit candle at one end at the exact level of the holes and look through the pinhole from the opposite end.\n3. **Observation**: When all three holes are strictly aligned (collinear), the bright flame is clearly visible. If any one cardboard (e.g., card $B$) is shifted slightly sideways out of alignment, the flame immediately disappears.\n4. **Conclusion**: This confirms that light travels exclusively in straight lines (**rectilinear propagation**) and cannot bend around an obstruction.",
+      "explanation": "Light from the flame propagates along a straight ray path through collinear apertures. Displacing any aperture interposes an opaque barrier that blocks the straight ray."
     },
     {
       "id": "q40",
       "type": "short_answer",
-      "category": "Chemical Properties of Metals",
+      "category": "Formation of Shadow",
       "marks": 4,
       "difficulty": "hard",
-      "question": "Refer to Passage 1 and Passage 2. (a) Classify the elements $\\text{Mg}$, $\\text{S}$, $\\text{Na}$, $\\text{Ca}$, and $\\text{Fe}$ as metals or non-metals based on their oxides and reactions with water. (b) Explain why copper turnings in Test Tube C fail to evolve hydrogen gas when treated with dilute $\\text{HCl}$.",
-      "passageId": "p1",
-      "tag": "Comprehensive Activity Analysis",
-      "hint": "Check the position of copper relative to hydrogen in the reactivity series.",
+      "question": "A streetlamp is positioned atop a tall pole. An individual walks away from the streetlamp in a straight line at uniform speed.\n*(a)* Describe how the **length of the person's shadow** changes as they walk away.\n*(b)* When is their shadow **shortest**?\n*(c)* If the light source were replaced by an infinitely large diffuse light panel directly overhead, explain what would happen to the shadow's sharpness.\n*(d)* Identify the source of light, the obstacle, and the screen in this real-world setup.",
+      "passageId": "",
+      "tag": "Shadow Dynamics and Geometry",
+      "hint": "Section 11.5: Formation of Shadow & Characteristics of shadows",
       "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
+        "hasDiagram": true,
+        "description": "Ray tracing diagram showing street light casting shadow of person onto the ground.",
+        "code": "import matplotlib.pyplot as plt\n\nfig, ax = plt.subplots(figsize=(7, 3))\nax.set_xlim(-1, 11)\nax.set_ylim(-0.5, 5)\n\n# Ground\nax.plot([-0.5, 10.5], [0, 0], color='#334155', lw=2)\n\n# Lamppost at x = 0\nax.plot([0, 0], [0, 4.0], color='#0F172A', lw=4)\nax.plot(0, 4.0, 'o', color='#F59E0B', markersize=12)\nax.text(0, 4.3, 'Lamp ($S$)', ha='center', va='bottom', fontsize=9, fontweight='bold')\n\n# Person at x = 4\nax.plot([4, 4], [0, 2.0], color='#2563EB', lw=4)\nax.text(4, 2.2, 'Person', ha='center', va='bottom', fontsize=8, fontweight='bold')\n\n# Light ray casting shadow\nax.plot([0, 8], [4.0, 0], '--', color='#DC2626', lw=1.5)\n\n# Shadow on ground (from x=4 to x=8)\nax.plot([4, 8], [0, 0], color='#0F172A', lw=6)\nax.text(6, -0.3, 'Shadow Length $L$', ha='center', va='top', fontsize=8, fontweight='bold', color='#B91C1C')\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
       },
-      "correctAnswer": "(a) Metals: $\\text{Mg}$, $\\text{Na}$, $\\text{Ca}$, $\\text{Fe}$ (form basic oxides, displace hydrogen). Non-metal: $\\text{S}$ (forms acidic oxide). (b) Copper lies below hydrogen in the reactivity series and cannot reduce $\\text{H}^{+}$ to $\\text{H}_{2}$ gas.",
-      "explanation": "(a) $\\text{Mg}$, $\\text{Na}$, $\\text{Ca}$, and $\\text{Fe}$ are metals: their oxides are basic (turning red litmus blue) and they can displace hydrogen from water or steam under appropriate conditions. Sulphur ($\\text{S}$) is a non-metal: its oxide is acidic (forming $\\text{H}_{2}\\text{SO}_{3}$ and turning blue litmus red).\n(b) In Test Tube C, copper cannot displace hydrogen from dilute $\\text{HCl}$ because copper is less reactive than hydrogen and lies below it in the reactivity series, making the reaction thermodynamically non-spontaneous: $\\text{Cu(s)} + \\text{HCl(aq)} \\rightarrow \\text{No reaction}$."
+      "correctAnswer": "*(a)* As the person walks away from the streetlamp, the angle of the incident rays relative to the horizontal becomes shallower, causing the **length of the shadow on the ground to steadily increase (lengthen)**.\n*(b)* The shadow is **shortest** when the individual is standing **directly underneath the streetlamp**.\n*(c)* If replaced by an infinitely large diffuse light source, rays would arrive from many directions simultaneously, significantly washing out the umbra and making the shadow **extremely faint, blurry, and diffuse**.\n*(d)* **Source of light**: The streetlamp.\n**Obstacle**: The person's body.\n**Screen**: The ground/road surface.",
+      "explanation": "By similar triangles, as the object distance from the vertical base of the lamp increases, the projected shadow length along the ground increases proportionately."
     }
   ]
 }

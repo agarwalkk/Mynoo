@@ -164,6 +164,63 @@ body { overflow: hidden; }
   line-height: 1.7;
   margin-bottom: 8px;
 }
+.q-text strong, .passage-box strong, .feedback-text strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+.q-text em, .passage-box em {
+  font-style: italic;
+  color: #c4b5fd;
+}
+.q-code {
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: .88em;
+  padding: 2px 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  color: #38bdf8;
+}
+
+/* ── SVG Diagrams ── */
+.q-diagram-card {
+  margin: 16px 0 20px 0;
+  padding: 16px;
+  background: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+.q-diagram-svg-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.q-diagram-svg-wrap svg {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+}
+.opt-svg-wrap {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 8px;
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  justify-content: center;
+}
+.opt-svg-wrap svg {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+}
 .q-input-sentence {
   font-size: .92rem;
   color: #a78bfa;
@@ -887,16 +944,17 @@ function renderQuestion(idx) {
     </div>`;
 
   // Passage
+  // Passage
   if (q.passage) {
-    html += `<div class="passage-box">${escHtml(q.passage)}</div>`;
+    html += `<div class="passage-box">${renderMarkdown(q.passage)}</div>`;
   }
 
-  // Question text
-  html += `<div class="q-text">${escHtml(q.question)}</div>`;
+  // Question text (Markdown supported)
+  html += `<div class="q-text">${renderMarkdown(q.question)}</div>`;
 
   // Input sentence (for transformations, grammar, etc.)
   if (q.inputSentence) {
-    html += `<div class="q-input-sentence">${escHtml(q.inputSentence)}</div>`;
+    html += `<div class="q-input-sentence">${renderMarkdown(q.inputSentence)}</div>`;
   }
 
   // Chemical Reaction (for reaction_identification)
@@ -915,6 +973,15 @@ function renderQuestion(idx) {
       <div class="q-reaction-card" style="border-color: rgba(96, 165, 250, 0.45); background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(37, 99, 235, 0.05));">
         <div class="q-reaction-badge" style="color: #60a5fa;">⚖️ Unbalanced Equation</div>
         <div class="q-reaction-eq">${escHtml(q.unbalancedEquation)}</div>
+      </div>
+    `;
+  }
+
+  // Pre-rendered SVG Vector Diagram (if present)
+  if (q.svg && q.svg.trim()) {
+    html += `
+      <div class="q-diagram-card">
+        <div class="q-diagram-svg-wrap">${q.svg}</div>
       </div>
     `;
   }
@@ -990,9 +1057,11 @@ function renderMCQ(q, idx, ans, isRO) {
 
     const dis = (isDone || isRO) ? 'disabled' : '';
     const onclick = (isDone || isRO) ? '' : `onclick="selectMCQ(${idx}, ${oi})"`;
+    const isSvgOpt = opt.includes('<svg');
+    const optContent = isSvgOpt ? `<div class="opt-svg-wrap">${opt}</div>` : `<span>${renderMarkdown(opt)}</span>`;
     html += `<button class="${cls}" ${dis} ${onclick} id="opt-${idx}-${oi}">
                <span class="option-letter">${LETTERS[oi] || oi}</span>
-               <span>${escHtml(opt)}</span>
+               ${optContent}
              </button>`;
   });
   html += `</div>`;
@@ -1009,7 +1078,7 @@ function renderMCQ(q, idx, ans, isRO) {
     } else {
       const correctOpt = q.options[q.correctIndex] || '';
       html += `<div class="feedback-box feedback-wrong"><div class="feedback-title">✗ Incorrect.</div>
-               <div class="feedback-text">The correct answer was: <strong>${escHtml(correctOpt)}</strong>.</div></div>`;
+               <div class="feedback-text">The correct answer was: <strong>${renderMarkdown(correctOpt)}</strong>.</div></div>`;
     }
   }
 
@@ -1676,6 +1745,46 @@ function shakeEl(id) {
   el.style.animation = 'none';
   el.offsetHeight;
   el.style.animation = 'shake .4s ease';
+}
+
+function renderMarkdown(s) {
+  if (!s) return '';
+  let str = String(s);
+
+  // If the string contains an SVG, preserve it
+  if (str.trim().startsWith('<svg') && str.includes('</svg>')) {
+    return str;
+  }
+
+  // Escape HTML entities to prevent raw injection
+  str = str.replace(/&/g, '&amp;')
+           .replace(/</g, '&lt;')
+           .replace(/>/g, '&gt;')
+           .replace(/"/g, '&quot;')
+           .replace(/'/g, '&#39;');
+
+  // Bold: **text** or __text__
+  str = str.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  str = str.replace(/__(.+?)__/g, '<strong>$1</strong>');
+
+  // Italic: *text* or _text_
+  str = str.replace(/(^|[^\w*])\*([^*\n]+?)\*([^\w*]|$)/g, '$1<em>$2</em>$3');
+  str = str.replace(/(^|[^\w_])_([^_\n]+?)_([^\w_]|$)/g, '$1<em>$2</em>$3');
+
+  // Inline code: `code`
+  str = str.replace(/`([^`\n]+?)`/g, '<code class="q-code">$1</code>');
+
+  // Common arrows
+  str = str.replace(/\\rightarrow/g, '→')
+           .replace(/\\leftarrow/g, '←')
+           .replace(/\\Rightarrow/g, '⇒')
+           .replace(/\\to/g, '→')
+           .replace(/\\degree/g, '°');
+
+  // Newlines to <br>
+  str = str.replace(/\r?\n/g, '<br>');
+
+  return str;
 }
 
 function escHtml(s) {

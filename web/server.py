@@ -97,6 +97,7 @@ def get_gemini():
 # LaTeX → Unicode helper
 # ═════════════════════════════════════════════════════════════════════════════
 
+_re = re
 _SUB_TRANS = str.maketrans('0123456789+-=()', '₀₁₂₃₄₅₆₇₈₉₊⁻⁼₍₎')
 _SUP_TRANS = str.maketrans('0123456789+-=()', '⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾')
 
@@ -104,8 +105,9 @@ def _clean_latex(s: str) -> str:
     """Convert common LaTeX math notation to Unicode for browser display."""
     if not s:
         return s
-    import re as _re
     s = str(s)
+    if '<svg' in s:
+        return s
     # Arrows
     s = s.replace(r'\rightarrow', '→').replace(r'\to', '→').replace(r'\leftarrow', '←')
     s = s.replace(r'\Rightarrow', '⇒').replace(r'\Leftrightarrow', '⇔')
@@ -249,6 +251,7 @@ def _parse_question(q: dict) -> dict:
         'correctMatches':     [_clean_latex(str(c)) for c in q.get('correctMatches', [])],
         'unbalancedEquation': unbal_eq,
         'inputReaction':      input_r,
+        'svg':                str(q.get('svg', '') or (q.get('diagram') or {}).get('svg', '') or ''),
     }
 
 
