@@ -378,19 +378,6 @@ main {
 .feedback-wrong    { border-color: var(--red);   background: var(--red-bg);   color: var(--red);   }
 .feedback-title { font-weight: 700; margin-bottom: 4px; font-size: 1rem; }
 .feedback-text  { color: var(--text); opacity: .85; }
-.feedback-correction {
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid rgba(255,255,255,.1);
-}
-.correction-item {
-  display: flex; gap: 6px;
-  font-size: .82rem;
-  margin-top: 4px;
-  color: var(--text-muted);
-}
-.correction-orig { text-decoration: line-through; color: var(--red); opacity: .8; }
-.correction-new  { color: var(--green); font-weight: 600; }
 .corrected-answer {
   margin-top: 10px;
   padding: 8px 12px;
@@ -400,6 +387,61 @@ main {
   color: var(--text-muted);
 }
 .corrected-answer strong { color: var(--text); }
+
+/* ── Kid's Submitted Answer Box (Inline Corrections) ── */
+.user-answer-box {
+  background: var(--bg-card2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  line-height: 1.7;
+}
+.user-answer-label {
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.annotated-answer-text {
+  font-size: 1rem;
+  color: var(--text);
+  word-break: break-word;
+  white-space: pre-wrap;
+  line-height: 1.75;
+}
+.inline-corr-orig {
+  text-decoration: line-through;
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.16);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+.inline-corr-arrow {
+  color: var(--text-muted);
+  font-weight: 600;
+  margin: 0 4px;
+}
+.inline-corr-new {
+  color: #34d399;
+  font-weight: 700;
+  background: rgba(16, 185, 129, 0.16);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+.unmatched-corrections {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+  font-size: .88rem;
+  color: var(--text-muted);
+}
+.unmatched-corr-item {
+  margin-top: 4px;
+}
 
 /* ── Text answer area ── */
 .text-answer-wrap { margin-top: 20px; }
@@ -1187,6 +1229,128 @@ async function saveMCQToServer(idx, ans) {
   } catch(e) { console.warn('Save MCQ failed:', e); }
 }
 
+// ════════════════════════════════════════════════════════════════════
+// Inline Annotated Answer (matches Android implementation)
+// ════════════════════════════════════════════════════════════════════
+function renderAnnotatedAnswer(text, corrections) {
+  if (!text) return '';
+  if (!corrections || !corrections.length) {
+    return `<div class="annotated-answer-text">${escHtml(text)}</div>`;
+  }
+
+  const punctuation = [' ', '.', ',', ';', ':', '!', '?', '-', '"', "'"];
+  const matches = [];
+  const lowerText = text.toLowerCase();
+  const occupied = new Array(text.length).fill(false);
+  const matchedCorrections = new Set();
+
+  corrections.forEach((item, itemIdx) => {
+    const orig = (item.original || '').trim();
+    const corr = (item.corrected || '').trim();
+    if (!orig) return;
+
+    const lowerOrig = orig.toLowerCase();
+    let searchFrom = 0;
+    while (searchFrom < text.length) {
+      const idx = lowerText.indexOf(lowerOrig, searchFrom);
+      if (idx === -1) break;
+      const endIdx = idx + orig.length;
+
+      let overlaps = false;
+      for (let i = idx; i < endIdx; i++) {
+        if (occupied[i]) { overlaps = true; break; }
+      }
+
+      if (!overlaps) {
+        let p = 0;
+        const maxP = Math.min(orig.length, corr.length);
+        while (p < maxP && orig[p].toLowerCase() === corr[p].toLowerCase()) {
+          p++;
+        }
+        if (p > 0 && p < orig.length && p < corr.length) {
+          const sub = orig.substring(0, p);
+          let lastSpace = -1;
+          for (let i = sub.length - 1; i >= 0; i--) {
+            if (punctuation.includes(sub[i])) { lastSpace = i; break; }
+          }
+          p = (lastSpace >= 0) ? lastSpace + 1 : 0;
+        }
+
+        const subO = orig.substring(p);
+        const subC = corr.substring(p);
+
+        let s = 0;
+        const maxS = Math.min(subO.length, subC.length);
+        while (s < maxS && subO[subO.length - 1 - s].toLowerCase() === subC[subC.length - 1 - s].toLowerCase()) {
+          s++;
+        }
+        if (s > 0 && s < subO.length && s < subC.length) {
+          const subTail = subO.substring(subO.length - s);
+          let firstSpace = -1;
+          for (let i = 0; i < subTail.length; i++) {
+            if (punctuation.includes(subTail[i])) { firstSpace = i; break; }
+          }
+          s = (firstSpace >= 0) ? (s - firstSpace) : 0;
+        }
+
+        const refinedStart = idx + p;
+        const refinedEnd = idx + orig.length - s;
+        const refinedOrig = text.substring(refinedStart, refinedEnd);
+        const refinedCorr = subC.substring(0, subC.length - s).trim();
+
+        for (let i = idx; i < endIdx; i++) occupied[i] = true;
+        matches.push({
+          start: refinedStart,
+          end: refinedEnd,
+          original: refinedOrig,
+          corrected: refinedCorr
+        });
+        matchedCorrections.add(itemIdx);
+        break;
+      }
+      searchFrom = idx + 1;
+    }
+  });
+
+  matches.sort((a, b) => a.start - b.start);
+
+  let html = '';
+  let pos = 0;
+  for (const m of matches) {
+    if (m.start > pos) {
+      html += escHtml(text.substring(pos, m.start));
+    }
+    if (m.original.length > 0) {
+      html += `<span class="inline-corr-orig">${escHtml(m.original)}</span>`;
+      if (m.corrected.length > 0) {
+        html += `<span class="inline-corr-arrow"> → </span><span class="inline-corr-new">${escHtml(m.corrected)}</span>`;
+      }
+    } else if (m.corrected.length > 0) {
+      html += ` <span class="inline-corr-new">${escHtml(m.corrected.replace(/^[., ]+/, ''))}</span>`;
+    }
+    pos = m.end;
+  }
+  if (pos < text.length) {
+    html += escHtml(text.substring(pos));
+  }
+
+  const unmatched = corrections.filter((_, i) => !matchedCorrections.has(i));
+  let unmatchedHtml = '';
+  if (unmatched.length > 0) {
+    unmatchedHtml += `<div class="unmatched-corrections">`;
+    unmatched.forEach(u => {
+      const orig = (u.original || '').trim();
+      const corr = (u.corrected || '').trim();
+      if (orig && corr) {
+        unmatchedHtml += `<div class="unmatched-corr-item">• <span class="inline-corr-orig">${escHtml(orig)}</span> <span class="inline-corr-arrow">→</span> <span class="inline-corr-new">${escHtml(corr)}</span></div>`;
+      }
+    });
+    unmatchedHtml += `</div>`;
+  }
+
+  return `<div class="annotated-answer-text">${html}</div>${unmatchedHtml}`;
+}
+
 // ── Text Input ────────────────────────────────────────────────────
 function renderTextInput(q, idx, ans, isRO) {
   const saved   = ans ? (ans.textAnswer || '') : '';
@@ -1196,23 +1360,31 @@ function renderTextInput(q, idx, ans, isRO) {
   const placeholder = `Type your answer here…`;
 
   let html = `<div class="text-answer-wrap">`;
-  if (isMulti) {
-    html += `<textarea class="${cls}" id="text-ans-${idx}"
-               placeholder="${placeholder}"
-               data-placeholder="${placeholder}"
-               ${isRO ? 'disabled' : ''}
-               onkeydown="handleTextKeydown(event)"
-               >${escHtml(saved)}</textarea>`;
-  } else {
-    html += `<input type="text" class="${cls}" id="text-ans-${idx}"
-               placeholder="${placeholder}"
-               data-placeholder="${placeholder}"
-               value="${escAttr(saved)}"
-               ${isRO ? 'disabled' : ''}
-               onkeydown="handleTextKeydown(event)" />`;
-  }
 
-  if (!isRO) {
+  if (isRO) {
+    html += `<div class="user-answer-box">
+      <div class="user-answer-label">Your Answer:</div>`;
+    if (saved) {
+      html += renderAnnotatedAnswer(saved, ans ? ans.corrections : null);
+    } else {
+      html += `<div class="annotated-answer-text" style="font-style:italic;color:var(--text-muted);">(No answer submitted / Skipped)</div>`;
+    }
+    html += `</div>`;
+  } else {
+    if (isMulti) {
+      html += `<textarea class="${cls}" id="text-ans-${idx}"
+                 placeholder="${placeholder}"
+                 data-placeholder="${placeholder}"
+                 onkeydown="handleTextKeydown(event)"
+                 >${escHtml(saved)}</textarea>`;
+    } else {
+      html += `<input type="text" class="${cls}" id="text-ans-${idx}"
+                 placeholder="${placeholder}"
+                 data-placeholder="${placeholder}"
+                 value="${escAttr(saved)}"
+                 onkeydown="handleTextKeydown(event)" />`;
+    }
+
     html += `<div class="no-paste-hint">⌨️ Type your answer — pasting is not allowed</div>`;
     if (!isAnswered(ans)) {
       html += `<button class="check-btn" id="check-btn-${idx}"
@@ -1221,6 +1393,7 @@ function renderTextInput(q, idx, ans, isRO) {
                </button>`;
     }
   }
+
   html += `</div>`;
   return html;
 }
@@ -1610,19 +1783,6 @@ function buildFeedbackHtml(ans) {
   let html = `<div class="feedback-box ${cls}" id="feedback-box">
     <div class="feedback-title">${title}</div>
     <div class="feedback-text">${escHtml(ans.aiFeedback || '')}</div>`;
-
-  if (ans.corrections && ans.corrections.length) {
-    html += `<div class="feedback-correction"><strong style="font-size:.8rem;opacity:.7">Corrections:</strong>`;
-    ans.corrections.forEach(c => {
-      html += `<div class="correction-item">
-        <span>${c.type}: </span>
-        <span class="correction-orig">${escHtml(c.original)}</span>
-        <span>→</span>
-        <span class="correction-new">${escHtml(c.corrected)}</span>
-      </div>`;
-    });
-    html += `</div>`;
-  }
 
   if (ans.correctedAnswer) {
     html += `<div class="corrected-answer">Ideal answer: <strong>${escHtml(ans.correctedAnswer)}</strong></div>`;
