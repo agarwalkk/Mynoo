@@ -42,15 +42,20 @@ app = Flask(__name__, template_folder='templates')
 app.secret_key = os.environ.get('SECRET_KEY', 'mynoo-web-companion-2026-secret')
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
-# ── Read local.properties ─────────────────────────────────────────────────────
 def _get_local_prop(key: str, default: str = '') -> str:
     for p in [REPO_ROOT / 'local.properties', Path('.') / 'local.properties']:
         if p.exists():
             for line in p.read_text(encoding='utf-8', errors='ignore').splitlines():
                 line = line.strip()
                 if line.startswith(key + '=') and not line.startswith('#'):
-                    return line.split('=', 1)[1].strip()
-    return os.environ.get(key, default)
+                    val = line.split('=', 1)[1].strip()
+                    if (val.startswith('"') and val.endswith('"')) or (val.startswith("'") and val.endswith("'")):
+                        val = val[1:-1].strip()
+                    return val
+    val = os.environ.get(key, default)
+    if (val.startswith('"') and val.endswith('"')) or (val.startswith("'") and val.endswith("'")):
+        val = val[1:-1].strip()
+    return val
 
 GEMINI_API_KEY = _get_local_prop('GEMINI_API_KEY')
 
