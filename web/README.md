@@ -78,6 +78,89 @@ python web\server.py
 
 ---
 
+## Starting Automatically When Windows Starts
+
+You can configure Mynoo Web Companion to start automatically in the background whenever Windows boots or logs in.
+
+### Method 1 — 1-Click Startup (Recommended · No Admin Rights Required)
+
+This runs the server silently in the background via `pythonw.exe` (no black terminal window pops up).
+
+1. Double-click:
+   ```
+   web\install-autostart.cmd
+   ```
+2. That's it! Every time Windows starts, the companion is live at **http://localhost:8080**.
+
+**To stop & remove auto-start:**
+Double-click:
+```
+web\uninstall-autostart.cmd
+```
+
+---
+
+### Method 2 — Windows Task Scheduler (Runs as Administrator)
+
+To register a background scheduled task via PowerShell (Run as Administrator):
+
+```powershell
+# Open PowerShell as Administrator, navigate to repo folder:
+cd C:\Apps\Mynoo
+
+$action = New-ScheduledTaskAction `
+    -Execute "$PWD\.venv\Scripts\pythonw.exe" `
+    -Argument "web\server.py" `
+    -WorkingDirectory "$PWD"
+
+$trigger = New-ScheduledTaskTrigger -AtLogOn
+
+$settings = New-ScheduledTaskSettingsSet `
+    -AllowStartIfOnBatteries `
+    -DontStopIfGoingOnBatteries `
+    -ExecutionTimeLimit ([TimeSpan]::Zero)
+
+Register-ScheduledTask `
+    -TaskName "MynooWebCompanion" `
+    -Action $action `
+    -Trigger $trigger `
+    -Settings $settings `
+    -Description "Mynoo Web Companion Assessment Server" `
+    -Force
+```
+
+**To remove the scheduled task:**
+```powershell
+Unregister-ScheduledTask -TaskName "MynooWebCompanion" -Confirm:$false
+```
+
+---
+
+### Method 3 — True Windows Service via NSSM (Runs Before User Login)
+
+If you want Mynoo to run as an official Windows Service visible in `services.msc` that starts even before anyone logs into Windows:
+
+1. Download NSSM (Non-Sucking Service Manager) from https://nssm.cc/download (free, open source) and extract `nssm.exe` to a folder in your PATH (e.g. `C:\Windows\System32` or `C:\Apps\Mynoo\bin`).
+2. Open **Command Prompt as Administrator** and run:
+   ```cmd
+   nssm install MynooWebCompanion "C:\Apps\Mynoo\.venv\Scripts\python.exe" "web\server.py"
+   nssm set MynooWebCompanion AppDirectory "C:\Apps\Mynoo"
+   nssm set MynooWebCompanion Description "Mynoo Web Companion Assessment Player"
+   nssm set MynooWebCompanion Start SERVICE_AUTO_START
+   nssm start MynooWebCompanion
+   ```
+3. The service is now running. You can manage it via:
+   - `net start MynooWebCompanion` / `net stop MynooWebCompanion`
+   - Or open Windows **Services** (`services.msc`) → find **MynooWebCompanion**
+
+**To remove the NSSM service:**
+```cmd
+nssm stop MynooWebCompanion
+nssm remove MynooWebCompanion confirm
+```
+
+---
+
 ## Troubleshooting
 
 | Problem | Fix |
