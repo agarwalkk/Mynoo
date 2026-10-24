@@ -281,6 +281,7 @@ def _parse_assessment(doc) -> dict:
         'summary':       d.get('summary', ''),
         'createdAt':     d.get('createdAt', ''),
         'completedAt':   d.get('completedAt', ''),
+        'tabSwitches':   int(d.get('tabSwitches', 0)),
         'questions':     questions,
         'answers':       answers[:len(questions)],
     }
@@ -307,25 +308,32 @@ def load_assessment(db, child_name: str, assessment_id: str) -> Optional[dict]:
 
 
 def save_assessment_progress(db, child_name: str, assessment_id: str,
-                              answers: list, status: str):
+                              answers: list, status: str, tab_switches: Optional[int] = None):
     kid_id = _resolve_child(db, child_name)
+    update_data = {'answers': answers, 'status': status}
+    if tab_switches is not None:
+        update_data['tabSwitches'] = int(tab_switches)
     (db.collection('kids').document(kid_id)
        .collection('assessments').document(assessment_id)
-       .update({'answers': answers, 'status': status}))
+       .update(update_data))
 
 
 def mark_assessment_complete(db, child_name: str, assessment_id: str,
-                              answers: list, score: float, summary: str):
+                              answers: list, score: float, summary: str,
+                              tab_switches: Optional[int] = None):
     kid_id = _resolve_child(db, child_name)
+    update_data = {
+        'answers':     answers,
+        'status':      'completed',
+        'score':       score,
+        'summary':     summary,
+        'completedAt': datetime.now(timezone.utc).isoformat(),
+    }
+    if tab_switches is not None:
+        update_data['tabSwitches'] = int(tab_switches)
     (db.collection('kids').document(kid_id)
        .collection('assessments').document(assessment_id)
-       .update({
-           'answers':     answers,
-           'status':      'completed',
-           'score':       score,
-           'summary':     summary,
-           'completedAt': datetime.now(timezone.utc).isoformat(),
-       }))
+       .update(update_data))
 
 # ═════════════════════════════════════════════════════════════════════════════
 # Scoring
@@ -550,12 +558,13 @@ def api_save_draft():
     kid           = data.get('kid', '')
     assessment_id = data.get('assessmentId', '')
     answers       = data.get('answers', [])
+    tab_switches  = data.get('tabSwitches')
 
     db      = get_db()
     has_any = any(_has_any_answer(a) for a in answers if isinstance(a, dict))
     status  = 'in_progress' if has_any else 'ready'
     try:
-        save_assessment_progress(db, kid, assessment_id, answers, status)
+        save_assessment_progress(db, kid, assessment_id, answers, status, tab_switches=tab_switches)
     except Exception as e:
         return jsonify({'ok': False, 'error': str(e)}), 500
     return jsonify({'ok': True})
@@ -633,6 +642,7 @@ def api_finish():
     kid           = data.get('kid', '')
     assessment_id = data.get('assessmentId', '')
     answers       = data.get('answers', [])
+    tab_switches  = int(data.get('tabSwitches', 0))
 
     db         = get_db()
     assessment = load_assessment(db, kid, assessment_id)
@@ -649,16 +659,17 @@ def api_finish():
         summary = f"Assessment completed! You scored {int(round(score))}%. Keep up the great work!"
 
     try:
-        mark_assessment_complete(db, kid, assessment_id, answers, score, summary)
+        mark_assessment_complete(db, kid, assessment_id, answers, score, summary, tab_switches=tab_switches)
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
     return jsonify({
-        'ok':      True,
-        'score':   score,
-        'earned':  earned,
-        'total':   total,
-        'summary': summary,
+        'ok':          True,
+        'score':       score,
+        'earned':      earned,
+        'total':       total,
+        'summary':     summary,
+        'tabSwitches': tab_switches,
     })
 
 # ═════════════════════════════════════════════════════════════════════════════

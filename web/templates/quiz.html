@@ -832,6 +832,143 @@ main {
   align-items: center;
   gap: 8px;
 }
+
+/* ── In-App Proctoring & Focus Lock ── */
+.proctor-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 12, 18, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.proctor-modal {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  max-width: 520px;
+  width: 100%;
+  padding: 32px 28px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65);
+  animation: proctorPopIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes proctorPopIn {
+  from { opacity: 0; transform: scale(0.92) translateY(12px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.proctor-icon {
+  font-size: 3.2rem;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+.proctor-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+.proctor-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin-bottom: 22px;
+}
+.proctor-rules {
+  background: var(--bg-card2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  text-align: left;
+  margin-bottom: 24px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.proctor-rule-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.proctor-rule-item span:first-child {
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+.strike-meter {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 18px 0;
+}
+.strike-badge {
+  flex: 1;
+  max-width: 110px;
+  padding: 10px 8px;
+  background: var(--bg-card2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+.strike-badge.active-strike {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: var(--red);
+  color: var(--red);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.25);
+}
+.proctor-btn-start {
+  background: linear-gradient(135deg, #6c63ff, #8b5cf6);
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: var(--radius);
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(108, 99, 255, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  width: 100%;
+}
+.proctor-btn-start:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(108, 99, 255, 0.55);
+}
+.proctor-btn-resume {
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  color: #fff;
+  border: none;
+  padding: 13px 28px;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.35);
+  transition: transform 0.15s ease;
+  width: 100%;
+}
+.proctor-btn-resume:hover {
+  transform: translateY(-2px);
+}
+.blurred-test {
+  filter: blur(14px) grayscale(50%);
+  pointer-events: none !important;
+  user-select: none !important;
+  transition: filter 0.2s ease;
+}
 {% endblock %}
 
 {% block content %}
@@ -841,6 +978,56 @@ main {
   <div class="loading-overlay" id="loading-overlay">
     <div class="big-spinner"></div>
     <div id="loading-text">Loading assessment…</div>
+  </div>
+
+  <!-- Proctor Fullscreen Prompt Overlay -->
+  <div class="proctor-overlay hidden" id="fullscreen-prompt-overlay">
+    <div class="proctor-modal">
+      <div class="proctor-icon">🛡️</div>
+      <div class="proctor-title">Assessment Focus Mode</div>
+      <div class="proctor-desc">To ensure fairness and an uninterrupted experience, this assessment runs in dedicated Fullscreen Mode.</div>
+      <div class="proctor-rules">
+        <div class="proctor-rule-item">
+          <span>🔒</span>
+          <span>Stay in fullscreen until you finish all questions.</span>
+        </div>
+        <div class="proctor-rule-item">
+          <span>⚠️</span>
+          <span>Switching tabs, minimizing, or opening other windows is logged as a strike.</span>
+        </div>
+        <div class="proctor-rule-item">
+          <span>🚨</span>
+          <span>Reaching 3 strikes will immediately lock and submit your assessment.</span>
+        </div>
+      </div>
+      <button class="proctor-btn-start" onclick="enterFocusMode()">Enter Fullscreen & Begin Test</button>
+    </div>
+  </div>
+
+  <!-- Proctor Strike Warning Overlay -->
+  <div class="proctor-overlay hidden" id="strike-overlay">
+    <div class="proctor-modal">
+      <div class="proctor-icon" id="strike-modal-icon">⚠️</div>
+      <div class="proctor-title" id="strike-modal-title" style="color:var(--red);">Focus Lost Warning</div>
+      <div class="proctor-desc" id="strike-modal-msg">You navigated away from the assessment window. Please stay on this screen.</div>
+      <div class="strike-meter">
+        <div class="strike-badge" id="strike-badge-1">
+          <span>Strike 1</span>
+          <span class="strike-state">Warning</span>
+        </div>
+        <div class="strike-badge" id="strike-badge-2">
+          <span>Strike 2</span>
+          <span class="strike-state">Final Warning</span>
+        </div>
+        <div class="strike-badge" id="strike-badge-3">
+          <span>Strike 3</span>
+          <span class="strike-state">Auto-Submit</span>
+        </div>
+      </div>
+      <div id="strike-action-wrap" style="margin-top: 20px;">
+        <button class="proctor-btn-resume" id="strike-resume-btn" onclick="resumeFromStrike()">Return to Fullscreen & Continue</button>
+      </div>
+    </div>
   </div>
 
   <!-- Progress strip -->
@@ -882,17 +1069,23 @@ const KID         = {{ kid | tojson }};
 const ASSESSMENT  = {{ assessment_json | safe }};
 
 // ════════════════════════════════════════════════════════════════════
+// ════════════════════════════════════════════════════════════════════
 // App state
 // ════════════════════════════════════════════════════════════════════
 let state = {
-  currentIndex:  0,
-  answers:       JSON.parse(JSON.stringify(ASSESSMENT.answers)), // deep copy
-  phase:         'idle',   // idle | first_wrong | done | validating
-  mcqFirstWrong: null,
-  mcqDrafts:     {},       // { [qidx]: selectedOptionIndex }
-  retryUsed:     {},        // { [index]: true }
-  isReadOnly:    ASSESSMENT.status === 'completed',
-  finished:      false,
+  currentIndex:      0,
+  answers:           JSON.parse(JSON.stringify(ASSESSMENT.answers)), // deep copy
+  phase:             'idle',   // idle | first_wrong | done | validating
+  mcqFirstWrong:     null,
+  mcqDrafts:         {},       // { [qidx]: selectedOptionIndex }
+  retryUsed:         {},        // { [index]: true }
+  isReadOnly:        ASSESSMENT.status === 'completed',
+  finished:          false,
+  tabSwitches:       parseInt(ASSESSMENT.tabSwitches || 0, 10),
+  maxStrikes:        3,
+  proctorActive:     ASSESSMENT.status !== 'completed',
+  proctorModalOpen:  false,
+  lastViolationTime: 0,
 };
 
 const QUESTIONS = ASSESSMENT.questions;
@@ -903,6 +1096,161 @@ const jumbledState = {};
 
 // For match_columns: store matches per question
 const matchState = {};   // { [qidx]: { [aIdx]: bIdx } }
+
+// ════════════════════════════════════════════════════════════════════
+// Proctoring & Focus Lock
+// ════════════════════════════════════════════════════════════════════
+function isProctorActive() {
+  return state.proctorActive && !state.isReadOnly && !state.finished;
+}
+
+async function enterFocusMode() {
+  const overlay = document.getElementById('fullscreen-prompt-overlay');
+  const card = document.getElementById('question-card');
+  try {
+    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+      if (document.documentElement.requestFullscreen) {
+        await document.documentElement.requestFullscreen();
+      } else if (document.documentElement.webkitRequestFullscreen) {
+        await document.documentElement.webkitRequestFullscreen();
+      }
+    }
+  } catch (err) {
+    console.warn('Fullscreen request bypassed or denied:', err);
+  }
+  if (overlay) overlay.classList.add('hidden');
+  if (card) card.classList.remove('blurred-test');
+}
+
+function updateStrikeMeterUI() {
+  for (let s = 1; s <= 3; s++) {
+    const badge = document.getElementById(`strike-badge-${s}`);
+    if (badge) {
+      if (s <= state.tabSwitches) {
+        badge.classList.add('active-strike');
+      } else {
+        badge.classList.remove('active-strike');
+      }
+    }
+  }
+}
+
+function handleTabSwitchViolation(reason) {
+  if (!isProctorActive()) return;
+
+  const now = Date.now();
+  // Debounce to prevent simultaneous blur and visibilitychange within 1.5s
+  if (now - state.lastViolationTime < 1500) return;
+  state.lastViolationTime = now;
+
+  state.tabSwitches++;
+  // Persist immediately to server so reloading cannot reset strikes
+  persistDraftsSilently();
+
+  // Blur question card immediately to hide questions/answers
+  const card = document.getElementById('question-card');
+  if (card) card.classList.add('blurred-test');
+
+  state.proctorModalOpen = true;
+  updateStrikeMeterUI();
+
+  const strikeOv = document.getElementById('strike-overlay');
+  const strikeMsg = document.getElementById('strike-modal-msg');
+  const strikeTitle = document.getElementById('strike-modal-title');
+  const strikeIcon = document.getElementById('strike-modal-icon');
+  const actionWrap = document.getElementById('strike-action-wrap');
+
+  if (state.tabSwitches >= state.maxStrikes) {
+    if (strikeIcon) strikeIcon.textContent = '🚨';
+    if (strikeTitle) strikeTitle.textContent = 'Assessment Locked (3 Strikes Reached)';
+    if (strikeMsg) strikeMsg.textContent = 'You left the test window 3 times. Your assessment is now being submitted automatically.';
+    if (actionWrap) {
+      actionWrap.innerHTML = `<button class="proctor-btn-resume" style="opacity:0.75;cursor:not-allowed;" disabled>Submitting Test…</button>`;
+    }
+    if (strikeOv) strikeOv.classList.remove('hidden');
+
+    // Auto submit after brief display
+    setTimeout(() => {
+      if (strikeOv) strikeOv.classList.add('hidden');
+      finishAssessment();
+    }, 2200);
+  } else {
+    if (strikeIcon) strikeIcon.textContent = '⚠️';
+    if (strikeTitle) strikeTitle.textContent = `Strike ${state.tabSwitches} of ${state.maxStrikes}: Focus Lost`;
+    if (strikeMsg) {
+      strikeMsg.textContent = reason || 'You switched tabs or left the test window. Please return to fullscreen to continue.';
+    }
+    if (actionWrap) {
+      actionWrap.innerHTML = `<button class="proctor-btn-resume" id="strike-resume-btn" onclick="resumeFromStrike()">Return to Fullscreen & Continue (Strike ${state.tabSwitches}/${state.maxStrikes})</button>`;
+    }
+    if (strikeOv) strikeOv.classList.remove('hidden');
+  }
+}
+
+async function resumeFromStrike() {
+  const strikeOv = document.getElementById('strike-overlay');
+  const card = document.getElementById('question-card');
+  try {
+    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+      if (document.documentElement.requestFullscreen) {
+        await document.documentElement.requestFullscreen();
+      } else if (document.documentElement.webkitRequestFullscreen) {
+        await document.documentElement.webkitRequestFullscreen();
+      }
+    }
+  } catch (err) {
+    console.warn('Fullscreen request bypassed:', err);
+  }
+  state.proctorModalOpen = false;
+  if (strikeOv) strikeOv.classList.add('hidden');
+  if (card) card.classList.remove('blurred-test');
+}
+
+function handleFullscreenChange() {
+  if (!isProctorActive()) return;
+  if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+    handleTabSwitchViolation('You exited fullscreen mode. Test must be completed in fullscreen.');
+  }
+}
+
+function setupProctoring() {
+  if (!isProctorActive()) return;
+
+  const promptOv = document.getElementById('fullscreen-prompt-overlay');
+  const card = document.getElementById('question-card');
+
+  // Check if starting fresh or returning without fullscreen
+  if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+    if (promptOv) promptOv.classList.remove('hidden');
+    if (card) card.classList.add('blurred-test');
+  }
+
+  // Visibility change (tab switch, minimize)
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      handleTabSwitchViolation('You switched away from the test tab.');
+    }
+  });
+
+  // Window blur (clicked outside or opened other app)
+  window.addEventListener('blur', () => {
+    if (!state.proctorModalOpen) {
+      handleTabSwitchViolation('You navigated to another application or window.');
+    }
+  });
+
+  // Fullscreen exit detection
+  document.addEventListener('fullscreenchange', handleFullscreenChange);
+  document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+
+  // Prevent accidental close/back navigation
+  window.addEventListener('beforeunload', (e) => {
+    if (isProctorActive()) {
+      e.preventDefault();
+      e.returnValue = 'You have an active test. Are you sure you want to leave?';
+    }
+  });
+}
 
 // ════════════════════════════════════════════════════════════════════
 // Init
@@ -923,6 +1271,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('loading-overlay').classList.add('hidden');
   renderQuestion(state.currentIndex);
   updateProgress();
+  setupProctoring();
 });
 
 // ════════════════════════════════════════════════════════════════════
@@ -1102,7 +1451,12 @@ function persistDraftsSilently() {
   fetch('/api/answer/save', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({kid: KID, assessmentId: ASSESSMENT.id, answers: state.answers}),
+    body: JSON.stringify({
+      kid: KID,
+      assessmentId: ASSESSMENT.id,
+      answers: state.answers,
+      tabSwitches: state.tabSwitches,
+    }),
   }).catch(e => console.warn('Silent save failed:', e));
 }
 
@@ -1267,7 +1621,10 @@ function renderQuestion(idx) {
 
   // Read-only banner
   if (state.isReadOnly) {
-    html += `<div class="readonly-banner">📖 Review mode — answers are locked</div>`;
+    const focusTag = state.tabSwitches > 0
+      ? ` · <span style="color:var(--yellow);margin-left:auto;">⚠️ ${state.tabSwitches} tab switch${state.tabSwitches > 1 ? 'es' : ''}</span>`
+      : ` · <span style="color:var(--green);margin-left:auto;">🛡️ 100% focus maintained</span>`;
+    html += `<div class="readonly-banner"><span>📖 Review mode — answers are locked</span>${focusTag}</div>`;
   }
 
   // Header
@@ -2249,12 +2606,20 @@ async function finishAssessment() {
         kid:          KID,
         assessmentId: ASSESSMENT.id,
         answers:      state.answers,
+        tabSwitches:  state.tabSwitches,
       }),
     });
     const result = await resp.json();
     hideLoadingOverlay();
 
     if (result.error) { alert('Error: ' + result.error); return; }
+
+    state.finished = true;
+    state.proctorActive = false;
+    if (document.fullscreenElement && document.exitFullscreen) {
+      document.exitFullscreen().catch(() => {});
+    }
+
     showSummary(result);
   } catch(err) {
     hideLoadingOverlay();
@@ -2267,6 +2632,10 @@ function showSummary(result) {
   const earned = result.earned || 0;
   const total  = result.total || totalMarks();
   const summary = result.summary || '';
+  const tabSwitches = (result.tabSwitches !== undefined) ? result.tabSwitches : (state.tabSwitches || 0);
+  const focusVal = tabSwitches === 0 ? '🛡️ 100%' : `${tabSwitches} strike${tabSwitches > 1 ? 's' : ''}`;
+  const focusColor = tabSwitches === 0 ? 'var(--green)' : tabSwitches >= 3 ? 'var(--red)' : 'var(--yellow)';
+  const focusLbl = tabSwitches === 0 ? 'Focus integrity' : 'Tab switches';
 
   const color  = score >= 80 ? 'var(--green)' : score >= 50 ? 'var(--yellow)' : 'var(--red)';
   const emoji  = score >= 80 ? '🏆' : score >= 50 ? '🎉' : '📚';
@@ -2292,6 +2661,10 @@ function showSummary(result) {
           <div class="stat-card">
             <div class="stat-val">${TOTAL}</div>
             <div class="stat-lbl">Questions</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val" style="font-size:1.1rem;color:${focusColor};">${focusVal}</div>
+            <div class="stat-lbl">${focusLbl}</div>
           </div>
         </div>
         ${summary ? `<div class="summary-text">${escHtml(summary)}</div>` : ''}
