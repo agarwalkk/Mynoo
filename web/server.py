@@ -334,12 +334,24 @@ def mark_assessment_complete(db, child_name: str, assessment_id: str,
 def _is_answered(ans: Optional[dict]) -> bool:
     if not ans or not isinstance(ans, dict):
         return False
+    if ans.get('isDraft'):
+        return False
+    t = ans.get('type', '')
+    if t == 'mcq' or 'selectedIndex' in ans:
+        return int(ans.get('selectedIndex', -1) or -1) >= 0 and ans.get('correct') is not None
+    text = str(ans.get('textAnswer') or '').strip()
+    fb   = str(ans.get('aiFeedback') or '').strip()
+    return bool(text) and text != '(skipped)' and fb != 'Skipped'
+
+
+def _has_any_answer(ans: Optional[dict]) -> bool:
+    if not ans or not isinstance(ans, dict):
+        return False
     t = ans.get('type', '')
     if t == 'mcq' or 'selectedIndex' in ans:
         return int(ans.get('selectedIndex', -1) or -1) >= 0
     text = str(ans.get('textAnswer') or '').strip()
-    fb   = str(ans.get('aiFeedback') or '').strip()
-    return bool(text) and text != '(skipped)' and fb != 'Skipped'
+    return bool(text) and text != '(skipped)'
 
 
 def compute_score(questions: list, answers: list) -> tuple:
@@ -349,6 +361,8 @@ def compute_score(questions: list, answers: list) -> tuple:
     for i, q in enumerate(questions):
         ans = answers[i] if i < len(answers) else None
         if not isinstance(ans, dict):
+            continue
+        if ans.get('isDraft'):
             continue
         t = ans.get('type', '')
         if t == 'mcq':
@@ -528,16 +542,17 @@ def quiz_page(kid_name: str, assessment_id: str):
 
 # ── API ───────────────────────────────────────────────────────────────────────
 
+@app.route('/api/answer/save', methods=['POST'])
 @app.route('/api/answer/mcq', methods=['POST'])
-def api_mcq():
-    """Save an MCQ answer and persist to Firestore."""
+def api_save_draft():
+    """Save answers (drafts or completed) and persist to Firestore."""
     data          = request.get_json(force=True)
     kid           = data.get('kid', '')
     assessment_id = data.get('assessmentId', '')
     answers       = data.get('answers', [])
 
     db      = get_db()
-    has_any = any(_is_answered(a) for a in answers if isinstance(a, dict))
+    has_any = any(_has_any_answer(a) for a in answers if isinstance(a, dict))
     status  = 'in_progress' if has_any else 'ready'
     try:
         save_assessment_progress(db, kid, assessment_id, answers, status)
@@ -596,11 +611,12 @@ def api_validate():
                 'correctedAnswer': result.get('correctedAnswer', ''),
                 'aiFeedback':     result.get('feedback', ''),
                 'retryUsed':      retry_used,
+                'isDraft':        False,
             }
             while len(answers) <= q_idx:
                 answers.append(None)
             answers[q_idx] = ans_map
-            has_any = any(_is_answered(a) for a in answers if isinstance(a, dict))
+            has_any = any(_has_any_answer(a) for a in answers if isinstance(a, dict))
             save_assessment_progress(db, kid, assessment_id, answers,
                                      'in_progress' if has_any else 'ready')
     except Exception as e:

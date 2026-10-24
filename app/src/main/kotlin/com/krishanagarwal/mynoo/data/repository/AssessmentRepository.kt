@@ -53,6 +53,7 @@ data class Assessment(
 
 fun Map<String, Any>?.isAnswered(): Boolean {
     if (this == null || isEmpty()) return false
+    if (get("isDraft") as? Boolean == true) return false
     val type = get("type") as? String ?: ""
     if (type == "mcq" || containsKey("selectedIndex")) {
         val selectedIndex = (get("selectedIndex") as? Number)?.toInt() ?: -1

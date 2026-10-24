@@ -1,894 +1,747 @@
 {
-  "title": "Light, Shadow and Reflection",
-  "passages": [],
+  "title": "Empires and Kingdoms: 6th to 10th Centuries",
   "questions": [
     {
       "id": "q1",
       "type": "mcq",
-      "category": "Sources of Light",
+      "category": "History - Pushyabhutis",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Which of the following is a **natural living source of light**?",
-      "passageId": "",
-      "tag": "Natural Sources of Light",
-      "hint": "Section 11.2: Sources of Light - Natural sources of light",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
+      "question": "In 606 CE, **Harshavardhana** ascended the throne at Kannauj[cite: 3]. Which dynasty did he belong to[cite: 3]?",
+      "tag": "Pushyabhuti Dynasty",
+      "hint": "Refer to Section: 'The Great King of Kings' (Page 63)",
       "options": [
-        { "text": "Electric bulb", "explanation": "Incorrect. An electric bulb is an artificial, man-made source of light." },
-        { "text": "Firefly", "explanation": "Correct. A firefly is an organism that produces and emits light naturally." },
-        { "text": "Candle", "explanation": "Incorrect. A candle is an artificial source made by humans." },
-        { "text": "Moon", "explanation": "Incorrect. The Moon does not produce its own light; it reflects sunlight." }
+        { "text": "Maukharis", "explanation": "Incorrect. Harsha belonged to the Pushyabhuti (or Vardhana) dynasty[cite: 3]." },
+        { "text": "Pushyabhūti", "explanation": "Correct. Harshavardhana belonged to the Pushyabhūti (or Vardhana) dynasty[cite: 3]." },
+        { "text": "Chalukya", "explanation": "Incorrect. Pulakeshin II belonged to the Chalukyas[cite: 7, 16]." },
+        { "text": "Rashtrakuta", "explanation": "Incorrect. Dantidurga founded the Rashtrakutas[cite: 11]." }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Firefly",
-      "explanation": "Fireflies are natural living sources of light that emit a faint glow in darkness."
+      "correctAnswer": "Pushyabhūti",
+      "explanation": "Harshavardhana belonged to the **Pushyabhūti** (or Vardhana) dynasty, whose earlier capital was Sthāneshvara[cite: 3]."
     },
     {
       "id": "q2",
       "type": "mcq",
-      "category": "Sources of Light",
+      "category": "History - Literature",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Which of the following statements correctly explains why the **Moon** is considered a **non-luminous object**?",
-      "passageId": "",
-      "tag": "Luminous and Non-luminous Objects",
-      "hint": "Section 11.2: Non-luminous objects",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
+      "question": "Which scholar and court poet patronised by Harsha wrote the biographical work *Harshacharita* and the novel *Kādambarī*[cite: 4, 5]?",
+      "tag": "Ancient Literature",
+      "hint": "Refer to Section: 'The Great King of Kings' (Page 4-5)",
       "options": [
-        { "text": "It emits a very dim light of its own", "explanation": "Incorrect. The Moon produces zero light of its own." },
-        { "text": "It absorbs light from fireflies", "explanation": "Incorrect. Light from fireflies is far too faint to illuminate celestial bodies." },
-        { "text": "It shines by reflecting light from the Sun", "explanation": "Correct. Non-luminous objects become visible when they reflect light falling on them from a luminous source." },
-        { "text": "It reflects light from distant stars", "explanation": "Incorrect. The Moon primarily reflects sunlight." }
+        { "text": "Ravikīrti", "explanation": "Incorrect. Ravikirti was the court poet of Pulakeshin II[cite: 16]." },
+        { "text": "Kalhaṇa", "explanation": "Incorrect. Kalhana wrote the Rajatarangini[cite: 13]." },
+        { "text": "Bāṇabhaṭṭa", "explanation": "Correct. Banabhatta composed Harshacharita and Kadambari[cite: 5]." },
+        { "text": "Dandin", "explanation": "Incorrect. Dandin was a poet hosted by the Pallavas[cite: 19]." }
       ],
       "correctIndex": 2,
-      "correctAnswer": "It shines by reflecting light from the Sun",
-      "explanation": "The Moon does not emit light of its own; it becomes visible only because it reflects sunlight falling on its surface."
+      "correctAnswer": "Bāṇabhaṭṭa",
+      "explanation": "**Bāṇabhaṭṭa** (also known as Bāṇa) patronised by Harsha, wrote *Kādambarī* and the biography *Harshacharita*[cite: 4, 5]."
     },
     {
       "id": "q3",
-      "type": "mcq",
-      "category": "Propagation of Light",
+      "type": "fill_blank",
+      "category": "History - Foreign Travelers",
       "marks": 1,
       "difficulty": "easy",
-      "question": "What is the phenomenon of light traveling strictly in **straight lines** termed?",
-      "passageId": "",
-      "tag": "Rectilinear Propagation",
-      "hint": "Section 11.3: Propagation of Light",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "options": [
-        { "text": "Curvilinear motion", "explanation": "Incorrect. Light does not travel in curved lines in uniform media." },
-        { "text": "Rectilinear propagation", "explanation": "Correct. The property of light traveling in straight lines is known as rectilinear propagation." },
-        { "text": "Lateral inversion", "explanation": "Incorrect. Lateral inversion refers to left-right reversal in plane mirrors." },
-        { "text": "Diffuse reflection", "explanation": "Incorrect. Diffuse reflection refers to scattering from rough surfaces." }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "Rectilinear propagation",
-      "explanation": "The property of light traveling along straight-line paths is called rectilinear propagation of light."
+      "question": "Fill in the blank: The Chinese Buddhist pilgrim who travelled across India between 630 and 644 CE and took back over 600 Sanskrit manuscripts was ___[cite: 5].",
+      "tag": "Travelogues",
+      "hint": "Refer to Section: 'The Great King of Kings' (Page 65)",
+      "blanks": ["Xuanzang"],
+      "correctAnswer": "Xuanzang",
+      "explanation": "**Xuanzang** visited India between 630 and 644 CE during Harsha's reign and recorded comprehensive accounts of Indian polity and culture[cite: 5, 6]."
     },
     {
       "id": "q4",
       "type": "mcq",
-      "category": "Propagation of Light",
+      "category": "History - Chalukyas",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "Which of the following optical representations depicts a **converging beam of light**?",
-      "passageId": "",
-      "tag": "Ray and Beam",
-      "hint": "Section 11.3: Ray and beam",
-      "diagram": {
-        "hasDiagram": true,
-        "description": "Ray diagram illustrating parallel, diverging, and converging rays meeting at a point.",
-        "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\nfig, ax = plt.subplots(figsize=(6, 3))\nax.set_xlim(-1, 9)\nax.set_ylim(-1, 5)\n\n# Beam A: Parallel\nfor y in [3.2, 3.7, 4.2]:\n    ax.annotate('', xy=(3, y), xytext=(0.5, y), arrowprops=dict(arrowstyle=\"->\", color=\"#DC2626\", lw=2))\nax.text(1.75, 4.5, 'Beam A', ha='center', va='bottom', fontsize=11, fontweight='bold', color='#1E293B')\n\n# Beam B: Converging\nax.annotate('', xy=(7.5, 2.5), xytext=(5.0, 4.0), arrowprops=dict(arrowstyle=\"->\", color=\"#2563EB\", lw=2))\nax.annotate('', xy=(7.5, 2.5), xytext=(4.8, 2.5), arrowprops=dict(arrowstyle=\"->\", color=\"#2563EB\", lw=2))\nax.annotate('', xy=(7.5, 2.5), xytext=(5.0, 1.0), arrowprops=dict(arrowstyle=\"->\", color=\"#2563EB\", lw=2))\nax.plot(7.5, 2.5, 'ko', markersize=5)\nax.text(6.0, 4.3, 'Beam B', ha='center', va='bottom', fontsize=11, fontweight='bold', color='#1E293B')\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
-      },
+      "difficulty": "medium",
+      "question": "Harshavardhana's military advance south of the **Narmada River** was checked by which ruler[cite: 7]?",
+      "tag": "Chalukyas of Badami",
+      "hint": "Refer to Section: 'The Great King of Kings' (Page 67)",
       "options": [
-        { "text": "Beam A only", "explanation": "Incorrect. Beam A represents parallel rays." },
-        { "text": "Beam B only", "explanation": "Correct. In Beam B, rays travel towards and meet at a single focal point." },
-        { "text": "Both Beam A and Beam B", "explanation": "Incorrect. Only Beam B converges to a point." },
-        { "text": "Neither Beam A nor Beam B", "explanation": "Incorrect. Beam B is clearly converging." }
+        { "text": "Pulakeśhin II", "explanation": "Correct. Pulakeshin II of the Chalukya dynasty checked Harsha's southward advance[cite: 7]." },
+        { "text": "Dantidurga", "explanation": "Incorrect. Dantidurga founded the Rashtrakutas later in the 8th century[cite: 11]." },
+        { "text": "Narasimhavarman I", "explanation": "Incorrect. Narasimhavarman I defeated Pulakeshin II[cite: 18]." },
+        { "text": "Aditya I", "explanation": "Incorrect. Aditya I was a Chola ruler[cite: 19, 21]." }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "Beam B only",
-      "explanation": "Light rays that travel to meet together at a common single point form a converging beam."
+      "correctIndex": 0,
+      "correctAnswer": "Pulakeśhin II",
+      "explanation": "Harsha attempted to expand beyond the Narmada but was stopped by **Pulakeśhin II** of the Chalukya dynasty[cite: 7]."
     },
     {
       "id": "q5",
-      "type": "mcq",
-      "category": "Nature of Objects",
+      "type": "fill_blank",
+      "category": "History - Pushyabhutis",
       "marks": 1,
       "difficulty": "easy",
-      "question": "Materials that allow light to pass through them **partially**, causing objects behind them to appear blurred, are classified as:",
-      "passageId": "",
-      "tag": "Translucent Objects",
-      "hint": "Section 11.4: Nature of Objects",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "options": [
-        { "text": "Transparent objects", "explanation": "Incorrect. Transparent objects allow light to pass through completely and clearly." },
-        { "text": "Opaque objects", "explanation": "Incorrect. Opaque objects block light completely." },
-        { "text": "Translucent objects", "explanation": "Correct. Translucent objects transmit light partially and scatter the rest." },
-        { "text": "Luminous objects", "explanation": "Incorrect. Luminous objects emit their own light." }
-      ],
-      "correctIndex": 2,
-      "correctAnswer": "Translucent objects",
-      "explanation": "Objects like butter paper and frosted glass that allow only some light to pass through are called translucent."
+      "question": "Fill in the blank: King Harshavardhana held a grand charitable assembly every five years at ___, where he gave away much of his accumulated wealth[cite: 7].",
+      "tag": "Harshavardhana",
+      "hint": "Refer to Section: 'The Great King of Kings' (Page 67)",
+      "blanks": ["Prayāga"],
+      "correctAnswer": "Prayāga",
+      "explanation": "Harsha conducted a major assembly every five years at **Prayāga** (present-day Prayagraj) at the sacred confluence of the Ganga and Yamuna[cite: 7]."
     },
     {
       "id": "q6",
       "type": "mcq",
-      "category": "Formation of Shadow",
+      "category": "History - Palas",
       "marks": 1,
       "difficulty": "easy",
-      "question": "What is the colour of the shadow formed when red, green, and blue opaque balls are illuminated by white sunlight?",
-      "passageId": "",
-      "tag": "Shadow Characteristics",
-      "hint": "Section 11.5: Formation of Shadow - Characteristics of shadows",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
+      "question": "Who was chosen by the people around 750 CE to bring stability to the Bengal region, establishing the **Pāla dynasty**[cite: 8]?",
+      "tag": "Pala Dynasty",
+      "hint": "Refer to Section: 'The Palas' (Page 68)",
       "options": [
-        { "text": "Red, green, and blue respectively", "explanation": "Incorrect. Shadows do not inherit the colour of the object." },
-        { "text": "White", "explanation": "Incorrect. A shadow is an absence/blocking of light." },
-        { "text": "Always black or dark", "explanation": "Correct. Shadows are dark patches formed by the obstruction of light, regardless of the object's colour." },
-        { "text": "Grey during noon and yellow in morning", "explanation": "Incorrect. Color does not change with time of day." }
+        { "text": "Dharmapāla", "explanation": "Incorrect. Dharmapala was Gopala's successor[cite: 8]." },
+        { "text": "Gopāla", "explanation": "Correct. Gopala was chosen by the people around 750 CE[cite: 8]." },
+        { "text": "Bhoja", "explanation": "Incorrect. King Bhoja was a Gurjara-Pratihara ruler[cite: 10]." },
+        { "text": "Dantidurga", "explanation": "Incorrect. Dantidurga established Rashtrakuta rule[cite: 11]." }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "Always black or dark",
-      "explanation": "The shadow of an opaque object is always a dark/black patch because it represents a region where light rays are blocked."
+      "correctIndex": 1,
+      "correctAnswer": "Gopāla",
+      "explanation": "**Gopāla** was chosen as ruler by the people in 750 CE to end disorder, laying the foundation of the Pala dynasty[cite: 8]."
     },
     {
       "id": "q7",
-      "type": "mcq",
-      "category": "Reflection of Light",
+      "type": "fill_blank",
+      "category": "History - Education",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "The phenomenon of **bouncing back of light** into the same medium when it strikes a smooth, polished surface is called:",
-      "passageId": "",
-      "tag": "Reflection",
-      "hint": "Section 11.6: Reflection of Light",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "options": [
-        { "text": "Refraction", "explanation": "Incorrect. Refraction is the bending of light entering a different medium." },
-        { "text": "Reflection", "explanation": "Correct. Bouncing back of light from a surface is called reflection." },
-        { "text": "Dispersion", "explanation": "Incorrect. Dispersion is the splitting of white light into constituent colours." },
-        { "text": "Rectilinear propagation", "explanation": "Incorrect. That refers to straight-line travel." }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "Reflection",
-      "explanation": "Bouncing back of light from the boundary of an opaque shiny surface is defined as reflection of light."
+      "difficulty": "medium",
+      "question": "Fill in the blank: The ancient university of **Vikramaśhilā** on the banks of the Ganga was founded by the Pala emperor ___[cite: 8, 9].",
+      "tag": "Ancient Universities",
+      "hint": "Refer to Section: 'A university with scholars as gatekeepers' (Page 69)",
+      "blanks": ["Dharmapāla"],
+      "correctAnswer": "Dharmapāla",
+      "explanation": "Emperor **Dharmapāla** founded the monastic university of Vikramaśhilā in the late 8th century[cite: 8, 9]."
     },
     {
       "id": "q8",
       "type": "mcq",
-      "category": "Reflection of Light",
+      "category": "History - Education",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "An image that **cannot** be captured or formed on a screen is described as a:",
-      "passageId": "",
-      "tag": "Image Characteristics",
-      "hint": "Section 11.6: Activity-7 - Characteristics of image formed by a plane mirror",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
+      "difficulty": "hard",
+      "question": "At Vikramaśhilā University, prospective students were examined at the entrance by an official known as a[cite: 9]:",
+      "tag": "Vikramashila",
+      "hint": "Refer to Section: 'A university with scholars as gatekeepers' (Page 69)",
       "options": [
-        { "text": "Real image", "explanation": "Incorrect. Real images can be obtained on a screen." },
-        { "text": "Inverted image", "explanation": "Incorrect. Inverted refers to orientation, not whether it can be cast on a screen." },
-        { "text": "Virtual image", "explanation": "Correct. An image that cannot be caught on a screen is termed virtual." },
-        { "text": "Shadow", "explanation": "Incorrect. A shadow is a region of blocked light, not an optical image." }
+        { "text": "Mahasāmanta", "explanation": "Incorrect. Samanta refers to a vassal or subordinate feudatory[cite: 22]." },
+        { "text": "Dvārapaṇḍita", "explanation": "Correct. A 'dvārapaṇḍita' was a scholar gatekeeper who tested students[cite: 9]." },
+        { "text": "Yuvarāja", "explanation": "Incorrect. Yuvaraja means crown prince[cite: 26]." },
+        { "text": "Goṣhṭhika", "explanation": "Incorrect. Goshthika was a temple council member[cite: 30]." }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "Virtual image",
-      "explanation": "Images formed by plane mirrors cannot be projected on a screen and are known as virtual images."
+      "correctIndex": 1,
+      "correctAnswer": "Dvārapaṇḍita",
+      "explanation": "Each college at Vikramaśhilā had a **dvārapaṇḍita** ('scholar gatekeeper') who screened candidate admissions[cite: 9]."
     },
     {
       "id": "q9",
-      "type": "mcq",
-      "category": "Pinhole Camera",
+      "type": "fill_blank",
+      "category": "History - Gurjara-Pratiharas",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "Which of the following is an essential characteristic of the image formed by a standard **pinhole camera**?",
-      "passageId": "",
-      "tag": "Pinhole Camera Characteristics",
-      "hint": "Section 11.7: Pinhole Camera - Characteristics of the image in a pinhole camera",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "options": [
-        { "text": "Virtual and erect", "explanation": "Incorrect. Pinhole cameras produce real, inverted images." },
-        { "text": "Real and inverted", "explanation": "Correct. Rays from the top and bottom of an object intersect at the pinhole, resulting in an upside-down (inverted) image on the screen." },
-        { "text": "Always magnified and upright", "explanation": "Incorrect. The image is inverted and typically diminished." },
-        { "text": "Completely black without details", "explanation": "Incorrect. Pinhole images display color and details." }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "Real and inverted",
-      "explanation": "Because light travels strictly in straight lines through the aperture, the image formed on the wax paper screen of a pinhole camera is always inverted."
+      "difficulty": "medium",
+      "question": "Fill in the blank: The Gurjara-Pratīhāra dynasty was founded in the mid-8th century CE by ___[cite: 10].",
+      "tag": "Gurjara-Pratiharas",
+      "hint": "Refer to Section: 'The Gurjara-Pratīhāras' (Page 70)",
+      "blanks": ["Nāgabhaṭa I"],
+      "correctAnswer": "Nāgabhaṭa I",
+      "explanation": "**Nāgabhaṭa I** founded the Gurjara-Pratīhāra dynasty and resisted Arab invasions into northwest India[cite: 10]."
     },
     {
       "id": "q10",
       "type": "mcq",
-      "category": "Periscope and Kaleidoscope",
+      "category": "History - Gurjara-Pratiharas",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "How many plane mirrors are used inside an ordinary **periscope** to view objects over obstacles?",
-      "passageId": "",
-      "tag": "Periscope",
-      "hint": "Section 11.8: Periscope and Kaleidoscope - Periscope",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
+      "difficulty": "medium",
+      "question": "Which prominent Gurjara-Pratīhāra king adopted the title **Ādi Varāha** and had coins struck with the boar incarnation of Vishnu[cite: 10]?",
+      "tag": "Gurjara-Pratiharas",
+      "hint": "Refer to Section: 'The Gurjara-Pratīhāras' (Page 70)",
       "options": [
-        { "text": "1", "explanation": "Incorrect. A single mirror cannot redirect light twice to exit parallel." },
-        { "text": "2", "explanation": "Correct. A periscope employs two parallel plane mirrors inclined at $45^{\\circ}$." },
-        { "text": "3", "explanation": "Incorrect. Three mirrors are arranged in an equilateral prism inside a kaleidoscope." },
-        { "text": "4", "explanation": "Incorrect. Only two mirrors are required in a Z-shaped periscope tube." }
+        { "text": "Nagabhata II", "explanation": "Incorrect. King Bhoja took the title of Adi Varaha[cite: 10]." },
+        { "text": "King Bhoja", "explanation": "Correct. King Bhoja was also designated Mihira and Adi Varaha[cite: 10]." },
+        { "text": "Dantidurga", "explanation": "Incorrect. Dantidurga was a Rashtrakuta king[cite: 11]." },
+        { "text": "Lalitaditya", "explanation": "Incorrect. Lalitaditya was a Kashmiri ruler[cite: 13]." }
       ],
       "correctIndex": 1,
-      "correctAnswer": "2",
-      "explanation": "A periscope contains two plane mirrors positioned at an angle within a Z-shaped tube to successively reflect light rays towards the observer's eyes."
+      "correctAnswer": "King Bhoja",
+      "explanation": "**King Bhoja** (also known as Mihira) was a devotee of Vishnu and assumed the title **Ādi Varāha**[cite: 10]."
     },
     {
       "id": "q11",
-      "type": "mcq",
-      "category": "Periscope and Kaleidoscope",
+      "type": "fill_blank",
+      "category": "History - Rashtrakutas",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "A **kaleidoscope** produces beautiful symmetrical patterns based on which optical principle?",
-      "passageId": "",
-      "tag": "Kaleidoscope",
-      "hint": "Section 11.8: Periscope and Kaleidoscope - Kaleidoscope",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "options": [
-        { "text": "Total absorption of light", "explanation": "Incorrect. Multiple reflections from mirrors form the pattern." },
-        { "text": "Multiple reflections by inclined mirrors", "explanation": "Correct. The phenomenon of multiple reflections creates symmetrical patterns from glass fragments." },
-        { "text": "Dispersion through droplets", "explanation": "Incorrect. Dispersion forms rainbows, not kaleidoscopic patterns." },
-        { "text": "Rectilinear shadow projection", "explanation": "Incorrect. Shadows do not form colorful patterns." }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "Multiple reflections by inclined mirrors",
-      "explanation": "A kaleidoscope uses three plane mirror strips inclined to each other to produce multiple reflections of coloured glass pieces."
+      "difficulty": "medium",
+      "question": "Fill in the blank: The capital of the Rashtrakūṭa Empire was located at ___ (modern Malkheda in Karnataka)[cite: 11].",
+      "tag": "Rashtrakuta Dynasty",
+      "hint": "Refer to Section: 'The Rashtrakūtas' (Page 71)",
+      "blanks": ["Mānyakheṭa"],
+      "correctAnswer": "Mānyakheṭa",
+      "explanation": "The Rashtrakūṭas established their capital at **Mānyakheṭa** in Karnataka[cite: 11]."
     },
     {
       "id": "q12",
       "type": "mcq",
-      "category": "Nature of Objects",
+      "category": "History - Architecture",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "Which of the following items is an example of an **opaque material**?",
-      "passageId": "",
-      "tag": "Classification of Materials",
-      "hint": "Section 11.4: Nature of Objects - 3. Opaque objects",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
+      "difficulty": "medium",
+      "question": "The monolithic rock-cut **Kailashanātha Temple** at Ellora was commissioned by which Rashtrakūṭa ruler[cite: 11]?",
+      "tag": "Ellora Rock Architecture",
+      "hint": "Refer to Section: 'The Rashtrakūtas' (Page 71)",
       "options": [
-        { "text": "Clean drinking water", "explanation": "Incorrect. Clean water is transparent." },
-        { "text": "Clear glass pane", "explanation": "Incorrect. Clear glass is transparent." },
-        { "text": "Aluminium foil", "explanation": "Correct. Metal foils do not permit any light to pass through." },
-        { "text": "Cellophane sheet", "explanation": "Incorrect. Clear cellophane is transparent." }
+        { "text": "Amoghavarsha I", "explanation": "Incorrect. Amoghavarsha I took the title Nripatunga[cite: 12]." },
+        { "text": "Krishna I", "explanation": "Correct. Krishna I got the Kailashanatha rock-cut temple carved out at Ellora[cite: 11]." },
+        { "text": "Dantidurga", "explanation": "Incorrect. Dantidurga founded the dynasty[cite: 11]." },
+        { "text": "Pulakeshin I", "explanation": "Incorrect. Pulakeshin I was an early Chalukya ruler[cite: 16]." }
       ],
-      "correctIndex": 2,
-      "correctAnswer": "Aluminium foil",
-      "explanation": "Aluminium foil is completely impermeable to light rays and thus is an opaque material."
+      "correctIndex": 1,
+      "correctAnswer": "Krishna I",
+      "explanation": "Rashtrakūṭa king **Krishna I** commissioned the monumental monolithic Kailashanātha temple at Ellora[cite: 11]."
     },
     {
       "id": "q13",
-      "type": "mcq",
-      "category": "Formation of Shadow",
+      "type": "fill_blank",
+      "category": "History - Rashtrakutas",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "At what time of day is the **shadow** of a vertical pole cast by sunlight the **shortest**?",
-      "passageId": "",
-      "tag": "Length of Shadow",
-      "hint": "Section 11.5: Characteristics of shadows",
-      "diagram": {
-        "hasDiagram": true,
-        "description": "Sun positions across the sky and the corresponding shadow length variations.",
-        "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\nfig, ax = plt.subplots(figsize=(6, 3))\nax.set_xlim(-1, 9)\nax.set_ylim(-0.5, 4.5)\nax.set_aspect('equal')\n\n# Ground\nax.plot([-0.5, 8.5], [0, 0], color='#334155', lw=2)\n\n# Vertical pole at x = 4\nax.plot([4, 4], [0, 2], color='#0F172A', lw=4)\nax.text(4, 2.2, 'Pole', ha='center', va='bottom', fontsize=9, fontweight='bold')\n\n# Noon sun at x = 4, y = 3.8\nax.plot(4, 3.8, 'o', color='#F59E0B', markersize=14)\nax.text(4, 4.1, 'Noon (Sun Overhead)', ha='center', va='bottom', fontsize=9, color='#B45309', fontweight='bold')\n\n# Morning sun at x = 0.5, y = 1.5\nax.plot(0.5, 1.5, 'o', color='#F59E0B', markersize=12)\nax.text(0.5, 1.8, 'Morning', ha='center', va='bottom', fontsize=8)\n\n# Afternoon sun at x = 7.5, y = 1.5\nax.plot(7.5, 1.5, 'o', color='#F59E0B', markersize=12)\nax.text(7.5, 1.8, 'Evening', ha='center', va='bottom', fontsize=8)\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
-      },
-      "options": [
-        { "text": "Early morning ($7\\text{ AM}$)", "explanation": "Incorrect. Shadows are elongated in the morning when the sun is near the horizon." },
-        { "text": "Exactly noon ($12\\text{ PM}$)", "explanation": "Correct. At solar noon, the sun is highest in the sky, producing the shortest shadow." },
-        { "text": "Late afternoon ($5\\text{ PM}$)", "explanation": "Incorrect. Shadows become long again as the sun approaches the horizon." },
-        { "text": "Shadow length remains constant throughout daylight hours", "explanation": "Incorrect. Shadow length varies continuously with the sun's elevation angle." }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "Exactly noon ($12\\text{ PM}$)",
-      "explanation": "At noon, the sun reaches its highest position directly overhead, resulting in the minimum shadow length."
+      "difficulty": "hard",
+      "question": "Fill in the blank: The Rashtrakūṭa monarch who ruled for 64 years and held the title 'Nripatunga' was ___[cite: 12].",
+      "tag": "Rashtrakutas",
+      "hint": "Refer to Section: 'The Rashtrakūtas' (Page 72)",
+      "blanks": ["Amoghavarsha I"],
+      "correctAnswer": "Amoghavarsha I",
+      "explanation": "**Amoghavarsha I** adopted the epithet Nripatunga ('peak of kings') and reigned for 64 years[cite: 12]."
     },
     {
       "id": "q14",
       "type": "mcq",
-      "category": "Reflection of Light",
+      "category": "History - Kashmir",
       "marks": 1,
       "difficulty": "easy",
-      "question": "If an object is placed at a perpendicular distance of $25\\text{ cm}$ in front of a flat plane mirror, what is the distance of its **image behind the mirror**?",
-      "passageId": "",
-      "tag": "Plane Mirror Distance",
-      "hint": "Section 11.6: Summary & Characteristics of plane mirror",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
+      "question": "The historical chronicle *Rājataraṅgiṇī*, detailing the ruling dynasties of Kashmir, was written by[cite: 13]:",
+      "tag": "Kashmir History",
+      "hint": "Refer to Section: 'Kashmir' (Page 73)",
       "options": [
-        { "text": "$12.5\\text{ cm}$", "explanation": "Incorrect. The image distance does not halve." },
-        { "text": "$25\\text{ cm}$", "explanation": "Correct. In a plane mirror, the image distance behind the mirror equals the object distance in front of it." },
-        { "text": "$50\\text{ cm}$", "explanation": "Incorrect. $50\\text{ cm}$ is the total separation between object and image." },
-        { "text": "$0\\text{ cm}$", "explanation": "Incorrect. The image is not formed on the surface." }
+        { "text": "Kalhaṇa", "explanation": "Correct. Kalhana authored the Rajatarangini in the 12th century[cite: 13]." },
+        { "text": "Banabhatta", "explanation": "Incorrect. Banabhatta authored the Harshacharita[cite: 5]." },
+        { "text": "Abhinavagupta", "explanation": "Incorrect. Abhinavagupta was a Kashmir Shaivism philosopher[cite: 15]." },
+        { "text": "Brahmagupta", "explanation": "Incorrect. Brahmagupta was an astronomer and mathematician[cite: 28]." }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "$25\\text{ cm}$",
-      "explanation": "A plane mirror forms an image as far behind the mirror as the object is placed in front of it ($d_{i} = d_{o} = 25\\text{ cm}$)."
+      "correctIndex": 0,
+      "correctAnswer": "Kalhaṇa",
+      "explanation": "**Kalhaṇa** composed the Sanskrit historical epic *Rājataraṅgiṇī* ('The River of Kings')[cite: 13]."
     },
     {
       "id": "q15",
-      "type": "mcq",
-      "category": "Reflection of Light",
+      "type": "fill_blank",
+      "category": "History - Kashmir",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "Why is the word **AMBULANCE** written in reverse lettering (`\\existsONALUBMA`) on emergency medical vehicles?",
-      "passageId": "",
-      "tag": "Lateral Inversion",
-      "hint": "Section 11.6: INFO-BUBBLE on Ambulance",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "options": [
-        { "text": "It is an international artistic decorative standard", "explanation": "Incorrect. It serves a functional optical purpose." },
-        { "text": "So drivers ahead can read it correctly in their rear-view mirrors due to lateral inversion", "explanation": "Correct. Rear-view plane/convex mirrors laterally invert the lettering back into readable text." },
-        { "text": "To prevent glare from high-beam headlights", "explanation": "Incorrect. Letter reversal does not prevent glare." },
-        { "text": "To allow pedestrians standing on the side of the road to read it backwards", "explanation": "Incorrect. Pedestrians view it directly and see it reversed." }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "So drivers ahead can read it correctly in their rear-view mirrors due to lateral inversion",
-      "explanation": "Due to lateral inversion in rear-view mirrors, the pre-reversed lettering appears correctly oriented to the driver looking into the mirror."
+      "difficulty": "hard",
+      "question": "Fill in the blank: In 10th-century Kashmir, Queen ___ ruled firmly by forging strategic alliances and ruthlessly suppressing rivals[cite: 13].",
+      "tag": "Kashmir Rulers",
+      "hint": "Refer to Section: 'Kashmir' (Page 73)",
+      "blanks": ["Diddā"],
+      "correctAnswer": "Diddā",
+      "explanation": "Queen **Diddā** consolidated control over 10th-century Kashmir, founding towns and building temples[cite: 13]."
     },
     {
       "id": "q16",
       "type": "mcq",
-      "category": "Formation of Shadow",
+      "category": "History - Chalukyas",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "Which of the following is **NOT** a required condition for a shadow to be formed and observed?",
-      "passageId": "",
-      "tag": "Conditions for Shadow Formation",
-      "hint": "Section 11.5: Activity-4 & Characteristics of shadows",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
+      "difficulty": "medium",
+      "question": "The famous eulogy (*prashasti*) inscribed on the walls of the Meguti Jain temple at Aihole was composed by[cite: 16]:",
+      "tag": "Aihole Inscription",
+      "hint": "Refer to Section: 'The Chalukyas' (Page 76)",
       "options": [
-        { "text": "A source of light", "explanation": "Incorrect. A light source is strictly necessary." },
-        { "text": "An opaque or translucent obstacle", "explanation": "Incorrect. An object blocking the path of light is strictly required." },
-        { "text": "A screen or surface behind the object", "explanation": "Incorrect. Without a screen, the cast shadow cannot be captured or seen." },
-        { "text": "A polished plane mirror", "explanation": "Correct. Mirrors produce reflections and images, not shadows; a mirror is not required." }
+        { "text": "Banabhatta", "explanation": "Incorrect. Banabhatta was Harsha's court poet[cite: 4, 5]." },
+        { "text": "Ravikīrti", "explanation": "Correct. Ravikirti was Pulakeshin II's court poet who wrote the inscription[cite: 16]." },
+        { "text": "Dandin", "explanation": "Incorrect. Dandin was patronised by the Pallavas[cite: 19]." },
+        { "text": "Kalhana", "explanation": "Incorrect. Kalhana wrote the Rajatarangini[cite: 13]." }
       ],
-      "correctIndex": 3,
-      "correctAnswer": "A polished plane mirror",
-      "explanation": "Only three components are necessary for shadow observation: a light source, an obstructing object, and a screen."
+      "correctIndex": 1,
+      "correctAnswer": "Ravikīrti",
+      "explanation": "Court poet **Ravikīrti** composed the Aihole inscription in Sanskrit celebrating Pulakeśhin II's military conquests[cite: 16, 17]."
     },
     {
       "id": "q17",
-      "type": "mcq",
-      "category": "Reflection of Light",
+      "type": "fill_blank",
+      "category": "History - Pallavas",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "What type of reflection occurs when parallel rays of light strike a rough wooden tabletop?",
-      "passageId": "",
-      "tag": "Regular and Diffused Reflection",
-      "hint": "Section 11.6: Reflection of Light",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "options": [
-        { "text": "Regular specular reflection", "explanation": "Incorrect. Specular reflection occurs exclusively on ultra-smooth surfaces." },
-        { "text": "Diffused or irregular scattering", "explanation": "Correct. Rough surfaces scatter incident parallel rays in all directions." },
-        { "text": "Total internal reflection", "explanation": "Incorrect. This occurs inside optical media at critical angles." },
-        { "text": "Dispersion", "explanation": "Incorrect. Splitting into spectral components is dispersion." }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "Diffused or irregular scattering",
-      "explanation": "Light striking an uneven or rough surface gets scattered in various directions, which is known as diffused reflection."
+      "difficulty": "medium",
+      "question": "Fill in the blank: Pallava king Narasimhavarman I was known by the title ___, meaning 'wrestler' or 'warrior'[cite: 18].",
+      "tag": "Pallavas",
+      "hint": "Refer to Section: 'The Pallavas' (Page 78)",
+      "blanks": ["Māmalla"],
+      "correctAnswer": "Māmalla",
+      "explanation": "Narasimhavarman I held the title **Māmalla**, which commemorated his prowess as a warrior[cite: 18]."
     },
     {
       "id": "q18",
       "type": "mcq",
-      "category": "Propagation of Light",
+      "category": "History - Cholas",
       "marks": 1,
-      "difficulty": "easy",
-      "question": "In the cardboard and candle experiment demonstrating rectilinear propagation, what happens when the middle cardboard is displaced slightly sideways?",
-      "passageId": "",
-      "tag": "Rectilinear Propagation Experiment",
-      "hint": "Section 11.3: Activity-1 - To show rectilinear propagation of light",
-      "diagram": {
-        "hasDiagram": true,
-        "description": "Three cardboard screens with holes; middle card displaced obstructing light ray.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\n\nfig, ax = plt.subplots(figsize=(6, 3))\nax.set_xlim(-1, 9)\nax.set_ylim(-1, 5)\nax.set_aspect('equal')\n\n# Three cardboard screens\nax.add_patch(patches.Rectangle((1.5, 0.5), 0.3, 3.5, color='#94A3B8'))\nax.add_patch(patches.Rectangle((4.0, 1.2), 0.3, 3.5, color='#CBD5E1')) # Displaced card\nax.add_patch(patches.Rectangle((6.5, 0.5), 0.3, 3.5, color='#94A3B8'))\n\n# Candle at x = 0\nax.plot([0, 0], [1.0, 2.0], color='#D97706', lw=4)\nax.plot(0, 2.3, '*', color='#EF4444', markersize=10)\nax.text(0, 0.5, 'Candle', ha='center', va='top', fontsize=9)\n\n# Blocked ray\nax.annotate('', xy=(4.0, 2.3), xytext=(0, 2.3), arrowprops=dict(arrowstyle=\"->\", color=\"#DC2626\", lw=2))\nax.plot(4.0, 2.3, 'x', color='#DC2626', markersize=8, mew=2)\nax.text(5.5, 4.2, 'Middle Card Displaced', ha='center', va='center', fontsize=9, fontweight='bold', color='#B91C1C')\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
-      },
+      "difficulty": "medium",
+      "question": "Who revived the **Chola dynasty** in the 9th century and established Tanjāvūr as its capital[cite: 21]?",
+      "tag": "Chola Dynasty",
+      "hint": "Refer to Section: 'Further South' (Page 81)",
       "options": [
-        { "text": "The candle flame remains clearly visible without change", "explanation": "Incorrect. The blocked line of sight prevents light from passing through." },
-        { "text": "The candle flame is no longer visible", "explanation": "Correct. Because light travels only in straight lines, shifting the pinhole blocks the path of light." },
-        { "text": "The flame appears inverted and coloured", "explanation": "Incorrect. No light reaches the observer." },
-        { "text": "The brightness of the flame increases", "explanation": "Incorrect. Intensity does not increase." }
+        { "text": "Aditya I", "explanation": "Incorrect. Aditya I was Vijayalaya's son who expanded the realm[cite: 21]." },
+        { "text": "Vijayālaya", "explanation": "Correct. Vijayalaya restored Chola power in the 9th century[cite: 21]." },
+        { "text": "Mahendravarman I", "explanation": "Incorrect. Mahendravarman I was a Pallava king[cite: 18]." },
+        { "text": "Dantidurga", "explanation": "Incorrect. Dantidurga founded the Rashtrakutas[cite: 11]." }
       ],
       "correctIndex": 1,
-      "correctAnswer": "The candle flame is no longer visible",
-      "explanation": "Displacing the middle screen breaks the collinear alignment of the holes. Since light travels in straight lines and cannot bend around the obstacle, the flame is obscured."
+      "correctAnswer": "Vijayālaya",
+      "explanation": "**Vijayālaya** revived Chola authority in the 9th century from his capital at Tanjāvūr[cite: 21]."
     },
     {
       "id": "q19",
-      "type": "mcq",
-      "category": "Pinhole Camera",
+      "type": "fill_blank",
+      "category": "Civics - Administration",
       "marks": 1,
       "difficulty": "easy",
-      "question": "What acts as **natural pinhole cameras** when round patches of sunlight are observed on the ground under a large leafy tree?",
-      "passageId": "",
-      "tag": "Natural Pinhole Camera",
-      "hint": "Section 11.7: Pinhole camera in nature",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "options": [
-        { "text": "The tree branches acting as mirrors", "explanation": "Incorrect. Tree branches do not act as reflective mirrors." },
-        { "text": "The tiny irregular gaps between overlapping leaves", "explanation": "Correct. Small gaps between leaves act as pinholes, casting circular inverted images of the Sun." },
-        { "text": "Dew drops acting as diverging lenses", "explanation": "Incorrect. The patches are pinhole projections, not lens refractions." },
-        { "text": "The circular shape of individual leaves", "explanation": "Incorrect. The image shape reflects the circular Sun, not the leaf contour." }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "The tiny irregular gaps between overlapping leaves",
-      "explanation": "Tiny irregular spaces between dense leaves act as natural pinholes that project circular images of the Sun onto the ground."
+      "question": "Fill in the blank: Subordinate feudal rulers who administered territories and supplied military support to kings were called ___[cite: 22].",
+      "tag": "Feudal Polity",
+      "hint": "Refer to Section: 'Polity and administration' (Page 82)",
+      "blanks": ["sāmantas"],
+      "correctAnswer": "sāmantas",
+      "explanation": "Subordinate chieftains or tributaries who exercised regional authority were termed **sāmantas**[cite: 22]."
     },
     {
       "id": "q20",
       "type": "mcq",
-      "category": "Formation of Shadow",
+      "category": "Civics - Administration",
       "marks": 1,
       "difficulty": "medium",
-      "question": "When an opaque object is moved **closer to a stationary light source**, how do the size and sharpness of its shadow on a distant fixed screen change?",
-      "passageId": "",
-      "tag": "Shadow Size Variation",
-      "hint": "Section 11.5: Activity-5 - Shadow formation",
-      "diagram": {
-        "hasDiagram": true,
-        "description": "Ray tracing diagram showing light source, object moved near light source, and enlarged shadow on screen.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\n\nfig, ax = plt.subplots(figsize=(6, 3))\nax.set_xlim(-0.5, 9.5)\nax.set_ylim(-0.5, 5.5)\n\n# Light source at (0.5, 2.5)\nax.plot(0.5, 2.5, 'o', color='#F59E0B', markersize=12)\nax.text(0.5, 2.8, 'Source', ha='center', va='bottom', fontsize=9, fontweight='bold')\n\n# Opaque object at x = 2.5\nax.plot([2.5, 2.5], [1.8, 3.2], color='#1E293B', lw=5)\nax.text(2.5, 3.4, 'Object', ha='center', va='bottom', fontsize=9)\n\n# Screen at x = 8.5\nax.plot([8.5, 8.5], [0.2, 4.8], color='#64748B', lw=3)\nax.text(8.5, 5.0, 'Screen', ha='center', va='bottom', fontsize=9)\n\n# Rays\nax.plot([0.5, 8.5], [2.5, 4.6], '--', color='#DC2626', lw=1.5)\nax.plot([0.5, 8.5], [2.5, 0.4], '--', color='#DC2626', lw=1.5)\n\n# Shadow region\nax.plot([8.5, 8.5], [0.4, 4.6], color='#0F172A', lw=6)\nax.text(8.8, 2.5, 'Large Shadow', ha='left', va='center', fontsize=9, fontweight='bold', color='#0F172A')\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
-      },
+      "question": "Detailed 10th-century inscriptions describing the democratic selection of members to the village council (*sabhā*) were discovered at[cite: 22]:",
+      "tag": "Village Administration",
+      "hint": "Refer to Section: 'Polity and administration' (Page 82)",
       "options": [
-        { "text": "The shadow becomes smaller and sharper", "explanation": "Incorrect. Moving closer to the light intercepts a wider angle of rays, enlarging the shadow." },
-        { "text": "The shadow becomes larger and less sharp", "explanation": "Correct. Bringing the object closer to the source intercepts rays earlier, projecting a larger and softer-edged shadow." },
-        { "text": "The shadow stays exactly identical in size", "explanation": "Incorrect. Shadow size depends directly on the relative distances." },
-        { "text": "The shadow disappears entirely", "explanation": "Incorrect. Obstruction remains and shadow is cast onto the screen." }
+        { "text": "Uttaramerur", "explanation": "Correct. Uttaramerur inscriptions describe village council selection procedures[cite: 22]." },
+        { "text": "Mamallapuram", "explanation": "Incorrect. Mamallapuram was known for rock-cut temples and ports[cite: 2, 18]." },
+        { "text": "Malkheda", "explanation": "Incorrect. Malkheda (Manyakheta) was the Rashtrakuta capital[cite: 11]." },
+        { "text": "Daśhapura", "explanation": "Incorrect. Dashapura was the Aulikara capital[cite: 30]." }
       ],
-      "correctIndex": 1,
-      "correctAnswer": "The shadow becomes larger and less sharp",
-      "explanation": "As the object moves closer to the light source, it blocks a wider solid angle of emitted rays, causing the shadow cast on the screen to become larger and less sharp."
+      "correctIndex": 0,
+      "correctAnswer": "Uttaramerur",
+      "explanation": "The Chola inscriptions at **Uttaramerur** explain the committee electoral rules of the local village *sabhā*[cite: 22]."
     },
     {
       "id": "q21",
-      "type": "mcq",
-      "category": "Reflection of Light",
+      "type": "fill_blank",
+      "category": "History - Social Life",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "A person stands $4\\text{ m}$ in front of a flat plane mirror. What is the total straight-line distance between the **person and their virtual image**?",
-      "passageId": "",
-      "tag": "Object-to-Image Separation",
-      "hint": "Section 11.6: Characteristics of image formed by a plane mirror",
-      "diagram": {
-        "hasDiagram": true,
-        "description": "Geometric schematic showing object at distance d and virtual image at distance d behind mirror.",
-        "code": "import matplotlib.pyplot as plt\n\nfig, ax = plt.subplots(figsize=(6, 2.5))\nax.set_xlim(-1, 9)\nax.set_ylim(-1, 3)\nax.set_aspect('equal')\n\n# Plane mirror at x = 4\nax.plot([4, 4], [0, 2.5], color='#2563EB', lw=4)\nax.text(4, 2.7, 'Mirror', ha='center', va='bottom', fontsize=9, fontweight='bold', color='#1D4ED8')\n\n# Object at x = 0\nax.plot(0, 1.2, 'o', color='#059669', markersize=10)\nax.text(0, 1.5, 'Person', ha='center', va='bottom', fontsize=9, fontweight='bold')\n\n# Image at x = 8\nax.plot(8, 1.2, 'o', color='#9CA3AF', markersize=10)\nax.text(8, 1.5, 'Image', ha='center', va='bottom', fontsize=9, fontweight='bold')\n\n# Distance arrows\nax.annotate('', xy=(4, 0.4), xytext=(0, 0.4), arrowprops=dict(arrowstyle=\"<->\", color=\"#111827\"))\nax.text(2, 0.6, '$4\\text{ m}$', ha='center', va='bottom', fontsize=9)\n\nax.annotate('', xy=(8, 0.4), xytext=(4, 0.4), arrowprops=dict(arrowstyle=\"<->\", color=\"#111827\"))\nax.text(6, 0.6, '$4\\text{ m}$', ha='center', va='bottom', fontsize=9)\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
-      },
-      "options": [
-        { "text": "$4\\text{ m}$", "explanation": "Incorrect. This is only the distance between the person and the mirror." },
-        { "text": "$8\\text{ m}$", "explanation": "Correct. Total separation is $d + d = 4\\text{ m} + 4\\text{ m} = 8\\text{ m}$." },
-        { "text": "$16\\text{ m}$", "explanation": "Incorrect. Separation is $2d$, not $d^{2}$." },
-        { "text": "$2\\text{ m}$", "explanation": "Incorrect. Half the distance would be closer than the mirror itself." }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "$8\\text{ m}$",
-      "explanation": "Since the image lies $4\\text{ m}$ behind the plane mirror, the total distance from person to image is $4\\text{ m} + 4\\text{ m} = 8\\text{ m}$."
+      "difficulty": "hard",
+      "question": "Fill in the blank: Scribes and administrative clerks who transitioned from an occupational category into a distinct jāti by the 10th century were the ___[cite: 25].",
+      "tag": "Social Jatis",
+      "hint": "Refer to Section: 'Social life' (Page 85)",
+      "blanks": ["Kāyasthas"],
+      "correctAnswer": "Kāyasthas",
+      "explanation": "The **Kāyasthas**, originally professional scribes and record keepers, formed a distinct endogamous jāti by the 10th century[cite: 25]."
     },
     {
       "id": "q22",
       "type": "mcq",
-      "category": "Reflection of Light",
+      "category": "History - Bhakti Tradition",
       "marks": 1,
-      "difficulty": "medium",
-      "question": "A student standing before a plane mirror touches her **left ear with her right hand**. What does her reflection appear to be doing?",
-      "passageId": "",
-      "tag": "Lateral Inversion Application",
-      "hint": "Section 11.6: Activity-7 - Characteristics of image formed by a plane mirror",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
+      "difficulty": "easy",
+      "question": "In the South Indian Bhakti tradition, the 12 devotional poet-saints dedicated to Lord Vishnu were known as the[cite: 27]:",
+      "tag": "Bhakti Tradition",
+      "hint": "Refer to Section: 'Cultural life' (Page 87)",
       "options": [
-        { "text": "Touching her left ear with her right hand", "explanation": "Incorrect. Lateral inversion swaps left and right orientations." },
-        { "text": "Touching her right ear with her left hand", "explanation": "Correct. Lateral inversion reverses the lateral perspective: left becomes right and right becomes left." },
-        { "text": "Touching her chin with both hands", "explanation": "Incorrect. Image coordinates are not translated vertically or altered." },
-        { "text": "Appearing upside-down with feet at the top", "explanation": "Incorrect. The image remains upright/erect." }
+        { "text": "Nāyanārs", "explanation": "Incorrect. Nayanars were the 63 Shaivite poet-saints[cite: 27]." },
+        { "text": "Āḻvārs", "explanation": "Correct. The 12 Alvars were devotees of Vishnu[cite: 27]." },
+        { "text": "Dvārapaṇḍitas", "explanation": "Incorrect. Dvarapanditas were university gatekeeper scholars[cite: 9]." },
+        { "text": "Kāyasthas", "explanation": "Incorrect. Kayasthas were scribes and clerks[cite: 25]." }
       ],
       "correctIndex": 1,
-      "correctAnswer": "Touching her right ear with her left hand",
-      "explanation": "Due to lateral inversion in plane mirrors, the object's left side appears as the image's right side and vice-versa; hence she appears to touch her right ear with her left hand."
+      "correctAnswer": "Āḻvārs",
+      "explanation": "The 12 **Āḻvārs** were Tamil poet-saints dedicated to Vishnu, among whom the female saint Āṇḍāḷ was prominent[cite: 27]."
     },
     {
       "id": "q23",
-      "type": "mcq",
-      "category": "Periscope and Kaleidoscope",
+      "type": "fill_blank",
+      "category": "History - Science & Mathematics",
       "marks": 1,
       "difficulty": "medium",
-      "question": "In a submarine periscope, the two plane mirrors are mounted **parallel** to each other and inclined at what specific angle relative to the tube's axis?",
-      "passageId": "",
-      "tag": "Periscope Mirror Angles",
-      "hint": "Section 11.8: Periscope and Kaleidoscope - Periscope",
-      "diagram": {
-        "hasDiagram": true,
-        "description": "Ray path inside a periscope showing two mirrors inclined at 45 degrees.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\n\nfig, ax = plt.subplots(figsize=(4, 5))\nax.set_xlim(-1, 5)\nax.set_ylim(-1, 7)\nax.set_aspect('equal')\n\n# Periscope body\nax.plot([0, 3, 3, 2, 2, 0, 0], [5, 5, 1, 1, 0, 0, 5], color='#334155', lw=2)\nax.plot([1, 4, 4, 3, 3, 1, 1], [6, 6, 2, 2, 1, 1, 6], color='#334155', lw=2)\n\n# Mirrors (45 degrees)\nax.plot([0, 1], [5, 6], color='#2563EB', lw=4) # Top mirror\nax.plot([2, 3], [0, 1], color='#2563EB', lw=4) # Bottom mirror\n\n# Ray tracing\nax.annotate('', xy=(0.5, 5.5), xytext=(-0.8, 5.5), arrowprops=dict(arrowstyle=\"->\", color=\"#DC2626\", lw=2))\nax.plot([0.5, 2.5], [5.5, 0.5], color='#DC2626', lw=2)\nax.annotate('', xy=(4.2, 0.5), xytext=(2.5, 0.5), arrowprops=dict(arrowstyle=\"->\", color=\"#DC2626\", lw=2))\n\nax.text(0.7, 6.2, '$45^{\\circ}$ Mirror', fontsize=8, color='#1E40AF', fontweight='bold')\nax.text(2.7, -0.3, '$45^{\\circ}$ Mirror', fontsize=8, color='#1E40AF', fontweight='bold')\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
-      },
-      "options": [
-        { "text": "$90^{\\circ}$", "explanation": "Incorrect. At $90^{\\circ}$, light reflects back out instead of traveling down the tube." },
-        { "text": "$45^{\\circ}$", "explanation": "Correct. Inclining both mirrors at $45^{\\circ}$ deflects incident rays by $90^{\\circ}$ downward and then $90^{\\circ}$ horizontally into the viewer's eyes." },
-        { "text": "$60^{\\circ}$", "explanation": "Incorrect. A $60^{\\circ}$ inclination would not produce parallel emergent rays." },
-        { "text": "$30^{\\circ}$", "explanation": "Incorrect. $30^{\\circ}$ reflection would misalign the optical axis with the viewing tube." }
-      ],
-      "correctIndex": 1,
-      "correctAnswer": "$45^{\\circ}$",
-      "explanation": "The mirrors in a periscope are fixed parallel to each other at an angle of $45^{\\circ}$ to produce two consecutive $90^{\\circ}$ deflections."
+      "question": "Fill in the blank: The treatise *Brahmasphuṭasiddhānta*, formulating foundational rules for operations with zero and negative numbers, was authored by ___[cite: 28].",
+      "tag": "Indian Mathematics",
+      "hint": "Refer to Section: 'A galaxy of mathematicians and astronomers' (Page 88)",
+      "blanks": ["Brahmagupta"],
+      "correctAnswer": "Brahmagupta",
+      "explanation": "**Brahmagupta** wrote the *Brahmasphuṭasiddhānta* in 628 CE, laying principles of algebra and zero arithmetic[cite: 28]."
     },
     {
       "id": "q24",
       "type": "mcq",
-      "category": "Propagation of Light",
+      "category": "History - Invasions",
       "marks": 1,
       "difficulty": "medium",
-      "question": "Which of the following optical observations provides direct experimental proof that light propagates in **straight lines**?",
-      "passageId": "",
-      "tag": "Evidence of Rectilinear Propagation",
-      "hint": "Section 11.3: Propagation of Light & Section 11.5",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
+      "question": "The invasion of the Hūṇas into central India in the 6th century was decisively crushed by the rulers of the[cite: 30]:",
+      "tag": "Huna Invasions",
+      "hint": "Refer to Section: 'The Hūṇas' challenge' (Page 90)",
       "options": [
-        { "text": "Formation of sharp dark shadows behind opaque objects", "explanation": "Correct. If light could bend around corners, shadow regions would be filled with light." },
-        { "text": "Bending of light rays around sharp corners", "explanation": "Incorrect. Noticeable macroscopic bending does not occur in basic geometric optics." },
-        { "text": "A light beam speeding up in water", "explanation": "Incorrect. Light actually slows down in denser media." },
-        { "text": "Production of sound echoes in large chambers", "explanation": "Incorrect. Sound echoes demonstrate acoustic reflection, not light propagation." }
+        { "text": "Aulikara dynasty", "explanation": "Correct. The Aulikaras of Dashapura defeated the Hunas[cite: 30]." },
+        { "text": "Chola dynasty", "explanation": "Incorrect. Cholas ruled the deep South[cite: 21]." },
+        { "text": "Pala dynasty", "explanation": "Incorrect. Palas ruled Bengal from the 8th century[cite: 8]." },
+        { "text": "Pallava dynasty", "explanation": "Incorrect. Pallavas were centred in Kanchipuram[cite: 18]." }
       ],
       "correctIndex": 0,
-      "correctAnswer": "Formation of sharp dark shadows behind opaque objects",
-      "explanation": "Sharp shadows form precisely because light travels in straight lines and cannot curve around opaque obstacles."
+      "correctAnswer": "Aulikara dynasty",
+      "explanation": "King Yashodharma of the **Aulikara dynasty** (ruling from Daśhapura/Mandsaur) defeated the Hūṇa leaders[cite: 29, 30]."
     },
     {
       "id": "q25",
-      "type": "short_answer",
-      "category": "Sources of Light",
-      "marks": 2,
+      "type": "fill_blank",
+      "category": "History - Invasions",
+      "marks": 1,
       "difficulty": "easy",
-      "question": "Distinguish clearly between **luminous** and **non-luminous** objects, providing two examples of each.",
-      "passageId": "",
-      "tag": "Luminous vs Non-Luminous",
-      "hint": "Section 11.2: Sources of Light - Luminous and Non-luminous objects",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "correctAnswer": "**Luminous objects** are objects that emit light of their own (e.g., the Sun, stars, burning candle, glowing electric bulb). **Non-luminous objects** are objects that do not emit light of their own and become visible only when they reflect light falling on them from an external luminous source (e.g., the Moon, books, chairs, earth).",
-      "explanation": "Luminous objects generate their own radiant photons, whereas non-luminous objects rely strictly on reflection of incident light to be seen."
+      "question": "Fill in the blank: The Arab commander who led the military campaign that conquered Debal and the province of Sindh in 712 CE was ___[cite: 3, 31].",
+      "tag": "Arab Invasion",
+      "hint": "Refer to Section: 'The Arabs arrive on India's shores' (Page 91)",
+      "blanks": ["Muhammad bin Qasim"],
+      "correctAnswer": "Muhammad bin Qasim",
+      "explanation": "**Muhammad bin Qasim** conquered the port of Debal and defeated King Dāhar of Sindh in 712 CE[cite: 3, 31]."
     },
     {
       "id": "q26",
-      "type": "short_answer",
-      "category": "Propagation of Light",
-      "marks": 2,
-      "difficulty": "easy",
-      "question": "Explain using a simple rubber pipe experiment why a candle flame cannot be seen through a **bent tube**.",
-      "passageId": "",
-      "tag": "Bent Tube Experiment",
-      "hint": "Section 11.3: Activity-2 - Rectilinear propagation of light",
-      "diagram": {
-        "hasDiagram": true,
-        "description": "Candle flame viewed through a straight pipe versus a bent pipe.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\n\nfig, ax = plt.subplots(figsize=(6, 3))\nax.set_xlim(-1, 9)\nax.set_ylim(-1, 5)\nax.set_aspect('equal')\n\n# Candle\nax.plot([0.5, 0.5], [1, 2], color='#D97706', lw=4)\nax.plot(0.5, 2.3, '*', color='#EF4444', markersize=10)\nax.text(0.5, 0.6, 'Candle', ha='center', va='top', fontsize=9)\n\n# Bent tube\nax.plot([2.0, 4.0, 6.0], [2.3, 2.3, 3.8], color='#334155', lw=6)\nax.text(4.0, 1.8, 'Bent Pipe', ha='center', va='top', fontsize=9, fontweight='bold')\n\n# Eye at (7.0, 3.8)\nax.plot(6.8, 3.8, 'o', color='#2563EB', markersize=8)\nax.text(7.2, 3.8, 'Observer', ha='left', va='center', fontsize=9)\n\n# Light blocked indicator\nax.plot(4.0, 2.3, 'x', color='#DC2626', markersize=10, mew=2.5)\nax.text(4.0, 3.0, 'Light Blocked', ha='center', va='bottom', fontsize=8, color='#DC2626', fontweight='bold')\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
-      },
-      "correctAnswer": "Light travels exclusively along straight paths (**rectilinear propagation**). When looking through a straight tube, light reaches the eye directly; however, when the tube is bent, the straight-traveling light rays strike the opaque inner walls of the tube and cannot curve around the bend, rendering the candle flame invisible.",
-      "explanation": "Because light cannot curve around bends, light rays emitted by the flame are obstructed by the inner walls of a bent pipe."
+      "type": "mcq",
+      "category": "Economics - Trade",
+      "marks": 1,
+      "difficulty": "hard",
+      "question": "Which ancient port located in southern Tamil Nadu handled maritime commerce with Southeast Asia for the **Pāṇḍya dynasty**[cite: 20]?",
+      "tag": "Pandya Trade",
+      "hint": "Refer to Section: 'Further South' (Page 80)",
+      "options": [
+        { "text": "Thane", "explanation": "Incorrect. Thane is on the western coast[cite: 31]." },
+        { "text": "Korkai", "explanation": "Correct. Korkai was an active southern port of the Pandyas[cite: 20]." },
+        { "text": "Debal", "explanation": "Incorrect. Debal was in the Indus delta[cite: 31]." },
+        { "text": "Sthaneshvara", "explanation": "Incorrect. Sthaneshvara was an inland northern capital[cite: 3]." }
+      ],
+      "correctIndex": 1,
+      "correctAnswer": "Korkai",
+      "explanation": "The Pāṇḍyas conducted brisk overseas maritime trade through their ancient seaport at **Korkai**[cite: 20]."
     },
     {
       "id": "q27",
       "type": "short_answer",
-      "category": "Nature of Objects",
+      "category": "History - Pushyabhutis",
       "marks": 2,
-      "difficulty": "easy",
-      "question": "Classify the following four materials into **transparent**, **translucent**, and **opaque**: *(i) Clear window glass, (ii) Cardboard sheet, (iii) Oiled paper, (iv) Brick wall*.",
-      "passageId": "",
-      "tag": "Material Classification",
-      "hint": "Section 11.4: Nature of Objects",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "correctAnswer": "*(i) Clear window glass*: **Transparent**\n*(ii) Cardboard sheet*: **Opaque**\n*(iii) Oiled paper*: **Translucent**\n*(iv) Brick wall*: **Opaque**",
-      "explanation": "Transparent materials permit full transmission of light, translucent materials allow partial transmission, and opaque materials completely block light transmission."
+      "difficulty": "medium",
+      "question": "Explain the significance of the **Banskhera copper plate inscription** with respect to King Harshavardhana[cite: 4].",
+      "tag": "Harshavardhana Inscriptions",
+      "hint": "Refer to Section: 'The Great King of Kings' (Page 64)",
+      "correctAnswer": "The Banskhera copper plate inscription in Uttar Pradesh contains King Harsha's personal signature in Nagari script, which reads 'svahasto mama mahārājādhirāja śhrī harshasya' ('By my own hand, the great king of kings, Shri Harsha')[cite: 4]. It proves his direct administrative authority and reveals the evolution of the Nagari script[cite: 4].",
+      "explanation": "The Banskhera inscription features Harsha's royal endorsement and demonstrates script transitions preceding modern Devanagari[cite: 4]."
     },
     {
       "id": "q28",
       "type": "short_answer",
-      "category": "Formation of Shadow",
+      "category": "History - Kashmir",
       "marks": 2,
-      "difficulty": "medium",
-      "question": "State the **three essential requirements** necessary for the formation and observation of a shadow.",
-      "passageId": "",
-      "tag": "Requirements for Shadow",
-      "hint": "Section 11.5: Formation of Shadow & Characteristics of shadows",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "correctAnswer": "The three essential requirements are:\n1. A **source of light** (e.g., torch, sun, lamp).\n2. An **opaque or translucent object** placed in the path of the light to block the rays.\n3. A **screen or surface** (e.g., wall, ground, paper) behind the object upon which the shadow can be cast and seen.",
-      "explanation": "Without a light source, no rays exist; without an opaque obstacle, light is not obstructed; and without a screen, the cast shadow cannot be captured."
+      "difficulty": "hard",
+      "question": "State two distinctive historical methods adopted by **Kalhaṇa** while compiling the *Rājataraṅgiṇī*[cite: 13].",
+      "tag": "Historiography",
+      "hint": "Refer to Section: 'Kashmir' (Page 73)",
+      "correctAnswer": "1. He examined eleven earlier historical chronicles composed by prior scholars to reconstruct past events[cite: 13].\n2. He verified records against primary archaeological evidence, such as inscriptions on temple consecrations, land grants, and laudatory records[cite: 13].",
+      "explanation": "Kalhaṇa broke ground in Indian historiography by cross-referencing literary chronicles with epigraphic records without personal bias[cite: 13, 14]."
     },
     {
       "id": "q29",
       "type": "short_answer",
-      "category": "Reflection of Light",
+      "category": "History - Philosophy",
       "marks": 2,
-      "difficulty": "easy",
-      "question": "What is **lateral inversion**? Give one everyday example demonstrating this phenomenon.",
-      "passageId": "",
-      "tag": "Lateral Inversion Definition",
-      "hint": "Section 11.6: Activity-7 & Info-Bubble",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "correctAnswer": "**Lateral inversion** is the optical phenomenon where the left side of an object appears as the right side in its image, and the right side appears as the left side when reflected by a plane mirror.\n*Example*: Raising your right hand while looking into a bathroom plane mirror makes your reflected image appear to raise its left hand (or the reversed spelling of 'AMBULANCE' on vehicles).",
-      "explanation": "Lateral inversion is the left-to-right reversal of an object's image formed by a plane mirror."
+      "difficulty": "medium",
+      "question": "What core philosophy did **Ādi Śhaṅkarāchārya** propagate, and what was the strategic significance of the four *maṭhas* he established[cite: 14, 15]?",
+      "tag": "Advaita Vedanta",
+      "hint": "Refer to Section: 'Kashmir' (Page 74-75)",
+      "correctAnswer": "Ādi Śhaṅkarāchārya taught **Advaita Vedānta**, arguing that *Brahman* is the ultimate reality and the empirical world is *māyā* (illusion)[cite: 14, 15]. He established four *maṭhas* at the four corners of India (Badrinath, Puri, Dwarka, and Sringeri) to preserve Vedic learning and unify cultural traditions[cite: 15].",
+      "explanation": "Śhaṅkarāchārya formulated the philosophy of non-dualism and unified pan-Indian cultural and philosophical networks via his four monastic centres[cite: 14, 15]."
     },
     {
       "id": "q30",
       "type": "short_answer",
-      "category": "Pinhole Camera",
+      "category": "History - Pallavas",
       "marks": 2,
       "difficulty": "medium",
-      "question": "State the **underlying principle** of a pinhole camera and describe the orientation of the image it produces.",
-      "passageId": "",
-      "tag": "Pinhole Camera Working",
-      "hint": "Section 11.7: Pinhole Camera - Characteristics of the image",
-      "diagram": {
-        "hasDiagram": true,
-        "description": "Ray diagram of a pinhole camera showing inversion of image through a small aperture.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\n\nfig, ax = plt.subplots(figsize=(6, 3))\nax.set_xlim(-1, 9)\nax.set_ylim(-1, 5)\nax.set_aspect('equal')\n\n# Object arrow (upright) at x = 0.5\nax.annotate('', xy=(0.5, 4.0), xytext=(0.5, 0.5), arrowprops=dict(arrowstyle=\"->\", color=\"#16A34A\", lw=3))\nax.text(0.5, 4.2, 'Object (Tree/Arrow)', ha='center', va='bottom', fontsize=8, fontweight='bold')\n\n# Pinhole box screen at x = 4.5\nax.plot([4.5, 4.5], [0, 2.0], color='#1E293B', lw=4)\nax.plot([4.5, 4.5], [2.5, 4.5], color='#1E293B', lw=4)\nax.text(4.5, 2.25, 'Pinhole', ha='left', va='center', fontsize=8, fontweight='bold', color='#DC2626')\n\n# Screen at x = 7.5\nax.plot([7.5, 7.5], [0.5, 4.0], color='#94A3B8', lw=3)\nax.text(7.5, 4.2, 'Wax paper screen', ha='center', va='bottom', fontsize=8)\n\n# Rays through pinhole\nax.plot([0.5, 7.5], [4.0, 1.0], color='#DC2626', linestyle='--', lw=1.5)\nax.plot([0.5, 7.5], [0.5, 3.5], color='#2563EB', linestyle='--', lw=1.5)\n\n# Inverted image arrow\nax.annotate('', xy=(7.5, 1.0), xytext=(7.5, 3.5), arrowprops=dict(arrowstyle=\"->\", color=\"#DC2626\", lw=3))\nax.text(7.7, 2.2, 'Inverted Image', ha='left', va='center', fontsize=8, fontweight='bold')\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
-      },
-      "correctAnswer": "A pinhole camera operates on the principle of **rectilinear propagation of light** (light traveling in straight lines). It produces a **real, inverted (upside-down)** image on its translucent wax paper screen because light rays from the top and bottom of the object cross each other as they pass through the tiny aperture.",
-      "explanation": "Straight-line propagation causes rays from the object's upper extremities to hit the screen at the bottom, and rays from the lower extremities to hit the top, forming an inverted image."
+      "question": "Highlight two key achievements of the Pallava king **Narasimhavarman I**[cite: 18].",
+      "tag": "Pallavas",
+      "hint": "Refer to Section: 'The Pallavas' (Page 78)",
+      "correctAnswer": "1. He defeated the Chalukya ruler Pulakeśhin II and captured the Chalukya capital at Badami (Vātāpi)[cite: 18].\n2. He dispatched a successful naval expedition to Sri Lanka to help restore a Sinhalese prince to the throne[cite: 18].",
+      "explanation": "Narasimhavarman I 'Māmalla' expanded Pallava prestige by overcoming Badami and projecting naval strength into Sri Lanka[cite: 18]."
     },
     {
       "id": "q31",
       "type": "short_answer",
-      "category": "Periscope and Kaleidoscope",
+      "category": "History - Society",
       "marks": 2,
       "difficulty": "medium",
-      "question": "What is a **periscope**? State two practical real-life scenarios where a periscope is employed.",
-      "passageId": "",
-      "tag": "Periscope Applications",
-      "hint": "Section 11.8: Periscope and Kaleidoscope - Periscope",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "correctAnswer": "A **periscope** is an optical instrument consisting of a Z-shaped tube containing two parallel plane mirrors fixed at $45^{\\circ}$ angles that allows an observer to view objects outside their direct line of sight.\n*Two applications*:\n1. Used by crews inside **submarines** to observe ships and obstacles on the water's surface while submerged.\n2. Used by soldiers inside **trenches or bunkers** to observe enemy movements safely without exposing themselves to fire.",
-      "explanation": "A periscope bends light through two successive reflections, allowing concealed observers to see over or around barriers."
+      "question": "What information do **hero stones** (*vīragal*), like the one found at Eduthanur, provide about local village life and values[cite: 23]?",
+      "tag": "Hero Stones",
+      "hint": "Refer to Section: 'Trade, economy and urbanisation' (Page 83)",
+      "correctAnswer": "Hero stones commemorate individuals who sacrificed their lives defending local communities or livestock against cattle thieves and invaders[cite: 23]. For example, the Eduthanur stone honors both a village chieftain and his faithful dog who died defending local cattle[cite: 23].",
+      "explanation": "Hero stones preserve local historical incidents, village security challenges, and communal ethics of valor and loyalty[cite: 23]."
     },
     {
       "id": "q32",
       "type": "short_answer",
-      "category": "Formation of Shadow",
+      "category": "History - Society",
       "marks": 2,
-      "difficulty": "medium",
-      "question": "Why is **no shadow visible** when an aeroplane or a bird flies at an extremely high altitude in the bright daytime sky?",
-      "passageId": "",
-      "tag": "High Altitude Shadows",
-      "hint": "Section 11.5: Activity-4 & Characteristics of shadows",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "correctAnswer": "Although an aeroplane or bird blocks sunlight high in the air, the ground (which acts as the screen) is located **too far away** from the object. At such large distances, surrounding diffused sunlight converges and fills the shadow region before it reaches the ground; hence, no visible shadow is cast on the earth's surface.",
-      "explanation": "For an extended light source like the Sun, the umbra tapers down and does not reach the ground when an object is positioned at very high altitudes, leaving no perceptible shadow on the distant screen."
+      "difficulty": "hard",
+      "question": "Explain how the **Bhauma-Kara dynasty** of Odisha was exceptional regarding royal succession and political leadership[cite: 26].",
+      "tag": "Women Rulers",
+      "hint": "Refer to Section: 'Social life' (Page 86)",
+      "correctAnswer": "While most Indian dynasties favored male heirs (*yuvarājas*), the Bhauma-Karas featured several reigning female sovereigns[cite: 26]. Queen **Tribhuvana Mahādevī I** consolidated the state, quelled rebellions, and assumed full imperial titles[cite: 26].",
+      "explanation": "The Bhauma-Karas stand out for recognizing queens as sovereign administrative and military leaders[cite: 26]."
     },
     {
       "id": "q33",
       "type": "short_answer",
-      "category": "Propagation of Light",
+      "category": "History - Bhakti Movement",
       "marks": 2,
       "difficulty": "medium",
-      "question": "Define the terms **ray of light** and **beam of light**, stating the geometric convention used to represent them.",
-      "passageId": "",
-      "tag": "Ray and Beam Definition",
-      "hint": "Section 11.3: Propagation of Light - Ray and beam",
-      "diagram": {
-        "hasDiagram": true,
-        "description": "Geometric representations of a single ray with an arrowhead versus a parallel beam of multiple rays.",
-        "code": "import matplotlib.pyplot as plt\n\nfig, ax = plt.subplots(figsize=(6, 2.5))\nax.set_xlim(-1, 9)\nax.set_ylim(-1, 4)\n\n# Single ray\nax.annotate('', xy=(3.5, 2.8), xytext=(0.5, 2.8), arrowprops=dict(arrowstyle=\"->\", color=\"#DC2626\", lw=2))\nax.text(2.0, 3.2, 'Ray of light (Single line with arrow)', ha='center', va='bottom', fontsize=9, fontweight='bold')\n\n# Parallel beam\nfor y in [0.4, 0.9, 1.4]:\n    ax.annotate('', xy=(7.5, y), xytext=(4.5, y), arrowprops=dict(arrowstyle=\"->\", color=\"#2563EB\", lw=1.5))\nax.text(6.0, 1.8, 'Beam of light (Bundle of rays)', ha='center', va='bottom', fontsize=9, fontweight='bold')\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
-      },
-      "correctAnswer": "1. **Ray of light**: The narrow path along which light energy travels in a given direction, represented geometrically by a thin straight line with an arrowhead indicating the direction of propagation.\n2. **Beam of light**: A broad collection or bundle of numerous light rays propagating together (which can be parallel, converging, or diverging).",
-      "explanation": "A ray represents an idealized single line of light propagation, whereas a beam represents a wider stream containing multiple rays."
+      "question": "How did the **Bhakti tradition** in South India challenge conventional social and gender boundaries[cite: 27, 28]?",
+      "tag": "Bhakti Movement",
+      "hint": "Refer to Section: 'Cultural life' (Page 87-88)",
+      "correctAnswer": "The Bhakti tradition opened direct spiritual devotion to all individuals regardless of caste or gender, composing poetry in vernacular regional languages[cite: 28]. Several revered saints were Śhūdras, and women saints like **Āṇḍāḷ** and **Kāraikkāl Ammaiyār** were celebrated as major spiritual leaders[cite: 27, 28].",
+      "explanation": "South Indian Bhakti broke elite monopolies over worship by promoting egalitarian devotion across varied social groups[cite: 28]."
     },
     {
       "id": "q34",
       "type": "short_answer",
-      "category": "Formation of Shadow",
+      "category": "History - Science & Mathematics",
       "marks": 2,
-      "difficulty": "hard",
-      "question": "A student claims: *'A green leaf casts a green shadow and a red ball casts a red shadow.'* State whether this claim is correct or incorrect, and provide scientific justification.",
-      "passageId": "",
-      "tag": "Shadow Color Concept",
-      "hint": "Section 11.5: Intext Questions Q.1 & Characteristics of shadows",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "correctAnswer": "The claim is **incorrect**.\n*Justification*: A shadow is formed when an opaque object blocks the path of light, creating an area of darkness on a screen where light cannot reach. Because a shadow represents the absence of light rather than reflected light, the shadow of any opaque object is always **dark/black**, regardless of whether the object is red, green, or any other colour.",
-      "explanation": "Shadows do not convey colour information because they correspond to regions where incident illumination is blocked."
+      "difficulty": "medium",
+      "question": "What distinct mathematical breakthrough is attributed to the 9th-century Jain scholar **Mahāvīra**[cite: 28, 29]?",
+      "tag": "Jain Mathematics",
+      "hint": "Refer to Section: 'A galaxy of mathematicians and astronomers' (Page 88-89)",
+      "correctAnswer": "Mahāvīra, who resided at the court of Rashtrakūṭa king Amoghavarsha, authored the first treatise on mathematics treated completely independent of astronomy[cite: 28, 29].",
+      "explanation": "Unlike contemporary astronomers who treated arithmetic strictly as a tool for planetary tracking, Mahāvīra established mathematics as an autonomous discipline[cite: 29]."
     },
     {
       "id": "q35",
       "type": "short_answer",
-      "category": "Reflection of Light",
-      "marks": 3,
+      "category": "History - Invasions",
+      "marks": 2,
       "difficulty": "medium",
-      "question": "Enumerate **three distinct characteristics** of an image formed by a flat **plane mirror**.",
-      "passageId": "",
-      "tag": "Plane Mirror Properties",
-      "hint": "Section 11.6: Summary & Characteristics of image formed by a plane mirror",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "correctAnswer": "Three key characteristics of an image formed by a plane mirror are:\n1. **Virtual and Erect**: The image is upright and cannot be captured on a screen.\n2. **Same Size**: The size of the image is exactly equal to the size of the object ($h_{i} = h_{o}$).\n3. **Equal Distance**: The image is formed as far behind the mirror as the object is placed in front of it ($d_{i} = d_{o}$).\n*(Also: It is laterally inverted).*",
-      "explanation": "Plane mirror reflections maintain 1:1 proportionality in object-to-image dimensions and distance, are virtual, and exhibit lateral inversion."
+      "question": "Describe two ways the **Hūṇas** assimilated into Indian society after their military defeats in the 6th century[cite: 30].",
+      "tag": "Huna Assimilation",
+      "hint": "Refer to Section: 'The Hūṇas' challenge' (Page 90)",
+      "correctAnswer": "1. They served as soldiers and joined local civic bodies, such as temple administrative councils (*goṣhṭhikas*)[cite: 30].\n2. They adopted Sanskrit and Prakrit for inscriptions and issued coins bearing Indian royal titles and Hindu deities like Lakshmi, Shiva, and Vishnu[cite: 30].",
+      "explanation": "The nomadic Hūṇas integrated into Indian society by adopting local religious, administrative, and cultural practices[cite: 30]."
     },
     {
       "id": "q36",
       "type": "short_answer",
-      "category": "Reflection of Light",
-      "marks": 3,
-      "difficulty": "medium",
-      "question": "Construct a clear comparison presenting **three fundamental differences** between a **shadow** and an **image**.",
-      "passageId": "",
-      "tag": "Shadow vs Image",
-      "hint": "Section 11.6: Differences between images and shadows (Table)",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "correctAnswer": "| Feature | **Image** | **Shadow** |\n| :--- | :--- | :--- |\n| **Formation Cause** | Formed due to the **reflection** (or refraction) of light by a shiny/smooth surface. | Formed when light rays are **obstructed** by an opaque object. |\n| **Colour & Details** | Shows the **actual colour, textures, and details** of the object. | Always a **dark/black patch** without internal details regardless of object colour. |\n| **Screen Requirement**| Can be observed directly in mirrors without needing a separate physical backdrop screen. | Absolutely **requires a screen** (wall, ground) to be visible. |",
-      "explanation": "An image reveals structural features and true colour through reflected rays, while a shadow is simply a dark silhouette formed by light obstruction."
+      "category": "History - Invasions",
+      "marks": 2,
+      "difficulty": "hard",
+      "question": "Why did the Arab conquest of Sindh in 712 CE result in a limited long-term political and religious transformation compared to Arab expansions elsewhere[cite: 32]?",
+      "tag": "Arab Dominion",
+      "hint": "Refer to Section: 'The Arabs arrive on India's shores' (Page 92)",
+      "correctAnswer": "Indian rulers continuously resisted and pushed them back, restricting Arab rule to small pockets in Sindh and Punjab[cite: 32]. Consequently, the rulers abandoned iconoclasm and allowed Hindus and Buddhists to retain and rebuild temples, and keep priests in revenue sharing[cite: 32].",
+      "explanation": "Persistent military pushback by Indian dynasties forced Arab rulers to abandon mass replacement of regional social and religious structures[cite: 32]."
     },
     {
       "id": "q37",
-      "type": "short_answer",
-      "category": "Periscope and Kaleidoscope",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "Describe the construction and working mechanism of a **kaleidoscope**. Why are broken coloured glass bangles placed inside it?",
-      "passageId": "",
-      "tag": "Kaleidoscope Construction",
-      "hint": "Section 11.8: Activity-10 - To make a kaleidoscope",
-      "diagram": {
-        "hasDiagram": true,
-        "description": "Cross-sectional triangular prism configuration of three rectangular mirrors inside a kaleidoscope.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nimport numpy as np\n\nfig, ax = plt.subplots(figsize=(4, 4))\nax.set_xlim(-2, 2)\nax.set_ylim(-2, 2)\nax.set_aspect('equal')\n\n# Outer circular tube\ncircle = patches.Circle((0, 0), 1.6, fill=False, edgecolor='#64748B', lw=3, linestyle='--')\nax.add_patch(circle)\n\n# Equilateral triangle of three mirror strips\np1 = np.array([0, 1.3])\np2 = np.array([-1.126, -0.65])\np3 = np.array([1.126, -0.65])\n\nax.plot([p1[0], p2[0]], [p1[1], p2[1]], color='#2563EB', lw=4, label='Mirrors')\nax.plot([p2[0], p3[0]], [p2[1], p3[1]], color='#2563EB', lw=4)\nax.plot([p3[0], p1[0]], [p3[1], p1[1]], color='#2563EB', lw=4)\n\n# Glass fragments in center\nax.plot([-0.2, 0.1, -0.1], [0.1, -0.1, -0.2], '*', color='#EC4899', markersize=9)\nax.plot([0.2, -0.05], [0.2, 0.25], 'o', color='#F59E0B', markersize=7)\n\nax.text(0, -1.2, '3 Plane Mirrors at $60^{\\circ}$', ha='center', va='top', fontsize=9, fontweight='bold', color='#1E40AF')\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
-      },
-      "correctAnswer": "1. **Construction**: A kaleidoscope is made by joining three identical rectangular plane mirror strips inclined to each other at an angle of $60^{\\circ}$ to form a hollow triangular prism, enclosed within a cylindrical cardboard tube.\n2. **Working Mechanism**: Broken coloured glass pieces or bangles are placed at one closed transparent end. When viewed through the peephole from the opposite end, the mirrors reflect the glass fragments back and forth repeatedly.\n3. **Purpose of Glass Pieces**: The principle of **multiple reflection** produces an array of symmetrical, colorful, and non-repeating geometric patterns as the tube is rotated.",
-      "explanation": "Multiple reflections between the three mirrors inclined at $60^{\\circ}$ multiply the images of loose colored glass fragments, creating intricate symmetrical designs."
+      "type": "match_columns",
+      "category": "History - Dynasties & Capitals",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Match each **dynasty** in Column A with its primary **capital city** in Column B[cite: 11, 16, 18, 21].",
+      "tag": "Dynastic Capitals",
+      "hint": "Refer to Section: Map Fig. 3.16 and 'Further South' (Page 76-81)",
+      "columnA": ["Rashtrakūṭas", "Pallavas", "Chalukyas (Early)", "Cholas (Revived)"],
+      "columnB": ["(a) Vātāpi", "(b) Kānchī", "(c) Tanjāvūr", "(d) Mānyakheṭa"],
+      "correctMatches": ["d", "b", "a", "c"],
+      "correctAnswer": "1-d, 2-b, 3-a, 4-c",
+      "explanation": "The Rashtrakūṭas ruled from Mānyakheṭa[cite: 11], the Pallavas from Kānchī[cite: 18], the early Chalukyas from Vātāpi[cite: 16], and the revived Cholas from Tanjāvūr[cite: 21]."
     },
     {
       "id": "q38",
-      "type": "short_answer",
-      "category": "Pinhole Camera",
-      "marks": 3,
-      "difficulty": "hard",
-      "question": "A student builds a pinhole camera to view a distant tall tree. Explain how the image is affected if: *(i) The pinhole diameter is made substantially larger, (ii) The translucent wax paper screen is moved farther away from the pinhole, (iii) The pinhole camera is covered completely with black paper except for the aperture.*",
-      "passageId": "",
-      "tag": "Pinhole Camera Adjustments",
-      "hint": "Section 11.7: Activity-8 & Characteristics of the image in pinhole camera",
-      "diagram": {
-        "hasDiagram": false,
-        "description": "",
-        "code": ""
-      },
-      "correctAnswer": "*(i) Pinhole made substantially larger*: The image becomes **blurred and indistinct** because a larger opening acts as a cluster of many separate pinholes, producing multiple overlapping images that wash out sharpness.\n*(ii) Screen moved farther away from the pinhole*: The inverted image **increases in size (becomes larger)**, but its illumination/brightness decreases.\n*(iii) Camera covered in black paper*: It prevents extraneous light from penetrating through the cardboard walls, thereby **increasing the contrast and visibility** of the image on the screen.",
-      "explanation": "A sharp pinhole image requires a tiny aperture to maintain a one-to-one mapping of rays; increasing screen distance geometrically increases the image size by similar triangles."
+      "type": "match_columns",
+      "category": "History - Literature",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Match the ancient **author or scholar** in Column A with their **work or accomplishment** in Column B[cite: 5, 13, 16, 28].",
+      "tag": "Ancient Scholars",
+      "hint": "Refer to Sections on Literature and Science (Pages 65, 73, 76, 88)",
+      "columnA": ["Bāṇabhaṭṭa", "Kalhaṇa", "Ravikīrti", "Brahmagupta"],
+      "columnB": [
+        "(a) Rājatarangiṇī",
+        "(b) Aihole Prashasti Inscription",
+        "(c) Brahmasphuṭasiddhānta",
+        "(d) Harshacharita"
+      ],
+      "correctMatches": ["d", "a", "b", "c"],
+      "correctAnswer": "1-d, 2-a, 3-b, 4-c",
+      "explanation": "Bāṇa wrote Harshacharita[cite: 5], Kalhaṇa composed Rājatarangiṇī[cite: 13], Ravikīrti authored the Aihole inscription[cite: 16], and Brahmagupta wrote the Brahmasphuṭasiddhānta[cite: 28]."
     },
     {
       "id": "q39",
-      "type": "short_answer",
-      "category": "Propagation of Light",
-      "marks": 4,
-      "difficulty": "hard",
-      "question": "Describe an experiment using three pierced cardboard cards and a candle to verify the **rectilinear propagation of light**. State the required setup, procedure, observation, and scientific conclusion.",
-      "passageId": "",
-      "tag": "Three Cardboard Experiment",
-      "hint": "Section 11.3: Activity-1 - To show rectilinear propagation of light",
-      "diagram": {
-        "hasDiagram": true,
-        "description": "Three collinear pierced cardboards on stands showing rectilinear ray transmission from a candle flame.",
-        "code": "import matplotlib.pyplot as plt\nimport matplotlib.patches as patches\n\nfig, ax = plt.subplots(figsize=(7, 3))\nax.set_xlim(-1, 10)\nax.set_ylim(-1, 5)\nax.set_aspect('equal')\n\n# Stands & cards\nfor x in [2.5, 5.0, 7.5]:\n    ax.add_patch(patches.Rectangle((x-0.1, 0.5), 0.2, 3.5, color='#94A3B8'))\n    ax.plot([x-0.4, x+0.4], [0.5, 0.5], color='#475569', lw=3)\n    ax.plot(x, 2.25, 'o', color='#FFFFFF', markersize=5)\n\n# Candle\nax.plot([0.5, 0.5], [1.2, 2.0], color='#D97706', lw=4)\nax.plot(0.5, 2.25, '*', color='#EF4444', markersize=10)\nax.text(0.5, 0.8, 'Candle', ha='center', va='top', fontsize=8)\n\n# Direct ray of light\nax.annotate('', xy=(8.5, 2.25), xytext=(0.5, 2.25), arrowprops=dict(arrowstyle=\"->\", color=\"#DC2626\", lw=2))\nax.text(9.0, 2.25, 'Eye', ha='left', va='center', fontsize=9, fontweight='bold', color='#1E293B')\n\nax.text(5.0, 4.3, 'Collinear pinholes A, B, and C', ha='center', va='bottom', fontsize=8, fontweight='bold')\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
-      },
-      "correctAnswer": "1. **Apparatus**: Three identical square cardboard sheets ($A, B, C$), mounting stands, a knitting pin, and a candle.\n2. **Procedure**: Punch a small pinhole at the exact center of each cardboard sheet at identical heights. Mount the cardboards vertically on stands such that the three holes lie along a single straight line. Position a lit candle at one end at the exact level of the holes and look through the pinhole from the opposite end.\n3. **Observation**: When all three holes are strictly aligned (collinear), the bright flame is clearly visible. If any one cardboard (e.g., card $B$) is shifted slightly sideways out of alignment, the flame immediately disappears.\n4. **Conclusion**: This confirms that light travels exclusively in straight lines (**rectilinear propagation**) and cannot bend around an obstruction.",
-      "explanation": "Light from the flame propagates along a straight ray path through collinear apertures. Displacing any aperture interposes an opaque barrier that blocks the straight ray."
+      "type": "match_columns",
+      "category": "History - Dynastic Founders",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Match each **historical founder/ruler** in Column A with their associated **dynasty** in Column B[cite: 8, 10, 11, 16].",
+      "tag": "Dynastic Rulers",
+      "hint": "Refer to Sections on Chief Dynasties (Pages 68-76)",
+      "columnA": ["Gopāla", "Nāgabhaṭa I", "Dantidurga", "Pulakeśhin I"],
+      "columnB": [
+        "(a) Gurjara-Pratīhāras",
+        "(b) Pāla Dynasty",
+        "(c) Chalukya Dynasty",
+        "(d) Rashtrakūṭa Dynasty"
+      ],
+      "correctMatches": ["b", "a", "d", "c"],
+      "correctAnswer": "1-b, 2-a, 3-d, 4-c",
+      "explanation": "Gopāla founded the Pāla dynasty[cite: 8], Nāgabhaṭa I founded the Gurjara-Pratīhāras[cite: 10], Dantidurga founded the Rashtrakūṭas[cite: 11], and Pulakeśhin I founded the Chalukyas[cite: 16]."
     },
     {
       "id": "q40",
+      "type": "match_columns",
+      "category": "History - Monuments & Art",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "Match the famous **monument or sculpture** in Column A with its **associated region or dynasty** in Column B[cite: 2, 11, 21, 27].",
+      "tag": "Art & Architecture",
+      "hint": "Refer to Figures across the chapter (Pages 61, 71, 81, 87)",
+      "columnA": [
+        "Shore Temple at Mamallapuram",
+        "Kailashanātha Temple at Ellora",
+        "Monolithic Bahubali Statue",
+        "Natarāja Bronze Sculptures"
+      ],
+      "columnB": [
+        "(a) Shravanabelagola, Karnataka",
+        "(b) Chola Dynasty",
+        "(c) Pallava Dynasty",
+        "(d) Rashtrakūṭa Dynasty"
+      ],
+      "correctMatches": ["c", "d", "a", "b"],
+      "correctAnswer": "1-c, 2-d, 3-a, 4-b",
+      "explanation": "Shore Temple was built by Pallavas[cite: 2], Kailashanatha by Rashtrakūṭas[cite: 11], Bahubali is at Shravanabelagola[cite: 27], and Nataraja bronzes flourished under Cholas[cite: 21]."
+    },
+    {
+      "id": "q41",
       "type": "short_answer",
-      "category": "Formation of Shadow",
-      "marks": 4,
+      "category": "History - Regional Conflicts",
+      "marks": 3,
       "difficulty": "hard",
-      "question": "A streetlamp is positioned atop a tall pole. An individual walks away from the streetlamp in a straight line at uniform speed.\n*(a)* Describe how the **length of the person's shadow** changes as they walk away.\n*(b)* When is their shadow **shortest**?\n*(c)* If the light source were replaced by an infinitely large diffuse light panel directly overhead, explain what would happen to the shadow's sharpness.\n*(d)* Identify the source of light, the obstacle, and the screen in this real-world setup.",
-      "passageId": "",
-      "tag": "Shadow Dynamics and Geometry",
-      "hint": "Section 11.5: Formation of Shadow & Characteristics of shadows",
-      "diagram": {
-        "hasDiagram": true,
-        "description": "Ray tracing diagram showing street light casting shadow of person onto the ground.",
-        "code": "import matplotlib.pyplot as plt\n\nfig, ax = plt.subplots(figsize=(7, 3))\nax.set_xlim(-1, 11)\nax.set_ylim(-0.5, 5)\n\n# Ground\nax.plot([-0.5, 10.5], [0, 0], color='#334155', lw=2)\n\n# Lamppost at x = 0\nax.plot([0, 0], [0, 4.0], color='#0F172A', lw=4)\nax.plot(0, 4.0, 'o', color='#F59E0B', markersize=12)\nax.text(0, 4.3, 'Lamp ($S$)', ha='center', va='bottom', fontsize=9, fontweight='bold')\n\n# Person at x = 4\nax.plot([4, 4], [0, 2.0], color='#2563EB', lw=4)\nax.text(4, 2.2, 'Person', ha='center', va='bottom', fontsize=8, fontweight='bold')\n\n# Light ray casting shadow\nax.plot([0, 8], [4.0, 0], '--', color='#DC2626', lw=1.5)\n\n# Shadow on ground (from x=4 to x=8)\nax.plot([4, 8], [0, 0], color='#0F172A', lw=6)\nax.text(6, -0.3, 'Shadow Length $L$', ha='center', va='top', fontsize=8, fontweight='bold', color='#B91C1C')\n\nax.axis('off')\nplt.tight_layout()\nplt.savefig('diagram.svg', format='svg', bbox_inches='tight')"
-      },
-      "correctAnswer": "*(a)* As the person walks away from the streetlamp, the angle of the incident rays relative to the horizontal becomes shallower, causing the **length of the shadow on the ground to steadily increase (lengthen)**.\n*(b)* The shadow is **shortest** when the individual is standing **directly underneath the streetlamp**.\n*(c)* If replaced by an infinitely large diffuse light source, rays would arrive from many directions simultaneously, significantly washing out the umbra and making the shadow **extremely faint, blurry, and diffuse**.\n*(d)* **Source of light**: The streetlamp.\n**Obstacle**: The person's body.\n**Screen**: The ground/road surface.",
-      "explanation": "By similar triangles, as the object distance from the vertical base of the lamp increases, the projected shadow length along the ground increases proportionately."
+      "question": "Analyze the causes, participants, and long-term consequences of the **Tripartite Struggle** over Kannauj[cite: 7, 8, 10].",
+      "tag": "Tripartite Struggle",
+      "hint": "Refer to Section: 'A Tripartite Struggle for Kannauj' (Pages 67-68)",
+      "correctAnswer": "1. **Parties**: The contest involved the **Pālas** of eastern India, the **Gurjara-Pratīhāras** of western India, and the **Rashtrakūṭas** of the Deccan[cite: 7, 8].\n2. **Causes**: Kannauj, located strategically in the fertile central Gangetic plain, was the symbol of imperial sovereignty across northern India after Harsha[cite: 7, 10, 12].\n3. **Consequences**: Centuries of warfare depleted military resources, brought fluctuating fortunes with no permanent victor, and ultimately exhausted all three dynasties[cite: 8, 10].",
+      "explanation": "The Tripartite Struggle centered on dominance over Kannauj and weakened the three major early medieval Indian empires[cite: 7, 8, 10]."
+    },
+    {
+      "id": "q42",
+      "type": "short_answer",
+      "category": "Economics - Agrarian Economy",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "How did the widespread practice of **royal land grants** transform rural agriculture and social structures between the 6th and 10th centuries[cite: 23]?",
+      "tag": "Land Grants & Agrarian Expansion",
+      "hint": "Refer to Section: 'Trade, economy and urbanisation' (Page 83)",
+      "correctAnswer": "1. **Expansion of Cultivation**: Kings, royal families, and vassals granted unused or forest land to individuals and religious institutions, bringing virgin land under active farming[cite: 23].\n2. **Emergence of Intermediaries**: It created a landed class that did not cultivate the land directly, leading to non-cultivating intermediaries who collected revenue from peasant cultivators[cite: 23].\n3. **Agricultural Infrastructure**: Beneficiaries and rulers invested in water harvesting systems, including extensive tanks and wells that boosted cash crop yields[cite: 23].",
+      "explanation": "Land grants extended cultivation into forest fringes but created hierarchical agrarian relations between landlords and peasantry[cite: 23]."
+    },
+    {
+      "id": "q43",
+      "type": "short_answer",
+      "category": "Economics - Maritime Trade",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Examine how India operated as an **international maritime hub** between the 6th and 10th centuries, identifying its key trading partners and commodities[cite: 18, 23, 24].",
+      "tag": "Indian Ocean Trade",
+      "hint": "Refer to Section: 'Trade, economy and urbanisation' (Pages 83-84)",
+      "correctAnswer": "1. **Western Trade Networks**: Indian ports on the western coast traded actively with Iran, Iraq, the Arabian peninsula, and East Africa using monsoon winds[cite: 23, 33].\n2. **Eastern Maritime Trade**: Eastern ports under the Pallavas, Cholas, and Palas sailed to Sri Lanka, Southeast Asia, and Chinese ports[cite: 8, 18, 23].\n3. **Commodities and Cosmopolitan Presence**: India exported fine textiles (such as silk), spices, and ivory[cite: 18]. Copper-plate records confirm that communities of Christian, Muslim, and Jewish merchants lived and traded on India's coasts[cite: 24].",
+      "explanation": "India served as an oceanic commercial crossroad linking West Asian, African, and East Asian trade networks[cite: 23, 24, 33]."
+    },
+    {
+      "id": "q44",
+      "type": "short_answer",
+      "category": "Civics - Feudal Structure",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Examine the role of **sāmantas** in medieval governance, outlining their administrative duties, military responsibilities, and risks to royal authority[cite: 22].",
+      "tag": "Samanta System",
+      "hint": "Refer to Section: 'Polity and administration' (Page 82)",
+      "correctAnswer": "1. **Duties**: Sāmantas were subordinate vassals who administered outlying provinces and maintained local order on behalf of the monarch[cite: 22].\n2. **Military Support**: They maintained troops and provided armed levies during royal military campaigns[cite: 22].\n3. **Political Instability**: When central control weakened, ambitious sāmantas rebelled to declare independence, as seen when the Rashtrakūṭas overthrew their Chalukya overlords[cite: 22].",
+      "explanation": "The sāmanta mechanism decentralized territorial governance but created chronic structural instability at the central imperial level[cite: 22]."
+    },
+    {
+      "id": "q45",
+      "type": "short_answer",
+      "category": "History - Religion & Culture",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Illustrate how early medieval rulers demonstrated **religious tolerance and pluralism**, citing examples from Harsha, the Palas, and the Rashtrakūṭas[cite: 5, 9, 11, 12].",
+      "tag": "Religious Pluralism",
+      "hint": "Refer to Sections: 'The Palas', 'The Rashtrakūtas', and Cultural Life (Pages 65, 69, 71, 72)",
+      "correctAnswer": "1. **Harsha**: Revered Lord Shiva while actively supporting Buddhism and organizing assemblies open to all faiths[cite: 5, 7].\n2. **Pālas**: Though great champions of Mahāyāna Buddhism, many Pala rulers and successors patronized Shaivite temples and appointed Brahmin ministers[cite: 8, 9].\n3. **Rashtrakūṭas**: Kings like Amoghavarsha embraced Jainism while funding Hindu temples[cite: 12]. Arab chronicles by Al-Mas'ūdī note that Muslim traders in Rashtrakūṭa territories were protected and allowed to build congregational mosques[cite: 12].",
+      "explanation": "Rulers patronized multiple religious traditions simultaneously, reflecting open philosophical and religious interaction[cite: 9, 11, 12]."
+    },
+    {
+      "id": "q46",
+      "type": "short_answer",
+      "category": "History - Scientific Exchange",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Detail the cultural and intellectual transmission between **India and the Arab world** in science and mathematics during the 8th and 9th centuries[cite: 28, 33].",
+      "tag": "Scientific Transmission",
+      "hint": "Refer to Section: 'The Arabs arrive on India's shores' (Pages 92-93)",
+      "correctAnswer": "1. **Translation of Sanskrit Treatises**: Sanskrit works on astronomy, medicine, and mathematics—notably Brahmagupta's *Brahmasphuṭasiddhānta*—were translated into Arabic in cultural centers like Baghdad[cite: 28, 33].\n2. **Decimal Numerals and Zero**: The Arab world adopted the Indian decimal numeral system along with zero, openly acknowledging its Indian origin[cite: 33].\n3. **Transmission to Europe**: These concepts later traveled to Europe through Arabic works, becoming internationally known as Hindu-Arabic numerals[cite: 33].",
+      "explanation": "Medieval Indian mathematical discoveries were assimilated through Baghdad's translation bureaus and revolutionized global science[cite: 33]."
+    },
+    {
+      "id": "q47",
+      "type": "short_answer",
+      "category": "History - Society",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Explain the dual reality of **social mobility and caste rigidity** in Indian society between the 6th and 10th centuries[cite: 24, 25].",
+      "tag": "Varna and Jati",
+      "hint": "Refer to Section: 'Social life' (Pages 84-85)",
+      "correctAnswer": "1. **Flexibility & Mobility**: Occupational groups and dynasties rose in the hierarchy; lineages originating from Śhūdra backgrounds (such as the early Pālas) attained Kshatriya status through military conquest[cite: 25]. Professional scribes merged to form the Kāyastha jāti[cite: 25].\n2. **Rigidity & Marginalisation**: Endogamy hardened, and discriminatory terms like *aspṛśya* ('untouchable') entered textual records[cite: 24, 25].\n3. **Segregation**: Pilgrims like Xuanzang recorded that communities of scavengers, butchers, and executioners were forced to reside outside town walls[cite: 25].",
+      "explanation": "The varṇa-jāti system showed flexibility at the ruling elite level while hardening exclusion toward marginalized communities[cite: 25]."
+    },
+    {
+      "id": "q48",
+      "type": "short_answer",
+      "category": "History - Invasions",
+      "marks": 3,
+      "difficulty": "hard",
+      "question": "Compare the nature and lasting impact of the **Hūṇa invasions** with the **early Arab invasions** of India[cite: 30, 31, 32].",
+      "tag": "Foreign Invasions Comparison",
+      "hint": "Refer to Sections: 'The Hūṇas' challenge' and 'The Arabs arrive...' (Pages 90-92)",
+      "correctAnswer": "1. **Aims & Origins**: The nomadic Hūṇas came from Central Asia as conquerors who settled within the land[cite: 30]. The Arabs swept across Sind motivated by imperial conquest and religious expansion from the caliphate[cite: 31].\n2. **Assimilation vs Retention**: The Hūṇas completely absorbed into Indian society, adopting Indian religions, names, scripts, and military roles[cite: 30]. The Arabs maintained distinct cultural and political ties with the Islamic caliphate[cite: 31, 32].\n3. **Resistance & Scope**: Both faced stiff regional resistance—the Hūṇas by the Aulikaras, and the Arabs by the Gurjara-Pratīhāras and Kashmiri kings—limiting their territorial sway[cite: 30, 32].",
+      "explanation": "Hūṇa invaders assimilated entirely into Hindu and regional society, whereas Arab campaigns established distinct frontier enclaves[cite: 30, 32]."
+    },
+    {
+      "id": "q49",
+      "type": "short_answer",
+      "category": "History - Intellectual Networks",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "How did the valley of **Kashmir** function as an intellectual bridge linking northern India, Tibet, and Central Asia[cite: 15]?",
+      "tag": "Kashmir Cultural Influence",
+      "hint": "Refer to Section: 'Kashmir' (Page 75)",
+      "correctAnswer": "1. **Sanskrit and Philosophical Center**: Kashmir was a leading center of Sanskrit scholarship and developed Kashmir Shaivism, producing polymaths like Abhinavagupta[cite: 15].\n2. **Buddhist Conduit**: Monks, scholars, and sacred texts traveled between mainland Indian centers and Himalayan passes into Central Asia and Tibet[cite: 15].\n3. **Artistic Excellence**: Kashmiri artisans, sculptors, and manuscript illustrators were actively sought after across northern India, the Himalayas, and Central Asia[cite: 15].",
+      "explanation": "Kashmir functioned as an intellectual hub connecting Indian philosophical traditions with Central Asian and Tibetan scholarship[cite: 15]."
+    },
+    {
+      "id": "q50",
+      "type": "short_answer",
+      "category": "History - Art and Architecture",
+      "marks": 3,
+      "difficulty": "medium",
+      "question": "Describe the architectural and sculptural innovations of the **Pallavas** and **Cholas** in Tamil Nadu[cite: 2, 18, 19, 21].",
+      "tag": "Dravidian Art",
+      "hint": "Refer to Sections: 'The Pallavas' and 'Further South' (Pages 61, 78, 81)",
+      "correctAnswer": "1. **Pallava Rock Architecture**: Pioneered monolithic rock-cut cave temples and freestanding monolithic shrines (*rathas*) at Mamallapuram, along with structural stone temples like the Shore Temple[cite: 2, 18].\n2. **Dynamic Relief Sculptures**: Sculpted expressive narrative reliefs in granite, such as Durga slaying Mahiṣhāsura and Mahābhārata tableaux[cite: 18, 19].\n3. **Chola Grandeur and Bronze Casting**: Constructed vast structural stone temples and perfected lost-wax bronze casting, producing iconic masterpieces such as the dancing Shiva as **Naṭarāja**[cite: 21].",
+      "explanation": "Pallava rock-cut experiments established the base from which Chola structural architecture and bronze casting reached classical heights[cite: 18, 21]."
     }
   ]
 }

@@ -345,6 +345,11 @@ main {
   background: var(--yellow-bg);
   color: var(--yellow);
 }
+.option-btn.selected {
+  border-color: var(--accent);
+  background: rgba(108, 99, 255, 0.12);
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.35);
+}
 .option-btn.dimmed {
   opacity: .45;
   pointer-events: none;
@@ -362,6 +367,7 @@ main {
 .option-btn.correct .option-letter { background: var(--green); color: #fff; border-color: var(--green); }
 .option-btn.wrong .option-letter   { background: var(--red); color: #fff; border-color: var(--red); }
 .option-btn.partial .option-letter { background: var(--yellow); color: #fff; border-color: var(--yellow); }
+.option-btn.selected .option-letter { background: var(--accent); color: #fff; border-color: var(--accent); }
 
 /* ── Feedback box ── */
 .feedback-box {
@@ -627,6 +633,52 @@ main {
 .check-btn:hover:not(:disabled) { opacity: .9; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(108,99,255,.4); }
 .check-btn:disabled { opacity: .45; cursor: default; }
 
+/* ── Save Draft Button & Actions Row ── */
+.answer-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.answer-actions .check-btn {
+  margin-top: 0;
+}
+.save-btn {
+  padding: 12px 22px;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: .95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.save-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: rgba(108, 99, 255, 0.08);
+  transform: translateY(-1px);
+}
+.save-btn:disabled { opacity: .45; cursor: default; }
+
+.draft-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: .82rem;
+  font-weight: 600;
+  color: #c4b5fd;
+  background: rgba(108, 99, 255, 0.15);
+  border: 1px solid rgba(167, 139, 250, 0.35);
+}
+
 /* ── Spinner ── */
 .spinner {
   width: 20px; height: 20px;
@@ -837,6 +889,7 @@ let state = {
   answers:       JSON.parse(JSON.stringify(ASSESSMENT.answers)), // deep copy
   phase:         'idle',   // idle | first_wrong | done | validating
   mcqFirstWrong: null,
+  mcqDrafts:     {},       // { [qidx]: selectedOptionIndex }
   retryUsed:     {},        // { [index]: true }
   isReadOnly:    ASSESSMENT.status === 'completed',
   finished:      false,
@@ -855,6 +908,13 @@ const matchState = {};   // { [qidx]: { [aIdx]: bIdx } }
 // Init
 // ════════════════════════════════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
+  // Pre-populate mcqDrafts from any saved MCQ drafts
+  state.answers.forEach((ans, i) => {
+    if (ans && ans.type === 'mcq' && ans.selectedIndex >= 0) {
+      state.mcqDrafts[i] = ans.selectedIndex;
+    }
+  });
+
   // If in-progress, resume from first unanswered
   if (!state.isReadOnly) {
     const firstUnanswered = state.answers.findIndex(a => !isAnswered(a));
@@ -868,15 +928,30 @@ document.addEventListener('DOMContentLoaded', () => {
 // ════════════════════════════════════════════════════════════════════
 // Helpers
 // ════════════════════════════════════════════════════════════════════
+function isSubmitted(ans) {
+  if (!ans || typeof ans !== 'object') return false;
+  if (ans.isDraft) return false;
+  const t = ans.type || '';
+  if (t === 'mcq' || 'selectedIndex' in ans) {
+    return (ans.selectedIndex ?? -1) >= 0 && ans.correct !== undefined;
+  }
+  const text = (ans.textAnswer || '').trim();
+  const fb   = (ans.aiFeedback || '').trim();
+  return Boolean(text && text !== '(skipped)' && fb && fb !== 'Skipped');
+}
+
 function isAnswered(ans) {
-  if (!ans) return false;
+  return isSubmitted(ans);
+}
+
+function hasAnswerOrDraft(ans) {
+  if (!ans || typeof ans !== 'object') return false;
   const t = ans.type || '';
   if (t === 'mcq' || 'selectedIndex' in ans) {
     return (ans.selectedIndex ?? -1) >= 0;
   }
   const text = (ans.textAnswer || '').trim();
-  const fb   = (ans.aiFeedback || '').trim();
-  return text && text !== '(skipped)' && fb !== 'Skipped';
+  return Boolean(text && text !== '(skipped)');
 }
 
 function answeredCount() {
@@ -919,6 +994,195 @@ function computeRunningTotals() {
 
 function computeEarned() {
   return computeRunningTotals().earned;
+}
+
+function captureCurrentAnswer(idx) {
+  if (state.isReadOnly) return null;
+  const q = QUESTIONS[idx];
+  if (!q) return null;
+  const currentAns = state.answers[idx];
+  if (isSubmitted(currentAns)) return currentAns;
+
+  if (q.type === 'mcq') {
+    const sel = (state.mcqDrafts[idx] !== undefined && state.mcqDrafts[idx] !== null)
+      ? state.mcqDrafts[idx]
+      : (currentAns ? (currentAns.selectedIndex ?? -1) : -1);
+    if (sel >= 0) {
+      return {
+        questionId: q.id,
+        type: 'mcq',
+        selectedIndex: sel,
+        isDraft: true,
+      };
+    }
+    return null;
+  }
+
+  if (q.type === 'fill_blank') {
+    const combined = collectFillBlanks(idx);
+    if (combined && combined.replace(/\|/g, '').trim()) {
+      return {
+        questionId: q.id,
+        type: 'fill_blank',
+        textAnswer: combined,
+        isDraft: true,
+      };
+    }
+    return null;
+  }
+
+  if (q.type === 'jumbled') {
+    const js = jumbledState[idx];
+    if (js && js.placed && js.placed.length > 0) {
+      return {
+        questionId: q.id,
+        type: 'jumbled',
+        textAnswer: js.placed.join(' '),
+        isDraft: true,
+      };
+    }
+    return null;
+  }
+
+  if (q.type === 'match_columns') {
+    const serialized = serializeMatchColumns(idx);
+    if (serialized && serialized.trim()) {
+      return {
+        questionId: q.id,
+        type: 'match_columns',
+        textAnswer: serialized,
+        isDraft: true,
+        matches: { ...(matchState[idx] ? matchState[idx].matches : {}) },
+      };
+    }
+    return null;
+  }
+
+  const el = document.getElementById(`text-ans-${idx}`);
+  const val = el ? el.value.trim() : (currentAns ? (currentAns.textAnswer || '').trim() : '');
+  if (val) {
+    return {
+      questionId: q.id,
+      type: q.type,
+      textAnswer: val,
+      isDraft: true,
+    };
+  }
+  return null;
+}
+
+async function saveDraft(idx, showToastMsg = true) {
+  if (state.isReadOnly) return;
+  const draft = captureCurrentAnswer(idx);
+  if (!draft) {
+    if (showToastMsg) showToast('Please enter an answer to save.');
+    return;
+  }
+
+  state.answers[idx] = draft;
+  updateProgress();
+
+  const pill = document.getElementById(`draft-pill-${idx}`);
+  if (pill) pill.style.display = 'inline-flex';
+
+  if (showToastMsg) {
+    const btn = document.getElementById(`save-btn-${idx}`);
+    if (btn) {
+      const origHtml = btn.innerHTML;
+      btn.innerHTML = `<span style="color:var(--green)">✓ Saved</span>`;
+      setTimeout(() => { if (btn) btn.innerHTML = origHtml; }, 1800);
+    }
+    showToast('✓ Answer saved as draft');
+  }
+
+  persistDraftsSilently();
+}
+
+function persistDraftsSilently() {
+  fetch('/api/answer/save', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({kid: KID, assessmentId: ASSESSMENT.id, answers: state.answers}),
+  }).catch(e => console.warn('Silent save failed:', e));
+}
+
+async function validateSingleDraft(qIdx) {
+  const q = QUESTIONS[qIdx];
+  const draft = state.answers[qIdx];
+  if (!draft || isSubmitted(draft)) return;
+
+  if (q.type === 'mcq') {
+    const sel = draft.selectedIndex;
+    if (sel >= 0) {
+      const isCorrect = (sel === q.correctIndex);
+      const ans = buildMCQAnswer(q, sel, null, 1, isCorrect);
+      ans.isDraft = false;
+      state.answers[qIdx] = ans;
+    }
+    return;
+  }
+
+  const answer = (draft.textAnswer || '').trim();
+  if (!answer) return;
+
+  const correctAns = q.answer || '';
+  if (correctAns && answer.toLowerCase().trim() === correctAns.toLowerCase().trim()) {
+    const marks = q.marks || 1.0;
+    state.answers[qIdx] = {
+      questionId:      q.id,
+      type:            q.type,
+      textAnswer:      answer,
+      selfGrade:       'got_it',
+      earnedMarks:     marks,
+      aiEarnedMarks:   marks,
+      corrections:     [],
+      correctedAnswer: '',
+      aiFeedback:      '✓ Spot on! That matches the correct answer perfectly.',
+      retryUsed:       false,
+      isDraft:         false,
+    };
+    return;
+  }
+
+  try {
+    const resp = await fetch('/api/answer/validate', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        kid:           KID,
+        assessmentId:  ASSESSMENT.id,
+        questionIndex: qIdx,
+        question:      q,
+        answer:        answer,
+        assessmentMeta: {
+          subject:  ASSESSMENT.subject,
+          classNum: ASSESSMENT.classNum,
+          lang:     ASSESSMENT.lang,
+        },
+        retryUsed: false,
+      }),
+    });
+    const result = await resp.json();
+    if (!result.error) {
+      const verdict   = result.verdict || 'wrong';
+      const selfGrade = verdict === 'correct' ? 'got_it' : (verdict === 'partial' ? 'partial' : 'wrong');
+      state.answers[qIdx] = {
+        questionId:      q.id,
+        type:            q.type,
+        textAnswer:      answer,
+        selfGrade,
+        earnedMarks:     result.earnedMarks,
+        aiEarnedMarks:   result.earnedMarks,
+        corrections:     result.corrections || [],
+        correctedAnswer: result.correctedAnswer || '',
+        aiFeedback:      result.feedback || '',
+        retryUsed:       false,
+        isDraft:         false,
+      };
+    }
+  } catch(e) {
+    console.error('Validation error on draft question', qIdx, e);
+  }
 }
 
 function totalMarks() {
@@ -1111,40 +1375,44 @@ function renderQuestion(idx) {
 
 // ── MCQ ───────────────────────────────────────────────────────────
 function renderMCQ(q, idx, ans, isRO) {
-  const savedSelected  = ans ? (ans.selectedIndex ?? -1) : -1;
+  const savedSelected   = ans ? (ans.selectedIndex ?? -1) : -1;
   const savedFirstWrong = ans ? (ans.firstWrongIndex ?? null) : null;
-  const savedCorrect   = ans ? !!ans.correct : false;
-  const savedAttempts  = ans ? (ans.attempts ?? 0) : 0;
+  const savedCorrect    = ans ? !!ans.correct : false;
+  const savedAttempts   = ans ? (ans.attempts ?? 0) : 0;
+  const submitted       = isSubmitted(ans);
 
-  // Determine display phase
+  // If question was already submitted, displayPhase is 'done'
   let displayPhase = 'idle';
-  if (isRO && savedSelected >= 0) {
+  if (submitted || isRO) {
     displayPhase = 'done';
   } else if (state.currentIndex === idx) {
     displayPhase = state.phase;
   }
 
-  let feedback = '';
+  // Active draft selection if not submitted
+  const currentDraft = (state.mcqDrafts[idx] !== undefined && state.mcqDrafts[idx] !== null)
+    ? state.mcqDrafts[idx]
+    : savedSelected;
+
   let html = `<div class="options-grid">`;
   q.options.forEach((opt, oi) => {
     let cls = 'option-btn';
-    const isSelected     = (displayPhase !== 'idle') && (oi === savedSelected || (displayPhase === 'first_wrong' && oi === state.mcqFirstWrong));
-    const isCorrect      = oi === q.correctIndex;
-    const isFirstWrong   = oi === (savedFirstWrong ?? state.mcqFirstWrong);
-    const isDone         = displayPhase === 'done' || (isRO && savedSelected >= 0);
+    const isDone = displayPhase === 'done' || (isRO && savedSelected >= 0);
 
     if (isDone) {
-      if (oi === savedSelected && savedCorrect)         cls += ' correct';
-      else if (oi === savedSelected && !savedCorrect)   cls += ' wrong';
-      else if (!savedCorrect && oi === q.correctIndex)  cls += ' correct';
-      else                                               cls += ' dimmed';
+      if (oi === savedSelected && savedCorrect)        cls += ' correct';
+      else if (oi === savedSelected && !savedCorrect)  cls += ' wrong';
+      else if (!savedCorrect && oi === q.correctIndex) cls += ' correct';
+      else                                              cls += ' dimmed';
     } else if (displayPhase === 'first_wrong') {
       if (oi === (state.mcqFirstWrong ?? savedFirstWrong)) cls += ' wrong';
-      else if (!isCorrect)                                  cls += '';
+      else if (oi === currentDraft)                        cls += ' selected';
+    } else {
+      if (oi === currentDraft)                             cls += ' selected';
     }
 
     const dis = (isDone || isRO) ? 'disabled' : '';
-    const onclick = (isDone || isRO) ? '' : `onclick="selectMCQ(${idx}, ${oi})"`;
+    const onclick = (isDone || isRO) ? '' : `onclick="selectMCQDraft(${idx}, ${oi})"`;
     const isSvgOpt = opt.includes('<svg');
     const optContent = isSvgOpt ? `<div class="opt-svg-wrap">${opt}</div>` : `<span>${renderMarkdown(opt)}</span>`;
     html += `<button class="${cls}" ${dis} ${onclick} id="opt-${idx}-${oi}">
@@ -1154,7 +1422,30 @@ function renderMCQ(q, idx, ans, isRO) {
   });
   html += `</div>`;
 
-  // MCQ feedback
+  // Notice when first try was wrong
+  if (displayPhase === 'first_wrong' && !submitted) {
+    html += `<div class="feedback-box feedback-wrong" style="margin-top:14px;">
+               <div class="feedback-title">✗ Not quite! Try one more time for half marks.</div>
+             </div>`;
+  }
+
+  // Action buttons (Save Answer + Check Answer) when not submitted
+  if (!submitted && !isRO) {
+    const hasSelection = currentDraft >= 0 && (displayPhase !== 'first_wrong' || currentDraft !== state.mcqFirstWrong);
+    const hasDraftPill = (ans && ans.isDraft) || (currentDraft >= 0);
+    html += `<div class="answer-actions">
+               <button class="save-btn" id="save-btn-${idx}" onclick="saveDraft(${idx})">
+                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                 <span>Save Answer</span>
+               </button>
+               <button class="check-btn" id="check-btn-${idx}" onclick="checkMCQAnswer(${idx})" ${!hasSelection ? 'disabled' : ''}>
+                 <span>Check Answer</span>
+               </button>
+               <span class="draft-pill" id="draft-pill-${idx}" style="${hasDraftPill ? '' : 'display:none'}">📝 Draft saved</span>
+             </div>`;
+  }
+
+  // MCQ feedback when done
   if (isDone(displayPhase, ans)) {
     const correct = savedSelected >= 0 ? savedSelected === q.correctIndex :
                     (state.mcqSelectedIndex === q.correctIndex);
@@ -1174,30 +1465,65 @@ function renderMCQ(q, idx, ans, isRO) {
 }
 
 function isDone(phase, ans) {
-  return phase === 'done' || (ans && isAnswered(ans));
+  return phase === 'done' || isSubmitted(ans);
 }
 
-function selectMCQ(idx, optIdx) {
+function selectMCQDraft(idx, optIdx) {
+  if (state.isReadOnly) return;
+  if (state.phase === 'first_wrong' && optIdx === state.mcqFirstWrong) return;
+
+  state.mcqDrafts[idx] = optIdx;
+
+  // Update selection styling on options
+  document.querySelectorAll(`[id^="opt-${idx}-"]`).forEach((b, oi) => {
+    if (oi !== state.mcqFirstWrong) b.classList.remove('selected');
+  });
+  const btn = document.getElementById(`opt-${idx}-${optIdx}`);
+  if (btn) btn.classList.add('selected');
+
+  // Enable check button
+  const checkBtn = document.getElementById(`check-btn-${idx}`);
+  if (checkBtn) checkBtn.disabled = false;
+
+  // Auto-save draft silently
+  saveDraft(idx, false);
+}
+
+function checkMCQAnswer(idx) {
   if (state.isReadOnly) return;
   const q = QUESTIONS[idx];
-  const isCorrect = optIdx === q.correctIndex;
+  const selected = (state.mcqDrafts[idx] !== undefined && state.mcqDrafts[idx] !== null)
+    ? state.mcqDrafts[idx]
+    : (state.answers[idx] ? state.answers[idx].selectedIndex : -1);
+
+  if (selected < 0) {
+    shakeEl('check-btn-' + idx);
+    showToast('Please select an option first.');
+    return;
+  }
+
+  const isCorrect = (selected === q.correctIndex);
 
   if (state.phase === 'idle') {
-    state.mcqSelectedIndex = optIdx;
+    state.mcqSelectedIndex = selected;
     if (isCorrect) {
       state.phase = 'done';
-      const ans = buildMCQAnswer(q, optIdx, null, 1, true);
+      const ans = buildMCQAnswer(q, selected, null, 1, true);
       setAnswer(idx, ans);
       saveMCQToServer(idx, ans);
     } else {
-      state.mcqFirstWrong = optIdx;
+      state.mcqFirstWrong = selected;
       state.phase = 'first_wrong';
+      state.mcqDrafts[idx] = null;
     }
   } else if (state.phase === 'first_wrong') {
-    if (optIdx === state.mcqFirstWrong) return;  // same wrong option
-    state.mcqSelectedIndex = optIdx;
+    if (selected === state.mcqFirstWrong) {
+      showToast('Please choose a different option.');
+      return;
+    }
+    state.mcqSelectedIndex = selected;
     state.phase = 'done';
-    const ans = buildMCQAnswer(q, optIdx, state.mcqFirstWrong, 2, isCorrect);
+    const ans = buildMCQAnswer(q, selected, state.mcqFirstWrong, 2, isCorrect);
     setAnswer(idx, ans);
     saveMCQToServer(idx, ans);
   }
@@ -1212,6 +1538,7 @@ function buildMCQAnswer(q, selected, firstWrong, attempts, correct) {
     selectedIndex: selected,
     attempts:      attempts,
     correct:       correct,
+    isDraft:       false,
   };
   if (firstWrong !== null) ans.firstWrongIndex = firstWrong;
   return ans;
@@ -1221,7 +1548,7 @@ async function saveMCQToServer(idx, ans) {
   const answers = [...state.answers];
   answers[idx] = ans;
   try {
-    await fetch('/api/answer/mcq', {
+    await fetch('/api/answer/save', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({kid: KID, assessmentId: ASSESSMENT.id, answers}),
@@ -1386,11 +1713,17 @@ function renderTextInput(q, idx, ans, isRO) {
     }
 
     html += `<div class="no-paste-hint">⌨️ Type your answer — pasting is not allowed</div>`;
-    if (!isAnswered(ans)) {
-      html += `<button class="check-btn" id="check-btn-${idx}"
-                 onclick="submitTextAnswer(${idx})" style="margin-top:14px;">
-                 <span>Check Answer</span>
-               </button>`;
+    if (!isSubmitted(ans)) {
+      html += `<div class="answer-actions">
+                 <button class="save-btn" id="save-btn-${idx}" onclick="saveDraft(${idx})">
+                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                   <span>Save Answer</span>
+                 </button>
+                 <button class="check-btn" id="check-btn-${idx}" onclick="submitTextAnswer(${idx})">
+                   <span>Check Answer</span>
+                 </button>
+                 <span class="draft-pill" id="draft-pill-${idx}" style="${ans && ans.isDraft ? '' : 'display:none'}">📝 Draft saved</span>
+               </div>`;
     }
   }
 
@@ -1416,13 +1749,13 @@ function renderFillBlank(q, idx, ans, isRO) {
   parts.forEach((part, pi) => {
     html += escHtml(part);
     if (pi < parts.length - 1) {
-      const savedVal = saved ? (saved.split('|')[pi] || '') : '';
+      const savedVal = saved ? (saved.split('|')[pi] || '').trim() : '';
       const correctVal = blanks[pi] || '';
       html += `<input type="text" class="blank-input"
                  id="blank-${idx}-${pi}"
                  data-placeholder="blank ${pi+1}"
                  placeholder="______"
-                 value="${escAttr(isRO ? savedVal : savedVal)}"
+                 value="${escAttr(savedVal)}"
                  ${isRO ? 'disabled' : ''}
                  onkeydown="handleTextKeydown(event)"
                  style="width:${Math.max(80, (correctVal.length + 6) * 10)}px" />`;
@@ -1430,14 +1763,18 @@ function renderFillBlank(q, idx, ans, isRO) {
   });
   html += `</div>`;
 
-  if (!isRO) {
+  if (!isRO && !isSubmitted(ans)) {
     html += `<div class="no-paste-hint" style="margin-top:8px;">⌨️ Type your answer — pasting is not allowed</div>`;
-    if (!isAnswered(ans)) {
-      html += `<button class="check-btn" id="check-btn-${idx}"
-                 onclick="submitFillBlank(${idx})" style="margin-top:14px;">
+    html += `<div class="answer-actions">
+               <button class="save-btn" id="save-btn-${idx}" onclick="saveDraft(${idx})">
+                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                 <span>Save Answer</span>
+               </button>
+               <button class="check-btn" id="check-btn-${idx}" onclick="submitFillBlank(${idx})">
                  <span>Check Answer</span>
-               </button>`;
-    }
+               </button>
+               <span class="draft-pill" id="draft-pill-${idx}" style="${ans && ans.isDraft ? '' : 'display:none'}">📝 Draft saved</span>
+             </div>`;
   }
   return html;
 }
@@ -1505,11 +1842,17 @@ function renderJumbled(q, idx, ans, isRO) {
 
   html += `</div>`;
 
-  if (!isRO && !isAnswered(ans)) {
-    html += `<button class="check-btn" id="check-btn-${idx}"
-               onclick="submitJumbled(${idx})" style="margin-top:18px;">
-               <span>Check Answer</span>
-             </button>`;
+  if (!isRO && !isSubmitted(ans)) {
+    html += `<div class="answer-actions">
+               <button class="save-btn" id="save-btn-${idx}" onclick="saveDraft(${idx})">
+                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                 <span>Save Answer</span>
+               </button>
+               <button class="check-btn" id="check-btn-${idx}" onclick="submitJumbled(${idx})">
+                 <span>Check Answer</span>
+               </button>
+               <span class="draft-pill" id="draft-pill-${idx}" style="${(ans && ans.isDraft) || js.placed.length ? '' : 'display:none'}">📝 Draft saved</span>
+             </div>`;
   }
   html += `</div>`;
   return html;
@@ -1627,14 +1970,19 @@ function renderMatchColumns(q, idx, ans, isRO) {
   const totalA = q.columnA.length;
   const matched = Object.keys(ms.matches).length;
 
-  if (!isRO && !isAnswered(ans)) {
-    if (matched === totalA) {
-      html += `<button class="check-btn" id="check-btn-${idx}"
-                 onclick="submitMatchColumns(${idx})" style="margin-top:18px;">
+  if (!isRO && !isSubmitted(ans)) {
+    html += `<div class="answer-actions">
+               <button class="save-btn" id="save-btn-${idx}" onclick="saveDraft(${idx})">
+                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                 <span>Save Answer</span>
+               </button>
+               <button class="check-btn" id="check-btn-${idx}" onclick="submitMatchColumns(${idx})" ${matched !== totalA ? 'disabled' : ''}>
                  <span>Check Answer</span>
-               </button>`;
-    } else {
-      html += `<div style="margin-top:12px;font-size:.82rem;color:var(--text-muted)">
+               </button>
+               <span class="draft-pill" id="draft-pill-${idx}" style="${(ans && ans.isDraft) || matched > 0 ? '' : 'display:none'}">📝 Draft saved</span>
+             </div>`;
+    if (matched !== totalA) {
+      html += `<div style="margin-top:8px;font-size:.82rem;color:var(--text-muted)">
                  Match ${matched}/${totalA} pairs. Click an item in Column A, then Column B.
                </div>`;
     }
@@ -1748,6 +2096,7 @@ async function submitTextAnswer(idx, overrideAnswer) {
       correctedAnswer: result.correctedAnswer || '',
       aiFeedback:      result.feedback || '',
       retryUsed:       !!(state.retryUsed[idx]),
+      isDraft:         false,
     };
     setAnswer(idx, ans);
     renderQuestion(idx);
@@ -1797,6 +2146,12 @@ function buildFeedbackHtml(ans) {
 // ════════════════════════════════════════════════════════════════════
 function navPrev() {
   if (state.currentIndex <= 0) return;
+  // Auto-save current answer if not submitted
+  const draft = captureCurrentAnswer(state.currentIndex);
+  if (draft && !isSubmitted(state.answers[state.currentIndex])) {
+    state.answers[state.currentIndex] = draft;
+    persistDraftsSilently();
+  }
   state.currentIndex--;
   state.phase = 'idle';
   state.mcqFirstWrong = null;
@@ -1808,9 +2163,16 @@ function navNext() {
   const idx = state.currentIndex;
   const isLast = (idx === TOTAL - 1);
 
+  // Auto-save current answer if not submitted
+  const draft = captureCurrentAnswer(idx);
+  if (draft && !isSubmitted(state.answers[idx])) {
+    state.answers[idx] = draft;
+    persistDraftsSilently();
+  }
+
   if (isLast) {
-    // Check all answered
-    const firstUnanswered = state.answers.findIndex(a => !isAnswered(a));
+    // Check all answered or drafted
+    const firstUnanswered = state.answers.findIndex((a, i) => !hasAnswerOrDraft(a));
     if (firstUnanswered >= 0) {
       state.currentIndex = firstUnanswered;
       state.phase = 'idle';
@@ -1855,6 +2217,28 @@ function navSkip() {
 // Finish
 // ════════════════════════════════════════════════════════════════════
 async function finishAssessment() {
+  const currentDraft = captureCurrentAnswer(state.currentIndex);
+  if (currentDraft && !isSubmitted(state.answers[state.currentIndex])) {
+    state.answers[state.currentIndex] = currentDraft;
+  }
+
+  // Find all unsubmitted draft answers
+  const draftIndices = [];
+  for (let i = 0; i < TOTAL; i++) {
+    if (!isSubmitted(state.answers[i]) && hasAnswerOrDraft(state.answers[i])) {
+      draftIndices.push(i);
+    }
+  }
+
+  if (draftIndices.length > 0) {
+    showLoadingOverlay(`Evaluating remaining answers with AI (0 of ${draftIndices.length})…`);
+    for (let d = 0; d < draftIndices.length; d++) {
+      const qIdx = draftIndices[d];
+      showLoadingOverlay(`Evaluating answer ${d + 1} of ${draftIndices.length} with AI…`);
+      await validateSingleDraft(qIdx);
+    }
+  }
+
   showLoadingOverlay('Generating your performance summary…');
 
   try {
