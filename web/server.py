@@ -422,6 +422,14 @@ def _build_validation_prompt(q: dict, child_answer: str, assessment: dict) -> st
             "Do NOT deduct marks for lowercase initial letter or missing trailing punctuation "
             "if the words are in the correct sequence."
         )
+    elif q['type'] == 'match_columns':
+        parts.append(
+            "Note: This is a matching exercise between Column A and Column B.\n"
+            f"Column A: {json.dumps(q.get('columnA', []))}\n"
+            f"Column B: {json.dumps(q.get('columnB', []))}\n"
+            "The student answer lists mappings like 'A[0]→B[2], A[1]→B[0], ...' where indices are 0-based.\n"
+            "Award full or proportional partial marks based on the number of correct pairings."
+        )
     parts.append(
         "Return a JSON object with these exact fields:\n"
         "- verdict: string, one of: correct, partial, wrong\n"

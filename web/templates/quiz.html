@@ -598,13 +598,30 @@ main {
   align-items: center;
   gap: 8px;
 }
-.match-item:hover:not(.matched):not(.disabled) {
+.match-item:hover:not(.disabled) {
   border-color: var(--accent);
   transform: translateX(2px);
 }
-.match-item.selected-a { border-color: var(--accent); background: rgba(108,99,255,.12); }
-.match-item.matched     { border-color: var(--green);  background: var(--green-bg); opacity: .85; }
-.match-item.disabled    { opacity: .45; pointer-events: none; }
+.match-item.selected-a {
+  border-color: var(--accent) !important;
+  background: rgba(108,99,255,.16) !important;
+  box-shadow: 0 0 0 2px var(--accent-glow) !important;
+}
+.match-item.targetable:hover {
+  border-color: #a78bfa;
+  background: rgba(108,99,255,.08);
+}
+.match-item.matched {
+  border-color: var(--green);
+  background: var(--green-bg);
+}
+.match-item.matched:hover {
+  border-color: #22c55e;
+}
+.match-item.disabled {
+  opacity: .45;
+  pointer-events: none;
+}
 .match-badge {
   width: 22px; height: 22px;
   border-radius: 50%;
@@ -615,6 +632,27 @@ main {
   flex-shrink: 0;
 }
 .match-item.matched .match-badge { background: var(--green); color: #fff; }
+.match-item.selected-a .match-badge { background: var(--accent); color: #fff; }
+.unmatch-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 3px 6px;
+  font-size: .8rem;
+  border-radius: 4px;
+  margin-left: 6px;
+  line-height: 1;
+  transition: all .15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.unmatch-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--red);
+  transform: scale(1.15);
+}
 
 /* ── Check button ── */
 .check-btn {
@@ -2461,13 +2499,26 @@ function shuffle(arr) {
   return arr;
 }
 
+function getMatchBLabel(itemB, bi) {
+  if (!itemB) return LETTERS[bi] ?? `${bi+1}`;
+  const m = itemB.match(/^\s*\(([a-zA-Z0-9]+)\)/);
+  if (m) return `(${m[1]})`;
+  const m2 = itemB.match(/^\s*([a-zA-Z0-9]+)[\.\)]/);
+  if (m2) return `(${m2[1]})`;
+  return `(${LETTERS[bi] ? LETTERS[bi].toLowerCase() : bi+1})`;
+}
+
 // ── Match Columns ─────────────────────────────────────────────────
 function renderMatchColumns(q, idx, ans, isRO) {
   const saved = ans ? (ans.textAnswer || '') : '';
   if (!matchState[idx]) {
     // Parse saved matches if any
     const matches = {};
-    if (saved) {
+    if (ans && ans.matches && typeof ans.matches === 'object') {
+      Object.entries(ans.matches).forEach(([k, v]) => {
+        matches[parseInt(k)] = parseInt(v);
+      });
+    } else if (saved) {
       // Format: "A[0]→B[2], A[1]→B[0], ..."
       saved.split(',').forEach(pair => {
         const m = pair.match(/A\[(\d+)\]→B\[(\d+)\]/);
@@ -2484,14 +2535,24 @@ function renderMatchColumns(q, idx, ans, isRO) {
 
   q.columnA.forEach((item, ai) => {
     const isMatched = ai in ms.matches;
-    const cls = isMatched ? 'match-item matched' : (ms.selectedA === ai ? 'match-item selected-a' : 'match-item');
-    const dis  = isRO ? 'pointer-events:none;opacity:0.7' : '';
-    const bIdx = ms.matches[ai];
-    const badge = isMatched ? (LETTERS[bIdx] ?? bIdx) : (LETTERS[ai] ?? ai+1);
+    const isSelected = (ms.selectedA === ai);
+    const cls = isSelected ? 'match-item selected-a' : (isMatched ? 'match-item matched' : 'match-item');
+    const dis = isRO ? 'pointer-events:none;opacity:0.85' : '';
+    const bIdx = isMatched ? ms.matches[ai] : null;
+    const bLabel = bIdx !== null ? getMatchBLabel(q.columnB[bIdx], bIdx) : '';
+
     html += `<div class="${cls}" id="col-a-${idx}-${ai}"
                data-ai="${ai}" style="${dis}">
-               <span class="match-badge">${isMatched ? '✓' : (LETTERS[ai] ?? ai+1)}</span>
-               ${escHtml(item)}
+               <span class="match-badge">${isSelected ? '●' : (isMatched ? '✓' : (ai + 1))}</span>
+               <span class="match-text" style="flex:1;">${escHtml(item)}</span>
+               ${isMatched ? `
+                 <span class="match-tag" style="background:rgba(46,204,113,.15);border:1px solid rgba(46,204,113,.4);color:#2ecc71;border-radius:4px;padding:2px 8px;font-size:.78rem;font-weight:700;white-space:nowrap;display:inline-flex;align-items:center;gap:4px;">
+                   ➜ ${escHtml(bLabel)}
+                 </span>
+                 ${!isRO && !isSubmitted(ans) ? `
+                 <button type="button" class="unmatch-btn" title="Remove this match" onclick="event.stopPropagation(); unmatchColumnA(${idx}, ${ai});">✕</button>
+                 ` : ''}
+               ` : ''}
              </div>`;
   });
 
@@ -2500,12 +2561,25 @@ function renderMatchColumns(q, idx, ans, isRO) {
 
   q.columnB.forEach((item, bi) => {
     const isMatched = ms.matchedB.has(bi);
-    const cls = isMatched ? 'match-item matched' : 'match-item';
-    const dis  = isRO ? 'pointer-events:none;opacity:0.7' : '';
+    const matchedAKey = Object.keys(ms.matches).find(k => ms.matches[k] === bi);
+    const matchedA = matchedAKey !== undefined ? parseInt(matchedAKey) : null;
+    const isTargetable = (ms.selectedA !== null && !isRO && !isSubmitted(ans));
+    const cls = isMatched ? 'match-item matched' : (isTargetable ? 'match-item targetable' : 'match-item');
+    const dis = isRO ? 'pointer-events:none;opacity:0.85' : '';
+    const bPillLabel = getMatchBLabel(item, bi).replace(/[\(\)]/g, '');
+
     html += `<div class="${cls}" id="col-b-${idx}-${bi}"
                data-bi="${bi}" style="${dis}">
-               <span class="match-badge">${isMatched ? '✓' : (LETTERS[bi] ?? bi+1)}</span>
-               ${escHtml(item)}
+               <span class="match-badge">${isMatched ? '✓' : bPillLabel}</span>
+               <span class="match-text" style="flex:1;">${escHtml(item)}</span>
+               ${isMatched && matchedA !== null ? `
+                 <span class="match-tag" style="background:rgba(108,99,255,.15);border:1px solid rgba(108,99,255,.35);color:#a78bfa;border-radius:4px;padding:2px 8px;font-size:.75rem;font-weight:700;white-space:nowrap;">
+                   A${matchedA + 1}
+                 </span>
+                 ${!isRO && !isSubmitted(ans) ? `
+                 <button type="button" class="unmatch-btn" title="Remove this match" onclick="event.stopPropagation(); unmatchColumnB(${idx}, ${bi});">✕</button>
+                 ` : ''}
+               ` : ''}
              </div>`;
   });
 
@@ -2520,16 +2594,20 @@ function renderMatchColumns(q, idx, ans, isRO) {
                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
                  <span>Save Answer</span>
                </button>
+               ${matched > 0 ? `
+               <button class="btn btn-ghost" id="reset-match-btn-${idx}" onclick="resetMatchColumns(${idx})" style="padding:10px 16px;font-size:.85rem;border-color:rgba(239,68,68,.3);color:#f87171;">
+                 <span>↺ Clear Matches</span>
+               </button>` : ''}
                <button class="check-btn" id="check-btn-${idx}" onclick="submitMatchColumns(${idx})" ${matched !== totalA ? 'disabled' : ''}>
                  <span>Check Answer</span>
                </button>
                <span class="draft-pill" id="draft-pill-${idx}" style="${(ans && ans.isDraft) || matched > 0 ? '' : 'display:none'}">📝 Draft saved</span>
              </div>`;
-    if (matched !== totalA) {
-      html += `<div style="margin-top:8px;font-size:.82rem;color:var(--text-muted)">
-                 Match ${matched}/${totalA} pairs. Click an item in Column A, then Column B.
-               </div>`;
-    }
+    html += `<div style="margin-top:8px;font-size:.82rem;color:var(--text-muted)">
+               ${matched === totalA
+                 ? `✓ All ${totalA} pairs matched. Click any item or ✕ to change mappings before checking.`
+                 : `Match ${matched}/${totalA} pairs. Click an item in Column A, then Column B. Click any matched item or ✕ to change it.`}
+             </div>`;
   }
 
   return html;
@@ -2538,30 +2616,86 @@ function renderMatchColumns(q, idx, ans, isRO) {
 function attachMatchHandlers(idx, ans, isRO) {
   if (isRO || isAnswered(ans)) return;
   const ms = matchState[idx];
+  if (!ms) return;
 
+  // Column A items: clicking selects or deselects
   document.querySelectorAll(`[id^="col-a-${idx}-"]`).forEach(el => {
-    if (parseInt(el.dataset.ai) in ms.matches) return;
     el.addEventListener('click', () => {
       const ai = parseInt(el.dataset.ai);
-      ms.selectedA = ai;
-      document.querySelectorAll(`[id^="col-a-${idx}-"]`).forEach(e => {
-        e.classList.remove('selected-a');
-      });
-      el.classList.add('selected-a');
+      if (ms.selectedA === ai) {
+        ms.selectedA = null; // deselect
+      } else {
+        ms.selectedA = ai; // select to map or re-map
+      }
+      renderQuestion(idx);
     });
   });
 
+  // Column B items: clicking maps with selectedA or selects mapped A
   document.querySelectorAll(`[id^="col-b-${idx}-"]`).forEach(el => {
-    if (ms.matchedB.has(parseInt(el.dataset.bi))) return;
     el.addEventListener('click', () => {
-      if (ms.selectedA === null) return;
       const bi = parseInt(el.dataset.bi);
-      ms.matches[ms.selectedA] = bi;
-      ms.matchedB.add(bi);
-      ms.selectedA = null;
-      renderQuestion(idx);   // full re-render
+      if (ms.selectedA !== null) {
+        const ai = ms.selectedA;
+        // If this bi was already mapped to a different A, unmap that other A
+        for (const [otherA, otherB] of Object.entries(ms.matches)) {
+          if (otherB === bi && parseInt(otherA) !== ai) {
+            delete ms.matches[otherA];
+          }
+        }
+        // Map ai -> bi
+        ms.matches[ai] = bi;
+        ms.matchedB = new Set(Object.values(ms.matches));
+        ms.selectedA = null;
+        renderQuestion(idx);
+        saveDraft(idx, false);
+      } else {
+        // If no A is currently selected and this B is already matched,
+        // clicking B selects the matched A so the kid can easily change it!
+        const matchedAKey = Object.keys(ms.matches).find(k => ms.matches[k] === bi);
+        if (matchedAKey !== undefined) {
+          ms.selectedA = parseInt(matchedAKey);
+          renderQuestion(idx);
+        }
+      }
     });
   });
+}
+
+function unmatchColumnA(idx, ai) {
+  const ms = matchState[idx];
+  if (!ms) return;
+  delete ms.matches[ai];
+  ms.matchedB = new Set(Object.values(ms.matches));
+  if (ms.selectedA === ai) ms.selectedA = null;
+  saveDraft(idx, false);
+  renderQuestion(idx);
+}
+
+function unmatchColumnB(idx, bi) {
+  const ms = matchState[idx];
+  if (!ms) return;
+  const matchedAKey = Object.keys(ms.matches).find(k => ms.matches[k] === bi);
+  if (matchedAKey !== undefined) {
+    delete ms.matches[matchedAKey];
+    ms.matchedB = new Set(Object.values(ms.matches));
+    if (ms.selectedA === parseInt(matchedAKey)) ms.selectedA = null;
+    saveDraft(idx, false);
+    renderQuestion(idx);
+  }
+}
+
+function resetMatchColumns(idx) {
+  const ms = matchState[idx];
+  if (!ms) return;
+  ms.matches = {};
+  ms.matchedB.clear();
+  ms.selectedA = null;
+  if (state.answers[idx] && state.answers[idx].isDraft) {
+    state.answers[idx] = null;
+  }
+  persistDraftsSilently();
+  renderQuestion(idx);
 }
 
 function serializeMatchColumns(idx) {
