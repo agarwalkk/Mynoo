@@ -730,8 +730,9 @@ fun ParentDashboardScreen(
                             assessmentsList.forEach { a ->
                                 val statusColor = when {
                                     a.status == "completed" -> Color(0xFF27AE60)
-                                    a.isInProgress -> Color(0xFFE67E22)
-                                    else -> Color(0xFF2980B9)
+                                    a.status == "locked"    -> Color(0xFFE74C3C)
+                                    a.isInProgress          -> Color(0xFFE67E22)
+                                    else                    -> Color(0xFF2980B9)
                                 }
                                 Card(
                                     modifier = Modifier.fillMaxWidth().clickable {
@@ -751,8 +752,9 @@ fun ParentDashboardScreen(
                                                 Text(
                                                     text = when {
                                                         a.status == "completed" -> "✓ Done"
-                                                        a.isInProgress -> "▶ In Progress"
-                                                        else -> "⏳ Ready"
+                                                        a.status == "locked"    -> "🔒 Locked (3 Strikes)"
+                                                        a.isInProgress          -> "▶ In Progress"
+                                                        else                    -> "⏳ Ready"
                                                     },
                                                     style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
                                                     color = statusColor
@@ -760,6 +762,22 @@ fun ParentDashboardScreen(
                                                 if (a.status == "completed" && a.score != null) {
                                                     Text("${a.score.toInt()}%", style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold, color = statusColor))
                                                 }
+                                            }
+                                        }
+                                        if (a.status == "locked") {
+                                            Button(
+                                                onClick = {
+                                                    selectedChild?.let { child ->
+                                                        assessmentVm.unlockAssessment(child.name, a.id) {
+                                                            Toast.makeText(context, "Assessment unlocked!", Toast.LENGTH_SHORT).show()
+                                                        }
+                                                    }
+                                                },
+                                                modifier = Modifier.fillMaxWidth(),
+                                                shape = RoundedCornerShape(8.dp),
+                                                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF27AE60))
+                                            ) {
+                                                Text("🔓 Unlock Assessment", style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold))
                                             }
                                         }
                                         Button(
@@ -1801,7 +1819,21 @@ fun ParentDashboardScreen(
                                 if (validating.validating) CircularProgressIndicator(modifier = Modifier.size(18.dp)) else Text("Regenerate Summary (AI)")
                             }
                         }
-                        if (a.status != "ready") {
+                        if (a.status == "locked") {
+                            Button(
+                                onClick = {
+                                    assessmentVm.unlockAssessment(childName, a.id) {
+                                        Toast.makeText(context, "Assessment unlocked!", Toast.LENGTH_SHORT).show()
+                                    }
+                                    showAssessmentDetail = false
+                                },
+                                modifier = Modifier.fillMaxWidth(),
+                                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF27AE60))
+                            ) {
+                                Text("🔓 Unlock Assessment (Reset Strikes)")
+                            }
+                        }
+                        if (a.status != "ready" && a.status != "locked") {
                             Button(
                                 onClick = {
                                     assessmentVm.resetAssessment(childName, a.id)

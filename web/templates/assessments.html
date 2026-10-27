@@ -129,7 +129,9 @@
           </div>
           <div class="assessment-meta">
             {{ total_q }} questions ·
-            {% if a.status == 'in_progress' %}
+            {% if a.status == 'locked' %}
+              <span style="color:#f87171;font-weight:600;">🔒 Locked (3 focus strikes)</span> · {{ answered }}/{{ total_q }} answered
+            {% elif a.status == 'in_progress' %}
               {{ answered }}/{{ total_q }} answered
             {% else %}
               Not started yet
@@ -137,7 +139,9 @@
           </div>
         </div>
         <div class="assessment-right">
-          {% if a.status == 'in_progress' %}
+          {% if a.status == 'locked' %}
+            <span class="badge" style="background:rgba(239,68,68,.16);color:#f87171;border:1px solid rgba(239,68,68,.35);">🔒 Locked</span>
+          {% elif a.status == 'in_progress' %}
             <span class="badge badge-progress">In Progress</span>
             <div class="progress-bar-wrap">
               <div class="progress-bar-fill" style="width: {{ (answered / total_q * 100) | round }}%"></div>

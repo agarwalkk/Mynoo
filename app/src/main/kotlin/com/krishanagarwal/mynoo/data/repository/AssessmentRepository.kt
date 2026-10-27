@@ -68,11 +68,14 @@ fun Map<String, Any>?.isAnswered(): Boolean {
 val Assessment.answeredCount: Int
     get() = answers.count { it.isAnswered() }
 
+val Assessment.isLocked: Boolean
+    get() = status == "locked"
+
 val Assessment.isInProgress: Boolean
-    get() = status != "completed" && answeredCount > 0
+    get() = status != "completed" && status != "locked" && answeredCount > 0
 
 val Assessment.isReady: Boolean
-    get() = status != "completed" && answeredCount == 0
+    get() = status != "completed" && status != "locked" && answeredCount == 0
 
 
 @Singleton
@@ -297,6 +300,17 @@ class AssessmentRepository @Inject constructor(
                 "answers", com.google.firebase.firestore.FieldValue.delete(),
                 "summary", com.google.firebase.firestore.FieldValue.delete(),
                 "completedAt", com.google.firebase.firestore.FieldValue.delete()
+            ).await()
+    }
+
+    suspend fun unlockAssessment(childName: String, assessmentId: String) {
+        val doc = col(childName).document(assessmentId).get().await()
+        val rawAnswers = doc.get("answers") as? List<Map<String, Any>?> ?: emptyList()
+        val newStatus = if (rawAnswers.any { it.isAnswered() }) "in_progress" else "ready"
+        col(childName).document(assessmentId)
+            .update(
+                "status", newStatus,
+                "tabSwitches", 0
             ).await()
     }
 

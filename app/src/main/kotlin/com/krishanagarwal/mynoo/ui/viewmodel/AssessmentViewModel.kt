@@ -213,6 +213,18 @@ class AssessmentViewModel @Inject constructor(
         }
     }
 
+    fun unlockAssessment(childName: String, assessmentId: String, onDone: (() -> Unit)? = null) {
+        viewModelScope.launch {
+            try {
+                repo.unlockAssessment(childName, assessmentId)
+                loadAssessments(childName)
+                onDone?.invoke()
+            } catch (e: Exception) {
+                Log.e("AssessmentVM", "Error unlocking assessment", e)
+            }
+        }
+    }
+
     fun deleteAssessment(childName: String, assessmentId: String) {
         viewModelScope.launch {
             try {

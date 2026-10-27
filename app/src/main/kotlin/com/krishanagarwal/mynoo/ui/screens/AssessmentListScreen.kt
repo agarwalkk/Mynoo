@@ -535,9 +535,9 @@ private fun AssessmentCard(
                     verticalArrangement = Arrangement.Center
                 ) {
                     Text(
-                        text = if (a.isInProgress) "▶ Resume" else "Start →",
+                        text = if (a.status == "locked") "🔒 Locked" else if (a.isInProgress) "▶ Resume" else "Start →",
                         style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
-                        color = themeColor
+                        color = if (a.status == "locked") Color(0xFFE74C3C) else themeColor
                     )
                     if (a.isInProgress) {
                         Text(
@@ -634,9 +634,9 @@ private fun AssessmentDetailDialog(
                         ) {
                             Column(modifier = Modifier.padding(16.dp)) {
                                 Text(
-                                    text = if (isCompleted) "Completed · $formattedDate" else if (a.isInProgress) "▶ In Progress · Created: $formattedDate" else "⏳ Ready · Created: $formattedDate",
+                                    text = if (isCompleted) "Completed · $formattedDate" else if (a.status == "locked") "🔒 Locked · 3 focus warnings" else if (a.isInProgress) "▶ In Progress · Created: $formattedDate" else "⏳ Ready · Created: $formattedDate",
                                     style = MaterialTheme.typography.bodyMedium,
-                                    color = Color(0xFF555555)
+                                    color = if (a.status == "locked") Color(0xFFE74C3C) else Color(0xFF555555)
                                 )
                                 if (isCompleted && a.score != null) {
                                     val pct = a.score.toInt()

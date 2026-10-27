@@ -465,6 +465,7 @@ main {
   resize: vertical;
   transition: var(--transition);
   outline: none;
+  -webkit-spellcheck: false;
 }
 .answer-textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
 .answer-textarea:disabled { opacity: .6; cursor: default; }
@@ -479,6 +480,7 @@ main {
   font-size: 1rem;
   transition: var(--transition);
   outline: none;
+  -webkit-spellcheck: false;
 }
 .answer-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
 .answer-input:disabled { opacity: .6; }
@@ -511,6 +513,7 @@ main {
   transition: var(--transition);
   vertical-align: middle;
   margin: 0 4px;
+  -webkit-spellcheck: false;
 }
 .blank-input:focus { border-bottom-color: #a78bfa; background: rgba(108,99,255,.08); }
 .blank-input:disabled { opacity: .6; }
@@ -972,7 +975,7 @@ main {
 {% endblock %}
 
 {% block content %}
-<div class="quiz-shell" id="quiz-shell">
+<div class="quiz-shell" id="quiz-shell" spellcheck="false">
 
   <!-- Loading overlay -->
   <div class="loading-overlay" id="loading-overlay">
@@ -997,7 +1000,7 @@ main {
         </div>
         <div class="proctor-rule-item">
           <span>🚨</span>
-          <span>Reaching 3 strikes will immediately lock and submit your assessment.</span>
+          <span>Reaching 3 strikes will immediately lock you out of the assessment until a parent unlocks it.</span>
         </div>
       </div>
       <button class="proctor-btn-start" onclick="enterFocusMode()">Enter Fullscreen & Begin Test</button>
@@ -1021,7 +1024,7 @@ main {
         </div>
         <div class="strike-badge" id="strike-badge-3">
           <span>Strike 3</span>
-          <span class="strike-state">Auto-Submit</span>
+          <span class="strike-state">Lockout</span>
         </div>
       </div>
       <div id="strike-action-wrap" style="margin-top: 20px;">
@@ -1079,11 +1082,12 @@ let state = {
   mcqFirstWrong:     null,
   mcqDrafts:         {},       // { [qidx]: selectedOptionIndex }
   retryUsed:         {},        // { [index]: true }
+  isLocked:          ASSESSMENT.status === 'locked' || parseInt(ASSESSMENT.tabSwitches || 0, 10) >= 3,
   isReadOnly:        ASSESSMENT.status === 'completed',
   finished:          false,
   tabSwitches:       parseInt(ASSESSMENT.tabSwitches || 0, 10),
   maxStrikes:        3,
-  proctorActive:     ASSESSMENT.status !== 'completed',
+  proctorActive:     ASSESSMENT.status !== 'completed' && ASSESSMENT.status !== 'locked' && parseInt(ASSESSMENT.tabSwitches || 0, 10) < 3,
   proctorModalOpen:  false,
   lastViolationTime: 0,
 };
@@ -1101,10 +1105,11 @@ const matchState = {};   // { [qidx]: { [aIdx]: bIdx } }
 // Proctoring & Focus Lock
 // ════════════════════════════════════════════════════════════════════
 function isProctorActive() {
-  return state.proctorActive && !state.isReadOnly && !state.finished;
+  return state.proctorActive && !state.isReadOnly && !state.finished && !state.isLocked;
 }
 
 async function enterFocusMode() {
+  if (state.isLocked) return;
   const overlay = document.getElementById('fullscreen-prompt-overlay');
   const card = document.getElementById('question-card');
   try {
@@ -1144,8 +1149,6 @@ function handleTabSwitchViolation(reason) {
   state.lastViolationTime = now;
 
   state.tabSwitches++;
-  // Persist immediately to server so reloading cannot reset strikes
-  persistDraftsSilently();
 
   // Blur question card immediately to hide questions/answers
   const card = document.getElementById('question-card');
@@ -1158,28 +1161,36 @@ function handleTabSwitchViolation(reason) {
   const strikeMsg = document.getElementById('strike-modal-msg');
   const strikeTitle = document.getElementById('strike-modal-title');
   const strikeIcon = document.getElementById('strike-modal-icon');
-  const actionWrap = document.getElementById('strike-action-wrap');
 
   if (state.tabSwitches >= state.maxStrikes) {
-    if (strikeIcon) strikeIcon.textContent = '🚨';
-    if (strikeTitle) strikeTitle.textContent = 'Assessment Locked (3 Strikes Reached)';
-    if (strikeMsg) strikeMsg.textContent = 'You left the test window 3 times. Your assessment is now being submitted automatically.';
-    if (actionWrap) {
-      actionWrap.innerHTML = `<button class="proctor-btn-resume" style="opacity:0.75;cursor:not-allowed;" disabled>Submitting Test…</button>`;
-    }
-    if (strikeOv) strikeOv.classList.remove('hidden');
+    state.isLocked = true;
+    state.proctorActive = false;
+    persistDraftsSilently();
+    lockAssessmentOnStrikes();
 
-    // Auto submit after brief display
-    setTimeout(() => {
-      if (strikeOv) strikeOv.classList.add('hidden');
-      finishAssessment();
-    }, 2200);
+    if (strikeIcon) strikeIcon.textContent = '🔒';
+    if (strikeTitle) {
+      strikeTitle.textContent = 'Assessment Locked Out (3 Strikes Reached)';
+      strikeTitle.style.color = 'var(--red)';
+    }
+    if (strikeMsg) {
+      strikeMsg.innerHTML = 'You left the test window 3 times. <strong>Your answers have been saved, and the quiz has NOT been submitted.</strong><br/><br/>This assessment is now locked until a parent unlocks it from Parent Settings.';
+    }
+    renderStrikeActionWrapLocked();
+    if (strikeOv) strikeOv.classList.remove('hidden');
   } else {
+    // Persist strike count silently
+    persistDraftsSilently();
+
     if (strikeIcon) strikeIcon.textContent = '⚠️';
-    if (strikeTitle) strikeTitle.textContent = `Strike ${state.tabSwitches} of ${state.maxStrikes}: Focus Lost`;
+    if (strikeTitle) {
+      strikeTitle.textContent = `Strike ${state.tabSwitches} of ${state.maxStrikes}: Focus Lost`;
+      strikeTitle.style.color = 'var(--red)';
+    }
     if (strikeMsg) {
       strikeMsg.textContent = reason || 'You switched tabs or left the test window. Please return to fullscreen to continue.';
     }
+    const actionWrap = document.getElementById('strike-action-wrap');
     if (actionWrap) {
       actionWrap.innerHTML = `<button class="proctor-btn-resume" id="strike-resume-btn" onclick="resumeFromStrike()">Return to Fullscreen & Continue (Strike ${state.tabSwitches}/${state.maxStrikes})</button>`;
     }
@@ -1187,7 +1198,149 @@ function handleTabSwitchViolation(reason) {
   }
 }
 
+async function lockAssessmentOnStrikes() {
+  state.isLocked = true;
+  state.proctorActive = false;
+  state.proctorModalOpen = true;
+
+  if (document.fullscreenElement && document.exitFullscreen) {
+    document.exitFullscreen().catch(() => {});
+  } else if (document.webkitFullscreenElement && document.webkitExitFullscreen) {
+    document.webkitExitFullscreen().catch(() => {});
+  }
+
+  try {
+    await fetch('/api/lock', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        kid:          KID,
+        assessmentId: ASSESSMENT.id,
+        tabSwitches:  state.tabSwitches,
+        answers:      state.answers,
+      }),
+    });
+  } catch (err) {
+    console.warn('Silent lock failed:', err);
+  }
+}
+
+function renderStrikeActionWrapLocked() {
+  const actionWrap = document.getElementById('strike-action-wrap');
+  if (!actionWrap) return;
+  actionWrap.innerHTML = `
+    <a href="/kid/${encodeURIComponent(KID)}" class="btn btn-ghost" style="width:100%;justify-content:center;margin-bottom:12px;padding:11px 16px;font-size:.9rem;box-sizing:border-box;">← Exit to Assessments</a>
+    <div style="margin-top: 14px; padding: 14px 16px; background: var(--bg-card2); border-radius: 10px; border: 1.5px solid var(--border); text-align: left;">
+      <div style="font-size: .88rem; font-weight: 700; color: var(--text); margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+        <span>🔑</span> Parent Quick Unlock
+      </div>
+      <div style="font-size: .8rem; color: var(--text-muted); margin-bottom: 10px;">
+        Enter Parent PIN to unlock this assessment immediately:
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <input type="password" id="parent-pin-input" maxlength="8" placeholder="PIN" style="width: 110px; padding: 8px 10px; border-radius: 6px; border: 1.5px solid var(--border); background: var(--bg); color: var(--text); font-size: 1rem; text-align: center; letter-spacing: 3px;" onkeydown="if(event.key==='Enter') unlockWithPin()" />
+        <button class="btn btn-primary" id="parent-unlock-btn" style="flex: 1; justify-content: center; padding: 8px 14px; font-size: .88rem;" onclick="unlockWithPin()">Unlock Assessment</button>
+      </div>
+      <div id="pin-error-msg" style="color: var(--red); font-size: .8rem; margin-top: 8px; display: none;"></div>
+    </div>
+  `;
+}
+
+function showLockedOverlay() {
+  state.isLocked = true;
+  state.proctorActive = false;
+  state.proctorModalOpen = true;
+
+  const card = document.getElementById('question-card');
+  if (card) card.classList.add('blurred-test');
+
+  updateStrikeMeterUI();
+
+  const strikeOv = document.getElementById('strike-overlay');
+  const strikeMsg = document.getElementById('strike-modal-msg');
+  const strikeTitle = document.getElementById('strike-modal-title');
+  const strikeIcon = document.getElementById('strike-modal-icon');
+
+  if (strikeIcon) strikeIcon.textContent = '🔒';
+  if (strikeTitle) {
+    strikeTitle.textContent = 'Assessment Locked Out';
+    strikeTitle.style.color = 'var(--red)';
+  }
+  if (strikeMsg) {
+    strikeMsg.innerHTML = 'This assessment has been locked because 3 focus warnings (tab switches) were detected.<br/><br/><strong>Your answers have been saved, and the quiz has NOT been submitted.</strong> It will remain locked until a parent unlocks it from Parent Settings.';
+  }
+  renderStrikeActionWrapLocked();
+  if (strikeOv) strikeOv.classList.remove('hidden');
+}
+
+async function unlockWithPin() {
+  const pinInput = document.getElementById('parent-pin-input');
+  const errorEl = document.getElementById('pin-error-msg');
+  const unlockBtn = document.getElementById('parent-unlock-btn');
+  const pin = (pinInput ? pinInput.value : '').trim();
+
+  if (!pin) {
+    if (errorEl) { errorEl.textContent = 'Please enter your Parent PIN.'; errorEl.style.display = 'block'; }
+    return;
+  }
+
+  if (unlockBtn) {
+    unlockBtn.disabled = true;
+    unlockBtn.textContent = 'Verifying…';
+  }
+  if (errorEl) errorEl.style.display = 'none';
+
+  try {
+    const resp = await fetch('/api/unlock', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        kid:          KID,
+        assessmentId: ASSESSMENT.id,
+        pin:          pin,
+      }),
+    });
+    const result = await resp.json();
+    if (!result.ok) {
+      if (errorEl) {
+        errorEl.textContent = result.error || 'Incorrect PIN.';
+        errorEl.style.display = 'block';
+      }
+      if (unlockBtn) {
+        unlockBtn.disabled = false;
+        unlockBtn.textContent = 'Unlock Assessment';
+      }
+      return;
+    }
+
+    // Success!
+    state.isLocked = false;
+    state.tabSwitches = 0;
+    state.proctorActive = true;
+    state.proctorModalOpen = false;
+    updateStrikeMeterUI();
+
+    const strikeOv = document.getElementById('strike-overlay');
+    if (strikeOv) strikeOv.classList.add('hidden');
+    const card = document.getElementById('question-card');
+    if (card) card.classList.remove('blurred-test');
+
+    showToast('✓ Assessment unlocked! Returning to test…');
+    enterFocusMode();
+  } catch (err) {
+    if (errorEl) {
+      errorEl.textContent = 'Error: ' + err.message;
+      errorEl.style.display = 'block';
+    }
+    if (unlockBtn) {
+      unlockBtn.disabled = false;
+      unlockBtn.textContent = 'Unlock Assessment';
+    }
+  }
+}
+
 async function resumeFromStrike() {
+  if (state.isLocked) return;
   const strikeOv = document.getElementById('strike-overlay');
   const card = document.getElementById('question-card');
   try {
@@ -1268,6 +1421,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const firstUnanswered = state.answers.findIndex(a => !isAnswered(a));
     state.currentIndex = firstUnanswered >= 0 ? firstUnanswered : TOTAL - 1;
   }
+  // Check if assessment is already locked
+  if (state.isLocked) {
+    document.getElementById('loading-overlay').classList.add('hidden');
+    renderQuestion(state.currentIndex);
+    updateProgress();
+    showLockedOverlay();
+    return;
+  }
+
   document.getElementById('loading-overlay').classList.add('hidden');
   renderQuestion(state.currentIndex);
   updateProgress();
@@ -1456,6 +1618,7 @@ function persistDraftsSilently() {
       assessmentId: ASSESSMENT.id,
       answers: state.answers,
       tabSwitches: state.tabSwitches,
+      status: state.isLocked ? 'locked' : undefined,
     }),
   }).catch(e => console.warn('Silent save failed:', e));
 }
@@ -2059,12 +2222,28 @@ function renderTextInput(q, idx, ans, isRO) {
       html += `<textarea class="${cls}" id="text-ans-${idx}"
                  placeholder="${placeholder}"
                  data-placeholder="${placeholder}"
+                 spellcheck="false"
+                 autocomplete="off"
+                 autocorrect="off"
+                 autocapitalize="off"
+                 writingsuggestions="false"
+                 data-gramm="false"
+                 data-gramm_editor="false"
+                 data-enable-grammarly="false"
                  onkeydown="handleTextKeydown(event)"
                  >${escHtml(saved)}</textarea>`;
     } else {
       html += `<input type="text" class="${cls}" id="text-ans-${idx}"
                  placeholder="${placeholder}"
                  data-placeholder="${placeholder}"
+                 spellcheck="false"
+                 autocomplete="off"
+                 autocorrect="off"
+                 autocapitalize="off"
+                 writingsuggestions="false"
+                 data-gramm="false"
+                 data-gramm_editor="false"
+                 data-enable-grammarly="false"
                  value="${escAttr(saved)}"
                  onkeydown="handleTextKeydown(event)" />`;
     }
@@ -2112,6 +2291,14 @@ function renderFillBlank(q, idx, ans, isRO) {
                  id="blank-${idx}-${pi}"
                  data-placeholder="blank ${pi+1}"
                  placeholder="______"
+                 spellcheck="false"
+                 autocomplete="off"
+                 autocorrect="off"
+                 autocapitalize="off"
+                 writingsuggestions="false"
+                 data-gramm="false"
+                 data-gramm_editor="false"
+                 data-enable-grammarly="false"
                  value="${escAttr(savedVal)}"
                  ${isRO ? 'disabled' : ''}
                  onkeydown="handleTextKeydown(event)"

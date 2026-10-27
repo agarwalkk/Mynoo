@@ -116,6 +116,50 @@ fun AssessmentScreen(
                 Text("Loading assessment.")
             }
         }
+        quiz.assessment?.status == "locked" -> Box(
+            Modifier.fillMaxSize().padding(24.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            Card(
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
+                modifier = Modifier.fillMaxWidth().padding(16.dp)
+            ) {
+                Column(
+                    modifier = Modifier.padding(24.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(16.dp)
+                ) {
+                    Text("🔒", fontSize = 48.sp)
+                    Text(
+                        "Assessment Locked Out",
+                        style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
+                        color = MaterialTheme.colorScheme.error,
+                        textAlign = TextAlign.Center
+                    )
+                    Text(
+                        "This assessment has been locked because 3 focus warnings (tab switches) were detected. Your previous answers are preserved and the quiz has not been submitted.",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        textAlign = TextAlign.Center
+                    )
+                    Text(
+                        "Please ask a parent to unlock it from the Parent Dashboard to resume.",
+                        style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.SemiBold),
+                        color = MaterialTheme.colorScheme.primary,
+                        textAlign = TextAlign.Center
+                    )
+                    Button(
+                        onClick = onFinish,
+                        modifier = Modifier.fillMaxWidth(),
+                        shape = RoundedCornerShape(8.dp)
+                    ) {
+                        Text("← Return to Assessments")
+                    }
+                }
+            }
+        }
         quiz.finished -> {
             val savedScore = quiz.assessment?.score?.toInt()
             val scoreLabel = if (savedScore != null) {

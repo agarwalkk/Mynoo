@@ -315,7 +315,7 @@ def save_assessment_progress(db, child_name: str, assessment_id: str,
         update_data['tabSwitches'] = int(tab_switches)
     (db.collection('kids').document(kid_id)
        .collection('assessments').document(assessment_id)
-       .update(update_data))
+       .set(update_data, merge=True))
 
 
 def mark_assessment_complete(db, child_name: str, assessment_id: str,
@@ -559,15 +559,89 @@ def api_save_draft():
     assessment_id = data.get('assessmentId', '')
     answers       = data.get('answers', [])
     tab_switches  = data.get('tabSwitches')
+    req_status    = data.get('status')
 
     db      = get_db()
-    has_any = any(_has_any_answer(a) for a in answers if isinstance(a, dict))
-    status  = 'in_progress' if has_any else 'ready'
+    if req_status == 'locked' or (tab_switches is not None and int(tab_switches) >= 3):
+        status = 'locked'
+    else:
+        # Preserve locked status if already set
+        existing = load_assessment(db, kid, assessment_id)
+        if existing and existing.get('status') == 'locked':
+            status = 'locked'
+        else:
+            has_any = any(_has_any_answer(a) for a in answers if isinstance(a, dict))
+            status  = 'in_progress' if has_any else 'ready'
+
     try:
         save_assessment_progress(db, kid, assessment_id, answers, status, tab_switches=tab_switches)
     except Exception as e:
         return jsonify({'ok': False, 'error': str(e)}), 500
-    return jsonify({'ok': True})
+    return jsonify({'ok': True, 'status': status})
+
+
+@app.route('/api/lock', methods=['POST'])
+def api_lock():
+    """Lock an assessment due to 3 focus strikes without submitting/completing it."""
+    data          = request.get_json(force=True)
+    kid           = data.get('kid', '')
+    assessment_id = data.get('assessmentId', '')
+    tab_switches  = int(data.get('tabSwitches', 3))
+    answers       = data.get('answers')
+
+    try:
+        db = get_db()
+        kid_id = _resolve_child(db, kid)
+        update_data = {
+            'status':      'locked',
+            'tabSwitches': tab_switches,
+        }
+        if answers is not None:
+            update_data['answers'] = answers
+        doc_ref = db.collection('kids').document(kid_id).collection('assessments').document(assessment_id)
+        doc_ref.set(update_data, merge=True)
+        return jsonify({'ok': True, 'status': 'locked', 'tabSwitches': tab_switches})
+    except Exception as e:
+        return jsonify({'ok': False, 'error': str(e)}), 500
+
+
+@app.route('/api/unlock', methods=['POST'])
+def api_unlock():
+    """Unlock an assessment, reset strikes to 0, restore in_progress/ready status."""
+    data          = request.get_json(force=True)
+    kid           = data.get('kid', '')
+    assessment_id = data.get('assessmentId', '')
+    pin           = str(data.get('pin', '')).strip()
+
+    db = get_db()
+    if pin:
+        correct_pin = '1234'
+        try:
+            global_doc = db.collection('settings').document('global').get()
+            if global_doc.exists:
+                correct_pin = str((global_doc.to_dict() or {}).get('pin', '1234')).strip()
+        except Exception:
+            pass
+        if pin != correct_pin:
+            return jsonify({'ok': False, 'error': 'Incorrect parent PIN.'}), 403
+
+    try:
+        kid_id = _resolve_child(db, kid)
+        doc_ref = db.collection('kids').document(kid_id).collection('assessments').document(assessment_id)
+        doc = doc_ref.get()
+        if not doc.exists:
+            return jsonify({'ok': False, 'error': 'Assessment not found.'}), 404
+        d = doc.to_dict() or {}
+        raw_answers = list(d.get('answers') or [])
+        has_any = any(_has_any_answer(a) for a in raw_answers if isinstance(a, dict))
+        new_status = 'in_progress' if has_any else 'ready'
+        doc_ref.set({
+            'status':      new_status,
+            'tabSwitches': 0,
+        }, merge=True)
+        return jsonify({'ok': True, 'status': new_status, 'tabSwitches': 0})
+    except Exception as e:
+        return jsonify({'ok': False, 'error': str(e)}), 500
 
 
 @app.route('/api/answer/validate', methods=['POST'])
