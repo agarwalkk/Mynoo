@@ -234,6 +234,12 @@ def _parse_question(q: dict) -> dict:
     if qtype == 'equation_balancing' and not unbal_eq:
         question, unbal_eq = _extract_equation_from_text(question)
 
+    raw_hint = q.get('hint') or q.get('hints') or ''
+    if isinstance(raw_hint, list):
+        raw_hint = ' '.join(str(x) for x in raw_hint)
+    elif isinstance(raw_hint, dict):
+        raw_hint = str(raw_hint.get('text', ''))
+
     return {
         'id':                 str(q.get('id', '')),
         'type':               qtype,
@@ -248,7 +254,7 @@ def _parse_question(q: dict) -> dict:
         'difficulty':         str(q.get('difficulty', '')),
         'explanation':        _clean_latex(str(q.get('explanation', '') or '')),
         'passage':            _clean_latex(str(q.get('passage', '') or '')),
-        'hint':               _clean_latex(str(q.get('hint', '') or '')),
+        'hint':               _clean_latex(str(raw_hint or '')),
         'transformationType': str(q.get('transformationType', '')),
         'jumbledWords':       [_clean_latex(str(w)) for w in q.get('jumbledWords', [])],
         'columnA':            [_clean_latex(str(c)) for c in q.get('columnA', [])],
